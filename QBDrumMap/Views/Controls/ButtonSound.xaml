@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="QBDrumMap.Views.Controls.ButtonSound"
+    x:Name="root"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:Background="Black">
+
+    <Button
+        x:Name="PlayButton"
+        Focusable="False"
+        ToolTip="Play Note"
+        Background="Transparent"
+        BorderThickness="0">
+        <TextBlock
+            FontFamily="Segoe MDL2 Assets"
+            Text="&#xE767;"
+            FontSize="12"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+    </Button>
+</UserControl>

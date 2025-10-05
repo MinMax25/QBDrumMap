@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MIDIコンバート</title>
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>MIDIコンバート</h1>
+        <p>MIDIデータ(SMF)のコンバートを行います。</p>
+        <div class="image-wrapper">
+            <img src="image/page-convert_pic_1.png" width="650" height="400" />
+        </div>
+
+        <h2 id="howtouse">使い方</h2>
+        <p>
+            コンバート元のキットをベースキットで選択します。
+            Target Midi Fileの右側にあるボタンでコンバートするファイルを取り込みます。
+            画面右のキットリストよりコンバート対象を選択（複数選択可）、コンバートボタンを押します。
+        </p>
+
+        <h2 id="specifications">コンバート仕様</h2>
+        <p>ドラムマップのアーティキュレーション設定を元にコンバートを行います。</p>
+        <p>
+            アーティキュレーションが指定されていないピッチは元ファイル名称の先頭に'#'がついて別データとして出力されます。
+        </p>
+        <p>コンバート出力ファイルは元ファイルと同じフォルダにに作成されます。</p>
+        <p class="note">出力フォーマットがFormat0の場合は、元ファイル名+_convertedでフォルダを作成し、その中にコンバート先のドラムマップ名でファイルが作成されます。</p>
+        <p class="note">出力フォーマットがFormat1の場合は、元ファイル名+_convertedでファイルを作成し、その中にコンバート先のドラムマップ名でトラックが作成されます。</p>
+
+        <h3>出力フォーマットについて</h3>
+        <p>Cubaseを使用の場合、MIDIファイル内のトラックを個別に扱えないためFormat0を使用するのがよいでしょう。</p>
+    </div>
+</body>
+
+</html>

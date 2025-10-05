@@ -1,0 +1,114 @@
+﻿<UserControl
+    x:Class="QBDrumMap.Views.Controls.ScorePitchSelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="200" d:DesignWidth="200">
+
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="ScoreBrush" Color="White"/>
+        <BooleanToVisibilityConverter x:Key="Bool2Visibility"/>
+        <Style x:Key="Staff" TargetType="Border">
+            <Setter Property="Canvas.Left" Value="0"/>
+            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=ActualWidth}"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ScoreBrush}"/>
+        </Style>
+        <Style x:Key="StaffOutSide" TargetType="Border">
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Canvas.Left" Value="{Binding StaffOutSideLeft.Value}"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ScoreBrush}"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <UserControl.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}"/>
+    </UserControl.Background>
+    
+    <Grid>
+        <!-- Score -->
+        <Canvas>
+            <Canvas.Resources>
+                <Style TargetType="Line">
+                    <Setter Property="Stroke" Value="{StaticResource ScoreBrush}"/>
+                    <Setter Property="StrokeThickness" Value="1"/>
+                </Style>
+                <Style TargetType="Ellipse">
+                    <Setter Property="Stroke" Value="{StaticResource ScoreBrush}"/>
+                    <Setter Property="StrokeThickness" Value="1"/>
+                </Style>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="{StaticResource ScoreBrush}"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                </Style>
+            </Canvas.Resources>
+
+            <Line StrokeThickness="3" X1="30" X2="30" Y1="100" Y2="120"/>
+            <Line StrokeThickness="3" X1="36" X2="36" Y1="100" Y2="120"/>
+
+            <Border x:Name="StaffTop1" Style="{StaticResource StaffOutSide}" Canvas.Top="50" Canvas.Left="100"/>
+            <Border x:Name="StaffTop2" Style="{StaticResource StaffOutSide}" Canvas.Top="60" Canvas.Left="100"/>
+            <Border x:Name="StaffTop3" Style="{StaticResource StaffOutSide}" Canvas.Top="70" Canvas.Left="100"/>
+            <Border x:Name="StaffTop4" Style="{StaticResource StaffOutSide}" Canvas.Top="80" Canvas.Left="100"/>
+
+            <Border Style="{StaticResource Staff}" Canvas.Top="90"/>
+            <Border Style="{StaticResource Staff}" Canvas.Top="100"/>
+            <Border Style="{StaticResource Staff}" Canvas.Top="110"/>
+            <Border Style="{StaticResource Staff}" Canvas.Top="120"/>
+            <Border Style="{StaticResource Staff}" Canvas.Top="130"/>
+
+            <Border x:Name="StaffTop5" Style="{StaticResource StaffOutSide}" Canvas.Top="140" Canvas.Left="100"/>
+            <Border x:Name="StaffTop6" Style="{StaticResource StaffOutSide}" Canvas.Top="150" Canvas.Left="100"/>
+
+            <Canvas x:Name="Note0" d:Canvas.Top="120" d:Canvas.Left="100">
+
+                <Line X1="16" X2="16" Y1="-2" Y2="-25"/>
+
+                <!-- Note Head -->
+                <Ellipse x:Name="nhNo" Margin="4,-3.5,0,0" Width="12" Height="8" Fill="{StaticResource ScoreBrush}" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="0" AngleY="-8"/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Border x:Name="nhSl" Margin="1,-1,0,0" Width="18" Height="2" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-145"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                </Border>
+                <Grid x:Name="nhdX">
+                    <Line X1="8" X2="16" Y1="-3" Y2="5"/>
+                    <Line X1="16" X2="8" Y1="-3" Y2="5"/>
+                </Grid>
+                <Ellipse x:Name="nhCX" Width="12" Height="12" Margin="6,-5,0,0"/>
+                <Path x:Name="nhTr" Margin="7,-3,0,0" Data="M 4,1 L 0,8 L 8, 8 Z" Fill="{StaticResource ScoreBrush}" Stretch="Fill"/>
+                <Path x:Name="nhDi" Margin="7,-4,0,0" Data="M 0,4 L 4,8 L 8,4 L4,0  Z" Fill="{StaticResource ScoreBrush}" Stretch="Fill"/>
+
+                <!-- Technique -->
+                <Line x:Name="trm1" Margin="12,-16,0,0" X1="0" X2="8" Y1="4" Y2="0" StrokeThickness="2"/>
+                <Line x:Name="trm2" Margin="12,-20,0,0" X1="0" X2="8" Y1="4" Y2="0" StrokeThickness="2"/>
+                <Line x:Name="trm3" Margin="12,-12,0,0" X1="0" X2="8" Y1="4" Y2="0" StrokeThickness="2"/>
+            </Canvas>
+            
+            <Canvas x:Name="Note1" d:Canvas.Top="120" d:Canvas.Left="100">
+                <!-- Technique -->
+                <Ellipse x:Name="circ" Margin="6,-69,0,0" Height="8" Width="8"/>
+                <Line x:Name="ccir" Margin="10,-40,0,0" X1="0" X2="0" Y1="0" Y2="12"/>
+                <Line x:Name="plus" Margin="4,-40,0,0" X1="0" X2="12" Y1="6" Y2="6"/>
+                <Ellipse x:Name="stac" Fill="{StaticResource ScoreBrush}" Margin="6,-69,0,0" Height="8" Width="8"/>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</UserControl>

@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="QBDrumMap.Views.ConvertMidiPage"
+    Style="{DynamicResource MahApps.Styles.Page}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
+    xmlns:properties="clr-namespace:QBDrumMap.Properties"
+    Dialog:DialogParticipation.Register="{Binding}"
+    mc:Ignorable="d"
+    d:DesignHeight="800" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
+            <ContentControl Focusable="False" Content="{StaticResource ConvertPageIcon}" Margin="8,2,0,0"/>
+            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static properties:Resources.Title_ConvertMidiPage}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="{StaticResource MediumLeftRightMargin}" Background="{DynamicResource MahApps.Brushes.Gray10}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Convert MIDI">
+                        <StackPanel>
+                            <Label Content="Base On Kit"/>
+                            <ComboBox SelectedValue="{Binding BaseOn}" ItemsSource="{Binding BaseOnComboSource}" DisplayMemberPath="Name"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="MIDI FIle">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Select MIDI File"/>
+                                <Button Style="{StaticResource OpenFileButton}" Command="{Binding OpenFileCommand}"/>
+                                <Label Margin="24,0,0,0" Content="Convert To"/>
+                                <ComboBox Width="100" SelectedValue="{Binding Setting.ConvertMIDIFormat}" ItemsSource="{Binding Source={StaticResource MIDIFormatComboSource}}"/>
+                            </StackPanel>
+                            <TextBlock Margin="8,4,8,4" Height="48" Text="{Binding LastConvertMIDIFilePath}" TextWrapping="Wrap"/>
+                            <Button Style="{StaticResource ExportButtonStyle}" Content="Convert" Command="{Binding ConvertCommand}"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+                <Grid Grid.Column="1">
+                    <DataGrid
+                        ItemsSource="{Binding KitListView}"
+                        Style="{StaticResource DataGridStyle}">
+                        <bh:Interaction.Behaviors>
+                            <behaviors:DataGridExtendBehavior SelectedRows="{Binding SelectedKits}" SelectionChangedCommand="{Binding SelectedKitsSelectionChangedCommand}"/>
+                        </bh:Interaction.Behaviors>
+                        <DataGrid.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="GroupItem">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="GroupItem">
+                                                    <Expander
+                                                        IsExpanded="False"
+                                                        mah:HeaderedControlHelper.HeaderBackground="{StaticResource MahApps.Brushes.Accent4}">
+                                                        <Expander.Header>
+                                                            <DockPanel>
+                                                                <TextBlock Width="280" Text="{Binding Items[0].PluginName}"/>
+                                                                <TextBlock Text="{Binding Items.Count}"/>
+                                                            </DockPanel>
+                                                        </Expander.Header>
+                                                        <Expander.Content>
+                                                            <ItemsPresenter/>
+                                                        </Expander.Content>
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </DataGrid.GroupStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Kit" Binding="{Binding KitName}" Width="300" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

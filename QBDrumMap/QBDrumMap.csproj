@@ -1,0 +1,215 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <RootNamespace>QBDrumMap</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest></ApplicationManifest>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Resources\QB.ico</ApplicationIcon>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class\MapModels\ItemPropertyChangedEventArgs.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="DrumMap.qbd" />
+    <None Remove="Resources\Document\Manual\Application.html" />
+    <None Remove="Resources\Document\Manual\base.html" />
+    <None Remove="Resources\Document\Manual\basic.html" />
+    <None Remove="Resources\Document\Manual\content.css" />
+    <None Remove="Resources\Document\Manual\image\intoro_pic_1.png" />
+    <None Remove="Resources\Document\Manual\image\page-articulation_pic_1.png" />
+    <None Remove="Resources\Document\Manual\image\page-convert_pic_1.png" />
+    <None Remove="Resources\Document\Manual\image\page-export_pic_1.png" />
+    <None Remove="Resources\Document\Manual\image\page-parts_pic_1.png" />
+    <None Remove="Resources\Document\Manual\image\page-parts_pic_2.png" />
+    <None Remove="Resources\Document\Manual\image\page-parts_pic_3.png" />
+    <None Remove="Resources\Document\Manual\image\page-plugin_pic_1.png" />
+    <None Remove="Resources\Document\Manual\image\page-plugin_pic_2.png" />
+    <None Remove="Resources\Document\Manual\image\page-plugin_pic_3.png" />
+    <None Remove="Resources\Document\Manual\image\page-plugin_pic_4.png" />
+    <None Remove="Resources\Document\Manual\image\page-plugin_pic_5.png" />
+    <None Remove="Resources\Document\Manual\image\page-plugin_pic_6.png" />
+    <None Remove="Resources\Document\Manual\image\page-plugin_pic_7.png" />
+    <None Remove="Resources\Document\Manual\image\page-plugin_pic_8.png" />
+    <None Remove="Resources\Document\Manual\image\QB.png" />
+    <None Remove="Resources\Document\Manual\image\setting_pic_1.png" />
+    <None Remove="Resources\Document\Manual\index.html" />
+    <None Remove="Resources\Document\Manual\install.html" />
+    <None Remove="Resources\Document\Manual\intro.html" />
+    <None Remove="Resources\Document\Manual\layout.js" />
+    <None Remove="Resources\Document\Manual\others.html" />
+    <None Remove="Resources\Document\Manual\page-articulation.html" />
+    <None Remove="Resources\Document\Manual\page-common.html" />
+    <None Remove="Resources\Document\Manual\page-export.html" />
+    <None Remove="Resources\Document\Manual\page-midiconvert.html" />
+    <None Remove="Resources\Document\Manual\page-parts.html" />
+    <None Remove="Resources\Document\Manual\page-plugin.html" />
+    <None Remove="Resources\Document\Manual\page.html" />
+    <None Remove="Resources\Document\Manual\score.html" />
+    <None Remove="Resources\Document\Manual\ScreenLayout.html" />
+    <None Remove="Resources\Document\Manual\setting.html" />
+    <None Remove="Resources\Document\Manual\style.css" />
+    <None Remove="Resources\license.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DrumMap.qbd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\Application.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\content.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\intoro_pic_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-articulation_pic_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-convert_pic_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-export_pic_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-parts_pic_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-parts_pic_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-parts_pic_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-plugin_pic_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-plugin_pic_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-plugin_pic_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-plugin_pic_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-plugin_pic_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-plugin_pic_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-plugin_pic_7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\page-plugin_pic_8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\QB.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\image\setting_pic_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\install.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\intro.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\layout.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\others.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\page-articulation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\page-common.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\page-export.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\page-midiconvert.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\page-parts.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\page-plugin.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\setting.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\QB.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="libMidi" Version="1.0.0" />
+    <PackageReference Include="libQB" Version="1.0.0" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.11" />
+    <PackageReference Include="MahApps.Metro.IconPacks.FontAwesome" Version="6.1.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="6.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.9" />
+    <PackageReference Include="NAudio.Midi" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Name.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Name.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Controls\PartPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Name.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Name.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.ja.resx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+</Project>

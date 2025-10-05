@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>プラグイン</title>
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>プラグイン</h1>
+        <p>ドラムマップの編集を行います。</p>
+
+        <h2 id="drummap">ドラムマップの編集</h2>
+        <p>プラグイン、キットの情報を設定します。</p>
+        <div class="image-wrapper">
+            <img src="image/page-plugin_pic_7.png" width="50%" height="50%" />
+        </div>
+        <ul>
+            <li class="sub-text">プラグインリストよりプラグインを選択します。プラグインが無い場合、プラグインを追加します。</li>
+            <li class="sub-text">キットリストよりキットを選択します。キットが無い場合、キットを追加します。</li>
+            <li class="sub-text">ピッチリストでマップ設定を行います。</li>
+        </ul>
+
+        <h2 id="pitchlist">ピッチリスト</h2>
+        <p>VST（ドラム音源）で定義されているドラムマップ情報を設定します。</p>
+        <div class="image-wrapper">
+            <img src="image/page-plugin_pic_8.png" width="50%" height="50%" />
+        </div>
+        <ul>
+            <li class="sub-text">該当するピッチ行の各項目を入力します。</li>
+            <li class="sub-text">列見出しをクリックで並び順の変更が可能です。
+                <ul>
+                    <li class="sub-text">一回目のクリックで昇順、二回目で降順、三回目で初期状態に戻ります。</li>
+                    <li class="sub-text">ソートされた状態では一部編集機能に制限があります。編集する場合は初期状態に戻してください。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>入力項目</h3>
+        <ul>
+            <li class="sub-text">名称
+                <ul>
+                    <li class="sub-text">ピッチ名を入力します。空白の場合はピッチ未設定となります。</li>
+                </ul>
+            </li>
+            <li class="sub-text">アーティキュレーション
+                <ul>
+                    <li class="sub-text">検索ボタンからアーティキュレーション選択画面を開き、該当するものを選びます。</li>
+                </ul>
+            </li>
+            <li class="sub-text">セパレータ
+                <ul>
+                    <li class="sub-text">コンボボックスより該当するものを選びます。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="filter">フィルター</h3>
+        <p>ピッチ名、アーティキュレーション名により絞り込みを行います。</p>
+        <div class="image-wrapper">
+            <img src="image/page-plugin_pic_5.png" width="40%" height="40%" />
+        </div>
+        <p>アスタリスク(*)によるワイルドカード指定ができます。</p>
+        <ul>
+            <li>未指定場合は完全一致</li>
+            <li>キーワードの先頭につけた場合は後方一致</li>
+            <li>キーワードの末尾につけた場合は前方一致</li>
+            <li>キーワードの前後につけた場合は部分一致</li>
+        </ul>
+
+        <h2 id="soundcheck">サウンドチェック</h2>
+        <div class="image-wrapper">
+            <img src="image/page-plugin_pic_6.png" />
+        </div>
+        <p>ピッチリスト各行にあるスピーカーアイコンをクリックすると、該当行のノートオン・オフメッセージがMIDIポートに送信されます。</p>
+        <p>ベロシティは後述のオプションで指定された値となります。</p>
+        <p>ベロシティはスピーカーアイコンを長押しながら(0.3秒)マウスの上下で調整可能です。</p>
+
+        <h2 id="contextmenu">コンテクストメニュー</h2>
+        <p>ピッチリスト上の右クリックで表示されます。</p>
+        <div class="contextmenu-wrapper">
+            <div class="contextmenu-image">
+                <img src="image/page-plugin_pic_2.png" />
+            </div>
+            <ul class="contextmenu-list">
+                <li class="sub-text">アーティキュレーションマップ表示</li>
+                <li class="sub-text">ドラムマップエクスポート
+                    <ul>
+                        <li class="sub-text">Studio One</li>
+                        <li class="sub-text">Cubase</li>
+                        <li class="sub-text">.tsvテキスト</li>
+                    </ul>
+                </li>
+                <li class="sub-text">ドラムマップインポート (.pitchlist, .drm, .tsv)</li>
+                <li class="sub-text">ピッチリスト並び替え
+                    <ul>
+                        <li class="sub-text">ピッチ順に並び替え</li>
+                        <li class="sub-text">前方に寄せる</li>
+                    </ul>
+                </li>
+                <li class="sub-text">他のマップからアーティキュレーションをコピーする</li>
+            </ul>
+        </div>
+
+        <h2 id="articulationmap">アーティキュレーションマップ</h2>
+        <p class="sub-text">コンテクストメニューからの呼び出しで表示されます。</p>
+        <div class="image-wrapper">
+            <img src="image/page-plugin_pic_3.png" width="60%" height="60%" alt="アーティキュレーションマップ" />
+        </div>
+        <p class="sub-text">アーティキュレーションに紐づけされたピッチが表示されます。</p>
+        <p class="note">Sub列のチェック付きは自動補間されたピッチです。</p>
+
+        <h2 id="options">オプション</h2>
+        <p class="sub-text">オプションのヘッダ部をクリックすることにより開閉します。サウンドチェックで使用するMIDIポートの設定を行います。</p>
+        <div class="image-wrapper">
+            <img src="image/page-plugin_pic_4.png" width="40%" height="40%" alt="オプション画面" />
+        </div>
+        <ul>
+            <li class="sub-text">MIDIキーボードを使用してサウンドチェックする場合は、MIDI入力デバイスを選択してください。
+                <ul>
+                    <li>
+                        <p>MIDI入力はMIDI出力にスルー出力されます。MIDIキーボードが接続されているポートを選択します。</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="sub-text">入力固定ピッチが指定されている場合は、入力されたノートメッセージをピッチリストで選択されているピッチに置き換えて送信します。
+                <ul>
+                    <li>
+                        <p>ベロシティはそのまま出力されます。</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="sub-text">MIDI入力および出力デバイスはコンボボックスより選択してください。
+                <ul>
+                    <li>
+                        <p>選択時点でMIDIポートの状態が右に表示されます。ポートが使用可能な場合は'Connected'、使用不可の場合は（DAW等で排他使用されている場合など）'Not
+                            Connected'と表示されます。</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="sub-text">プラグインタイプに 'None' 以外を指定した場合、キット選択時にシステムエクスクルーシブメッセージを含むプログラムチェンジメッセージが送信されます。</li>
+        </ul>
+    </div>
+</body>
+
+</html>

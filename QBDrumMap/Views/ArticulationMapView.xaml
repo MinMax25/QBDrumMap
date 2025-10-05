@@ -1,0 +1,80 @@
+﻿<mah:MetroWindow
+    x:Class="QBDrumMap.Views.ArticulationMapView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    Style="{StaticResource CustomMetroWindow}"
+    WindowStartupLocation="CenterScreen"
+    TitleCharacterCasing="Normal"
+    Dialog:DialogParticipation.Register="{Binding}"
+    WindowTransitionsEnabled="False"
+    Title="Articulation Map"
+    KeyDown="OnKeyDown"
+    ResizeMode="CanResizeWithGrip"
+    mc:Ignorable="d"
+    d:Background="Black"
+    BorderThickness="1"
+    BorderBrush="Gray"
+    Icon="/Resources/QB.ico"
+    Width="1200" Height="780">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Label" BasedOn="{StaticResource MahApps.Styles.Label}">
+                <Setter Property="Width" Value="80"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource MahApps.Styles.TextBlock}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </Grid.Resources>
+        <StackPanel Grid.Row="0">
+            <DockPanel>
+                <Label Content="Plugin"/>
+                <TextBlock Text="{Binding Plugin.Name}" d:Text="#Plugin Name#" Foreground="White" VerticalAlignment="Center"/>
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Kit"/>
+                <TextBlock Text="{Binding Kit.Name}" d:Text="#Kit Name#" Foreground="White" VerticalAlignment="Center"/>
+            </DockPanel>
+        </StackPanel>
+        <DataGrid Grid.Row="1"
+            Style="{StaticResource DataGridStyle}" 
+            ItemsSource="{Binding ArticulationMapView}"
+            CanUserSortColumns="True"
+            IsReadOnly="True">
+            <bh:Interaction.Behaviors>
+                <behaviors:DataGridExtendBehavior
+                    SelectedRow="{Binding SelectedRow}">
+                </behaviors:DataGridExtendBehavior>
+            </bh:Interaction.Behaviors>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <mah:Tile Margin="2" Height="10" Width="30" Background="{Binding ID, Converter={StaticResource GetPartColorConverter}}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Width="160" Header="Part" Binding="{Binding ID, Converter={StaticResource GetPartNameConverter}}"/>
+                <DataGridTextColumn Width="240" Header="Articulation" Binding="{Binding Name}"/>
+                <DataGridCheckBoxColumn Width="50" Header="Sub" Binding="{Binding IsSub}"/>
+                <DataGridTextColumn Width="50" Header="Pitch" Binding="{Binding Pitch}"/>
+                <DataGridTextColumn Width="50" Header="Note" Binding="{Binding Note}"/>
+                <DataGridTextColumn Width="440" Header="Pitches" Binding="{Binding PitchesText}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</mah:MetroWindow>

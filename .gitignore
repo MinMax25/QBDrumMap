@@ -1,0 +1,12 @@
+﻿/.vs
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+[Dd]ebug*/
+[Rr]elease*/
+.vs/
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

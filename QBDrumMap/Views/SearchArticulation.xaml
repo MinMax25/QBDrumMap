@@ -1,0 +1,62 @@
+﻿<mah:MetroWindow
+    x:Class="QBDrumMap.Views.SearchArticulation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    Style="{StaticResource CustomMetroWindow}"
+    WindowStartupLocation="CenterScreen"
+    TitleCharacterCasing="Normal"
+    Dialog:DialogParticipation.Register="{Binding}"
+    WindowTransitionsEnabled="False"
+    Title="Articulations"
+    ResizeMode="NoResize"
+    KeyDown="OnKeyDown"
+    mc:Ignorable="d"
+    Icon="/Resources/QB.ico"
+    d:Background="Black"
+    BorderThickness="1"
+    BorderBrush="Gray"
+    Width="480" Height="600">
+    <Grid Margin="16">
+        <DockPanel>
+            <DockPanel.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="Width" Value="100"/>
+                </Style>
+            </DockPanel.Resources>
+            <DockPanel DockPanel.Dock="Top">
+                <Label Content="Articulation"/>
+                <TextBox mah:TextBoxHelper.ClearTextButton="True" mah:TextBoxHelper.Watermark="Articulation Filter"
+                         Text="{Binding FilterArticulationName, UpdateSourceTrigger=PropertyChanged}"/>
+            </DockPanel>
+            <DataGrid
+                Style="{StaticResource DataGridStyle}" IsReadOnly="True"
+                ItemsSource="{Binding Articulations}" SelectedItem="{Binding SelectedArticulation, Mode=TwoWay}" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    ToolTip="Select"
+                                    Background="Transparent" BorderThickness="0" Focusable="False"
+                                    Command="{Binding DataContext.ArticulationSelectedCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets"
+                                       Text="&#xE73E;"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Width="200" Header="Articulation" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Width="160" Header="Part" Binding="{Binding ID, Converter={StaticResource GetPartNameConverter}}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</mah:MetroWindow>

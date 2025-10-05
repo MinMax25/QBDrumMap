@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>エクスポート</title>
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>エクスポート</h1>
+        <p>ドラムマップのエクスポートを行います。</p>
+        <div class="image-wrapper">
+            <img src="image/page-export_pic_1.png" width="650" height="400" />
+        </div>
+
+        <h2 id="howtouse">使い方</h2>
+        <p>
+            画面右のキットリストよりエクスポート対象を選択（複数選択可）、
+            希望するエクスポートボタンを押します。
+            表示されたフォルダ選択ダイアログで格納先を選択します。
+            選択したフォルダは設定ファイルに記録され、次回エクスポートの際に初期選択フォルダとなります。
+        </p>
+
+        <h3>アーティキュレーションの使用</h3>
+        <p>Use Articulation Pitch Nameにチェックがある場合、ピッチ名にはアーティキュレーション名が優先的に使用されます。</p>
+        <p>通常のドラムマップエクスポート時は Use Articulation When Exportingでアーティキュレーションの使用する・しないを指定できます。</p>
+
+        <h2 id="filename">ファイル名について</h2>
+        <p>ファイル名にはキット名.<em>拡張子</em>となります。すでに同名ファイルが存在する場合は上書き置換されます。</p>
+
+        <h2 id="filetype">ファイル種別</h2>
+        <p>エクスポート可能なファイルは以下の通りです。</p>
+        <ul>
+            <li>通常のドラムマップ
+                <ul>
+                    <li>Studio One用ピッチリスト</li>
+                    <li>Cubase用ドラムマップ</li>
+                </ul>
+            </li>
+            <li>マッピングされたドラムマップ
+                <ul>
+                    <li>Cubase用ドラムマップ</li>
+                    <li>Note Mapper用テンプレート</li>
+                </ul>
+            </li>
+            <li>その他
+                <ul>
+                    <li>tsvテキスト</li>
+                    <li>QB Drummer用プリセットファイル</li>
+                </ul>
+            </li>
+        </ul>
+        <p>マッピングされたドラムマップをエクスポートする場合は元になるドラムマップ（キット）を選択してください。</p>
+        <p class="note">※QB Drummerはテスト開発中のプラグインです。</p>
+    </div>
+</body>
+
+</html>

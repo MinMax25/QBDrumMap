@@ -1,0 +1,182 @@
+﻿<UserControl
+    x:Class="QBDrumMap.Views.Controls.KitPitchesPanel"
+    x:Name="root"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    xmlns:resLocal="clr-namespace:QBDrumMap.Properties"
+    xmlns:controls="clr-namespace:QBDrumMap.Views.Controls"
+    Dialog:DialogParticipation.Register="{Binding}"
+    mc:Ignorable="d"
+    d:Background="Black"
+    d:DesignHeight="600" d:DesignWidth="700">
+    
+    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Pitch">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <TextBlock d:Text="#Kit Name#" Style="{StaticResource PanelTextStyle}" Text="{Binding Kit.Name}"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1" IsEnabled="{Binding IsEditing, Converter={StaticResource InveresBool}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveTop}">
+                            <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveUp}">
+                            <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveDown}">
+                            <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveBottom}">
+                            <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Margin="4,0,0,0" Orientation="Horizontal">
+                        <TextBox
+                            Width="200" Text="{Binding FilterName, UpdateSourceTrigger=PropertyChanged}"
+                            MaxLength="128"
+                            mah:TextBoxHelper.Watermark="Name Filter"
+                            mah:TextBoxHelper.ClearTextButton="True"
+                            mah:TextBoxHelper.SelectAllOnFocus="True"/>
+                    </StackPanel>
+                    <StackPanel Margin="4,0,0,0" Orientation="Horizontal">
+                        <TextBox
+                            Width="180" Text="{Binding FilterArticulation, UpdateSourceTrigger=PropertyChanged}"
+                            MaxLength="128"
+                            mah:TextBoxHelper.Watermark="Articulation Filter"
+                            mah:TextBoxHelper.ClearTextButton="True"
+                            mah:TextBoxHelper.SelectAllOnFocus="True"/>
+                    </StackPanel>
+                    <StackPanel Margin="10,0,0,0" Orientation="Horizontal"/>
+                </StackPanel>
+            </Grid>
+
+            <DataGrid Grid.Row="2" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding PitchesView}" CanUserSortColumns="True">
+                <bh:Interaction.Behaviors>
+                    <behaviors:DataGridExtendBehavior
+                        IsEditing="{Binding IsEditing}"
+                        IsSorted="{Binding IsSorted}"
+                        SelectedRows="{Binding SelectedPitches}"
+                        SelectedRow="{Binding SelectedPitch}"
+                        DeleteCommand="{Binding ClearSelectedPitchesCommand}"/>
+                    <behaviors:ContextMenuBehavior IsContextMenuEnabled="{Binding IsCommandEnabled}"/>
+                </bh:Interaction.Behaviors>
+                <DataGrid.ContextMenu>
+                    <ContextMenu IsEnabled="{Binding IsCommandEnabled}">
+                        <MenuItem Header="{x:Static resLocal:Resources.ContextKitPitchesShowArticulationMap}" Command="{Binding ShowArticulationMapCommand}"/>
+                        <Separator/>
+                        <MenuItem Header="Export Studio One" Command="{Binding ExportStudioOneCommand}"/>
+                        <MenuItem Header="Export Cubase" Command="{Binding ExportCubaseCommand}"/>
+                        <MenuItem Header="Export Text(.tsv)" Command="{Binding ExportTextCommand}"/>
+                        <Separator/>
+                        <MenuItem Header="{x:Static resLocal:Resources.ContextKitPitchesImportDrmMap}" Command="{Binding ImportCommand}"/>
+                        <Separator/>
+                        <MenuItem Header="{x:Static resLocal:Resources.ContextKitPitchesResetOrdeByPitch}" Command="{Binding ResetOrdrByPitchCommand}"/>
+                        <MenuItem Header="{x:Static resLocal:Resources.ContextKitPitchesCompressForward}" Command="{Binding CompressForwardCommand}"/>
+                        <Separator/>
+                        <MenuItem Header="{x:Static resLocal:Resources.ContextKitPitchesCopyArticulation}" Command="{Binding CopyArticulationCommand}"/>
+                        <ComboBox
+                            SelectedValue="{Binding ArticulationSource}"
+                            ItemsSource="{Binding BaseOnComboSource}"
+                            DisplayMemberPath="Name"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.RowValidationErrorTemplate>
+                    <ControlTemplate/>
+                </DataGrid.RowValidationErrorTemplate>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="30">
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <DockPanel>
+                                    <controls:ButtonSound
+                                        CommandParameter="{Binding}"
+                                        NoteOnCommand="{Binding DataContext.SendNoteOnCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        NoteOffCommand="{Binding DataContext.SendNoteOffCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Width="50" Header="Pitch" Binding="{Binding Pitch}" IsReadOnly="True"/>
+                    <DataGridTextColumn Width="50" Header="Note" Binding="{Binding Note}" IsReadOnly="True"/>
+                    <DataGridTextColumn Width="190" Header="Name" Binding="{Binding Name, ValidatesOnDataErrors=True, Converter={StaticResource TrimConverter}}"/>
+                    <DataGridTemplateColumn Header="Articulation" Width="170">
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <DockPanel>
+                                    <controls:ButtonArticulation
+                                        IsEnabled="{Binding IsEmpty, Converter={StaticResource InveresBool}}"
+                                        LabelText="{Binding ArticulationID, Converter={StaticResource GetArticulationNameConverter}}"
+                                        ButtonCommand="{Binding DataContext.SearchArticulationCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        ClearCommand="{Binding DataContext.ClearArticulationCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}">
+                                    </controls:ButtonArticulation>
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridComboBoxColumn
+                        Width="95" Header="Separator"
+                        SelectedValueBinding="{Binding Separator}"
+                        ItemsSource="{Binding Source={StaticResource SeparatorComboSource}}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Expander Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="4" IsExpanded="{Binding Setting.IsPluginOptionsViewExtended}">
+                <Expander.Header>
+                    <TextBlock Text="Pgogram Change"/>
+                </Expander.Header>
+                
+                <StackPanel>
+                    <Grid Margin="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Orientation" Value="Horizontal"/>
+                                <Setter Property="Margin" Value="2"/>
+                            </Style>
+                        </Grid.Resources>
+                        <StackPanel Grid.Column="1">
+                            <Label Content="MSB"/>
+                            <ComboBox SelectedValue="{Binding Kit.BankSelectMSB}" ItemsSource="{Binding Source={StaticResource ControlValuesComboSource}}" Width="55" Margin="4,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <Label Content="LSB"/>
+                            <ComboBox SelectedValue="{Binding Kit.BankSelectLSB}" ItemsSource="{Binding Source={StaticResource ControlValuesComboSource}}" Width="55" Margin="4,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3">
+                            <Label Content="PG"/>
+                            <ComboBox SelectedValue="{Binding Kit.ProgramNumber}" ItemsSource="{Binding Source={StaticResource ProgramNumbersComboSource}}" SelectedValuePath="Key" DisplayMemberPath="Value" Width="75" Margin="4,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Expander>
+        </Grid>
+    </GroupBox>
+</UserControl>

@@ -1,0 +1,21 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:libQB="clr-namespace:libQB.ValueConverters;assembly=libQB"
+    xmlns:sone="clr-namespace:QBDrumMap.Class.StudioOne"
+    xmlns:converters="clr-namespace:QBDrumMap.Class.ValueConverters">
+
+    <!-- Converter -->
+    <libQB:InverseBoolConverter x:Key="InveresBool"/>
+    <libQB:TrimConverter x:Key="TrimConverter"/>
+    <libQB:BaseThemeConverter x:Key="BaseThemeConverter"/>
+
+    <converters:GetPartNameConverter x:Key="GetPartNameConverter"/>
+    <converters:GetPartColorConverter x:Key="GetPartColorConverter"/>
+    <converters:GetPluginNameConverter x:Key="GetPluginNameConverter"/>
+    <converters:GetArticulationNameConverter x:Key="GetArticulationNameConverter"/>
+    
+    <sone:StudioOneSolidBrushConverter x:Key="StudioOneSolidBrushConverter"/>
+    <sone:StudioOneColorConverter x:Key="StudioOneColorConverter"/>
+
+</ResourceDictionary>

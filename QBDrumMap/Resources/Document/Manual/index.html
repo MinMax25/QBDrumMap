@@ -1,0 +1,126 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>QB DrumMap 2 操作ガイド</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 上部タイトルバー -->
+    <header>
+        <img src="image/QB.png" />
+        QB DrumMap 2 操作ガイド
+    </header>
+
+    <!-- 中央エリア -->
+    <div class="main">
+        <!-- 左サイドバー -->
+        <div class="root" id="sidebar">
+            <h1>インデックス</h1>
+            <ul>
+                <!-- はじめに -->
+                <li>
+                    <a href="intro.html" target="contents">はじめに</a>
+                    <ul>
+                        <li><a href="intro.html#system-requirements" target="contents">システム要件</a></li>
+                        <li><a href="intro.html#overview" target="contents">概要</a></li>
+                        <li><a href="intro.html#purpose" target="contents">プログラム作成の目的</a></li>
+                        <li><a href="intro.html#disclaimer" target="contents">免責事項</a></li>
+                    </ul>
+                </li>
+
+                <!-- インストール -->
+                <li><a href="install.html" target="contents">インストール、アンインストール</a></li>
+
+                <!-- 設定 -->
+                <li>
+                    <a href="setting.html" target="contents">設定</a>
+                    <ul>
+                        <li><a href="setting.html#theme" target="contents">テーマを設定する</a></li>
+                        <li><a href="setting.html#language" target="contents">言語を設定する</a></li>
+                        <li><a href="setting.html#startup-page" target="contents">スタートアップページを設定する</a></li>
+                        <li><a href="setting.html#load-on-startup" target="contents">起動時読み込設定をする</a></li>
+                        <li><a href="setting.html#cubase-path" target="contents">Cubaseのインストール先を設定する</a></li>
+                    </ul>
+                </li>
+
+                <!-- ページ -->
+                <li>
+                    ページ
+                    <ul>
+                        <li><a href="page-common.html" target="contents">☆共通事項</a>
+                            <ul>
+                                <li><a href="page-common.html#editdatagrid" target="contents">プラグインリストなど一覧の編集</a></li>
+                                <li><a href="page-common.html#characterlimit" target="contents">文字数の制限</a></li>
+                                <li><a href="page-common.html#namingConvention" target="contents">命名規則</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="page-plugin.html" target="contents">プラグイン</a>
+                            <ul>
+                                <li><a href="page-plugin.html#editmap" target="contents">ドラムマップの編集</a></li>
+                                <li><a href="page-plugin.html#pitchlist" target="contents">ピッチリスト</a></li>
+                                <li><a href="page-plugin.html#soundcheck" target="contents">サウンドチェック</a></li>
+                                <li><a href="page-plugin.html#contextmenu" target="contents">コンテクストメニュー</a></li>
+                                <li><a href="page-plugin.html#articulationmap" target="contents">アーティキュレーションマップ</a></li>
+                                <li><a href="page-plugin.html#options" target="contents">オプション</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="page-parts.html" target="contents">パーツ</a>
+                            <ul>
+                                <li><a href="page-parts.html#parts" target="contents">ドラムパーツの編集</a></li>
+                                <li><a href="page-parts.html#articulationlist" target="contents">アーティキュレーションリスト</a></li>
+                                <li><a href="page-parts.html#score" target="contents">スコア</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="page-articulation.html" target="contents">アーティキュレーション</a>
+                            <ul>
+                                <li><a href="page-articulation.html#order" target="contents">表示順について</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="page-export.html" target="contents">エクスポート</a>
+                            <ul>
+                                <li><a href="page-export.html#howtouse" target="contents">使い方</a></li>
+                                <li><a href="page-export.html#filename" target="contents">ファイル名について</a></li>
+                                <li><a href="page-export.html#filetype" target="contents">ファイル種別</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="page-midiconvert.html" target="contents">MIDIコンバート</a>
+                            <ul>
+                                <li><a href="page-midiconvert.html#howtouse" target="contents">使い方</a></li>
+                                <li><a href="page-midiconvert.html#specifications" target="contents">コンバート仕様</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- その他 -->
+                <li>その他
+                    <ul>
+                        <li><a href="others.html#interpolation" target="contents">アーティキュレーションの自動補間について</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 右側コンテンツ -->
+        <div class="contents">
+            <iframe name="contents" src="intro.html"></iframe>
+        </div>
+
+        <!-- サイドバー開閉ボタン -->
+        <button id="toggleSidebar">☰</button>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <p><small>&copy; 2025 Min Max</small></p>
+    </footer>
+
+    <script src="layout.js"></script>
+</body>
+
+</html>

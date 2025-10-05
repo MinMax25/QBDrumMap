@@ -1,0 +1,149 @@
+﻿<mah:MetroWindow
+    x:Class="QBDrumMap.Views.ShellWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:reslibQB="clr-namespace:libQB.Properties;assembly=libQB"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    xmlns:resLocal="clr-namespace:QBDrumMap.Properties"
+    xmlns:templateSelectors="clr-namespace:QBDrumMap.TemplateSelectors"
+    Style="{StaticResource CustomMetroWindow}"
+    WindowStartupLocation="CenterScreen"
+    TitleCharacterCasing="Normal"
+    Dialog:DialogParticipation.Register="{Binding}"
+    Title="{Binding Title}"
+    ResizeMode="CanResizeWithGrip"
+    mc:Ignorable="d"
+    Icon="/Resources/QB.ico"
+    MinWidth="840" MinHeight="600"
+    Width="1300" Height="800">
+
+    <mah:MetroWindow.InputBindings>
+        <KeyBinding Key="Z" Modifiers="Control" Command="{Binding UndoCommand}" />
+        <KeyBinding Key="Y" Modifiers="Control" Command="{Binding RedoCommand}" />
+    </mah:MetroWindow.InputBindings>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <mah:MetroWindow.Resources>
+        <templateSelectors:MenuItemTemplateSelector x:Key="MenuItemTemplateSelector">
+            <templateSelectors:MenuItemTemplateSelector.GlyphDataTemplate>
+                <DataTemplate DataType="{x:Type mah:HamburgerMenuGlyphItem}">
+                    <Grid Height="48">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            FontSize="16"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="Segoe MDL2 Assets"
+                            Text="{Binding Glyph}"
+                            ToolTip="{Binding Label}"/>
+                        <TextBlock
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            Text="{Binding Label}"/>
+                    </Grid>
+                </DataTemplate>
+            </templateSelectors:MenuItemTemplateSelector.GlyphDataTemplate>
+            <templateSelectors:MenuItemTemplateSelector.ImageDataTemplate>
+                <DataTemplate DataType="{x:Type mah:HamburgerMenuImageItem}">
+                    <Grid Height="48">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            Text="{Binding Label}"/>
+                    </Grid>
+                </DataTemplate>
+            </templateSelectors:MenuItemTemplateSelector.ImageDataTemplate>
+            <!-- Add -->
+            <templateSelectors:MenuItemTemplateSelector.IconDataTemplate>
+                <DataTemplate DataType="{x:Type mah:HamburgerMenuIconItem}">
+                    <Grid Height="48">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ContentControl
+                            Grid.Column="0"
+                            Content="{Binding Icon}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            ToolTip="{Binding Label}"/>
+                        <TextBlock
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            Text="{Binding Label}"/>
+                    </Grid>
+                </DataTemplate>
+            </templateSelectors:MenuItemTemplateSelector.IconDataTemplate>
+        </templateSelectors:MenuItemTemplateSelector>
+    </mah:MetroWindow.Resources>
+
+    <mah:MetroWindow.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Menu Grid.Row="0" Grid.ColumnSpan="2" Focusable="False" IsEnabled="{Binding IsCommandEnabled}">
+                <MenuItem Header="{x:Static reslibQB:Menu.File}" Focusable="False">
+                    <MenuItem Header="{x:Static reslibQB:Menu.File_New}" Command="{Binding NewFileCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static reslibQB:Menu.File_Open}" Command="{Binding OpenFileCommand}"/>
+                    <MenuItem Header="{x:Static reslibQB:Menu.File_Save}" Command="{Binding SaveFileCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static reslibQB:Menu.File_Close}" Command="{Binding CloseCommand}"/>
+                </MenuItem>
+                <MenuItem Header="{x:Static reslibQB:Menu.Help}" Focusable="False">
+                    <MenuItem Header="{x:Static reslibQB:Menu.Help_Document}" Command="{Binding ShowDocumentCommand}"/>
+                    <MenuItem Header="{x:Static resLocal:Resources.Help_About}" Command="{Binding ShowAboutCommand}"/>
+                </MenuItem>
+            </Menu>
+
+            <mah:HamburgerMenu
+                x:Name="hamburgerMenu"
+                Grid.Row="1" Grid.ColumnSpan="2"
+                IsTabStop="False"
+                IsPaneOpen="False"
+                DisplayMode="CompactInline"
+                ItemsSource="{Binding MenuItems}"
+                SelectedItem="{Binding SelectedMenuItem}"
+                ItemCommand="{Binding MenuItemInvokedCommand}"
+                ItemTemplateSelector="{StaticResource MenuItemTemplateSelector}"
+                OptionsItemsSource="{Binding OptionMenuItems}"
+                SelectedOptionsItem="{Binding SelectedMenuItem}"
+                OptionsItemCommand="{Binding MenuItemInvokedCommand}"
+                OptionsItemTemplateSelector="{StaticResource MenuItemTemplateSelector}">
+                <mah:HamburgerMenu.Content>
+                    <Frame Grid.Row="1" x:Name="shellFrame" NavigationUIVisibility="Hidden" Focusable="False"/>
+                </mah:HamburgerMenu.Content>
+            </mah:HamburgerMenu>
+        </Grid>
+    </mah:MetroWindow.Content>
+</mah:MetroWindow>

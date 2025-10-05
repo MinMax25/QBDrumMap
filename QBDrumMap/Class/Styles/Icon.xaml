@@ -1,0 +1,61 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ICON Style -->
+    <Style x:Key="BasePackIconStyle" TargetType="iconPacks:PackIconBase">
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="IsTabStop" Value="False"/>
+    </Style>
+
+    <Style x:Key="IconButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="18"/>
+        <Setter Property="Height" Value="18"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border">
+                        <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#22000000"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#33000000"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ICON Resources -->
+    <iconPacks:PackIconMaterial x:Key="PluginPageIcon" Kind="PowerPlugOutline" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconFontAwesome x:Key="PartsPageIcon" Kind="DrumSolid" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="ArticulationsPageIcon" Kind="MusicBoxMultipleOutline" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="ExportPageIcon" Kind="ExportVariant" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="ConvertPageIcon" Kind="MidiPort" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="SettingPageIcon" Kind="CogOutline" Style="{StaticResource BasePackIconStyle}"/>
+
+    <iconPacks:PackIconMaterial x:Key="AddIcon" Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="MoveTopIcon" Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="MoveUpIcon" Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="MoveDownIcon" Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="MoveBottomIcon" Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
+    <iconPacks:PackIconMaterial x:Key="OpenFileIcon" Kind="FolderOpenOutline" Style="{StaticResource BasePackIconStyle}"/>
+
+</ResourceDictionary>
