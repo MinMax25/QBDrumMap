@@ -1,4 +1,4 @@
-# QBDrumMap2
+# QBDrumMap
 DAW(Studio One、Cubase)で使用するドラムマップのエディターです。
 <img width="1300" height="800" alt="Image" src="QBDrumMap/Resources/Document/Manual/image/intoro_pic_1.png" />
 ## システム要件
