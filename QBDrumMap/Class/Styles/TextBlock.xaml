@@ -1,0 +1,12 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- TextBlock -->
+    <Style x:Key="PanelTextStyle" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="{StaticResource LargeFontSize}"/>
+        <Setter Property="Margin" Value="12,0,0,0"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,29 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:properties="clr-namespace:QBDrumMap.Properties">
+
+    <!-- Button -->
+    <Style x:Key="ButtonBaseStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+        <Setter Property="Focusable" Value="False"/>
+    </Style>
+    <Style x:Key="ExportButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonBaseStyle}">
+        <Setter Property="Margin" Value="8"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+    <Style x:Key="CommandPanelButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonBaseStyle}">
+        <Setter Property="Margin" Value="4,0,0,0"/>
+        <Setter Property="Width" Value="26"/>
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+    </Style>
+
+    <Style x:Key="OpenFileButton" TargetType="Button" BasedOn="{StaticResource CommandPanelButtonStyle}">
+        <Setter Property="Content" Value="{StaticResource OpenFileIcon}"/>
+        <Setter Property="ToolTip" Value="{x:Static properties:Resources.ButtonOpenFile}"/>
+    </Style>
+
+</ResourceDictionary>

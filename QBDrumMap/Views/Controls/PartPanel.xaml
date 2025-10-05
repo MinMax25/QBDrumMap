@@ -1,0 +1,167 @@
+﻿<UserControl
+    x:Class="QBDrumMap.Views.Controls.PartPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    xmlns:resLocal="clr-namespace:QBDrumMap.Properties"
+    xmlns:controls="clr-namespace:QBDrumMap.Views.Controls"
+    xmlns:vc="clr-namespace:QBDrumMap.Views.Controls"
+    Dialog:DialogParticipation.Register="{Binding}"
+    mc:Ignorable="d"
+    d:Background="Black"
+    d:DesignHeight="600" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <TextBlock  Style="{StaticResource PanelTextStyle}" Text="{Binding Part.Name}"/>
+        </StackPanel>
+
+        <GroupBox Grid.Row="1" Style="{StaticResource GroupBoxBaseStyle}" Header="Articulations">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{x:Static resLocal:Resources.ButtonAdd}">
+                        <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
+                    </Button>
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveTop}">
+                        <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
+                    </Button>
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveUp}">
+                        <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
+                    </Button>
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveDown}">
+                        <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
+                    </Button>
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveBottom}">
+                        <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
+                    </Button>
+                </StackPanel>
+
+                <DataGrid Grid.Row="1" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding ArticulationsView}">
+                    <bh:Interaction.Behaviors>
+                        <behaviors:DataGridExtendBehavior
+                            IsEditing="{Binding IsEditing}"
+                            SelectedRows="{Binding SelectedArticulations}"
+                            SelectedRow="{Binding SelectedArticulation}"
+                            DeleteCommand="{Binding DeleteSelectedArticulationsCommand}"/>
+                    </bh:Interaction.Behaviors>
+                    <DataGrid.RowValidationErrorTemplate>
+                        <ControlTemplate/>
+                    </DataGrid.RowValidationErrorTemplate>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="200" Header="Articulation" Binding="{Binding Name, ValidatesOnDataErrors=True, Converter={StaticResource TrimConverter}}"/>
+                        <DataGridTemplateColumn Header="Complement" Width="220">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <controls:ButtonArticulation
+                                            LabelText="{Binding Complement, Converter={StaticResource GetArticulationNameConverter}}"
+                                            ButtonCommand="{Binding DataContext.SearchComplementCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            ClearCommand="{Binding DataContext.ClearComplementCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
+                                    </DockPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+
+        <Expander Grid.Row="2" Margin="4" IsExpanded="{Binding Setting.IsPartScoreViewExtended}">
+            <Expander.Header>
+                <TextBlock Text="Score"/>
+            </Expander.Header>
+                
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <vc:ScorePitchSelector Grid.Column="0"
+                    ScorePitch="{Binding Part.ScorePitch}"
+                    NoteHead="{Binding Part.NoteHead}"
+                    Technique="{Binding Part.Technique}"/>
+
+                <StackPanel Grid.Column="1">
+                    <StackPanel.Resources>
+                        <Style x:Key="LabelStyle" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                            <Setter Property="Width" Value="120"/>
+                        </Style>
+                    </StackPanel.Resources>
+                        
+                    <StackPanel Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelStyle}" Content="Score Pitch"/>
+                        <ComboBox Width="80" SelectedValue="{Binding Part.ScorePitch}"
+                                    ItemsSource="{Binding Source={StaticResource ScoreNotePitchesComboSource}}" DisplayMemberPath="Note" SelectedValuePath="Pitch"
+                                    behaviors:ClearableComboBox.EnableClearButton="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelStyle}" Content="Color"/>
+                        <mah:ColorPicker Width="240" SelectedColor="{Binding Part.Color, Converter={StaticResource StudioOneColorConverter}}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelStyle}" Content="Note Head"/>
+                        <ComboBox Width="140" SelectedValue="{Binding Part.NoteHead}"
+                                    ItemsSource="{Binding Source={StaticResource StudioOneNoteHeadComboSource}}"
+                                    behaviors:ClearableComboBox.EnableClearButton="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Style="{StaticResource LabelStyle}" Content="Technique"/>
+                        <ComboBox Width="140" SelectedValue="{Binding Part.Technique}"
+                                    ItemsSource="{Binding Source={StaticResource StudioOneTechniqueComboSource}}"
+                                    behaviors:ClearableComboBox.EnableClearButton="True"/>
+
+                    </StackPanel>
+                        
+                    <GroupBox Header="Cubase" Style="{StaticResource GroupBoxBaseStyle}">
+                        <StackPanel>
+                            <DockPanel >
+                                <Label Style="{StaticResource LabelStyle}" Content="Instrument Entity ID"/>
+                                <ComboBox SelectedValue="{Binding Part.InstrumentEntityID}"
+                                            ItemsSource="{Binding Source={StaticResource InstrumentsComboSource}}" SelectedValuePath="Key" DisplayMemberPath="Value"
+                                            behaviors:ClearableComboBox.EnableClearButton="True"
+                                            behaviors:ClearableComboBox.ClearValue=""/>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label Style="{StaticResource LabelStyle}" Content="Voice"/>
+                                <ComboBox SelectedValue="{Binding Part.Voice}"
+                                            ItemsSource="{Binding Source={StaticResource VoiceTypeComboSource}}"
+                                            behaviors:ClearableComboBox.EnableClearButton="True"/>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label Style="{StaticResource LabelStyle}" Content="Note Head Set"/>
+                                <ComboBox SelectedValue="{Binding Part.NoteHeadSet}"
+                                            ItemsSource="{Binding Source={StaticResource NoteHeadSetComboSource}}" SelectedValuePath="Key" DisplayMemberPath="Value"
+                                            behaviors:ClearableComboBox.EnableClearButton="True"/>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label Style="{StaticResource LabelStyle}" Content="Technique Entity ID"/>
+                                <ComboBox SelectedValue="{Binding Part.TechniqueEntityID}"
+                                            ItemsSource="{Binding Source={StaticResource TechniqueComboSource}}" SelectedValuePath="Key" DisplayMemberPath="Value"
+                                            behaviors:ClearableComboBox.EnableClearButton="True"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </Grid>
+        </Expander>
+    </Grid>
+</UserControl>

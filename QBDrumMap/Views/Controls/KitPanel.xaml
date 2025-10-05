@@ -1,0 +1,181 @@
+﻿<UserControl
+    x:Class="QBDrumMap.Views.Controls.KitPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    xmlns:resx="clr-namespace:QBDrumMap.Properties"
+    xmlns:resLocal="clr-namespace:QBDrumMap.Properties"
+    xmlns:vm="clr-namespace:QBDrumMap.ViewModels.Controls"
+    xmlns:Controls="clr-namespace:QBDrumMap.Views.Controls"
+    Dialog:DialogParticipation.Register="{Binding}"
+    mc:Ignorable="d" d:Background="Black"
+    d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Grid.Column="0" DockPanel.Dock="Left" Orientation="Horizontal">
+                <TextBlock d:Text="#Plugin Name#" Style="{StaticResource PanelTextStyle}" Text="{Binding Plugin.Name}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Expander Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="4" ExpandDirection="Right" IsExpanded="True">
+                <Expander.Header>
+                    <Label Content="Kit">
+                        <Label.LayoutTransform>
+                            <RotateTransform Angle="90"/>
+                        </Label.LayoutTransform>
+                    </Label>
+                </Expander.Header>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{x:Static resx:Resources.ButtonAdd}">
+                            <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveTop}">
+                            <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveUp}">
+                            <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveDown}">
+                            <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveBottom}">
+                            <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
+                        </Button>
+                    </StackPanel>
+
+                    <DataGrid Grid.Row="1" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding KitsView}">
+                        <bh:Interaction.Behaviors>
+                            <behaviors:DataGridExtendBehavior 
+                        IsEditing="{Binding IsEditing}"
+                        SelectedRows="{Binding SelectedKits}" 
+                        SelectedRow="{Binding SelectedKit}" 
+                        DeleteCommand="{Binding DeleteSelectedKitsCommand}"/>
+                        </bh:Interaction.Behaviors>
+                        <DataGrid.RowValidationErrorTemplate>
+                            <ControlTemplate/>
+                        </DataGrid.RowValidationErrorTemplate>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="220" Header="Name"
+                                mah:TextBoxHelper.ClearTextButton="True"
+                                Binding="{Binding Name, ValidatesOnDataErrors=True, Converter={StaticResource TrimConverter}}">
+                                <DataGridTextColumn.EditingElementStyle>
+                                    <StaticResource ResourceKey="DataGridEditingTextBoxStyle"/>
+                                </DataGridTextColumn.EditingElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Expander>
+
+            <!-- Child Contents -->
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <DataTemplate DataType="{x:Type vm:KitPitchesPanelViewModel}">
+                        <Controls:KitPitchesPanel/>
+                    </DataTemplate>
+                </Grid.Resources>
+                    
+                <ContentControl Grid.Row="0" Focusable="False" IsEnabled="{Binding IsContentEnabled}" Content="{Binding ContentViewModel}"/>
+            </Grid>
+
+            <Expander Grid.Row="2" Grid.ColumnSpan="2" Margin="4" IsExpanded="False">
+                <Expander.Header>
+                    <TextBlock Text="Plugin Options"/>
+                </Expander.Header>
+
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="Width" Value="140"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resLocal:Resources.SoundCheckVelocity}"/>
+                            <ComboBox
+                                HorizontalAlignment="Left" Width="70"
+                                SelectedValue="{Binding MIDI.SoundCheckVelocity}"
+                                ItemsSource="{Binding Source={StaticResource ControlValuesComboSource}}"/>
+                            <Slider Width="100" Margin="4,0,0,0" Minimum="0" Maximum="127" Value="{Binding MIDI.SoundCheckVelocity}"/>
+                        </StackPanel>
+                        <CheckBox Margin="16,0,12,0" Content="Input Fixed" IsChecked="{Binding MIDI.FixedPitchEnabled}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Plugin Type"/>
+                        <ComboBox Width="70" SelectedValue="{Binding Plugin.PluginType}" ItemsSource="{Binding Source={StaticResource KitTypeComboSource}}"/>
+                    </StackPanel>
+                    <DockPanel>
+                        <Label Content="{x:Static resLocal:Resources.Setting_MidiInDevice}"/>
+                        <ComboBox
+                                    HorizontalAlignment="Left" Width="300"
+                                    SelectedValue="{Binding Setting.MidiInDevice}"
+                                    ItemsSource="{Binding MIDI.MidiInDevices}"
+                                    behaviors:ClearableComboBox.EnableClearButton="True"/>
+                        <Label HorizontalAlignment="Left" Content="{Binding MIDI.MidiInDevState}"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="{x:Static resLocal:Resources.Setting_MidiInFixedPitch}"/>
+                        <ComboBox
+                                    HorizontalAlignment="Left" Width="300"
+                                    SelectedValue="{Binding Setting.MidiInFixedPitch}"
+                                    ItemsSource="{Binding Source={StaticResource NoteNamesComboSource}}"
+                                    SelectedValuePath="Key"
+                                    DisplayMemberPath="Value"
+                                    behaviors:ClearableComboBox.EnableClearButton="True"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="{x:Static resLocal:Resources.Setting_MidiOutDevice}"/>
+                        <ComboBox
+                            HorizontalAlignment="Left" Width="300"
+                            SelectedValue="{Binding Plugin.MidiOutDevice}"
+                            ItemsSource="{Binding MIDI.MidiOutDevices}"
+                            behaviors:ClearableComboBox.EnableClearButton="True"/>
+                        <Label HorizontalAlignment="Left" Content="{Binding MIDI.MidiOutDevState}"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="{x:Static resLocal:Resources.Setting_MidiOutChannel}"/>
+                        <ComboBox
+                            HorizontalAlignment="Left" Width="300"
+                            SelectedValue="{Binding Plugin.SoundCheckChannel}"
+                            ItemsSource="{Binding Source={StaticResource MIDIChannelComboSource}}"/>
+                    </DockPanel>
+                </StackPanel>
+            </Expander>
+        </Grid>
+    </Grid>
+</UserControl>

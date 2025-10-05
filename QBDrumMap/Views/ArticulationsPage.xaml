@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="QBDrumMap.Views.ArticulationsPage"
+    Style="{DynamicResource MahApps.Styles.Page}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
+    xmlns:resx="clr-namespace:QBDrumMap.Properties"
+    Dialog:DialogParticipation.Register="{Binding}"
+    mc:Ignorable="d"
+    d:DesignHeight="450" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
+            <ContentControl Focusable="False" Content="{StaticResource ArticulationsPageIcon}" Margin="8,2,0,0"/>
+            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static resx:Resources.Title_ArticulationsPage}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="{StaticResource MediumLeftRightMargin}" Background="{DynamicResource MahApps.Brushes.Gray10}">
+            <Grid>
+                <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Articulations (DrumMap Order)">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveTop}">
+                                    <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
+                                </Button>
+                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveUp}">
+                                    <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
+                                </Button>
+                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveDown}">
+                                    <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
+                                </Button>
+                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveBottom}">
+                                    <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+
+                        <DataGrid Grid.Row="1"
+                            x:Name="grdData" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding Articulations}" IsReadOnly="True">
+                            <bh:Interaction.Behaviors>
+                                <behaviors:DataGridExtendBehavior SelectedRows="{Binding SelectedArticulations}"/>
+                            </bh:Interaction.Behaviors>
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Color" Width="60">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <mah:Tile Margin="2" Height="10" Width="40" Background="{Binding ID, Converter={StaticResource GetPartColorConverter}}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Width="240" Header="Articulation" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Width="160" Header="Part" Binding="{Binding ID, Converter={StaticResource GetPartNameConverter}}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,71 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:libQB="clr-namespace:libQB.Enums;assembly=libQB"
+    xmlns:cubasscore="clr-namespace:QBDrumMap.Class.Cubase"
+    xmlns:enums="clr-namespace:QBDrumMap.Class.Enums"
+    xmlns:ext="clr-namespace:QBDrumMap.Class.Extentions"
+    xmlns:models="clr-namespace:QBDrumMap.Class.MapModels"
+    xmlns:sone="clr-namespace:QBDrumMap.Class.StudioOne"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- ComboBox Source -->
+    <ObjectDataProvider x:Key="LanguagesComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="libQB:Languages"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+    <ObjectDataProvider x:Key="PagesComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="enums:Pages"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+    <ObjectDataProvider x:Key="MIDIFormatComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="enums:MIDIFormat"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+    <ObjectDataProvider x:Key="MIDIChannelComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="enums:MIDIChannel"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="ScoreNotePitchesComboSource" ObjectType="{x:Type sone:StudioOneScore}" MethodName="get_ScoreNotePitches"/>
+
+    <ObjectDataProvider x:Key="NoteNamesComboSource" ObjectType="{x:Type ext:UtilMap}" MethodName="get_NoteNames"/>
+    <ObjectDataProvider x:Key="ControlValuesComboSource" ObjectType="{x:Type ext:UtilMap}" MethodName="get_ControlValues"/>
+    <ObjectDataProvider x:Key="ProgramNumbersComboSource" ObjectType="{x:Type ext:UtilMap}" MethodName="get_ProgramNumbers"/>
+
+    <ObjectDataProvider x:Key="SeparatorComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="models:Separator"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+    <ObjectDataProvider x:Key="KitTypeComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="models:PluginType"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="StudioOneNoteHeadComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="sone:StudioOneNoteHead"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+    <ObjectDataProvider x:Key="StudioOneTechniqueComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="sone:StudioOneTechnique"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="VoiceTypeComboSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="cubasscore:CubaseVoiceType"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="InstrumentsComboSource" ObjectType="{x:Type cubasscore:CubaseScore}" MethodName="get_InstrumentsComboSource"/>
+    <ObjectDataProvider x:Key="NoteHeadSetComboSource" ObjectType="{x:Type cubasscore:CubaseScore}" MethodName="get_NoteHeadSetComboSource"/>
+    <ObjectDataProvider x:Key="TechniqueComboSource" ObjectType="{x:Type cubasscore:CubaseScore}" MethodName="get_TechniqueComboSource"/>
+</ResourceDictionary>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>QBDrumMap</value>
+  </data>
+  <data name="ArticulationAutomaticFill" xml:space="preserve">
+    <value>アーティキュレーションを自動設定しますか？</value>
+  </data>
+  <data name="ButtonAdd" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="ButtonImport" xml:space="preserve">
+    <value>インポート</value>
+  </data>
+  <data name="ButtonMoveBottom" xml:space="preserve">
+    <value>末尾へ</value>
+  </data>
+  <data name="ButtonMoveDown" xml:space="preserve">
+    <value>下へ</value>
+  </data>
+  <data name="ButtonMoveTop" xml:space="preserve">
+    <value>先頭へ</value>
+  </data>
+  <data name="ButtonMoveUp" xml:space="preserve">
+    <value>上へ</value>
+  </data>
+  <data name="ButtonOpenFile" xml:space="preserve">
+    <value>ファイルを開く</value>
+  </data>
+  <data name="ButtonSearch" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="CompressForward" xml:space="preserve">
+    <value>空白行を詰める</value>
+  </data>
+  <data name="CompressForwardConfirm" xml:space="preserve">
+    <value>空白行を後ろに詰めますか？</value>
+  </data>
+  <data name="ConfiramAutomaticInterpolation" xml:space="preserve">
+    <value>自動補間しますか？</value>
+  </data>
+  <data name="ConfirmAutoFill" xml:space="preserve">
+    <value>同名自動補間しますか？</value>
+  </data>
+  <data name="ContextKitPitchesArticulationSourceIsEmpty" xml:space="preserve">
+    <value>コピー元のキットを選択してください</value>
+  </data>
+  <data name="ContextKitPitchesCompressForward" xml:space="preserve">
+    <value>名前付きを前方に詰める</value>
+  </data>
+  <data name="ContextKitPitchesCopyArticulation" xml:space="preserve">
+    <value>アーティキュレーションのコピー</value>
+  </data>
+  <data name="ContextKitPitchesCopyTextToClibBoard" xml:space="preserve">
+    <value>テキストをクリップボートにコピー</value>
+  </data>
+  <data name="ContextKitPitchesImportDrmMap" xml:space="preserve">
+    <value>ドラムマップのインポート</value>
+  </data>
+  <data name="ContextKitPitchesPasteTextFromClibBoard" xml:space="preserve">
+    <value>クリップボードのテキストを貼り付け</value>
+  </data>
+  <data name="ContextKitPitchesResetOrdeByPitch" xml:space="preserve">
+    <value>ピッチの昇順に並び替え</value>
+  </data>
+  <data name="ContextKitPitchesShowArticulationMap" xml:space="preserve">
+    <value>アーティキュレーションマップ表示</value>
+  </data>
+  <data name="CopyTextClipToClipBoardComplete" xml:space="preserve">
+    <value>クリップボードにコピーしました</value>
+  </data>
+  <data name="DialogAutomaticFill" xml:space="preserve">
+    <value>自動補間</value>
+  </data>
+  <data name="DuplicateNaem" xml:space="preserve">
+    <value>'{0}' はすでに登録されています！</value>
+  </data>
+  <data name="ImportDrumMap" xml:space="preserve">
+    <value>ドラムマップインポート</value>
+  </data>
+  <data name="IncorrectMIDIData" xml:space="preserve">
+    <value>不正なMIDIデータです！</value>
+  </data>
+  <data name="LenghtLessLThan" xml:space="preserve">
+    <value>{0}名は{1}文字以内にしてください</value>
+  </data>
+  <data name="LengthBetween" xml:space="preserve">
+    <value>{0}名は{1}文字以上{2}文字以下にしてください</value>
+  </data>
+  <data name="MIDIError" xml:space="preserve">
+    <value>MIDIデータ処理中にエラーが発生しました</value>
+  </data>
+  <data name="PasteComplete" xml:space="preserve">
+    <value>ペースト完了！</value>
+  </data>
+  <data name="PasteConfirm" xml:space="preserve">
+    <value>貼り付けを実行しますか？</value>
+  </data>
+  <data name="ResetOrderByPitch" xml:space="preserve">
+    <value>ピッチ順に並び替え</value>
+  </data>
+  <data name="ResetOrderByPitchConfirm" xml:space="preserve">
+    <value>ピッチ順に並び替えますがよろしいですか？</value>
+  </data>
+  <data name="SelectCubaseInstallPath" xml:space="preserve">
+    <value>Cubaseのインストール先を選択</value>
+  </data>
+  <data name="Setting_ConvertMIDIFormat" xml:space="preserve">
+    <value>出力MIDIフォーマット</value>
+  </data>
+  <data name="Setting_CubaseInstallPath" xml:space="preserve">
+    <value>Cubaseインストール先</value>
+  </data>
+  <data name="Setting_ExportCubaseBaseOnDefaultPath" xml:space="preserve">
+    <value>エクスポート先(Cubase Base On)</value>
+  </data>
+  <data name="Setting_ExportCubaseDefaultPath" xml:space="preserve">
+    <value>エクスポート先(Cubase)</value>
+  </data>
+  <data name="Setting_ExportNoteMapperDefaultPath" xml:space="preserve">
+    <value>エクスポート先(Note Mapper templates)</value>
+  </data>
+  <data name="Setting_ExportQBDrummerDefaultPath" xml:space="preserve">
+    <value>エクスポート先(QB Drummer)</value>
+  </data>
+  <data name="Setting_ExportStudioOneDefaultPath" xml:space="preserve">
+    <value>エクスポート先(Studio One)</value>
+  </data>
+  <data name="Setting_ExportTextDefaultPath" xml:space="preserve">
+    <value>エクスポート先(Text)</value>
+  </data>
+  <data name="Setting_IsOpenTheLastFileOpened" xml:space="preserve">
+    <value>起動時に最後に開いたファイルを開く</value>
+  </data>
+  <data name="Setting_LastImportFilePath" xml:space="preserve">
+    <value>最後にインポートしたファイル</value>
+  </data>
+  <data name="Setting_LastOpenedFilePath" xml:space="preserve">
+    <value>最後に開いたファイル</value>
+  </data>
+  <data name="Setting_MidiInDevice" xml:space="preserve">
+    <value>MIDI入力デバイス</value>
+  </data>
+  <data name="Setting_MidiInFixedPitch" xml:space="preserve">
+    <value>MIDI入力固定ピッチ</value>
+  </data>
+  <data name="Setting_MidiOutChannel" xml:space="preserve">
+    <value>MIDI出力チャンネル</value>
+  </data>
+  <data name="Setting_MidiOutDevice" xml:space="preserve">
+    <value>MIDI出力デバイス</value>
+  </data>
+  <data name="Setting_UseArticulationPitchName" xml:space="preserve">
+    <value>アーティキュレーション名をピッチ名として使用</value>
+  </data>
+  <data name="Setting_UseArticulationWhenExporting" xml:space="preserve">
+    <value>アーティキュレーションに基づいてエクスポート</value>
+  </data>
+  <data name="SoundCheckVelocity" xml:space="preserve">
+    <value>サウンドチェックベロシティ</value>
+  </data>
+  <data name="Title_ArticulationsPage" xml:space="preserve">
+    <value>アーティキュレーション</value>
+  </data>
+  <data name="Title_ConvertMidiPage" xml:space="preserve">
+    <value>MIDIコンバート</value>
+  </data>
+  <data name="Title_ExportPage" xml:space="preserve">
+    <value>エクスポート</value>
+  </data>
+  <data name="Title_PartsPage" xml:space="preserve">
+    <value>パーツ</value>
+  </data>
+  <data name="Title_PluginPage" xml:space="preserve">
+    <value>プラグイン</value>
+  </data>
+  <data name="Help_About" xml:space="preserve">
+    <value>QBDrumMap2について</value>
+  </data>
+</root>
