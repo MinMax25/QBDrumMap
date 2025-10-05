@@ -1,6 +1,6 @@
 # QBDrumMap2
 DAW(Studio One、Cubase)で使用するドラムマップのエディターです。
-<img width="1300" height="800" alt="Image" src="https://github.com/MinMax25/QBDrumMap2/blob/master/QBDrumMap2/Resources/Document/Manual/image/intoro_pic_1.png" />
+<img width="1300" height="800" alt="Image" src="QBDrumMap/Resources/Document/Manual/image/intoro_pic_1.png" />
 ## システム要件
 OSはWindowsのみの対応となります。  
 Studio One Pro Windowsシステムの要件に準拠します。
