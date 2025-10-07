@@ -1,4 +1,7 @@
 # QBDrumMap
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](Resources/license.txt)
+[![.NET](https://img.shields.io/badge/.NET-8.0-blueviolet)](https://dotnet.microsoft.com/)
+
 DAW(Studio One、Cubase)で使用するドラムマップのエディターです。
 <img width="1300" height="800" alt="Image" src="QBDrumMap/Resources/Document/Manual/image/intoro_pic_1.png" />
 ## システム要件
