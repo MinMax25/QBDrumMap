@@ -33,6 +33,15 @@ namespace QBDrumMap.ViewModels.Controls
         [ObservableProperty]
         private Kit selectedKit;
 
+        [ObservableProperty]
+        private bool isExpandedKitList;
+
+        #endregion
+
+        #region Fields
+
+        private bool SameKit;
+
         #endregion
 
         #region ctor
@@ -51,7 +60,9 @@ namespace QBDrumMap.ViewModels.Controls
             MIDI.MidiOutDevice = Plugin?.MidiOutDevice ?? string.Empty;
 
             KitsView = CollectionViewSource.GetDefaultView(Plugin?.Kits);
-            ContentViewModel = App.GetService<KitPitchesPanelFactory>()?.Create(null);
+            ContentViewModel = App.GetService<KitPitchesPanelFactory>()?.Create(null, false);
+
+            IsExpandedKitList = Plugin != null;
 
             MapData.EditStateChanged += OnPropertyChanged;
             PropertyChanged += OnPropertyChanged;
@@ -154,7 +165,8 @@ namespace QBDrumMap.ViewModels.Controls
             {
                 ContentViewModel?.Dispose();
             }
-            ContentViewModel = App.GetService<KitPitchesPanelFactory>()?.Create(SelectedKit);
+            ContentViewModel = App.GetService<KitPitchesPanelFactory>()?.Create(SelectedKit, SameKit);
+            SameKit = true;
 
             if (newValue == null) return;
             MIDI.SendProgramChange(Plugin, newValue);

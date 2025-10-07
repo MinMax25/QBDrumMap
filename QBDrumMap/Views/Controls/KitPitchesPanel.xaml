@@ -36,6 +36,7 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
                         <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{x:Static resLocal:Resources.ButtonMoveTop}">
@@ -51,6 +52,7 @@
                             <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
                     </StackPanel>
+                    
                     <StackPanel Margin="4,0,0,0" Orientation="Horizontal">
                         <TextBox
                             Width="200" Text="{Binding FilterName, UpdateSourceTrigger=PropertyChanged}"
@@ -59,6 +61,7 @@
                             mah:TextBoxHelper.ClearTextButton="True"
                             mah:TextBoxHelper.SelectAllOnFocus="True"/>
                     </StackPanel>
+                    
                     <StackPanel Margin="4,0,0,0" Orientation="Horizontal">
                         <TextBox
                             Width="180" Text="{Binding FilterArticulation, UpdateSourceTrigger=PropertyChanged}"
@@ -81,6 +84,7 @@
                         DeleteCommand="{Binding ClearSelectedPitchesCommand}"/>
                     <behaviors:ContextMenuBehavior IsContextMenuEnabled="{Binding IsCommandEnabled}"/>
                 </bh:Interaction.Behaviors>
+                
                 <DataGrid.ContextMenu>
                     <ContextMenu IsEnabled="{Binding IsCommandEnabled}">
                         <MenuItem Header="{x:Static resLocal:Resources.ContextKitPitchesShowArticulationMap}" Command="{Binding ShowArticulationMapCommand}"/>
@@ -101,9 +105,11 @@
                             DisplayMemberPath="Name"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
+                
                 <DataGrid.RowValidationErrorTemplate>
                     <ControlTemplate/>
                 </DataGrid.RowValidationErrorTemplate>
+                
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Width="30">
                         <DataGridTemplateColumn.CellTemplate >
@@ -117,6 +123,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    
                     <DataGridTextColumn Width="50" Header="Pitch" Binding="{Binding Pitch}" IsReadOnly="True"/>
                     <DataGridTextColumn Width="50" Header="Note" Binding="{Binding Note}" IsReadOnly="True"/>
                     <DataGridTextColumn Width="190" Header="Name" Binding="{Binding Name, ValidatesOnDataErrors=True, Converter={StaticResource TrimConverter}}"/>
@@ -142,7 +149,7 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Expander Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="4" IsExpanded="{Binding Setting.IsPluginOptionsViewExtended}">
+            <Expander Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="4" IsExpanded="{Binding Setting.IsExtendedProgramChange}">
                 <Expander.Header>
                     <TextBlock Text="Pgogram Change"/>
                 </Expander.Header>

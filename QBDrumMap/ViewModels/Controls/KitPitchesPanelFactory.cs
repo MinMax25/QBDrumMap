@@ -14,9 +14,9 @@ namespace QBDrumMap.ViewModels.Controls
             _container = diContainer;
         }
 
-        public KitPitchesPanelViewModel Create(Kit kit)
+        public KitPitchesPanelViewModel Create(Kit kit, bool sameKit)
         {
-            return new KitPitchesPanelViewModel(_container, kit);
+            return new KitPitchesPanelViewModel(_container, kit, sameKit);
         }
     }
 }

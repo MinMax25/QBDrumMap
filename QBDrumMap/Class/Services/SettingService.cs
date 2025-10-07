@@ -84,8 +84,8 @@ namespace QBDrumMap.Class.Services
         private int midiInFixedPitch = -1;
 
         [JsonIgnore]
-        public bool IsPluginOptionsViewExtended { get => _IsPluginOptionsViewExtended; set => SetProperty(ref _IsPluginOptionsViewExtended, value); }
-        private bool _IsPluginOptionsViewExtended = false;
+        public bool IsExtendedProgramChange { get => _IsExtendedProgramChange; set => SetProperty(ref _IsExtendedProgramChange, value); }
+        private bool _IsExtendedProgramChange = false;
 
         private IMidiService MIDI;
 

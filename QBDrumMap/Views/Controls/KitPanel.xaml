@@ -40,7 +40,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Expander Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="4" ExpandDirection="Right" IsExpanded="True">
+            <Expander Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="4" ExpandDirection="Right" IsExpanded="{Binding IsExpandedKitList}">
                 <Expander.Header>
                     <Label Content="Kit">
                         <Label.LayoutTransform>
