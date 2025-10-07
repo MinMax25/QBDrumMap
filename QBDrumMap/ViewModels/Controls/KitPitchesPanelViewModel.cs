@@ -61,12 +61,21 @@ namespace QBDrumMap.ViewModels.Controls
 
         #endregion
 
+        #region Fields
+
+        private bool SameKit;
+
+        #endregion
+
         #region ctor
 
-        public KitPitchesPanelViewModel(IDIContainer diContainer, Kit kit)
+        public KitPitchesPanelViewModel(IDIContainer diContainer, Kit kit, bool sameKit)
             : base(diContainer)
         {
             Kit = kit;
+            SameKit = sameKit;
+
+            Setting.IsExtendedProgramChange &= SameKit;
 
             if (Kit != null)
             {
@@ -77,7 +86,9 @@ namespace QBDrumMap.ViewModels.Controls
 
             PitchesView = CollectionViewSource.GetDefaultView(Kit?.Pitches);
             if (PitchesView != null)
+            {
                 PitchesView.Filter = FilterPitches;
+            }
 
             SetIsCommandEnabled();
 

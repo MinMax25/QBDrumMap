@@ -24,8 +24,6 @@ namespace QBDrumMap.Class.Services
 
         bool IsOpenTheLastFileOpened { get; set; }
 
-        bool IsPluginOptionsViewExtended { get; set; }
-
         bool IsPartScoreViewExtended { get; set; }
 
         string LastOpenedFilePath { get; set; }
@@ -51,6 +49,8 @@ namespace QBDrumMap.Class.Services
         string MidiInDevice { get; set; }
 
         int MidiInFixedPitch { get; set; }
+
+        bool IsExtendedProgramChange { get; set; }
 
         #endregion
 
