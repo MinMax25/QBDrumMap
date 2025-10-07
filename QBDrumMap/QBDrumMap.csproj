@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <None Remove="DrumMap.qbd" />
-    <None Remove="Resources\Document\Manual\Application.html" />
     <None Remove="Resources\Document\Manual\base.html" />
     <None Remove="Resources\Document\Manual\basic.html" />
     <None Remove="Resources\Document\Manual\content.css" />
@@ -59,9 +58,6 @@
 
   <ItemGroup>
     <Content Include="DrumMap.qbd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\Application.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Document\Manual\content.css">
