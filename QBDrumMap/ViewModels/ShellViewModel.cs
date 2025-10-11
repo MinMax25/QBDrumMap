@@ -96,6 +96,13 @@ namespace QBDrumMap.ViewModels
 
         #region Properties
 
+        [ObservableProperty]
+        public string title;
+
+        public string AboutCaption => string.Format(Properties.Resources.MenuHelpAboutCaption, AppName);
+
+        private string AppName => typeof(App).Assembly.GetName().Name;
+
         private ISettingService Setting => SettingService;
 
         private const string QBD_FILTER = "QB DrumMap (*.qbd)|*.qbd";
@@ -161,9 +168,6 @@ namespace QBDrumMap.ViewModels
 
         [ObservableProperty]
         private bool isCommandEnabled = true;
-
-        [ObservableProperty]
-        private string title;
 
         #endregion
 
@@ -332,14 +336,13 @@ namespace QBDrumMap.ViewModels
 
         private void SetTitle()
         {
-            var appName = typeof(App).Assembly.GetName().Name;
             if (File.Exists(Setting.LastOpenedFilePath))
             {
-                Title = $"{appName} ({Path.GetFileNameWithoutExtension(Setting.LastOpenedFilePath)})";
+                Title = $"{AppName} ({Path.GetFileNameWithoutExtension(Setting.LastOpenedFilePath)})";
             }
             else
             {
-                Title = $"{appName}";
+                Title = $"{AppName}";
             }
         }
 

@@ -11,7 +11,6 @@ using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using QBDrumMap.Class.Extentions;
 using QBDrumMap.Class.Services;
 using QBDrumMap.Contracts.Services;
 using QBDrumMap.Models;
@@ -34,7 +33,7 @@ namespace QBDrumMap
         }
 
         public static Dictionary<Type, Type> _pages { get; } = new();
-        
+
         private static IHost _host;
 
         public App()

@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppDisplayName" xml:space="preserve">
-    <value>QBDrumMap</value>
-  </data>
   <data name="ArticulationAutomaticFill" xml:space="preserve">
     <value>Do you want to set articulation automatically?</value>
   </data>
@@ -291,7 +288,7 @@
   <data name="Title_PluginPage" xml:space="preserve">
     <value>Plugin</value>
   </data>
-  <data name="Help_About" xml:space="preserve">
-    <value>About QBDrumMap</value>
+  <data name="MenuHelpAboutCaption" xml:space="preserve">
+    <value>About {0}</value>
   </data>
 </root>

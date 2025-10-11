@@ -55,7 +55,7 @@ namespace QBDrumMap.Class.MapModels
 
         public MapData()
         {
-            AppName = Properties.Resources.AppDisplayName;
+            AppName = typeof(App).Assembly.GetName().Name;
             ModelVersion = "1.0.0";
         }
 

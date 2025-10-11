@@ -122,7 +122,7 @@
                 </MenuItem>
                 <MenuItem Header="{x:Static reslibQB:Menu.Help}" Focusable="False">
                     <MenuItem Header="{x:Static reslibQB:Menu.Help_Document}" Command="{Binding ShowDocumentCommand}"/>
-                    <MenuItem Header="{x:Static resLocal:Resources.Help_About}" Command="{Binding ShowAboutCommand}"/>
+                    <MenuItem Header="{Binding AboutCaption}" Command="{Binding ShowAboutCommand}"/>
                 </MenuItem>
             </Menu>
 
