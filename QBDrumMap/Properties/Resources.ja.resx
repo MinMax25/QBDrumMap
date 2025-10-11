@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppDisplayName" xml:space="preserve">
-    <value>QBDrumMap</value>
-  </data>
   <data name="ArticulationAutomaticFill" xml:space="preserve">
     <value>アーティキュレーションを自動設定しますか？</value>
   </data>
@@ -291,7 +288,7 @@
   <data name="Title_PluginPage" xml:space="preserve">
     <value>プラグイン</value>
   </data>
-  <data name="Help_About" xml:space="preserve">
-    <value>QBDrumMap2について</value>
+  <data name="MenuHelpAboutCaption" xml:space="preserve">
+    <value>{0}について</value>
   </data>
 </root>

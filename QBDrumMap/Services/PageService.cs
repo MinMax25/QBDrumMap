@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using QBDrumMap.Class.Extentions;
 using QBDrumMap.Contracts.Services;
 
 namespace QBDrumMap.Services
