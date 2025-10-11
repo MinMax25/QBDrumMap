@@ -28,6 +28,5 @@ namespace QBDrumMap.Class.Services
         public void Flush();
 
         #endregion
-
     }
 }
