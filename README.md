@@ -4,7 +4,8 @@
 [![MahApps.Metro](https://img.shields.io/badge/MahApps.Metro-2.4%2B-green)](https://github.com/MahApps/MahApps.Metro)
 [![CommunityToolkit.Mvvm](https://img.shields.io/badge/MVVM%20Toolkit-8.4%2B-orange)](https://github.com/CommunityToolkit/dotnet)
 [![NAudio](https://img.shields.io/nuget/v/NAudio.svg?label=NAudio&color=blue)](https://www.nuget.org/packages/NAudio/)
-[![libMidi](https://img.shields.io/badge/libMidi-1.0%2B-orange)](https://github.com/MinMax25/libMidi)
+[![libMidi](https://img.shields.io/badge/libMidi-1.0%2B-aqua)](https://github.com/MinMax25/libMidi)
+[![libQB](https://img.shields.io/badge/libQB-1.0%2B-lavender)](https://github.com/MinMax25/libQB)
 
 DAW(Studio One、Cubase)で使用するドラムマップのエディターです。
 <img width="1300" height="800" alt="Image" src="QBDrumMap/Resources/Document/Manual/image/intoro_pic_1.png" />
