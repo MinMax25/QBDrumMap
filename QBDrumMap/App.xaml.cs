@@ -33,6 +33,8 @@ namespace QBDrumMap
             return default;
         }
 
+        public static Dictionary<Type, Type> _pages { get; } = new();
+        
         private static IHost _host;
 
         public App()
@@ -86,7 +88,7 @@ namespace QBDrumMap
             services.AddSingleton<IUndoManager, UndoManager>();
 
             //
-            PageHolder.Items.Clear();
+            _pages.Clear();
 
             foreach (var t in GetDITargets().ToArray())
             {
@@ -107,7 +109,7 @@ namespace QBDrumMap
                 {
                     services.AddTransient(t);
                     services.AddTransient(attr.Type1);
-                    PageHolder.Items.Add(t, attr.Type1);
+                    _pages.Add(t, attr.Type1);
                 }
                 else if (attrtype.Name == typeof(DIUserControlAttribute<>).Name)
                 {

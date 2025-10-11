@@ -12,7 +12,7 @@ namespace QBDrumMap.Services
         public PageService(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
-            Configure(PageHolder.Items);
+            Configure(App._pages);
         }
 
         public Type GetPageType(string key)
