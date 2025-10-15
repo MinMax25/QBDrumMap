@@ -115,7 +115,9 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Style="{StaticResource LabelStyle}" Content="Color"/>
-                        <mah:ColorPicker Width="240" SelectedColor="{Binding Part.Color, Converter={StaticResource StudioOneColorConverter}}"/>
+                        <mah:ColorPicker
+                            Width="240"
+                            SelectedColor="{Binding Part.Color, Converter={StaticResource StudioOneColorConverter}}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Style="{StaticResource LabelStyle}" Content="Note Head"/>
