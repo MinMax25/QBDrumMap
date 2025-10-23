@@ -315,7 +315,30 @@ namespace QBDrumMap.Class.MapModels
             return clone;
         }
 
-        public void FixID(MapData map)
+        public bool IsModified()
+        {
+            if (replica == null)
+            {
+                if (Plugins.Any() || Parts.Any())
+                {
+                    return true;
+                }
+                return false;
+            }
+            return CompareMapData(replica, this);
+        }
+
+        public bool HasError()
+        {
+            return
+                Plugins.Any(x => x.HasErrors) ||
+                Plugins.SelectMany(x => x.Kits).Any(x => x.HasErrors) ||
+                Plugins.SelectMany(x => x.Kits).SelectMany(x => x.Pitches).Any(x => x.HasErrors) ||
+                Parts.Any(x => x.HasErrors) ||
+                Parts.SelectMany(x => x.Articulations).Any(x => x.HasErrors);
+        }
+
+        private void FixID(MapData map)
         {
             int kitID = 1;
             foreach (var plugin in map.Plugins.OrderBy(x => x.DisplayOrder).Select((x, i) => new { item = x, order = i }).ToArray())
@@ -367,19 +390,6 @@ namespace QBDrumMap.Class.MapModels
                     articulation.Complement = artics[articulation.Complement];
                 }
             }
-        }
-
-        public bool IsModified()
-        {
-            if (replica == null)
-            {
-                if (Plugins.Any() || Parts.Any())
-                {
-                    return true;
-                }
-                return false;
-            }
-            return CompareMapData(replica, this);
         }
 
         private bool CompareMapData(MapData src, MapData dst)
@@ -469,16 +479,6 @@ namespace QBDrumMap.Class.MapModels
             if (src.Name != dst.Name) return true;
             if (src.Complement != dst.Complement) return true;
             return false;
-        }
-
-        public bool HasError()
-        {
-            return
-                Plugins.Any(x => x.HasErrors) ||
-                Plugins.SelectMany(x => x.Kits).Any(x => x.HasErrors) ||
-                Plugins.SelectMany(x => x.Kits).SelectMany(x => x.Pitches).Any(x => x.HasErrors) ||
-                Parts.Any(x => x.HasErrors) ||
-                Parts.SelectMany(x => x.Articulations).Any(x => x.HasErrors);
         }
 
         #endregion
