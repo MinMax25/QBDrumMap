@@ -187,7 +187,6 @@ namespace QBDrumMap.ViewModels.Controls
             if (value is not KitPitch pitch) return;
 
             WindowService.ShowWindowWithCallback<SearchArticulation, SearchArticulationViewModel, Articulation>(
-                parameter: pitch,
                 owner: Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive),
                 resultCallback: async articulation =>
                 {

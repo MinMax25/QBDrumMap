@@ -16,7 +16,6 @@ namespace QBDrumMap.ViewModels
     [DIWindow<SearchArticulation>]
     public partial class SearchArticulationViewModel
         : ViewModelBase
-        , IParameterReceiver
         , IResultProvider<Articulation>
     {
         #region Properties
@@ -42,20 +41,22 @@ namespace QBDrumMap.ViewModels
             Articulations = CollectionViewSource.GetDefaultView(artics);
             Articulations.Filter = FilterMethod;
 
-            PropertyChanged += OnPropertyChanged;
-        }
-
-        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(FilterArticulationName))
-            {
-                Articulations.Refresh();
-            }
+            FilterArticulationName = SettingService.SearchArticulationFilter;
         }
 
         #endregion
 
         #region Methods
+
+        #region PropertyChanged Callbacks
+
+        partial void OnFilterArticulationNameChanged(string value)
+        {
+            SettingService.SearchArticulationFilter = value;
+            Articulations.Refresh();
+        }
+
+        #endregion
 
         #region Commands
 
@@ -81,14 +82,6 @@ namespace QBDrumMap.ViewModels
             return articulation.Name.Like(FilterArticulationName);
         }
 
-        public void ReceiveParameter(object parameter)
-        {
-            if (parameter is IEnumerable<Articulation> articulations)
-            {
-                OnPropertyChanged(nameof(Articulations));
-            }
-        }
-
         #endregion
 
         #region Dispose
@@ -98,7 +91,6 @@ namespace QBDrumMap.ViewModels
             base.Dispose(disposing);
             if (disposing)
             {
-                PropertyChanged -= OnPropertyChanged;
             }
         }
 

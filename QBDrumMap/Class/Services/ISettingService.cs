@@ -50,6 +50,8 @@ namespace QBDrumMap.Class.Services
 
         int MidiInFixedPitch { get; set; }
 
+        string SearchArticulationFilter { get; set; }
+
         bool IsExtendedProgramChange { get; set; }
 
         #endregion

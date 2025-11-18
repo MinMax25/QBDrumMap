@@ -84,6 +84,9 @@ namespace QBDrumMap.Class.Services
         private int midiInFixedPitch = -1;
 
         [JsonIgnore]
+        public string SearchArticulationFilter { get; set; } = string.Empty;
+
+        [JsonIgnore]
         public bool IsExtendedProgramChange { get => _IsExtendedProgramChange; set => SetProperty(ref _IsExtendedProgramChange, value); }
         private bool _IsExtendedProgramChange = false;
 
