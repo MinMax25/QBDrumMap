@@ -4733,9 +4733,7 @@
           "ID": 8,
           "Name": "EZX Modern Metal",
           "Pitches": [
-            {
-              "Name": ""
-            },
+            {},
             {
               "Pitch": 1,
               "Name": "One Shot Hit"
@@ -4749,18 +4747,15 @@
               "Name": "Tambourine Shake Hit Immediate"
             },
             {
-              "Pitch": 4,
-              "Name": ""
+              "Pitch": 4
             },
             {
-              "Pitch": 5,
-              "Name": ""
+              "Pitch": 5
             },
             {
               "Pitch": 6,
               "Name": "Snare Zone Trigger",
-              "ArticulationID": 4,
-              "Separator": "Duplicate"
+              "Separator": "Separate"
             },
             {
               "Pitch": 7,
@@ -4779,49 +4774,48 @@
             },
             {
               "Pitch": 10,
-              "Name": "Hi-Hat Pedal Closed (*)",
+              "Name": "Hi-Hat Pedal Closed",
               "ArticulationID": 59,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 11,
-              "Name": "Hi-Hat Closed Edge (*)",
+              "Name": "Hi-Hat Closed Tip",
               "ArticulationID": 47,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 12,
-              "Name": "Hi-Hat Open Edge 0 (*)",
-              "ArticulationID": 45,
-              "Separator": "Duplicate"
+              "Name": "Hi-Hat Open Edge 0",
+              "ArticulationID": 44
             },
             {
               "Pitch": 13,
-              "Name": "Hi-Hat Open Edge 1 (*)",
-              "ArticulationID": 38,
+              "Name": "Hi-Hat Open Edge 1",
+              "ArticulationID": 41,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 14,
-              "Name": "Hi-Hat Open Edge 2 (*)",
-              "ArticulationID": 35,
+              "Name": "Hi-Hat Open Edge 2",
+              "ArticulationID": 38,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 15,
-              "Name": "Hi-Hat Open Edge 3 (*)",
+              "Name": "Hi-Hat Open Edge 3",
               "ArticulationID": 35,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 16,
-              "Name": "Hi-Hat Open Edge 4 (*)",
+              "Name": "Hi-Hat Open Edge 4",
               "ArticulationID": 32,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 17,
-              "Name": "Hi-Hat Open Edge 4 (*)",
+              "Name": "Hi-Hat Open Edge 4",
               "ArticulationID": 32,
               "Separator": "Duplicate"
             },
@@ -4842,7 +4836,7 @@
             },
             {
               "Pitch": 21,
-              "Name": "Hi-Hat Pedal Closed (*)",
+              "Name": "Hi-Hat Pedal Closed",
               "ArticulationID": 59,
               "Separator": "Duplicate"
             },
@@ -4863,7 +4857,7 @@
             },
             {
               "Pitch": 25,
-              "Name": "Hi-Hat Open Edge 2 (*)",
+              "Name": "Hi-Hat Open Edge 2",
               "ArticulationID": 38,
               "Separator": "Duplicate"
             },
@@ -4874,56 +4868,58 @@
             },
             {
               "Pitch": 27,
-              "Name": "China 1 (*)",
+              "Name": "China 1 Crash",
               "ArticulationID": 185
             },
             {
               "Pitch": 28,
-              "Name": "China 1",
-              "ArticulationID": 156
+              "Name": "China 1 Crash",
+              "ArticulationID": 185,
+              "Separator": "Duplicate"
             },
             {
               "Pitch": 29,
-              "Name": "Spock (*)",
+              "Name": "Spock Crash",
+              "ArticulationID": 182
+            },
+            {
+              "Pitch": 30,
+              "Name": "Spock Crash",
               "ArticulationID": 182,
               "Separator": "Duplicate"
             },
             {
-              "Pitch": 30,
-              "Name": "Spock",
-              "ArticulationID": 162
-            },
-            {
               "Pitch": 31,
-              "Name": "Crash 1 (*)",
-              "ArticulationID": 145
+              "Name": "Crash Ride Crash",
+              "ArticulationID": 156
             },
             {
               "Pitch": 32,
-              "Name": "Crash 1",
-              "ArticulationID": 170
-            },
-            {
-              "Pitch": 33,
-              "Name": "Snare Edge (*)",
-              "ArticulationID": 4,
+              "Name": "Crash Ride Crash",
+              "ArticulationID": 156,
               "Separator": "Duplicate"
             },
             {
+              "Pitch": 33,
+              "Name": "Snare Edge",
+              "ArticulationID": 11
+            },
+            {
               "Pitch": 34,
-              "Name": "Kick Hit (*)",
+              "Name": "Kick Hit",
               "ArticulationID": 2,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 35,
-              "Name": "Kick Hit (*)",
-              "ArticulationID": 2
+              "Name": "Kick Hit",
+              "ArticulationID": 2,
+              "Separator": "Duplicate"
             },
             {
               "Pitch": 36,
               "Name": "Kick Hit",
-              "ArticulationID": 1
+              "ArticulationID": 2
             },
             {
               "Pitch": 37,
@@ -4932,12 +4928,12 @@
             },
             {
               "Pitch": 38,
-              "Name": "Snare",
+              "Name": "Snare Center",
               "ArticulationID": 4
             },
             {
               "Pitch": 39,
-              "Name": "Snare (*)",
+              "Name": "Snare Center",
               "ArticulationID": 4,
               "Separator": "Duplicate"
             },
@@ -4948,7 +4944,7 @@
             },
             {
               "Pitch": 41,
-              "Name": "Floortom 2",
+              "Name": "Floortom 2 Center",
               "ArticulationID": 129
             },
             {
@@ -4958,7 +4954,7 @@
             },
             {
               "Pitch": 43,
-              "Name": "Floortom 1",
+              "Name": "Floortom 1 Center",
               "ArticulationID": 122
             },
             {
@@ -4968,8 +4964,8 @@
             },
             {
               "Pitch": 45,
-              "Name": "Racktom 2 (*)",
-              "ArticulationID": 114
+              "Name": "Racktom 2 Center",
+              "ArticulationID": 108
             },
             {
               "Pitch": 46,
@@ -4978,68 +4974,69 @@
             },
             {
               "Pitch": 47,
-              "Name": "Racktom 2",
-              "ArticulationID": 108
+              "Name": "Racktom 2 Center",
+              "ArticulationID": 108,
+              "Separator": "Duplicate"
             },
             {
               "Pitch": 48,
-              "Name": "Racktom 1",
+              "Name": "Racktom 1 Center",
               "ArticulationID": 102
             },
             {
               "Pitch": 49,
-              "Name": "Crash L",
+              "Name": "Crash 1 Crash",
               "ArticulationID": 134
             },
             {
               "Pitch": 50,
-              "Name": "Crash L Choke",
+              "Name": "Crash 1 Muted Hit",
               "ArticulationID": 144
             },
             {
               "Pitch": 51,
-              "Name": "Ride 1 Bow Tip 1",
-              "ArticulationID": 65
+              "Name": "Ride Bow",
+              "ArticulationID": 64
             },
             {
               "Pitch": 52,
-              "Name": "China 2",
+              "Name": "China 2 Crash",
               "ArticulationID": 192
             },
             {
               "Pitch": 53,
-              "Name": "Ride 1 Bell Tip",
+              "Name": "Ride Bell",
               "ArticulationID": 62
             },
             {
               "Pitch": 54,
-              "Name": "China 2 Choke",
-              "ArticulationID": 191
+              "Name": "China 2 Muted Hit",
+              "ArticulationID": 194
             },
             {
               "Pitch": 55,
-              "Name": "Splash 1",
+              "Name": "Splash Crash",
               "ArticulationID": 172
             },
             {
               "Pitch": 56,
-              "Name": "Splash 1 Choke",
-              "ArticulationID": 169,
+              "Name": "Splash Muted Hit",
+              "ArticulationID": 177,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 57,
-              "Name": "Crash R",
-              "ArticulationID": 168
+              "Name": "Crash 2 Crash",
+              "ArticulationID": 145
             },
             {
               "Pitch": 58,
-              "Name": "Crash R Choke",
-              "ArticulationID": 169
+              "Name": "Crash 2 Muted Hit",
+              "ArticulationID": 155
             },
             {
               "Pitch": 59,
-              "Name": "Ride 1 Edge",
+              "Name": "Ride Edge",
               "ArticulationID": 68
             },
             {
@@ -5049,7 +5046,7 @@
             },
             {
               "Pitch": 61,
-              "Name": "Hi-Hat Closed Tip (*)",
+              "Name": "Hi-Hat Closed Tip",
               "ArticulationID": 51,
               "Separator": "Duplicate"
             },
@@ -5066,381 +5063,380 @@
             {
               "Pitch": 64,
               "Name": "Hi-Hat Open Edge 0",
-              "ArticulationID": 47,
+              "ArticulationID": 44,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 65,
-              "Name": "Hi-Hat Closed Edge (*)",
+              "Name": "Hi-Hat Closed Edge",
               "ArticulationID": 47,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 66,
-              "Name": "Snare (*)",
+              "Name": "Snare Center",
               "ArticulationID": 4,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 67,
-              "Name": "Snare Sidestick (*)",
+              "Name": "Snare Sidestick",
               "ArticulationID": 27,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 68,
-              "Name": "Snare (*)",
+              "Name": "Snare Center",
               "ArticulationID": 4,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 69,
-              "Name": "Snare (*)",
+              "Name": "Snare Center",
               "ArticulationID": 4,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 70,
-              "Name": "Snare (*)",
+              "Name": "Snare Center",
               "ArticulationID": 4,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 71,
-              "Name": "Snare Sidestick (*)",
-              "ArticulationID": 27,
-              "Separator": "Duplicate"
+              "Name": "Snare Rim Only",
+              "ArticulationID": 26
             },
             {
               "Pitch": 72,
-              "Name": "Floortom 2 (*)",
+              "Name": "Floortom 2 Center",
               "ArticulationID": 129,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 73,
-              "Name": "Floortom 2 (*)",
+              "Name": "Floortom 2 Center",
               "ArticulationID": 129,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 74,
-              "Name": "Floortom 1 (*)",
+              "Name": "Floortom 1 Center",
               "ArticulationID": 122,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 75,
-              "Name": "Floortom 1 (*)",
+              "Name": "Floortom 1 Center",
               "ArticulationID": 122,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 76,
-              "Name": "Snare Sidestick (*)",
+              "Name": "Snare Sidestick",
               "ArticulationID": 27,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 77,
-              "Name": "Racktom 2 (*)",
-              "ArticulationID": 114,
+              "Name": "Racktom 2 Center",
+              "ArticulationID": 108,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 78,
-              "Name": "Racktom 2 (*)",
-              "ArticulationID": 114,
+              "Name": "Racktom 2 Center",
+              "ArticulationID": 108,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 79,
-              "Name": "Racktom 2 (*)",
+              "Name": "Racktom 2 Center",
               "ArticulationID": 108,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 80,
-              "Name": "Racktom 2 (*)",
+              "Name": "Racktom 2 Center",
               "ArticulationID": 108,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 81,
-              "Name": "Racktom 1 (*)",
+              "Name": "Racktom 1 Center",
               "ArticulationID": 102,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 82,
-              "Name": "Racktom 1 (*)",
+              "Name": "Racktom 1 Center",
               "ArticulationID": 102,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 83,
-              "Name": "Ride 1 Choke",
-              "ArticulationID": 156
+              "Name": "Ride Muted Hit",
+              "ArticulationID": 70
             },
             {
               "Pitch": 84,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 85,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 86,
-              "Name": "Ride 1 Edge (*)",
+              "Name": "Ride Edge",
               "ArticulationID": 68,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 87,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 88,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 89,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 90,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 91,
-              "Name": "Ride 1 Edge (*)",
+              "Name": "Ride Edge",
               "ArticulationID": 68,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 92,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 93,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 94,
-              "Name": "Crash L Choke (*)",
-              "ArticulationID": 156,
+              "Name": "Crash 1 Muted Hit",
+              "ArticulationID": 144,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 95,
-              "Name": "China 1 Choke",
-              "ArticulationID": 167
+              "Name": "China 1 Muted Hit",
+              "ArticulationID": 191
             },
             {
               "Pitch": 96,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 97,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 98,
-              "Name": "Ride 1 Edge (*)",
+              "Name": "Ride Edge",
               "ArticulationID": 68,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 99,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 100,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 101,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 102,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 103,
-              "Name": "Ride 1 Edge (*)",
+              "Name": "Ride Edge",
               "ArticulationID": 68,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 104,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 105,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 106,
-              "Name": "Crash R Choke (*)",
+              "Name": "Crash 2 Muted Hit",
               "ArticulationID": 155,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 107,
-              "Name": "Crash 1 Choke",
-              "ArticulationID": 171,
-              "Separator": "Duplicate"
+              "Name": "Crash Ride Muted Hit",
+              "ArticulationID": 161
             },
             {
               "Pitch": 108,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 109,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 110,
-              "Name": "Ride 1 Edge (*)",
+              "Name": "Ride Edge",
               "ArticulationID": 68,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 111,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 112,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 113,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 114,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 115,
-              "Name": "Ride 1 Edge (*)",
+              "Name": "Ride Edge",
               "ArticulationID": 68,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 116,
-              "Name": "Ride 1 Bow Tip 1 (*)",
-              "ArticulationID": 65,
+              "Name": "Ride Bow",
+              "ArticulationID": 64,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 117,
-              "Name": "Ride 1 Bell Tip (*)",
+              "Name": "Ride Bell",
               "ArticulationID": 62,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 118,
-              "Name": "Ride 1 Choke (*)",
-              "ArticulationID": 171
+              "Name": "Ride Muted Hit",
+              "ArticulationID": 70,
+              "Separator": "Duplicate"
             },
             {
               "Pitch": 119,
-              "Name": "Hi-Hat Closed Edge (*)",
+              "Name": "Hi-Hat Closed Tip",
               "ArticulationID": 47,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 120,
-              "Name": "Hi-Hat Open Edge 1 (*)",
-              "ArticulationID": 44,
+              "Name": "Hi-Hat Open Edge 1",
+              "ArticulationID": 41,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 121,
-              "Name": "Hi-Hat Open Edge 3 (*)",
-              "ArticulationID": 32,
+              "Name": "Hi-Hat Open Edge 3",
+              "ArticulationID": 35,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 122,
-              "Name": "Hi-Hat Closed Edge (*)",
+              "Name": "Hi-Hat Closed Edge",
               "ArticulationID": 47,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 123,
-              "Name": "Hi-Hat Open Edge 1 (*)",
+              "Name": "Hi-Hat Open Edge 1",
               "ArticulationID": 41,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 124,
-              "Name": "Hi-Hat Open Edge 3 (*)",
+              "Name": "Hi-Hat Open Edge 3",
               "ArticulationID": 35,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 125,
-              "Name": "Snare (*)",
+              "Name": "Snare Center",
               "ArticulationID": 4,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 126,
-              "Name": "Snare Rimshot (*)",
+              "Name": "Snare Rimshot",
               "ArticulationID": 20,
               "Separator": "Duplicate"
             },
             {
               "Pitch": 127,
-              "Name": "Snare Sidestick (*)",
+              "Name": "Snare Sidestick",
               "ArticulationID": 27,
               "Separator": "Duplicate"
             }
@@ -19325,37 +19321,32 @@
             {
               "Pitch": 27,
               "Name": "China 1 Crash",
-              "ArticulationID": 157,
-              "Separator": "Unload"
+              "ArticulationID": 185
             },
             {
               "Pitch": 28,
               "Name": "Cymbal 1 Crash",
-              "ArticulationID": 160,
-              "Separator": "Unload"
+              "ArticulationID": 156
             },
             {
               "Pitch": 29,
               "Name": "Spock Crash",
-              "ArticulationID": 66
+              "ArticulationID": 182
             },
             {
               "Pitch": 30,
               "Name": "Cymbal 3 Crash",
-              "ArticulationID": 63,
-              "Separator": "Duplicate"
+              "ArticulationID": 162
             },
             {
               "Pitch": 31,
               "Name": "Cymbal 4 Crash",
-              "ArticulationID": 147,
-              "Separator": "Unload"
+              "ArticulationID": 168
             },
             {
               "Pitch": 32,
               "Name": "Cymbal 6 Crash",
-              "ArticulationID": 153,
-              "Separator": "Unload"
+              "ArticulationID": 170
             },
             {
               "Pitch": 33,
@@ -19365,13 +19356,13 @@
             {
               "Pitch": 34,
               "Name": "Kick Open",
-              "ArticulationID": 1,
-              "Separator": "Duplicate"
+              "ArticulationID": 1
             },
             {
               "Pitch": 35,
               "Name": "Kick Hit",
-              "ArticulationID": 2
+              "ArticulationID": 2,
+              "Separator": "Duplicate"
             },
             {
               "Pitch": 36,
@@ -19457,7 +19448,7 @@
             {
               "Pitch": 52,
               "Name": "China 2 Crash",
-              "ArticulationID": 185
+              "ArticulationID": 192
             },
             {
               "Pitch": 53,
@@ -19467,7 +19458,7 @@
             {
               "Pitch": 54,
               "Name": "China 2 Mute Hit",
-              "ArticulationID": 191
+              "ArticulationID": 194
             },
             {
               "Pitch": 55,
@@ -19548,8 +19539,7 @@
             {
               "Pitch": 69,
               "Name": "Snare Flams",
-              "ArticulationID": 15,
-              "Separator": "Unload"
+              "ArticulationID": 15
             },
             {
               "Pitch": 70,
@@ -19585,8 +19575,7 @@
             {
               "Pitch": 76,
               "Name": "Spock Mute Hit",
-              "ArticulationID": 26,
-              "Separator": "Duplicate"
+              "ArticulationID": 184
             },
             {
               "Pitch": 77,
@@ -19621,8 +19610,7 @@
             {
               "Pitch": 83,
               "Name": "China 1 Mute Hit",
-              "ArticulationID": 161,
-              "Separator": "Duplicate"
+              "ArticulationID": 191
             },
             {
               "Pitch": 84,
@@ -19687,13 +19675,12 @@
             {
               "Pitch": 94,
               "Name": "Cymbal 1 Mute Hit",
-              "ArticulationID": 161,
-              "Separator": "Duplicate"
+              "ArticulationID": 161
             },
             {
               "Pitch": 95,
               "Name": "Cymbal 3 Mute Hit",
-              "ArticulationID": 144
+              "ArticulationID": 167
             },
             {
               "Pitch": 96,
@@ -19758,14 +19745,12 @@
             {
               "Pitch": 106,
               "Name": "Cymbal 4 Mute Hit",
-              "ArticulationID": 155,
-              "Separator": "Duplicate"
+              "ArticulationID": 169
             },
             {
               "Pitch": 107,
               "Name": "Cymbal 6 Mute Hit",
-              "ArticulationID": 191,
-              "Separator": "Duplicate"
+              "ArticulationID": 171
             },
             {
               "Pitch": 108,
