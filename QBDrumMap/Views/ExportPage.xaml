@@ -56,7 +56,7 @@
                     <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Export Other">
                         <StackPanel>
                             <Button Style="{StaticResource ExportButtonStyle}" Content="Text(.tsv)" Command="{Binding ExportTextCommand}"/>
-                            <!--<Button Style="{StaticResource ExportButtonStyle}" Content="QB Drummer" Command="{Binding ExportQBDrummerCommand}"/>-->
+                            <Button Style="{StaticResource ExportButtonStyle}" Content="QB Drummer" Command="{Binding ExportQBDrummerCommand}"/>
                         </StackPanel>
                     </GroupBox>
                 </StackPanel>
