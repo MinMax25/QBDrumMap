@@ -237,7 +237,7 @@ namespace QBDrumMap.ViewModels
         {
             if (MapData.HasError())
             {
-                await Dialog.ShowAlertAsync(libQB.Properties.Dialog.Common_SaveFile);
+                await Dialog.ShowAlertAsync(libQB.Properties.Dialog.Confirm_SaveHasError);
                 return;
             }
 
