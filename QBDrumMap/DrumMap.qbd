@@ -72843,7 +72843,8 @@
             },
             {
               "Pitch": 34,
-              "Name": "OpenRimShot"
+              "Name": "OpenRimShot",
+              "ArticulationID": 20
             },
             {
               "Pitch": 35,

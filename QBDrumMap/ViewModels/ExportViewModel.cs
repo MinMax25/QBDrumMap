@@ -96,8 +96,13 @@ namespace QBDrumMap.ViewModels
             {
                 foreach (var kit in SelectedKits)
                 {
+                    var outPath = Path.Combine(path, kit.PluginName);
+                    if (!File.Exists(outPath))
+                    {
+                        Directory.CreateDirectory(outPath);
+                    }
                     var pitchList = MapData.GetStudioOnePitchList(kit.KitName);
-                    pitchList.Save(Path.Combine(path, $"{pitchList.Title}.pitchlist"));
+                    pitchList.Save(Path.Combine(outPath, $"{pitchList.Title}.pitchlist"));
                 }
             });
         }
@@ -114,8 +119,13 @@ namespace QBDrumMap.ViewModels
             {
                 foreach (var kit in SelectedKits)
                 {
+                    var outPath = Path.Combine(path, kit.PluginName);
+                    if (!File.Exists(outPath))
+                    {
+                        Directory.CreateDirectory(outPath);
+                    }
                     var cubase = MapData.GetCubaseDrumMap(kit.KitName);
-                    cubase.Save(Path.Combine(path, $"{kit.KitName}.drm"));
+                    cubase.Save(Path.Combine(outPath, $"{kit.KitName}.drm"));
                 }
             });
         }
@@ -132,8 +142,13 @@ namespace QBDrumMap.ViewModels
             {
                 foreach (var kit in SelectedKits)
                 {
+                    var outPath = Path.Combine(path, kit.PluginName);
+                    if (!File.Exists(outPath))
+                    {
+                        Directory.CreateDirectory(outPath);
+                    }
                     var sb = MapData.GetText(kit.KitName);
-                    File.WriteAllText(Path.Combine(path, $"{kit.KitName}.tsv"), sb.ToString());
+                    File.WriteAllText(Path.Combine(outPath, $"{kit.KitName}.tsv"), sb.ToString());
                 }
             });
         }
@@ -150,8 +165,13 @@ namespace QBDrumMap.ViewModels
             {
                 foreach (var kit in SelectedKits)
                 {
+                    var outPath = Path.Combine(path, kit.PluginName);
+                    if (!File.Exists(outPath))
+                    {
+                        Directory.CreateDirectory(outPath);
+                    }
                     var cubase = MapData.GetCubaseDrumMap(kit.KitName, BaseOn.Name);
-                    cubase.Save(Path.Combine(path, $"{kit.KitName}.drm"));
+                    cubase.Save(Path.Combine(outPath, $"{kit.KitName}.drm"));
                 }
             });
         }
