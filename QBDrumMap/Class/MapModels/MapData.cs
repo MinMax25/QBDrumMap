@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Unicode;
 using CommunityToolkit.Mvvm.ComponentModel;
+using libMidi.Messages.interfaces;
 using libQB.Attributes;
 
 namespace QBDrumMap.Class.MapModels
@@ -365,6 +366,12 @@ namespace QBDrumMap.Class.MapModels
                 }
             }
 
+            Func<int, int> getNewArticulationID = (oldId) =>
+            {
+                if (artics.TryGetValue(oldId, out var id)) return id;
+                return 0;
+            };
+
             int drumMapOrder = 1;
             foreach (var articulation in map.Parts.SelectMany(x => x.Articulations).OrderBy(a => a.DrumMapOrder).ToArray())
             {
@@ -373,33 +380,21 @@ namespace QBDrumMap.Class.MapModels
 
             foreach (var kitPitch in map.Plugins.SelectMany(x => x.Kits).SelectMany(x => x.Pitches).ToArray())
             {
-                if (kitPitch.ArticulationID != 0 && artics.Any())
+                if (kitPitch.ArticulationID != 0)
                 {
-                    kitPitch.ArticulationID = artics[kitPitch.ArticulationID];
-                }
-                else
-                {
-                    kitPitch.ArticulationID = 0;
+                    kitPitch.ArticulationID = getNewArticulationID(kitPitch.ArticulationID);
                 }
             }
 
             foreach (var articulation in map.Parts.SelectMany(x => x.Articulations).ToArray())
             {
-                if (artics.Any())
+                if (articulation.ID != 0)
                 {
-                    if (articulation.ID != 0)
-                    {
-                        articulation.ID = artics[articulation.ID];
-                    }
-                    if (articulation.Complement != 0)
-                    {
-                        articulation.Complement = artics[articulation.Complement];
-                    }
+                    articulation.ID = getNewArticulationID(articulation.ID);
                 }
-                else
+                if (articulation.Complement != 0)
                 {
-                    articulation.ID = 0;
-                    articulation.Complement = 0;
+                    articulation.Complement = getNewArticulationID(articulation.Complement);
                 }
             }
         }
