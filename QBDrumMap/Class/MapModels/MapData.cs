@@ -373,21 +373,33 @@ namespace QBDrumMap.Class.MapModels
 
             foreach (var kitPitch in map.Plugins.SelectMany(x => x.Kits).SelectMany(x => x.Pitches).ToArray())
             {
-                if (kitPitch.ArticulationID != 0)
+                if (kitPitch.ArticulationID != 0 && artics.Any())
                 {
                     kitPitch.ArticulationID = artics[kitPitch.ArticulationID];
+                }
+                else
+                {
+                    kitPitch.ArticulationID = 0;
                 }
             }
 
             foreach (var articulation in map.Parts.SelectMany(x => x.Articulations).ToArray())
             {
-                if (articulation.ID != 0)
+                if (artics.Any())
                 {
-                    articulation.ID = artics[articulation.ID];
+                    if (articulation.ID != 0)
+                    {
+                        articulation.ID = artics[articulation.ID];
+                    }
+                    if (articulation.Complement != 0)
+                    {
+                        articulation.Complement = artics[articulation.Complement];
+                    }
                 }
-                if (articulation.Complement != 0)
+                else
                 {
-                    articulation.Complement = artics[articulation.Complement];
+                    articulation.ID = 0;
+                    articulation.Complement = 0;
                 }
             }
         }
