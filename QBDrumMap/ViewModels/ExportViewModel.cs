@@ -256,6 +256,12 @@ namespace QBDrumMap.ViewModels
                     if (ArticulationMap.GetArticulationMap(MapData, kit.KitName) is not ArticulationMap articMap)
                         throw new Exception();
 
+                    var outPath = Path.Combine(path, kit.PluginName);
+                    if (!File.Exists(outPath))
+                    {
+                        Directory.CreateDirectory(outPath);
+                    }
+
                     var sb = new StringBuilder();
                     sb.AppendLine("ID,Sub,Name,Pitchs");
 
@@ -264,7 +270,7 @@ namespace QBDrumMap.ViewModels
                         sb.AppendLine($"{item.ID},{(item.IsSub ? 1 : 0)},{item.Name},{string.Join("|", item.Pitches)}");
                     }
 
-                    File.WriteAllText(Path.Combine(path, $"{kit.KitName}.csv"), sb.ToString());
+                    File.WriteAllText(Path.Combine(outPath, $"{kit.KitName}.csv"), sb.ToString());
                 }
             });
         }
