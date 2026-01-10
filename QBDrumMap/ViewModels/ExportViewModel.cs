@@ -323,6 +323,8 @@ namespace QBDrumMap.ViewModels
                 KitListView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(KitListItem.PluginName)));
                 KitListView.Refresh();
             });
+
+            OnPropertyChanged(nameof(BaseOnComboSource));
         }
 
         private IEnumerable<KitListItem> GetOrderedSelectedKits()
