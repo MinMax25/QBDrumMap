@@ -7,8 +7,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bhlibqb="clr-namespace:libQB.Behaviors;assembly=libQB"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
-    xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
+    xmlns:bhlocal="clr-namespace:QBDrumMap.Class.Behaviors"
     xmlns:properties="clr-namespace:QBDrumMap.Properties"
     Dialog:DialogParticipation.Register="{Binding}"
     mc:Ignorable="d"
@@ -66,9 +67,17 @@
                         ItemsSource="{Binding KitListView}"
                         Style="{StaticResource DataGridStyle}">
                         <bh:Interaction.Behaviors>
-                            <behaviors:DataGridExtendBehavior SelectedRows="{Binding SelectedKits}" SelectionChangedCommand="{Binding SelectedKitsSelectionChangedCommand}"/>
+                            <bhlibqb:DataGridExtendBehavior SelectedRows="{Binding SelectedKits}" SelectionChangedCommand="{Binding SelectedKitsSelectionChangedCommand}"/>
+                            <bhlocal:DataGridGroupExpandBehavior IsExpanded="{Binding IsGroupExpanded}" />
                         </bh:Interaction.Behaviors>
-                            
+
+                        <DataGrid.ContextMenu>
+                            <ContextMenu  IsEnabled="{Binding IsCommandEnabled}">
+                                <MenuItem Header="Expand All" Command="{Binding ExpandAllCommand}"/>
+                                <MenuItem Header="Shrink All" Command="{Binding ShrinkAllCommand}"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        
                         <DataGrid.GroupStyle>
                             <GroupStyle>
                                 <GroupStyle.ContainerStyle>
