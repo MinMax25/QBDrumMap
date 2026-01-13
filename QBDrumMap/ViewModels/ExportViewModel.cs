@@ -59,6 +59,9 @@ namespace QBDrumMap.ViewModels
 
         private bool CanExportBaseOn => BaseOn != null && CanExport;
 
+        [ObservableProperty]
+        private bool isGroupExpanded;
+
         #endregion
 
         #region ctor
@@ -273,6 +276,18 @@ namespace QBDrumMap.ViewModels
                     File.WriteAllText(Path.Combine(outPath, $"{kit.KitName}.csv"), sb.ToString());
                 }
             });
+        }
+
+        [RelayCommand]
+        private void OnExpandAll()
+        {
+            IsGroupExpanded = true;
+        }
+
+        [RelayCommand]
+        private void OnShrinkAll()
+        {
+            IsGroupExpanded = false;
         }
 
         #endregion
