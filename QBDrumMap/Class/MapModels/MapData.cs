@@ -6,7 +6,6 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Unicode;
 using CommunityToolkit.Mvvm.ComponentModel;
-using libMidi.Messages.interfaces;
 using libQB.Attributes;
 
 namespace QBDrumMap.Class.MapModels

@@ -48,6 +48,9 @@ namespace QBDrumMap.ViewModels
 
         private bool CanConvert => !string.IsNullOrWhiteSpace(LastConvertMIDIFilePath) && BaseOn != null && SelectedKitsCount > 0;
 
+        [ObservableProperty]
+        private bool isGroupExpanded;
+
         #endregion
 
         #region ctor
@@ -118,6 +121,18 @@ namespace QBDrumMap.ViewModels
                 await Dialog.ShowErrorAsync(Properties.Resources.MIDIError);
             }
 
+        }
+
+        [RelayCommand]
+        private void OnExpandAll()
+        {
+            IsGroupExpanded = true;
+        }
+
+        [RelayCommand]
+        private void OnShrinkAll()
+        {
+            IsGroupExpanded = false;
         }
 
         #endregion
