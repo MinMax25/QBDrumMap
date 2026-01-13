@@ -5,7 +5,7 @@ using Microsoft.Xaml.Behaviors;
 
 namespace QBDrumMap.Class.Behaviors
 {
-    public class DataGridGroupExpandBehavior 
+    public class DataGridGroupExpandBehavior
         : Behavior<DataGrid>
     {
         public static readonly DependencyProperty IsExpandedProperty =
@@ -38,7 +38,9 @@ namespace QBDrumMap.Class.Behaviors
 
                 var expander = FindVisualChild<Expander>(groupItem);
                 if (expander != null)
+                {
                     expander.IsExpanded = isExpanded;
+                }
             }
         }
 
@@ -49,11 +51,12 @@ namespace QBDrumMap.Class.Behaviors
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
             {
                 var child = VisualTreeHelper.GetChild(depObj, i);
-                if (child is T t)
-                    yield return t;
+                if (child is T t) yield return t;
 
                 foreach (var childOfChild in FindVisualChildren<T>(child))
+                {
                     yield return childOfChild;
+                }
             }
         }
 
@@ -62,12 +65,13 @@ namespace QBDrumMap.Class.Behaviors
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
             {
                 var child = VisualTreeHelper.GetChild(parent, i);
-                if (child is T t)
-                    return t;
+                if (child is T t) return t;
 
                 var result = FindVisualChild<T>(child);
                 if (result != null)
+                {
                     return result;
+                }
             }
             return null;
         }
