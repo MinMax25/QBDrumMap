@@ -9,6 +9,13 @@
 
 DAW(Studio One、Cubase)で使用するドラムマップのエディターです。
 <img width="1300" height="800" alt="Image" src="QBDrumMap/Resources/Document/Manual/image/intoro_pic_1.png" />
+## 🎥 Demo Video
+
+QBDrumMapの基本コンセプト、画面構成、  
+ドラムマップ変換・エクスポートの流れを動画で確認できます。
+
+[![QBDrumMap Demo Video](https://img.youtube.com/vi/dQjmQkXGzZQ/0.jpg)](https://youtu.be/dQjmQkXGzZQ)
+---
 ## システム要件
 OSはWindowsのみの対応となります。  
 Studio One Pro Windowsシステムの要件に準拠します。
