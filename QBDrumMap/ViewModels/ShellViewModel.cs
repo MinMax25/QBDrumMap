@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -20,93 +21,69 @@ using QBDrumMap.Views;
 namespace QBDrumMap.ViewModels
 {
     [DIWindow<IShellWindow, ShellWindow>]
-    public partial class ShellViewModel
-        : ViewModelBase
-        , IWindowClosingAware
+    public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
     {
-        #region Template
+        #region Fields
 
+        // ハンバーガーメニューで現在選択されている項目
+        [ObservableProperty]
         private HamburgerMenuItem _selectedMenuItem;
-        private RelayCommand _goBackCommand;
-        private ICommand _menuItemInvokedCommand;
-        private ICommand _loadedCommand;
-        private ICommand _unloadedCommand;
 
-        public HamburgerMenuItem SelectedMenuItem
-        {
-            get { return _selectedMenuItem; }
-            set { SetProperty(ref _selectedMenuItem, value); }
-        }
+        // ウィンドウのタイトル文字列
+        [ObservableProperty]
+        private string _title;
 
-        public RelayCommand GoBackCommand => _goBackCommand ?? (_goBackCommand = new RelayCommand(OnGoBack, CanGoBack));
+        // コマンドの実行可否状態
+        [ObservableProperty]
+        private bool _isCommandEnabled = true;
 
-        public ICommand MenuItemInvokedCommand => _menuItemInvokedCommand ?? (_menuItemInvokedCommand = new RelayCommand(OnMenuItemInvoked));
-
-        public ICommand LoadedCommand => _loadedCommand ?? (_loadedCommand = new RelayCommand(OnLoaded));
-
-        public ICommand UnloadedCommand => _unloadedCommand ?? (_unloadedCommand = new RelayCommand(OnUnloaded));
-
-        private void OnLoaded()
-        {
-            Navigation.Navigated += OnNavigated;
-        }
-
-        private void OnUnloaded()
-        {
-            Navigation.Navigated -= OnNavigated;
-        }
-
-        private bool CanGoBack() => Navigation.CanGoBack;
-
-        private void OnGoBack() => Navigation.GoBack();
-
-        private void OnMenuItemInvoked()
-        {
-            if (SelectedMenuItem is HamburgerMenuIconItem item && item.TargetPageType != null)
-            {
-                NavigateTo(item.TargetPageType);
-            }
-        }
-
-        private void NavigateTo(Type targetViewModel)
-        {
-            if (targetViewModel != null)
-            {
-                Navigation.NavigateTo(targetViewModel.FullName);
-                App.GetService<IMidiService>().MidiThruEnabled = false;
-            }
-        }
-
-        private void OnNavigated(object sender, string viewModelName)
-        {
-            var item =
-                MenuItems
-                .OfType<HamburgerMenuItem>()
-                .FirstOrDefault(i => viewModelName == i.TargetPageType?.FullName);
-
-            if (item != null)
-            {
-                SelectedMenuItem = item;
-            }
-
-            GoBackCommand.NotifyCanExecuteChanged();
-        }
+        // ファイルダイアログ用のフィルター定数
+        private const string QBD_FILTER = "QB DrumMap (*.qbd)|*.qbd";
 
         #endregion
 
         #region Properties
 
-        [ObservableProperty]
-        public string title;
+        // 前の画面に戻るコマンド
+        public IRelayCommand GoBackCommand => new RelayCommand(OnGoBack, CanGoBack);
 
-        public string AboutCaption => string.Format(Properties.Resources.MenuHelpAboutCaption, AppName);
+        // ハンバーガーメニュー項目が選択された際のコマンド
+        public ICommand MenuItemInvokedCommand => new RelayCommand(OnMenuItemInvoked);
 
-        private string AppName => typeof(App).Assembly.GetName().Name;
+        // ウィンドウロード時のコマンド
+        public ICommand LoadedCommand => new RelayCommand(OnLoaded);
 
-        private ISettingService Setting => SettingService;
+        // ウィンドウアンロード時のコマンド
+        public ICommand UnloadedCommand => new RelayCommand(OnUnloaded);
 
-        private const string QBD_FILTER = "QB DrumMap (*.qbd)|*.qbd";
+        // アプリケーション情報（バージョン等）のキャプション
+        public string AboutCaption
+        {
+            get
+            {
+                return string.Format(Properties.Resources.MenuHelpAboutCaption, AppName);
+            }
+        }
 
+        // アプリケーション名
+        private string AppName
+        {
+            get
+            {
+                return typeof(App).Assembly.GetName().Name;
+            }
+        }
+
+        // 設定サービスへの参照
+        private ISettingService Setting
+        {
+            get
+            {
+                return SettingService;
+            }
+        }
+
+        // メインメニュー項目
         public ObservableCollection<HamburgerMenuItemBase> MenuItems { get; } =
         [
             new HamburgerMenuSeparatorItem(),
@@ -152,22 +129,19 @@ namespace QBDrumMap.ViewModels
                 TargetPageType = typeof(ConvertMidiViewModel)
             },
 
-            new HamburgerMenuSeparatorItem(),
-
+            new HamburgerMenuSeparatorItem()
         ];
 
-        public ObservableCollection<HamburgerMenuItemBase> OptionMenuItems { get; } = new()
-        {
+        // オプションメニュー項目（設定等）
+        public ObservableCollection<HamburgerMenuItemBase> OptionMenuItems { get; } =
+        [
             new HamburgerMenuIconItem()
             {
                 Label = libQB.Properties.Resources.Setting_PageTitle,
                 Icon = ClonePackIcon(PageIcon.SettingPage),
                 TargetPageType = typeof(SettingViewModel)
-            },
-        };
-
-        [ObservableProperty]
-        private bool isCommandEnabled = true;
+            }
+        ];
 
         #endregion
 
@@ -182,7 +156,12 @@ namespace QBDrumMap.ViewModels
 
             if (Setting.IsOpenTheLastFileOpened && File.Exists(Setting.LastOpenedFilePath))
             {
-                if (!Task.Run(async () => await MapData.LoadAsync(Setting.LastOpenedFilePath)).Result)
+                var loadTask = Task.Run(async () =>
+                {
+                    return await MapData.LoadAsync(Setting.LastOpenedFilePath);
+                });
+
+                if (loadTask.Result == false)
                 {
                     Setting.LastOpenedFilePath = string.Empty;
                 }
@@ -206,11 +185,13 @@ namespace QBDrumMap.ViewModels
         {
             if (MapData.IsModified())
             {
-                if (await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_NewFile) == false) return;
+                if (await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_NewFile) == false)
+                {
+                    return;
+                }
             }
 
             MapData.Initialize();
-
             Setting.LastOpenedFilePath = string.Empty;
         }
 
@@ -219,11 +200,22 @@ namespace QBDrumMap.ViewModels
         {
             if (MapData.IsModified())
             {
-                if (await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_NewFile) == false) return;
+                if (await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_NewFile) == false)
+                {
+                    return;
+                }
             }
 
-            var path = await Dialog.ShowOpenFileDialog(libQB.Properties.Dialog.Common_OpenFile, QBD_FILTER, GetValidFilePath(Setting.LastOpenedFilePath));
-            if (path == null) return;
+            var path = await Dialog.ShowOpenFileDialog(
+                libQB.Properties.Dialog.Common_OpenFile,
+                QBD_FILTER,
+                GetValidFilePath(Setting.LastOpenedFilePath));
+
+            if (path == null)
+            {
+                return;
+            }
+
             Setting.LastOpenedFilePath = path;
 
             if (await MapData.LoadAsync(path) == false)
@@ -241,8 +233,15 @@ namespace QBDrumMap.ViewModels
                 return;
             }
 
-            var path = await Dialog.ShowSaveFileDialog(libQB.Properties.Dialog.Common_SaveFile, QBD_FILTER, GetValidFilePath(Setting.LastOpenedFilePath));
-            if (path == null) return;
+            var path = await Dialog.ShowSaveFileDialog(
+                libQB.Properties.Dialog.Common_SaveFile,
+                QBD_FILTER,
+                GetValidFilePath(Setting.LastOpenedFilePath));
+
+            if (path == null)
+            {
+                return;
+            }
 
             if (await MapData.SaveAsync(path))
             {
@@ -257,8 +256,7 @@ namespace QBDrumMap.ViewModels
         [RelayCommand]
         private void OnShowAbout()
         {
-            WindowService.ShowWindowWithCallback<About, AboutViewModel, object>
-            (
+            WindowService.ShowWindowWithCallback<About, AboutViewModel, object>(
                 owner: Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive)
             );
         }
@@ -268,10 +266,16 @@ namespace QBDrumMap.ViewModels
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Resources\Document\Manual\index.html");
 
-            if (!File.Exists(path)) return;
+            if (File.Exists(path) == false)
+            {
+                return;
+            }
 
             var p = new Process();
-            p.StartInfo = new ProcessStartInfo(path) { UseShellExecute = true };
+            p.StartInfo = new ProcessStartInfo(path)
+            {
+                UseShellExecute = true
+            };
             p.Start();
         }
 
@@ -282,16 +286,49 @@ namespace QBDrumMap.ViewModels
         }
 
         [RelayCommand]
-        private void OnUndo() => UndoManager.Undo();
+        private void OnUndo()
+        {
+            UndoManager.Undo();
+        }
 
         [RelayCommand]
-        private void OnRedo() => UndoManager.Redo();
+        private void OnRedo()
+        {
+            UndoManager.Redo();
+        }
 
         #endregion
 
-        #region PropertyChanged Callbacks
+        #region EventHandler
 
-        private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void OnLoaded()
+        {
+            Navigation.Navigated += OnNavigated;
+        }
+
+        private void OnUnloaded()
+        {
+            Navigation.Navigated -= OnNavigated;
+        }
+
+        private void OnNavigated(object sender, string viewModelName)
+        {
+            var item = MenuItems
+                .OfType<HamburgerMenuItem>()
+                .FirstOrDefault(i =>
+                {
+                    return viewModelName == i.TargetPageType?.FullName;
+                });
+
+            if (item != null)
+            {
+                SelectedMenuItem = item;
+            }
+
+            GoBackCommand.NotifyCanExecuteChanged();
+        }
+
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             switch (e.PropertyName)
             {
@@ -306,19 +343,17 @@ namespace QBDrumMap.ViewModels
             }
         }
 
-        #endregion
-
-        #region Event Handling
-
         public async Task<bool> OnWindowClosingAsync()
         {
             if (MapData.IsModified())
             {
-                return await Dialog.ShowWarningAsync(libQB.Properties.Dialog.Confirm_ApplicationCloseWithTheChanges) ?? false;
+                var result = await Dialog.ShowWarningAsync(libQB.Properties.Dialog.Confirm_ApplicationCloseWithTheChanges);
+                return result ?? false;
             }
             else
             {
-                return await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_ApplicationClose) ?? false;
+                var result = await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_ApplicationClose);
+                return result ?? false;
             }
         }
 
@@ -326,10 +361,41 @@ namespace QBDrumMap.ViewModels
 
         #region General
 
+        private bool CanGoBack()
+        {
+            return Navigation.CanGoBack;
+        }
+
+        private void OnGoBack()
+        {
+            Navigation.GoBack();
+        }
+
+        private void OnMenuItemInvoked()
+        {
+            if (SelectedMenuItem is HamburgerMenuIconItem item && item.TargetPageType != null)
+            {
+                NavigateTo(item.TargetPageType);
+            }
+        }
+
+        private void NavigateTo(Type targetViewModel)
+        {
+            if (targetViewModel != null)
+            {
+                Navigation.NavigateTo(targetViewModel.FullName);
+                App.GetService<IMidiService>().MidiThruEnabled = false;
+            }
+        }
+
         private static object ClonePackIcon(PageIcon pageIcon)
         {
             var original = Application.Current.Resources[$"{pageIcon}Icon"];
-            if (original == null) return null;
+            if (original == null)
+            {
+                return null;
+            }
+
             string xaml = System.Windows.Markup.XamlWriter.Save(original);
             return System.Windows.Markup.XamlReader.Parse(xaml);
         }
@@ -352,10 +418,8 @@ namespace QBDrumMap.ViewModels
             {
                 return path;
             }
-            else
-            {
-                return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            }
+
+            return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         }
 
         #endregion
@@ -365,6 +429,7 @@ namespace QBDrumMap.ViewModels
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
+
             if (disposing)
             {
                 MapData.EditStateChanged -= OnPropertyChanged;

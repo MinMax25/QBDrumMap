@@ -11,8 +11,7 @@ using libQB.Attributes;
 namespace QBDrumMap.Class.MapModels
 {
     [DISingleton]
-    public partial class MapData
-        : ObservableObject
+    public partial class MapData : ObservableObject
     {
         public EventHandler<DrumMapIOEventArgs> Loaded;
 
@@ -20,34 +19,60 @@ namespace QBDrumMap.Class.MapModels
 
         public EventHandler<PropertyChangedEventArgs> EditStateChanged;
 
-        #region Properties
+        #region Fields
 
+        // 保存時や比較用のデータ複製
         private MapData replica;
 
+        // 現在編集中のViewModelリスト
         private List<ViewModelBase> EditingList = new();
 
+        // アプリケーション名
         [ObservableProperty]
         private string appName;
 
+        // モデルのバージョン
         [ObservableProperty]
         private string modelVersion;
 
+        // プラグイン設定のコレクション
         [ObservableProperty]
         private ObservableCollection<Plugin> plugins = new();
 
+        // パート設定のコレクション
         [ObservableProperty]
         private ObservableCollection<Part> parts = new();
 
-        [JsonIgnore]
-        public IEnumerable<Articulation> Articulations => Parts.SelectMany(p => p.Articulations);
+        // 編集状態フラグ
+        private bool _EditState;
 
+        #endregion
+
+        #region Properties
+
+        // 全てのアーティキュレーションをフラットに取得
+        [JsonIgnore]
+        public IEnumerable<Articulation> Articulations
+        {
+            get
+            {
+                return Parts.SelectMany(p => p.Articulations);
+            }
+        }
+
+        // 編集状態
         [JsonIgnore]
         public bool EditState
         {
-            get => _EditState;
-            private set => SetProperty(ref _EditState, value);
+            get
+            {
+                return _EditState;
+            }
+            private set
+            {
+                SetProperty(ref _EditState, value);
+            }
         }
-        private bool _EditState;
 
         #endregion
 
@@ -62,6 +87,8 @@ namespace QBDrumMap.Class.MapModels
         #endregion
 
         #region Methods
+
+        #region General
 
         public void SetEditState(ViewModelBase sender, bool isEditing)
         {
@@ -110,6 +137,11 @@ namespace QBDrumMap.Class.MapModels
 
                 string jsonString = await File.ReadAllTextAsync(path);
                 var data = JsonSerializer.Deserialize<MapData>(jsonString);
+
+                if (data == null)
+                {
+                    return false;
+                }
 
                 foreach (var plugin in data.Plugins.Select((x, i) => new { item = x, order = i }))
                 {
@@ -216,6 +248,7 @@ namespace QBDrumMap.Class.MapModels
                     Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
                     WriteIndented = true
                 };
+
                 var jsonString = JsonSerializer.Serialize(replica, options);
                 await File.WriteAllTextAsync(path, jsonString);
 
@@ -330,13 +363,16 @@ namespace QBDrumMap.Class.MapModels
 
         public bool HasError()
         {
-            return
-                Plugins.Any(x => x.HasErrors) ||
-                Plugins.SelectMany(x => x.Kits).Any(x => x.HasErrors) ||
-                Plugins.SelectMany(x => x.Kits).SelectMany(x => x.Pitches).Any(x => x.HasErrors) ||
-                Parts.Any(x => x.HasErrors) ||
-                Parts.SelectMany(x => x.Articulations).Any(x => x.HasErrors);
+            return Plugins.Any(x => x.HasErrors) ||
+                   Plugins.SelectMany(x => x.Kits).Any(x => x.HasErrors) ||
+                   Plugins.SelectMany(x => x.Kits).SelectMany(x => x.Pitches).Any(x => x.HasErrors) ||
+                   Parts.Any(x => x.HasErrors) ||
+                   Parts.SelectMany(x => x.Articulations).Any(x => x.HasErrors);
         }
+
+        #endregion
+
+        #region Private
 
         private void FixID(MapData map)
         {
@@ -367,7 +403,10 @@ namespace QBDrumMap.Class.MapModels
 
             Func<int, int> getNewArticulationID = (oldId) =>
             {
-                if (artics.TryGetValue(oldId, out var id)) return id;
+                if (artics.TryGetValue(oldId, out var id))
+                {
+                    return id;
+                }
                 return 0;
             };
 
@@ -400,17 +439,29 @@ namespace QBDrumMap.Class.MapModels
 
         private bool CompareMapData(MapData src, MapData dst)
         {
-            if (src.Plugins.Count != dst.Plugins.Count) return true;
-            if (src.Parts.Count != dst.Parts.Count) return true;
+            if (src.Plugins.Count != dst.Plugins.Count)
+            {
+                return true;
+            }
+            if (src.Parts.Count != dst.Parts.Count)
+            {
+                return true;
+            }
 
             for (int i = 0; i < src.Plugins.Count; i++)
             {
-                if (ComparePlugin(src.Plugins[i], dst.Plugins.OrderBy(x => x.DisplayOrder).ToArray()[i])) return true;
+                if (ComparePlugin(src.Plugins[i], dst.Plugins.OrderBy(x => x.DisplayOrder).ToArray()[i]))
+                {
+                    return true;
+                }
             }
 
             for (int i = 0; i < src.Parts.Count; i++)
             {
-                if (ComparePart(src.Parts[i], dst.Parts.OrderBy(x => x.DisplayOrder).ToArray()[i])) return true;
+                if (ComparePart(src.Parts[i], dst.Parts.OrderBy(x => x.DisplayOrder).ToArray()[i]))
+                {
+                    return true;
+                }
             }
 
             return false;
@@ -418,62 +469,154 @@ namespace QBDrumMap.Class.MapModels
 
         private bool ComparePlugin(Plugin src, Plugin dst)
         {
-            if (src.Kits.Count != dst.Kits.Count) return true;
-            if (src.ID != dst.ID) return true;
-            if (src.Name != dst.Name) return true;
-            if (src.PluginType != dst.PluginType) return true;
-            if (src.MidiOutDevice != dst.MidiOutDevice) return true;
-            if (src.SoundCheckChannel != dst.SoundCheckChannel) return true;
+            if (src.Kits.Count != dst.Kits.Count)
+            {
+                return true;
+            }
+            if (src.ID != dst.ID)
+            {
+                return true;
+            }
+            if (src.Name != dst.Name)
+            {
+                return true;
+            }
+            if (src.PluginType != dst.PluginType)
+            {
+                return true;
+            }
+            if (src.MidiOutDevice != dst.MidiOutDevice)
+            {
+                return true;
+            }
+            if (src.SoundCheckChannel != dst.SoundCheckChannel)
+            {
+                return true;
+            }
 
             for (int i = 0; i < src.Kits.Count; i++)
             {
-                if (CompareKit(src.Kits[i], dst.Kits.OrderBy(x => x.DisplayOrder).ToArray()[i])) return true;
+                if (CompareKit(src.Kits[i], dst.Kits.OrderBy(x => x.DisplayOrder).ToArray()[i]))
+                {
+                    return true;
+                }
             }
             return false;
         }
 
         private bool CompareKit(Kit src, Kit dst)
         {
-            if (src.ID != dst.ID) return true;
-            if (src.Name != dst.Name) return true;
-            if (src.Pitches.Count != dst.Pitches.Count) return true;
-            if (src.BankSelectMSB != dst.BankSelectMSB) return true;
-            if (src.BankSelectLSB != dst.BankSelectLSB) return true;
-            if (src.ProgramNumber != dst.ProgramNumber) return true;
-
-            for (int i = 0; i < 128; i++)
+            if (src.ID != dst.ID)
             {
-                if (CompareKitPitch(src.Pitches[i], dst.Pitches.OrderBy(x => x.DisplayOrder).ToArray()[i])) return true;
+                return true;
+            }
+            if (src.Name != dst.Name)
+            {
+                return true;
+            }
+            if (src.Pitches.Count != dst.Pitches.Count)
+            {
+                return true;
+            }
+            if (src.BankSelectMSB != dst.BankSelectMSB)
+            {
+                return true;
+            }
+            if (src.BankSelectLSB != dst.BankSelectLSB)
+            {
+                return true;
+            }
+            if (src.ProgramNumber != dst.ProgramNumber)
+            {
+                return true;
+            }
+
+            var srcPitches = src.Pitches.OrderBy(x => x.DisplayOrder).ToArray();
+            var dstPitches = dst.Pitches.OrderBy(x => x.DisplayOrder).ToArray();
+
+            for (int i = 0; i < srcPitches.Length; i++)
+            {
+                if (CompareKitPitch(srcPitches[i], dstPitches[i]))
+                {
+                    return true;
+                }
             }
             return false;
         }
 
         private bool CompareKitPitch(KitPitch src, KitPitch dst)
         {
-            if (src.Pitch != dst.Pitch) return true;
-            if (src.Name != dst.Name) return true;
-            if (src.ArticulationID != dst.ArticulationID) return true;
-            if (src.Separator != dst.Separator) return true;
+            if (src.Pitch != dst.Pitch)
+            {
+                return true;
+            }
+            if (src.Name != dst.Name)
+            {
+                return true;
+            }
+            if (src.ArticulationID != dst.ArticulationID)
+            {
+                return true;
+            }
+            if (src.Separator != dst.Separator)
+            {
+                return true;
+            }
             return false;
         }
 
         private bool ComparePart(Part src, Part dst)
         {
-            if (src.Name != dst.Name) return true;
-            if (src.ScorePitch != dst.ScorePitch) return true;
-            if (src.Color != dst.Color) return true;
-            if (src.NoteHead != dst.NoteHead) return true;
-            if (src.Technique != dst.Technique) return true;
-            if (src.InstrumentEntityID != dst.InstrumentEntityID) return true;
-            if (src.NoteHeadSet != dst.NoteHeadSet) return true;
-            if (src.Voice != dst.Voice) return true;
-            if (src.TechniqueEntityID != dst.TechniqueEntityID) return true;
-            if (src.Articulations.Count != dst.Articulations.Count) return true;
-
-            for (int i = 0; i < src.Articulations.Count; i++)
+            if (src.Name != dst.Name)
             {
-                if (CompareArticulation(src.Articulations[i], dst.Articulations.OrderBy(x => x.DisplayOrder).ToArray()[i])) return true;
-                if (src.Articulations.OrderBy(x => x.DrumMapOrder).Skip(i).First().ID != dst.Articulations.OrderBy(x => x.DrumMapOrder).Skip(i).First().ID) return true;
+                return true;
+            }
+            if (src.ScorePitch != dst.ScorePitch)
+            {
+                return true;
+            }
+            if (src.Color != dst.Color)
+            {
+                return true;
+            }
+            if (src.NoteHead != dst.NoteHead)
+            {
+                return true;
+            }
+            if (src.Technique != dst.Technique)
+            {
+                return true;
+            }
+            if (src.InstrumentEntityID != dst.InstrumentEntityID)
+            {
+                return true;
+            }
+            if (src.NoteHeadSet != dst.NoteHeadSet)
+            {
+                return true;
+            }
+            if (src.Voice != dst.Voice)
+            {
+                return true;
+            }
+            if (src.TechniqueEntityID != dst.TechniqueEntityID)
+            {
+                return true;
+            }
+            if (src.Articulations.Count != dst.Articulations.Count)
+            {
+                return true;
+            }
+
+            var srcArtics = src.Articulations.OrderBy(x => x.DisplayOrder).ToArray();
+            var dstArtics = dst.Articulations.OrderBy(x => x.DisplayOrder).ToArray();
+
+            for (int i = 0; i < srcArtics.Length; i++)
+            {
+                if (CompareArticulation(srcArtics[i], dstArtics[i]))
+                {
+                    return true;
+                }
             }
 
             return false;
@@ -481,11 +624,26 @@ namespace QBDrumMap.Class.MapModels
 
         private bool CompareArticulation(Articulation src, Articulation dst)
         {
-            if (src.ID != dst.ID) return true;
-            if (src.Name != dst.Name) return true;
-            if (src.Complement != dst.Complement) return true;
+            if (src.ID != dst.ID)
+            {
+                return true;
+            }
+            if (src.Name != dst.Name)
+            {
+                return true;
+            }
+            if (src.Complement != dst.Complement)
+            {
+                return true;
+            }
+            if (src.DrumMapOrder != dst.DrumMapOrder)
+            {
+                return true;
+            }
             return false;
         }
+
+        #endregion
 
         #endregion
     }

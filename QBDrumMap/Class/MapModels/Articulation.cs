@@ -3,23 +3,33 @@ using QBDrumMap.Class.CustomValidations;
 
 namespace QBDrumMap.Class.MapModels
 {
-    public partial class Articulation
-        : ModelBase
-        , IHasID
+    public partial class Articulation : ModelBase, IHasID
     {
+        #region Fields
+
+        // アーティキュレーションの一意なID
         [ObservableProperty]
         private int iD;
 
+        // アーティキュレーション名
         [ObservableProperty]
         [ValidateArticulation]
         [NotifyDataErrorInfo]
         private string name = string.Empty;
 
+        // 補足情報または補完データ
         [ObservableProperty]
         private int complement;
 
+        // ドラムマップ表示時の並び順
         [ObservableProperty]
         private int drumMapOrder;
+
+        #endregion
+
+        #region Methods
+
+        #region Property Change Handler
 
         partial void OnIDChanged(int oldValue, int newValue)
         {
@@ -41,6 +51,10 @@ namespace QBDrumMap.Class.MapModels
             UndoManager?.RegisterPropertyChange(() => DrumMapOrder, oldValue, newValue);
         }
 
+        #endregion
+
+        #region General
+
         public override object Clone()
         {
             return new Articulation
@@ -52,5 +66,9 @@ namespace QBDrumMap.Class.MapModels
                 DisplayOrder = DisplayOrder
             };
         }
+
+        #endregion
+
+        #endregion
     }
 }

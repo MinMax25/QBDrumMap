@@ -8,7 +8,8 @@ namespace QBDrumMap.Class.CustomValidations
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (validationContext?.ObjectInstance is not KitPitch kitPitch) return ValidationResult.Success;
+            if (validationContext?.ObjectInstance is not KitPitch kitPitch)
+                return ValidationResult.Success;
 
             string str = $"{value}";
 

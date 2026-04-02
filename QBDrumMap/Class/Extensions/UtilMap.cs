@@ -5,21 +5,35 @@ using QBDrumMap.Class.MapModels;
 using QBDrumMap.Class.Services;
 using QBDrumMap.Class.StudioOne;
 
-namespace QBDrumMap.Class.Extentions
+namespace QBDrumMap.Class.Extensions
 {
     public static class UtilMap
     {
+        #region Properties
+
         private static ISettingService Setting => App.GetService<ISettingService>();
 
         public static MapData MapData => App.GetService<MapData>();
 
-        public static Dictionary<int, string> NoteNames => Enumerable.Range(-1, 129).ToDictionary(x => x, x => $"{(x < 0 ? string.Empty : x.ToString() + " - " + Pitch.NoteName(x))}");
+        public static Dictionary<int, string> NoteNames => Enumerable.Range(-1, 129).ToDictionary(x => x, x =>
+        {
+            return $"{(x < 0 ? string.Empty : x.ToString() + " - " + Pitch.NoteName(x))}";
+        });
 
         public static List<int> ControlValues => Enumerable.Range(0, 128).ToList();
 
-        public static Dictionary<int, string> ProgramNumbers => Enumerable.Range(0, 128).ToDictionary(x => x, x => $"PG {x + 1}");
+        public static Dictionary<int, string> ProgramNumbers => Enumerable.Range(0, 128).ToDictionary(x => x, x =>
+        {
+            return $"PG {x + 1}";
+        });
 
-        public static IEnumerable<KitPitch> GetKitPitechs(this MapData data, string kitName)
+        #endregion
+
+        #region Methods
+
+        #region General
+
+        public static IEnumerable<KitPitch> GetKitPitches(this MapData data, string kitName)
         {
             if (data.Plugins.SelectMany(x => x.Kits).FirstOrDefault(x => x.Name == kitName) is not Kit kit)
             {
@@ -28,11 +42,11 @@ namespace QBDrumMap.Class.Extentions
 
             if (kit.Pitches.Any(x => x.ArticulationID != 0) && Setting.UseArticulation == true)
             {
-                return data.GetKitPitechsHasArticulation(kit);
+                return GetKitPitchesHasArticulation(data, kit);
             }
             else
             {
-                return data.GetKitPitechesNoArticulation(kit);
+                return GetKitPitchesNoArticulation(data, kit);
             }
         }
 
@@ -61,7 +75,7 @@ namespace QBDrumMap.Class.Extentions
                 Title = kitName
             };
 
-            foreach (var item in data.GetKitPitechs(kitName))
+            foreach (var item in data.GetKitPitches(kitName))
             {
                 Articulation artic = data.Parts.SelectMany(x => x.Articulations).FirstOrDefault(a => a.ID == item.ArticulationID);
                 Part part = data.Parts.FirstOrDefault(x => x.Articulations.Any(a => a.ID == item.ArticulationID));
@@ -83,22 +97,21 @@ namespace QBDrumMap.Class.Extentions
                     color = null;
                 }
 
-                PitchName pitchName =
-                    Setting.UseArticulation
-                        ? new()
-                        {
-                            Pitch = (byte)item.Pitch,
-                            Name = name,
-                            ScorePitch = (part?.ScorePitch ?? 0) == 0 ? null : $"{part?.ScorePitch}",
-                            Color = color,
-                            Notehead = (part?.NoteHead ?? StudioOneNoteHead.None) == StudioOneNoteHead.None ? null : Enum.GetName(part?.NoteHead ?? StudioOneNoteHead.None),
-                            Technique = (part?.Technique ?? StudioOneTechnique.None) == StudioOneTechnique.None ? null : Enum.GetName(part?.Technique ?? StudioOneTechnique.None)
-                        }
-                        : new()
-                        {
-                            Pitch = (byte)item.Pitch,
-                            Name = name,
-                        };
+                PitchName pitchName = Setting.UseArticulation
+                    ? new()
+                    {
+                        Pitch = (byte)item.Pitch,
+                        Name = name,
+                        ScorePitch = (part?.ScorePitch ?? 0) == 0 ? null : $"{part?.ScorePitch}",
+                        Color = color,
+                        Notehead = (part?.NoteHead ?? StudioOneNoteHead.None) == StudioOneNoteHead.None ? null : Enum.GetName(part?.NoteHead ?? StudioOneNoteHead.None),
+                        Technique = (part?.Technique ?? StudioOneTechnique.None) == StudioOneTechnique.None ? null : Enum.GetName(part?.Technique ?? StudioOneTechnique.None)
+                    }
+                    : new()
+                    {
+                        Pitch = (byte)item.Pitch,
+                        Name = name,
+                    };
 
                 result.Items.Add(pitchName);
             }
@@ -109,17 +122,15 @@ namespace QBDrumMap.Class.Extentions
         public static CubaseDrumMap GetCubaseDrumMap(this MapData data, string drumKitName, string baseOn = null)
         {
             var setting = App.GetService<ISettingService>();
-
             var isBaseOn = baseOn != null;
             var result = new CubaseDrumMap();
-            var items = data.GetKitPitechs(baseOn ?? drumKitName).ToList();
+            var items = data.GetKitPitches(baseOn ?? drumKitName).ToList();
             var articMap = ArticulationMap.GetArticulationMap(data, drumKitName);
 
             result.Initialize();
-
             result.Name = drumKitName;
 
-            Dictionary<int, int> odr = [];
+            Dictionary<int, int> odr = new();
 
             Enumerable.Range(0, 128).ToList().ForEach(pitch =>
             {
@@ -136,7 +147,10 @@ namespace QBDrumMap.Class.Extentions
                     }
 
                     int onote = !isBaseOn ? item.Pitch : articMap.Items.FirstOrDefault(m => m.ID == item.ArticulationID)?.Pitches.FirstOrDefault() ?? -1;
-                    if (item.Pitch != 0 && onote == -1) return;
+                    if (item.Pitch != 0 && onote == -1)
+                    {
+                        return;
+                    }
 
                     if (item.ArticulationID != 0)
                     {
@@ -167,46 +181,47 @@ namespace QBDrumMap.Class.Extentions
             });
 
             result.Order.Clear();
-
             result.Order.AddRange(
-                odr
-                .OrderBy(x => x.Value)
-                .ThenBy(x => x.Key)
-                .Select(x => x.Key)
-                .ToArray()
+                odr.OrderBy(x => x.Value)
+                   .ThenBy(x => x.Key)
+                   .Select(x => x.Key)
+                   .ToArray()
             );
 
             return result;
         }
 
-        private static IEnumerable<KitPitch> GetKitPitechsHasArticulation(this MapData data, Kit kit)
-        {
-            List<KitPitch> result = [];
+        #endregion
 
-            var allPitches =
-                kit.Pitches.Where(x => x.Pitch >= 0 && !string.IsNullOrWhiteSpace(x.Name))
-                .Select(x => new { p = x, a = data.Parts.SelectMany(x => x.Articulations).FirstOrDefault(a => a.ID == x.ArticulationID) ?? new Articulation() })
+        #region Private
+
+        private static IEnumerable<KitPitch> GetKitPitchesHasArticulation(this MapData data, Kit kit)
+        {
+            List<KitPitch> result = new();
+
+            var allPitches = kit.Pitches.Where(x => x.Pitch >= 0 && !string.IsNullOrWhiteSpace(x.Name))
+                .Select(x => new
+                {
+                    p = x,
+                    a = data.Parts.SelectMany(p => p.Articulations).FirstOrDefault(a => a.ID == x.ArticulationID) ?? new Articulation()
+                })
                 .ToArray();
 
-            var hasArticNoSeparate =
-                allPitches.Where(x => x.p.ArticulationID != 0 && x.p.Separator == Separator.None)
+            var hasArticNoSeparate = allPitches.Where(x => x.p.ArticulationID != 0 && x.p.Separator == Separator.None)
                 .OrderBy(x => x.a.DrumMapOrder)
                 .ToArray();
 
-            var noArticNoSeparate =
-                allPitches.Where(x => x.p.ArticulationID == 0 && x.p.Separator == Separator.None)
+            var noArticNoSeparate = allPitches.Where(x => x.p.ArticulationID == 0 && x.p.Separator == Separator.None)
                 .OrderBy(x => x.p.DisplayOrder)
                 .ThenBy(x => x.p.Pitch)
                 .ToArray();
 
-            var hasArticAndSeparate =
-                allPitches.Where(x => x.p.ArticulationID != 0 && x.p.Separator != Separator.None)
+            var hasArticAndSeparate = allPitches.Where(x => x.p.ArticulationID != 0 && x.p.Separator != Separator.None)
                 .OrderBy(x => x.p.Separator)
                 .ThenBy(x => x.a.DrumMapOrder)
                 .ToArray();
 
-            var noArticAndSeparate =
-                allPitches.Where(x => x.p.ArticulationID == 0 && x.p.Separator != Separator.None)
+            var noArticAndSeparate = allPitches.Where(x => x.p.ArticulationID == 0 && x.p.Separator != Separator.None)
                 .OrderBy(x => x.p.Separator)
                 .ThenBy(x => x.p.DisplayOrder)
                 .ThenBy(x => x.p.Pitch)
@@ -214,11 +229,17 @@ namespace QBDrumMap.Class.Extentions
 
             if (noArticAndSeparate.Any())
             {
-                hasArticNoSeparate.Union(noArticNoSeparate).ToList().ForEach(x => result.Add(x.p));
+                hasArticNoSeparate.Union(noArticNoSeparate).ToList().ForEach(x =>
+                {
+                    result.Add(x.p);
+                });
             }
             else
             {
-                hasArticNoSeparate.ToList().ForEach(x => result.Add(x.p));
+                hasArticNoSeparate.ToList().ForEach(x =>
+                {
+                    result.Add(x.p);
+                });
             }
 
             if ((hasArticNoSeparate.Any() || noArticAndSeparate.Any()) && (hasArticAndSeparate.Any() || noArticNoSeparate.Any()))
@@ -232,18 +253,23 @@ namespace QBDrumMap.Class.Extentions
 
             if (noArticAndSeparate.Any() == false)
             {
-                noArticNoSeparate.ToList().ForEach(x => result.Add(x.p));
+                noArticNoSeparate.ToList().ForEach(x =>
+                {
+                    result.Add(x.p);
+                });
             }
 
-            hasArticAndSeparate.Union(noArticAndSeparate).ToList().ForEach(x => result.Add(x.p));
+            hasArticAndSeparate.Union(noArticAndSeparate).ToList().ForEach(x =>
+            {
+                result.Add(x.p);
+            });
 
             return result;
         }
 
-        private static IEnumerable<KitPitch> GetKitPitechesNoArticulation(this MapData data, Kit kit)
+        private static IEnumerable<KitPitch> GetKitPitchesNoArticulation(this MapData data, Kit kit)
         {
-            return
-                kit.Pitches
+            return kit.Pitches
                 .Where(p => !string.IsNullOrWhiteSpace(p.Name))
                 .OrderBy(p => p.DisplayOrder)
                 .ToArray();
@@ -251,16 +277,19 @@ namespace QBDrumMap.Class.Extentions
 
         private static string GetPitchName(KitPitch item, string name)
         {
-            name = name +
-                item.Separator switch
-                {
-                    Separator.None => string.Empty,
-                    Separator.Separate => " (-)",
-                    Separator.Unload => " (+)",
-                    Separator.Duplicate => " (*)",
-                    _ => throw new ArgumentException(),
-                };
+            name = name + item.Separator switch
+            {
+                Separator.None => string.Empty,
+                Separator.Separate => " (-)",
+                Separator.Unload => " (+)",
+                Separator.Duplicate => " (*)",
+                _ => throw new ArgumentException(),
+            };
             return name;
         }
+
+        #endregion
+
+        #endregion
     }
 }

@@ -2,32 +2,44 @@
 {
     public record ArticulationMap
     {
+        #region Properties
+
+        // マップ名
         public string Name { get; set; } = string.Empty;
 
-        public List<ArticulationMapItem> Items { get; } = [];
+        // マップアイテムのリスト
+        public List<ArticulationMapItem> Items { get; } = new();
+
+        #endregion
+
+        #region Methods
+
+        #region General
 
         public static ArticulationMap GetArticulationMap(MapData data, string kitName)
         {
             if (data.Plugins.SelectMany(x => x.Kits).FirstOrDefault(x => x.Name == kitName) is not Kit kit)
             {
-                throw new Exception();
+                throw new InvalidOperationException($"Kit '{kitName}' not found.");
             }
 
-            ArticulationMap articMap = new() { Name = kitName };
+            ArticulationMap articMap = new()
+            {
+                Name = kitName
+            };
 
             foreach (var part in data.Parts)
             {
                 foreach (var articulation in part.Articulations)
                 {
-                    articMap.Items.Add(
-                        new ArticulationMapItem()
-                        {
-                            ID = articulation.ID,
-                            Name = articulation.Name,
-                            Order = articulation.DisplayOrder,
-                            PartID = part.ID,
-                            Complement = articulation.Complement,
-                        });
+                    articMap.Items.Add(new ArticulationMapItem()
+                    {
+                        ID = articulation.ID,
+                        Name = articulation.Name,
+                        Order = articulation.DisplayOrder,
+                        PartID = part.ID,
+                        Complement = articulation.Complement,
+                    });
                 }
             }
 
@@ -83,7 +95,7 @@
             {
                 if (articMap.Items.FirstOrDefault(a => a.ID == item.Complement) is not ArticulationMapItem mapItem)
                 {
-                    throw new Exception();
+                    throw new InvalidOperationException($"Complement Articulation ID '{item.Complement}' not found.");
                 }
 
                 if (mapItem.Pitches.Any())
@@ -94,5 +106,9 @@
 
             return articMap;
         }
+
+        #endregion
+
+        #endregion
     }
 }

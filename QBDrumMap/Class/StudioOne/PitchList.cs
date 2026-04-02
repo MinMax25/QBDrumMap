@@ -1,22 +1,33 @@
 ﻿using System.IO;
 using System.Text;
 using System.Xml.Serialization;
-using QBDrumMap.Class.Extentions;
+using QBDrumMap.Class.Extensions;
 
 namespace QBDrumMap.Class.StudioOne
 {
-    [Serializable()]
+    [Serializable]
     [System.ComponentModel.DesignerCategory("code")]
     [XmlType(AnonymousType = true)]
     [XmlRoot("Music.PitchNameList", Namespace = "", IsNullable = false)]
     public partial class PitchList
     {
-        [XmlElement("Music.PitchName")]
-        public List<PitchName> Items { get; set; } = [];
+        #region Properties
 
+        // ピッチ名のリスト項目
+        [XmlElement("Music.PitchName")]
+        public List<PitchName> Items { get; set; } = new();
+
+        // リストのタイトル
         [XmlAttribute("title")]
         public string Title { get; set; } = string.Empty;
 
+        #endregion
+
+        #region Methods
+
+        #region General
+
+        // 指定したパスにStudio One形式のXMLとして保存
         public void Save(string path)
         {
             StringBuilder sb = new();
@@ -29,10 +40,27 @@ namespace QBDrumMap.Class.StudioOne
                 sb.Append("\t<Music.PitchName");
                 sb.Append($" pitch=\"{item.Pitch}\"");
                 sb.Append($" name=\"{EscXML(item.Name)}\"");
-                if (!string.IsNullOrWhiteSpace(item.Color)) sb.Append($" color=\"{item.Color}\"");
-                if (!string.IsNullOrWhiteSpace(item.ScorePitch)) sb.Append($" scorePitch=\"{item.ScorePitch}\"");
-                if (!string.IsNullOrWhiteSpace(item.Notehead)) sb.Append($" notehead=\"{item.Notehead}\"");
-                if (!string.IsNullOrWhiteSpace(item.Technique)) sb.Append($" technique=\"{item.Technique}\"");
+
+                if (!string.IsNullOrWhiteSpace(item.Color))
+                {
+                    sb.Append($" color=\"{item.Color}\"");
+                }
+
+                if (!string.IsNullOrWhiteSpace(item.ScorePitch))
+                {
+                    sb.Append($" scorePitch=\"{item.ScorePitch}\"");
+                }
+
+                if (!string.IsNullOrWhiteSpace(item.Notehead))
+                {
+                    sb.Append($" notehead=\"{item.Notehead}\"");
+                }
+
+                if (!string.IsNullOrWhiteSpace(item.Technique))
+                {
+                    sb.Append($" technique=\"{item.Technique}\"");
+                }
+
                 sb.AppendLine("/>");
             }
 
@@ -41,15 +69,19 @@ namespace QBDrumMap.Class.StudioOne
             File.WriteAllText(path.ToSafeFilePath(), sb.ToString(), Encoding.UTF8);
         }
 
+        // XMLの特殊文字をエスケープ処理
         public static string EscXML(string str)
         {
-            return
-                $"{str}".
-                    Replace("&", "&amp;").
-                    Replace("\"", "&quot;").
-                    Replace("'", "&apos;").
-                    Replace("<", "&lt;").
-                    Replace(">", "&gt;");
+            return $"{str}"
+                .Replace("&", "&amp;")
+                .Replace("\"", "&quot;")
+                .Replace("'", "&apos;")
+                .Replace("<", "&lt;")
+                .Replace(">", "&gt;");
         }
+
+        #endregion
+
+        #endregion
     }
 }

@@ -6,52 +6,61 @@ using QBDrumMap.Class.StudioOne;
 
 namespace QBDrumMap.Class.MapModels
 {
-    public partial class Part
-        : ModelBase
-        , IHasID
+    public partial class Part : ModelBase, IHasID
     {
+        #region Fields
+
+        // パートの一意なID
         [ObservableProperty]
         private int iD;
 
+        // パート名
         [ObservableProperty]
         [ValidatePart]
         [NotifyDataErrorInfo]
         private string name = string.Empty;
 
+        // スコア表示時のピッチ
         [ObservableProperty]
         private int scorePitch;
 
-        #region Studio One
-
+        // Studio One: カラー設定
         [ObservableProperty]
         private string color;
 
+        // Studio One: ノートヘッドの種類
         [ObservableProperty]
         private StudioOneNoteHead noteHead;
 
+        // Studio One: 奏法設定
         [ObservableProperty]
         private StudioOneTechnique technique;
 
-        #endregion
-
-        #region Cubase
-
+        // Cubase: インストゥルメントエンティティID
         [ObservableProperty]
         private string instrumentEntityID = string.Empty;
 
+        // Cubase: ノートヘッドセット番号
         [ObservableProperty]
         private int noteHeadSet;
 
+        // Cubase: ボイスタイプ
         [ObservableProperty]
         private CubaseVoiceType voice;
 
+        // Cubase: テクニックエンティティID
         [ObservableProperty]
         private string techniqueEntityID = string.Empty;
 
+        // パートに属するアーティキュレーションのコレクション
+        [ObservableProperty]
+        private ObservableCollection<Articulation> articulations = new();
+
         #endregion
 
-        [ObservableProperty]
-        private ObservableCollection<Articulation> articulations = [];
+        #region Methods
+
+        #region Property Change Handler
 
         partial void OnIDChanged(int oldValue, int newValue)
         {
@@ -103,6 +112,10 @@ namespace QBDrumMap.Class.MapModels
             UndoManager?.RegisterPropertyChange(() => TechniqueEntityID, oldValue, newValue);
         }
 
+        #endregion
+
+        #region General
+
         public override object Clone()
         {
             return new Part
@@ -117,9 +130,16 @@ namespace QBDrumMap.Class.MapModels
                 NoteHeadSet = NoteHeadSet,
                 Voice = Voice,
                 TechniqueEntityID = TechniqueEntityID,
-                Articulations = new ObservableCollection<Articulation>(Articulations.Select(articulation => (Articulation)articulation.Clone())),
+                Articulations = new ObservableCollection<Articulation>(Articulations.Select(articulation =>
+                {
+                    return (Articulation)articulation.Clone();
+                })),
                 DisplayOrder = DisplayOrder
             };
         }
+
+        #endregion
+
+        #endregion
     }
 }

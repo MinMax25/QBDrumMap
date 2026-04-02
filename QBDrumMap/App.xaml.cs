@@ -148,7 +148,8 @@ namespace QBDrumMap
         {
             GetService<IDIContainer>()?.Flush();
 
-            if (_host == null) return;
+            if (_host == null)
+                return;
 
             await _host.StopAsync();
             _host.Dispose();

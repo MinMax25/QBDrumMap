@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using CommunityToolkit.Mvvm.ComponentModel;
 using libQB.Attributes;
@@ -8,22 +9,25 @@ using QBDrumMap.Views;
 namespace QBDrumMap.ViewModels
 {
     [DIWindow<About>]
-    public partial class AboutViewModel
-        : ViewModelBase
+    public partial class AboutViewModel : ViewModelBase
     {
-        #region Properties
+        #region Fields
 
+        // ライセンス情報のテキスト
         [ObservableProperty]
-        private string license;
+        private string _license;
 
+        // アプリケーション名
         [ObservableProperty]
-        private string applicationName;
+        private string _applicationName;
 
+        // バージョン情報文字列
         [ObservableProperty]
-        private string version;
+        private string _version;
 
+        // コピーライト表記
         [ObservableProperty]
-        private string copyright = "© 2025 Min Max";
+        private string _copyright = "© 2025 Min Max";
 
         #endregion
 
@@ -33,14 +37,23 @@ namespace QBDrumMap.ViewModels
         {
             ApplicationName = typeof(App).Assembly.GetName().Name;
 
-            var fullname = typeof(App).Assembly.Location;
-            var info = System.Diagnostics.FileVersionInfo.GetVersionInfo(fullname);
-            version = $"Version {info.FileVersion}";
+            string fullName = typeof(App).Assembly.Location;
+            FileVersionInfo info = FileVersionInfo.GetVersionInfo(fullName);
 
-            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\license.txt");
-            if (File.Exists(path))
+            // フィールドに直接代入せず、プロパティまたは通知を伴う形式で設定
+            Version = $"Version {info.FileVersion}";
+
+            string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+            string directory = Path.GetDirectoryName(assemblyLocation);
+
+            if (directory != null)
             {
-                License = File.ReadAllText(path);
+                string path = Path.Combine(directory, @"Resources\license.txt");
+
+                if (File.Exists(path))
+                {
+                    License = File.ReadAllText(path);
+                }
             }
         }
 

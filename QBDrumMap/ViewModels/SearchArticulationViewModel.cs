@@ -6,7 +6,7 @@ using CommunityToolkit.Mvvm.Input;
 using libQB.Attributes;
 using libQB.WindowServices;
 using QBDrumMap.Class;
-using QBDrumMap.Class.Extentions;
+using QBDrumMap.Class.Extensions;
 using QBDrumMap.Class.MapModels;
 using QBDrumMap.Class.Services;
 using QBDrumMap.Views;
@@ -14,30 +14,55 @@ using QBDrumMap.Views;
 namespace QBDrumMap.ViewModels
 {
     [DIWindow<SearchArticulation>]
-    public partial class SearchArticulationViewModel
-        : ViewModelBase
-        , IResultProvider<Articulation>
+    public partial class SearchArticulationViewModel : ViewModelBase, IResultProvider<Articulation>
     {
-        #region Properties
+        #region Fields
 
+        // フィルタリング・表示用のアーティキュレーション一覧ビュー
         public ICollectionView Articulations { get; init; }
 
+        // アーティキュレーション名で絞り込むためのフィルター文字列
         [ObservableProperty]
-        private string filterArticulationName;
+        private string _filterArticulationName;
 
+        // リストで選択されているアーティキュレーション
         [ObservableProperty]
-        private Articulation selectedArticulation;
+        private Articulation _selectedArticulation;
 
-        public Articulation GetResult() => SelectedArticulation;
+        #endregion
+
+        #region Properties
+
+        // IResultProviderの実装: 選択された結果を返す
+        public Articulation GetResult()
+        {
+            return SelectedArticulation;
+        }
 
         #endregion
 
         #region ctor
 
         public SearchArticulationViewModel(IDIContainer diContainer)
-          : base(diContainer)
+            : base(diContainer)
         {
-            var artics = MapData.Parts.GroupBy(x => x.DisplayOrder).SelectMany(x => x.SelectMany(y => y.Articulations.OrderBy(y => y.DisplayOrder))).ToList();
+            var artics = MapData.Parts
+                .GroupBy(x =>
+                {
+                    return x.DisplayOrder;
+                })
+                .SelectMany(x =>
+                {
+                    return x.SelectMany(y =>
+                    {
+                        return y.Articulations.OrderBy(z =>
+                        {
+                            return z.DisplayOrder;
+                        });
+                    });
+                })
+                .ToList();
+
             Articulations = CollectionViewSource.GetDefaultView(artics);
             Articulations.Filter = FilterMethod;
 
@@ -50,6 +75,7 @@ namespace QBDrumMap.ViewModels
 
         #region PropertyChanged Callbacks
 
+        // フィルター文字列変更時に設定を保存し、ビューを更新する
         partial void OnFilterArticulationNameChanged(string value)
         {
             SettingService.SearchArticulationFilter = value;
@@ -73,11 +99,18 @@ namespace QBDrumMap.ViewModels
 
         #region General
 
+        // コレクションビューのフィルタリングロジック
         private bool FilterMethod(object obj)
         {
-            if (obj is not Articulation articulation) return false;
+            if (obj is not Articulation articulation)
+            {
+                return false;
+            }
 
-            if (string.IsNullOrEmpty(FilterArticulationName)) return true;
+            if (string.IsNullOrEmpty(FilterArticulationName))
+            {
+                return true;
+            }
 
             return articulation.Name.Like(FilterArticulationName);
         }
@@ -89,6 +122,7 @@ namespace QBDrumMap.ViewModels
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
+
             if (disposing)
             {
             }

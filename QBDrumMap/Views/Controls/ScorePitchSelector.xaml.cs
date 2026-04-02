@@ -138,13 +138,13 @@ namespace QBDrumMap.Views.Controls
 
         private void UpdateNoteHead()
         {
-            var head = StudioOneScore.NoteHeadVisibillities.FirstOrDefault(x => x.NoteHead == NoteHead);
+            var head = StudioOneScore.NoteHeadVisibilities.FirstOrDefault(x => x.NoteHead == NoteHead);
             _noteHeadElements.SetVisibility(head);
         }
 
         private void UpdateTechnique()
         {
-            var technique = StudioOneScore.TechniqueVisibillities.FirstOrDefault(x => x.Technique == Technique);
+            var technique = StudioOneScore.TechniqueVisibilities.FirstOrDefault(x => x.Technique == Technique);
             _techniqueElements.SetVisibility(technique);
         }
 

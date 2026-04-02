@@ -17,46 +17,77 @@ using QBDrumMap.Views;
 namespace QBDrumMap.ViewModels
 {
     [DIPage<ConvertMidiPage>]
-    public partial class ConvertMidiViewModel
-        : ViewModelBase
+    public partial class ConvertMidiViewModel : ViewModelBase
     {
+        #region Fields
+
+        // キット一覧の生データ
+        private ObservableCollection<KitListItem> _kits = new();
+
+        // 変換元の基準となるキット
+        [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(ConvertCommand))]
+        private Kit _baseOn;
+
+        // 最後に選択したMIDIファイルのパス
+        [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(ConvertCommand))]
+        private string _lastConvertMIDIFilePath;
+
+        // 選択されているキットの数
+        [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(ConvertCommand))]
+        private int _selectedKitsCount;
+
+        // キットリストのビュー（グルーピング表示用）
+        [ObservableProperty]
+        private ICollectionView _kitListView;
+
+        // 選択されたキットのリスト
+        [ObservableProperty]
+        private ObservableCollection<KitListItem> _selectedKits = new();
+
+        // グループ展開状態
+        [ObservableProperty]
+        private bool _isGroupExpanded;
+
+        #endregion
+
         #region Properties
 
-        public ISettingService Setting => SettingService;
+        // 設定サービスへの参照
+        public ISettingService Setting
+        {
+            get
+            {
+                return SettingService;
+            }
+        }
 
-        public IEnumerable<Kit> BaseOnComboSource => [.. MapData.Plugins.OrderBy(x => x.DisplayOrder).SelectMany(x => x.Kits.OrderBy(k => k.DisplayOrder))];
+        // コンボボックスに表示する全キットのリスト
+        public IEnumerable<Kit> BaseOnComboSource
+        {
+            get
+            {
+                return [.. MapData.Plugins.OrderBy(x => x.DisplayOrder).SelectMany(x => x.Kits.OrderBy(k => k.DisplayOrder))];
+            }
+        }
 
-        private ObservableCollection<KitListItem> Kits = new();
-
-        [ObservableProperty]
-        private ICollectionView kitListView;
-
-        [ObservableProperty]
-        private ObservableCollection<KitListItem> selectedKits = [];
-
-        [ObservableProperty]
-        [NotifyCanExecuteChangedFor(nameof(ConvertCommand))]
-        private Kit baseOn;
-
-        [ObservableProperty]
-        [NotifyCanExecuteChangedFor(nameof(ConvertCommand))]
-        private string lastConvertMIDIFilePath;
-
-        [ObservableProperty]
-        [NotifyCanExecuteChangedFor(nameof(ConvertCommand))]
-        private int selectedKitsCount;
-
-        private bool CanConvert => !string.IsNullOrWhiteSpace(LastConvertMIDIFilePath) && BaseOn != null && SelectedKitsCount > 0;
-
-        [ObservableProperty]
-        private bool isGroupExpanded;
+        // 変換実行可能かどうかの判定
+        private bool CanConvert
+        {
+            get
+            {
+                return !string.IsNullOrWhiteSpace(LastConvertMIDIFilePath) && BaseOn != null && SelectedKitsCount > 0;
+            }
+        }
 
         #endregion
 
         #region ctor
 
         public ConvertMidiViewModel(IDIContainer diContainer)
-          : base(diContainer)
+            : base(diContainer)
         {
             Task.Run(InitializeDataAsync);
 
@@ -79,8 +110,16 @@ namespace QBDrumMap.ViewModels
         [RelayCommand]
         private async Task OnOpenFile()
         {
-            var path = await Dialog.ShowOpenFileDialog(libQB.Properties.Dialog.Common_OpenFile, "MIDI File|*.mid", GetValidFilePath(LastConvertMIDIFilePath));
-            if (path == null) return;
+            var path = await Dialog.ShowOpenFileDialog(
+                libQB.Properties.Dialog.Common_OpenFile,
+                "MIDI File|*.mid",
+                GetValidFilePath(LastConvertMIDIFilePath));
+
+            if (path == null)
+            {
+                return;
+            }
+
             LastConvertMIDIFilePath = path;
         }
 
@@ -99,11 +138,11 @@ namespace QBDrumMap.ViewModels
             try
             {
                 MidiData baseMIDI = SMFLoader.Load(LastConvertMIDIFilePath);
-
                 ArticulationMap baseArticMap = ArticulationMap.GetArticulationMap(MapData, BaseOn.Name);
 
-                var systemEvents = baseMIDI.GetAllEvents().Where(x => x.Channel == 0).ToList();
-                var channelEvents = baseMIDI.GetAllEvents().Where(x => x.Channel > 0).ToList();
+                var allEvents = baseMIDI.GetAllEvents();
+                var systemEvents = allEvents.Where(x => x.Channel == 0).ToList();
+                var channelEvents = allEvents.Where(x => x.Channel > 0).ToList();
 
                 if (Setting.ConvertMIDIFormat == MIDIFormat.Format0)
                 {
@@ -120,7 +159,6 @@ namespace QBDrumMap.ViewModels
             {
                 await Dialog.ShowErrorAsync(Properties.Resources.MIDIError);
             }
-
         }
 
         [RelayCommand]
@@ -137,7 +175,7 @@ namespace QBDrumMap.ViewModels
 
         #endregion
 
-        #region Event Handling
+        #region EventHandler
 
         private async void OnMapDataLoaded(object sender, RoutedEventArgs e)
         {
@@ -160,13 +198,13 @@ namespace QBDrumMap.ViewModels
             await Application.Current.Dispatcher.InvokeAsync(() =>
             {
                 KitListView = null;
+                _kits.Clear();
 
-                Kits.Clear();
                 foreach (var plugin in MapData.Plugins.OrderBy(x => x.DisplayOrder))
                 {
                     foreach (var kit in plugin.Kits.OrderBy(x => x.DisplayOrder))
                     {
-                        Kits.Add(new KitListItem
+                        _kits.Add(new KitListItem
                         {
                             PluginID = plugin.ID,
                             PluginName = plugin.Name,
@@ -178,7 +216,7 @@ namespace QBDrumMap.ViewModels
                     }
                 }
 
-                KitListView = CollectionViewSource.GetDefaultView(Kits);
+                KitListView = CollectionViewSource.GetDefaultView(_kits);
                 KitListView.GroupDescriptions.Clear();
                 KitListView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(KitListItem.PluginName)));
                 KitListView.Refresh();
@@ -193,31 +231,29 @@ namespace QBDrumMap.ViewModels
             {
                 return path;
             }
-            else
-            {
-                return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            }
+
+            return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
         }
 
         private void ConvertToFormat0(MidiData baseMIDI, ArticulationMap baseArticMap, List<MidiEvent> channelEvents)
         {
-            string convertedFilePath = Path.Combine(Path.GetDirectoryName(baseMIDI.FilePath), $"{Path.GetFileNameWithoutExtension(baseMIDI.FilePath)} Converted");
+            string baseDir = Path.GetDirectoryName(baseMIDI.FilePath);
+            string convertedFilePath = Path.Combine(baseDir, $"{Path.GetFileNameWithoutExtension(baseMIDI.FilePath)} Converted");
+
             if (Directory.Exists(convertedFilePath))
             {
                 Directory.Delete(convertedFilePath, true);
             }
             Directory.CreateDirectory(convertedFilePath);
 
-            // Out Of Articulation
+            // Out Of Articulation (マッピング漏れ分)
             MidiData dstMIDI = new(baseMIDI.Division);
-
             Track outTrack = new(dstMIDI);
-
             outTrack.EventAdd(new MidiEvent(outTrack) { AbsoluteTick = 0, Message = new SequenceTrackName($"#{baseArticMap.Name}") });
 
             ConvertChannelEvents(channelEvents, baseArticMap, baseArticMap, outTrack, true);
 
-            if (outTrack.Events.Where(x => x.Message is NoteOn).Any())
+            if (outTrack.Events.Any(x => x.Message is NoteOn))
             {
                 dstMIDI.AddTrack(outTrack);
                 dstMIDI.Organize();
@@ -225,14 +261,13 @@ namespace QBDrumMap.ViewModels
                 SMFConverter.SaveMidiData(dstMIDI, filter: false);
             }
 
-            //
+            // 各選択キットへの変換
             foreach (var drumKit in SelectedKits.OrderBy(x => x.PluginDisplayOrder).ThenBy(x => x.KitDisplayOrder))
             {
                 dstMIDI = new MidiData(baseMIDI.Division);
                 ArticulationMap dstArticMap = ArticulationMap.GetArticulationMap(MapData, drumKit.KitName);
 
                 Track dstTrack = new(dstMIDI);
-
                 dstTrack.EventAdd(new MidiEvent(dstTrack) { AbsoluteTick = 0, Message = new SequenceTrackName(drumKit.KitName) });
 
                 ConvertChannelEvents(channelEvents, baseArticMap, dstArticMap, dstTrack);
@@ -249,6 +284,7 @@ namespace QBDrumMap.ViewModels
         {
             MidiData dstMIDI = new(baseMIDI.Division);
 
+            // テンポ・拍子等のシステムトラック
             Track sysTrack = new(dstMIDI);
             foreach (var midiEvent in systemEvents)
             {
@@ -265,32 +301,28 @@ namespace QBDrumMap.ViewModels
 
             // Out Of Articulation
             Track outTrack = new(dstMIDI);
-
             outTrack.EventAdd(new MidiEvent(outTrack) { AbsoluteTick = 0, Message = new SequenceTrackName($"#{baseArticMap.Name}") });
-
             ConvertChannelEvents(channelEvents, baseArticMap, baseArticMap, outTrack, true);
 
-            if (outTrack.Events.Where(x => x.Message is NoteOn).Any())
+            if (outTrack.Events.Any(x => x.Message is NoteOn))
             {
                 dstMIDI.AddTrack(outTrack);
             }
 
-            //
+            // 各選択キット
             foreach (var drumKit in SelectedKits.OrderBy(x => x.PluginDisplayOrder).ThenBy(x => x.KitDisplayOrder))
             {
                 ArticulationMap dstArticMap = ArticulationMap.GetArticulationMap(MapData, drumKit.KitName);
-
                 Track dstTrack = new(dstMIDI);
-
                 dstTrack.EventAdd(new MidiEvent(dstTrack) { AbsoluteTick = 0, Message = new SequenceTrackName(drumKit.KitName) });
 
                 ConvertChannelEvents(channelEvents, baseArticMap, dstArticMap, dstTrack);
-
                 dstMIDI.AddTrack(dstTrack);
             }
 
             dstMIDI.Organize();
-            dstMIDI.FilePath = Path.Combine(Path.GetDirectoryName(baseMIDI.FilePath) ?? "", $"{Path.GetFileNameWithoutExtension(baseMIDI.FilePath)} Converted.mid");
+            string dir = Path.GetDirectoryName(baseMIDI.FilePath) ?? string.Empty;
+            dstMIDI.FilePath = Path.Combine(dir, $"{Path.GetFileNameWithoutExtension(baseMIDI.FilePath)} Converted.mid");
             SMFConverter.SaveMidiData(dstMIDI, filter: false);
         }
 
@@ -301,10 +333,12 @@ namespace QBDrumMap.ViewModels
                 if (midiEvent.Message is ChannelNoteMessage note)
                 {
                     int dstPitch = GetPitch(baseArticMap, dstArticMap, note.Pitch);
+
                     if (!isOut && dstPitch >= 0)
                     {
                         dstTrack.EventAdd(midiEvent with { Message = note with { Pitch = (byte)dstPitch } });
                     }
+
                     if (isOut && dstPitch < 0)
                     {
                         dstTrack.EventAdd(midiEvent with { Message = note with { Pitch = note.Pitch } });
@@ -319,13 +353,24 @@ namespace QBDrumMap.ViewModels
 
         protected static int GetPitch(ArticulationMap baseArticMap, ArticulationMap dstArticMap, byte basePitch)
         {
-            if (baseArticMap?.Items.FirstOrDefault(i => !i.IsSub && i.Pitches.Contains(basePitch)) is ArticulationMapItem baseArtic)
+            var baseItem = baseArticMap?.Items.FirstOrDefault(i =>
             {
-                if (baseArticMap != null && dstArticMap?.Items.FirstOrDefault(i => i.ID == baseArtic.ID) is ArticulationMapItem dstArtic)
+                return !i.IsSub && i.Pitches.Contains(basePitch);
+            });
+
+            if (baseItem != null)
+            {
+                var dstItem = dstArticMap?.Items.FirstOrDefault(i =>
                 {
-                    return dstArtic.Pitch;
+                    return i.ID == baseItem.ID;
+                });
+
+                if (dstItem != null)
+                {
+                    return dstItem.Pitch;
                 }
             }
+
             return -1;
         }
 
@@ -336,6 +381,7 @@ namespace QBDrumMap.ViewModels
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
+
             if (disposing)
             {
                 MapData.Loaded -= OnMapDataLoaded;

@@ -14,21 +14,34 @@ using QBDrumMap.Views;
 namespace QBDrumMap.ViewModels
 {
     [DIPage<PluginPage>]
-    public partial class PluginViewModel
-        : ViewModelBaseHasContents
+    public partial class PluginViewModel : ViewModelBaseHasContents
     {
+        #region Fields
+
+        // プラグイン一覧のビュー
+        [ObservableProperty]
+        private ICollectionView _pluginsView;
+
+        // 選択されている複数のプラグイン
+        [ObservableProperty]
+        private ObservableCollection<Plugin> _selectedPlugins = new();
+
+        // 編集対象として選択されている単一のプラグイン
+        [ObservableProperty]
+        private Plugin _selectedPlugin;
+
+        #endregion
+
         #region Properties
 
-        public ISettingService Setting => SettingService;
-
-        [ObservableProperty]
-        private ICollectionView pluginsView;
-
-        [ObservableProperty]
-        private ObservableCollection<Plugin> selectedPlugins = [];
-
-        [ObservableProperty]
-        private Plugin selectedPlugin;
+        // 設定サービスへの参照
+        public ISettingService Setting
+        {
+            get
+            {
+                return SettingService;
+            }
+        }
 
         #endregion
 
@@ -54,12 +67,25 @@ namespace QBDrumMap.ViewModels
         [RelayCommand]
         private async Task OnDeleteSelectedPlugins()
         {
-            if (SelectedPlugins == null) return;
-            if (SelectedPlugins.Count == 0) return;
+            if (SelectedPlugins == null || SelectedPlugins.Count == 0)
+            {
+                return;
+            }
 
-            string names = string.Join("', '", SelectedPlugins.Select(x => x.Name).ToArray());
-            string message = string.Format(libQB.Properties.Resources.Message_Command_Delete, Properties.Name.Plugin, names);
-            if (await Dialog.ShowConfirmAsync(message, libQB.Properties.Dialog.Title_Command_Delete) == false) return;
+            string names = string.Join("', '", SelectedPlugins.Select(x =>
+            {
+                return x.Name;
+            }));
+
+            string message = string.Format(
+                libQB.Properties.Resources.Message_Command_Delete,
+                Properties.Name.Plugin,
+                names);
+
+            if (await Dialog.ShowConfirmAsync(message, libQB.Properties.Dialog.Title_Command_Delete) == false)
+            {
+                return;
+            }
 
             foreach (var item in SelectedPlugins.ToArray())
             {
@@ -82,6 +108,7 @@ namespace QBDrumMap.ViewModels
             };
             plugin.Name = $"Plugin{plugin.ID}";
 
+            // Expression Lambda (式ツリー) を使用
             MapData.Plugins.AddItem(plugin, x => x.DisplayOrder);
 
             SelectedPlugin = plugin;
@@ -101,9 +128,9 @@ namespace QBDrumMap.ViewModels
 
         #endregion
 
-        #region PropertyChanged Callbacks
+        #region EventHandler
 
-        private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             switch (e.PropertyName)
             {
@@ -122,8 +149,15 @@ namespace QBDrumMap.ViewModels
 
         private async void OnMapDataSaved(object sender, DrumMapIOEventArgs e)
         {
-            await Application.Current.Dispatcher.InvokeAsync(PluginsView.Refresh);
+            await Application.Current.Dispatcher.InvokeAsync(() =>
+            {
+                PluginsView.Refresh();
+            });
         }
+
+        #endregion
+
+        #region PropertyChanged Callbacks
 
         partial void OnSelectedPluginChanged(Plugin oldValue, Plugin newValue)
         {
@@ -132,10 +166,12 @@ namespace QBDrumMap.ViewModels
 
             IsCommandEnabled = !MapData.EditState;
             IsContentEnabled = newValue != null;
+
             if (newValue != (ContentViewModel as KitPanelViewModel)?.Plugin)
             {
                 ContentViewModel?.Dispose();
             }
+
             ContentViewModel = App.GetService<KitPanelFactory>()?.Create(newValue);
         }
 
@@ -149,7 +185,10 @@ namespace QBDrumMap.ViewModels
 
             var sortedPlugins = await Task.Run(() =>
             {
-                return MapData.Plugins.OrderBy(x => x.DisplayOrder).ToList();
+                return MapData.Plugins.OrderBy(x =>
+                {
+                    return x.DisplayOrder;
+                }).ToList();
             });
 
             await Application.Current.Dispatcher.InvokeAsync(() =>
@@ -174,9 +213,10 @@ namespace QBDrumMap.ViewModels
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
+
             if (disposing)
             {
-                if (ContentViewModel != null) ContentViewModel.Dispose();
+                ContentViewModel?.Dispose();
                 MapData.Loaded -= OnMapDataLoaded;
                 MapData.Saved -= OnMapDataSaved;
                 MapData.EditStateChanged -= OnPropertyChanged;

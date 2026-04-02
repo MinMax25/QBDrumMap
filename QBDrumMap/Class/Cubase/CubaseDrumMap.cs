@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Linq;
 using System.Xml.XPath;
-using QBDrumMap.Class.Extentions;
+using QBDrumMap.Class.Extensions;
 
 namespace QBDrumMap.Class.Cubase
 {
@@ -25,19 +25,29 @@ namespace QBDrumMap.Class.Cubase
 
         #region ctor
 
-        public CubaseDrumMap() { }
+        public CubaseDrumMap()
+        {
+        }
 
         #endregion
 
         #region Methods
 
+        #region General
+
         public static CubaseDrumMap Load(string filePath)
         {
             CubaseDrumMap drumMap;
 
-            if (XDocument.Load(filePath) is not XDocument doc) throw new FileNotFoundException(filePath);
+            if (XDocument.Load(filePath) is not XDocument doc)
+            {
+                throw new FileNotFoundException(filePath);
+            }
 
-            if (doc.XPathSelectElement($"/{Tag.DrumMap}") is not XElement root) throw new ArgumentException(filePath);
+            if (doc.XPathSelectElement($"/{Tag.DrumMap}") is not XElement root)
+            {
+                throw new ArgumentException(filePath);
+            }
 
             IEnumerable<XElement> GetItems(string key) => root.XPathSelectElements($"*[@{CubaseAttr.name}='{key}']/{Tag.item}");
 
@@ -54,6 +64,7 @@ namespace QBDrumMap.Class.Cubase
 
             drumMap.OutputDevices.GetElement(GetItems(nameof(OutputDevices)));
 
+            // nameof(Flags) に統一
             drumMap.Flags = int.Parse(root.XPathSelectElement($"*[@{CubaseAttr.name}='{nameof(Flags)}']")?.Attribute(CubaseAttr.value)?.Value ?? "0");
 
             return drumMap;
@@ -74,12 +85,17 @@ namespace QBDrumMap.Class.Cubase
             root.Add(Map.ToElement());
 
             XElement order = new XElement(Tag.list, [new XAttribute(CubaseAttr.name, nameof(Order)), new XAttribute(CubaseAttr.type, Tag.@int)]);
-            Order.ForEach(item => order.Add(new XElement(Tag.item, new XAttribute(CubaseAttr.value, $"{item}"))));
+
+            Order.ForEach(item =>
+            {
+                order.Add(new XElement(Tag.item, new XAttribute(CubaseAttr.value, $"{item}")));
+            });
+
             root.Add(order);
 
             root.Add(OutputDevices.ToElement());
 
-            root.Add(new XElement(Tag.@int, [new XAttribute(CubaseAttr.name, $"{CubaseAttr.Flags}"), new XAttribute($"{CubaseAttr.value}", Flags)]));
+            root.Add(new XElement(Tag.@int, [new XAttribute(CubaseAttr.name, $"{nameof(Flags)}"), new XAttribute($"{CubaseAttr.value}", Flags)]));
 
             doc.Save(filePath.ToSafeFilePath());
         }
@@ -98,6 +114,8 @@ namespace QBDrumMap.Class.Cubase
 
             OutputDevices.Items.Add(new OutputDevicesItem());
         }
+
+        #endregion
 
         #endregion
     }

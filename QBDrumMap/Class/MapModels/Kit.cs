@@ -4,29 +4,41 @@ using QBDrumMap.Class.CustomValidations;
 
 namespace QBDrumMap.Class.MapModels
 {
-    public partial class Kit
-        : ModelBase
-        , IHasID
+    public partial class Kit : ModelBase, IHasID
     {
+        #region Fields
+
+        // キットの一意なID
         [ObservableProperty]
         private int iD;
 
+        // キット名
         [ObservableProperty]
         [ValidateKit]
         [NotifyDataErrorInfo]
         private string name = string.Empty;
 
+        // バンクセレクトMSB (CC#0)
         [ObservableProperty]
         private int bankSelectMSB;
 
+        // バンクセレクトLSB (CC#32)
         [ObservableProperty]
         private int bankSelectLSB;
 
+        // プログラムチェンジ番号
         [ObservableProperty]
         private int programNumber;
 
+        // キットに含まれるピッチ割り当てのコレクション
         [ObservableProperty]
-        private ObservableCollection<KitPitch> pitches = [];
+        private ObservableCollection<KitPitch> pitches = new();
+
+        #endregion
+
+        #region Methods
+
+        #region Property Change Handler
 
         partial void OnIDChanged(int oldValue, int newValue)
         {
@@ -53,15 +65,29 @@ namespace QBDrumMap.Class.MapModels
             UndoManager?.RegisterPropertyChange(() => ProgramNumber, oldValue, newValue);
         }
 
+        #endregion
+
+        #region General
+
         public override object Clone()
         {
             return new Kit
             {
                 ID = ID,
                 Name = Name,
-                Pitches = new ObservableCollection<KitPitch>(Pitches.Select(pitch => (KitPitch)pitch.Clone())),
+                BankSelectMSB = BankSelectMSB,
+                BankSelectLSB = BankSelectLSB,
+                ProgramNumber = ProgramNumber,
+                Pitches = new ObservableCollection<KitPitch>(Pitches.Select(pitch =>
+                {
+                    return (KitPitch)pitch.Clone();
+                })),
                 DisplayOrder = DisplayOrder
             };
         }
+
+        #endregion
+
+        #endregion
     }
 }
