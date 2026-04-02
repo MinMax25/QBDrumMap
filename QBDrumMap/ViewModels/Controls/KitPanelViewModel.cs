@@ -77,12 +77,15 @@ namespace QBDrumMap.ViewModels.Controls
         [RelayCommand]
         private async Task OnDeleteSelectedKits()
         {
-            if (SelectedKits == null) return;
-            if (SelectedKits.Count == 0) return;
+            if (SelectedKits == null)
+                return;
+            if (SelectedKits.Count == 0)
+                return;
 
             string names = string.Join("', '", SelectedKits.Select(x => x.Name).ToArray());
             string message = string.Format(libQB.Properties.Resources.Message_Command_Delete, Properties.Name.Kit, names);
-            if (await Dialog.ShowConfirmAsync(message, libQB.Properties.Dialog.Title_Command_Delete) == false) return;
+            if (await Dialog.ShowConfirmAsync(message, libQB.Properties.Dialog.Title_Command_Delete) == false)
+                return;
 
             foreach (var k in SelectedKits.ToArray())
             {
@@ -99,7 +102,8 @@ namespace QBDrumMap.ViewModels.Controls
         [RelayCommand]
         private void OnAdd()
         {
-            if (Plugin == null) return;
+            if (Plugin == null)
+                return;
 
             Kit kit = new();
 
@@ -168,7 +172,8 @@ namespace QBDrumMap.ViewModels.Controls
             ContentViewModel = App.GetService<KitPitchesPanelFactory>()?.Create(SelectedKit, SameKit);
             SameKit = true;
 
-            if (newValue == null) return;
+            if (newValue == null)
+                return;
             MIDI.SendProgramChange(Plugin, newValue);
         }
 
@@ -185,7 +190,8 @@ namespace QBDrumMap.ViewModels.Controls
                 {
                     Plugin.PropertyChanged -= OnPropertyChanged;
                 }
-                if (ContentViewModel != null) ContentViewModel.Dispose();
+                if (ContentViewModel != null)
+                    ContentViewModel.Dispose();
                 MapData.EditStateChanged -= OnPropertyChanged;
                 PropertyChanged -= OnPropertyChanged;
             }

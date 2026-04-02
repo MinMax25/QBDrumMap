@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using QBDrumMap.Class.Extentions;
+using QBDrumMap.Class.Extensions;
 using QBDrumMap.Class.MapModels;
 
 namespace QBDrumMap.Class.CustomValidations
@@ -9,7 +9,8 @@ namespace QBDrumMap.Class.CustomValidations
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (validationContext?.ObjectInstance is not Plugin plugin) return ValidationResult.Success;
+            if (validationContext?.ObjectInstance is not Plugin plugin)
+                return ValidationResult.Success;
 
             string str = $"{value}";
 

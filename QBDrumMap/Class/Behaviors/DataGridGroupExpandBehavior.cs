@@ -5,15 +5,26 @@ using Microsoft.Xaml.Behaviors;
 
 namespace QBDrumMap.Class.Behaviors
 {
-    public class DataGridGroupExpandBehavior
-        : Behavior<DataGrid>
+    public class DataGridGroupExpandBehavior : Behavior<DataGrid>
     {
+        #region Properties
+
+        #region DependencyProperty
+
+        // 全てのグループを展開するかどうか
         public static readonly DependencyProperty IsExpandedProperty =
             DependencyProperty.Register(
                 nameof(IsExpanded),
                 typeof(bool),
                 typeof(DataGridGroupExpandBehavior),
-                new PropertyMetadata(false, OnIsExpandedChanged));
+                new FrameworkPropertyMetadata(
+                    false,
+                    FrameworkPropertyMetadataOptions.None,
+                    OnIsExpandedChanged
+                )
+            );
+
+        #endregion
 
         public bool IsExpanded
         {
@@ -21,20 +32,36 @@ namespace QBDrumMap.Class.Behaviors
             set => SetValue(IsExpandedProperty, value);
         }
 
+        #endregion
+
+        #region Methods
+
+        #region Property Change Handler
+
         private static void OnIsExpandedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var behavior = (DataGridGroupExpandBehavior)d;
             behavior.UpdateExpanders((bool)e.NewValue);
         }
 
+        #endregion
+
+        #region General
+
         private void UpdateExpanders(bool isExpanded)
         {
-            if (AssociatedObject == null) return;
+            if (AssociatedObject == null)
+            {
+                return;
+            }
 
             var groupItems = FindVisualChildren<GroupItem>(AssociatedObject);
             foreach (var groupItem in groupItems)
             {
-                if (VisualTreeHelper.GetChildrenCount(groupItem) == 0) continue;
+                if (VisualTreeHelper.GetChildrenCount(groupItem) == 0)
+                {
+                    continue;
+                }
 
                 var expander = FindVisualChild<Expander>(groupItem);
                 if (expander != null)
@@ -46,12 +73,18 @@ namespace QBDrumMap.Class.Behaviors
 
         private static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
-            if (depObj == null) yield break;
+            if (depObj == null)
+            {
+                yield break;
+            }
 
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
             {
                 var child = VisualTreeHelper.GetChild(depObj, i);
-                if (child is T t) yield return t;
+                if (child is T t)
+                {
+                    yield return t;
+                }
 
                 foreach (var childOfChild in FindVisualChildren<T>(child))
                 {
@@ -65,7 +98,10 @@ namespace QBDrumMap.Class.Behaviors
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
             {
                 var child = VisualTreeHelper.GetChild(parent, i);
-                if (child is T t) return t;
+                if (child is T t)
+                {
+                    return t;
+                }
 
                 var result = FindVisualChild<T>(child);
                 if (result != null)
@@ -73,7 +109,12 @@ namespace QBDrumMap.Class.Behaviors
                     return result;
                 }
             }
+
             return null;
         }
+
+        #endregion
+
+        #endregion
     }
 }

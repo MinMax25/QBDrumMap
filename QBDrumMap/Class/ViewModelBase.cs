@@ -9,42 +9,79 @@ using QBDrumMap.Contracts.ViewModels;
 
 namespace QBDrumMap.Class
 {
-    public abstract partial class ViewModelBase
-        : ObservableObject
-        , INavigationAware
-        , IDisposable
+    public abstract partial class ViewModelBase : ObservableObject, INavigationAware, IDisposable
     {
-        #region Properties
+        #region Fields
 
+        // 重複して破棄されないためのフラグ
+        private bool disposedValue;
+
+        // コマンドの有効状態
         [ObservableProperty]
         private bool isCommandEnabled = true;
 
+        // 編集モード中かどうか
         [ObservableProperty]
         private bool isEditing;
 
-        #region Services
-
+        // 依存サービスを保持するコンテナ
         protected internal IDIContainer DIContainer;
 
-        protected internal ISettingService SettingService => DIContainer?.SettingService;
-
-        protected internal INavigationService Navigation => DIContainer?.Navigation;
-
-        protected internal IDialogService Dialog => DIContainer?.Dialog;
-
-        protected internal IWindowService WindowService => DIContainer?.WindowService;
-
-        protected internal IUndoManager UndoManager => DIContainer?.UndoManager;
-
+        // アプリケーション全体で共有されるマップデータ
         protected internal MapData MapData;
 
         #endregion
 
+        #region Properties
+
+        #region Services
+
+        // 設定管理サービスへのショートカット
+        protected internal ISettingService SettingService
+        {
+            get
+            {
+                return DIContainer?.SettingService;
+            }
+        }
+
+        // ナビゲーションサービスへのショートカット
+        protected internal INavigationService Navigation
+        {
+            get
+            {
+                return DIContainer?.Navigation;
+            }
+        }
+
+        // ダイアログサービスへのショートカット
+        protected internal IDialogService Dialog
+        {
+            get
+            {
+                return DIContainer?.Dialog;
+            }
+        }
+
+        // ウィンドウ操作サービスへのショートカット
+        protected internal IWindowService WindowService
+        {
+            get
+            {
+                return DIContainer?.WindowService;
+            }
+        }
+
+        // Undo/Redoマネージャーへのショートカット
+        protected internal IUndoManager UndoManager
+        {
+            get
+            {
+                return DIContainer?.UndoManager;
+            }
+        }
+
         #endregion
-
-        #region Fields
-
-        private bool disposedValue;
 
         #endregion
 
@@ -64,23 +101,39 @@ namespace QBDrumMap.Class
 
         #region Methods
 
+        #region Property Change Handler
+
         partial void OnIsEditingChanged(bool oldValue, bool newValue)
         {
-            MapData.SetEditState(this, newValue);
+            MapData?.SetEditState(this, newValue);
         }
 
+        #endregion
+
+        #region General
+
+        // 画面遷移で離れる際の処理
         public virtual void OnNavigatedFrom()
         {
         }
 
+        // 画面遷移で到達した際の処理
         public virtual void OnNavigatedTo(object parameter)
         {
         }
+
+        #endregion
+
+        #region Dispose
 
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
             {
+                if (disposing)
+                {
+                }
+
                 disposedValue = true;
             }
         }
@@ -90,6 +143,8 @@ namespace QBDrumMap.Class
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
+        #endregion
 
         #endregion
     }

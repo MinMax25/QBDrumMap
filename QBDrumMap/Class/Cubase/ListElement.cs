@@ -2,12 +2,12 @@
 
 namespace QBDrumMap.Class.Cubase
 {
-    public abstract class ListElement<T>
-        where T : ListElementItem
+    public abstract class ListElement<T> where T : ListElementItem
     {
         #region Properties
 
-        public List<T> Items { get; set; }
+        // リストアイテムのコレクション
+        public List<T> Items { get; set; } = new();
 
         #endregion
 
@@ -22,11 +22,17 @@ namespace QBDrumMap.Class.Cubase
 
         #region Methods
 
+        #region General
+
         internal void GetElement(IEnumerable<XElement> elements)
         {
             elements.ToList().ForEach(element =>
             {
-                if (Activator.CreateInstance(typeof(T)) is not T instance) throw new ArgumentException();
+                if (Activator.CreateInstance(typeof(T)) is not T instance)
+                {
+                    throw new ArgumentException();
+                }
+
                 instance.GetElement(element);
                 Items.Add(instance);
             });
@@ -34,19 +40,21 @@ namespace QBDrumMap.Class.Cubase
 
         internal XElement ToElement()
         {
-            XElement element =
-                new(
-                    "list",
-                    [
-                        new XAttribute(CubaseAttr.name, GetType().Name.Replace($"{nameof(XElement.Element)}", string.Empty)),
-                        new XAttribute(CubaseAttr.type, "list"),
-                    ]
-                );
+            XElement element = new XElement(
+                "list",
+                new XAttribute(CubaseAttr.name, GetType().Name.Replace("Element", string.Empty)),
+                new XAttribute(CubaseAttr.type, "list")
+            );
 
-            Items.ForEach(item => element.Add(item.ToElement()));
+            Items.ForEach(item =>
+            {
+                element.Add(item.ToElement());
+            });
 
             return element;
         }
+
+        #endregion
 
         #endregion
     }

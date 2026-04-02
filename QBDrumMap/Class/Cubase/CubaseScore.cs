@@ -12,15 +12,29 @@ namespace QBDrumMap.Class.Cubase
 {
     public static class CubaseScore
     {
+        #region Properties
+
+        // 楽器一覧のコンボボックスソース
         public static ObservableCollection<KeyValuePair<string, string>> InstrumentsComboSource { get; } = new();
 
+        // ノートヘッドセットのコンボボックスソース
         public static ObservableCollection<KeyValuePair<int, string>> NoteHeadSetComboSource { get; } = new();
 
+        // 奏法のコンボボックスソース
         public static ObservableCollection<KeyValuePair<string, string>> TechniqueComboSource { get; } = new();
+
+        #endregion
+
+        #region Methods
+
+        #region General
 
         public static void Initialize()
         {
-            if (App.GetService<ISettingService>() is not ISettingService setting) return;
+            if (App.GetService<ISettingService>() is not ISettingService setting)
+            {
+                return;
+            }
 
             var cubaseRootPath = setting.CubaseInstallPath ?? string.Empty;
             var language = setting.Language;
@@ -29,27 +43,39 @@ namespace QBDrumMap.Class.Cubase
             NoteHeadSetComboSource.Clear();
             TechniqueComboSource.Clear();
 
-            if (string.IsNullOrWhiteSpace(cubaseRootPath)) return;
+            if (string.IsNullOrWhiteSpace(cubaseRootPath))
+            {
+                return;
+            }
 
             string instpath = Path.Combine(cubaseRootPath, @"Components\ScoringEngine\instruments.xml");
             string nhpath = Path.Combine(cubaseRootPath, @"Components\ScoringEngine\scoreLibrary.xml");
             string namepath = Path.Combine(cubaseRootPath, @"Components\ScoringEngine\l10n\instrumentnames_ja.xml");
             string teqpath = Path.Combine(cubaseRootPath, @"Components\ScoringEngine\playingTechniqueDefinitions.xml");
 
-            if (!File.Exists(instpath)) return;
-            if (!File.Exists(nhpath)) return;
-            if (!File.Exists(namepath)) return;
-            if (!File.Exists(teqpath)) return;
+            if (!File.Exists(instpath) || !File.Exists(nhpath) || !File.Exists(namepath) || !File.Exists(teqpath))
+            {
+                return;
+            }
 
             var libinst = Deserialize<Instruments.kScoreLibrary>(instpath);
             var libnh = Deserialize<NoteHeadSet.kScoreLibrary>(nhpath);
             var libname = Deserialize<InstrumentName.kScoreLibrary>(namepath);
             var libteq = Deserialize<Technique.kScoreLibrary>(teqpath);
 
+            if (libinst == null || libnh == null || libname == null || libteq == null)
+            {
+                return;
+            }
+
             // Instruments
             foreach (var item in libinst.instruments.entities.InstrumentEntityDefinition)
             {
-                if (string.IsNullOrWhiteSpace(item.percussionInstrumentDataID)) continue;
+                if (string.IsNullOrWhiteSpace(item.percussionInstrumentDataID))
+                {
+                    continue;
+                }
+
                 if (language == Languages.Japanese)
                 {
                     var jp = libname.instrumentNames.entities.InstrumentNameEntityDefinition.FirstOrDefault(x => x.entityID == item.nameID);
@@ -62,7 +88,9 @@ namespace QBDrumMap.Class.Cubase
             }
 
             if (!InstrumentsComboSource.Any(x => string.IsNullOrWhiteSpace(x.Key)))
+            {
                 InstrumentsComboSource.Insert(0, new KeyValuePair<string, string>(string.Empty, string.Empty));
+            }
 
             // Note Head Set
             int nhcount = 1;
@@ -73,26 +101,50 @@ namespace QBDrumMap.Class.Cubase
             }
 
             if (!NoteHeadSetComboSource.Any(x => x.Key == 0))
+            {
                 NoteHeadSetComboSource.Insert(0, new KeyValuePair<int, string>(0, string.Empty));
+            }
 
             // Technique
             foreach (var item in libteq.playingTechniques.entities.PlayingTechniqueDefinition)
             {
-                if (item.groupType != "kTechniques") continue;
+                if (item.groupType != "kTechniques")
+                {
+                    continue;
+                }
+
                 TechniqueComboSource.Add(new KeyValuePair<string, string>(item.entityID, item.name));
             }
 
             if (!TechniqueComboSource.Any(x => string.IsNullOrWhiteSpace(x.Key)))
+            {
                 TechniqueComboSource.Insert(0, new KeyValuePair<string, string>(string.Empty, string.Empty));
+            }
         }
 
         private static T Deserialize<T>(string path)
         {
-            if (!File.Exists(path)) return default;
+            if (!File.Exists(path))
+            {
+                return default;
+            }
 
-            using var stream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            var serializer = new XmlSerializer(typeof(T));
-            return (T)serializer.Deserialize(stream);
+            try
+            {
+                using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
+                {
+                    var serializer = new XmlSerializer(typeof(T));
+                    return (T)serializer.Deserialize(stream);
+                }
+            }
+            catch
+            {
+                return default;
+            }
         }
+
+        #endregion
+
+        #endregion
     }
 }

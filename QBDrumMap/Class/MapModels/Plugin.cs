@@ -5,29 +5,41 @@ using QBDrumMap.Class.Enums;
 
 namespace QBDrumMap.Class.MapModels
 {
-    public partial class Plugin
-        : ModelBase
-        , IHasID
+    public partial class Plugin : ModelBase, IHasID
     {
+        #region Fields
+
+        // プラグインの一意なID
         [ObservableProperty]
         private int iD;
 
+        // プラグイン名
         [ObservableProperty]
         [ValidatePlugin]
         [NotifyDataErrorInfo]
         private string name = string.Empty;
 
+        // プラグインの種類（VST, Hardware等）
         [ObservableProperty]
         private PluginType pluginType = PluginType.None;
 
+        // MIDI出力デバイス名
         [ObservableProperty]
         private string midiOutDevice = string.Empty;
 
+        // 音声確認用MIDIチャンネル
         [ObservableProperty]
         private MIDIChannel soundCheckChannel = MIDIChannel.Channel10;
 
+        // プラグインに含まれるキットのコレクション
         [ObservableProperty]
-        private ObservableCollection<Kit> kits = [];
+        private ObservableCollection<Kit> kits = new();
+
+        #endregion
+
+        #region Methods
+
+        #region Property Change Handler
 
         partial void OnIDChanged(int oldValue, int newValue)
         {
@@ -54,15 +66,29 @@ namespace QBDrumMap.Class.MapModels
             UndoManager?.RegisterPropertyChange(() => SoundCheckChannel, oldValue, newValue);
         }
 
+        #endregion
+
+        #region General
+
         public override object Clone()
         {
             return new Plugin
             {
                 ID = ID,
                 Name = Name,
-                Kits = new ObservableCollection<Kit>(Kits.Select(kit => (Kit)kit.Clone())),
+                PluginType = PluginType,
+                MidiOutDevice = MidiOutDevice,
+                SoundCheckChannel = SoundCheckChannel,
+                Kits = new ObservableCollection<Kit>(Kits.Select(kit =>
+                {
+                    return (Kit)kit.Clone();
+                })),
                 DisplayOrder = DisplayOrder
             };
         }
+
+        #endregion
+
+        #endregion
     }
 }

@@ -11,16 +11,17 @@ using QBDrumMap.Views;
 namespace QBDrumMap.ViewModels
 {
     [DIPage<ArticulationsPage>]
-    public partial class ArticulationsViewModel
-        : ViewModelBase
+    public partial class ArticulationsViewModel : ViewModelBase
     {
-        #region Properties
+        #region Fields
 
+        // 画面に表示する全アーティキュレーションのリスト
         [ObservableProperty]
-        private ObservableCollection<Articulation> articulations = [];
+        private ObservableCollection<Articulation> _articulations = new();
 
+        // グリッド等で選択されているアーティキュレーションのリスト
         [ObservableProperty]
-        private ObservableCollection<Articulation> selectedArticulations = [];
+        private ObservableCollection<Articulation> _selectedArticulations = new();
 
         #endregion
 
@@ -54,17 +55,15 @@ namespace QBDrumMap.ViewModels
 
         #endregion
 
-        #region PropertyChanged Callbacks
+        #region EventHandler
 
-        #endregion
-
-        #region Event Handling
-
+        // マップデータ読み込み完了時のイベントハンドラ
         private async void OnMapDataLoaded(object sender, RoutedEventArgs e)
         {
             await InitializeDataAsync();
         }
 
+        // マップデータ保存完了時のイベントハンドラ
         private async void OnMapDataSaved(object sender, DrumMapIOEventArgs e)
         {
             await InitializeDataAsync();
@@ -74,6 +73,7 @@ namespace QBDrumMap.ViewModels
 
         #region General
 
+        // 表示用データの非同期初期化処理
         private async Task InitializeDataAsync()
         {
             SelectedArticulations.Clear();
@@ -81,7 +81,19 @@ namespace QBDrumMap.ViewModels
             await Application.Current.Dispatcher.InvokeAsync(() =>
             {
                 Articulations.Clear();
-                foreach (var item in MapData.Parts.SelectMany(x => x.Articulations).OrderBy(x => x.DrumMapOrder))
+
+                // 全パートからアーティキュレーションをフラットに取得し、ドラムマップ順でソート
+                var source = MapData.Parts
+                    .SelectMany(x =>
+                    {
+                        return x.Articulations;
+                    })
+                    .OrderBy(x =>
+                    {
+                        return x.DrumMapOrder;
+                    });
+
+                foreach (var item in source)
                 {
                     Articulations.Add(item);
                 }
@@ -95,9 +107,11 @@ namespace QBDrumMap.ViewModels
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
+
             if (disposing)
             {
                 MapData.Loaded -= OnMapDataLoaded;
+                MapData.Saved -= OnMapDataSaved;
             }
         }
 

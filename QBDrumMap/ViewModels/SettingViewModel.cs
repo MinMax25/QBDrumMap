@@ -9,20 +9,34 @@ using QBDrumMap.Views;
 namespace QBDrumMap.ViewModels
 {
     [DIPage<SettingPage>]
-    public partial class SettingViewModel
-        : ViewModelBase
+    public partial class SettingViewModel : ViewModelBase
     {
-        #region Properties
-
-        public ISettingService Setting => SettingService;
-
-        public IMidiService MIDI => App.GetService<IMidiService>();
-
-        public Dictionary<string, Brush> AccentColors { get; set; }
+        #region Fields
 
         #endregion
 
-        #region Fields
+        #region Properties
+
+        // 設定サービスへの参照
+        public ISettingService Setting
+        {
+            get
+            {
+                return SettingService;
+            }
+        }
+
+        // MIDIサービスへの参照
+        public IMidiService MIDI
+        {
+            get
+            {
+                return App.GetService<IMidiService>();
+            }
+        }
+
+        // 利用可能なアクセントカラーのリスト
+        public Dictionary<string, Brush> AccentColors { get; set; }
 
         #endregion
 
@@ -31,12 +45,30 @@ namespace QBDrumMap.ViewModels
         public SettingViewModel(IDIContainer diContainer)
             : base(diContainer)
         {
-            AccentColors =
-                ThemeManager.Current.Themes
-                .GroupBy(x => x.ColorScheme)
-                .OrderBy(a => a.Key)
-                .Select(a => new { Name = a.Key, ColorBrush = a.First().ShowcaseBrush })
-                .ToDictionary(x => x.Name, x => x.ColorBrush);
+            AccentColors = ThemeManager.Current.Themes
+                .GroupBy(x =>
+                {
+                    return x.ColorScheme;
+                })
+                .OrderBy(a =>
+                {
+                    return a.Key;
+                })
+                .Select(a =>
+                {
+                    return new
+                    {
+                        Name = a.Key,
+                        ColorBrush = a.First().ShowcaseBrush
+                    };
+                })
+                .ToDictionary(x =>
+                {
+                    return x.Name;
+                }, x =>
+                {
+                    return x.ColorBrush;
+                });
         }
 
         #endregion
@@ -48,9 +80,26 @@ namespace QBDrumMap.ViewModels
         [RelayCommand]
         private async Task OnSelectCubaseInstallPath()
         {
-            if (await Dialog.ShowSelectFolderDialog(Properties.Resources.Setting_CubaseInstallPath, Setting.CubaseInstallPath) is string path)
+            var result = await Dialog.ShowSelectFolderDialog(
+                Properties.Resources.Setting_CubaseInstallPath,
+                Setting.CubaseInstallPath);
+
+            if (result is string path)
             {
                 Setting.CubaseInstallPath = path;
+            }
+        }
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            if (disposing)
+            {
             }
         }
 

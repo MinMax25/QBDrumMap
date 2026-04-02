@@ -36,7 +36,8 @@ namespace QBDrumMap.Views.Controls
 
         private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (_isPressed) return;
+            if (_isPressed)
+                return;
 
             _isPressed = true;
 
@@ -50,7 +51,8 @@ namespace QBDrumMap.Views.Controls
 
         private void OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (!_isPressed) return;
+            if (!_isPressed)
+                return;
 
             _isPressed = false;
             Mouse.Capture(null);

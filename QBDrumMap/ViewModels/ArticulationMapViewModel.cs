@@ -11,23 +11,25 @@ using QBDrumMap.Views;
 namespace QBDrumMap.ViewModels
 {
     [DIWindow<ArticulationMapView>]
-    public partial class ArticulationMapViewModel
-        : ViewModelBase
-        , IParameterReceiver
+    public partial class ArticulationMapViewModel : ViewModelBase, IParameterReceiver
     {
-        #region Properties
+        #region Fields
 
+        // アーティキュレーションマップのビュー（表示・ソート用）
         [ObservableProperty]
-        private ICollectionView articulationMapView;
+        private ICollectionView _articulationMapView;
 
+        // 対象となるプラグインモデル
         [ObservableProperty]
-        private Plugin plugin;
+        private Plugin _plugin;
 
+        // 現在表示対象となっているキットモデル
         [ObservableProperty]
-        private Kit kit;
+        private Kit _kit;
 
+        // グリッド等で選択されている行アイテム
         [ObservableProperty]
-        private ArticulationMapItem selectedRow;
+        private ArticulationMapItem _selectedRow;
 
         #endregion
 
@@ -44,14 +46,26 @@ namespace QBDrumMap.ViewModels
 
         #region General
 
+        // 外部（WindowService等）からパラメータを受け取り、画面を初期化する
         public void ReceiveParameter(object parameter)
         {
-            if (parameter is not Kit kit) return;
+            if (parameter is not Kit kit)
+            {
+                return;
+            }
 
             Kit = kit;
 
-            Plugin = MapData.Plugins.FirstOrDefault(p => p.Kits.Any(k => k.ID == Kit.ID));
+            // 当該キットを保持しているプラグインを検索
+            Plugin = MapData.Plugins.FirstOrDefault(p =>
+            {
+                return p.Kits.Any(k =>
+                {
+                    return k.ID == Kit.ID;
+                });
+            });
 
+            // アーティキュレーションマップ情報の生成とビューの取得
             var articMap = ArticulationMap.GetArticulationMap(MapData, Kit.Name);
             ArticulationMapView = CollectionViewSource.GetDefaultView(articMap.Items);
         }

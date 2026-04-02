@@ -7,10 +7,15 @@ using QBDrumMap.Contracts.Services;
 namespace QBDrumMap.Class.Services
 {
     [DISingleton<IDIContainer>]
-    public class DIContainer
-        : IDIContainer
-        , IDisposable
+    public class DIContainer : IDIContainer, IDisposable
     {
+        #region Fields
+
+        // 重複して破棄されないためのフラグ
+        private bool disposedValue;
+
+        #endregion
+
         #region Properties
 
         #region Services
@@ -26,12 +31,6 @@ namespace QBDrumMap.Class.Services
         public ISettingService SettingService { get; }
 
         #endregion
-
-        #endregion
-
-        #region Fields
-
-        private bool disposedValue;
 
         #endregion
 
@@ -75,25 +74,13 @@ namespace QBDrumMap.Class.Services
             {
                 if (disposing)
                 {
-                    // TODO: マネージド状態を破棄します (マネージド オブジェクト)
                 }
-
-                // TODO: アンマネージド リソース (アンマネージド オブジェクト) を解放し、ファイナライザーをオーバーライドします
-                // TODO: 大きなフィールドを null に設定します
                 disposedValue = true;
             }
         }
 
-        // // TODO: 'Dispose(bool disposing)' にアンマネージド リソースを解放するコードが含まれる場合にのみ、ファイナライザーをオーバーライドします
-        // ~ServiceContainer()
-        // {
-        //     // このコードを変更しないでください。クリーンアップ コードを 'Dispose(bool disposing)' メソッドに記述します
-        //     Dispose(disposing: false);
-        // }
-
         public void Dispose()
         {
-            // このコードを変更しないでください。クリーンアップ コードを 'Dispose(bool disposing)' メソッドに記述します
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }

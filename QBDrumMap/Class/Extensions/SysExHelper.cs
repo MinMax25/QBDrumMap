@@ -2,7 +2,7 @@
 using libMidi.Messages.attributes;
 using libMidi.Messages.enums;
 
-namespace QBDrumMap.Class.Extentions
+namespace QBDrumMap.Class.Extensions
 {
     public static class SysExHelper
     {
@@ -11,10 +11,12 @@ namespace QBDrumMap.Class.Extentions
             byte[] data = [0xF0];
 
             var fieldInfo = typeof(SysExType).GetField(type.ToString());
-            if (fieldInfo == null) return null;
+            if (fieldInfo == null)
+                return null;
 
             var attribute = fieldInfo.GetCustomAttribute<ExclusiveAttribute>();
-            if (attribute?.Data == null) return null;
+            if (attribute?.Data == null)
+                return null;
 
             return data.Concat(attribute.Data).ToArray();
         }

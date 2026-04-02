@@ -4,7 +4,7 @@
     xmlns:libQB="clr-namespace:libQB.Enums;assembly=libQB"
     xmlns:cubasscore="clr-namespace:QBDrumMap.Class.Cubase"
     xmlns:enums="clr-namespace:QBDrumMap.Class.Enums"
-    xmlns:ext="clr-namespace:QBDrumMap.Class.Extentions"
+    xmlns:ext="clr-namespace:QBDrumMap.Class.Extensions"
     xmlns:models="clr-namespace:QBDrumMap.Class.MapModels"
     xmlns:sone="clr-namespace:QBDrumMap.Class.StudioOne"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">

@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 using System.Windows.Data;
-using QBDrumMap.Class.Extentions;
+using QBDrumMap.Class.Extensions;
 
 namespace QBDrumMap.Class.ValueConverters
 {
@@ -9,8 +9,10 @@ namespace QBDrumMap.Class.ValueConverters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (UtilMap.MapData == null) return string.Empty;
-            if (value is not int i) return string.Empty;
+            if (UtilMap.MapData == null)
+                return string.Empty;
+            if (value is not int i)
+                return string.Empty;
             return UtilMap.MapData.Plugins.FirstOrDefault(x => x.Kits.Any(k => k.ID == i))?.Name ?? string.Empty;
         }
 

@@ -15,44 +15,57 @@ using QBDrumMap.Services;
 namespace QBDrumMap.Class.Services
 {
     [DISingleton<ISettingService>]
-    public partial class SettingService
-        : ObservableObject
-        , ISettingService
+    public partial class SettingService : ObservableObject, ISettingService
     {
-        #region Properties
+        #region Fields
 
-        private static string SettingFilePath => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Setting.json");
+        // テーマの切り替えを管理するサービス
+        private readonly IThemeSelectorService ThemeSelector;
 
+        // MIDI入出力を管理するサービス
+        private IMidiService MIDI;
+
+        // ベーステーマ (Dark/Light)
         [ObservableProperty]
         private BaseTheme baseTheme = BaseTheme.Dark;
 
+        // テーマのアクセントカラー名
         [ObservableProperty]
         private string themeColor = "Steel";
 
+        // アプリケーションの表示言語
         [ObservableProperty]
         private Languages language = Languages.English;
 
+        // 起動時に表示する初期ページ
         [ObservableProperty]
         private Pages startUpPage = Pages.PluginPage;
 
+        // アーティキュレーション名にピッチ名を含めるかどうか
         [ObservableProperty]
         private bool useArticulationPitchName = true;
 
+        // アーティキュレーション機能自体の有効/無効
         [ObservableProperty]
         private bool useArticulation = true;
 
+        // 最後に開いたファイルを起動時に自動で読み込むかどうか
         [ObservableProperty]
         private bool isOpenTheLastFileOpened = true;
 
+        // パートスコアビューの拡張表示設定
         [ObservableProperty]
         private bool isPartScoreViewExtended = false;
 
+        // 最後に開いたファイルのフルパス
         [ObservableProperty]
         private string lastOpenedFilePath = string.Empty;
 
+        // 最後にインポートしたファイルのフルパス
         [ObservableProperty]
         private string lastImportFilePath = string.Empty;
 
+        // 各エクスポート形式のデフォルト出力パス
         [ObservableProperty]
         private string exportStudioOneDefaultPath = string.Empty;
 
@@ -71,32 +84,55 @@ namespace QBDrumMap.Class.Services
         [ObservableProperty]
         private string exportQBDrummerDefaultPath = string.Empty;
 
+        // MIDI出力時のフォーマット形式
         [ObservableProperty]
         private MIDIFormat convertMIDIFormat = MIDIFormat.Format1;
 
+        // Cubaseの実行ファイル/インストールディレクトリのパス
         [ObservableProperty]
         private string cubaseInstallPath = string.Empty;
 
+        // 既定のMIDI入力デバイス名
         [ObservableProperty]
         private string midiInDevice = string.Empty;
 
+        // MIDI入力時の固定ピッチ（-1は無効）
         [ObservableProperty]
         private int midiInFixedPitch = -1;
 
-        [JsonIgnore]
-        public string SearchArticulationFilter { get; set; } = string.Empty;
-
-        [JsonIgnore]
-        public bool IsExtendedProgramChange { get => _IsExtendedProgramChange; set => SetProperty(ref _IsExtendedProgramChange, value); }
+        // プログラムチェンジの拡張設定フラグ
         private bool _IsExtendedProgramChange = false;
-
-        private IMidiService MIDI;
 
         #endregion
 
-        #region Fields
+        #region Properties
 
-        private readonly IThemeSelectorService ThemeSelector;
+        // 設定ファイルの保存先パス
+        private static string SettingFilePath
+        {
+            get
+            {
+                return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Setting.json");
+            }
+        }
+
+        // アーティキュレーション検索用のフィルター（非永続化）
+        [JsonIgnore]
+        public string SearchArticulationFilter { get; set; } = string.Empty;
+
+        // プログラムチェンジの拡張設定
+        [JsonIgnore]
+        public bool IsExtendedProgramChange
+        {
+            get
+            {
+                return _IsExtendedProgramChange;
+            }
+            set
+            {
+                SetProperty(ref _IsExtendedProgramChange, value);
+            }
+        }
 
         #endregion
 
@@ -104,7 +140,6 @@ namespace QBDrumMap.Class.Services
 
         public SettingService()
         {
-
         }
 
         public SettingService(IThemeSelectorService themeSelectorService, IMidiService midiService)
@@ -117,7 +152,7 @@ namespace QBDrumMap.Class.Services
 
         #region Methods
 
-        #region PropertyChanged Callbacks
+        #region Property Change Handler
 
         partial void OnBaseThemeChanged(BaseTheme value)
         {
@@ -131,13 +166,19 @@ namespace QBDrumMap.Class.Services
 
         partial void OnMidiInDeviceChanged(string value)
         {
-            if (MIDI == null) return;
+            if (MIDI == null)
+            {
+                return;
+            }
             MIDI.MidiInDevice = value;
         }
 
         partial void OnMidiInFixedPitchChanged(int value)
         {
-            if (MIDI == null) return;
+            if (MIDI == null)
+            {
+                return;
+            }
             MIDI.MidiInFixedPitch = value;
         }
 
@@ -155,13 +196,18 @@ namespace QBDrumMap.Class.Services
             if (File.Exists(SettingFilePath))
             {
                 var jsonString = File.ReadAllText(SettingFilePath);
-                if (JsonSerializer.Deserialize<SettingService>(jsonString) is SettingService _restore)
+                var restore = JsonSerializer.Deserialize<SettingService>(jsonString);
+
+                if (restore != null)
                 {
                     GetType()
-                    .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                    .Where(x => x.GetCustomAttribute<JsonIgnoreAttribute>() == null)
-                    .ToList()
-                    .ForEach(p => p.SetValue(this, p.GetValue(_restore)));
+                        .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                        .Where(x => x.GetCustomAttribute<JsonIgnoreAttribute>() == null)
+                        .ToList()
+                        .ForEach(p =>
+                        {
+                            p.SetValue(this, p.GetValue(restore));
+                        });
                 }
             }
 
@@ -177,13 +223,13 @@ namespace QBDrumMap.Class.Services
             libQB.Properties.Menu.Culture = culture;
             libQB.Properties.Resources.Culture = culture;
 
-            Properties.Resources.Culture = culture;
-            Properties.Name.Culture = culture;
+            QBDrumMap.Properties.Resources.Culture = culture;
+            QBDrumMap.Properties.Name.Culture = culture;
 
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 
-            ThemeSelector.SetTheme(BaseTheme, ThemeColor);
+            ThemeSelector?.SetTheme(BaseTheme, ThemeColor);
         }
 
         public void Save()

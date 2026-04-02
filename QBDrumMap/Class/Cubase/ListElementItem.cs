@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Reflection;
+using System.Xml.Linq;
 using System.Xml.XPath;
 
 namespace QBDrumMap.Class.Cubase
@@ -7,60 +8,88 @@ namespace QBDrumMap.Class.Cubase
     {
         #region Methods
 
+        #region General
+
         internal void GetElement(XElement element)
         {
-            foreach (var prop in GetType().GetProperties())
+            foreach (PropertyInfo prop in GetType().GetProperties())
             {
-                if (element.XPathSelectElement($"*[@{CubaseAttr.name}='{prop.Name}']") is not XElement item) continue;
+                if (element.XPathSelectElement($"*[@{CubaseAttr.name}='{prop.Name}']") is not XElement item)
+                {
+                    continue;
+                }
 
-                object value = null!;
+                object value;
 
                 if (prop.PropertyType == typeof(string))
+                {
                     value = item.Attribute(CubaseAttr.value)?.Value ?? string.Empty;
+                }
                 else if (prop.PropertyType == typeof(int))
-                    value = int.Parse(item.Attribute(CubaseAttr.value)?.Value ?? @"0");
+                {
+                    value = int.Parse(item.Attribute(CubaseAttr.value)?.Value ?? "0");
+                }
                 else if (prop.PropertyType == typeof(float))
-                    value = float.Parse(item.Attribute(CubaseAttr.value)?.Value ?? @"0");
+                {
+                    value = float.Parse(item.Attribute(CubaseAttr.value)?.Value ?? "0");
+                }
                 else
+                {
                     continue;
+                }
 
-                if (value == null) throw new ArgumentException();
+                if (value == null)
+                {
+                    throw new ArgumentException();
+                }
 
                 prop.SetValue(this, value);
             }
-        }
-
-        string getTypeName(Type type)
-        {
-            if (type == typeof(int)) return Tag.@int;
-            if (type == typeof(string)) return Tag.@string;
-            if (type == typeof(float)) return Tag.@float;
-            throw new ArgumentException();
         }
 
         internal XElement ToElement()
         {
             XElement element = new XElement(Tag.item);
 
-            foreach (var p in GetType().GetProperties())
-                element.Add(
-                    new XElement(getTypeName(p.PropertyType),
-                    p.PropertyType == typeof(string) ?
-                        new XAttribute[] {
-                            new XAttribute(CubaseAttr.name, $"{p.Name}"),
-                            new XAttribute(CubaseAttr.value, $"{p.GetValue(this)}"),
-                            new XAttribute(CubaseAttr.wide, true.ToString().ToLower()),
-                        }
-                        :
-                        [
-                            new XAttribute(CubaseAttr.name, $"{p.Name}"),
-                            new XAttribute(CubaseAttr.value, $"{p.GetValue(this)}")
-                        ]
-                    )
-                );
+            foreach (PropertyInfo p in GetType().GetProperties())
+            {
+                XElement child = new XElement(GetTypeName(p.PropertyType));
+
+                child.Add(new XAttribute(CubaseAttr.name, $"{p.Name}"));
+                child.Add(new XAttribute(CubaseAttr.value, $"{p.GetValue(this)}"));
+
+                if (p.PropertyType == typeof(string))
+                {
+                    child.Add(new XAttribute(CubaseAttr.wide, true.ToString().ToLower()));
+                }
+
+                element.Add(child);
+            }
 
             return element;
         }
+
+        private string GetTypeName(Type type)
+        {
+            if (type == typeof(int))
+            {
+                return Tag.@int;
+            }
+
+            if (type == typeof(string))
+            {
+                return Tag.@string;
+            }
+
+            if (type == typeof(float))
+            {
+                return Tag.@float;
+            }
+
+            throw new ArgumentException();
+        }
+
+        #endregion
 
         #endregion
     }

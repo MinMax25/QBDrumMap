@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using libMidi.Messages.enums;
 using libQB.Attributes;
 using NAudio.Midi;
-using QBDrumMap.Class.Extentions;
+using QBDrumMap.Class.Extensions;
 using QBDrumMap.Class.MapModels;
 using MidiMessage = NAudio.Midi.MidiMessage;
 
@@ -126,7 +126,8 @@ namespace QBDrumMap.Class.Services
                 {
                     if (MidiOut.DeviceInfo(i).ProductName == value)
                     {
-                        try { midiOutDev = new MidiOut(i); }
+                        try
+                        { midiOutDev = new MidiOut(i); }
                         catch { }
                         break;
                     }
@@ -142,9 +143,12 @@ namespace QBDrumMap.Class.Services
 
         private void MidiInDev_MessageReceived(object sender, MidiInMessageEventArgs e)
         {
-            if (MidiThruEnabled == false) return;
-            if (midiOutDev == null) return;
-            if (e.MidiEvent is not NoteEvent noteEvent) return;
+            if (MidiThruEnabled == false)
+                return;
+            if (midiOutDev == null)
+                return;
+            if (e.MidiEvent is not NoteEvent noteEvent)
+                return;
 
             KeyVelocity = noteEvent.Velocity;
 
@@ -220,8 +224,10 @@ namespace QBDrumMap.Class.Services
                 return;
             }
 
-            if (MidiInFixedPitch != pitch) return;
-            if (SoundCheckPitch < 0) return;
+            if (MidiInFixedPitch != pitch)
+                return;
+            if (SoundCheckPitch < 0)
+                return;
             action.Invoke(SoundCheckPitch, true);
         }
 
@@ -232,9 +238,11 @@ namespace QBDrumMap.Class.Services
 
         public void SendNoteOn(int pitch, bool isFromMidiDevice = false)
         {
-            if (MidiThruEnabled == false) return;
+            if (MidiThruEnabled == false)
+                return;
 
-            if (midiOutDev == null || pitch is < 0 or > 127) return;
+            if (midiOutDev == null || pitch is < 0 or > 127)
+                return;
 
             if (isFromMidiDevice == false)
             {
@@ -247,9 +255,11 @@ namespace QBDrumMap.Class.Services
 
         public void SendNoteOff(int pitch, bool isFromMidiDevice = false)
         {
-            if (MidiThruEnabled == false) return;
+            if (MidiThruEnabled == false)
+                return;
 
-            if (midiOutDev == null || pitch is < 0 or > 127) return;
+            if (midiOutDev == null || pitch is < 0 or > 127)
+                return;
 
             var velocity = isFromMidiDevice ? KeyVelocity : SoundCheckVelocity;
             midiOutDev.Send(MidiMessage.StopNote(pitch, velocity, MidiOutChannel).RawData);
@@ -260,7 +270,8 @@ namespace QBDrumMap.Class.Services
             MidiOutDevice = plugin.MidiOutDevice;
             MidiOutChannel = (int)plugin.SoundCheckChannel;
 
-            if (midiOutDev == null || kit == null) return;
+            if (midiOutDev == null || kit == null)
+                return;
 
             midiOutDev.SendBuffer(SysExHelper.GetExclusiveData(SysExType.GMSystemOff));
 

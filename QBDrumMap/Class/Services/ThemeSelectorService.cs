@@ -6,16 +6,29 @@ using libQB.Enums;
 namespace QBDrumMap.Services
 {
     [DISingleton<IThemeSelectorService>]
-    public class ThemeSelectorService
-        : IThemeSelectorService
+    public class ThemeSelectorService : IThemeSelectorService
     {
+        #region ctor
+
         public ThemeSelectorService()
         {
         }
 
+        #endregion
+
+        #region Methods
+
+        // アプリケーションのテーマ（Dark/Light）とアクセントカラーを変更
         public void SetTheme(BaseTheme theme, string colorname)
         {
-            ThemeManager.Current.ChangeTheme(Application.Current, $"{theme.ToString()}.{colorname}");
+            if (Application.Current == null)
+            {
+                return;
+            }
+
+            ThemeManager.Current.ChangeTheme(Application.Current, $"{theme}.{colorname}");
         }
+
+        #endregion
     }
 }
