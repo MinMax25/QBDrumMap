@@ -24,7 +24,7 @@ namespace QBDrumMap.Class.MapModels
 
         private MapData replica;
 
-        private List<ViewModelBase> EdigingList = new();
+        private List<ViewModelBase> EditingList = new();
 
         [ObservableProperty]
         private string appName;
@@ -69,24 +69,24 @@ namespace QBDrumMap.Class.MapModels
 
             if (isEditing)
             {
-                if (!EdigingList.Contains(sender))
+                if (!EditingList.Contains(sender))
                 {
-                    EdigingList.Add(sender);
+                    EditingList.Add(sender);
                     stateChanged = true;
                 }
             }
             else
             {
-                if (EdigingList.Contains(sender))
+                if (EditingList.Contains(sender))
                 {
-                    EdigingList.Remove(sender);
+                    EditingList.Remove(sender);
                     stateChanged = true;
                 }
             }
 
             if (stateChanged)
             {
-                EditState = EdigingList.Count > 0;
+                EditState = EditingList.Count > 0;
                 EditStateChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(EditState)));
             }
         }
@@ -108,8 +108,8 @@ namespace QBDrumMap.Class.MapModels
                 Plugins.Clear();
                 Parts.Clear();
 
-                string jsonStrng = await File.ReadAllTextAsync(path);
-                var data = JsonSerializer.Deserialize<MapData>(jsonStrng);
+                string jsonString = await File.ReadAllTextAsync(path);
+                var data = JsonSerializer.Deserialize<MapData>(jsonString);
 
                 foreach (var plugin in data.Plugins.Select((x, i) => new { item = x, order = i }))
                 {
