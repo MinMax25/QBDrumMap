@@ -14,8 +14,18 @@
     Dialog:DialogParticipation.Register="{Binding}"
     mc:Ignorable="d"
     d:DesignHeight="800" d:DesignWidth="1000">
-
-    <Grid>
+    
+    <Grid AllowDrop="True"
+        PreviewDragOver="Grid_PreviewDragOver">
+        <bh:Interaction.Triggers>
+            <bh:EventTrigger
+                EventName="Drop">
+                <bh:InvokeCommandAction
+                    Command="{Binding DropFileCommand}"
+                    PassEventArgsToCommand="True"/>
+            </bh:EventTrigger>
+        </bh:Interaction.Triggers>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="48"/>
             <RowDefinition Height="*"/>

@@ -123,6 +123,24 @@ namespace QBDrumMap.ViewModels
             LastConvertMIDIFilePath = path;
         }
 
+        [RelayCommand]
+        private void OnDropFile(DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files?.Length > 0)
+                {
+                    string path = files[0];
+                    if (Path.GetExtension(path).Equals(".mid", StringComparison.OrdinalIgnoreCase))
+                    {
+                        LastConvertMIDIFilePath = path;
+                    }
+                }
+            }
+        }
+
+
         [RelayCommand(CanExecute = nameof(CanConvert))]
         private async Task OnConvert()
         {
@@ -172,7 +190,6 @@ namespace QBDrumMap.ViewModels
         {
             IsGroupExpanded = false;
         }
-
         #endregion
 
         #region EventHandler
