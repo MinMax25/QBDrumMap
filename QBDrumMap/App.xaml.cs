@@ -25,7 +25,7 @@ namespace QBDrumMap
 
         public static T GetService<T>()
         {
-            if (_host.Services.GetService<T>() is T service)
+            if (_host is not null && _host.Services.GetService<T>() is T service)
             {
                 return service;
             }

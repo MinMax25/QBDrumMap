@@ -13,7 +13,7 @@ namespace QBDrumMap.Class.Extensions
 
         private static ISettingService Setting => App.GetService<ISettingService>();
 
-        public static MapData MapData => App.GetService<MapData>();
+        public static MapData MapData => App.GetService<MapData>() ?? new MapData();
 
         public static Dictionary<int, string> NoteNames => Enumerable.Range(-1, 129).ToDictionary(x => x, x =>
         {

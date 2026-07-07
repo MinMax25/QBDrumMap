@@ -62,7 +62,7 @@
 
   <ItemGroup>
     <Content Include="DrumMap.qbd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Document\Manual\content.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -173,12 +173,12 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-    <PackageReference Include="libMidi" Version="1.0.4" />
+    <PackageReference Include="libMidi" Version="1.0.6" />
     <PackageReference Include="libQB" Version="1.0.0" />
     <PackageReference Include="MahApps.Metro" Version="2.4.11" />
     <PackageReference Include="MahApps.Metro.IconPacks.FontAwesome" Version="6.2.1" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="6.2.1" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.9" />
     <PackageReference Include="NAudio.Midi" Version="2.3.0" />
   </ItemGroup>
 
