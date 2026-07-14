@@ -67,7 +67,7 @@
                 <GroupBox Header="Global" Style="{StaticResource GroupBoxBaseStyle}">
                     <StackPanel>
                         <DockPanel>
-                            <Label Content="{x:Static reslibQB:Resources.Setting_SatartUpPage}"/>
+                            <Label Content="{x:Static reslibQB:Resources.Setting_StartUpPage}"/>
                             <ComboBox
                                 HorizontalAlignment="Left" Width="140"
                                 SelectedValue="{Binding Setting.StartUpPage}" ItemsSource="{Binding Source={StaticResource PagesComboSource}}"/>
