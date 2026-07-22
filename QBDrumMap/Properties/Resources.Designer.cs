@@ -19,7 +19,7 @@ namespace QBDrumMap.Properties {
     // または Visual Studio のようなツールを使用して自動生成されました。
     // メンバーを追加または削除するには、.ResX ファイルを編集して、/str オプションと共に
     // ResGen を実行し直すか、または VS プロジェクトをビルドし直します。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -66,6 +66,24 @@ namespace QBDrumMap.Properties {
         public static string ArticulationAutomaticFill {
             get {
                 return ResourceManager.GetString("ArticulationAutomaticFill", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Automatically assign articulations for this kit based on the map data? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AutoAssignArticulationConfirm {
+            get {
+                return ResourceManager.GetString("AutoAssignArticulationConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0} pitch(es) assigned. {1} pitch(es) skipped (no confident match found). に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AutoAssignArticulationResult {
+            get {
+                return ResourceManager.GetString("AutoAssignArticulationResult", resourceCulture);
             }
         }
         
@@ -142,6 +160,15 @@ namespace QBDrumMap.Properties {
         }
         
         /// <summary>
+        ///   Are you sure you want to clear the articulation and separator for all pitches in this kit? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ClearArticulationAndSeparatorConfirm {
+            get {
+                return ResourceManager.GetString("ClearArticulationAndSeparatorConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Compress Forward に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string CompressForward {
@@ -183,6 +210,24 @@ namespace QBDrumMap.Properties {
         public static string ContextKitPitchesArticulationSourceIsEmpty {
             get {
                 return ResourceManager.GetString("ContextKitPitchesArticulationSourceIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Auto Assign Articulation に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ContextKitPitchesAutoAssignArticulation {
+            get {
+                return ResourceManager.GetString("ContextKitPitchesAutoAssignArticulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Clear Articulation And Separator に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ContextKitPitchesClearArticulationAndSeparator {
+            get {
+                return ResourceManager.GetString("ContextKitPitchesClearArticulationAndSeparator", resourceCulture);
             }
         }
         

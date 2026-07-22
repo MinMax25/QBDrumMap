@@ -109,6 +109,9 @@
   <data name="Part" xml:space="preserve">
     <value>Part</value>
   </data>
+  <data name="PartNameAlias" xml:space="preserve">
+    <value>Part Name Alias</value>
+  </data>
   <data name="Plugin" xml:space="preserve">
     <value>Plugin</value>
   </data>

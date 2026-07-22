@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text.Encodings.Web;
@@ -10,6 +11,7 @@ using libQB.Attributes;
 using libQB.Enums;
 using QBDrumMap.Class.Cubase;
 using QBDrumMap.Class.Enums;
+using QBDrumMap.Class.MapModels;
 using QBDrumMap.Services;
 
 namespace QBDrumMap.Class.Services
@@ -102,6 +104,10 @@ namespace QBDrumMap.Class.Services
 
         // プログラムチェンジの拡張設定フラグ
         private bool _IsExtendedProgramChange = false;
+
+        // パーツ名の表記ゆれ辞書
+        [ObservableProperty]
+        private ObservableCollection<PartNameAlias> partNameDictionary = new();
 
         #endregion
 
@@ -230,6 +236,33 @@ namespace QBDrumMap.Class.Services
             Thread.CurrentThread.CurrentUICulture = culture;
 
             ThemeSelector?.SetTheme(BaseTheme, ThemeColor);
+
+            SeedDefaultPartNameDictionaryIfEmpty();
+        }
+
+        // 初回起動時など辞書が未登録の場合に、代表的なドラムパーツの表記ゆれをデフォルト登録する
+        private void SeedDefaultPartNameDictionaryIfEmpty()
+        {
+            if (PartNameDictionary.Any())
+            {
+                return;
+            }
+
+            var defaults = new[]
+            {
+                new PartNameAlias { CanonicalName = "Kick", Aliases = "Bass Drum,BD" },
+                new PartNameAlias { CanonicalName = "Snare", Aliases = "SD" },
+                new PartNameAlias { CanonicalName = "Hi-Hat", Aliases = "HiHat,HH,Hat" },
+                new PartNameAlias { CanonicalName = "Tom", Aliases = "Floor Tom" },
+                new PartNameAlias { CanonicalName = "Ride", Aliases = "Ride Cymbal" },
+                new PartNameAlias { CanonicalName = "Crash", Aliases = "Crash Cymbal" },
+                new PartNameAlias { CanonicalName = "Cymbal", Aliases = string.Empty },
+            };
+
+            foreach (var item in defaults)
+            {
+                PartNameDictionary.Add(item);
+            }
         }
 
         public void Save()

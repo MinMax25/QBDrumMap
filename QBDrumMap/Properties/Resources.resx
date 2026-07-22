@@ -120,6 +120,12 @@
   <data name="ArticulationAutomaticFill" xml:space="preserve">
     <value>Do you want to set articulation automatically?</value>
   </data>
+  <data name="AutoAssignArticulationConfirm" xml:space="preserve">
+    <value>Automatically assign articulations for this kit based on the map data?</value>
+  </data>
+  <data name="AutoAssignArticulationResult" xml:space="preserve">
+    <value>{0} pitch(es) assigned. {1} pitch(es) skipped (no confident match found).</value>
+  </data>
   <data name="ButtonAdd" xml:space="preserve">
     <value>Add</value>
   </data>
@@ -144,6 +150,9 @@
   <data name="ButtonSearch" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="ClearArticulationAndSeparatorConfirm" xml:space="preserve">
+    <value>Are you sure you want to clear the articulation and separator for all pitches in this kit?</value>
+  </data>
   <data name="CompressForward" xml:space="preserve">
     <value>Compress Forward</value>
   </data>
@@ -158,6 +167,12 @@
   </data>
   <data name="ContextKitPitchesArticulationSourceIsEmpty" xml:space="preserve">
     <value>Select Articulation Source Kit</value>
+  </data>
+  <data name="ContextKitPitchesAutoAssignArticulation" xml:space="preserve">
+    <value>Auto Assign Articulation</value>
+  </data>
+  <data name="ContextKitPitchesClearArticulationAndSeparator" xml:space="preserve">
+    <value>Clear Articulation And Separator</value>
   </data>
   <data name="ContextKitPitchesCompressForward" xml:space="preserve">
     <value>Compress Forward</value>

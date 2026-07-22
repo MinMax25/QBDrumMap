@@ -124,6 +124,17 @@ namespace QBDrumMap.Properties
         }
 
         /// <summary>
+        ///   Part Name Alias に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string PartNameAlias
+        {
+            get
+            {
+                return ResourceManager.GetString("PartNameAlias", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Plugin に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Plugin

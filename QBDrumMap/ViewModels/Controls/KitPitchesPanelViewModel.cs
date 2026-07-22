@@ -489,6 +489,46 @@ namespace QBDrumMap.ViewModels.Controls
             }
         }
 
+        [RelayCommand]
+        private async Task OnAutoAssignArticulation()
+        {
+            if (Kit == null)
+            {
+                return;
+            }
+
+            if (await Dialog.ShowConfirmAsync(Properties.Resources.ContextKitPitchesAutoAssignArticulation, Properties.Resources.AutoAssignArticulationConfirm) == false)
+            {
+                return;
+            }
+
+            var (assignedCount, skippedCount) = MapData.AutoAssignArticulations(Kit, Setting.PartNameDictionary);
+
+            await Dialog.ShowInformationAsync(
+                string.Format(Properties.Resources.AutoAssignArticulationResult, assignedCount, skippedCount),
+                Properties.Resources.ContextKitPitchesAutoAssignArticulation);
+        }
+
+        [RelayCommand]
+        private async Task OnClearArticulationAndSeparator()
+        {
+            if (Kit == null)
+            {
+                return;
+            }
+
+            if (await Dialog.ShowConfirmAsync(Properties.Resources.ContextKitPitchesClearArticulationAndSeparator, Properties.Resources.ClearArticulationAndSeparatorConfirm) == false)
+            {
+                return;
+            }
+
+            foreach (var pitch in Kit.Pitches)
+            {
+                pitch.ArticulationID = 0;
+                pitch.Separator = Separator.None;
+            }
+        }
+
         #endregion
 
         #region Property Change Handler

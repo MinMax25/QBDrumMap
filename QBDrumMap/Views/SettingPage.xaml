@@ -5,6 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
@@ -77,12 +79,48 @@
                             <Label Content="{x:Static resLocal:Resources.Setting_CubaseInstallPath}"/>
                             <TextBox
                                 Style="{DynamicResource MahApps.Styles.TextBox.Search}"
-                                Text="{Binding Setting.CubaseInstallPath}" MaxLength="256"  
+                                Text="{Binding Setting.CubaseInstallPath}" MaxLength="256"
                                 mah:TextBoxHelper.SelectAllOnFocus="True"
                                 mah:TextBoxHelper.ButtonCommand="{Binding SelectCubaseInstallPathCommand}">
                             </TextBox>
                         </DockPanel>
                     </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Part Name Dictionary" Style="{StaticResource GroupBoxBaseStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="300"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddPartNameDictionaryEntryCommand}" ToolTip="{x:Static resLocal:Resources.ButtonAdd}">
+                                <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
+                            </Button>
+                        </StackPanel>
+
+                        <DataGrid Grid.Row="1" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding PartNameDictionary}">
+                            <bh:Interaction.Behaviors>
+                                <behaviors:DataGridExtendBehavior
+                                    SelectedRows="{Binding SelectedPartNameDictionaryEntries}"
+                                    SelectedRow="{Binding SelectedPartNameDictionaryEntry}"
+                                    DeleteCommand="{Binding DeleteSelectedPartNameDictionaryEntriesCommand}"/>
+                            </bh:Interaction.Behaviors>
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Width="220" Header="Canonical Name" Binding="{Binding CanonicalName, Converter={StaticResource TrimConverter}}">
+                                    <DataGridTextColumn.EditingElementStyle>
+                                        <StaticResource ResourceKey="DataGridEditingTextBoxStyle"/>
+                                    </DataGridTextColumn.EditingElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="Aliases (comma separated)" Binding="{Binding Aliases, Converter={StaticResource TrimConverter}}">
+                                    <DataGridTextColumn.EditingElementStyle>
+                                        <StaticResource ResourceKey="DataGridEditingTextBoxStyle"/>
+                                    </DataGridTextColumn.EditingElementStyle>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
                 </GroupBox>
             </StackPanel>
         </ScrollViewer>

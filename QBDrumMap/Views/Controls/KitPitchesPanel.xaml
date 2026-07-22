@@ -103,6 +103,10 @@
                             SelectedValue="{Binding ArticulationSource}"
                             ItemsSource="{Binding BaseOnComboSource}"
                             DisplayMemberPath="Name"/>
+                        <Separator/>
+                        <MenuItem Header="{x:Static resLocal:Resources.ContextKitPitchesAutoAssignArticulation}" Command="{Binding AutoAssignArticulationCommand}"/>
+                        <Separator/>
+                        <MenuItem Header="{x:Static resLocal:Resources.ContextKitPitchesClearArticulationAndSeparator}" Command="{Binding ClearArticulationAndSeparatorCommand}"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
                 
