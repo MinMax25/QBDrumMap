@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>アーティキュレーション自動設定機能 設計方針</title>
+<style>
+    body {
+        font-family: "Segoe UI", "Yu Gothic", sans-serif;
+        line-height: 1.7;
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+        color: #222;
+    }
+    h1 { border-bottom: 3px solid #444; padding-bottom: 0.3rem; }
+    h2 { border-bottom: 1px solid #ccc; padding-bottom: 0.2rem; margin-top: 2.2rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem 0.8rem; text-align: left; }
+    th { background: #f2f2f2; }
+    code { background: #f5f5f5; padding: 0.1rem 0.35rem; border-radius: 3px; font-family: Consolas, monospace; }
+    .file-ref { color: #555; font-size: 0.9em; }
+    ol, ul { margin-top: 0.3rem; }
+    .status {
+        display: inline-block;
+        background: #eef;
+        border: 1px solid #99c;
+        border-radius: 4px;
+        padding: 0.2rem 0.6rem;
+        font-size: 0.85em;
+        margin-bottom: 1rem;
+    }
+</style>
+</head>
+<body>
+
+<h1>アーティキュレーション自動設定機能 設計方針</h1>
+<p class="status">作成日: 2026-07-22 / ステータス: 設計確定・実装着手</p>
+
+<h2>1. 目的</h2>
+<p>
+    ピッチリストの <code>KitPitch.ArticulationID</code>
+    （<span class="file-ref">Class/MapModels/KitPitch.cs</span>）を、
+    現在の手動選択に加えて、マップデータ内の情報から自動的に割り当てられるようにする。
+</p>
+
+<h2>2. 対象外フィルタ（前処理）</h2>
+<p>
+    <code>Plugin.PluginType</code> が <code>GM</code> / <code>GM2</code> / <code>GS</code> / <code>XG</code>
+    （<span class="file-ref">Class/MapModels/PluginType.cs</span>）の場合、GM標準ドラムマップ上でパーカッション用途に
+    割り当てられているノート番号に該当する <code>KitPitch</code> は自動設定の対象から除外する。
+</p>
+<ul>
+    <li>Tambourine = 54</li>
+    <li>Cowbell = 56</li>
+    <li>Vibraslap = 58</li>
+    <li>Bongo = 60-61</li>
+    <li>Conga = 62-64</li>
+    <li>Timbale = 65-66</li>
+    <li>Agogo = 67-68</li>
+    <li>Cabasa = 69</li>
+    <li>Maracas = 70</li>
+    <li>Whistle = 71-72</li>
+    <li>Guiro = 73-74</li>
+    <li>Claves = 75</li>
+    <li>Wood Block = 76-77</li>
+    <li>Cuica = 78-79</li>
+    <li>Triangle = 80-81</li>
+</ul>
+<p>通常のドラム音源プラグイン（GM系以外）はこの除外を適用しない。</p>
+
+<h2>3. パーツ名辞書（正規化）</h2>
+<ul>
+    <li>Kick/Bass Drum/BD、Hi-Hat/HH等の表記ゆれを吸収する別名辞書を用意する。</li>
+    <li>
+        用途は2つ。
+        <ol>
+            <li><code>KitPitch.Name</code> からどの <code>Part</code>（楽器）を指すか特定する。</li>
+            <li>正規化後の文字列でのマッチング精度を向上させる。</li>
+        </ol>
+    </li>
+    <li>
+        <strong>永続化：</strong> アプリ全体共通設定として <code>Setting.json</code> に保存する。
+        <code>ISettingService</code> / <code>SettingService</code> の既存パターンを流用し、新規ファイル・新規I/O基盤は追加しない。
+    </li>
+    <li>
+        <strong>編集UI：</strong> 当初は専用ページをハンバーガーメニューに追加する方針だったが、
+        Settingページに十分な余裕があることを確認できたため、Settingページ内のグループボックス
+        「Part Name Dictionary」として統合した（専用ページ・専用ハンバーガーメニュー項目は削除）。
+        編集用のDataGrid・Add/Deleteコマンドは <code>SettingViewModel</code> / <code>SettingPage.xaml</code>
+        に実装する。
+    </li>
+</ul>
+
+<h2>4. マッチング優先順位</h2>
+<p>正規化後の名前を用いて、以下の順で試行し、最初にヒットした結果を採用する。</p>
+<table>
+    <tr><th>優先度</th><th>方法</th><th>信頼度</th><th>備考</th></tr>
+    <tr>
+        <td>1a</td>
+        <td>同一Plugin内の他KitでName一致 &amp; ArticulationID設定済みのものを参照</td>
+        <td>最高</td>
+        <td><code>Articulation.ID</code> はMapData全体でグローバル一意なため、Part特定不要でそのままID転用可</td>
+    </tr>
+    <tr>
+        <td>1b</td>
+        <td>1aでヒットしなければ、他Plugin含む全Kitを対象に同様に検索</td>
+        <td>高</td>
+        <td>別製品間の同名衝突リスクはあるが、完全一致のみを対象とすることでリスクを抑制</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>辞書正規化で対象Partを特定し、そのPartの <code>Articulations</code> 一覧内でName完全一致を検索</td>
+        <td>中〜高</td>
+        <td>初出の名前でも辞書があれば機械的に解決可能</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>1・2でヒットしない場合のみ、対象Part内 <code>Articulations</code> とのトークン一致率等でベスト候補をスコアリング</td>
+        <td>低（フォールバック）</td>
+        <td>確信度が高ければ自動適用、低い・複数候補拮抗時はユーザー確認</td>
+    </tr>
+</table>
+
+<h2>5. 代表ピッチ／重複ピッチの後処理</h2>
+<p>同一 <code>ArticulationID</code> が複数の <code>KitPitch</code> に割り当てられた結果になった場合：</p>
+<ol>
+    <li>候補の中にGM標準ドラムマップの対応ノート番号と <code>Pitch</code> が一致するものがあれば、それを代表とする。</li>
+    <li>該当が無ければ、最初に見つかったピッチを代表とする。</li>
+    <li>代表ピッチには <code>Separator.None</code>、それ以外には <code>Separator.Duplicate</code> を設定する。</li>
+</ol>
+<p>
+    また、ピッチ名が設定されているにもかかわらずアーティキュレーションが割り当たらなかった場合
+    （GM/GS/XGパーカッション除外、または優先度1〜3のいずれでも候補が見つからなかった場合）は、
+    <code>Separator.Separate</code> を設定し、未設定ピッチと区別する。
+</p>
+
+<h2>6. UI操作</h2>
+<p>
+    <code>KitPitchesPanel.xaml</code> の既存コンテキストメニュー内、<code>ContextKitPitchesCopyArticulation</code>
+    （アーティキュレーションコピー）の近くに新規メニュー項目「アーティキュレーション自動引き当て」を追加する。
+    実行対象は選択状態に関わらずKit全体（全128ピッチ）とし、既存の <code>RelayCommand</code> パターンで実装する。
+</p>
+<p>
+    コンテキストメニューの末尾には「アーティキュレーションとセパレータをクリア」コマンドを追加する。
+    Kit全体（選択不問）を対象に、全ピッチの <code>ArticulationID</code> を0、<code>Separator</code> を
+    <code>None</code> に戻す（ピッチ名は変更しない）。
+</p>
+
+</body>
+</html>

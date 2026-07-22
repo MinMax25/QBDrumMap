@@ -1,6 +1,8 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using libQB.Enums;
 using QBDrumMap.Class.Enums;
+using QBDrumMap.Class.MapModels;
 
 namespace QBDrumMap.Class.Services
 {
@@ -73,6 +75,9 @@ namespace QBDrumMap.Class.Services
 
         // プログラムチェンジを拡張設定するか
         bool IsExtendedProgramChange { get; set; }
+
+        // パーツ名の表記ゆれ辞書（アーティキュレーション自動設定で使用）
+        ObservableCollection<PartNameAlias> PartNameDictionary { get; set; }
 
         #endregion
 

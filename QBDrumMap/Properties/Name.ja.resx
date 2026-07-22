@@ -109,6 +109,9 @@
   <data name="Part" xml:space="preserve">
     <value>パーツ</value>
   </data>
+  <data name="PartNameAlias" xml:space="preserve">
+    <value>パーツ名エイリアス</value>
+  </data>
   <data name="Plugin" xml:space="preserve">
     <value>プラグイン</value>
   </data>

@@ -120,6 +120,12 @@
   <data name="ArticulationAutomaticFill" xml:space="preserve">
     <value>アーティキュレーションを自動設定しますか？</value>
   </data>
+  <data name="AutoAssignArticulationConfirm" xml:space="preserve">
+    <value>マップデータに基づいてこのキットのアーティキュレーションを自動設定しますか？</value>
+  </data>
+  <data name="AutoAssignArticulationResult" xml:space="preserve">
+    <value>{0}件のピッチに自動設定しました。{1}件は確信度の高い候補が見つからずスキップしました。</value>
+  </data>
   <data name="ButtonAdd" xml:space="preserve">
     <value>追加</value>
   </data>
@@ -144,6 +150,9 @@
   <data name="ButtonSearch" xml:space="preserve">
     <value>検索</value>
   </data>
+  <data name="ClearArticulationAndSeparatorConfirm" xml:space="preserve">
+    <value>このキットの全ピッチのアーティキュレーションとセパレータをクリアしますか？</value>
+  </data>
   <data name="CompressForward" xml:space="preserve">
     <value>空白行を詰める</value>
   </data>
@@ -158,6 +167,12 @@
   </data>
   <data name="ContextKitPitchesArticulationSourceIsEmpty" xml:space="preserve">
     <value>コピー元のキットを選択してください</value>
+  </data>
+  <data name="ContextKitPitchesAutoAssignArticulation" xml:space="preserve">
+    <value>アーティキュレーション自動引き当て</value>
+  </data>
+  <data name="ContextKitPitchesClearArticulationAndSeparator" xml:space="preserve">
+    <value>アーティキュレーションとセパレータをクリア</value>
   </data>
   <data name="ContextKitPitchesCompressForward" xml:space="preserve">
     <value>名前付きを前方に詰める</value>
