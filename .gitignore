@@ -10,6 +10,5 @@
 *.user
 *.userosscache
 *.sln.docstates
-docs/
 /UnitTest
 /QBDrumMap/DrumMap.qbd_
