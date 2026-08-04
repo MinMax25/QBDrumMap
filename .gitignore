@@ -12,3 +12,4 @@
 *.sln.docstates
 /UnitTest
 /docs
+/graphify-out
