@@ -1,15 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Globalization;
-using System.IO;
-using System.Reflection;
-using System.Text.Encodings.Web;
-using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.Json.Nodes;
-using System.Text.Unicode;
 using CommunityToolkit.Mvvm.ComponentModel;
 using libQB.Attributes;
 using libQB.Enums;
+using libQB.Settings;
 using QBDrumMap.Class.Cubase;
 using QBDrumMap.Class.Enums;
 using QBDrumMap.Class.MapModels;
@@ -21,6 +16,8 @@ namespace QBDrumMap.Class.Services
     public partial class SettingService : ObservableObject, ISettingService
     {
         #region Fields
+
+        private readonly ISettingStore<AppSettings> SettingStore;
 
         // テーマの切り替えを管理するサービス
         private readonly IThemeSelectorService ThemeSelector;
@@ -114,15 +111,6 @@ namespace QBDrumMap.Class.Services
 
         #region Properties
 
-        // 設定ファイルの保存先パス
-        private static string SettingFilePath
-        {
-            get
-            {
-                return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Setting.json");
-            }
-        }
-
         // アーティキュレーション検索用のフィルター（非永続化）
         [JsonIgnore]
         public string SearchArticulationFilter { get; set; } = string.Empty;
@@ -145,12 +133,12 @@ namespace QBDrumMap.Class.Services
 
         #region ctor
 
-        public SettingService()
+        public SettingService(
+            ISettingStore<AppSettings> settingStore,
+            IThemeSelectorService themeSelectorService,
+            IMidiService midiService)
         {
-        }
-
-        public SettingService(IThemeSelectorService themeSelectorService, IMidiService midiService)
-        {
+            SettingStore = settingStore;
             ThemeSelector = themeSelectorService;
             MIDI = midiService;
         }
@@ -206,36 +194,43 @@ namespace QBDrumMap.Class.Services
 
         public void Load()
         {
-            if (File.Exists(SettingFilePath))
-            {
-                var jsonString = File.ReadAllText(SettingFilePath);
-                var json = JsonNode.Parse(jsonString);
-                if (json?[nameof(Language)] is JsonValue legacyLanguage &&
-                    legacyLanguage.TryGetValue<int>(out var languageValue))
-                {
-                    json[nameof(Language)] = languageValue == 1 ? "ja-JP" : "en-US";
-                    jsonString = json.ToJsonString();
-                }
-                var restore = JsonSerializer.Deserialize<SettingService>(jsonString);
-
-                if (restore != null)
-                {
-                    GetType()
-                        .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                        .Where(x => x.GetCustomAttribute<JsonIgnoreAttribute>() == null)
-                        .ToList()
-                        .ForEach(p =>
-                        {
-                            p.SetValue(this, p.GetValue(restore));
-                        });
-                }
-            }
+            ApplySettings(SettingStore.Load());
 
             ApplyLanguage(Language);
 
             ThemeSelector?.SetTheme(BaseTheme, ThemeColor);
 
             SeedDefaultPartNameDictionaryIfEmpty();
+        }
+
+        private void ApplySettings(AppSettings settings)
+        {
+            BaseTheme = settings.BaseTheme;
+            ThemeColor = settings.ThemeColor;
+            Language = settings.Language;
+            StartUpPage = settings.StartUpPage;
+            UseArticulationPitchName = settings.UseArticulationPitchName;
+            UseArticulation = settings.UseArticulation;
+            IsOpenTheLastFileOpened = settings.IsOpenTheLastFileOpened;
+            IsPartScoreViewExtended = settings.IsPartScoreViewExtended;
+            LastOpenedFilePath = settings.LastOpenedFilePath;
+            LastImportFilePath = settings.LastImportFilePath;
+            ExportStudioOneDefaultPath = settings.ExportStudioOneDefaultPath;
+            ExportCubaseDefaultPath = settings.ExportCubaseDefaultPath;
+            ExportTextDefaultPath = settings.ExportTextDefaultPath;
+            ExportCubaseBaseOnDefaultPath = settings.ExportCubaseBaseOnDefaultPath;
+            ExportNoteMapperDefaultPath = settings.ExportNoteMapperDefaultPath;
+            ExportQBDrummerDefaultPath = settings.ExportQBDrummerDefaultPath;
+            ConvertMIDIFormat = settings.ConvertMIDIFormat;
+            CubaseInstallPath = settings.CubaseInstallPath;
+            MidiInDevice = settings.MidiInDevice;
+            MidiInFixedPitch = settings.MidiInFixedPitch;
+            PartNameDictionary = new ObservableCollection<PartNameAlias>(
+                settings.PartNameDictionary.Select(item => new PartNameAlias
+                {
+                    CanonicalName = item.CanonicalName,
+                    Aliases = item.Aliases
+                }));
         }
 
         private static void ApplyLanguage(string cultureCode)
@@ -286,13 +281,41 @@ namespace QBDrumMap.Class.Services
 
         public void Save()
         {
-            var options = new JsonSerializerOptions
+            SettingStore.Save(CreateSettings(this));
+        }
+
+        private static AppSettings CreateSettings(ISettingService source)
+        {
+            return new AppSettings
             {
-                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
-                WriteIndented = true
+                BaseTheme = source.BaseTheme,
+                ThemeColor = source.ThemeColor,
+                Language = source.Language,
+                StartUpPage = source.StartUpPage,
+                UseArticulationPitchName = source.UseArticulationPitchName,
+                UseArticulation = source.UseArticulation,
+                IsOpenTheLastFileOpened = source.IsOpenTheLastFileOpened,
+                IsPartScoreViewExtended = source.IsPartScoreViewExtended,
+                LastOpenedFilePath = source.LastOpenedFilePath,
+                LastImportFilePath = source.LastImportFilePath,
+                ExportStudioOneDefaultPath = source.ExportStudioOneDefaultPath,
+                ExportCubaseDefaultPath = source.ExportCubaseDefaultPath,
+                ExportTextDefaultPath = source.ExportTextDefaultPath,
+                ExportCubaseBaseOnDefaultPath = source.ExportCubaseBaseOnDefaultPath,
+                ExportNoteMapperDefaultPath = source.ExportNoteMapperDefaultPath,
+                ExportQBDrummerDefaultPath = source.ExportQBDrummerDefaultPath,
+                ConvertMIDIFormat = source.ConvertMIDIFormat,
+                CubaseInstallPath = source.CubaseInstallPath,
+                MidiInDevice = source.MidiInDevice,
+                MidiInFixedPitch = source.MidiInFixedPitch,
+                PartNameDictionary = source.PartNameDictionary
+                    .Select(item => new PartNameAliasSetting
+                    {
+                        CanonicalName = item.CanonicalName,
+                        Aliases = item.Aliases
+                    })
+                    .ToList()
             };
-            var jsonString = JsonSerializer.Serialize(this, options);
-            File.WriteAllText(SettingFilePath, jsonString);
         }
 
         #endregion

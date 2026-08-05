@@ -110,6 +110,10 @@ namespace QBDrumMap
             services.AddSingleton<INavigationService, NavigationService>();
             services.AddSingleton<IDialogCoordinator, DialogCoordinator>();
 
+            var settingFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Setting.toml");
+            services.AddSingleton<libQB.Settings.ISettingStore<AppSettings>>(
+                new libQB.Settings.TomlSettingStore<AppSettings>(settingFilePath));
+
             services.AddSingleton<IDialogService, DialogService>();
             services.AddSingleton<IWindowService, WindowService>();
             services.AddSingleton<IUndoManager, UndoManager>();
