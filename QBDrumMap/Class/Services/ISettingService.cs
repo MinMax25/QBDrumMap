@@ -17,7 +17,7 @@ namespace QBDrumMap.Class.Services
         string ThemeColor { get; set; }
 
         // 言語設定
-        Languages Language { get; set; }
+        string Language { get; set; }
 
         // 起動時に表示するページ
         Pages StartUpPage { get; set; }

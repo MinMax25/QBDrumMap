@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Windows;
@@ -111,7 +111,7 @@ namespace QBDrumMap.ViewModels
         private async Task OnOpenFile()
         {
             var path = await Dialog.ShowOpenFileDialog(
-                libQB.Properties.Dialog.Common_OpenFile,
+                App.Text("Common_OpenFile", "Open File"),
                 "MIDI File|*.mid",
                 GetValidFilePath(LastConvertMIDIFilePath));
 
@@ -148,7 +148,7 @@ namespace QBDrumMap.ViewModels
 
             if (!File.Exists(LastConvertMIDIFilePath))
             {
-                await Dialog.ShowAlertAsync(title, libQB.Properties.Dialog.Alert_FileNotFound);
+                await Dialog.ShowAlertAsync(title, App.Text("Alert_FileNotFound"));
                 LastConvertMIDIFilePath = string.Empty;
                 return;
             }
@@ -171,11 +171,11 @@ namespace QBDrumMap.ViewModels
                     ConvertToFormat1(baseMIDI, baseArticMap, systemEvents, channelEvents);
                 }
 
-                await Dialog.ShowInformationAsync(libQB.Properties.Resources.Message_ProcessComplete, title);
+                await Dialog.ShowInformationAsync(App.Text("Message_ProcessComplete"), title);
             }
             catch
             {
-                await Dialog.ShowErrorAsync(Properties.Resources.MIDIError);
+                await Dialog.ShowErrorAsync(App.Text("MIDIError", Properties.Resources.MIDIError));
             }
         }
 

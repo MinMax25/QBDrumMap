@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Autres</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Autres</h1>
+<h2 id="interpolation">À propos de l'interpolation automatique des articulations</h2>
+<p>Lors de la conversion MIDI ou de la création d'une mappe de batterie mappée, une mappe d'articulation est créée pour chaque mappe de batterie et la conversion de hauteur est effectuée en fonction de ces informations.</p>
+<p>Si aucune hauteur n'est assignée à une articulation, une hauteur alternative sera remplie selon les règles suivantes.</p>
+<ol>
+<li>Si la liste d'articulations de chaque partie de batterie n'est pas définie de haut en bas, remplissez la hauteur précédente.</li>
+<li>Si la liste d'articulations de chaque partie de batterie n'est pas définie de bas en haut, remplissez la hauteur précédente.</li>
+<li>Après avoir exécuté 1.2. ci-dessus, si elle n'est toujours pas définie, renseignez la hauteur de l'articulation réglée sur Complément.</li>
+</ol>
+<p class="note">
+            Selon les règles ci-dessus, les articulations des parties de batterie nécessitent au moins une affectation de hauteur.
+        </p>
+</div>
+</body>
+</html>

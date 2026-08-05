@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Articulation</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Articulation</h1>
+<p>Définit l'ordre de tri lors de la création d'une Drum Map.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-articulation_pic_1.png" width="650"/>
+</div>
+<h2 id="order">A propos de l'ordre d'affichage</h2>
+<h3>Si « Utiliser les articulations » est coché lors de l'export de la drum map</h3>
+<p>Les drum maps seront regroupées selon les règles suivantes, et au sein des groupes elles seront triées par ordre décroissant de hauteur d'articulation.</p>
+<ol>
+<li>L'articulation est spécifiée mais le séparateur n'est pas spécifié.</li>
+<li>L'articulation n'est pas spécifiée et Séparer est spécifié.</li>
+<li>Articulation est spécifié et Séparé est spécifié. L'articulation</li>
+<li>est spécifiée et Not Loaded est spécifié. L'articulation</li>
+<li>est spécifiée et la duplication est spécifiée.</li>
+<li>L'articulation n'est pas spécifiée et le séparateur n'est pas spécifié.</li>
+</ol>
+<p>S'il existe un pas minimum non défini entre 2. et 3., un séparateur ("==========") sera automatiquement interpolé.</p>
+<h3>Si "Utiliser les articulations" n'est pas coché lors de l'export de la drum map</h3>
+<p>L'ordre de la liste de pitch sera appliqué tel quel.</p>
+</div>
+</body>
+</html>

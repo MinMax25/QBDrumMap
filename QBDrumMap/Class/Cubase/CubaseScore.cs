@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.IO;
 using System.Xml.Serialization;
-using libQB.Enums;
 using QBDrumMap.Class.Services;
 using InstrumentName = QBDrumMap.Cubase.Score.InstrumentName;
 using Instruments = QBDrumMap.Cubase.Score.Instruments;
@@ -76,7 +75,7 @@ namespace QBDrumMap.Class.Cubase
                     continue;
                 }
 
-                if (language == Languages.Japanese)
+                if (language.StartsWith("ja", StringComparison.OrdinalIgnoreCase))
                 {
                     var jp = libname.instrumentNames.entities.InstrumentNameEntityDefinition.FirstOrDefault(x => x.entityID == item.nameID);
                     InstrumentsComboSource.Add(new KeyValuePair<string, string>(item.entityID, $"{jp?.name}"));

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="MenuHelpAboutCaption" xml:space="preserve">
+    <value>Acerca de {0}</value>
+  </data>
+  <data name="Alert_FileNotFound" xml:space="preserve">
+    <value>¡Archivo no encontrado!</value>
+  </data>
+  <data name="Setting_PageTitle" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="Setting_AccentColor" xml:space="preserve">
+    <value>Color de acento</value>
+  </data>
+  <data name="Setting_Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Button_Yes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="Button_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Title_Dialog_Information" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="Title_Dialog_Warning" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="Title_Dialog_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Title_Dialog_Confirm" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="Title_Command_Clear" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="Common_OpenFile" xml:space="preserve">
+    <value>Abrir archivo</value>
+  </data>
+  <data name="Common_SaveFile" xml:space="preserve">
+    <value>Guardar archivo</value>
+  </data>
+  <data name="BuiltInLanguages" xml:space="preserve">
+    <value>Idiomas Integrados</value>
+  </data>
+  <data name="LanguagePacks" xml:space="preserve">
+    <value>Paquetes de Idioma</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>Archivo (_F)</value>
+  </data>
+  <data name="Menu_File_New" xml:space="preserve">
+    <value>Nuevo (_N)</value>
+  </data>
+  <data name="Menu_File_Open" xml:space="preserve">
+    <value>Abrir (_O)</value>
+  </data>
+  <data name="Menu_File_Save" xml:space="preserve">
+    <value>Guardar (_S)</value>
+  </data>
+  <data name="Menu_File_Close" xml:space="preserve">
+    <value>Cerrar (_X)</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>Ayuda (_H)</value>
+  </data>
+  <data name="Menu_Help_Document" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="Title_PluginPage" xml:space="preserve">
+    <value>Plugin</value>
+  </data>
+  <data name="Title_PartsPage" xml:space="preserve">
+    <value>Partes</value>
+  </data>
+  <data name="Title_ArticulationsPage" xml:space="preserve">
+    <value>Articulaciones</value>
+  </data>
+  <data name="Title_ExportPage" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="Title_ConvertMidiPage" xml:space="preserve">
+    <value>Convertir MIDI</value>
+  </data>
+</root>

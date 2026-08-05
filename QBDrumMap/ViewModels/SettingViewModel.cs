@@ -1,9 +1,10 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ControlzEx.Theming;
 using libQB.Attributes;
+using libQB.Localization;
 using QBDrumMap.Class;
 using QBDrumMap.Class.MapModels;
 using QBDrumMap.Class.Services;
@@ -48,6 +49,61 @@ namespace QBDrumMap.ViewModels
 
         // 利用可能なアクセントカラーのリスト
         public Dictionary<string, Brush> AccentColors { get; set; }
+
+        private static readonly string[] BuiltInLanguageOrder = { "ja-JP", "en-US" };
+
+        private static readonly Dictionary<string, string> LanguageDisplayNameOverrides = new()
+        {
+            ["zh-TW"] = "繁體中文",
+            ["zh-CN"] = "简体中文",
+            ["ko-KR"] = "한국어",
+            ["es-ES"] = "Español",
+            ["pt-BR"] = "Português (Brasil)",
+            ["de-DE"] = "Deutsch",
+            ["fr-FR"] = "Français",
+        };
+
+        public IReadOnlyList<object> AvailableLanguages
+        {
+            get
+            {
+                var languages = LocalizationManager.Instance.AvailableLanguages
+                    .Select(language => LanguageDisplayNameOverrides.TryGetValue(language.Code, out var displayName)
+                        ? new LanguageInfo
+                        {
+                            Code = language.Code,
+                            DisplayName = displayName,
+                            IsBuiltIn = language.IsBuiltIn
+                        }
+                        : language)
+                    .ToList();
+                var result = new List<object>();
+
+                var builtIn = BuiltInLanguageOrder
+                    .Select(code => languages.FirstOrDefault(x => x.Code == code))
+                    .Where(x => x != null)
+                    .ToList();
+
+                if (builtIn.Count > 0)
+                {
+                    result.Add(LanguageGroupHeaderItem.BuiltIn);
+                    result.AddRange(builtIn!);
+                }
+
+                var languagePacks = languages
+                    .Where(x => x.IsBuiltIn == false)
+                    .OrderBy(x => x.DisplayName, StringComparer.CurrentCulture)
+                    .ToList();
+
+                if (languagePacks.Count > 0)
+                {
+                    result.Add(LanguageGroupHeaderItem.LanguagePacks);
+                    result.AddRange(languagePacks);
+                }
+
+                return result;
+            }
+        }
 
         // パーツ名辞書（表記ゆれ）の編集対象コレクション
         public ObservableCollection<PartNameAlias> PartNameDictionary
@@ -101,7 +157,7 @@ namespace QBDrumMap.ViewModels
         private async Task OnSelectCubaseInstallPath()
         {
             var result = await Dialog.ShowSelectFolderDialog(
-                Properties.Resources.Setting_CubaseInstallPath,
+                App.Text("Setting_CubaseInstallPath", Properties.Resources.Setting_CubaseInstallPath),
                 Setting.CubaseInstallPath);
 
             if (result is string path)
@@ -133,11 +189,11 @@ namespace QBDrumMap.ViewModels
 
             string names = string.Join(", ", SelectedPartNameDictionaryEntries.Select(x => x.CanonicalName));
             string message = string.Format(
-                libQB.Properties.Resources.Message_Command_Delete,
-                Properties.Name.PartNameAlias,
+                App.Text("Message_Command_Delete"),
+                App.NameText("PartNameAlias", Properties.Name.PartNameAlias),
                 names);
 
-            if (await Dialog.ShowConfirmAsync(message, libQB.Properties.Dialog.Title_Command_Delete) == false)
+            if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Delete")) == false)
             {
                 return;
             }

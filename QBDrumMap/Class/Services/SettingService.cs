@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.Json.Nodes;
 using System.Text.Unicode;
 using CommunityToolkit.Mvvm.ComponentModel;
 using libQB.Attributes;
@@ -37,7 +38,7 @@ namespace QBDrumMap.Class.Services
 
         // アプリケーションの表示言語
         [ObservableProperty]
-        private Languages language = Languages.English;
+        private string language = "en-US";
 
         // 起動時に表示する初期ページ
         [ObservableProperty]
@@ -170,6 +171,12 @@ namespace QBDrumMap.Class.Services
             ThemeSelector?.SetTheme(BaseTheme, value);
         }
 
+        partial void OnLanguageChanged(string value)
+        {
+            ApplyLanguage(value);
+            CubaseScore.Initialize();
+        }
+
         partial void OnMidiInDeviceChanged(string value)
         {
             if (MIDI == null)
@@ -202,6 +209,13 @@ namespace QBDrumMap.Class.Services
             if (File.Exists(SettingFilePath))
             {
                 var jsonString = File.ReadAllText(SettingFilePath);
+                var json = JsonNode.Parse(jsonString);
+                if (json?[nameof(Language)] is JsonValue legacyLanguage &&
+                    legacyLanguage.TryGetValue<int>(out var languageValue))
+                {
+                    json[nameof(Language)] = languageValue == 1 ? "ja-JP" : "en-US";
+                    jsonString = json.ToJsonString();
+                }
                 var restore = JsonSerializer.Deserialize<SettingService>(jsonString);
 
                 if (restore != null)
@@ -217,17 +231,24 @@ namespace QBDrumMap.Class.Services
                 }
             }
 
-            var culture = Language switch
-            {
-                Languages.Japanese => new CultureInfo("ja-JP"),
-                Languages.English => new CultureInfo("en-US"),
-                _ => throw new NotSupportedException()
-            };
+            ApplyLanguage(Language);
 
-            libQB.Properties.Dialog.Culture = culture;
-            libQB.Properties.Hamburger.Culture = culture;
-            libQB.Properties.Menu.Culture = culture;
-            libQB.Properties.Resources.Culture = culture;
+            ThemeSelector?.SetTheme(BaseTheme, ThemeColor);
+
+            SeedDefaultPartNameDictionaryIfEmpty();
+        }
+
+        private static void ApplyLanguage(string cultureCode)
+        {
+            CultureInfo culture;
+            try
+            {
+                culture = new CultureInfo(cultureCode);
+            }
+            catch (CultureNotFoundException)
+            {
+                culture = new CultureInfo("en-US");
+            }
 
             QBDrumMap.Properties.Resources.Culture = culture;
             QBDrumMap.Properties.Name.Culture = culture;
@@ -235,9 +256,7 @@ namespace QBDrumMap.Class.Services
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 
-            ThemeSelector?.SetTheme(BaseTheme, ThemeColor);
-
-            SeedDefaultPartNameDictionaryIfEmpty();
+            libQB.Localization.LocalizationManager.Instance.SetCulture(culture.Name);
         }
 
         // 初回起動時など辞書が未登録の場合に、代表的なドラムパーツの表記ゆれをデフォルト登録する

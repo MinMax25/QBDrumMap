@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<title>其他</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>其他</h1>
+<h2 id="interpolation">關於演奏法的自動插值</h2>
+<p>轉換 MIDI 或建立映射鼓圖時，會為每個鼓映射建立發音圖，並根據該資訊執行音高轉換。</p>
+<p>如果沒有為某個發音分配音高，則會依照下列規則填入替代音高。</p>
+<ol>
+<li>如果每個鼓聲部的發音清單從上到下未定義，請填寫前一個音高。</li>
+<li>如果每個鼓聲部的發音清單從下到上未定義，請填寫前一個音高。</li>
+<li>執行1.2後。上面，如果仍然未定義，請填寫設定為補音的發音音高。</li>
+</ol>
+<p class="note">
+            根據上述規則，鼓聲部的發音至少需要一種音高分配。
+        </p>
+</div>
+</body>
+</html>

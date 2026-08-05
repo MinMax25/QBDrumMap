@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Plug-in</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Plug-in</h1>
+<p>Modifie la Drum Map.</p>
+<h2 id="drummap">Modifier la mappe de batterie</h2>
+<p>Définir les informations sur le plug-in et le kit.</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_7_.png"/>
+</div>
+<ul>
+<li class="sub-text">Sélectionnez un plug-in dans la liste des plug-ins. Ajoutez le plugin s'il n'est pas présent.</li>
+<li class="sub-text">Sélectionnez un kit dans la liste des kits. Si vous n'avez pas de kit, ajoutez-en un.</li>
+<li class="sub-text">Configurez la carte à l'aide de la liste des emplacements.</li>
+</ul>
+<h2 id="pitchlist">Liste de hauteurs</h2>
+<p>Définissez les informations de mappage de batterie définies dans VST (source sonore de batterie).</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_8.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Nom
+                <ul>
+<li class="sub-text">Saisissez le nom du pas. S'il est vide, la hauteur ne sera pas définie.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Articulation
+                <ul>
+<li class="sub-text">Ouvrez l'écran de sélection d'articulation à partir du bouton de recherche et sélectionnez celle qui convient.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Séparateur
+                <ul>
+<li class="sub-text">Sélectionnez celui approprié dans la liste déroulante. Filtre</li>
+</ul>
+</li>
+</ul>
+<h3 id="filter"></h3>
+<p>Filtrer par nom de hauteur et nom d'articulation.</p>
+<div class="image-wrapper">
+<img height="40%" src="image/page-plugin_pic_5.png" width="40%"/>
+</div>
+<p>Vous pouvez spécifier un caractère générique à l'aide d'un astérisque (*).</p>
+<ul>
+<li>Si non spécifié, correspondance exacte</li>
+<li>Si placé au début du mot-clé, correspond au suffixe</li>
+<li>Si placé à la fin du mot-clé, correspond au début</li>
+<li>Si placé avant ou après le mot-clé, correspond partiellement</li>
+</ul>
+<h3>Trier</h3>
+<ul>
+<li class="sub-text">Entrez chaque élément de la ligne de pitch applicable.</li>
+<li class="sub-text">
+                Vous pouvez modifier l'ordre de tri en cliquant sur l'en-tête de la colonne.
+                <ul>
+<li class="sub-text">Le premier clic le triera par ordre croissant, le deuxième le triera par ordre décroissant et le troisième le ramènera à l'état initial.</li>
+<li class="sub-text">Certaines fonctions d'édition sont limitées dans l'état trié. Si vous souhaitez le modifier, veuillez le remettre à son état initial.</li>
+</ul>
+</li>
+</ul>
+<h2 id="soundcheck">Sound Check</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_6.png"/>
+</div>
+<p>Cliquer sur l'icône du haut-parleur dans chaque ligne de la liste de hauteurs enverra des messages d'activation/désactivation de note pour cette ligne au port MIDI.</p>
+<h2 id="contextmenu">Menu contextuel</h2>
+<p>Affiché par un clic droit sur la liste des pitchs.</p>
+<div class="contextmenu-wrapper">
+<div class="contextmenu-image">
+<img src="image/page-plugin_pic_2.png"/>
+</div>
+<ul class="contextmenu-list">
+<li class="sub-text">Affichage de la map d'articulation</li>
+<li class="sub-text">
+                    Exportation de la map de batterie
+                    <ul>
+<li class="sub-text">Studio One</li>
+<li class="sub-text">Cubase</li>
+<li class="sub-text">Texte .tsv</li>
+</ul>
+</li>
+<li class="sub-text">Importation de la map de batterie (.pitchlist, .drm, .tsv)</li>
+<li class="sub-text">
+                    Trier la liste des pitchs
+                    <ul>
+<li class="sub-text">Trier par pitch</li>
+<li class="sub-text">Avancer</li>
+</ul>
+</li>
+<li class="sub-text">Copier des articulations à partir d'autres cartes</li>
+<li class="sub-text">
+                    Attribution automatique des articulations
+                    <ul>
+<li class="sub-text">Définir automatiquement les articulations sur des hauteurs non définies en fonction des articulations des données de la carte (dictionnaire des noms de pièces, paramètres d'autres kits, correspondance de similarité). Pour les plug-ins</li>
+<li class="sub-text">GM/GS/XG, les notes standard pour les percussions ne sont pas soumises aux réglages automatiques. Le séparateur</li>
+<li class="sub-text">est réglé sur « Séparé » pour les emplacements qui ont un nom mais pas d'articulation.</li>
+</ul>
+</li>
+<li class="sub-text">
+                    Effacer les articulations et les séparateurs
+                    <ul>
+<li class="sub-text">Ramène les articulations et les séparateurs de tous les pitchs du kit à leur état non défini (les noms de pitch ne sont pas modifiés).</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="articulationmap">Carte d'articulation</h2>
+<p class="sub-text">Affiché lorsqu'il est appelé depuis le menu contextuel. Ici, vous pouvez voir quelles hauteurs sont attribuées à quelles articulations.</p>
+<div class="image-wrapper">
+<img alt="carte d'articulation" height="60%" src="image/page-plugin_pic_3.png" width="60%"/>
+</div>
+<p class="sub-text">Affiche la hauteur associée à l'articulation.</p>
+<p class="note">Les éléments cochés dans la colonne Sub sont des hauteurs automatiquement interpolées.</p>
+<h2 id="options">Options du plug-in</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_9.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Vitesse de vérification du son
+                <ul>
+<li class="sub-text">Définit la valeur de vélocité de note émise lorsque le bouton de vérification du son est enfoncé. Entrée</li>
+</ul>
+</li>
+<li class="sub-text">
+                fixe Activer le MIDI
+                <ul>
+<li class="sub-text">en pas fixe.</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI In Device
+                <ul>
+<li class="sub-text">Sélectionnez le port auquel le clavier MIDI est connecté. Si cela n’est pas obligatoire, veuillez sélectionner vide. Si disponible, « Connecté » s'affichera ; s'il n'est pas disponible, « Non connecté » s'affichera.</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI In Fixed Pitch
+                <ul>
+<li class="sub-text">
+                        Spécifie la hauteur des messages d'activation/désactivation des notes du clavier MIDI à accepter.<br/>
+                        Si vous spécifiez cette valeur et activez "Entrée fixe",
+                        L'entrée du clavier MIDI est convertie en message d'activation/désactivation de note sélectionné dans la liste de hauteurs et en sortie.
+                    </li>
+</ul>
+</li>
+<li class="sub-text">
+                Périphérique de sortie MIDI
+                <ul>
+<li class="sub-text">Sélectionnez la destination de sortie du message MIDI. Si disponible, « Connecté » s'affichera ; s'il n'est pas disponible, « Non connecté » s'affichera.</li>
+</ul>
+</li>
+</ul>
+</div>
+</body>
+</html>

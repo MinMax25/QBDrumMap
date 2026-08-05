@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>MIDI 변환</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>MIDI 변환</h1>
+<p>MIDI 데이터 (SMF)를 변환합니다.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-convert_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">사용법</h2>
+<p>
+            컨버트 소스 키트를 기본 키트에서 선택합니다.<br/>
+            Target Midi File의 오른쪽에 있는 버튼으로 변환할 파일을 가져옵니다.<br/>
+            혹은, 페이지내에 MIDI 파일을 드래그＆드롭 해도 받아들일 수가 있습니다. (ver 1.0.1 이후)<br/>
+            화면 오른쪽의 키트 리스트에서 컨버트 대상을 선택(복수 선택 가능), 컨버트 버튼을 누릅니다.
+        </p>
+<h2 id="specifications">변환 사양</h2>
+<p>드럼 맵의 아티큘레이션 설정을 기반으로 변환을 수행합니다.</p>
+<p>
+            아티큘레이션이 지정되지 않은 피치는 원래 파일 이름의 시작 부분에 '#'이 붙어 별도의 데이터로 출력됩니다.
+        </p>
+<p class="note">예를 들어, 변환 소스가 GM 맵의 타악기를 포함하는 데이터인 경우와 같이 드럼 파트와 타악기 파트가 분리됩니다.</p>
+<p>변환 출력 파일은 원본 파일과 동일한 폴더에 만들어집니다.</p>
+<p class="note">출력 형식이 Format0이면 원본 파일 이름 +_converted로 폴더를 만든 다음 변환 된 드럼 맵 이름으로 파일을 만듭니다.</p>
+<p class="note">출력 형식이 Format1이면 원본 파일 이름 +_converted로 파일을 만든 다음 변환 된 드럼 맵 이름으로 트랙을 만듭니다.</p>
+<h3>출력 형식 정보</h3>
+<p>Cubase를 사용하는 경우 MIDI 파일의 트랙을 개별적으로 처리 할 수 ​​없으므로 Format0을 사용하는 것이 좋습니다.</p>
+</div>
+</body>
+</html>

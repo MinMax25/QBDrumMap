@@ -6,7 +6,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:reslibQB="clr-namespace:libQB.Properties;assembly=libQB"
+    xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:resLocal="clr-namespace:QBDrumMap.Properties"
     xmlns:templateSelectors="clr-namespace:QBDrumMap.TemplateSelectors"
@@ -112,16 +112,16 @@
             </Grid.RowDefinitions>
 
             <Menu Grid.Row="0" Grid.ColumnSpan="2" Focusable="False" IsEnabled="{Binding IsCommandEnabled}">
-                <MenuItem Header="{x:Static reslibQB:Menu.File}" Focusable="False">
-                    <MenuItem Header="{x:Static reslibQB:Menu.File_New}" Command="{Binding NewFileCommand}"/>
+                <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File, Fallback=File}" Focusable="False">
+                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File_New, Fallback=New}" Command="{Binding NewFileCommand}"/>
                     <Separator/>
-                    <MenuItem Header="{x:Static reslibQB:Menu.File_Open}" Command="{Binding OpenFileCommand}"/>
-                    <MenuItem Header="{x:Static reslibQB:Menu.File_Save}" Command="{Binding SaveFileCommand}"/>
+                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File_Open, Fallback=Open}" Command="{Binding OpenFileCommand}"/>
+                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File_Save, Fallback=Save}" Command="{Binding SaveFileCommand}"/>
                     <Separator/>
-                    <MenuItem Header="{x:Static reslibQB:Menu.File_Close}" Command="{Binding CloseCommand}"/>
+                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File_Close, Fallback=Close}" Command="{Binding CloseCommand}"/>
                 </MenuItem>
-                <MenuItem Header="{x:Static reslibQB:Menu.Help}" Focusable="False">
-                    <MenuItem Header="{x:Static reslibQB:Menu.Help_Document}" Command="{Binding ShowDocumentCommand}"/>
+                <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_Help, Fallback=Help}" Focusable="False">
+                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_Help_Document, Fallback=Documentation}" Command="{Binding ShowDocumentCommand}"/>
                     <MenuItem Header="{Binding AboutCaption}" Command="{Binding ShowAboutCommand}"/>
                 </MenuItem>
             </Menu>

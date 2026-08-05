@@ -525,7 +525,7 @@ namespace QBDrumMap.ViewModels
             try
             {
                 action.Invoke();
-                await Dialog.ShowInformationAsync(successMessage ?? libQB.Properties.Resources.Message_ProcessComplete);
+                await Dialog.ShowInformationAsync(successMessage ?? App.Text("Message_ProcessComplete"));
             }
             catch (Exception ex)
             {

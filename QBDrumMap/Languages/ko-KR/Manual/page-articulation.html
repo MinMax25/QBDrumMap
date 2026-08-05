@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>아티큘레이션</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>아티큘레이션</h1>
+<p>드럼 맵을 만들 때 정렬 순서를 설정합니다.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-articulation_pic_1.png" width="650"/>
+</div>
+<h2 id="order">표시 순서 정보</h2>
+<h3>드럼 맵 내보내기시 "아티큘레이션 사용"을 선택하면</h3>
+<p>다음 규칙으로 그룹화되며 그룹 내에서 아티큘레이션 피치 내림차순으로 정렬됩니다.</p>
+<ol>
+<li>아티큘레이션이 지정되고 구분자가 지정되지 않았습니다.</li>
+<li>아티큘레이션이 지정되지 않고 Separate 지정되었습니다.</li>
+<li>아티큘레이션이 지정되고 Separate 지정되었습니다.</li>
+<li>아티큘레이션이 지정되었으며 Not Loaded 지정되었습니다.</li>
+<li>아티큘레이션이 지정되었으며 Duplicate 지정되었습니다.</li>
+<li>아티큘레이션이 지정되지 않고 구분 기호가 지정되지 않았습니다.</li>
+</ol>
+<p>2.와 3. 사이에 미정의 피치의 최저 피치가 존재하는 경우에는 세퍼레이터("=========")가 자동 보간됩니다.</p>
+<h3>드럼 맵 내보낼 때 "아티큘레이션 사용"을 선택하지 않은 경우</h3>
+<p>피치 목록의 순서가 그대로 적용됩니다.</p>
+</div>
+</body>
+</html>

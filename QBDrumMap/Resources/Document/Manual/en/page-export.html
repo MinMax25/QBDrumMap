@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Export</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Export</h1>
+<p>Exports the drum map.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-export_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">How to use</h2>
+<p>
+            Select the export target from the kit list on the right side of the screen (multiple selections possible),
+            Press the desired export button.
+            Select the storage location in the folder selection dialog that appears.
+            The selected folder is recorded in the settings file and becomes the default selection folder the next time you export.
+        </p>
+<h3>Use Articulation If</h3>
+<p>Use Articulation Pitch Name is checked, the articulation name will be used preferentially for the pitch name.</p>
+<p>When exporting a normal drum map, you can specify whether or not to use articulation in Use Articulation When Exporting. If you select not to use the</p>
+<p>articulation, the contents displayed in the pitch list will be output as is. If you select Use</p>
+<p>articulation, the sorting order will be determined by the linked articulation rather than the displayed contents of the pitch list.</p>
+<p>Drum score information and color scheme will be output only if you select Use articulation. (There is no color scheme information for Cubase)</p>
+<h2 id="filename">About the file name</h2>
+<p>The file name will be the kit name.<em>Extension</em>. If a file with the same name already exists, it will be overwritten and replaced.</p>
+<p class="note">Pitch list for Studio One, drum map for Cubase, and tsv text are output under the plug-in name folder.</p>
+<h2 id="filetype">File type</h2>
+<p>The files that can be exported are as follows.</p>
+<ul>
+<li>
+                Normal drum map
+                <ul>
+<li>Pitch list for Studio One</li>
+<li>Drum map for Cubase</li>
+</ul>
+</li>
+<li>
+                Mapped drum map
+                <ul>
+<li>Drum map for Cubase</li>
+<li>Template for Note Mapper</li>
+</ul>
+</li>
+<li>
+                Others
+                <ul>
+<li>tsv text</li>
+</ul>
+</li>
+</ul>
+<p>When exporting a mapped drum map, select the drum map (kit) to be the source.</p>
+</div>
+</body>
+</html>

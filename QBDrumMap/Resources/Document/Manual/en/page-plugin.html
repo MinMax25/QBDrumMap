@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Plug-in</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Plug-in</h1>
+<p>Edits the drum map.</p>
+<h2 id="drummap">Edit drum map</h2>
+<p>Set plug-in and kit information.</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_7_.png"/>
+</div>
+<ul>
+<li class="sub-text">Select a plugin from the plugin list. Add the plugin if it is not present.</li>
+<li class="sub-text">Select a kit from the kit list. If you don't have a kit, add one.</li>
+<li class="sub-text">Configure the map using the pitch list.</li>
+</ul>
+<h2 id="pitchlist">Pitch list</h2>
+<p>Set the drum map information defined in VST (drum sound source).</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_8.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Name
+                <ul>
+<li class="sub-text">Enter the pitch name. If it is blank, the pitch will not be set.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Articulation
+                <ul>
+<li class="sub-text">Open the articulation selection screen from the search button and select the appropriate one.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Separator
+                <ul>
+<li class="sub-text">Select the appropriate one from the combo box.</li>
+</ul>
+</li>
+</ul>
+<h3 id="filter">Filter</h3>
+<p>Filter by pitch name and articulation name.</p>
+<div class="image-wrapper">
+<img height="40%" src="image/page-plugin_pic_5.png" width="40%"/>
+</div>
+<p>You can specify a wildcard using an asterisk (*).</p>
+<ul>
+<li>If not specified, exact match</li>
+<li>If placed at the beginning of the keyword, match the suffix</li>
+<li>If placed at the end of the keyword, match the beginning</li>
+<li>If placed before or after the keyword, match partially</li>
+</ul>
+<h3>Sort</h3>
+<ul>
+<li class="sub-text">Enter each item of the applicable pitch line.</li>
+<li class="sub-text">
+                You can change the sort order by clicking on the column heading.
+                <ul>
+<li class="sub-text">The first click will sort it in ascending order, the second will sort it in descending order, and the third will return it to the initial state.</li>
+<li class="sub-text">Some editing functions are limited in the sorted state. If you want to edit it, please return it to the initial state.</li>
+</ul>
+</li>
+</ul>
+<h2 id="soundcheck">Sound Check</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_6.png"/>
+</div>
+<p>Clicking the speaker icon in each row of the pitch list will send note-on/off messages for that row to the MIDI port.</p>
+<h2 id="contextmenu">Context menu</h2>
+<p>Displayed by right-clicking on the pitch list.</p>
+<div class="contextmenu-wrapper">
+<div class="contextmenu-image">
+<img src="image/page-plugin_pic_2.png"/>
+</div>
+<ul class="contextmenu-list">
+<li class="sub-text">Articulation map display</li>
+<li class="sub-text">
+                    Drum map export
+                    <ul>
+<li class="sub-text">Studio One</li>
+<li class="sub-text">Cubase</li>
+<li class="sub-text">.tsv text</li>
+</ul>
+</li>
+<li class="sub-text">Drum map import (.pitchlist, .drm, .tsv)</li>
+<li class="sub-text">
+                    Sort pitch list
+                    <ul>
+<li class="sub-text">Sort by pitch</li>
+<li class="sub-text">Move forward</li>
+</ul>
+</li>
+<li class="sub-text">Copy articulations from other maps</li>
+<li class="sub-text">
+                    Articulation automatic assignment
+                    <ul>
+<li class="sub-text">Automatically set articulations to unset pitches based on map data articulations (part name dictionary, settings of other kits, similarity matching). For</li>
+<li class="sub-text">GM/GS/XG plug-ins, standard notes for percussion are not subject to automatic settings.</li>
+<li class="sub-text">Separator is set to "Separate" for pitches that have a name but no articulation.</li>
+</ul>
+</li>
+<li class="sub-text">
+                    Clear articulations and separators
+                    <ul>
+<li class="sub-text">Returns articulations and separators for all pitches in the kit to their unset state (pitch names are not changed).</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="articulationmap">Articulation map</h2>
+<p class="sub-text">Displayed when called from the context menu. Here you can see which pitches are assigned to which articulations.</p>
+<div class="image-wrapper">
+<img alt="articulation map" height="60%" src="image/page-plugin_pic_3.png" width="60%"/>
+</div>
+<p class="sub-text">Displays the pitch associated with the articulation.</p>
+<p class="note">Checked items in the Sub column are automatically interpolated pitches.</p>
+<h2 id="options">Plug-in option</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_9.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Sound Check Velocity
+                <ul>
+<li class="sub-text">Set the note-on velocity value that is output when the sound check button is pressed.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Input Fixed Enable
+                <ul>
+<li class="sub-text">MIDI In Fixed Pitch.</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI In Device
+                <ul>
+<li class="sub-text">Select the port to which the MIDI keyboard is connected. If not required, please select blank. If available, "Connected" will be displayed; if unavailable, "Not Connected" will be displayed.</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI In Fixed Pitch
+                <ul>
+<li class="sub-text">
+                        Specifies the pitch of MIDI keyboard note on/off messages to be accepted.<br/>
+                        If you specify this value and enable "Input Fixed",
+                        MIDI keyboard input is converted to the note on/off message selected in the pitch list and output.
+                    </li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI Out Device
+                <ul>
+<li class="sub-text">Select the MIDI message output destination. If available, "Connected" will be displayed; if unavailable, "Not Connected" will be displayed.</li>
+</ul>
+</li>
+</ul>
+</div>
+</body>
+</html>

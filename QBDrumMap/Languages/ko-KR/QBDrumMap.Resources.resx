@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="MenuHelpAboutCaption" xml:space="preserve">
+    <value>{0} 정보</value>
+  </data>
+  <data name="Alert_FileNotFound" xml:space="preserve">
+    <value>파일을 찾을 수 없습니다!</value>
+  </data>
+  <data name="Setting_PageTitle" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="Setting_AccentColor" xml:space="preserve">
+    <value>강조 색상</value>
+  </data>
+  <data name="Setting_Language" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="Button_Yes" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="Button_No" xml:space="preserve">
+    <value>아니요</value>
+  </data>
+  <data name="Title_Dialog_Information" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="Title_Dialog_Warning" xml:space="preserve">
+    <value>경고</value>
+  </data>
+  <data name="Title_Dialog_Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="Title_Dialog_Confirm" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="Title_Command_Clear" xml:space="preserve">
+    <value>지우기</value>
+  </data>
+  <data name="Common_OpenFile" xml:space="preserve">
+    <value>파일 열기</value>
+  </data>
+  <data name="Common_SaveFile" xml:space="preserve">
+    <value>파일 저장</value>
+  </data>
+  <data name="BuiltInLanguages" xml:space="preserve">
+    <value>기본 언어</value>
+  </data>
+  <data name="LanguagePacks" xml:space="preserve">
+    <value>언어 팩</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>파일(_F)</value>
+  </data>
+  <data name="Menu_File_New" xml:space="preserve">
+    <value>새로 만들기(_N)</value>
+  </data>
+  <data name="Menu_File_Open" xml:space="preserve">
+    <value>열기(_O)</value>
+  </data>
+  <data name="Menu_File_Save" xml:space="preserve">
+    <value>저장(_S)</value>
+  </data>
+  <data name="Menu_File_Close" xml:space="preserve">
+    <value>닫기(_X)</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>도움말(_H)</value>
+  </data>
+  <data name="Menu_Help_Document" xml:space="preserve">
+    <value>문서</value>
+  </data>
+  <data name="Title_PluginPage" xml:space="preserve">
+    <value>플러그인</value>
+  </data>
+  <data name="Title_PartsPage" xml:space="preserve">
+    <value>파트</value>
+  </data>
+  <data name="Title_ArticulationsPage" xml:space="preserve">
+    <value>아티큘레이션</value>
+  </data>
+  <data name="Title_ExportPage" xml:space="preserve">
+    <value>내보내기</value>
+  </data>
+  <data name="Title_ConvertMidiPage" xml:space="preserve">
+    <value>MIDI 변환</value>
+  </data>
+</root>

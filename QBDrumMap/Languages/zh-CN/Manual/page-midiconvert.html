@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>MIDI 转换</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>MIDI 转换</h1>
+<p>转换 MIDI 数据 (SMF)。</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-convert_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">如何使用</h2>
+<p>
+            选择要转换的基础套件。使用<br/>
+            目标 Midi 文件右侧的按钮导入要转换的文件。<br/>
+            或者，您可以通过将 MIDI 文件拖放到页面上来导入它。 （版本1.0.1或更高版本）<br/>
+            从屏幕右侧的套件列表中选择转换目标（可以多个选择），然后按转换按钮。
+        </p>
+<h2 id="specifications">转换规格</h2>
+<p>转换是根据鼓映射发音设置进行的。</p>
+<p>
+            未指定演奏法的音高将作为单独的数据输出，并在原始文件名的开头添加“#”。
+        </p>
+<p class="note">例如，如果转换源是还包括GM映射打击乐的数据，则鼓声部和打击乐声部将被分离。</p>
+<p>转换后的输出文件将在与原始文件相同的文件夹中创建。</p>
+<p class="note">如果输出格式为Format0，将创建一个文件夹，其中包含原始文件名+_converted，并在其中创建一个文件，其中包含转换后的鼓映射名称。</p>
+<p class="note">如果输出格式为 Format1，将使用原始文件名 + _converted 创建一个文件，并使用转换后的鼓映射名称在其中创建一个轨道。</p>
+<h3>关于输出格式</h3>
+<p>如果您使用 Cubase，最好使用格式 0，因为您无法处理 MIDI 文件中的单个轨道。</p>
+</div>
+</body>
+</html>
