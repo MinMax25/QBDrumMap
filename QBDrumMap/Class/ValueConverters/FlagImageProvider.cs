@@ -21,15 +21,28 @@ public static class FlagImageProvider
         try
         {
             var countryCode = new RegionInfo(cultureName).TwoLetterISORegionName.ToLowerInvariant();
-            var builtInPath = $"{BuiltInFlagsDirectory}/{countryCode}.png";
-            if (File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, builtInPath)))
+            var builtInPath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                BuiltInFlagsDirectory,
+                $"{countryCode}.png");
+            if (File.Exists(builtInPath))
             {
-                return $"/{builtInPath}";
+                return builtInPath;
             }
 
-            var languagePackPath = $"{LanguagePackDirectory}/{cultureName}/{countryCode}.png";
-            return File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, languagePackPath))
-                ? $"/{languagePackPath}"
+            var languagePackDirectory = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                LanguagePackDirectory,
+                cultureName);
+            var languagePackPath = Path.Combine(languagePackDirectory, $"{countryCode}.png");
+            if (File.Exists(languagePackPath))
+            {
+                return languagePackPath;
+            }
+
+            return Directory.Exists(languagePackDirectory)
+                ? Directory.EnumerateFiles(languagePackDirectory, "*.png", SearchOption.TopDirectoryOnly)
+                    .FirstOrDefault()
                 : null;
         }
         catch (ArgumentException)
