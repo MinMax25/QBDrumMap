@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>내보내기</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>내보내기</h1>
+<p>드럼 맵을 내보냅니다.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-export_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">사용법</h2>
+<p>
+            화면 오른쪽 키트 목록에서 내보내기 대상을 선택 (복수 선택 가능),
+            원하는 내보내기 버튼을 누릅니다.
+            표시된 폴더 선택 대화 상자에서 저장 대상을 선택합니다.
+            선택한 폴더는 설정 파일에 기록되며 다음 번 내보낼 때 초기 선택 폴더입니다.
+        </p>
+<h3>아티큘레이션 사용</h3>
+<p>Use Articulation Pitch Name에 체크가 있는 경우, 피치명에는 아티큘레이션명이 우선적으로 사용됩니다.</p>
+<p>일반 드럼 맵 내보낼 때 Use Articulation When Exporting에서 아티큘레이션을 사용할지 여부를 지정할 수 있습니다.</p>
+<p>아티큘레이션 사용 안함을 선택하면 피치 목록의 표시 내용이 그대로 출력됩니다.</p>
+<p>아티큘레이션 사용을 선택하면 피치 목록의 표시 내용이 아닌 연결된 아티큘레이션이 정렬 순서를 결정합니다.</p>
+<p>드럼 스코어 정보 및 색 구성표는 아티큘레이션 사용을 선택한 경우에만 출력됩니다. (Cubase 색 구성표 없음)</p>
+<h2 id="filename">파일 이름 정보</h2>
+<p>파일 이름에는 키트 이름.<em>확장자</em>됩니다. 이미 동명 파일이 존재하는 경우는 덧쓰기 치환됩니다.</p>
+<p class="note">Studio One용 피치 리스트, Cubase용 드럼 맵, tsv 텍스트는 플러그인 이름 폴더 아래에 출력됩니다.</p>
+<h2 id="filetype">파일 유형</h2>
+<p>내보낼 수 있는 파일은 다음과 같습니다.</p>
+<ul>
+<li>
+                일반 드럼 맵
+                <ul>
+<li>Studio One용 피치 목록</li>
+<li>Cubase 용 드럼 맵</li>
+</ul>
+</li>
+<li>
+                매핑된 드럼 맵
+                <ul>
+<li>Cubase 용 드럼 맵</li>
+<li>Note Mapper용 템플릿</li>
+</ul>
+</li>
+<li>
+                기타
+                <ul>
+<li>tsv 텍스트</li>
+</ul>
+</li>
+</ul>
+<p>매핑된 드럼 맵을 내보내려면 기본 드럼 맵(키트)을 선택합니다.</p>
+</div>
+</body>
+</html>

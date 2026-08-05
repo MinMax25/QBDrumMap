@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Sonstiges</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Sonstiges</h1>
+<h2 id="interpolation">Informationen zur automatischen Interpolation von Artikulationen</h2>
+<p>Beim Konvertieren von MIDI oder Erstellen einer zugeordneten Drum-Map wird für jede Drum-Map eine Artikulations-Map erstellt und die Tonhöhenkonvertierung basierend auf diesen Informationen durchgeführt.</p>
+<p>Wenn einer Artikulation keine Tonhöhe zugewiesen ist, wird gemäß den folgenden Regeln eine alternative Tonhöhe eingefügt.</p>
+<ol>
+<li>Wenn die Artikulationsliste für jeden Drum-Part von oben nach unten undefiniert ist, geben Sie die vorherige Tonhöhe ein.</li>
+<li>Wenn die Artikulationsliste für jeden Drum-Part von unten nach oben undefiniert ist, füllen Sie die vorherige Tonhöhe aus.</li>
+<li>Nach der Ausführung von 1.2. Wenn es oben noch nicht definiert ist, geben Sie die Tonhöhe der Artikulation ein, die auf Komplement eingestellt ist.</li>
+</ol>
+<p class="note">
+            Gemäß den oben genannten Regeln erfordern Drum-Part-Artikulationen mindestens eine Tonhöhenzuweisung.
+        </p>
+</div>
+</body>
+</html>

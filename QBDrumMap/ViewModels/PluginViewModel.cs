@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
@@ -78,11 +78,11 @@ namespace QBDrumMap.ViewModels
             }));
 
             string message = string.Format(
-                libQB.Properties.Resources.Message_Command_Delete,
-                Properties.Name.Plugin,
+                App.Text("Message_Command_Delete"),
+                App.NameText("Plugin", Properties.Name.Plugin),
                 names);
 
-            if (await Dialog.ShowConfirmAsync(message, libQB.Properties.Dialog.Title_Command_Delete) == false)
+            if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Delete")) == false)
             {
                 return;
             }

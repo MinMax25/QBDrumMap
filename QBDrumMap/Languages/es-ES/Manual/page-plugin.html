@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Complemento</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Complemento</h1>
+<p>Edita el mapa de batería.</p>
+<h2 id="drummap">Editar mapa de batería</h2>
+<p>Establecer información de complementos y kits.</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_7_.png"/>
+</div>
+<ul>
+<li class="sub-text">Seleccione un complemento de la lista de complementos. Agregue el complemento si no está presente.</li>
+<li class="sub-text">Seleccione un kit de la lista de kits. Si no tienes un kit, agrega uno.</li>
+<li class="sub-text">Configura el mapa usando la lista de campos.</li>
+</ul>
+<h2 id="pitchlist">Lista de tonos</h2>
+<p>Establece la información del mapa de batería definida en VST (fuente de sonido de batería).</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_8.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Nombre
+                <ul>
+<li class="sub-text">Introduzca el nombre del campo. Si está en blanco, no se establecerá el tono.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Articulación
+                <ul>
+<li class="sub-text">Abra la pantalla de selección de articulación desde el botón de búsqueda y seleccione la adecuada.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Separador
+                <ul>
+<li class="sub-text">Seleccione el apropiado en el cuadro combinado. Filtro</li>
+</ul>
+</li>
+</ul>
+<h3 id="filter"></h3>
+<p>Filtrar por nombre de tono y nombre de articulación.</p>
+<div class="image-wrapper">
+<img height="40%" src="image/page-plugin_pic_5.png" width="40%"/>
+</div>
+<p>Puede especificar un comodín utilizando un asterisco (*).</p>
+<ul>
+<li>Si no se especifica, concordancia exacta</li>
+<li>Si se coloca al principio de la palabra clave, coincide con el sufijo</li>
+<li>Si se coloca al final de la palabra clave, coincide con el principio</li>
+<li>Si se coloca antes o después de la palabra clave, coincide parcialmente</li>
+</ul>
+<h3>Ordenar</h3>
+<ul>
+<li class="sub-text">Ingrese cada elemento de la línea de tono correspondiente.</li>
+<li class="sub-text">
+                Puede cambiar el orden de clasificación haciendo clic en el encabezado de la columna.
+                <ul>
+<li class="sub-text">El primer clic lo ordenará en orden ascendente, el segundo lo ordenará en orden descendente y el tercero lo devolverá al estado inicial.</li>
+<li class="sub-text">Algunas funciones de edición están limitadas en el estado ordenado. Si desea editarlo, devuélvalo al estado inicial.</li>
+</ul>
+</li>
+</ul>
+<h2 id="soundcheck">Prueba de sonido</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_6.png"/>
+</div>
+<p>Al hacer clic en el icono del altavoz en cada fila de la lista de tonos, se enviarán mensajes de activación/desactivación de nota para esa fila al puerto MIDI.</p>
+<h2 id="contextmenu">Menú contextual</h2>
+<p>Se muestra al hacer clic derecho en la lista de tonos.</p>
+<div class="contextmenu-wrapper">
+<div class="contextmenu-image">
+<img src="image/page-plugin_pic_2.png"/>
+</div>
+<ul class="contextmenu-list">
+<li class="sub-text">Visualización del mapa de articulación</li>
+<li class="sub-text">
+                    Exportación del mapa de batería
+                    <ul>
+<li class="sub-text">Studio One</li>
+<li class="sub-text">Cubase</li>
+<li class="sub-text">Texto .tsv</li>
+</ul>
+</li>
+<li class="sub-text">Importación del mapa de batería (.pitchlist, .drm, .tsv)</li>
+<li class="sub-text">
+                    Ordenar lista de tonos
+                    <ul>
+<li class="sub-text">Ordenar por tono</li>
+<li class="sub-text">Avanzar</li>
+</ul>
+</li>
+<li class="sub-text">Copiar articulaciones de otros mapas</li>
+<li class="sub-text">
+                    Asignación automática de articulaciones
+                    <ul>
+<li class="sub-text">Establece automáticamente las articulaciones para desarmar los tonos según las articulaciones de datos del mapa (diccionario de nombres de piezas, configuraciones de otros kits, coincidencia de similitudes). Para los complementos</li>
+<li class="sub-text">GM/GS/XG, las notas estándar para percusión no están sujetas a configuraciones automáticas.</li>
+<li class="sub-text">Separator está configurado en "Separate" para tonos que tienen un nombre pero no tienen articulación.</li>
+</ul>
+</li>
+<li class="sub-text">
+                    Borrar articulaciones y separadores
+                    <ul>
+<li class="sub-text">Devuelve las articulaciones y separadores de todos los tonos del kit a su estado no configurado (los nombres de los tonos no se cambian).</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="articulationmap">Mapa de articulación</h2>
+<p class="sub-text">Se muestra cuando se llama desde el menú contextual. Aquí puede ver qué tonos están asignados a qué articulaciones.</p>
+<div class="image-wrapper">
+<img alt="mapa de articulación" height="60%" src="image/page-plugin_pic_3.png" width="60%"/>
+</div>
+<p class="sub-text">Muestra el tono asociado con la articulación.</p>
+<p class="note">Los elementos marcados en la columna Sub son tonos interpolados automáticamente.</p>
+<h2 id="options">Opción de complemento</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_9.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Velocidad de prueba de sonido
+                <ul>
+<li class="sub-text">Establece el valor de velocidad de nota activa que se emite cuando se presiona el botón de prueba de sonido. Entrada</li>
+</ul>
+</li>
+<li class="sub-text">
+                fija Habilitar
+                <ul>
+<li class="sub-text">MIDI en tono fijo.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Dispositivo de entrada MIDI
+                <ul>
+<li class="sub-text">Seleccione el puerto al que está conectado el teclado MIDI. Si no es necesario, seleccione en blanco. Si está disponible, se mostrará "Conectado"; si no está disponible, se mostrará "No conectado".</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI en tono fijo
+                <ul>
+<li class="sub-text">
+                        Especifica el tono de los mensajes de activación/desactivación de notas del teclado MIDI que se aceptarán.<br/>
+                        Si especifica este valor y habilita "Entrada fija",
+                        La entrada del teclado MIDI se convierte en el mensaje de activación/desactivación de nota seleccionado en la lista de tonos y en la salida.
+                    </li>
+</ul>
+</li>
+<li class="sub-text">
+                Dispositivo de salida MIDI
+                <ul>
+<li class="sub-text">Seleccione el destino de salida del mensaje MIDI. Si está disponible, se mostrará "Conectado"; si no está disponible, se mostrará "No conectado".</li>
+</ul>
+</li>
+</ul>
+</div>
+</body>
+</html>

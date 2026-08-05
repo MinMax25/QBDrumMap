@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<title>MIDI 轉換</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>MIDI 轉換</h1>
+<p>轉換 MIDI 資料 (SMF)。</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-convert_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">如何使用</h2>
+<p>
+            選擇要轉換的基礎套件。使用<br/>
+            目標 Midi 檔案右側的按鈕匯入要轉換的檔案。<br/>
+            或者，您可以將 MIDI 檔案拖曳到頁面上來匯入它。 （版本1.0.1或更高版本）<br/>
+            從螢幕右側的套件清單中選擇轉換目標（可多重選擇），然後按轉換按鈕。
+        </p>
+<h2 id="specifications">轉換規格</h2>
+<p>轉換是根據鼓映射發音設定進行的。</p>
+<p>
+            未指定演奏法的音高將作為單獨的資料輸出，並在原始檔案名稱的開頭加上「#」。
+        </p>
+<p class="note">例如，如果轉換源是還包括GM映射打擊樂的數據，則鼓聲部和打擊樂聲部將被分離。</p>
+<p>轉換後的輸出檔案將會在與原始檔案相同的資料夾中建立。</p>
+<p class="note">如果輸出格式為Format0，將建立一個資料夾，其中包含原始文件名稱+_converted，並在其中建立一個文件，其中包含轉換後的鼓映射名稱。</p>
+<p class="note">如果輸出格式為 Format1，將使用原始文件名 + _converted 建立一個文件，並使用轉換後的鼓映射名稱在其中建立一個軌道。</p>
+<h3>關於輸出格式</h3>
+<p>如果您使用 Cubase，最好使用格式 0，因為您無法處理 MIDI 檔案中的單一軌道。</p>
+</div>
+</body>
+</html>

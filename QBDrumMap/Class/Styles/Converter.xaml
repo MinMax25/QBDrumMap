@@ -9,6 +9,7 @@
     <libQB:InverseBoolConverter x:Key="InveresBool"/>
     <libQB:TrimConverter x:Key="TrimConverter"/>
     <libQB:BaseThemeConverter x:Key="BaseThemeConverter"/>
+    <converters:FlagConverter x:Key="FlagConverter"/>
 
     <converters:GetPartNameConverter x:Key="GetPartNameConverter"/>
     <converters:GetPartColorConverter x:Key="GetPartColorConverter"/>

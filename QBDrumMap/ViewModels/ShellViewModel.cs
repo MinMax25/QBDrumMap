@@ -61,7 +61,7 @@ namespace QBDrumMap.ViewModels
         {
             get
             {
-                return string.Format(Properties.Resources.MenuHelpAboutCaption, AppName);
+                return string.Format(App.Text("MenuHelpAboutCaption", "About {0}"), AppName);
             }
         }
 
@@ -90,7 +90,7 @@ namespace QBDrumMap.ViewModels
 
             new HamburgerMenuIconItem()
             {
-                Label = Resources.Title_PluginPage,
+                Label = App.Text("Title_PluginPage", "Plugin"),
                 Icon = ClonePackIcon(PageIcon.PluginPage),
                 TargetPageType = typeof(PluginViewModel)
             },
@@ -99,14 +99,14 @@ namespace QBDrumMap.ViewModels
 
             new HamburgerMenuIconItem()
             {
-                Label = Resources.Title_PartsPage,
+                Label = App.Text("Title_PartsPage", "Parts"),
                 Icon = ClonePackIcon(PageIcon.PartsPage),
                 TargetPageType = typeof(PartsViewModel)
             },
 
             new HamburgerMenuIconItem()
             {
-                Label = Resources.Title_ArticulationsPage,
+                Label = App.Text("Title_ArticulationsPage", "Articulations"),
                 Icon = ClonePackIcon(PageIcon.ArticulationsPage),
                 TargetPageType = typeof(ArticulationsViewModel)
             },
@@ -115,7 +115,7 @@ namespace QBDrumMap.ViewModels
 
             new HamburgerMenuIconItem()
             {
-                Label = Resources.Title_ExportPage,
+                Label = App.Text("Title_ExportPage", "Export"),
                 Icon = ClonePackIcon(PageIcon.ExportPage),
                 TargetPageType = typeof(ExportViewModel)
             },
@@ -124,7 +124,7 @@ namespace QBDrumMap.ViewModels
 
             new HamburgerMenuIconItem()
             {
-                Label = Resources.Title_ConvertMidiPage,
+                Label = App.Text("Title_ConvertMidiPage", "Convert MIDI"),
                 Icon = ClonePackIcon(PageIcon.ConvertPage),
                 TargetPageType = typeof(ConvertMidiViewModel)
             },
@@ -137,7 +137,7 @@ namespace QBDrumMap.ViewModels
         [
             new HamburgerMenuIconItem()
             {
-                Label = libQB.Properties.Resources.Setting_PageTitle,
+                Label = App.Text("Setting_PageTitle", "Settings"),
                 Icon = ClonePackIcon(PageIcon.SettingPage),
                 TargetPageType = typeof(SettingViewModel)
             }
@@ -185,7 +185,7 @@ namespace QBDrumMap.ViewModels
         {
             if (MapData.IsModified())
             {
-                if (await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_NewFile) == false)
+                if (await Dialog.ShowConfirmAsync(App.Text("Confirm_NewFile")) == false)
                 {
                     return;
                 }
@@ -200,14 +200,14 @@ namespace QBDrumMap.ViewModels
         {
             if (MapData.IsModified())
             {
-                if (await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_NewFile) == false)
+                if (await Dialog.ShowConfirmAsync(App.Text("Confirm_NewFile")) == false)
                 {
                     return;
                 }
             }
 
             var path = await Dialog.ShowOpenFileDialog(
-                libQB.Properties.Dialog.Common_OpenFile,
+                App.Text("Common_OpenFile", "Open File"),
                 QBD_FILTER,
                 GetValidFilePath(Setting.LastOpenedFilePath));
 
@@ -229,12 +229,12 @@ namespace QBDrumMap.ViewModels
         {
             if (MapData.HasError())
             {
-                await Dialog.ShowAlertAsync(libQB.Properties.Dialog.Confirm_SaveHasError);
+                await Dialog.ShowAlertAsync(App.Text("Confirm_SaveHasError"));
                 return;
             }
 
             var path = await Dialog.ShowSaveFileDialog(
-                libQB.Properties.Dialog.Common_SaveFile,
+                App.Text("Common_SaveFile", "Save File"),
                 QBD_FILTER,
                 GetValidFilePath(Setting.LastOpenedFilePath));
 
@@ -264,7 +264,19 @@ namespace QBDrumMap.ViewModels
         [RelayCommand]
         private void OnShowDocument()
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Resources\Document\Manual\index.html");
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string language = Setting.Language;
+            string path = language switch
+            {
+                "ja-JP" => Path.Combine(baseDir, "Resources", "Document", "Manual", "ja", "index.html"),
+                "en-US" => Path.Combine(baseDir, "Resources", "Document", "Manual", "en", "index.html"),
+                _ => Path.Combine(baseDir, "Languages", language, "Manual", "index.html")
+            };
+
+            if (File.Exists(path) == false)
+            {
+                path = Path.Combine(baseDir, "Resources", "Document", "Manual", "en", "index.html");
+            }
 
             if (File.Exists(path) == false)
             {
@@ -277,6 +289,16 @@ namespace QBDrumMap.ViewModels
                 UseShellExecute = true
             };
             p.Start();
+        }
+
+        private void ApplyLocalizedLabels()
+        {
+            ((HamburgerMenuIconItem)MenuItems[1]).Label = App.Text("Title_PluginPage", "Plugin");
+            ((HamburgerMenuIconItem)MenuItems[3]).Label = App.Text("Title_PartsPage", "Parts");
+            ((HamburgerMenuIconItem)MenuItems[4]).Label = App.Text("Title_ArticulationsPage", "Articulations");
+            ((HamburgerMenuIconItem)MenuItems[6]).Label = App.Text("Title_ExportPage", "Export");
+            ((HamburgerMenuIconItem)MenuItems[8]).Label = App.Text("Title_ConvertMidiPage", "Convert MIDI");
+            ((HamburgerMenuIconItem)OptionMenuItems[0]).Label = App.Text("Setting_PageTitle", "Settings");
         }
 
         [RelayCommand]
@@ -335,6 +357,10 @@ namespace QBDrumMap.ViewModels
                 case nameof(Setting.LastOpenedFilePath):
                     SetTitle();
                     break;
+                case nameof(Setting.Language):
+                    ApplyLocalizedLabels();
+                    OnPropertyChanged(nameof(AboutCaption));
+                    break;
                 case nameof(MapData.EditState):
                     IsCommandEnabled = !MapData.EditState;
                     break;
@@ -347,12 +373,12 @@ namespace QBDrumMap.ViewModels
         {
             if (MapData.IsModified())
             {
-                var result = await Dialog.ShowWarningAsync(libQB.Properties.Dialog.Confirm_ApplicationCloseWithTheChanges);
+                var result = await Dialog.ShowWarningAsync(App.Text("Confirm_ApplicationCloseWithTheChanges"));
                 return result ?? false;
             }
             else
             {
-                var result = await Dialog.ShowConfirmAsync(libQB.Properties.Dialog.Confirm_ApplicationClose);
+                var result = await Dialog.ShowConfirmAsync(App.Text("Confirm_ApplicationClose"));
                 return result ?? false;
             }
         }

@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="QBDrumMap.Views.PluginPage"
     Style="{DynamicResource MahApps.Styles.Page}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -6,6 +6,7 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
     xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
@@ -26,7 +27,7 @@
 
         <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
             <ContentControl Focusable="False" Content="{StaticResource PluginPageIcon}" Margin="8,2,0,0"/>
-            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static resx:Resources.Title_PluginPage}"/>
+            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{loc:Loc Key=QBDrumMap.Resources.Title_PluginPage, Fallback={x:Static resx:Resources.Title_PluginPage}}"/>
         </StackPanel>
 
         <Grid Grid.Row="1" Margin="{StaticResource MediumLeftRightMargin}" Background="{DynamicResource MahApps.Brushes.Gray10}">
@@ -52,19 +53,19 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
-                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{x:Static resx:Resources.ButtonAdd}">
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonAdd, Fallback={x:Static resx:Resources.ButtonAdd}}">
                                 <iconPacks:PackIconMaterial Focusable="False" Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
                             </Button>
-                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveTop}">
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveTop, Fallback={x:Static resx:Resources.ButtonMoveTop}}">
                                 <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
                             </Button>
-                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveUp}">
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveUp, Fallback={x:Static resx:Resources.ButtonMoveUp}}">
                                 <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
                             </Button>
-                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveDown}">
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveDown, Fallback={x:Static resx:Resources.ButtonMoveDown}}">
                                 <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
                             </Button>
-                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveBottom}">
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveBottom, Fallback={x:Static resx:Resources.ButtonMoveBottom}}">
                                 <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
                             </Button>
                         </StackPanel>

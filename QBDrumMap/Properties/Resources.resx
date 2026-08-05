@@ -306,4 +306,37 @@
   <data name="MenuHelpAboutCaption" xml:space="preserve">
     <value>About {0}</value>
   </data>
+  <data name="Alert_FileNotFound" xml:space="preserve"><value>File not found.</value></data>
+  <data name="Common_OpenFile" xml:space="preserve"><value>Open File</value></data>
+  <data name="Common_SaveFile" xml:space="preserve"><value>Save File</value></data>
+  <data name="Confirm_NewFile" xml:space="preserve"><value>Discard the current data and create a new file?</value></data>
+  <data name="Confirm_SaveHasError" xml:space="preserve"><value>The data contains errors and cannot be saved.</value></data>
+  <data name="Confirm_ApplicationCloseWithTheChanges" xml:space="preserve"><value>There are unsaved changes. Close the application?</value></data>
+  <data name="Confirm_ApplicationClose" xml:space="preserve"><value>Close the application?</value></data>
+  <data name="Message_Command_Clear" xml:space="preserve"><value>Clear {0}?</value></data>
+  <data name="Message_Command_Delete" xml:space="preserve"><value>Delete {0}: {1}?</value></data>
+  <data name="Message_ProcessComplete" xml:space="preserve"><value>Process completed.</value></data>
+  <data name="Title_Command_Clear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Title_Command_Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Setting_PageTitle" xml:space="preserve"><value>Settings</value></data>
+  <data name="Setting_AccentColor" xml:space="preserve"><value>Accent Color</value></data>
+  <data name="Setting_Language" xml:space="preserve"><value>Language</value></data>
+  <data name="Setting_StartUpPage" xml:space="preserve"><value>Startup Page</value></data>
+  <data name="Menu_File" xml:space="preserve"><value>File</value></data>
+  <data name="Menu_File_New" xml:space="preserve"><value>New</value></data>
+  <data name="Menu_File_Open" xml:space="preserve"><value>Open</value></data>
+  <data name="Menu_File_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Menu_File_Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Menu_Help" xml:space="preserve"><value>Help</value></data>
+  <data name="Menu_Help_Document" xml:space="preserve"><value>Documentation</value></data>
+  <data name="Button_OK" xml:space="preserve"><value>OK</value></data>
+  <data name="Button_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Button_Yes" xml:space="preserve"><value>Yes</value></data>
+  <data name="Button_No" xml:space="preserve"><value>No</value></data>
+  <data name="Title_Dialog_Information" xml:space="preserve"><value>Information</value></data>
+  <data name="Title_Dialog_Warning" xml:space="preserve"><value>Warning</value></data>
+  <data name="Title_Dialog_Error" xml:space="preserve"><value>Error</value></data>
+  <data name="Title_Dialog_Confirm" xml:space="preserve"><value>Confirm</value></data>
+  <data name="BuiltInLanguages" xml:space="preserve"><value>Built-in Languages</value></data>
+  <data name="LanguagePacks" xml:space="preserve"><value>Language Packs</value></data>
 </root>

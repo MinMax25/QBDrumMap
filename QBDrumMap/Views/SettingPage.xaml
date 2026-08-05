@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="QBDrumMap.Views.SettingPage"
     Style="{DynamicResource MahApps.Styles.Page}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -10,7 +10,8 @@
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
-    xmlns:reslibQB="clr-namespace:libQB.Properties;assembly=libQB"
+    xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
+    xmlns:local="clr-namespace:QBDrumMap.Class"
     xmlns:resLocal="clr-namespace:QBDrumMap.Properties"
     Dialog:DialogParticipation.Register="{Binding}"
     mc:Ignorable="d" d:Background="Black"
@@ -24,7 +25,7 @@
 
         <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
             <ContentControl IsTabStop="False" Content="{StaticResource SettingPageIcon}" Margin="8,2,0,0"/>
-            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static reslibQB:Resources.Setting_PageTitle}"/>
+            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{loc:Loc Key=QBDrumMap.Resources.Setting_PageTitle, Fallback=Settings}"/>
         </StackPanel>
 
         <ScrollViewer Grid.Row="1"  Margin="{StaticResource MediumLeftRightMargin}">
@@ -48,7 +49,7 @@
                             <RadioButton Margin="4" Width="80" Content="Dark" IsChecked="{Binding Setting.BaseTheme, ConverterParameter=Dark, Converter={StaticResource BaseThemeConverter}}"/>
                         </StackPanel>
                         <DockPanel>
-                            <Label Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static reslibQB:Resources.Setting_AccentColor}"/>
+                            <Label Width="110" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key=QBDrumMap.Resources.Setting_AccentColor, Fallback=Accent Color}"/>
                             <ComboBox HorizontalAlignment="Left" Width="140" SelectedValue="{Binding Setting.ThemeColor}" ItemsSource="{Binding AccentColors}" SelectedValuePath="Key">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
@@ -61,22 +62,65 @@
                             </ComboBox>
                         </DockPanel>
                         <DockPanel>
-                            <Label Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static reslibQB:Resources.Setting_Language}"/>
-                            <ComboBox Width="120" SelectedValue="{Binding Setting.Language}" ItemsSource="{Binding Source={StaticResource LanguagesComboSource}}"/>
+                            <Label Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key=QBDrumMap.Resources.Setting_Language, Fallback=Language}"/>
+                            <ComboBox Width="160" SelectedValue="{Binding Setting.Language}" SelectedValuePath="Code" ItemsSource="{Binding AvailableLanguages}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <StackPanel x:Name="LanguageItem" Orientation="Horizontal">
+                                                <Image Width="20" Height="15" Source="{Binding Code, Converter={StaticResource FlagConverter}}" Margin="0,0,6,0"/>
+                                                <TextBlock Text="{Binding DisplayName}"/>
+                                            </StackPanel>
+                                            <StackPanel x:Name="HeaderItem" Visibility="Collapsed">
+                                                <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" FontSize="10" Opacity="0.7"/>
+                                                <Separator/>
+                                            </StackPanel>
+                                        </Grid>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding}" Value="{x:Static local:LanguageGroupHeaderItem.BuiltIn}">
+                                                <Setter TargetName="LanguageItem" Property="Visibility" Value="Collapsed"/>
+                                                <Setter TargetName="HeaderItem" Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding}" Value="{x:Static local:LanguageGroupHeaderItem.LanguagePacks}">
+                                                <Setter TargetName="LanguageItem" Property="Visibility" Value="Collapsed"/>
+                                                <Setter TargetName="HeaderItem" Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                                <ComboBox.ItemContainerStyle>
+                                    <Style TargetType="ComboBoxItem">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding}" Value="{x:Static local:LanguageGroupHeaderItem.BuiltIn}">
+                                                <Setter Property="IsEnabled" Value="False"/>
+                                                <Setter Property="IsHitTestVisible" Value="False"/>
+                                                <Setter Property="Focusable" Value="False"/>
+                                                <Setter Property="Padding" Value="4,2"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding}" Value="{x:Static local:LanguageGroupHeaderItem.LanguagePacks}">
+                                                <Setter Property="IsEnabled" Value="False"/>
+                                                <Setter Property="IsHitTestVisible" Value="False"/>
+                                                <Setter Property="Focusable" Value="False"/>
+                                                <Setter Property="Padding" Value="4,2"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.ItemContainerStyle>
+                            </ComboBox>
                         </DockPanel>
                     </DockPanel>
                 </GroupBox>
                 <GroupBox Header="Global" Style="{StaticResource GroupBoxBaseStyle}">
                     <StackPanel>
                         <DockPanel>
-                            <Label Content="{x:Static reslibQB:Resources.Setting_StartUpPage}"/>
+                            <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_StartUpPage, Fallback=Startup Page}"/>
                             <ComboBox
                                 HorizontalAlignment="Left" Width="140"
                                 SelectedValue="{Binding Setting.StartUpPage}" ItemsSource="{Binding Source={StaticResource PagesComboSource}}"/>
-                            <CheckBox Margin="12,4,4,4" Content="{x:Static resLocal:Resources.Setting_IsOpenTheLastFileOpened}" IsChecked="{Binding Setting.IsOpenTheLastFileOpened}"/>
+                            <CheckBox Margin="12,4,4,4" Content="{loc:Loc Key=QBDrumMap.Resources.Setting_IsOpenTheLastFileOpened, Fallback={x:Static resLocal:Resources.Setting_IsOpenTheLastFileOpened}}" IsChecked="{Binding Setting.IsOpenTheLastFileOpened}"/>
                         </DockPanel>
                         <DockPanel>
-                            <Label Content="{x:Static resLocal:Resources.Setting_CubaseInstallPath}"/>
+                            <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_CubaseInstallPath, Fallback={x:Static resLocal:Resources.Setting_CubaseInstallPath}}"/>
                             <TextBox
                                 Style="{DynamicResource MahApps.Styles.TextBox.Search}"
                                 Text="{Binding Setting.CubaseInstallPath}" MaxLength="256"
@@ -94,7 +138,7 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Orientation="Horizontal">
-                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddPartNameDictionaryEntryCommand}" ToolTip="{x:Static resLocal:Resources.ButtonAdd}">
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddPartNameDictionaryEntryCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonAdd, Fallback={x:Static resLocal:Resources.ButtonAdd}}">
                                 <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
                             </Button>
                         </StackPanel>

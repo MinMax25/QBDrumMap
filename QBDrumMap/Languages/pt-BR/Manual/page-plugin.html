@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Plug-in</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Plug-in</h1>
+<p>Edita o mapa de bateria.</p>
+<h2 id="drummap">Editar mapa de bateria</h2>
+<p>Definir plug-in e informações do kit.</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_7_.png"/>
+</div>
+<ul>
+<li class="sub-text">Selecione um plugin na lista de plugins. Adicione o plugin se ele não estiver presente.</li>
+<li class="sub-text">Selecione um kit na lista de kits. Se você não tiver um kit, adicione um.</li>
+<li class="sub-text">Configure o mapa usando a lista de arremessos.</li>
+</ul>
+<h2 id="pitchlist">Lista de tons</h2>
+<p>Define as informações do mapa de bateria definidas em VST (fonte de som de bateria).</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_8.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Nome
+                <ul>
+<li class="sub-text">Insira o nome do pitch. Se estiver em branco, o tom não será definido.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Articulação
+                <ul>
+<li class="sub-text">Abra a tela de seleção de articulação no botão de pesquisa e selecione a articulação apropriada.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Separador
+                <ul>
+<li class="sub-text">Selecione o apropriado na caixa de combinação. Filtro</li>
+</ul>
+</li>
+</ul>
+<h3 id="filter"></h3>
+<p>Filtra por nome de afinação e nome de articulação.</p>
+<div class="image-wrapper">
+<img height="40%" src="image/page-plugin_pic_5.png" width="40%"/>
+</div>
+<p>Você pode especificar um curinga usando um asterisco (*).</p>
+<ul>
+<li>Se não for especificado, corresponda exatamente</li>
+<li>Se colocado no início da palavra-chave, corresponda ao sufixo</li>
+<li>Se colocado no final da palavra-chave, corresponda ao início</li>
+<li>Se colocado antes ou depois da palavra-chave, corresponda parcialmente</li>
+</ul>
+<h3>Classificar</h3>
+<ul>
+<li class="sub-text">Insira cada item da linha de argumento aplicável.</li>
+<li class="sub-text">
+                Você pode alterar a ordem de classificação clicando no cabeçalho da coluna.
+                <ul>
+<li class="sub-text">O primeiro clique irá classificá-lo em ordem crescente, o segundo irá classificá-lo em ordem decrescente e o terceiro irá retorná-lo ao estado inicial.</li>
+<li class="sub-text">Algumas funções de edição são limitadas no estado classificado. Se você quiser editá-lo, retorne-o ao estado inicial.</li>
+</ul>
+</li>
+</ul>
+<h2 id="soundcheck">Verificação de som</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_6.png"/>
+</div>
+<p>Clicar no ícone do alto-falante em cada linha da lista de tons enviará mensagens de ativação/desativação de notas daquela linha para a porta MIDI.</p>
+<h2 id="contextmenu">Menu de contexto</h2>
+<p>Exibido clicando com o botão direito na lista de pitches.</p>
+<div class="contextmenu-wrapper">
+<div class="contextmenu-image">
+<img src="image/page-plugin_pic_2.png"/>
+</div>
+<ul class="contextmenu-list">
+<li class="sub-text">Exibição do mapa de articulação</li>
+<li class="sub-text">
+                    Exportação de mapa de bateria
+                    <ul>
+<li class="sub-text">Studio One</li>
+<li class="sub-text">Cubase</li>
+<li class="sub-text">Texto .tsv</li>
+</ul>
+</li>
+<li class="sub-text">Importação de mapa de bateria (.pitchlist, .drm, .tsv)</li>
+<li class="sub-text">
+                    Classificar lista de tons
+                    <ul>
+<li class="sub-text">Classificar por pitch</li>
+<li class="sub-text">Avançar</li>
+</ul>
+</li>
+<li class="sub-text">Copiar articulações de outros mapas</li>
+<li class="sub-text">
+                    Atribuição automática de articulação
+                    <ul>
+<li class="sub-text">Definir articulações automaticamente para alturas não definidas com base nas articulações de dados do mapa (dicionário de nomes de peças, configurações de outros kits, correspondência de similaridade). Para plug-ins</li>
+<li class="sub-text">GM/GS/XG, as notas padrão para percussão não estão sujeitas a configurações automáticas.</li>
+<li class="sub-text">Separador é definido como "Separado" para notas que possuem nome, mas não têm articulação.</li>
+</ul>
+</li>
+<li class="sub-text">
+                    Limpa articulações e separadores
+                    <ul>
+<li class="sub-text">Retorna as articulações e os separadores de todas as notas do kit para seu estado não definido (os nomes das notas não são alterados).</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="articulationmap">Mapa de articulação</h2>
+<p class="sub-text">Exibido quando chamado a partir do menu de contexto. Aqui você pode ver quais notas estão atribuídas a quais articulações.</p>
+<div class="image-wrapper">
+<img alt="mapa de articulação" height="60%" src="image/page-plugin_pic_3.png" width="60%"/>
+</div>
+<p class="sub-text">Exibe a afinação associada à articulação.</p>
+<p class="note">Os itens marcados na subcoluna são tons interpolados automaticamente.</p>
+<h2 id="options">Opções de plug-in</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_9.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Velocidade de verificação de som
+                <ul>
+<li class="sub-text">Define o valor de velocidade da nota que é emitido quando o botão de verificação de som é pressionado. Entrada</li>
+</ul>
+</li>
+<li class="sub-text">
+                fixa Habilita
+                <ul>
+<li class="sub-text">MIDI em afinação fixa.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Dispositivo de entrada MIDI
+                <ul>
+<li class="sub-text">Selecione a porta à qual o teclado MIDI está conectado. Se não for necessário, selecione em branco. Se disponível, será exibido “Conectado”; se não estiver disponível, "Not Connected" será exibido.</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI In Fixed Pitch
+                <ul>
+<li class="sub-text">
+                        Especifica a afinação das mensagens de ativação/desativação de notas do teclado MIDI a serem aceitas.<br/>
+                        Se você especificar este valor e ativar "Entrada Fixa",
+                        A entrada do teclado MIDI é convertida na mensagem de ativação/desativação da nota selecionada na lista de afinações e na saída.
+                    </li>
+</ul>
+</li>
+<li class="sub-text">
+                Dispositivo de saída MIDI
+                <ul>
+<li class="sub-text">Selecione o destino de saída da mensagem MIDI. Se disponível, será exibido “Conectado”; se não estiver disponível, "Not Connected" será exibido.</li>
+</ul>
+</li>
+</ul>
+</div>
+</body>
+</html>
