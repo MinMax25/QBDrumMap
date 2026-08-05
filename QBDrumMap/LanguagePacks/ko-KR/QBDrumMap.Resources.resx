@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="MenuHelpAboutCaption" xml:space="preserve">
+    <value>{0} 정보</value>
+  </data>
+  <data name="Alert_FileNotFound" xml:space="preserve">
+    <value>파일을 찾을 수 없습니다!</value>
+  </data>
+  <data name="Setting_PageTitle" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="Setting_AccentColor" xml:space="preserve">
+    <value>강조 색상</value>
+  </data>
+  <data name="Setting_Language" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="Button_Yes" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="Button_No" xml:space="preserve">
+    <value>아니요</value>
+  </data>
+  <data name="Title_Dialog_Information" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="Title_Dialog_Warning" xml:space="preserve">
+    <value>경고</value>
+  </data>
+  <data name="Title_Dialog_Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="Title_Dialog_Confirm" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="Title_Command_Clear" xml:space="preserve">
+    <value>지우기</value>
+  </data>
+  <data name="Common_OpenFile" xml:space="preserve">
+    <value>파일 열기</value>
+  </data>
+  <data name="Common_SaveFile" xml:space="preserve">
+    <value>파일 저장</value>
+  </data>
+  <data name="BuiltInLanguages" xml:space="preserve">
+    <value>기본 언어</value>
+  </data>
+  <data name="LanguagePacks" xml:space="preserve">
+    <value>언어 팩</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>파일(_F)</value>
+  </data>
+  <data name="Menu_File_New" xml:space="preserve">
+    <value>새로 만들기(_N)</value>
+  </data>
+  <data name="Menu_File_Open" xml:space="preserve">
+    <value>열기(_O)</value>
+  </data>
+  <data name="Menu_File_Save" xml:space="preserve">
+    <value>저장(_S)</value>
+  </data>
+  <data name="Menu_File_Close" xml:space="preserve">
+    <value>닫기(_X)</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>도움말(_H)</value>
+  </data>
+  <data name="Menu_Help_Document" xml:space="preserve">
+    <value>문서</value>
+  </data>
+  <data name="Title_PluginPage" xml:space="preserve">
+    <value>플러그인</value>
+  </data>
+  <data name="Title_PartsPage" xml:space="preserve">
+    <value>파트</value>
+  </data>
+  <data name="Title_ArticulationsPage" xml:space="preserve">
+    <value>아티큘레이션</value>
+  </data>
+  <data name="Title_ExportPage" xml:space="preserve">
+    <value>내보내기</value>
+  </data>
+  <data name="Title_ConvertMidiPage" xml:space="preserve">
+    <value>MIDI 변환</value>
+  </data>
+  <data name="Setting_UseArticulationPitchName" xml:space="preserve">
+    <value>아티큘레이션 이름을 피치 이름으로 사용</value>
+  </data>
+  <data name="Setting_UseArticulationWhenExporting" xml:space="preserve">
+    <value>내보낼 때 아티큘레이션 사용</value>
+  </data>
+  <data name="ArticulationAutomaticFill" xml:space="preserve">
+    <value>자동으로 관절을 설정하시겠습니까?</value>
+  </data>
+  <data name="AutoAssignArticulationConfirm" xml:space="preserve">
+    <value>지도 데이터를 기반으로 이 키트에 관절을 자동으로 할당하시겠습니까?</value>
+  </data>
+  <data name="AutoAssignArticulationResult" xml:space="preserve">
+    <value>{0} 피치가 지정되었습니다. {1} 피치를 건너뛰었습니다(확실한 일치 항목을 찾을 수 없음).</value>
+  </data>
+  <data name="ButtonAdd" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="ButtonImport" xml:space="preserve">
+    <value>가져오기</value>
+  </data>
+  <data name="ButtonMoveBottom" xml:space="preserve">
+    <value>아래쪽으로 이동</value>
+  </data>
+  <data name="ButtonMoveDown" xml:space="preserve">
+    <value>아래로 이동</value>
+  </data>
+  <data name="ButtonMoveTop" xml:space="preserve">
+    <value>위쪽으로 이동</value>
+  </data>
+  <data name="ButtonMoveUp" xml:space="preserve">
+    <value>위로 이동</value>
+  </data>
+  <data name="ButtonOpenFile" xml:space="preserve">
+    <value>파일 열기</value>
+  </data>
+  <data name="ButtonSearch" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="ClearArticulationAndSeparatorConfirm" xml:space="preserve">
+    <value>이 키트의 모든 음조에 대한 연결 및 구분 기호를 삭제하시겠습니까?</value>
+  </data>
+  <data name="CompressForward" xml:space="preserve">
+    <value>앞으로 압축</value>
+  </data>
+  <data name="CompressForwardConfirm" xml:space="preserve">
+    <value>빈 줄을 뒤로 보내시겠습니까?</value>
+  </data>
+  <data name="ConfiramAutomaticInterpolation" xml:space="preserve">
+    <value>자동 보간을 원하십니까?</value>
+  </data>
+  <data name="ConfirmAutoFill" xml:space="preserve">
+    <value>동일한 값을 동일한 이름으로 설정하시겠습니까?</value>
+  </data>
+  <data name="ContextKitPitchesArticulationSourceIsEmpty" xml:space="preserve">
+    <value>아티큘레이션 소스 키트 선택</value>
+  </data>
+  <data name="ContextKitPitchesAutoAssignArticulation" xml:space="preserve">
+    <value>아티큘레이션 자동 지정</value>
+  </data>
+  <data name="ContextKitPitchesClearArticulationAndSeparator" xml:space="preserve">
+    <value>아티큘레이션 및 구분 기호 지우기</value>
+  </data>
+  <data name="ContextKitPitchesCompressForward" xml:space="preserve">
+    <value>앞으로 압축</value>
+  </data>
+  <data name="ContextKitPitchesCopyArticulation" xml:space="preserve">
+    <value>아티큘레이션 복사</value>
+  </data>
+  <data name="ContextKitPitchesCopyTextToClibBoard" xml:space="preserve">
+    <value>클립보드에 텍스트 복사</value>
+  </data>
+  <data name="ContextKitPitchesImportDrmMap" xml:space="preserve">
+    <value>드럼 맵 가져오기</value>
+  </data>
+  <data name="ContextKitPitchesPasteTextFromClibBoard" xml:space="preserve">
+    <value>클립보드에서 텍스트 붙여넣기</value>
+  </data>
+  <data name="ContextKitPitchesResetOrdeByPitch" xml:space="preserve">
+    <value>피치별 순서 재설정</value>
+  </data>
+  <data name="ContextKitPitchesShowArticulationMap" xml:space="preserve">
+    <value>관절 맵 표시</value>
+  </data>
+  <data name="CopyTextClipToClipBoardComplete" xml:space="preserve">
+    <value>클립보드에 복사</value>
+  </data>
+  <data name="DialogAutomaticFill" xml:space="preserve">
+    <value>자동 채우기</value>
+  </data>
+  <data name="DuplicateNaem" xml:space="preserve">
+    <value>'{0}'가 이미 사용 중입니다!</value>
+  </data>
+  <data name="ImportDrumMap" xml:space="preserve">
+    <value>DrumMap 가져오기</value>
+  </data>
+  <data name="IncorrectMIDIData" xml:space="preserve">
+    <value>잘못된 MIDI 데이터입니다!</value>
+  </data>
+  <data name="LenghtLessLThan" xml:space="preserve">
+    <value>{0} 이름은 {1}자 이하여야 합니다.</value>
+  </data>
+  <data name="LengthBetween" xml:space="preserve">
+    <value>{0} 이름은 {1} 이상 {2} 자 이하여야 합니다.</value>
+  </data>
+  <data name="MIDIError" xml:space="preserve">
+    <value>MIDI 데이터 처리 중 오류가 발생했습니다.</value>
+  </data>
+  <data name="PasteComplete" xml:space="preserve">
+    <value>붙여넣기가 완료되었습니다!</value>
+  </data>
+  <data name="PasteConfirm" xml:space="preserve">
+    <value>붙여넣기를 실행하시겠습니까?</value>
+  </data>
+  <data name="ResetOrderByPitch" xml:space="preserve">
+    <value>피치별로 순서 재설정</value>
+  </data>
+  <data name="ResetOrderByPitchConfirm" xml:space="preserve">
+    <value>피치별로 정렬해도 될까요?</value>
+  </data>
+  <data name="SelectCubaseInstallPath" xml:space="preserve">
+    <value>Cubase 설치 경로 선택</value>
+  </data>
+  <data name="Setting_ConvertMIDIFormat" xml:space="preserve">
+    <value>MIDI 형식 변환</value>
+  </data>
+  <data name="Setting_CubaseInstallPath" xml:space="preserve">
+    <value>Cubase 설치 경로</value>
+  </data>
+  <data name="Setting_ExportCubaseBaseOnDefaultPath" xml:space="preserve">
+    <value>기본 경로의 Cubase Base 내보내기</value>
+  </data>
+  <data name="Setting_ExportCubaseDefaultPath" xml:space="preserve">
+    <value>Cubase 기본 경로 내보내기</value>
+  </data>
+  <data name="Setting_ExportNoteMapperDefaultPath" xml:space="preserve">
+    <value>내보내기 Note Mapper 기본 경로</value>
+  </data>
+  <data name="Setting_ExportQBDrummerDefaultPath" xml:space="preserve">
+    <value>QB Drummer 기본 경로 내보내기</value>
+  </data>
+  <data name="Setting_ExportStudioOneDefaultPath" xml:space="preserve">
+    <value>Studio One 기본 경로 내보내기</value>
+  </data>
+  <data name="Setting_ExportTextDefaultPath" xml:space="preserve">
+    <value>텍스트 기본 경로 내보내기</value>
+  </data>
+  <data name="Setting_IsOpenTheLastFileOpened" xml:space="preserve">
+    <value>가 열려 있습니다. 마지막 파일이 열렸습니다.</value>
+  </data>
+  <data name="Setting_LastImportFilePath" xml:space="preserve">
+    <value>마지막 가져오기 파일 경로</value>
+  </data>
+  <data name="Setting_LastOpenedFilePath" xml:space="preserve">
+    <value>마지막으로 열린 파일 경로</value>
+  </data>
+  <data name="Setting_MidiInDevice" xml:space="preserve">
+    <value>MIDI 입력 장치</value>
+  </data>
+  <data name="Setting_MidiInFixedPitch" xml:space="preserve">
+    <value>MIDI 입력 고정 피치</value>
+  </data>
+  <data name="Setting_MidiOutChannel" xml:space="preserve">
+    <value>MIDI 출력 채널</value>
+  </data>
+  <data name="Setting_MidiOutDevice" xml:space="preserve">
+    <value>MIDI 출력 장치</value>
+  </data>
+  <data name="SoundCheckVelocity" xml:space="preserve">
+    <value>사운드 확인 속도</value>
+  </data>
+  <data name="Confirm_NewFile" xml:space="preserve">
+    <value>현재 데이터를 삭제하고 새 파일을 생성하시겠습니까?</value>
+  </data>
+  <data name="Confirm_SaveHasError" xml:space="preserve">
+    <value>데이터에 오류가 있어 저장할 수 없습니다.</value>
+  </data>
+  <data name="Confirm_ApplicationCloseWithTheChanges" xml:space="preserve">
+    <value>저장되지 않은 변경사항이 있습니다. 애플리케이션을 닫으시겠습니까?</value>
+  </data>
+  <data name="Confirm_ApplicationClose" xml:space="preserve">
+    <value>애플리케이션을 닫으시겠습니까?</value>
+  </data>
+  <data name="Message_Command_Clear" xml:space="preserve">
+    <value>{0}를 삭제하시겠습니까?</value>
+  </data>
+  <data name="Message_Command_Delete" xml:space="preserve">
+    <value>{0} 삭제: {1}?</value>
+  </data>
+  <data name="Message_ProcessComplete" xml:space="preserve">
+    <value>프로세스가 완료되었습니다.</value>
+  </data>
+  <data name="Title_Command_Delete" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Setting_StartUpPage" xml:space="preserve">
+    <value>시작 페이지 삭제</value>
+  </data>
+</root>
