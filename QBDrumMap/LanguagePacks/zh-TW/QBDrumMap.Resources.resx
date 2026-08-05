@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="MenuHelpAboutCaption" xml:space="preserve">
+    <value>關於 {0}</value>
+  </data>
+  <data name="Alert_FileNotFound" xml:space="preserve">
+    <value>找不到檔案！</value>
+  </data>
+  <data name="Setting_PageTitle" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="Setting_AccentColor" xml:space="preserve">
+    <value>主題色</value>
+  </data>
+  <data name="Setting_Language" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Button_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Button_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Title_Dialog_Information" xml:space="preserve">
+    <value>資訊</value>
+  </data>
+  <data name="Title_Dialog_Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="Title_Dialog_Error" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="Title_Dialog_Confirm" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="Title_Command_Clear" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="Common_OpenFile" xml:space="preserve">
+    <value>開啟檔案</value>
+  </data>
+  <data name="Common_SaveFile" xml:space="preserve">
+    <value>儲存檔案</value>
+  </data>
+  <data name="BuiltInLanguages" xml:space="preserve">
+    <value>內建語言</value>
+  </data>
+  <data name="LanguagePacks" xml:space="preserve">
+    <value>語言包</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>檔案 (_F)</value>
+  </data>
+  <data name="Menu_File_New" xml:space="preserve">
+    <value>新增 (_N)</value>
+  </data>
+  <data name="Menu_File_Open" xml:space="preserve">
+    <value>開啟 (_O)</value>
+  </data>
+  <data name="Menu_File_Save" xml:space="preserve">
+    <value>儲存 (_S)</value>
+  </data>
+  <data name="Menu_File_Close" xml:space="preserve">
+    <value>結束 (_X)</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>說明 (_H)</value>
+  </data>
+  <data name="Menu_Help_Document" xml:space="preserve">
+    <value>操作說明</value>
+  </data>
+  <data name="Title_PluginPage" xml:space="preserve">
+    <value>外掛</value>
+  </data>
+  <data name="Title_PartsPage" xml:space="preserve">
+    <value>部件</value>
+  </data>
+  <data name="Title_ArticulationsPage" xml:space="preserve">
+    <value>奏法</value>
+  </data>
+  <data name="Title_ExportPage" xml:space="preserve">
+    <value>匯出</value>
+  </data>
+  <data name="Title_ConvertMidiPage" xml:space="preserve">
+    <value>轉換 MIDI</value>
+  </data>
+  <data name="Setting_UseArticulationPitchName" xml:space="preserve">
+    <value>使用奏法名稱作為音高名稱</value>
+  </data>
+  <data name="Setting_UseArticulationWhenExporting" xml:space="preserve">
+    <value>匯出時使用奏法</value>
+  </data>
+  <data name="ArticulationAutomaticFill" xml:space="preserve">
+    <value>您想自動設定發音嗎？</value>
+  </data>
+  <data name="AutoAssignArticulationConfirm" xml:space="preserve">
+    <value>根據地圖資料自動為該套件分配關節？已分配</value>
+  </data>
+  <data name="AutoAssignArticulationResult" xml:space="preserve">
+    <value>{0} 節距。跳過 {1} 音調（未找到置信匹配）。</value>
+  </data>
+  <data name="ButtonAdd" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="ButtonImport" xml:space="preserve">
+    <value>匯入</value>
+  </data>
+  <data name="ButtonMoveBottom" xml:space="preserve">
+    <value>移至底部</value>
+  </data>
+  <data name="ButtonMoveDown" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="ButtonMoveTop" xml:space="preserve">
+    <value>移至頂部</value>
+  </data>
+  <data name="ButtonMoveUp" xml:space="preserve">
+    <value>上移</value>
+  </data>
+  <data name="ButtonOpenFile" xml:space="preserve">
+    <value>開啟檔案</value>
+  </data>
+  <data name="ButtonSearch" xml:space="preserve">
+    <value>搜尋</value>
+  </data>
+  <data name="ClearArticulationAndSeparatorConfirm" xml:space="preserve">
+    <value>您確定要清除此套件中所有音高的發音和分隔符嗎？</value>
+  </data>
+  <data name="CompressForward" xml:space="preserve">
+    <value>向前壓縮</value>
+  </data>
+  <data name="CompressForwardConfirm" xml:space="preserve">
+    <value>將空白行填回去？</value>
+  </data>
+  <data name="ConfiramAutomaticInterpolation" xml:space="preserve">
+    <value>您想要自動插值嗎？</value>
+  </data>
+  <data name="ConfirmAutoFill" xml:space="preserve">
+    <value>將相同的值設定為相同的名稱？</value>
+  </data>
+  <data name="ContextKitPitchesArticulationSourceIsEmpty" xml:space="preserve">
+    <value>選擇運音法源套件</value>
+  </data>
+  <data name="ContextKitPitchesAutoAssignArticulation" xml:space="preserve">
+    <value>自動分配運音法</value>
+  </data>
+  <data name="ContextKitPitchesClearArticulationAndSeparator" xml:space="preserve">
+    <value>清除運音法和分隔符</value>
+  </data>
+  <data name="ContextKitPitchesCompressForward" xml:space="preserve">
+    <value>向前壓縮</value>
+  </data>
+  <data name="ContextKitPitchesCopyArticulation" xml:space="preserve">
+    <value>複製運音法</value>
+  </data>
+  <data name="ContextKitPitchesCopyTextToClibBoard" xml:space="preserve">
+    <value>將文字複製到剪貼簿</value>
+  </data>
+  <data name="ContextKitPitchesImportDrmMap" xml:space="preserve">
+    <value>匯入鼓對映</value>
+  </data>
+  <data name="ContextKitPitchesPasteTextFromClibBoard" xml:space="preserve">
+    <value>從剪貼簿貼上文字</value>
+  </data>
+  <data name="ContextKitPitchesResetOrdeByPitch" xml:space="preserve">
+    <value>按音高重置順序</value>
+  </data>
+  <data name="ContextKitPitchesShowArticulationMap" xml:space="preserve">
+    <value>顯示發音圖</value>
+  </data>
+  <data name="CopyTextClipToClipBoardComplete" xml:space="preserve">
+    <value>複製到剪貼簿</value>
+  </data>
+  <data name="DialogAutomaticFill" xml:space="preserve">
+    <value>自動填充</value>
+  </data>
+  <data name="DuplicateNaem" xml:space="preserve">
+    <value>'{0}' 已在使用中！</value>
+  </data>
+  <data name="ImportDrumMap" xml:space="preserve">
+    <value>匯入 DrumMap</value>
+  </data>
+  <data name="IncorrectMIDIData" xml:space="preserve">
+    <value>MIDI 資料不正確！</value>
+  </data>
+  <data name="LenghtLessLThan" xml:space="preserve">
+    <value>{0} 名稱不得超過 {1} 個字元</value>
+  </data>
+  <data name="LengthBetween" xml:space="preserve">
+    <value>{0} 名稱必須至少為 {1} 且不超過 {2} 個字元</value>
+  </data>
+  <data name="MIDIError" xml:space="preserve">
+    <value>MIDI 資料處理期間發生錯誤</value>
+  </data>
+  <data name="PasteComplete" xml:space="preserve">
+    <value>貼上完成！</value>
+  </data>
+  <data name="PasteConfirm" xml:space="preserve">
+    <value>您確定要執行貼上嗎？</value>
+  </data>
+  <data name="ResetOrderByPitch" xml:space="preserve">
+    <value>按音高重置訂單</value>
+  </data>
+  <data name="ResetOrderByPitchConfirm" xml:space="preserve">
+    <value>我可以按音高排序嗎？</value>
+  </data>
+  <data name="SelectCubaseInstallPath" xml:space="preserve">
+    <value>選擇 Cubase 安裝路徑</value>
+  </data>
+  <data name="Setting_ConvertMIDIFormat" xml:space="preserve">
+    <value>轉換 MIDI 格式</value>
+  </data>
+  <data name="Setting_CubaseInstallPath" xml:space="preserve">
+    <value>Cubase 安裝路徑</value>
+  </data>
+  <data name="Setting_ExportCubaseBaseOnDefaultPath" xml:space="preserve">
+    <value>匯出 Cubase Base 預設路徑</value>
+  </data>
+  <data name="Setting_ExportCubaseDefaultPath" xml:space="preserve">
+    <value>匯出 Cubase 預設路徑</value>
+  </data>
+  <data name="Setting_ExportNoteMapperDefaultPath" xml:space="preserve">
+    <value>匯出音符對映器預設路徑</value>
+  </data>
+  <data name="Setting_ExportQBDrummerDefaultPath" xml:space="preserve">
+    <value>匯出 QB Drummer 預設路徑</value>
+  </data>
+  <data name="Setting_ExportStudioOneDefaultPath" xml:space="preserve">
+    <value>匯出 Studio One 預設路徑</value>
+  </data>
+  <data name="Setting_ExportTextDefaultPath" xml:space="preserve">
+    <value>匯出文字預設路徑</value>
+  </data>
+  <data name="Setting_IsOpenTheLastFileOpened" xml:space="preserve">
+    <value>開啟最後一個開啟的檔案</value>
+  </data>
+  <data name="Setting_LastImportFilePath" xml:space="preserve">
+    <value>上次匯入檔案路徑</value>
+  </data>
+  <data name="Setting_LastOpenedFilePath" xml:space="preserve">
+    <value>上次開啟檔案路徑</value>
+  </data>
+  <data name="Setting_MidiInDevice" xml:space="preserve">
+    <value>MIDI 輸入裝置</value>
+  </data>
+  <data name="Setting_MidiInFixedPitch" xml:space="preserve">
+    <value>MIDI 輸入固定音調</value>
+  </data>
+  <data name="Setting_MidiOutChannel" xml:space="preserve">
+    <value>MIDI 輸出通道</value>
+  </data>
+  <data name="Setting_MidiOutDevice" xml:space="preserve">
+    <value>MIDI 輸出裝置</value>
+  </data>
+  <data name="SoundCheckVelocity" xml:space="preserve">
+    <value>聲音檢查速度</value>
+  </data>
+  <data name="Confirm_NewFile" xml:space="preserve">
+    <value>放棄當前資料並建立新檔案？</value>
+  </data>
+  <data name="Confirm_SaveHasError" xml:space="preserve">
+    <value>資料有錯誤，無法儲存。</value>
+  </data>
+  <data name="Confirm_ApplicationCloseWithTheChanges" xml:space="preserve">
+    <value>有未儲存的更改。關閉應用程式？</value>
+  </data>
+  <data name="Confirm_ApplicationClose" xml:space="preserve">
+    <value>關閉應用程式？</value>
+  </data>
+  <data name="Message_Command_Clear" xml:space="preserve">
+    <value>清除 {0}？</value>
+  </data>
+  <data name="Message_Command_Delete" xml:space="preserve">
+    <value>刪除{0}：{1}？</value>
+  </data>
+  <data name="Message_ProcessComplete" xml:space="preserve">
+    <value>程序已完成。</value>
+  </data>
+  <data name="Title_Command_Delete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="Setting_StartUpPage" xml:space="preserve">
+    <value>啟動頁</value>
+  </data>
+</root>
