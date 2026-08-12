@@ -362,6 +362,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\lib\libQB\libQB.csproj" />
+    <ProjectReference Include="..\..\lib\libQB\libQB.csproj" />
   </ItemGroup>
 </Project>
