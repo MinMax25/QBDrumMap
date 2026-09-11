@@ -50,9 +50,9 @@ namespace QBDrumMap.ViewModels
         // 利用可能なアクセントカラーのリスト
         public Dictionary<string, Brush> AccentColors { get; set; }
 
-        private static readonly string[] BuiltInLanguageOrder = { "ja-JP", "en-US" };
-
-        private static readonly Dictionary<string, string> LanguageDisplayNameOverrides = new()
+        // 外部言語パックの表示名を、LocalizationManagerの自動生成(CultureInfo.NativeName)から
+        // アプリ指定の表記へ上書きするためのテーブル
+        private static readonly Dictionary<string, string> DisplayNameOverrides = new()
         {
             ["zh-TW"] = "繁體中文",
             ["zh-CN"] = "简体中文",
@@ -63,26 +63,38 @@ namespace QBDrumMap.ViewModels
             ["fr-FR"] = "Français",
         };
 
+        // 組み込み言語の固定表示順
+        private static readonly string[] BuiltInOrder = { "ja-JP", "en-US" };
+
+        // 利用可能な言語のリスト(「組み込み言語」見出し → 組み込み言語 → 「言語パック」見出し → 外部言語パック)
+        // ComboBoxのItemsSourceにはLanguageInfoに加え、グループ見出しを表すLanguageGroupHeaderItemが混在する。
         public IReadOnlyList<object> AvailableLanguages
         {
             get
             {
                 var languages = LocalizationManager.Instance.AvailableLanguages
-                    .Select(language => LanguageDisplayNameOverrides.TryGetValue(language.Code, out var displayName)
-                        ? new LanguageInfo
-                        {
-                            Code = language.Code,
-                            DisplayName = displayName,
-                            IsBuiltIn = language.IsBuiltIn
-                        }
-                        : language)
+                    .Select(l =>
+                    {
+                        return DisplayNameOverrides.TryGetValue(l.Code, out var name)
+                            ? new LanguageInfo { Code = l.Code, DisplayName = name, IsBuiltIn = l.IsBuiltIn }
+                            : l;
+                    })
                     .ToList();
-                var result = new List<object>();
 
-                var builtIn = BuiltInLanguageOrder
-                    .Select(code => languages.FirstOrDefault(x => x.Code == code))
-                    .Where(x => x != null)
+                var builtIn = BuiltInOrder
+                    .Select(code =>
+                    {
+                        return languages.FirstOrDefault(l => l.Code == code);
+                    })
+                    .Where(l => l != null)
                     .ToList();
+
+                var external = languages
+                    .Where(l => l.IsBuiltIn == false)
+                    .OrderBy(l => l.DisplayName, StringComparer.Ordinal)
+                    .ToList();
+
+                var result = new List<object>();
 
                 if (builtIn.Count > 0)
                 {
@@ -90,15 +102,10 @@ namespace QBDrumMap.ViewModels
                     result.AddRange(builtIn!);
                 }
 
-                var languagePacks = languages
-                    .Where(x => x.IsBuiltIn == false)
-                    .OrderBy(x => x.DisplayName, StringComparer.CurrentCulture)
-                    .ToList();
-
-                if (languagePacks.Count > 0)
+                if (external.Count > 0)
                 {
                     result.Add(LanguageGroupHeaderItem.LanguagePacks);
-                    result.AddRange(languagePacks);
+                    result.AddRange(external);
                 }
 
                 return result;

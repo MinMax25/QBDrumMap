@@ -64,30 +64,20 @@
                         <DockPanel>
                             <Label Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key=QBDrumMap.Resources.Setting_Language, Fallback=Language}"/>
                             <ComboBox Width="160" SelectedValue="{Binding Setting.Language}" SelectedValuePath="Code" ItemsSource="{Binding AvailableLanguages}">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <StackPanel x:Name="LanguageItem" Orientation="Horizontal">
-                                                <Image Width="20" Height="15" Source="{Binding Code, Converter={StaticResource FlagConverter}}" Margin="0,0,6,0"/>
-                                                <TextBlock Text="{Binding DisplayName}"/>
-                                            </StackPanel>
-                                            <StackPanel x:Name="HeaderItem" Visibility="Collapsed">
-                                                <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" FontSize="10" Opacity="0.7"/>
-                                                <Separator/>
-                                            </StackPanel>
-                                        </Grid>
-                                        <DataTemplate.Triggers>
-                                            <DataTrigger Binding="{Binding}" Value="{x:Static local:LanguageGroupHeaderItem.BuiltIn}">
-                                                <Setter TargetName="LanguageItem" Property="Visibility" Value="Collapsed"/>
-                                                <Setter TargetName="HeaderItem" Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                            <DataTrigger Binding="{Binding}" Value="{x:Static local:LanguageGroupHeaderItem.LanguagePacks}">
-                                                <Setter TargetName="LanguageItem" Property="Visibility" Value="Collapsed"/>
-                                                <Setter TargetName="HeaderItem" Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                        </DataTemplate.Triggers>
+                                <ComboBox.Resources>
+                                    <DataTemplate DataType="{x:Type local:LanguageGroupHeaderItem}">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" FontSize="10" Opacity="0.7"/>
+                                            <Separator/>
+                                        </StackPanel>
                                     </DataTemplate>
-                                </ComboBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type loc:LanguageInfo}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="20" Height="15" Source="{Binding Code, Converter={StaticResource FlagConverter}}" Margin="0,0,6,0"/>
+                                            <TextBlock Text="{Binding DisplayName}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.Resources>
                                 <ComboBox.ItemContainerStyle>
                                     <Style TargetType="ComboBoxItem">
                                         <Style.Triggers>
