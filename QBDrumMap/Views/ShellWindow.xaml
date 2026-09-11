@@ -9,6 +9,7 @@
     xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:templateSelectors="clr-namespace:QBDrumMap.TemplateSelectors"
+    xmlns:p="clr-namespace:QBDrumMap"
     Style="{StaticResource CustomMetroWindow}"
     WindowStartupLocation="CenterScreen"
     TitleCharacterCasing="Normal"
@@ -111,16 +112,16 @@
             </Grid.RowDefinitions>
 
             <Menu Grid.Row="0" Grid.ColumnSpan="2" Focusable="False" IsEnabled="{Binding IsCommandEnabled}">
-                <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File}" Focusable="False">
-                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File_New}" Command="{Binding NewFileCommand}"/>
+                <MenuItem Header="{loc:Loc Key={x:Static p:Resources.Menu_File}}" Focusable="False">
+                    <MenuItem Header="{loc:Loc Key={x:Static p:Resources.Menu_File_New}}" Command="{Binding NewFileCommand}"/>
                     <Separator/>
-                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File_Open}" Command="{Binding OpenFileCommand}"/>
-                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File_Save}" Command="{Binding SaveFileCommand}"/>
+                    <MenuItem Header="{loc:Loc Key={x:Static p:Resources.Menu_File_Open}}" Command="{Binding OpenFileCommand}"/>
+                    <MenuItem Header="{loc:Loc Key={x:Static p:Resources.Menu_File_Save}}" Command="{Binding SaveFileCommand}"/>
                     <Separator/>
-                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_File_Close}" Command="{Binding CloseCommand}"/>
+                    <MenuItem Header="{loc:Loc Key={x:Static p:Resources.Menu_File_Close}}" Command="{Binding CloseCommand}"/>
                 </MenuItem>
-                <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_Help}" Focusable="False">
-                    <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.Menu_Help_Document}" Command="{Binding ShowDocumentCommand}"/>
+                <MenuItem Header="{loc:Loc Key={x:Static p:Resources.Menu_Help}}" Focusable="False">
+                    <MenuItem Header="{loc:Loc Key={x:Static p:Resources.Menu_Help_Document}}" Command="{Binding ShowDocumentCommand}"/>
                     <MenuItem Header="{Binding AboutCaption}" Command="{Binding ShowAboutCommand}"/>
                 </MenuItem>
             </Menu>

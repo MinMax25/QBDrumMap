@@ -12,7 +12,7 @@
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     xmlns:local="clr-namespace:QBDrumMap.Class"
-    xmlns:resLocal="clr-namespace:QBDrumMap"
+    xmlns:p="clr-namespace:QBDrumMap"
     Dialog:DialogParticipation.Register="{Binding}"
     mc:Ignorable="d" d:Background="Black"
     d:DesignHeight="1000" d:DesignWidth="1200">
@@ -25,7 +25,7 @@
 
         <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
             <ContentControl IsTabStop="False" Content="{StaticResource SettingPageIcon}" Margin="8,2,0,0"/>
-            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{loc:Loc Key=QBDrumMap.Resources.Setting_PageTitle}"/>
+            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{loc:Loc Key={x:Static p:Resources.Setting_PageTitle}}"/>
         </StackPanel>
 
         <ScrollViewer Grid.Row="1"  Margin="{StaticResource MediumLeftRightMargin}">
@@ -49,7 +49,7 @@
                             <RadioButton Margin="4" Width="80" Content="Dark" IsChecked="{Binding Setting.BaseTheme, ConverterParameter=Dark, Converter={StaticResource BaseThemeConverter}}"/>
                         </StackPanel>
                         <DockPanel>
-                            <Label Width="110" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key=QBDrumMap.Resources.Setting_AccentColor}"/>
+                            <Label Width="110" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key={x:Static p:Resources.Setting_AccentColor}}"/>
                             <ComboBox HorizontalAlignment="Left" Width="140" SelectedValue="{Binding Setting.ThemeColor}" ItemsSource="{Binding AccentColors}" SelectedValuePath="Key">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
@@ -62,7 +62,7 @@
                             </ComboBox>
                         </DockPanel>
                         <DockPanel>
-                            <Label Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key=QBDrumMap.Resources.Setting_Language}"/>
+                            <Label Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key={x:Static p:Resources.Setting_Language}}"/>
                             <ComboBox Width="160" SelectedValue="{Binding Setting.Language}" SelectedValuePath="Code" ItemsSource="{Binding AvailableLanguages}">
                                 <ComboBox.Resources>
                                     <DataTemplate DataType="{x:Type local:LanguageGroupHeaderItem}">
@@ -103,14 +103,14 @@
                 <GroupBox Header="Global" Style="{StaticResource GroupBoxBaseStyle}">
                     <StackPanel>
                         <DockPanel>
-                            <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_StartUpPage}"/>
+                            <Label Content="{loc:Loc Key={x:Static p:Resources.Setting_StartUpPage}}"/>
                             <ComboBox
                                 HorizontalAlignment="Left" Width="140"
                                 SelectedValue="{Binding Setting.StartUpPage}" ItemsSource="{Binding Source={StaticResource PagesComboSource}}"/>
-                            <CheckBox Margin="12,4,4,4" Content="{loc:Loc Key=QBDrumMap.Resources.Setting_IsOpenTheLastFileOpened}" IsChecked="{Binding Setting.IsOpenTheLastFileOpened}"/>
+                            <CheckBox Margin="12,4,4,4" Content="{loc:Loc Key={x:Static p:Resources.Setting_IsOpenTheLastFileOpened}}" IsChecked="{Binding Setting.IsOpenTheLastFileOpened}"/>
                         </DockPanel>
                         <DockPanel>
-                            <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_CubaseInstallPath}"/>
+                            <Label Content="{loc:Loc Key={x:Static p:Resources.Setting_CubaseInstallPath}}"/>
                             <TextBox
                                 Style="{DynamicResource MahApps.Styles.TextBox.Search}"
                                 Text="{Binding Setting.CubaseInstallPath}" MaxLength="256"
@@ -128,7 +128,7 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Orientation="Horizontal">
-                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddPartNameDictionaryEntryCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonAdd}">
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddPartNameDictionaryEntryCommand}" ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonAdd}}">
                                 <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
                             </Button>
                         </StackPanel>
