@@ -57,19 +57,19 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonAdd, Fallback={x:Static resx:Resources.ButtonAdd}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonAdd}">
                             <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveTop, Fallback={x:Static resx:Resources.ButtonMoveTop}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveTop}">
                             <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveUp, Fallback={x:Static resx:Resources.ButtonMoveUp}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveUp}">
                             <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveDown, Fallback={x:Static resx:Resources.ButtonMoveDown}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveDown}">
                             <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveBottom, Fallback={x:Static resx:Resources.ButtonMoveBottom}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveBottom}">
                             <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
                     </StackPanel>
@@ -127,7 +127,7 @@
                     </StackPanel.Resources>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="{loc:Loc Key=QBDrumMap.Resources.SoundCheckVelocity, Fallback={x:Static resLocal:Resources.SoundCheckVelocity}}"/>
+                            <Label Content="{loc:Loc Key=QBDrumMap.Resources.SoundCheckVelocity}"/>
                             <ComboBox
                                 HorizontalAlignment="Left" Width="70"
                                 SelectedValue="{Binding MIDI.SoundCheckVelocity}"
@@ -141,7 +141,7 @@
                         <ComboBox Width="70" SelectedValue="{Binding Plugin.PluginType}" ItemsSource="{Binding Source={StaticResource KitTypeComboSource}}"/>
                     </StackPanel>
                     <DockPanel>
-                        <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_MidiInDevice, Fallback={x:Static resLocal:Resources.Setting_MidiInDevice}}"/>
+                        <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_MidiInDevice}"/>
                         <ComboBox
                                     HorizontalAlignment="Left" Width="300"
                                     SelectedValue="{Binding Setting.MidiInDevice}"
@@ -150,7 +150,7 @@
                         <Label HorizontalAlignment="Left" Content="{Binding MIDI.MidiInDevState}"/>
                     </DockPanel>
                     <DockPanel>
-                        <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_MidiInFixedPitch, Fallback={x:Static resLocal:Resources.Setting_MidiInFixedPitch}}"/>
+                        <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_MidiInFixedPitch}"/>
                         <ComboBox
                                     HorizontalAlignment="Left" Width="300"
                                     SelectedValue="{Binding Setting.MidiInFixedPitch}"
@@ -160,7 +160,7 @@
                                     behaviors:ClearableComboBox.EnableClearButton="True"/>
                     </DockPanel>
                     <DockPanel>
-                        <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_MidiOutDevice, Fallback={x:Static resLocal:Resources.Setting_MidiOutDevice}}"/>
+                        <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_MidiOutDevice}"/>
                         <ComboBox
                             HorizontalAlignment="Left" Width="300"
                             SelectedValue="{Binding Plugin.MidiOutDevice}"
@@ -169,7 +169,7 @@
                         <Label HorizontalAlignment="Left" Content="{Binding MIDI.MidiOutDevState}"/>
                     </DockPanel>
                     <DockPanel>
-                        <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_MidiOutChannel, Fallback={x:Static resLocal:Resources.Setting_MidiOutChannel}}"/>
+                        <Label Content="{loc:Loc Key=QBDrumMap.Resources.Setting_MidiOutChannel}"/>
                         <ComboBox
                             HorizontalAlignment="Left" Width="300"
                             SelectedValue="{Binding Plugin.SoundCheckChannel}"

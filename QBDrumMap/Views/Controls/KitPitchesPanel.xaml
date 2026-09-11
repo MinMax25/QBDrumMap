@@ -40,16 +40,16 @@
                 
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveTop, Fallback={x:Static resLocal:Resources.ButtonMoveTop}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveTop}">
                             <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveUp, Fallback={x:Static resLocal:Resources.ButtonMoveUp}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveUp}">
                             <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveDown, Fallback={x:Static resLocal:Resources.ButtonMoveDown}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveDown}">
                             <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
-                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveBottom, Fallback={x:Static resLocal:Resources.ButtonMoveBottom}}">
+                        <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveBottom}">
                             <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
                         </Button>
                     </StackPanel>
@@ -88,26 +88,26 @@
                 
                 <DataGrid.ContextMenu>
                     <ContextMenu IsEnabled="{Binding IsCommandEnabled}">
-                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesShowArticulationMap, Fallback={x:Static resLocal:Resources.ContextKitPitchesShowArticulationMap}}" Command="{Binding ShowArticulationMapCommand}"/>
+                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesShowArticulationMap}" Command="{Binding ShowArticulationMapCommand}"/>
                         <Separator/>
                         <MenuItem Header="Export Studio One" Command="{Binding ExportStudioOneCommand}"/>
                         <MenuItem Header="Export Cubase" Command="{Binding ExportCubaseCommand}"/>
                         <MenuItem Header="Export Text(.tsv)" Command="{Binding ExportTextCommand}"/>
                         <Separator/>
-                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesImportDrmMap, Fallback={x:Static resLocal:Resources.ContextKitPitchesImportDrmMap}}" Command="{Binding ImportCommand}"/>
+                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesImportDrmMap}" Command="{Binding ImportCommand}"/>
                         <Separator/>
-                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesResetOrdeByPitch, Fallback={x:Static resLocal:Resources.ContextKitPitchesResetOrdeByPitch}}" Command="{Binding ResetOrdrByPitchCommand}"/>
-                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesCompressForward, Fallback={x:Static resLocal:Resources.ContextKitPitchesCompressForward}}" Command="{Binding CompressForwardCommand}"/>
+                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesResetOrdeByPitch}" Command="{Binding ResetOrdrByPitchCommand}"/>
+                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesCompressForward}" Command="{Binding CompressForwardCommand}"/>
                         <Separator/>
-                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesCopyArticulation, Fallback={x:Static resLocal:Resources.ContextKitPitchesCopyArticulation}}" Command="{Binding CopyArticulationCommand}"/>
+                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesCopyArticulation}" Command="{Binding CopyArticulationCommand}"/>
                         <ComboBox
                             SelectedValue="{Binding ArticulationSource}"
                             ItemsSource="{Binding BaseOnComboSource}"
                             DisplayMemberPath="Name"/>
                         <Separator/>
-                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesAutoAssignArticulation, Fallback={x:Static resLocal:Resources.ContextKitPitchesAutoAssignArticulation}}" Command="{Binding AutoAssignArticulationCommand}"/>
+                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesAutoAssignArticulation}" Command="{Binding AutoAssignArticulationCommand}"/>
                         <Separator/>
-                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesClearArticulationAndSeparator, Fallback={x:Static resLocal:Resources.ContextKitPitchesClearArticulationAndSeparator}}" Command="{Binding ClearArticulationAndSeparatorCommand}"/>
+                        <MenuItem Header="{loc:Loc Key=QBDrumMap.Resources.ContextKitPitchesClearArticulationAndSeparator}" Command="{Binding ClearArticulationAndSeparatorCommand}"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
                 
