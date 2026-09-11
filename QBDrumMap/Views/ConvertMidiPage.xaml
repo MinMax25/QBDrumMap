@@ -34,7 +34,7 @@
         
         <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
             <ContentControl Focusable="False" Content="{StaticResource ConvertPageIcon}" Margin="8,2,0,0"/>
-            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{loc:Loc Key=QBDrumMap.Resources.Title_ConvertMidiPage, Fallback={x:Static properties:Resources.Title_ConvertMidiPage}}"/>
+            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{loc:Loc Key=QBDrumMap.Resources.Title_ConvertMidiPage}"/>
         </StackPanel>
 
         <Grid Grid.Row="1" Margin="{StaticResource MediumLeftRightMargin}" Background="{DynamicResource MahApps.Brushes.Gray10}">

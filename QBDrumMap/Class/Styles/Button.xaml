@@ -24,7 +24,7 @@
 
     <Style x:Key="OpenFileButton" TargetType="Button" BasedOn="{StaticResource CommandPanelButtonStyle}">
         <Setter Property="Content" Value="{StaticResource OpenFileIcon}"/>
-        <Setter Property="ToolTip" Value="{loc:Loc Key=QBDrumMap.Resources.ButtonOpenFile, Fallback={x:Static properties:Resources.ButtonOpenFile}}"/>
+        <Setter Property="ToolTip" Value="{loc:Loc Key=QBDrumMap.Resources.ButtonOpenFile}"/>
     </Style>
 
 </ResourceDictionary>

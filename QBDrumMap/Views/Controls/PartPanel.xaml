@@ -37,19 +37,19 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
-                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonAdd, Fallback={x:Static resLocal:Resources.ButtonAdd}}">
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonAdd}">
                         <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
                     </Button>
-                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveTop, Fallback={x:Static resLocal:Resources.ButtonMoveTop}}">
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveTop}">
                         <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
                     </Button>
-                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveUp, Fallback={x:Static resLocal:Resources.ButtonMoveUp}}">
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveUp}">
                         <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
                     </Button>
-                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveDown, Fallback={x:Static resLocal:Resources.ButtonMoveDown}}">
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveDown}">
                         <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
                     </Button>
-                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveBottom, Fallback={x:Static resLocal:Resources.ButtonMoveBottom}}">
+                    <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{loc:Loc Key=QBDrumMap.Resources.ButtonMoveBottom}">
                         <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
                     </Button>
                 </StackPanel>
