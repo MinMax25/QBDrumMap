@@ -344,16 +344,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Name.ja.resx">
+      <CustomToolNamespace>QBDrumMap</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Name.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Name.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>QBDrumMap</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.ja.resx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CustomToolNamespace>QBDrumMap</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>QBDrumMap</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
 

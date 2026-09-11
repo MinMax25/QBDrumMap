@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QBDrumMap.Properties {
+namespace QBDrumMap {
     using System;
     
     
