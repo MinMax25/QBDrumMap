@@ -10,96 +10,145 @@
     xmlns:bhlibqb="clr-namespace:libQB.Behaviors;assembly=libQB"
     xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
-    xmlns:bhlocal="clr-namespace:QBDrumMap.Class.Behaviors"
     xmlns:p="clr-namespace:QBDrumMap"
+    xmlns:bhlocal="clr-namespace:QBDrumMap.Class.Behaviors"
     Dialog:DialogParticipation.Register="{Binding}"
     mc:Ignorable="d"
-    d:DesignHeight="800" d:DesignWidth="1000">
-    
-    <Grid AllowDrop="True"
+    d:DesignHeight="800"
+    d:DesignWidth="1000">
+    <Grid
+        AllowDrop="True"
         PreviewDragOver="Grid_PreviewDragOver">
         <bh:Interaction.Triggers>
             <bh:EventTrigger
                 EventName="Drop">
                 <bh:InvokeCommandAction
                     Command="{Binding DropFileCommand}"
-                    PassEventArgsToCommand="True"/>
+                    PassEventArgsToCommand="True" />
             </bh:EventTrigger>
         </bh:Interaction.Triggers>
-        
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition
+                Height="48" />
+            <RowDefinition
+                Height="*" />
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
-            <ContentControl Focusable="False" Content="{StaticResource ConvertPageIcon}" Margin="8,2,0,0"/>
-            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{loc:Loc Key={x:Static p:Resources.Title_ConvertMidiPage}}"/>
+        <StackPanel
+            Grid.Row="0"
+            Margin="{StaticResource MediumLeftMargin}"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <ContentControl
+                Focusable="False"
+                Content="{StaticResource ConvertPageIcon}"
+                Margin="8,2,0,0" />
+            <TextBlock
+                Style="{StaticResource PageTitleStyle}"
+                Text="{loc:Loc Key={x:Static p:Resources.Title_ConvertMidiPage}}" />
         </StackPanel>
-
-        <Grid Grid.Row="1" Margin="{StaticResource MediumLeftRightMargin}" Background="{DynamicResource MahApps.Brushes.Gray10}">
+        <Grid
+            Grid.Row="1"
+            Margin="{StaticResource MediumLeftRightMargin}"
+            Background="{DynamicResource MahApps.Brushes.Gray10}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="400"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition
+                        Width="400" />
+                    <ColumnDefinition
+                        Width="*" />
                 </Grid.ColumnDefinitions>
-
-                <StackPanel Grid.Column="0">
-                    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Convert MIDI">
+                <StackPanel
+                    Grid.Column="0">
+                    <GroupBox
+                        Style="{StaticResource GroupBoxBaseStyle}"
+                        Header="Convert MIDI">
                         <StackPanel>
-                            <Label Content="Base On Kit"/>
-                            <ComboBox SelectedValue="{Binding BaseOn}" ItemsSource="{Binding BaseOnComboSource}" DisplayMemberPath="Name"/>
+                            <Label
+                                Content="Base On Kit" />
+                            <ComboBox
+                                SelectedValue="{Binding BaseOn}"
+                                ItemsSource="{Binding BaseOnComboSource}"
+                                DisplayMemberPath="Name" />
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="MIDI FIle">
+                    <GroupBox
+                        Style="{StaticResource GroupBoxBaseStyle}"
+                        Header="MIDI FIle">
                         <StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="Select MIDI File"/>
-                                <Button Style="{StaticResource OpenFileButton}" Command="{Binding OpenFileCommand}"/>
-                                <Label Margin="24,0,0,0" Content="Convert To"/>
-                                <ComboBox Width="100" SelectedValue="{Binding Setting.ConvertMIDIFormat}" ItemsSource="{Binding Source={StaticResource MIDIFormatComboSource}}"/>
+                            <StackPanel
+                                Orientation="Horizontal">
+                                <Label
+                                    Content="Select MIDI File" />
+                                <Button
+                                    Style="{StaticResource OpenFileButton}"
+                                    Command="{Binding OpenFileCommand}" />
+                                <Label
+                                    Margin="24,0,0,0"
+                                    Content="Convert To" />
+                                <ComboBox
+                                    Width="100"
+                                    SelectedValue="{Binding Setting.ConvertMIDIFormat}"
+                                    ItemsSource="{Binding Source={StaticResource MIDIFormatComboSource}}" />
                             </StackPanel>
-                            <TextBlock Margin="8,4,8,4" Height="48" Text="{Binding LastConvertMIDIFilePath}" TextWrapping="Wrap"/>
-                            <Button Style="{StaticResource ExportButtonStyle}" Content="Convert" Command="{Binding ConvertCommand}"/>
+                            <TextBlock
+                                Margin="8,4,8,4"
+                                Height="48"
+                                Text="{Binding LastConvertMIDIFilePath}"
+                                TextWrapping="Wrap" />
+                            <Button
+                                Style="{StaticResource ExportButtonStyle}"
+                                Content="Convert"
+                                Command="{Binding ConvertCommand}" />
                         </StackPanel>
                     </GroupBox>
                 </StackPanel>
-
-                <Grid Grid.Column="1">
+                <Grid
+                    Grid.Column="1">
                     <DataGrid
                         ItemsSource="{Binding KitListView}"
                         Style="{StaticResource DataGridStyle}">
-                        
                         <bh:Interaction.Behaviors>
-                            <bhlibqb:DataGridExtendBehavior SelectedRows="{Binding SelectedKits}" SelectionChangedCommand="{Binding SelectedKitsSelectionChangedCommand}"/>
-                            <bhlocal:DataGridGroupExpandBehavior IsExpanded="{Binding IsGroupExpanded}" />
+                            <bhlibqb:DataGridExtendBehavior
+                                SelectedRows="{Binding SelectedKits}"
+                                SelectionChangedCommand="{Binding SelectedKitsSelectionChangedCommand}" />
+                            <bhlocal:DataGridGroupExpandBehavior
+                                IsExpanded="{Binding IsGroupExpanded}" />
                         </bh:Interaction.Behaviors>
-                        
                         <DataGrid.ContextMenu>
-                            <ContextMenu  IsEnabled="{Binding IsCommandEnabled}">
-                                <MenuItem Header="Expand All" Command="{Binding ExpandAllCommand}"/>
-                                <MenuItem Header="Shrink All" Command="{Binding ShrinkAllCommand}"/>
+                            <ContextMenu
+                                IsEnabled="{Binding IsCommandEnabled}">
+                                <MenuItem
+                                    Header="Expand All"
+                                    Command="{Binding ExpandAllCommand}" />
+                                <MenuItem
+                                    Header="Shrink All"
+                                    Command="{Binding ShrinkAllCommand}" />
                             </ContextMenu>
                         </DataGrid.ContextMenu>
-
                         <DataGrid.GroupStyle>
                             <GroupStyle>
                                 <GroupStyle.ContainerStyle>
-                                    <Style TargetType="GroupItem">
-                                        <Setter Property="Template">
+                                    <Style
+                                        TargetType="GroupItem">
+                                        <Setter
+                                            Property="Template">
                                             <Setter.Value>
-                                                <ControlTemplate TargetType="GroupItem">
+                                                <ControlTemplate
+                                                    TargetType="GroupItem">
                                                     <Expander
                                                         IsExpanded="False"
                                                         mah:HeaderedControlHelper.HeaderBackground="{StaticResource MahApps.Brushes.Accent4}">
                                                         <Expander.Header>
                                                             <DockPanel>
-                                                                <TextBlock Width="280" Text="{Binding Items[0].PluginName}"/>
-                                                                <TextBlock Text="{Binding Items.Count}"/>
+                                                                <TextBlock
+                                                                    Width="280"
+                                                                    Text="{Binding Items[0].PluginName}" />
+                                                                <TextBlock
+                                                                    Text="{Binding Items.Count}" />
                                                             </DockPanel>
                                                         </Expander.Header>
                                                         <Expander.Content>
-                                                            <ItemsPresenter/>
+                                                            <ItemsPresenter />
                                                         </Expander.Content>
                                                     </Expander>
                                                 </ControlTemplate>
@@ -110,7 +159,11 @@
                             </GroupStyle>
                         </DataGrid.GroupStyle>
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Kit" Binding="{Binding KitName}" Width="300" IsReadOnly="True"/>
+                            <DataGridTextColumn
+                                Header="Kit"
+                                Binding="{Binding KitName}"
+                                Width="300"
+                                IsReadOnly="True" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

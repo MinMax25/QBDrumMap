@@ -11,87 +11,179 @@
     xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-    xmlns:local="clr-namespace:QBDrumMap.Class"
     xmlns:p="clr-namespace:QBDrumMap"
+    xmlns:local="clr-namespace:QBDrumMap.Class"
     Dialog:DialogParticipation.Register="{Binding}"
-    mc:Ignorable="d" d:Background="Black"
-    d:DesignHeight="1000" d:DesignWidth="1200">
-
+    mc:Ignorable="d"
+    d:Background="Black"
+    d:DesignHeight="1000"
+    d:DesignWidth="1200">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition
+                Height="48" />
+            <RowDefinition
+                Height="*" />
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
-            <ContentControl IsTabStop="False" Content="{StaticResource SettingPageIcon}" Margin="8,2,0,0"/>
-            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{loc:Loc Key={x:Static p:Resources.Setting_PageTitle}}"/>
+        <StackPanel
+            Grid.Row="0"
+            Margin="{StaticResource MediumLeftMargin}"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <ContentControl
+                IsTabStop="False"
+                Content="{StaticResource SettingPageIcon}"
+                Margin="8,2,0,0" />
+            <TextBlock
+                Style="{StaticResource PageTitleStyle}"
+                Text="{loc:Loc Key={x:Static p:Resources.Setting_PageTitle}}" />
         </StackPanel>
-
-        <ScrollViewer Grid.Row="1"  Margin="{StaticResource MediumLeftRightMargin}">
+        <ScrollViewer
+            Grid.Row="1"
+            Margin="{StaticResource MediumLeftRightMargin}">
             <ScrollViewer.Resources>
-                <Style TargetType="Label">
-                    <Setter Property="Width" Value="240"/>
+                <Style
+                    TargetType="Label">
+                    <Setter
+                        Property="Width"
+                        Value="240" />
                 </Style>
-                <Style TargetType="CheckBox">
-                    <Setter Property="Margin" Value="6"/>
-                    <Setter Property="VerticalAlignment" Value="Center"/>
+                <Style
+                    TargetType="CheckBox">
+                    <Setter
+                        Property="Margin"
+                        Value="6" />
+                    <Setter
+                        Property="VerticalAlignment"
+                        Value="Center" />
                 </Style>
-                <Style TargetType="TextBox" BasedOn="{StaticResource MahApps.Styles.TextBox}">
-                    <Setter Property="mah:TextBoxHelper.SelectAllOnFocus" Value="True"/>
+                <Style
+                    TargetType="TextBox"
+                    BasedOn="{StaticResource MahApps.Styles.TextBox}">
+                    <Setter
+                        Property="mah:TextBoxHelper.SelectAllOnFocus"
+                        Value="True" />
                 </Style>
             </ScrollViewer.Resources>
             <StackPanel>
-                <GroupBox Header="Theme" Style="{StaticResource GroupBoxBaseStyle}">
-                    <DockPanel Margin="8" HorizontalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <RadioButton Margin="4" Width="80" Content="Light" IsChecked="{Binding Setting.BaseTheme, ConverterParameter=Light, Converter={StaticResource BaseThemeConverter}}"/>
-                            <RadioButton Margin="4" Width="80" Content="Dark" IsChecked="{Binding Setting.BaseTheme, ConverterParameter=Dark, Converter={StaticResource BaseThemeConverter}}"/>
+                <GroupBox
+                    Header="Theme"
+                    Style="{StaticResource GroupBoxBaseStyle}">
+                    <DockPanel
+                        Margin="8"
+                        HorizontalAlignment="Center">
+                        <StackPanel
+                            Orientation="Horizontal">
+                            <RadioButton
+                                Margin="4"
+                                Width="80"
+                                Content="Light"
+                                IsChecked="{Binding Setting.BaseTheme, ConverterParameter=Light, Converter={StaticResource BaseThemeConverter}}" />
+                            <RadioButton
+                                Margin="4"
+                                Width="80"
+                                Content="Dark"
+                                IsChecked="{Binding Setting.BaseTheme, ConverterParameter=Dark, Converter={StaticResource BaseThemeConverter}}" />
                         </StackPanel>
                         <DockPanel>
-                            <Label Width="110" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key={x:Static p:Resources.Setting_AccentColor}}"/>
-                            <ComboBox HorizontalAlignment="Left" Width="140" SelectedValue="{Binding Setting.ThemeColor}" ItemsSource="{Binding AccentColors}" SelectedValuePath="Key">
+                            <Label
+                                Width="110"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                Content="{loc:Loc Key={x:Static p:Resources.Setting_AccentColor}}" />
+                            <ComboBox
+                                HorizontalAlignment="Left"
+                                Width="140"
+                                SelectedValue="{Binding Setting.ThemeColor}"
+                                ItemsSource="{Binding AccentColors}"
+                                SelectedValuePath="Key">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <mah:Tile Width="12" Height="12" Background="{Binding Value}"/>
-                                            <TextBlock Text="{Binding Key}"/>
+                                        <StackPanel
+                                            Orientation="Horizontal">
+                                            <mah:Tile
+                                                Width="12"
+                                                Height="12"
+                                                Background="{Binding Value}" />
+                                            <TextBlock
+                                                Text="{Binding Key}" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
                         </DockPanel>
                         <DockPanel>
-                            <Label Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{loc:Loc Key={x:Static p:Resources.Setting_Language}}"/>
-                            <ComboBox Width="160" SelectedValue="{Binding Setting.Language}" SelectedValuePath="Code" ItemsSource="{Binding AvailableLanguages}">
+                            <Label
+                                Width="100"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                Content="{loc:Loc Key={x:Static p:Resources.Setting_Language}}" />
+                            <ComboBox
+                                Width="160"
+                                SelectedValue="{Binding Setting.Language}"
+                                SelectedValuePath="Code"
+                                ItemsSource="{Binding AvailableLanguages}">
                                 <ComboBox.Resources>
-                                    <DataTemplate DataType="{x:Type local:LanguageGroupHeaderItem}">
+                                    <DataTemplate
+                                        DataType="{x:Type local:LanguageGroupHeaderItem}">
                                         <StackPanel>
-                                            <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" FontSize="10" Opacity="0.7"/>
-                                            <Separator/>
+                                            <TextBlock
+                                                Text="{Binding DisplayName}"
+                                                FontWeight="Bold"
+                                                FontSize="10"
+                                                Opacity="0.7" />
+                                            <Separator />
                                         </StackPanel>
                                     </DataTemplate>
-                                    <DataTemplate DataType="{x:Type loc:LanguageInfo}">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Width="20" Height="15" Source="{Binding Code, Converter={StaticResource FlagConverter}}" Margin="0,0,6,0"/>
-                                            <TextBlock Text="{Binding DisplayName}"/>
+                                    <DataTemplate
+                                        DataType="{x:Type loc:LanguageInfo}">
+                                        <StackPanel
+                                            Orientation="Horizontal">
+                                            <Image
+                                                Width="20"
+                                                Height="15"
+                                                Source="{Binding Code, Converter={StaticResource FlagConverter}}"
+                                                Margin="0,0,6,0" />
+                                            <TextBlock
+                                                Text="{Binding DisplayName}" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.Resources>
                                 <ComboBox.ItemContainerStyle>
-                                    <Style TargetType="ComboBoxItem">
+                                    <Style
+                                        TargetType="ComboBoxItem">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding}" Value="{x:Static local:LanguageGroupHeaderItem.BuiltIn}">
-                                                <Setter Property="IsEnabled" Value="False"/>
-                                                <Setter Property="IsHitTestVisible" Value="False"/>
-                                                <Setter Property="Focusable" Value="False"/>
-                                                <Setter Property="Padding" Value="4,2"/>
+                                            <DataTrigger
+                                                Binding="{Binding}"
+                                                Value="{x:Static local:LanguageGroupHeaderItem.BuiltIn}">
+                                                <Setter
+                                                    Property="IsEnabled"
+                                                    Value="False" />
+                                                <Setter
+                                                    Property="IsHitTestVisible"
+                                                    Value="False" />
+                                                <Setter
+                                                    Property="Focusable"
+                                                    Value="False" />
+                                                <Setter
+                                                    Property="Padding"
+                                                    Value="4,2" />
                                             </DataTrigger>
-                                            <DataTrigger Binding="{Binding}" Value="{x:Static local:LanguageGroupHeaderItem.LanguagePacks}">
-                                                <Setter Property="IsEnabled" Value="False"/>
-                                                <Setter Property="IsHitTestVisible" Value="False"/>
-                                                <Setter Property="Focusable" Value="False"/>
-                                                <Setter Property="Padding" Value="4,2"/>
+                                            <DataTrigger
+                                                Binding="{Binding}"
+                                                Value="{x:Static local:LanguageGroupHeaderItem.LanguagePacks}">
+                                                <Setter
+                                                    Property="IsEnabled"
+                                                    Value="False" />
+                                                <Setter
+                                                    Property="IsHitTestVisible"
+                                                    Value="False" />
+                                                <Setter
+                                                    Property="Focusable"
+                                                    Value="False" />
+                                                <Setter
+                                                    Property="Padding"
+                                                    Value="4,2" />
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
@@ -100,56 +192,84 @@
                         </DockPanel>
                     </DockPanel>
                 </GroupBox>
-                <GroupBox Header="Global" Style="{StaticResource GroupBoxBaseStyle}">
+                <GroupBox
+                    Header="Global"
+                    Style="{StaticResource GroupBoxBaseStyle}">
                     <StackPanel>
                         <DockPanel>
-                            <Label Content="{loc:Loc Key={x:Static p:Resources.Setting_StartUpPage}}"/>
+                            <Label
+                                Content="{loc:Loc Key={x:Static p:Resources.Setting_StartUpPage}}" />
                             <ComboBox
-                                HorizontalAlignment="Left" Width="140"
-                                SelectedValue="{Binding Setting.StartUpPage}" ItemsSource="{Binding Source={StaticResource PagesComboSource}}"/>
-                            <CheckBox Margin="12,4,4,4" Content="{loc:Loc Key={x:Static p:Resources.Setting_IsOpenTheLastFileOpened}}" IsChecked="{Binding Setting.IsOpenTheLastFileOpened}"/>
+                                HorizontalAlignment="Left"
+                                Width="140"
+                                SelectedValue="{Binding Setting.StartUpPage}"
+                                ItemsSource="{Binding Source={StaticResource PagesComboSource}}" />
+                            <CheckBox
+                                Margin="12,4,4,4"
+                                Content="{loc:Loc Key={x:Static p:Resources.Setting_IsOpenTheLastFileOpened}}"
+                                IsChecked="{Binding Setting.IsOpenTheLastFileOpened}" />
                         </DockPanel>
                         <DockPanel>
-                            <Label Content="{loc:Loc Key={x:Static p:Resources.Setting_CubaseInstallPath}}"/>
+                            <Label
+                                Content="{loc:Loc Key={x:Static p:Resources.Setting_CubaseInstallPath}}" />
                             <TextBox
                                 Style="{DynamicResource MahApps.Styles.TextBox.Search}"
-                                Text="{Binding Setting.CubaseInstallPath}" MaxLength="256"
+                                Text="{Binding Setting.CubaseInstallPath}"
+                                MaxLength="256"
                                 mah:TextBoxHelper.SelectAllOnFocus="True"
-                                mah:TextBoxHelper.ButtonCommand="{Binding SelectCubaseInstallPathCommand}">
-                            </TextBox>
+                                mah:TextBoxHelper.ButtonCommand="{Binding SelectCubaseInstallPathCommand}"></TextBox>
                         </DockPanel>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Header="Part Name Dictionary" Style="{StaticResource GroupBoxBaseStyle}">
+                <GroupBox
+                    Header="Part Name Dictionary"
+                    Style="{StaticResource GroupBoxBaseStyle}">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="300"/>
+                            <RowDefinition
+                                Height="Auto" />
+                            <RowDefinition
+                                Height="300" />
                         </Grid.RowDefinitions>
-
-                        <StackPanel Grid.Row="0" Orientation="Horizontal">
-                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddPartNameDictionaryEntryCommand}" ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonAdd}}">
-                                <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
+                        <StackPanel
+                            Grid.Row="0"
+                            Orientation="Horizontal">
+                            <Button
+                                Style="{StaticResource IconButtonStyle}"
+                                Command="{Binding AddPartNameDictionaryEntryCommand}"
+                                ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonAdd}}">
+                                <iconPacks:PackIconMaterial
+                                    Kind="Plus"
+                                    Style="{StaticResource BasePackIconStyle}" />
                             </Button>
                         </StackPanel>
-
-                        <DataGrid Grid.Row="1" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding PartNameDictionary}">
+                        <DataGrid
+                            Grid.Row="1"
+                            Style="{StaticResource DataGridStyle}"
+                            ItemsSource="{Binding PartNameDictionary}">
                             <bh:Interaction.Behaviors>
                                 <behaviors:DataGridExtendBehavior
                                     SelectedRows="{Binding SelectedPartNameDictionaryEntries}"
                                     SelectedRow="{Binding SelectedPartNameDictionaryEntry}"
-                                    DeleteCommand="{Binding DeleteSelectedPartNameDictionaryEntriesCommand}"/>
+                                    DeleteCommand="{Binding DeleteSelectedPartNameDictionaryEntriesCommand}" />
                             </bh:Interaction.Behaviors>
-
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="220" Header="Canonical Name" Binding="{Binding CanonicalName, Converter={StaticResource TrimConverter}}">
+                                <DataGridTextColumn
+                                    Width="220"
+                                    Header="Canonical Name"
+                                    Binding="{Binding CanonicalName, Converter={StaticResource TrimConverter}}">
                                     <DataGridTextColumn.EditingElementStyle>
-                                        <StaticResource ResourceKey="DataGridEditingTextBoxStyle"/>
+                                        <StaticResource
+                                            ResourceKey="DataGridEditingTextBoxStyle" />
                                     </DataGridTextColumn.EditingElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Aliases (comma separated)" Binding="{Binding Aliases, Converter={StaticResource TrimConverter}}">
+                                <DataGridTextColumn
+                                    Width="*"
+                                    Header="Aliases (comma separated)"
+                                    Binding="{Binding Aliases, Converter={StaticResource TrimConverter}}">
                                     <DataGridTextColumn.EditingElementStyle>
-                                        <StaticResource ResourceKey="DataGridEditingTextBoxStyle"/>
+                                        <StaticResource
+                                            ResourceKey="DataGridEditingTextBoxStyle" />
                                     </DataGridTextColumn.EditingElementStyle>
                                 </DataGridTextColumn>
                             </DataGrid.Columns>
