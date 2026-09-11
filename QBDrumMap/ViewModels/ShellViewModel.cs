@@ -15,7 +15,7 @@ using QBDrumMap.Class.Enums;
 using QBDrumMap.Class.MapModels;
 using QBDrumMap.Class.Services;
 using QBDrumMap.Contracts.Views;
-using QBDrumMap.Properties;
+using QBDrumMap;
 using QBDrumMap.Views;
 
 namespace QBDrumMap.ViewModels

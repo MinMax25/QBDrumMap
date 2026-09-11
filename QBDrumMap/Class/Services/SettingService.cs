@@ -245,8 +245,8 @@ namespace QBDrumMap.Class.Services
                 culture = new CultureInfo("en-US");
             }
 
-            QBDrumMap.Properties.Resources.Culture = culture;
-            QBDrumMap.Properties.Name.Culture = culture;
+            QBDrumMap.Resources.Culture = culture;
+            QBDrumMap.Name.Culture = culture;
 
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;

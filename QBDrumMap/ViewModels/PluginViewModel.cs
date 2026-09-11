@@ -79,7 +79,7 @@ namespace QBDrumMap.ViewModels
 
             string message = string.Format(
                 App.Text("Message_Command_Delete"),
-                App.NameText("Plugin", Properties.Name.Plugin),
+                App.NameText("Plugin", Name.Plugin),
                 names);
 
             if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Delete")) == false)

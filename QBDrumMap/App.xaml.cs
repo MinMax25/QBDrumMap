@@ -56,8 +56,8 @@ namespace QBDrumMap
 
             var appLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
-            libQB.Localization.LocalizationManager.Instance.RegisterResourceManager("QBDrumMap.Resources", QBDrumMap.Properties.Resources.ResourceManager);
-            libQB.Localization.LocalizationManager.Instance.RegisterResourceManager("QBDrumMap.Name", QBDrumMap.Properties.Name.ResourceManager);
+            libQB.Localization.LocalizationManager.Instance.RegisterResourceManager("QBDrumMap.Resources", QBDrumMap.Resources.ResourceManager);
+            libQB.Localization.LocalizationManager.Instance.RegisterResourceManager("QBDrumMap.Name", QBDrumMap.Name.ResourceManager);
             libQB.Localization.LocalizationManager.Instance.Initialize(Path.Combine(appLocation, "Languages"));
             RegisterDialogTexts();
 

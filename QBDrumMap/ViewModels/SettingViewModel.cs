@@ -157,7 +157,7 @@ namespace QBDrumMap.ViewModels
         private async Task OnSelectCubaseInstallPath()
         {
             var result = await Dialog.ShowSelectFolderDialog(
-                App.Text("Setting_CubaseInstallPath", Properties.Resources.Setting_CubaseInstallPath),
+                App.Text("Setting_CubaseInstallPath", Resources.Setting_CubaseInstallPath),
                 Setting.CubaseInstallPath);
 
             if (result is string path)
@@ -190,7 +190,7 @@ namespace QBDrumMap.ViewModels
             string names = string.Join(", ", SelectedPartNameDictionaryEntries.Select(x => x.CanonicalName));
             string message = string.Format(
                 App.Text("Message_Command_Delete"),
-                App.NameText("PartNameAlias", Properties.Name.PartNameAlias),
+                App.NameText("PartNameAlias", Name.PartNameAlias),
                 names);
 
             if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Delete")) == false)

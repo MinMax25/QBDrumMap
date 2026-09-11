@@ -16,12 +16,12 @@ namespace QBDrumMap.Class.CustomValidations
 
             if (str.Length < 1 || str.Length > ExModel.NAME_MAX_LENGTH)
             {
-                return new ValidationResult(string.Format(App.Text("LengthBetween", Properties.Resources.LengthBetween), App.NameText("Part", Properties.Name.Part), 1, ExModel.NAME_MAX_LENGTH));
+                return new ValidationResult(string.Format(App.Text("LengthBetween", Resources.LengthBetween), App.NameText("Part", Name.Part), 1, ExModel.NAME_MAX_LENGTH));
             }
 
             if (UtilMap.MapData.Parts.Where(x => x.ID != part.ID && x.Name == part.Name).Any())
             {
-                return new ValidationResult(string.Format(App.Text("DuplicateNaem", Properties.Resources.DuplicateNaem), $"{value}"));
+                return new ValidationResult(string.Format(App.Text("DuplicateNaem", Resources.DuplicateNaem), $"{value}"));
             }
 
             return ValidationResult.Success;

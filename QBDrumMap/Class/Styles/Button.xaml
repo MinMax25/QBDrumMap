@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-    xmlns:properties="clr-namespace:QBDrumMap.Properties">
+    xmlns:properties="clr-namespace:QBDrumMap">
 
     <!-- Button -->
     <Style x:Key="ButtonBaseStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">

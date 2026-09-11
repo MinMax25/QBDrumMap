@@ -11,7 +11,7 @@
     xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:bhlocal="clr-namespace:QBDrumMap.Class.Behaviors"
-    xmlns:properties="clr-namespace:QBDrumMap.Properties"
+    xmlns:properties="clr-namespace:QBDrumMap"
     Dialog:DialogParticipation.Register="{Binding}"
     mc:Ignorable="d"
     d:DesignHeight="800" d:DesignWidth="1000">
