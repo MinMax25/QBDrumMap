@@ -179,7 +179,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return;
             }
 
-            string message = string.Format(App.Text("Message_Command_Clear"), App.NameText("KitPitch", Properties.Name.KitPitch));
+            string message = string.Format(App.Text("Message_Command_Clear"), App.NameText("KitPitch", Name.KitPitch));
             if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Clear")) == false)
             {
                 return;
@@ -201,7 +201,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return;
             }
 
-            string message = string.Format(App.Text("Message_Command_Clear"), App.NameText("Articulation", Properties.Name.Articulation));
+            string message = string.Format(App.Text("Message_Command_Clear"), App.NameText("Articulation", Name.Articulation));
             if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Clear")) == false)
             {
                 return;
@@ -214,7 +214,7 @@ namespace QBDrumMap.ViewModels.Controls
         private async Task OnImport()
         {
             string filter = "Drum Map|*.pitchlist;*.drm;*.tsv";
-            string path = await Dialog.ShowOpenFileDialog(App.Text("ImportDrumMap", Properties.Resources.ImportDrumMap), filter, Setting.LastImportFilePath);
+            string path = await Dialog.ShowOpenFileDialog(App.Text("ImportDrumMap", Resources.ImportDrumMap), filter, Setting.LastImportFilePath);
 
             if (path == null)
             {
@@ -283,9 +283,9 @@ namespace QBDrumMap.ViewModels.Controls
                         return x.Name == pitch.Name;
                     }) > 1;
 
-                    string message = App.Text("ArticulationAutomaticFill", Properties.Resources.ArticulationAutomaticFill);
+                    string message = App.Text("ArticulationAutomaticFill", Resources.ArticulationAutomaticFill);
 
-                    if (hasMany && (await Dialog.ShowConfirmAsync(App.NameText("Articulation", Properties.Name.Articulation), message)).GetValueOrDefault())
+                    if (hasMany && (await Dialog.ShowConfirmAsync(App.NameText("Articulation", Name.Articulation), message)).GetValueOrDefault())
                     {
                         foreach (var kitPitch in Kit.Pitches.Where(x =>
                         {
@@ -326,7 +326,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return;
             }
 
-            if (await Dialog.ShowConfirmAsync(App.Text("ResetOrderByPitch", Properties.Resources.ResetOrderByPitch), App.Text("ResetOrderByPitchConfirm", Properties.Resources.ResetOrderByPitchConfirm)) == false)
+            if (await Dialog.ShowConfirmAsync(App.Text("ResetOrderByPitch", Resources.ResetOrderByPitch), App.Text("ResetOrderByPitchConfirm", Resources.ResetOrderByPitchConfirm)) == false)
             {
                 return;
             }
@@ -347,7 +347,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return;
             }
 
-            if (await Dialog.ShowConfirmAsync(App.Text("CompressForward", Properties.Resources.CompressForward), App.Text("CompressForwardConfirm", Properties.Resources.CompressForwardConfirm)) == false)
+            if (await Dialog.ShowConfirmAsync(App.Text("CompressForward", Resources.CompressForward), App.Text("CompressForwardConfirm", Resources.CompressForwardConfirm)) == false)
             {
                 return;
             }
@@ -465,11 +465,11 @@ namespace QBDrumMap.ViewModels.Controls
 
             if (ArticulationSource == null)
             {
-                await Dialog.ShowErrorAsync(App.Text("ContextKitPitchesCopyArticulation", Properties.Resources.ContextKitPitchesCopyArticulation), App.Text("ContextKitPitchesArticulationSourceIsEmpty", Properties.Resources.ContextKitPitchesArticulationSourceIsEmpty));
+                await Dialog.ShowErrorAsync(App.Text("ContextKitPitchesCopyArticulation", Resources.ContextKitPitchesCopyArticulation), App.Text("ContextKitPitchesArticulationSourceIsEmpty", Resources.ContextKitPitchesArticulationSourceIsEmpty));
                 return;
             }
 
-            if (await Dialog.ShowConfirmAsync(App.Text("ContextKitPitchesCopyArticulation", Properties.Resources.ContextKitPitchesCopyArticulation), App.Text("PasteConfirm", Properties.Resources.PasteConfirm)) == false)
+            if (await Dialog.ShowConfirmAsync(App.Text("ContextKitPitchesCopyArticulation", Resources.ContextKitPitchesCopyArticulation), App.Text("PasteConfirm", Resources.PasteConfirm)) == false)
             {
                 return;
             }
@@ -497,7 +497,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return;
             }
 
-            if (await Dialog.ShowConfirmAsync(App.Text("ContextKitPitchesAutoAssignArticulation", Properties.Resources.ContextKitPitchesAutoAssignArticulation), App.Text("AutoAssignArticulationConfirm", Properties.Resources.AutoAssignArticulationConfirm)) == false)
+            if (await Dialog.ShowConfirmAsync(App.Text("ContextKitPitchesAutoAssignArticulation", Resources.ContextKitPitchesAutoAssignArticulation), App.Text("AutoAssignArticulationConfirm", Resources.AutoAssignArticulationConfirm)) == false)
             {
                 return;
             }
@@ -505,8 +505,8 @@ namespace QBDrumMap.ViewModels.Controls
             var (assignedCount, skippedCount) = MapData.AutoAssignArticulations(Kit, Setting.PartNameDictionary);
 
             await Dialog.ShowInformationAsync(
-                string.Format(App.Text("AutoAssignArticulationResult", Properties.Resources.AutoAssignArticulationResult), assignedCount, skippedCount),
-                App.Text("ContextKitPitchesAutoAssignArticulation", Properties.Resources.ContextKitPitchesAutoAssignArticulation));
+                string.Format(App.Text("AutoAssignArticulationResult", Resources.AutoAssignArticulationResult), assignedCount, skippedCount),
+                App.Text("ContextKitPitchesAutoAssignArticulation", Resources.ContextKitPitchesAutoAssignArticulation));
         }
 
         [RelayCommand]
@@ -517,7 +517,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return;
             }
 
-            if (await Dialog.ShowConfirmAsync(App.Text("ContextKitPitchesClearArticulationAndSeparator", Properties.Resources.ContextKitPitchesClearArticulationAndSeparator), App.Text("ClearArticulationAndSeparatorConfirm", Properties.Resources.ClearArticulationAndSeparatorConfirm)) == false)
+            if (await Dialog.ShowConfirmAsync(App.Text("ContextKitPitchesClearArticulationAndSeparator", Resources.ContextKitPitchesClearArticulationAndSeparator), App.Text("ClearArticulationAndSeparatorConfirm", Resources.ClearArticulationAndSeparatorConfirm)) == false)
             {
                 return;
             }

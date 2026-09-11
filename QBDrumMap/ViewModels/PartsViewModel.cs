@@ -90,7 +90,7 @@ namespace QBDrumMap.ViewModels
             string names = string.Join(", ", SelectedParts.Select(x => x.Name));
             string message = string.Format(
                 App.Text("Message_Command_Delete"),
-                App.NameText("Part", Properties.Name.Part),
+                App.NameText("Part", Name.Part),
                 names);
 
             if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Delete")) == false)

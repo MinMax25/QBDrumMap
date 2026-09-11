@@ -83,7 +83,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return;
 
             string names = string.Join("', '", SelectedKits.Select(x => x.Name).ToArray());
-            string message = string.Format(App.Text("Message_Command_Delete"), App.NameText("Kit", Properties.Name.Kit), names);
+            string message = string.Format(App.Text("Message_Command_Delete"), App.NameText("Kit", Name.Kit), names);
             if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Delete")) == false)
                 return;
 

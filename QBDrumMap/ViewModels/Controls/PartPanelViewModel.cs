@@ -92,7 +92,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return;
             }
 
-            string message = string.Format(App.Text("Message_Command_Clear"), App.NameText("Complement", Properties.Name.Complement));
+            string message = string.Format(App.Text("Message_Command_Clear"), App.NameText("Complement", Name.Complement));
             if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Clear")) == false)
             {
                 return;
@@ -188,7 +188,7 @@ namespace QBDrumMap.ViewModels.Controls
                 return x.Name;
             }).ToArray());
 
-            string message = string.Format(App.Text("Message_Command_Delete"), App.NameText("Articulation", Properties.Name.Articulation), names);
+            string message = string.Format(App.Text("Message_Command_Delete"), App.NameText("Articulation", Name.Articulation), names);
             if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Delete")) == false)
             {
                 return;

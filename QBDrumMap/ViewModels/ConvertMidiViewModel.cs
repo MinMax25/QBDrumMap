@@ -175,7 +175,7 @@ namespace QBDrumMap.ViewModels
             }
             catch
             {
-                await Dialog.ShowErrorAsync(App.Text("MIDIError", Properties.Resources.MIDIError));
+                await Dialog.ShowErrorAsync(App.Text("MIDIError", Resources.MIDIError));
             }
         }
 

@@ -15,7 +15,7 @@ namespace QBDrumMap.Class.CustomValidations
 
             if (str.Length < 0 || str.Length > ExModel.NAME_MAX_LENGTH)
             {
-                return new ValidationResult(string.Format(App.Text("LenghtLessLThan", Properties.Resources.LenghtLessLThan), App.NameText("KitPitch", Properties.Name.KitPitch), ExModel.NAME_MAX_LENGTH));
+                return new ValidationResult(string.Format(App.Text("LenghtLessLThan", Resources.LenghtLessLThan), App.NameText("KitPitch", Name.KitPitch), ExModel.NAME_MAX_LENGTH));
             }
 
             return ValidationResult.Success;
