@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Xml.Linq;
 using System.Xml.XPath;
 

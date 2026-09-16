@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using QBDrumMap.Views.Controls;
 
 namespace QBDrumMap.Class.StudioOne

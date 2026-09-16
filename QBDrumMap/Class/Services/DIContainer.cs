@@ -1,4 +1,4 @@
-﻿using libQB.Attributes;
+using libQB.Attributes;
 using libQB.DialogServices;
 using libQB.UndoRedo;
 using libQB.WindowServices;

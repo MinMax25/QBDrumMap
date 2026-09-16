@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Cubase.Score.NoteHeadSet
+namespace QBDrumMap.Cubase.Score.NoteHeadSet
 {
     /// <remarks/>
     [System.SerializableAttribute()]

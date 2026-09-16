@@ -1,4 +1,4 @@
-﻿<UserControl
+<UserControl
     x:Class="QBDrumMap.Views.Controls.ButtonSound"
     x:Name="root"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"

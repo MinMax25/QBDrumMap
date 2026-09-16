@@ -1,4 +1,4 @@
-﻿using System.Windows.Input;
+using System.Windows.Input;
 using MahApps.Metro.Controls;
 
 namespace QBDrumMap.Views

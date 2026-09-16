@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 using QBDrumMap.Class.Extensions;

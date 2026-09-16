@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using ControlzEx.Theming;
 using libQB.Attributes;
 using libQB.Enums;

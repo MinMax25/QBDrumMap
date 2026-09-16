@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using libQB.DialogServices;
 using libQB.UndoRedo;
 using libQB.WindowServices;

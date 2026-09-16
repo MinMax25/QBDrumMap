@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Views.Controls
+namespace QBDrumMap.Views.Controls
 {
     public class ScoreNotePitch
     (

@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Class.MapModels
+namespace QBDrumMap.Class.MapModels
 {
     public interface IHasDisplayOrder
     {

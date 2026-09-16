@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Cubase.Score.InstrumentName
+namespace QBDrumMap.Cubase.Score.InstrumentName
 {
     /// <remarks/>
     [System.SerializableAttribute()]

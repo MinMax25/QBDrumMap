@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Class.Cubase
+namespace QBDrumMap.Class.Cubase
 {
     public static class Tag
     {

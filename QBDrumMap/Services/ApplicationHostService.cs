@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting;
 using QBDrumMap.Class.Enums;
 using QBDrumMap.Class.Services;
 using QBDrumMap.Contracts.Activation;
