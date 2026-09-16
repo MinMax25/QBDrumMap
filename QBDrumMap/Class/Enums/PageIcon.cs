@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Class.Enums
+namespace QBDrumMap.Class.Enums
 {
     internal enum PageIcon
     {

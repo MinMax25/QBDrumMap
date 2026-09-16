@@ -1,4 +1,4 @@
-﻿using System.Windows.Controls;
+using System.Windows.Controls;
 using libQB.WindowServices;
 using MahApps.Metro.Controls;
 using QBDrumMap.Contracts.Views;

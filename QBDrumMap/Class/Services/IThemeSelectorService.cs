@@ -1,4 +1,4 @@
-﻿using libQB.Enums;
+using libQB.Enums;
 
 namespace QBDrumMap.Services
 {

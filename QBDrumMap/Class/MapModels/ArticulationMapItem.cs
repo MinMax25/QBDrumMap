@@ -1,4 +1,4 @@
-﻿using libMidi.Messages;
+using libMidi.Messages;
 
 namespace QBDrumMap.Class.MapModels
 {

@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Contracts.ViewModels
+namespace QBDrumMap.Contracts.ViewModels
 {
     public interface INavigationAware
     {

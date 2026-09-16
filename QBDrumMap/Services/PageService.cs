@@ -1,4 +1,4 @@
-﻿using System.Windows.Controls;
+using System.Windows.Controls;
 using QBDrumMap.Contracts.Services;
 
 namespace QBDrumMap.Services

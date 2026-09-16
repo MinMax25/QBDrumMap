@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Contracts.Activation
+namespace QBDrumMap.Contracts.Activation
 {
     public interface IActivationHandler
     {

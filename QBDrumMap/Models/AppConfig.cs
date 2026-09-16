@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Models
+namespace QBDrumMap.Models
 {
     public class AppConfig
     {

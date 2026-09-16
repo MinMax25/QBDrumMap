@@ -1,4 +1,4 @@
-﻿using QBDrumMap.Views.Controls;
+using QBDrumMap.Views.Controls;
 
 namespace QBDrumMap.Class.StudioOne
 {

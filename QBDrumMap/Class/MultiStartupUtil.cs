@@ -1,4 +1,4 @@
-﻿namespace QBDrumMap.Class
+namespace QBDrumMap.Class
 {
     public static class MultiStartupUtil
     {

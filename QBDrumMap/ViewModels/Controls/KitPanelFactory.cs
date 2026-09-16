@@ -1,4 +1,4 @@
-﻿using libQB.Attributes;
+using libQB.Attributes;
 using QBDrumMap.Class.MapModels;
 using QBDrumMap.Class.Services;
 
