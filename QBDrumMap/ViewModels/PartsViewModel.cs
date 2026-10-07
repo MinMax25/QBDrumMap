@@ -169,4 +169,4 @@ public partial class PartsViewModel : ViewModelBaseHasContents
             SelectedParts.Clear();
         }
     }
-        }
+}

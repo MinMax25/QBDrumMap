@@ -421,4 +421,4 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
             Setting.PropertyChanged -= OnPropertyChanged;
         }
     }
-        }
+}

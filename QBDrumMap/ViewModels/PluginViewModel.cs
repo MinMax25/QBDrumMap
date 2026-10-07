@@ -186,4 +186,4 @@ public partial class PluginViewModel : ViewModelBaseHasContents
             PropertyChanged -= OnPropertyChanged;
         }
     }
-        }
+}

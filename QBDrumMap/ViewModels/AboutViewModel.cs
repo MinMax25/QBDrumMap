@@ -45,4 +45,4 @@ public partial class AboutViewModel : ViewModelBase
             }
         }
     }
-        }
+}
