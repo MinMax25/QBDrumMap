@@ -5,7 +5,6 @@ using System.IO;
 
 namespace QBDrumMap.Class.ValueConverters;
 
-// 組み込み言語はResources/Flags、外部言語パックはLanguages/{culture}から国旗を解決する。
 public static class FlagImageProvider
 {
     private const string BuiltInFlagsDirectory = "Resources/Flags";

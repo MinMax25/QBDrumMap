@@ -1,13 +1,12 @@
 using System.Windows.Controls;
 
-namespace QBDrumMap.Views.Controls
+namespace QBDrumMap.Views.Controls;
+
+public partial class KitPanel
+    : UserControl
 {
-    public partial class KitPanel
-        : UserControl
+    public KitPanel()
     {
-        public KitPanel()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

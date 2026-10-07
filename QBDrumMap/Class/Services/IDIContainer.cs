@@ -3,41 +3,21 @@ using libQB.UndoRedo;
 using libQB.WindowServices;
 using QBDrumMap.Contracts.Services;
 
-namespace QBDrumMap.Class.Services
+namespace QBDrumMap.Class.Services;
+
+public interface IDIContainer
 {
-    public interface IDIContainer
-    {
-        #region Properties
+    INavigationService Navigation { get; }
 
-        #region Services
+    IDialogService Dialog { get; }
 
-        // ナビゲーションサービス
-        INavigationService Navigation { get; }
+    IWindowService WindowService { get; }
 
-        // ダイアログサービス
-        IDialogService Dialog { get; }
+    IUndoManager UndoManager { get; }
 
-        // ウィンドウサービス
-        IWindowService WindowService { get; }
+    ISettingService SettingService { get; }
 
-        // Undo/Redoマネージャー
-        IUndoManager UndoManager { get; }
+    void Initialize();
 
-        // 設定管理サービス
-        ISettingService SettingService { get; }
-
-        #endregion
-
-        #endregion
-
-        #region Methods
-
-        // コンテナの初期化処理
-        void Initialize();
-
-        // データの保存等の終了前処理
-        void Flush();
-
-        #endregion
-    }
-}
+    void Flush();
+        }

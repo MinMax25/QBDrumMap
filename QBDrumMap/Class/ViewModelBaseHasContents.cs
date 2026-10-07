@@ -1,39 +1,22 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using QBDrumMap.Class.Services;
 
-namespace QBDrumMap.Class
+namespace QBDrumMap.Class;
+
+public abstract partial class ViewModelBaseHasContents : ViewModelBase
 {
-    public abstract partial class ViewModelBaseHasContents : ViewModelBase
+    [ObservableProperty]
+    private bool isContentEnabled;
+
+    [ObservableProperty]
+    private ViewModelBase contentViewModel;
+
+    public ViewModelBaseHasContents()
     {
-        #region Fields
-
-        // コンテンツ（子ビューモデル）が操作可能かどうか
-        [ObservableProperty]
-        private bool isContentEnabled;
-
-        // 現在保持している子ビューモデル
-        [ObservableProperty]
-        private ViewModelBase contentViewModel;
-
-        #endregion
-
-        #region Properties
-
-        // ObservablePropertyにより自動生成されるため、追加のプロパティ定義は不要
-
-        #endregion
-
-        #region ctor
-
-        public ViewModelBaseHasContents()
-        {
-        }
-
-        public ViewModelBaseHasContents(IDIContainer diContainer)
-            : base(diContainer)
-        {
-        }
-
-        #endregion
     }
-}
+
+    public ViewModelBaseHasContents(IDIContainer diContainer)
+        : base(diContainer)
+    {
+    }
+        }

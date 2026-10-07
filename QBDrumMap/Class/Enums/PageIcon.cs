@@ -1,12 +1,11 @@
-namespace QBDrumMap.Class.Enums
+namespace QBDrumMap.Class.Enums;
+
+internal enum PageIcon
 {
-    internal enum PageIcon
-    {
-        PluginPage,
-        PartsPage,
-        ArticulationsPage,
-        ExportPage,
-        ConvertPage,
-        SettingPage
-    }
+    PluginPage,
+    PartsPage,
+    ArticulationsPage,
+    ExportPage,
+    ConvertPage,
+    SettingPage
 }

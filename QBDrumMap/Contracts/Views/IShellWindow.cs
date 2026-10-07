@@ -1,13 +1,12 @@
 using System.Windows.Controls;
 
-namespace QBDrumMap.Contracts.Views
+namespace QBDrumMap.Contracts.Views;
+
+public interface IShellWindow
 {
-    public interface IShellWindow
-    {
-        Frame GetNavigationFrame();
+    Frame GetNavigationFrame();
 
-        void ShowWindow();
+    void ShowWindow();
 
-        void CloseWindow();
-    }
+    void CloseWindow();
 }

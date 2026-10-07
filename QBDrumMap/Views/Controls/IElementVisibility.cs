@@ -1,7 +1,6 @@
-namespace QBDrumMap.Views.Controls
+namespace QBDrumMap.Views.Controls;
+
+public interface IElementVisibility
 {
-    public interface IElementVisibility
-    {
-        bool[] Values { get; }
-    }
+    bool[] Values { get; }
 }

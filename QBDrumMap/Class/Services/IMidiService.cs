@@ -2,68 +2,39 @@ using System.Collections.ObjectModel;
 using NAudio.Midi;
 using QBDrumMap.Class.MapModels;
 
-namespace QBDrumMap.Class.Services
+namespace QBDrumMap.Class.Services;
+
+public interface IMidiService : IDisposable
 {
-    public interface IMidiService : IDisposable
-    {
-        #region Properties
+    ObservableCollection<string> MidiInDevices { get; }
 
-        // 利用可能なMIDI入力デバイスのリスト
-        ObservableCollection<string> MidiInDevices { get; }
+    ObservableCollection<string> MidiOutDevices { get; }
 
-        // 利用可能なMIDI出力デバイスのリスト
-        ObservableCollection<string> MidiOutDevices { get; }
+    string MidiInDevice { get; set; }
 
-        // 現在選択されているMIDI入力デバイス
-        string MidiInDevice { get; set; }
+    string MidiOutDevice { get; set; }
 
-        // 現在選択されているMIDI出力デバイス
-        string MidiOutDevice { get; set; }
+    string MidiInDevState { get; }
 
-        // MIDI入力デバイスのステータス文字列
-        string MidiInDevState { get; }
+    string MidiOutDevState { get; }
 
-        // MIDI出力デバイスのステータス文字列
-        string MidiOutDevState { get; }
+    bool MidiThruEnabled { get; set; }
 
-        // MIDIスルー（入力から出力への転送）の有効化
-        bool MidiThruEnabled { get; set; }
+    bool FixedPitchEnabled { get; set; }
 
-        // 固定ピッチ送信の有効化
-        bool FixedPitchEnabled { get; set; }
+    int MidiInFixedPitch { get; set; }
 
-        // MIDI入力時の固定ピッチ番号
-        int MidiInFixedPitch { get; set; }
+    int MidiOutChannel { get; set; }
 
-        // MIDI出力チャンネル
-        int MidiOutChannel { get; set; }
+    int SoundCheckVelocity { get; set; }
 
-        // 音声確認時のベロシティ
-        int SoundCheckVelocity { get; set; }
+    void SetSoundCheckPitch(int pitch);
 
-        #endregion
+    void SendNoteOn(int pitch, bool isFromMidiDevice = false);
 
-        #region Methods
+    void SendNoteOff(int pitch, bool isFromMidiDevice = false);
 
-        // 音声確認用のピッチを設定
-        void SetSoundCheckPitch(int pitch);
+    void SendProgramChange(Plugin plugin, Kit kit);
 
-        // ノートオンメッセージを送信
-        void SendNoteOn(int pitch, bool isFromMidiDevice = false);
-
-        // ノートオフメッセージを送信
-        void SendNoteOff(int pitch, bool isFromMidiDevice = false);
-
-        // プログラムチェンジ（音色切り替え）を送信
-        void SendProgramChange(Plugin plugin, Kit kit);
-
-        #endregion
-
-        #region Events
-
-        // MIDIメッセージ受信イベント
-        event EventHandler<MidiInMessageEventArgs> MidiMessageReceived;
-
-        #endregion
-    }
-}
+    event EventHandler<MidiInMessageEventArgs> MidiMessageReceived;
+        }
