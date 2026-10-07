@@ -26,4 +26,4 @@ public partial class PartNameAlias : ObservableObject
 
         return names.Where(x => !string.IsNullOrWhiteSpace(x));
     }
-        }
+}

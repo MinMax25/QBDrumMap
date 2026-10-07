@@ -280,4 +280,4 @@ public partial class MidiService
         FlushMidiIn();
         FlushMidiOut();
     }
-        }
+}

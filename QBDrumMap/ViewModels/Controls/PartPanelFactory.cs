@@ -18,4 +18,4 @@ public class PartPanelFactory
     {
         return new PartPanelViewModel(_container, part);
     }
-        }
+}

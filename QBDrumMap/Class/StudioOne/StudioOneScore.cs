@@ -75,4 +75,4 @@ public static class StudioOneScore
             target[i].SetVisibility(values.Values[i]);
         }
     }
-        }
+}

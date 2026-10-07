@@ -227,4 +227,4 @@ public partial class PartPanelViewModel : ViewModelBase
             MapData.EditStateChanged -= OnPropertyChanged;
         }
     }
-        }
+}

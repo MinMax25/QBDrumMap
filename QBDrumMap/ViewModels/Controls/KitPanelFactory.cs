@@ -18,4 +18,4 @@ public class KitPanelFactory
     {
         return new KitPanelViewModel(_container, plugin);
     }
-        }
+}

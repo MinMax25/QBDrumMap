@@ -37,4 +37,4 @@ public class NoteHeadVisbilityValue
         NhTr,
         NhDi
     ];
-        }
+}

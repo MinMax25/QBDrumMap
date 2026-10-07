@@ -103,4 +103,4 @@ public abstract partial class ViewModelBase : ObservableObject, INavigationAware
         Dispose(disposing: true);
         GC.SuppressFinalize(this);
     }
-        }
+}

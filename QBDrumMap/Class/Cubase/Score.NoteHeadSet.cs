@@ -1,6 +1,5 @@
 namespace QBDrumMap.Cubase.Score.NoteHeadSet;
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -105,7 +104,6 @@ public partial class kScoreLibrary
 
     private kScoreLibraryChordSymbolComponentKerningPairsCollection chordSymbolComponentKerningPairsCollectionField;
 
-    /// <remarks/>
     public kScoreLibraryTemperaments temperaments
     {
         get
@@ -118,7 +116,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryAccidentalSystems accidentalSystems
     {
         get
@@ -131,7 +128,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryAccidentalDefinitions accidentalDefinitions
     {
         get
@@ -144,7 +140,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryTonalitySystemDefinitions tonalitySystemDefinitions
     {
         get
@@ -157,7 +152,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryEnsembles ensembles
     {
         get
@@ -170,7 +164,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstruments instruments
     {
         get
@@ -183,7 +176,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentNames instrumentNames
     {
         get
@@ -196,7 +188,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentFamilies instrumentFamilies
     {
         get
@@ -209,7 +200,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentScoreOrders instrumentScoreOrders
     {
         get
@@ -222,7 +212,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryClefDefinitions clefDefinitions
     {
         get
@@ -235,7 +224,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryOttavaLineDefinitions ottavaLineDefinitions
     {
         get
@@ -248,7 +236,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryNoteheadSetDefinitions noteheadSetDefinitions
     {
         get
@@ -261,7 +248,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryNoteheadDefinitions noteheadDefinitions
     {
         get
@@ -274,7 +260,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryRestSetDefinitions restSetDefinitions
     {
         get
@@ -287,7 +272,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryRestDefinitions restDefinitions
     {
         get
@@ -300,7 +284,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryFlagSetDefinitions flagSetDefinitions
     {
         get
@@ -313,7 +296,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryFlagDefinitions flagDefinitions
     {
         get
@@ -326,7 +308,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryGraphicDefinitions graphicDefinitions
     {
         get
@@ -339,7 +320,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryBlobDefinitions blobDefinitions
     {
         get
@@ -352,7 +332,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryDrawingDefinitions drawingDefinitions
     {
         get
@@ -365,7 +344,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryTextDefinitions textDefinitions
     {
         get
@@ -378,7 +356,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryGlyphDefinitions glyphDefinitions
     {
         get
@@ -391,7 +368,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryCompositeDefinitions compositeDefinitions
     {
         get
@@ -404,7 +380,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryTempoPresetDefinitions tempoPresetDefinitions
     {
         get
@@ -417,7 +392,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryRhythmicFeelDefinitions rhythmicFeelDefinitions
     {
         get
@@ -430,7 +404,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPenstyles penstyles
     {
         get
@@ -443,7 +416,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryFontstyles fontstyles
     {
         get
@@ -456,7 +428,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryBrushstyles brushstyles
     {
         get
@@ -469,7 +440,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSets pagePairDefinitionSets
     {
         get
@@ -482,7 +452,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPageDimensionPresets pageDimensionPresets
     {
         get
@@ -495,7 +464,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryParagraphStyles paragraphStyles
     {
         get
@@ -508,7 +476,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryCharacterStyles characterStyles
     {
         get
@@ -521,7 +488,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPlayingTechniques playingTechniques
     {
         get
@@ -534,7 +500,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryOrnamentDefinitions ornamentDefinitions
     {
         get
@@ -547,7 +512,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryMultiSegmentLineDefinitions multiSegmentLineDefinitions
     {
         get
@@ -560,7 +524,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition playingTechniqueAppearanceCollectionDefinition
     {
         get
@@ -573,7 +536,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryExpressionMapDefinitions expressionMapDefinitions
     {
         get
@@ -586,7 +548,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryDrumKitNoteMapDefinitions drumKitNoteMapDefinitions
     {
         get
@@ -599,7 +560,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryRepeatableCompositeCollectionDefinitions repeatableCompositeCollectionDefinitions
     {
         get
@@ -612,7 +572,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryChordSymbolAppearanceCollectionDefinitions chordSymbolAppearanceCollectionDefinitions
     {
         get
@@ -625,7 +584,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitions chordSymbolAppearanceComponentCollectionDefinitions
     {
         get
@@ -638,7 +596,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPercussionKitDefinitionCollectionDefinition percussionKitDefinitionCollectionDefinition
     {
         get
@@ -651,7 +608,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPercussionInstrumentDataCollectionDefinition percussionInstrumentDataCollectionDefinition
     {
         get
@@ -664,7 +620,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryFrettedInstrumentDataCollectionDefinition frettedInstrumentDataCollectionDefinition
     {
         get
@@ -677,7 +632,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryChordDiagramCollectionDefinition chordDiagramCollectionDefinition
     {
         get
@@ -690,7 +644,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineAnnotationCollectionDefinition lineAnnotationCollectionDefinition
     {
         get
@@ -703,7 +656,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineBodyStyleCollectionDefinition lineBodyStyleCollectionDefinition
     {
         get
@@ -716,7 +668,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineStyleCollectionDefinition lineStyleCollectionDefinition
     {
         get
@@ -729,7 +680,6 @@ public partial class kScoreLibrary
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryChordSymbolComponentKerningPairsCollection chordSymbolComponentKerningPairsCollection
     {
         get
@@ -743,7 +693,6 @@ public partial class kScoreLibrary
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -751,7 +700,6 @@ public partial class kScoreLibraryTemperaments
 {
     private kScoreLibraryTemperamentsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryTemperamentsEntities entities
     {
         get
@@ -765,7 +713,6 @@ public partial class kScoreLibraryTemperaments
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -775,7 +722,6 @@ public partial class kScoreLibraryTemperamentsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("TemperamentDefinition")]
     public kScoreLibraryTemperamentsEntitiesTemperamentDefinition[] TemperamentDefinition
     {
@@ -789,7 +735,6 @@ public partial class kScoreLibraryTemperamentsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -804,7 +749,6 @@ public partial class kScoreLibraryTemperamentsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -822,7 +766,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
 
     private kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelativeDiatonicDivisions relativeDiatonicDivisionsField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -835,7 +778,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -848,7 +790,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -861,7 +802,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -874,7 +814,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
         }
     }
 
-    /// <remarks/>
     public byte precedence
     {
         get
@@ -887,7 +826,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelativeDiatonicDivisions relativeDiatonicDivisions
     {
         get
@@ -901,7 +839,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -921,7 +858,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelat
 
     private byte noteGtoAField;
 
-    /// <remarks/>
     public byte noteAtoB
     {
         get
@@ -934,7 +870,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelat
         }
     }
 
-    /// <remarks/>
     public byte noteBtoC
     {
         get
@@ -947,7 +882,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelat
         }
     }
 
-    /// <remarks/>
     public byte noteCtoD
     {
         get
@@ -960,7 +894,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelat
         }
     }
 
-    /// <remarks/>
     public byte noteDtoE
     {
         get
@@ -973,7 +906,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelat
         }
     }
 
-    /// <remarks/>
     public byte noteEtoF
     {
         get
@@ -986,7 +918,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelat
         }
     }
 
-    /// <remarks/>
     public byte noteFtoG
     {
         get
@@ -999,7 +930,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelat
         }
     }
 
-    /// <remarks/>
     public byte noteGtoA
     {
         get
@@ -1013,7 +943,6 @@ public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelat
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1021,7 +950,6 @@ public partial class kScoreLibraryAccidentalSystems
 {
     private kScoreLibraryAccidentalSystemsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryAccidentalSystemsEntities entities
     {
         get
@@ -1035,7 +963,6 @@ public partial class kScoreLibraryAccidentalSystems
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1045,7 +972,6 @@ public partial class kScoreLibraryAccidentalSystemsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("AccidentalSystem")]
     public kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem[] AccidentalSystem
     {
@@ -1059,7 +985,6 @@ public partial class kScoreLibraryAccidentalSystemsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1074,7 +999,6 @@ public partial class kScoreLibraryAccidentalSystemsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1092,7 +1016,6 @@ public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
 
     private byte precedenceField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -1105,7 +1028,6 @@ public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -1118,7 +1040,6 @@ public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -1131,7 +1052,6 @@ public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -1144,7 +1064,6 @@ public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
         }
     }
 
-    /// <remarks/>
     public string accidentalDefinitionIDs
     {
         get
@@ -1157,7 +1076,6 @@ public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
         }
     }
 
-    /// <remarks/>
     public byte precedence
     {
         get
@@ -1171,7 +1089,6 @@ public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1179,7 +1096,6 @@ public partial class kScoreLibraryAccidentalDefinitions
 {
     private kScoreLibraryAccidentalDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryAccidentalDefinitionsEntities entities
     {
         get
@@ -1193,7 +1109,6 @@ public partial class kScoreLibraryAccidentalDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1203,7 +1118,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("AccidentalDefinition")]
     public kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinition[] AccidentalDefinition
     {
@@ -1217,7 +1131,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1232,7 +1145,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1258,7 +1170,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
 
     private string cutOutSWField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -1271,7 +1182,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -1284,7 +1194,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -1297,7 +1206,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -1310,7 +1218,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public string compositeID
     {
         get
@@ -1323,7 +1230,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public string pitchDeltaFromNatural
     {
         get
@@ -1336,7 +1242,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public string cutOutNW
     {
         get
@@ -1349,7 +1254,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public string cutOutNE
     {
         get
@@ -1362,7 +1266,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public string cutOutSE
     {
         get
@@ -1375,7 +1278,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
         }
     }
 
-    /// <remarks/>
     public string cutOutSW
     {
         get
@@ -1389,7 +1291,6 @@ public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinit
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1397,7 +1298,6 @@ public partial class kScoreLibraryTonalitySystemDefinitions
 {
     private kScoreLibraryTonalitySystemDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryTonalitySystemDefinitionsEntities entities
     {
         get
@@ -1411,7 +1311,6 @@ public partial class kScoreLibraryTonalitySystemDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1421,7 +1320,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("TonalitySystemDefinition")]
     public kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinition[] TonalitySystemDefinition
     {
@@ -1435,7 +1333,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1450,7 +1347,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1470,7 +1366,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
 
     private kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinitionCustomKeySignatures customKeySignaturesField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -1483,7 +1378,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -1496,7 +1390,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -1509,7 +1402,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -1522,7 +1414,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
         }
     }
 
-    /// <remarks/>
     public string temperamentDefinition
     {
         get
@@ -1535,7 +1426,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
         }
     }
 
-    /// <remarks/>
     public string accidentalSystem
     {
         get
@@ -1548,7 +1438,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinitionCustomKeySignatures customKeySignatures
     {
         get
@@ -1562,7 +1451,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1570,7 +1458,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1585,7 +1472,6 @@ public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySyste
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1593,7 +1479,6 @@ public partial class kScoreLibraryEnsembles
 {
     private kScoreLibraryEnsemblesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryEnsemblesEntities entities
     {
         get
@@ -1607,7 +1492,6 @@ public partial class kScoreLibraryEnsembles
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1615,7 +1499,6 @@ public partial class kScoreLibraryEnsemblesEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1630,7 +1513,6 @@ public partial class kScoreLibraryEnsemblesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1638,7 +1520,6 @@ public partial class kScoreLibraryInstruments
 {
     private kScoreLibraryInstrumentsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntities entities
     {
         get
@@ -1652,7 +1533,6 @@ public partial class kScoreLibraryInstruments
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1660,7 +1540,6 @@ public partial class kScoreLibraryInstrumentsEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1675,7 +1554,6 @@ public partial class kScoreLibraryInstrumentsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1685,7 +1563,6 @@ public partial class kScoreLibraryInstrumentNames
 
     private string languageField;
 
-    /// <remarks/>
     public kScoreLibraryInstrumentNamesEntities entities
     {
         get
@@ -1698,7 +1575,6 @@ public partial class kScoreLibraryInstrumentNames
         }
     }
 
-    /// <remarks/>
     public string language
     {
         get
@@ -1712,7 +1588,6 @@ public partial class kScoreLibraryInstrumentNames
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1720,7 +1595,6 @@ public partial class kScoreLibraryInstrumentNamesEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1735,7 +1609,6 @@ public partial class kScoreLibraryInstrumentNamesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1743,7 +1616,6 @@ public partial class kScoreLibraryInstrumentFamilies
 {
     private kScoreLibraryInstrumentFamiliesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryInstrumentFamiliesEntities entities
     {
         get
@@ -1757,7 +1629,6 @@ public partial class kScoreLibraryInstrumentFamilies
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1765,7 +1636,6 @@ public partial class kScoreLibraryInstrumentFamiliesEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1780,7 +1650,6 @@ public partial class kScoreLibraryInstrumentFamiliesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1788,7 +1657,6 @@ public partial class kScoreLibraryInstrumentScoreOrders
 {
     private kScoreLibraryInstrumentScoreOrdersEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryInstrumentScoreOrdersEntities entities
     {
         get
@@ -1802,7 +1670,6 @@ public partial class kScoreLibraryInstrumentScoreOrders
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1810,7 +1677,6 @@ public partial class kScoreLibraryInstrumentScoreOrdersEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1825,7 +1691,6 @@ public partial class kScoreLibraryInstrumentScoreOrdersEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1833,7 +1698,6 @@ public partial class kScoreLibraryClefDefinitions
 {
     private kScoreLibraryClefDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryClefDefinitionsEntities entities
     {
         get
@@ -1847,7 +1711,6 @@ public partial class kScoreLibraryClefDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1857,7 +1720,6 @@ public partial class kScoreLibraryClefDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("ClefEntityDefinition")]
     public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition[] ClefEntityDefinition
     {
@@ -1871,7 +1733,6 @@ public partial class kScoreLibraryClefDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -1886,7 +1747,6 @@ public partial class kScoreLibraryClefDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -1912,7 +1772,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
 
     private kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinition clefDefinitionField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -1925,7 +1784,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -1938,7 +1796,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -1951,7 +1808,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -1964,7 +1820,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string basicClefType
     {
         get
@@ -1977,7 +1832,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public sbyte clefTranspositionReminder
     {
         get
@@ -1990,7 +1844,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string compositeID
     {
         get
@@ -2003,7 +1856,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string clefCategory
     {
         get
@@ -2016,7 +1868,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string clefChangeCompositeID
     {
         get
@@ -2029,7 +1880,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinition clefDefinition
     {
         get
@@ -2043,7 +1893,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2057,7 +1906,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
 
     private kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinitionHotSpot hotSpotField;
 
-    /// <remarks/>
     public bool isPitched
     {
         get
@@ -2070,7 +1918,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
         }
     }
 
-    /// <remarks/>
     public byte requiredNumStaveLines
     {
         get
@@ -2083,7 +1930,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
         }
     }
 
-    /// <remarks/>
     public byte staveIndexFromBottomLine
     {
         get
@@ -2096,7 +1942,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinitionHotSpot hotSpot
     {
         get
@@ -2110,7 +1955,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2124,7 +1968,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
 
     private bool transposedOctaveFieldSpecified;
 
-    /// <remarks/>
     public string noteName
     {
         get
@@ -2137,7 +1980,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
         }
     }
 
-    /// <remarks/>
     public byte octave
     {
         get
@@ -2150,7 +1992,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
         }
     }
 
-    /// <remarks/>
     public byte transposedOctave
     {
         get
@@ -2163,7 +2004,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool transposedOctaveSpecified
     {
@@ -2178,7 +2018,6 @@ public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionCle
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2186,7 +2025,6 @@ public partial class kScoreLibraryOttavaLineDefinitions
 {
     private kScoreLibraryOttavaLineDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryOttavaLineDefinitionsEntities entities
     {
         get
@@ -2200,7 +2038,6 @@ public partial class kScoreLibraryOttavaLineDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2210,7 +2047,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("OttavaLineDefinition")]
     public kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinition[] OttavaLineDefinition
     {
@@ -2224,7 +2060,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -2239,7 +2074,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2255,7 +2089,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinit
 
     private sbyte transpositionForIntersectingNotesField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -2268,7 +2101,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinit
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -2281,7 +2113,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinit
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -2294,7 +2125,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinit
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -2307,7 +2137,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinit
         }
     }
 
-    /// <remarks/>
     public sbyte transpositionForIntersectingNotes
     {
         get
@@ -2321,7 +2150,6 @@ public partial class kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinit
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2329,7 +2157,6 @@ public partial class kScoreLibraryNoteheadSetDefinitions
 {
     private kScoreLibraryNoteheadSetDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryNoteheadSetDefinitionsEntities entities
     {
         get
@@ -2343,7 +2170,6 @@ public partial class kScoreLibraryNoteheadSetDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2353,7 +2179,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("NoteheadSetDefinition")]
     public kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefinition[] NoteheadSetDefinition
     {
@@ -2367,7 +2192,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -2382,7 +2206,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2404,7 +2227,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
 
     private string defaultNoteheadIDField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -2417,7 +2239,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -2430,7 +2251,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -2443,7 +2263,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -2456,7 +2275,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
         }
     }
 
-    /// <remarks/>
     public string noteheadSetType
     {
         get
@@ -2469,7 +2287,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
         }
     }
 
-    /// <remarks/>
     public string noteheadSetCategory
     {
         get
@@ -2482,7 +2299,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
         }
     }
 
-    /// <remarks/>
     public string noteheads
     {
         get
@@ -2495,7 +2311,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
         }
     }
 
-    /// <remarks/>
     public string defaultNoteheadID
     {
         get
@@ -2509,7 +2324,6 @@ public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefin
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2517,7 +2331,6 @@ public partial class kScoreLibraryNoteheadDefinitions
 {
     private kScoreLibraryNoteheadDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryNoteheadDefinitionsEntities entities
     {
         get
@@ -2531,7 +2344,6 @@ public partial class kScoreLibraryNoteheadDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2541,7 +2353,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("NoteheadDefinition")]
     public kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition[] NoteheadDefinition
     {
@@ -2555,7 +2366,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -2570,7 +2380,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2620,7 +2429,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
 
     private string cutOutSEField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -2633,7 +2441,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -2646,7 +2453,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -2659,7 +2465,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -2672,7 +2477,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string noteheadSetType
     {
         get
@@ -2685,7 +2489,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string compositeID
     {
         get
@@ -2698,7 +2501,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string duration
     {
         get
@@ -2711,7 +2513,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public bool upToDuration
     {
         get
@@ -2724,7 +2525,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public bool upFromDuration
     {
         get
@@ -2737,7 +2537,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string roundOrSquare
     {
         get
@@ -2750,7 +2549,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string stemDirection
     {
         get
@@ -2763,7 +2561,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public byte scaleDegree
     {
         get
@@ -2776,7 +2573,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool scaleDegreeSpecified
     {
@@ -2790,7 +2586,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string pitch
     {
         get
@@ -2803,7 +2598,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string stemUpAttachment
     {
         get
@@ -2816,7 +2610,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string stemDownAttachment
     {
         get
@@ -2829,7 +2622,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string splitStemUpWAttachment
     {
         get
@@ -2842,7 +2634,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string splitStemUpEAttachment
     {
         get
@@ -2855,7 +2646,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string splitStemDownWAttachment
     {
         get
@@ -2868,7 +2658,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string splitStemDownEAttachment
     {
         get
@@ -2881,7 +2670,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string cutOutNW
     {
         get
@@ -2894,7 +2682,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
         }
     }
 
-    /// <remarks/>
     public string cutOutSE
     {
         get
@@ -2908,7 +2695,6 @@ public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2916,7 +2702,6 @@ public partial class kScoreLibraryRestSetDefinitions
 {
     private kScoreLibraryRestSetDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryRestSetDefinitionsEntities entities
     {
         get
@@ -2930,7 +2715,6 @@ public partial class kScoreLibraryRestSetDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2940,7 +2724,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("RestSetDefinition")]
     public kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition[] RestSetDefinition
     {
@@ -2954,7 +2737,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -2969,7 +2751,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -2985,7 +2766,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition
 
     private string restsField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -2998,7 +2778,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -3011,7 +2790,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -3024,7 +2802,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -3037,7 +2814,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition
         }
     }
 
-    /// <remarks/>
     public string rests
     {
         get
@@ -3051,7 +2827,6 @@ public partial class kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3059,7 +2834,6 @@ public partial class kScoreLibraryRestDefinitions
 {
     private kScoreLibraryRestDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryRestDefinitionsEntities entities
     {
         get
@@ -3073,7 +2847,6 @@ public partial class kScoreLibraryRestDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3083,7 +2856,6 @@ public partial class kScoreLibraryRestDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("RestDefinition")]
     public kScoreLibraryRestDefinitionsEntitiesRestDefinition[] RestDefinition
     {
@@ -3097,7 +2869,6 @@ public partial class kScoreLibraryRestDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -3112,7 +2883,6 @@ public partial class kScoreLibraryRestDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3130,7 +2900,6 @@ public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
 
     private string durationField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -3143,7 +2912,6 @@ public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -3156,7 +2924,6 @@ public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -3169,7 +2936,6 @@ public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -3182,7 +2948,6 @@ public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
         }
     }
 
-    /// <remarks/>
     public string compositeID
     {
         get
@@ -3195,7 +2960,6 @@ public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
         }
     }
 
-    /// <remarks/>
     public string duration
     {
         get
@@ -3209,7 +2973,6 @@ public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3217,7 +2980,6 @@ public partial class kScoreLibraryFlagSetDefinitions
 {
     private kScoreLibraryFlagSetDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryFlagSetDefinitionsEntities entities
     {
         get
@@ -3231,7 +2993,6 @@ public partial class kScoreLibraryFlagSetDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3241,7 +3002,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("FlagSetDefinition")]
     public kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition[] FlagSetDefinition
     {
@@ -3255,7 +3015,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -3270,7 +3029,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3286,7 +3044,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition
 
     private string flagsField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -3299,7 +3056,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -3312,7 +3068,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -3325,7 +3080,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -3338,7 +3092,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition
         }
     }
 
-    /// <remarks/>
     public string flags
     {
         get
@@ -3352,7 +3105,6 @@ public partial class kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3360,7 +3112,6 @@ public partial class kScoreLibraryFlagDefinitions
 {
     private kScoreLibraryFlagDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryFlagDefinitionsEntities entities
     {
         get
@@ -3374,7 +3125,6 @@ public partial class kScoreLibraryFlagDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3384,7 +3134,6 @@ public partial class kScoreLibraryFlagDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("FlagDefinition")]
     public kScoreLibraryFlagDefinitionsEntitiesFlagDefinition[] FlagDefinition
     {
@@ -3398,7 +3147,6 @@ public partial class kScoreLibraryFlagDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -3413,7 +3161,6 @@ public partial class kScoreLibraryFlagDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3437,7 +3184,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
 
     private string stemOffsetField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -3450,7 +3196,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -3463,7 +3208,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -3476,7 +3220,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -3489,7 +3232,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
         }
     }
 
-    /// <remarks/>
     public string compositeID
     {
         get
@@ -3502,7 +3244,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
         }
     }
 
-    /// <remarks/>
     public string duration
     {
         get
@@ -3515,7 +3256,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
         }
     }
 
-    /// <remarks/>
     public string stemDirection
     {
         get
@@ -3528,7 +3268,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
         }
     }
 
-    /// <remarks/>
     public bool shortVariant
     {
         get
@@ -3541,7 +3280,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
         }
     }
 
-    /// <remarks/>
     public string stemOffset
     {
         get
@@ -3555,7 +3293,6 @@ public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3563,7 +3300,6 @@ public partial class kScoreLibraryGraphicDefinitions
 {
     private kScoreLibraryGraphicDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryGraphicDefinitionsEntities entities
     {
         get
@@ -3577,7 +3313,6 @@ public partial class kScoreLibraryGraphicDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3585,7 +3320,6 @@ public partial class kScoreLibraryGraphicDefinitionsEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -3600,7 +3334,6 @@ public partial class kScoreLibraryGraphicDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3608,7 +3341,6 @@ public partial class kScoreLibraryBlobDefinitions
 {
     private kScoreLibraryBlobDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryBlobDefinitionsEntities entities
     {
         get
@@ -3622,7 +3354,6 @@ public partial class kScoreLibraryBlobDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3630,7 +3361,6 @@ public partial class kScoreLibraryBlobDefinitionsEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -3645,7 +3375,6 @@ public partial class kScoreLibraryBlobDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3653,7 +3382,6 @@ public partial class kScoreLibraryDrawingDefinitions
 {
     private kScoreLibraryDrawingDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryDrawingDefinitionsEntities entities
     {
         get
@@ -3667,7 +3395,6 @@ public partial class kScoreLibraryDrawingDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3677,7 +3404,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinition DrawingPrimitiveEntityDefinition
     {
         get
@@ -3690,7 +3416,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -3705,7 +3430,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3721,7 +3445,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
 
     private kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitions lineDefinitionsField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -3734,7 +3457,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -3747,7 +3469,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -3760,7 +3481,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -3773,7 +3493,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitions lineDefinitions
     {
         get
@@ -3787,7 +3506,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3797,7 +3515,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitionsLineDefinition lineDefinition
     {
         get
@@ -3810,7 +3527,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -3825,7 +3541,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3841,7 +3556,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
 
     private byte endYField;
 
-    /// <remarks/>
     public decimal lineWidth
     {
         get
@@ -3854,7 +3568,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     public byte startX
     {
         get
@@ -3867,7 +3580,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     public byte startY
     {
         get
@@ -3880,7 +3592,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     public byte endX
     {
         get
@@ -3893,7 +3604,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
         }
     }
 
-    /// <remarks/>
     public byte endY
     {
         get
@@ -3907,7 +3617,6 @@ public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEnti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3915,7 +3624,6 @@ public partial class kScoreLibraryTextDefinitions
 {
     private kScoreLibraryTextDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryTextDefinitionsEntities entities
     {
         get
@@ -3929,7 +3637,6 @@ public partial class kScoreLibraryTextDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3939,7 +3646,6 @@ public partial class kScoreLibraryTextDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("TextPrimitiveEntityDefinition")]
     public kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefinition[] TextPrimitiveEntityDefinition
     {
@@ -3953,7 +3659,6 @@ public partial class kScoreLibraryTextDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -3968,7 +3673,6 @@ public partial class kScoreLibraryTextDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -3986,7 +3690,6 @@ public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefi
 
     private string textField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -3999,7 +3702,6 @@ public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefi
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -4012,7 +3714,6 @@ public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefi
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -4025,7 +3726,6 @@ public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefi
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -4038,7 +3738,6 @@ public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefi
         }
     }
 
-    /// <remarks/>
     public string fontStyle
     {
         get
@@ -4051,7 +3750,6 @@ public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefi
         }
     }
 
-    /// <remarks/>
     public string text
     {
         get
@@ -4065,7 +3763,6 @@ public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefi
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4073,7 +3770,6 @@ public partial class kScoreLibraryGlyphDefinitions
 {
     private kScoreLibraryGlyphDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryGlyphDefinitionsEntities entities
     {
         get
@@ -4087,7 +3783,6 @@ public partial class kScoreLibraryGlyphDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4095,7 +3790,6 @@ public partial class kScoreLibraryGlyphDefinitionsEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -4110,7 +3804,6 @@ public partial class kScoreLibraryGlyphDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4118,7 +3811,6 @@ public partial class kScoreLibraryCompositeDefinitions
 {
     private kScoreLibraryCompositeDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryCompositeDefinitionsEntities entities
     {
         get
@@ -4132,7 +3824,6 @@ public partial class kScoreLibraryCompositeDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4140,7 +3831,6 @@ public partial class kScoreLibraryCompositeDefinitionsEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -4155,7 +3845,6 @@ public partial class kScoreLibraryCompositeDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4163,7 +3852,6 @@ public partial class kScoreLibraryTempoPresetDefinitions
 {
     private kScoreLibraryTempoPresetDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryTempoPresetDefinitionsEntities entities
     {
         get
@@ -4177,7 +3865,6 @@ public partial class kScoreLibraryTempoPresetDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4187,7 +3874,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("TempoPresetDefinition")]
     public kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefinition[] TempoPresetDefinition
     {
@@ -4201,7 +3887,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -4216,7 +3901,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4242,7 +3926,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
 
     private bool amountFieldSpecified;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -4255,7 +3938,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -4268,7 +3950,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -4281,7 +3962,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -4294,7 +3974,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     public string abbreviatedName
     {
         get
@@ -4307,7 +3986,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     public bool isGradual
     {
         get
@@ -4320,7 +3998,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     public string immediateType
     {
         get
@@ -4333,7 +4010,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     public string resetType
     {
         get
@@ -4346,7 +4022,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     public byte amount
     {
         get
@@ -4359,7 +4034,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool amountSpecified
     {
@@ -4374,7 +4048,6 @@ public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefin
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4382,7 +4055,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitions
 {
     private kScoreLibraryRhythmicFeelDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryRhythmicFeelDefinitionsEntities entities
     {
         get
@@ -4396,7 +4068,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4406,7 +4077,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("RhythmicFeelEntityDefinition")]
     public kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEntityDefinition[] RhythmicFeelEntityDefinition
     {
@@ -4420,7 +4090,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -4435,7 +4104,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4465,7 +4133,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
 
     private bool highStrengthFieldSpecified;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -4478,7 +4145,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -4491,7 +4157,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -4504,7 +4169,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -4517,7 +4181,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public string type
     {
         get
@@ -4530,7 +4193,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public string unit
     {
         get
@@ -4543,7 +4205,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public uint lowTempo
     {
         get
@@ -4556,7 +4217,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public decimal lowStrength
     {
         get
@@ -4569,7 +4229,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public uint highTempo
     {
         get
@@ -4582,7 +4241,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool highTempoSpecified
     {
@@ -4596,7 +4254,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     public decimal highStrength
     {
         get
@@ -4609,7 +4266,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool highStrengthSpecified
     {
@@ -4624,7 +4280,6 @@ public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEnt
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4632,7 +4287,6 @@ public partial class kScoreLibraryPenstyles
 {
     private kScoreLibraryPenstylesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryPenstylesEntities entities
     {
         get
@@ -4646,7 +4300,6 @@ public partial class kScoreLibraryPenstyles
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4656,7 +4309,6 @@ public partial class kScoreLibraryPenstylesEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("PenStyleEntityDefinition")]
     public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition[] PenStyleEntityDefinition
     {
@@ -4670,7 +4322,6 @@ public partial class kScoreLibraryPenstylesEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -4685,7 +4336,6 @@ public partial class kScoreLibraryPenstylesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4705,7 +4355,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
 
     private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPattern dashOrDotPatternField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -4718,7 +4367,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -4731,7 +4379,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -4744,7 +4391,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -4757,7 +4403,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string colour
     {
         get
@@ -4770,7 +4415,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth width
     {
         get
@@ -4783,7 +4427,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPattern dashOrDotPattern
     {
         get
@@ -4797,7 +4440,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4805,7 +4447,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth
 {
     private byte pointsField;
 
-    /// <remarks/>
     public byte points
     {
         get
@@ -4819,7 +4460,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4829,7 +4469,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashO
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPatternDashOrDotPattern dashOrDotPattern
     {
         get
@@ -4842,7 +4481,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashO
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -4857,7 +4495,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashO
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4865,7 +4502,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashO
 {
     private byte pointsField;
 
-    /// <remarks/>
     public byte points
     {
         get
@@ -4879,7 +4515,6 @@ public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashO
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4887,7 +4522,6 @@ public partial class kScoreLibraryFontstyles
 {
     private kScoreLibraryFontstylesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryFontstylesEntities entities
     {
         get
@@ -4901,7 +4535,6 @@ public partial class kScoreLibraryFontstyles
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4911,7 +4544,6 @@ public partial class kScoreLibraryFontstylesEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("FontStyleEntityDefinition")]
     public kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition[] FontStyleEntityDefinition
     {
@@ -4925,7 +4557,6 @@ public partial class kScoreLibraryFontstylesEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -4940,7 +4571,6 @@ public partial class kScoreLibraryFontstylesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -4970,7 +4600,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
 
     private string substituteFamilyNamesField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -4983,7 +4612,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -4996,7 +4624,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string parentEntityID
     {
         get
@@ -5009,7 +4636,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string inheritanceMask
     {
         get
@@ -5022,7 +4648,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string fontname
     {
         get
@@ -5035,7 +4660,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string colour
     {
         get
@@ -5048,7 +4672,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string size
     {
         get
@@ -5061,7 +4684,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string weight
     {
         get
@@ -5074,7 +4696,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public bool italic
     {
         get
@@ -5087,7 +4708,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public bool underlined
     {
         get
@@ -5100,7 +4720,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string namedStyle
     {
         get
@@ -5113,7 +4732,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string substituteFamilyNames
     {
         get
@@ -5127,7 +4745,6 @@ public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5135,7 +4752,6 @@ public partial class kScoreLibraryBrushstyles
 {
     private kScoreLibraryBrushstylesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryBrushstylesEntities entities
     {
         get
@@ -5149,7 +4765,6 @@ public partial class kScoreLibraryBrushstyles
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5159,7 +4774,6 @@ public partial class kScoreLibraryBrushstylesEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("BrushStyleEntityDefinition")]
     public kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition[] BrushStyleEntityDefinition
     {
@@ -5173,7 +4787,6 @@ public partial class kScoreLibraryBrushstylesEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -5188,7 +4801,6 @@ public partial class kScoreLibraryBrushstylesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5204,7 +4816,6 @@ public partial class kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition
 
     private string colourField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -5217,7 +4828,6 @@ public partial class kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -5230,7 +4840,6 @@ public partial class kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -5243,7 +4852,6 @@ public partial class kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -5256,7 +4864,6 @@ public partial class kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string colour
     {
         get
@@ -5270,7 +4877,6 @@ public partial class kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5278,7 +4884,6 @@ public partial class kScoreLibraryPagePairDefinitionSets
 {
     private kScoreLibraryPagePairDefinitionSetsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntities entities
     {
         get
@@ -5292,7 +4897,6 @@ public partial class kScoreLibraryPagePairDefinitionSets
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5302,7 +4906,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("PagePairDefinitionSetDefinition")]
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinition[] PagePairDefinitionSetDefinition
     {
@@ -5316,7 +4919,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -5331,7 +4933,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5359,7 +4960,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraFlowHeadingDefinitions extraFlowHeadingDefinitionsField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -5372,7 +4972,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -5385,7 +4984,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -5398,7 +4996,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -5411,7 +5008,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public string type
     {
         get
@@ -5424,7 +5020,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitions frameChainDefinitions
     {
         get
@@ -5437,7 +5032,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinition firstPageDefinition
     {
         get
@@ -5450,7 +5044,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinition normalPageDefinition
     {
         get
@@ -5463,7 +5056,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinition flowHeadingDefinition
     {
         get
@@ -5476,7 +5068,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraPageDefinitions extraPageDefinitions
     {
         get
@@ -5489,7 +5080,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraFlowHeadingDefinitions extraFlowHeadingDefinitions
     {
         get
@@ -5503,7 +5093,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5519,7 +5108,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicSliceFrameChains graphicSliceFrameChainsField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChains musicFrameChains
     {
         get
@@ -5532,7 +5120,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChains textFrameChains
     {
         get
@@ -5545,7 +5132,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicFrameChains graphicFrameChains
     {
         get
@@ -5558,7 +5144,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsChordsUsedFrameChains chordsUsedFrameChains
     {
         get
@@ -5571,7 +5156,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicSliceFrameChains graphicSliceFrameChains
     {
         get
@@ -5585,7 +5169,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5595,7 +5178,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChainsMusicFrameChains musicFrameChains
     {
         get
@@ -5608,7 +5190,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -5623,7 +5204,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5637,7 +5217,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private string flowInclusionPolicyField;
 
-    /// <remarks/>
     public byte frameChainDefinitionID
     {
         get
@@ -5650,7 +5229,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public object flowIDs
     {
         get
@@ -5663,7 +5241,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public object playerIDs
     {
         get
@@ -5676,7 +5253,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public string flowInclusionPolicy
     {
         get
@@ -5690,7 +5266,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5700,7 +5275,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("textFrameChains")]
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChains[] textFrameChains
     {
@@ -5714,7 +5288,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -5729,7 +5302,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5741,7 +5313,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsProperties propertiesField;
 
-    /// <remarks/>
     public byte frameChainDefinitionID
     {
         get
@@ -5754,7 +5325,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSource contentSource
     {
         get
@@ -5767,7 +5337,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsProperties properties
     {
         get
@@ -5781,7 +5350,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5789,7 +5357,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContent defaultContentField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContent defaultContent
     {
         get
@@ -5803,7 +5370,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5811,7 +5377,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphs paragraphsField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphs paragraphs
     {
         get
@@ -5825,7 +5390,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5835,7 +5399,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraph paragraph
     {
         get
@@ -5848,7 +5411,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -5863,7 +5425,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5875,7 +5436,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragments fragmentsField;
 
-    /// <remarks/>
     public string paragraphStyleID
     {
         get
@@ -5888,7 +5448,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public object content
     {
         get
@@ -5901,7 +5460,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragments fragments
     {
         get
@@ -5915,7 +5473,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5925,7 +5482,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragment fragment
     {
         get
@@ -5938,7 +5494,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -5953,7 +5508,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -5963,7 +5517,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragmentTextFragmentStyle textFragmentStyleField;
 
-    /// <remarks/>
     public string content
     {
         get
@@ -5976,7 +5529,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragmentTextFragmentStyle textFragmentStyle
     {
         get
@@ -5990,7 +5542,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6000,7 +5551,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private object localStyleField;
 
-    /// <remarks/>
     public object libraryStyle
     {
         get
@@ -6013,7 +5563,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public object localStyle
     {
         get
@@ -6027,7 +5576,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6039,7 +5587,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private string verticalAlignmentField;
 
-    /// <remarks/>
     public bool showBorder
     {
         get
@@ -6052,7 +5599,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte borderThickness
     {
         get
@@ -6065,7 +5611,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public string verticalAlignment
     {
         get
@@ -6079,7 +5624,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6087,7 +5631,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -6102,7 +5645,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6110,7 +5652,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -6125,7 +5666,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6133,7 +5673,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -6148,7 +5687,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6160,7 +5698,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRight rightField;
 
-    /// <remarks/>
     public object name
     {
         get
@@ -6173,7 +5710,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeft left
     {
         get
@@ -6186,7 +5722,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRight right
     {
         get
@@ -6200,7 +5735,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6208,7 +5742,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFrames framesField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFrames frames
     {
         get
@@ -6222,7 +5755,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6232,7 +5764,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("frame")]
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrame[] frame
     {
@@ -6246,7 +5777,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -6261,7 +5791,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6275,7 +5804,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraints constraintsField;
 
-    /// <remarks/>
     public byte indexInFrameChainOnPage
     {
         get
@@ -6288,7 +5816,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool contentRelative
     {
         get
@@ -6301,7 +5828,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionID
     {
         get
@@ -6314,7 +5840,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraints constraints
     {
         get
@@ -6328,7 +5853,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6338,7 +5862,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool isLayoutSpecificField;
 
-    /// <remarks/>
     public byte frameChainDefinitionID
     {
         get
@@ -6351,7 +5874,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool isLayoutSpecific
     {
         get
@@ -6365,7 +5887,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6375,7 +5896,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraints
     {
         get
@@ -6388,7 +5908,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraints
     {
         get
@@ -6402,7 +5921,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6424,7 +5942,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool topFieldSpecified;
 
-    /// <remarks/>
     public byte left
     {
         get
@@ -6437,7 +5954,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool leftSpecified
     {
@@ -6451,7 +5967,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte right
     {
         get
@@ -6464,7 +5979,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool rightSpecified
     {
@@ -6478,7 +5992,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte bottom
     {
         get
@@ -6491,7 +6004,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool bottomSpecified
     {
@@ -6505,7 +6017,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte top
     {
         get
@@ -6518,7 +6029,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool topSpecified
     {
@@ -6533,7 +6043,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6545,7 +6054,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private byte heightField;
 
-    /// <remarks/>
     public byte width
     {
         get
@@ -6558,7 +6066,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool widthSpecified
     {
@@ -6572,7 +6079,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte height
     {
         get
@@ -6586,7 +6092,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6594,7 +6099,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFrames framesField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFrames frames
     {
         get
@@ -6608,7 +6112,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6618,7 +6121,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("frame")]
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrame[] frame
     {
@@ -6632,7 +6134,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -6647,7 +6148,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6661,7 +6161,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraints constraintsField;
 
-    /// <remarks/>
     public byte indexInFrameChainOnPage
     {
         get
@@ -6674,7 +6173,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool contentRelative
     {
         get
@@ -6687,7 +6185,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionID
     {
         get
@@ -6700,7 +6197,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraints constraints
     {
         get
@@ -6714,7 +6210,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6724,7 +6219,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool isLayoutSpecificField;
 
-    /// <remarks/>
     public byte frameChainDefinitionID
     {
         get
@@ -6737,7 +6231,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool isLayoutSpecific
     {
         get
@@ -6751,7 +6244,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6761,7 +6253,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraints
     {
         get
@@ -6774,7 +6265,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraints
     {
         get
@@ -6788,7 +6278,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6810,7 +6299,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool topFieldSpecified;
 
-    /// <remarks/>
     public byte left
     {
         get
@@ -6823,7 +6311,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool leftSpecified
     {
@@ -6837,7 +6324,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte right
     {
         get
@@ -6850,7 +6336,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool rightSpecified
     {
@@ -6864,7 +6349,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte bottom
     {
         get
@@ -6877,7 +6361,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool bottomSpecified
     {
@@ -6891,7 +6374,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte top
     {
         get
@@ -6904,7 +6386,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool topSpecified
     {
@@ -6919,7 +6400,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6931,7 +6411,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private byte heightField;
 
-    /// <remarks/>
     public byte width
     {
         get
@@ -6944,7 +6423,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool widthSpecified
     {
@@ -6958,7 +6436,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte height
     {
         get
@@ -6972,7 +6449,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -6984,7 +6460,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRight rightField;
 
-    /// <remarks/>
     public object name
     {
         get
@@ -6997,7 +6472,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeft left
     {
         get
@@ -7010,7 +6484,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRight right
     {
         get
@@ -7024,7 +6497,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7032,7 +6504,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFrames framesField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFrames frames
     {
         get
@@ -7046,7 +6517,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7056,7 +6526,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("frame")]
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrame[] frame
     {
@@ -7070,7 +6539,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -7085,7 +6553,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7099,7 +6566,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraints constraintsField;
 
-    /// <remarks/>
     public byte indexInFrameChainOnPage
     {
         get
@@ -7112,7 +6578,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool contentRelative
     {
         get
@@ -7125,7 +6590,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionID
     {
         get
@@ -7138,7 +6602,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraints constraints
     {
         get
@@ -7152,7 +6615,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7162,7 +6624,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool isLayoutSpecificField;
 
-    /// <remarks/>
     public byte frameChainDefinitionID
     {
         get
@@ -7175,7 +6636,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool isLayoutSpecific
     {
         get
@@ -7189,7 +6649,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7199,7 +6658,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraints
     {
         get
@@ -7212,7 +6670,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraints
     {
         get
@@ -7226,7 +6683,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7244,7 +6700,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private byte topField;
 
-    /// <remarks/>
     public byte left
     {
         get
@@ -7257,7 +6712,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte right
     {
         get
@@ -7270,7 +6724,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool rightSpecified
     {
@@ -7284,7 +6737,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte bottom
     {
         get
@@ -7297,7 +6749,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool bottomSpecified
     {
@@ -7311,7 +6762,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte top
     {
         get
@@ -7325,7 +6775,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7337,7 +6786,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private byte heightField;
 
-    /// <remarks/>
     public byte width
     {
         get
@@ -7350,7 +6798,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool widthSpecified
     {
@@ -7364,7 +6811,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte height
     {
         get
@@ -7378,7 +6824,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7386,7 +6831,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFrames framesField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFrames frames
     {
         get
@@ -7400,7 +6844,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7410,7 +6853,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("frame")]
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrame[] frame
     {
@@ -7424,7 +6866,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -7439,7 +6880,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7453,7 +6893,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraints constraintsField;
 
-    /// <remarks/>
     public byte indexInFrameChainOnPage
     {
         get
@@ -7466,7 +6905,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool contentRelative
     {
         get
@@ -7479,7 +6917,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionID
     {
         get
@@ -7492,7 +6929,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraints constraints
     {
         get
@@ -7506,7 +6942,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7516,7 +6951,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool isLayoutSpecificField;
 
-    /// <remarks/>
     public byte frameChainDefinitionID
     {
         get
@@ -7529,7 +6963,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool isLayoutSpecific
     {
         get
@@ -7543,7 +6976,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7553,7 +6985,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraints
     {
         get
@@ -7566,7 +6997,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraints
     {
         get
@@ -7580,7 +7010,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7598,7 +7027,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private byte topField;
 
-    /// <remarks/>
     public byte left
     {
         get
@@ -7611,7 +7039,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool leftSpecified
     {
@@ -7625,7 +7052,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte right
     {
         get
@@ -7638,7 +7064,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte bottom
     {
         get
@@ -7651,7 +7076,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool bottomSpecified
     {
@@ -7665,7 +7089,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte top
     {
         get
@@ -7679,7 +7102,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7691,7 +7113,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private byte heightField;
 
-    /// <remarks/>
     public byte width
     {
         get
@@ -7704,7 +7125,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool widthSpecified
     {
@@ -7718,7 +7138,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte height
     {
         get
@@ -7732,7 +7151,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7742,7 +7160,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeading headingField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -7755,7 +7172,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeading heading
     {
         get
@@ -7769,7 +7185,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7777,7 +7192,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFrames framesField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFrames frames
     {
         get
@@ -7791,7 +7205,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7801,7 +7214,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrame frame
     {
         get
@@ -7814,7 +7226,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -7829,7 +7240,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7843,7 +7253,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraints constraintsField;
 
-    /// <remarks/>
     public byte indexInFrameChainOnPage
     {
         get
@@ -7856,7 +7265,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool contentRelative
     {
         get
@@ -7869,7 +7277,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameFrameChainDefinitionID frameChainDefinitionID
     {
         get
@@ -7882,7 +7289,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraints constraints
     {
         get
@@ -7896,7 +7302,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7906,7 +7311,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private bool isLayoutSpecificField;
 
-    /// <remarks/>
     public byte frameChainDefinitionID
     {
         get
@@ -7919,7 +7323,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public bool isLayoutSpecific
     {
         get
@@ -7933,7 +7336,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7943,7 +7345,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsPositionConstraints positionConstraints
     {
         get
@@ -7956,7 +7357,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsDimensionConstraints dimensionConstraints
     {
         get
@@ -7970,7 +7370,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -7982,7 +7381,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 
     private byte topField;
 
-    /// <remarks/>
     public byte left
     {
         get
@@ -7995,7 +7393,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte right
     {
         get
@@ -8008,7 +7405,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
         }
     }
 
-    /// <remarks/>
     public byte top
     {
         get
@@ -8022,7 +7418,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8030,7 +7425,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private byte heightField;
 
-    /// <remarks/>
     public byte height
     {
         get
@@ -8044,7 +7438,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8052,7 +7445,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -8067,7 +7459,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8075,7 +7466,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -8090,7 +7480,6 @@ public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefiniti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8098,7 +7487,6 @@ public partial class kScoreLibraryPageDimensionPresets
 {
     private kScoreLibraryPageDimensionPresetsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryPageDimensionPresetsEntities entities
     {
         get
@@ -8112,7 +7500,6 @@ public partial class kScoreLibraryPageDimensionPresets
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8122,7 +7509,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("PageDimensionsPresetEntityDefinition")]
     public kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPresetEntityDefinition[] PageDimensionsPresetEntityDefinition
     {
@@ -8136,7 +7522,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -8151,7 +7536,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8169,7 +7553,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPres
 
     private ushort heightField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -8182,7 +7565,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPres
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -8195,7 +7577,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPres
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -8208,7 +7589,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPres
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -8221,7 +7601,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPres
         }
     }
 
-    /// <remarks/>
     public ushort width
     {
         get
@@ -8234,7 +7613,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPres
         }
     }
 
-    /// <remarks/>
     public ushort height
     {
         get
@@ -8248,7 +7626,6 @@ public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPres
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8256,7 +7633,6 @@ public partial class kScoreLibraryParagraphStyles
 {
     private kScoreLibraryParagraphStylesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryParagraphStylesEntities entities
     {
         get
@@ -8270,7 +7646,6 @@ public partial class kScoreLibraryParagraphStyles
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8280,7 +7655,6 @@ public partial class kScoreLibraryParagraphStylesEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("ParagraphStyleEntityDefinition")]
     public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinition[] ParagraphStyleEntityDefinition
     {
@@ -8294,7 +7668,6 @@ public partial class kScoreLibraryParagraphStylesEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -8309,7 +7682,6 @@ public partial class kScoreLibraryParagraphStylesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8325,7 +7697,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
 
     private kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyle paragraphStyleField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -8338,7 +7709,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -8351,7 +7721,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string parentEntityID
     {
         get
@@ -8364,7 +7733,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string inheritanceMask
     {
         get
@@ -8377,7 +7745,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyle paragraphStyle
     {
         get
@@ -8391,7 +7758,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8433,7 +7799,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
 
     private kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyleBorderPadding borderPaddingField;
 
-    /// <remarks/>
     public string fontname
     {
         get
@@ -8446,7 +7811,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string size
     {
         get
@@ -8459,7 +7823,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string alignment
     {
         get
@@ -8472,7 +7835,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte indent
     {
         get
@@ -8485,7 +7847,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte extraFirstLineIndent
     {
         get
@@ -8498,7 +7859,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte gapAfterParagraph
     {
         get
@@ -8511,7 +7871,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte leading
     {
         get
@@ -8524,7 +7883,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string fontStyle
     {
         get
@@ -8537,7 +7895,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte fontStretch
     {
         get
@@ -8550,7 +7907,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte letterSpacing
     {
         get
@@ -8563,7 +7919,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte wordSpacing
     {
         get
@@ -8576,7 +7931,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public bool underline
     {
         get
@@ -8589,7 +7943,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public bool overline
     {
         get
@@ -8602,7 +7955,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public decimal borderThickness
     {
         get
@@ -8615,7 +7967,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public bool border
     {
         get
@@ -8628,7 +7979,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public bool alignWithSystemStart
     {
         get
@@ -8641,7 +7991,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string borderStyle
     {
         get
@@ -8654,7 +8003,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyleBorderPadding borderPadding
     {
         get
@@ -8668,7 +8016,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8682,7 +8029,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
 
     private decimal rightField;
 
-    /// <remarks/>
     public byte top
     {
         get
@@ -8695,7 +8041,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte bottom
     {
         get
@@ -8708,7 +8053,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public decimal left
     {
         get
@@ -8721,7 +8065,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public decimal right
     {
         get
@@ -8735,7 +8078,6 @@ public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDef
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8743,7 +8085,6 @@ public partial class kScoreLibraryCharacterStyles
 {
     private kScoreLibraryCharacterStylesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryCharacterStylesEntities entities
     {
         get
@@ -8757,7 +8098,6 @@ public partial class kScoreLibraryCharacterStyles
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8767,7 +8107,6 @@ public partial class kScoreLibraryCharacterStylesEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinition CharacterStyleEntityDefinition
     {
         get
@@ -8780,7 +8119,6 @@ public partial class kScoreLibraryCharacterStylesEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -8795,7 +8133,6 @@ public partial class kScoreLibraryCharacterStylesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8811,7 +8148,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
 
     private kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinitionCharacterStyle characterStyleField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -8824,7 +8160,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -8837,7 +8172,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -8850,7 +8184,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -8863,7 +8196,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinitionCharacterStyle characterStyle
     {
         get
@@ -8877,7 +8209,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8887,7 +8218,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
 
     private string fontStyleField;
 
-    /// <remarks/>
     public string fontName
     {
         get
@@ -8900,7 +8230,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
         }
     }
 
-    /// <remarks/>
     public string fontStyle
     {
         get
@@ -8914,7 +8243,6 @@ public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDef
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8922,7 +8250,6 @@ public partial class kScoreLibraryPlayingTechniques
 {
     private kScoreLibraryPlayingTechniquesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryPlayingTechniquesEntities entities
     {
         get
@@ -8936,7 +8263,6 @@ public partial class kScoreLibraryPlayingTechniques
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8944,7 +8270,6 @@ public partial class kScoreLibraryPlayingTechniquesEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -8959,7 +8284,6 @@ public partial class kScoreLibraryPlayingTechniquesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8967,7 +8291,6 @@ public partial class kScoreLibraryOrnamentDefinitions
 {
     private kScoreLibraryOrnamentDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryOrnamentDefinitionsEntities entities
     {
         get
@@ -8981,7 +8304,6 @@ public partial class kScoreLibraryOrnamentDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -8991,7 +8313,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("OrnamentDefinition")]
     public kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition[] OrnamentDefinition
     {
@@ -9005,7 +8326,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -9020,7 +8340,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9048,7 +8367,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
 
     private string realisationField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -9061,7 +8379,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -9074,7 +8391,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -9087,7 +8403,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -9100,7 +8415,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public string category
     {
         get
@@ -9113,7 +8427,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public string compositeID
     {
         get
@@ -9126,7 +8439,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public bool hasWavyLine
     {
         get
@@ -9139,7 +8451,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public string multiSegmentLineEntityID
     {
         get
@@ -9152,7 +8463,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public bool usesNoteAbove
     {
         get
@@ -9165,7 +8475,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public bool usesNoteBelow
     {
         get
@@ -9178,7 +8487,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
         }
     }
 
-    /// <remarks/>
     public string realisation
     {
         get
@@ -9192,7 +8500,6 @@ public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9200,7 +8507,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitions
 {
     private kScoreLibraryMultiSegmentLineDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryMultiSegmentLineDefinitionsEntities entities
     {
         get
@@ -9214,7 +8520,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9224,7 +8529,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinition MultiSegmentLineDefinition
     {
         get
@@ -9237,7 +8541,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -9252,7 +8555,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9268,7 +8570,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
 
     private kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegments lineSegmentsField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -9281,7 +8582,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -9294,7 +8594,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -9307,7 +8606,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -9320,7 +8618,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegments lineSegments
     {
         get
@@ -9334,7 +8631,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9344,7 +8640,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("repeatableLineSegmentData")]
     public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegmentsRepeatableLineSegmentData[] repeatableLineSegmentData
     {
@@ -9358,7 +8653,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -9373,7 +8667,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9383,7 +8676,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
 
     private decimal repeatOffsetField;
 
-    /// <remarks/>
     public string compositeID
     {
         get
@@ -9396,7 +8688,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
         }
     }
 
-    /// <remarks/>
     public decimal repeatOffset
     {
         get
@@ -9410,7 +8701,6 @@ public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmen
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9418,7 +8708,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
 {
     private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntities entities
     {
         get
@@ -9432,7 +8721,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9442,7 +8730,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("PlayingTechniqueAppearanceDefinition")]
     public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinition[] PlayingTechniqueAppearanceDefinition
     {
@@ -9456,7 +8743,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -9471,7 +8757,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9517,7 +8802,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
 
     private bool isBowingMarkField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -9530,7 +8814,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -9543,7 +8826,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -9556,7 +8838,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -9569,7 +8850,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string playingTechniqueAppearanceCategory
     {
         get
@@ -9582,7 +8862,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string playingTechniqueAppearanceType
     {
         get
@@ -9595,7 +8874,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string language
     {
         get
@@ -9608,7 +8886,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string text
     {
         get
@@ -9621,7 +8898,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string compositeEntityID
     {
         get
@@ -9634,7 +8910,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string playingTechniqueEntityID
     {
         get
@@ -9647,7 +8922,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public bool alwaysHasDuration
     {
         get
@@ -9660,7 +8934,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string defaultPlacement
     {
         get
@@ -9673,7 +8946,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string optionalCompositeEntityIDBelow
     {
         get
@@ -9686,7 +8958,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public bool shownInCues
     {
         get
@@ -9699,7 +8970,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public bool shownOnTabIfNotationAlsoShown
     {
         get
@@ -9712,7 +8982,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string continuationGlyph
     {
         get
@@ -9725,7 +8994,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string continuationText
     {
         get
@@ -9738,7 +9006,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionDurationLineData durationLineData
     {
         get
@@ -9751,7 +9018,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionTransitionLineData transitionLineData
     {
         get
@@ -9764,7 +9030,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public bool isBowingMark
     {
         get
@@ -9778,7 +9043,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9794,7 +9058,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
 
     private string lineTextAttachmentBelowField;
 
-    /// <remarks/>
     public string lineStyleEntityID
     {
         get
@@ -9807,7 +9070,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string lineGlyphAttachmentAbove
     {
         get
@@ -9820,7 +9082,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string lineGlyphAttachmentBelow
     {
         get
@@ -9833,7 +9094,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string lineTextAttachmentAbove
     {
         get
@@ -9846,7 +9106,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string lineTextAttachmentBelow
     {
         get
@@ -9860,7 +9119,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9876,7 +9134,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
 
     private string lineTextAttachmentBelowField;
 
-    /// <remarks/>
     public string lineStyleEntityID
     {
         get
@@ -9889,7 +9146,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string lineGlyphAttachmentAbove
     {
         get
@@ -9902,7 +9158,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string lineGlyphAttachmentBelow
     {
         get
@@ -9915,7 +9170,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string lineTextAttachmentAbove
     {
         get
@@ -9928,7 +9182,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
         }
     }
 
-    /// <remarks/>
     public string lineTextAttachmentBelow
     {
         get
@@ -9942,7 +9195,6 @@ public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9950,7 +9202,6 @@ public partial class kScoreLibraryExpressionMapDefinitions
 {
     private kScoreLibraryExpressionMapDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryExpressionMapDefinitionsEntities entities
     {
         get
@@ -9964,7 +9215,6 @@ public partial class kScoreLibraryExpressionMapDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9972,7 +9222,6 @@ public partial class kScoreLibraryExpressionMapDefinitionsEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -9987,7 +9236,6 @@ public partial class kScoreLibraryExpressionMapDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9995,7 +9243,6 @@ public partial class kScoreLibraryDrumKitNoteMapDefinitions
 {
     private kScoreLibraryDrumKitNoteMapDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryDrumKitNoteMapDefinitionsEntities entities
     {
         get
@@ -10009,7 +9256,6 @@ public partial class kScoreLibraryDrumKitNoteMapDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10017,7 +9263,6 @@ public partial class kScoreLibraryDrumKitNoteMapDefinitionsEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10032,7 +9277,6 @@ public partial class kScoreLibraryDrumKitNoteMapDefinitionsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10040,7 +9284,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitions
 {
     private kScoreLibraryRepeatableCompositeCollectionDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntities entities
     {
         get
@@ -10054,7 +9297,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10064,7 +9306,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("RepeatableCompositeEntityDefinition")]
     public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinition[] RepeatableCompositeEntityDefinition
     {
@@ -10078,7 +9319,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10093,7 +9333,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10109,7 +9348,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
 
     private kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinitionRepeatableCompositeData repeatableCompositeDataField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -10122,7 +9360,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -10135,7 +9372,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -10148,7 +9384,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -10161,7 +9396,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinitionRepeatableCompositeData repeatableCompositeData
     {
         get
@@ -10175,7 +9409,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10185,7 +9418,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
 
     private decimal repeatOffsetField;
 
-    /// <remarks/>
     public string compositeID
     {
         get
@@ -10198,7 +9430,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
         }
     }
 
-    /// <remarks/>
     public decimal repeatOffset
     {
         get
@@ -10212,7 +9443,6 @@ public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntiti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10220,7 +9450,6 @@ public partial class kScoreLibraryChordSymbolAppearanceCollectionDefinitions
 {
     private kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEntities entities
     {
         get
@@ -10234,7 +9463,6 @@ public partial class kScoreLibraryChordSymbolAppearanceCollectionDefinitions
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10242,7 +9470,6 @@ public partial class kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEnti
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10257,7 +9484,6 @@ public partial class kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEnti
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10265,7 +9491,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
 {
     private kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntities entities
     {
         get
@@ -10279,7 +9504,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10289,7 +9513,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("ChordSymbolAppearanceComponent")]
     public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponent[] ChordSymbolAppearanceComponent
     {
@@ -10303,7 +9526,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10318,7 +9540,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10328,7 +9549,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
 
     private ItemsChoiceType[] itemsElementNameField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("accidental", typeof(string))]
     [System.Xml.Serialization.XmlElementAttribute("alterationAccidentalPosition", typeof(string))]
     [System.Xml.Serialization.XmlElementAttribute("alterationAccidentalStyle", typeof(string))]
@@ -10391,7 +9611,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public ItemsChoiceType[] ItemsElementName
@@ -10407,7 +9626,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10417,7 +9635,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
 
     private string adjustmentField;
 
-    /// <remarks/>
     public byte degree
     {
         get
@@ -10430,7 +9647,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
         }
     }
 
-    /// <remarks/>
     public string adjustment
     {
         get
@@ -10444,7 +9660,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10456,7 +9671,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
 
     private string letterCaseField;
 
-    /// <remarks/>
     public bool hasDotSuffix
     {
         get
@@ -10469,7 +9683,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
         }
     }
 
-    /// <remarks/>
     public bool isScale
     {
         get
@@ -10482,7 +9695,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
         }
     }
 
-    /// <remarks/>
     public string letterCase
     {
         get
@@ -10496,7 +9708,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10504,7 +9715,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
 {
     private string noteNameField;
 
-    /// <remarks/>
     public string noteName
     {
         get
@@ -10518,7 +9728,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10528,7 +9737,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
 
     private string accidentalTypeField;
 
-    /// <remarks/>
     public string noteName
     {
         get
@@ -10541,7 +9749,6 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
         }
     }
 
-    /// <remarks/>
     public string accidentalType
     {
         get
@@ -10555,160 +9762,109 @@ public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefini
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
 public enum ItemsChoiceType
 {
-    /// <remarks/>
     accidental,
 
-    /// <remarks/>
     alterationAccidentalPosition,
 
-    /// <remarks/>
     alterationAccidentalStyle,
 
-    /// <remarks/>
     alterationType,
 
-    /// <remarks/>
     alteredAppearanceOption,
 
-    /// <remarks/>
     augmentedQualityAppearance,
 
-    /// <remarks/>
     chordSymbolMode,
 
-    /// <remarks/>
     chordSymbolPedalOnlyAppearance,
 
-    /// <remarks/>
     chordSymbolRootOnlyAppearance,
 
-    /// <remarks/>
     chordSymbolStyle,
 
-    /// <remarks/>
     compositeId,
 
-    /// <remarks/>
     compoundChordSymbolArrangement,
 
-    /// <remarks/>
     diminishedSeventhQualityAppearance,
 
-    /// <remarks/>
     diminishedTriadQualityAppearance,
 
-    /// <remarks/>
     entityID,
 
-    /// <remarks/>
     halfDiminishedChordAppearance,
 
-    /// <remarks/>
     inheritanceMask,
 
-    /// <remarks/>
     interval,
 
-    /// <remarks/>
     intervalDegreeAndAdjustment,
 
-    /// <remarks/>
     isChordAlterationComma,
 
-    /// <remarks/>
     isFlatFollowingVowel,
 
-    /// <remarks/>
     isH,
 
-    /// <remarks/>
     isJapaneseAlteredBassSeparator,
 
-    /// <remarks/>
     isOpticalVariantForSuperscript,
 
-    /// <remarks/>
     isParenthesised,
 
-    /// <remarks/>
     letterCase,
 
-    /// <remarks/>
     majorQualityAppearance,
 
-    /// <remarks/>
     majorSeventhIntervalAppearance,
 
-    /// <remarks/>
     maximumNumberOfRowsOfAlterations,
 
-    /// <remarks/>
     minorQualityAppearance,
 
-    /// <remarks/>
     modalChordSymbolAppearanceInfo,
 
-    /// <remarks/>
     name,
 
-    /// <remarks/>
     nashvilleNoteNameAccidentalAppearance,
 
-    /// <remarks/>
     note,
 
-    /// <remarks/>
     omissionText,
 
-    /// <remarks/>
     openFifthAppearance,
 
-    /// <remarks/>
     parentEntityID,
 
-    /// <remarks/>
     parenthesisTypeIfAny,
 
-    /// <remarks/>
     quality,
 
-    /// <remarks/>
     role,
 
-    /// <remarks/>
     root,
 
-    /// <remarks/>
     rootAndBassNoteAccidentalType,
 
-    /// <remarks/>
     scaleDegree,
 
-    /// <remarks/>
     sixSlashNineAppearance,
 
-    /// <remarks/>
     solfeggioPreferenceForNoteB,
 
-    /// <remarks/>
     solfeggioPreferenceForNoteC,
 
-    /// <remarks/>
     solfeggioPreferenceForNoteD,
 
-    /// <remarks/>
     solfeggioPreferenceForNoteG,
 
-    /// <remarks/>
     value,
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10716,7 +9872,6 @@ public partial class kScoreLibraryPercussionKitDefinitionCollectionDefinition
 {
     private kScoreLibraryPercussionKitDefinitionCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryPercussionKitDefinitionCollectionDefinitionEntities entities
     {
         get
@@ -10730,7 +9885,6 @@ public partial class kScoreLibraryPercussionKitDefinitionCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10738,7 +9892,6 @@ public partial class kScoreLibraryPercussionKitDefinitionCollectionDefinitionEnt
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10753,7 +9906,6 @@ public partial class kScoreLibraryPercussionKitDefinitionCollectionDefinitionEnt
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10761,7 +9913,6 @@ public partial class kScoreLibraryPercussionInstrumentDataCollectionDefinition
 {
     private kScoreLibraryPercussionInstrumentDataCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryPercussionInstrumentDataCollectionDefinitionEntities entities
     {
         get
@@ -10775,7 +9926,6 @@ public partial class kScoreLibraryPercussionInstrumentDataCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10783,7 +9933,6 @@ public partial class kScoreLibraryPercussionInstrumentDataCollectionDefinitionEn
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10798,7 +9947,6 @@ public partial class kScoreLibraryPercussionInstrumentDataCollectionDefinitionEn
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10806,7 +9954,6 @@ public partial class kScoreLibraryFrettedInstrumentDataCollectionDefinition
 {
     private kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntities entities
     {
         get
@@ -10820,7 +9967,6 @@ public partial class kScoreLibraryFrettedInstrumentDataCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10828,7 +9974,6 @@ public partial class kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntit
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10843,7 +9988,6 @@ public partial class kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntit
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10851,7 +9995,6 @@ public partial class kScoreLibraryChordDiagramCollectionDefinition
 {
     private kScoreLibraryChordDiagramCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryChordDiagramCollectionDefinitionEntities entities
     {
         get
@@ -10865,7 +10008,6 @@ public partial class kScoreLibraryChordDiagramCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10873,7 +10015,6 @@ public partial class kScoreLibraryChordDiagramCollectionDefinitionEntities
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10888,7 +10029,6 @@ public partial class kScoreLibraryChordDiagramCollectionDefinitionEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10896,7 +10036,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinition
 {
     private kScoreLibraryLineAnnotationCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryLineAnnotationCollectionDefinitionEntities entities
     {
         get
@@ -10910,7 +10049,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10920,7 +10058,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("LineAnnotationEntityDefinition")]
     public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinition[] LineAnnotationEntityDefinition
     {
@@ -10934,7 +10071,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -10949,7 +10085,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -10965,7 +10100,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
 
     private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionData dataField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -10978,7 +10112,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -10991,7 +10124,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -11004,7 +10136,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -11017,7 +10148,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionData data
     {
         get
@@ -11031,7 +10161,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11043,7 +10172,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
 
     private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataTerminalLineData terminalLineDataField;
 
-    /// <remarks/>
     public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataHookData hookData
     {
         get
@@ -11056,7 +10184,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataArrowData arrowData
     {
         get
@@ -11069,7 +10196,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataTerminalLineData terminalLineData
     {
         get
@@ -11083,7 +10209,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11097,7 +10222,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
 
     private string rotationBehaviourField;
 
-    /// <remarks/>
     public byte hookLength
     {
         get
@@ -11110,7 +10234,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public string lineWidth
     {
         get
@@ -11123,7 +10246,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public string hookDirection
     {
         get
@@ -11136,7 +10258,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public string rotationBehaviour
     {
         get
@@ -11150,7 +10271,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11164,7 +10284,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
 
     private byte widthField;
 
-    /// <remarks/>
     public string style
     {
         get
@@ -11177,7 +10296,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public string lineWidth
     {
         get
@@ -11190,7 +10308,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public byte height
     {
         get
@@ -11203,7 +10320,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public byte width
     {
         get
@@ -11217,7 +10333,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11229,7 +10344,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
 
     private string rotationBehaviourField;
 
-    /// <remarks/>
     public byte terminalLineLength
     {
         get
@@ -11242,7 +10356,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public string lineWidth
     {
         get
@@ -11255,7 +10368,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
         }
     }
 
-    /// <remarks/>
     public string rotationBehaviour
     {
         get
@@ -11269,7 +10381,6 @@ public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLine
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11277,7 +10388,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinition
 {
     private kScoreLibraryLineBodyStyleCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryLineBodyStyleCollectionDefinitionEntities entities
     {
         get
@@ -11291,7 +10401,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11301,7 +10410,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("LineBodyStyleEntityDefinition")]
     public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinition[] LineBodyStyleEntityDefinition
     {
@@ -11315,7 +10423,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -11330,7 +10437,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11346,7 +10452,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
 
     private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionData dataField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -11359,7 +10464,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -11372,7 +10476,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -11385,7 +10488,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -11398,7 +10500,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionData data
     {
         get
@@ -11412,7 +10513,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11424,7 +10524,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
 
     private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataGenericLineData genericLineDataField;
 
-    /// <remarks/>
     public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataMultiSegmentLineData multiSegmentLineData
     {
         get
@@ -11437,7 +10536,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataWedgeLineData wedgeLineData
     {
         get
@@ -11450,7 +10548,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataGenericLineData genericLineData
     {
         get
@@ -11464,7 +10561,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11476,7 +10572,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
 
     private bool drawEndsAsContinuationField;
 
-    /// <remarks/>
     public string pattern
     {
         get
@@ -11489,7 +10584,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public string repeatMode
     {
         get
@@ -11502,7 +10596,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public bool drawEndsAsContinuation
     {
         get
@@ -11516,7 +10609,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11528,7 +10620,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
 
     private string typeField;
 
-    /// <remarks/>
     public string wedgeStartThickness
     {
         get
@@ -11541,7 +10632,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public string wedgeEndThickness
     {
         get
@@ -11554,7 +10644,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public string type
     {
         get
@@ -11568,7 +10657,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11582,7 +10670,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
 
     private string lineSeparationField;
 
-    /// <remarks/>
     public string bodyStyle
     {
         get
@@ -11595,7 +10682,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public string lineWidth
     {
         get
@@ -11608,7 +10694,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public string dashGapPattern
     {
         get
@@ -11621,7 +10706,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
         }
     }
 
-    /// <remarks/>
     public string lineSeparation
     {
         get
@@ -11635,7 +10719,6 @@ public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineB
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11643,7 +10726,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinition
 {
     private kScoreLibraryLineStyleCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryLineStyleCollectionDefinitionEntities entities
     {
         get
@@ -11657,7 +10739,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11667,7 +10748,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("LineStyleEntityDefinition")]
     public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinition[] LineStyleEntityDefinition
     {
@@ -11681,7 +10761,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -11696,7 +10775,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11712,7 +10790,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
 
     private kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionData dataField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -11725,7 +10802,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -11738,7 +10814,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -11751,7 +10826,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -11764,7 +10838,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionData data
     {
         get
@@ -11778,7 +10851,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11786,7 +10858,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
 {
     private kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionDataCommonData commonDataField;
 
-    /// <remarks/>
     public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionDataCommonData commonData
     {
         get
@@ -11800,7 +10871,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -11838,7 +10908,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
 
     private byte centreAnnotationOffsetField;
 
-    /// <remarks/>
     public string orientation
     {
         get
@@ -11851,7 +10920,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public bool canBeRotated
     {
         get
@@ -11864,7 +10932,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string bodyEntity
     {
         get
@@ -11877,7 +10944,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string startCap
     {
         get
@@ -11890,7 +10956,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string endCap
     {
         get
@@ -11903,7 +10968,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string continuationEndCap
     {
         get
@@ -11916,7 +10980,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public bool hookAndTerminalLineFollowDashDotPattern
     {
         get
@@ -11929,7 +10992,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public bool wholeBodyOnEachSystem
     {
         get
@@ -11942,7 +11004,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string centreAnnotationVerticalPosition
     {
         get
@@ -11955,7 +11016,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string centreAnnotationRepeat
     {
         get
@@ -11968,7 +11028,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public byte centreAnnotationRepeatDistance
     {
         get
@@ -11981,7 +11040,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public bool centreAnnotationIsAlwaysHorizontal
     {
         get
@@ -11994,7 +11052,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string centreAnnotationPlacement
     {
         get
@@ -12007,7 +11064,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public byte centreAnnotationStartAndEndGap
     {
         get
@@ -12020,7 +11076,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public string defaultHorizontalPlacement
     {
         get
@@ -12033,7 +11088,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
         }
     }
 
-    /// <remarks/>
     public byte centreAnnotationOffset
     {
         get
@@ -12047,7 +11101,6 @@ public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyle
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -12055,7 +11108,6 @@ public partial class kScoreLibraryChordSymbolComponentKerningPairsCollection
 {
     private kScoreLibraryChordSymbolComponentKerningPairsCollectionEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryChordSymbolComponentKerningPairsCollectionEntities entities
     {
         get
@@ -12069,7 +11121,6 @@ public partial class kScoreLibraryChordSymbolComponentKerningPairsCollection
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -12077,7 +11128,6 @@ public partial class kScoreLibraryChordSymbolComponentKerningPairsCollectionEnti
 {
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {

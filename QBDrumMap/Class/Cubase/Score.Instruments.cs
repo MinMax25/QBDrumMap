@@ -1,6 +1,5 @@
 namespace QBDrumMap.Cubase.Score.Instruments;
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9,7 +8,6 @@ public partial class kScoreLibrary
 {
     private kScoreLibraryInstruments instrumentsField;
 
-    /// <remarks/>
     public kScoreLibraryInstruments instruments
     {
         get
@@ -23,7 +21,6 @@ public partial class kScoreLibrary
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -31,7 +28,6 @@ public partial class kScoreLibraryInstruments
 {
     private kScoreLibraryInstrumentsEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntities entities
     {
         get
@@ -45,7 +41,6 @@ public partial class kScoreLibraryInstruments
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -55,7 +50,6 @@ public partial class kScoreLibraryInstrumentsEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("InstrumentEntityDefinition")]
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition[] InstrumentEntityDefinition
     {
@@ -69,7 +63,6 @@ public partial class kScoreLibraryInstrumentsEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -84,7 +77,6 @@ public partial class kScoreLibraryInstrumentsEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -128,7 +120,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
 
     private string frettedInstrumentDataIDField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -141,7 +132,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -154,7 +144,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string parentEntityID
     {
         get
@@ -167,7 +156,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string aliasOfEntityID
     {
         get
@@ -180,7 +168,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -193,7 +180,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string nameID
     {
         get
@@ -206,7 +192,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public byte numStaves
     {
         get
@@ -219,7 +204,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string musicXMLSoundID
     {
         get
@@ -232,7 +216,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string numberingStyle
     {
         get
@@ -245,7 +228,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public bool showGuitarChords
     {
         get
@@ -258,7 +240,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public bool showChordSymbols
     {
         get
@@ -271,7 +252,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionStaveDefinition staveDefinition
     {
         get
@@ -284,7 +264,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionClefs clefs
     {
         get
@@ -297,7 +276,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string percussionKitDefinitionID
     {
         get
@@ -310,7 +288,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionPitchedInstrumentData pitchedInstrumentData
     {
         get
@@ -323,7 +300,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string percussionInstrumentDataID
     {
         get
@@ -336,7 +312,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionPlayingTechniques playingTechniques
     {
         get
@@ -349,7 +324,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionStringedInstrumentData stringedInstrumentData
     {
         get
@@ -362,7 +336,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
         }
     }
 
-    /// <remarks/>
     public string frettedInstrumentDataID
     {
         get
@@ -376,7 +349,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinition
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -396,7 +368,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
 
     private bool defaultContextualStemDirectionIsUpField;
 
-    /// <remarks/>
     public byte numStaveLines
     {
         get
@@ -409,7 +380,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
         }
     }
 
-    /// <remarks/>
     public byte barlineSpan
     {
         get
@@ -422,7 +392,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
         }
     }
 
-    /// <remarks/>
     public byte bracketSpan
     {
         get
@@ -435,7 +404,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool bracketSpanSpecified
     {
@@ -449,7 +417,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
         }
     }
 
-    /// <remarks/>
     public bool useBrace
     {
         get
@@ -462,7 +429,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
         }
     }
 
-    /// <remarks/>
     public bool isVocalStave
     {
         get
@@ -475,7 +441,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
         }
     }
 
-    /// <remarks/>
     public bool defaultContextualStemDirectionIsUp
     {
         get
@@ -489,7 +454,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -497,7 +461,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionC
 {
     private kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionClefsClefIDsForEachStave clefIDsForEachStaveField;
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionClefsClefIDsForEachStave clefIDsForEachStave
     {
         get
@@ -511,7 +474,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionC
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -521,7 +483,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionC
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("staveClefIDs")]
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionClefsClefIDsForEachStaveStaveClefIDs[] staveClefIDs
     {
@@ -535,7 +496,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionC
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -550,7 +510,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionC
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -560,7 +519,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionC
 
     private string idForNonTransposingLayoutsField;
 
-    /// <remarks/>
     public string idForTransposingLayouts
     {
         get
@@ -573,7 +531,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionC
         }
     }
 
-    /// <remarks/>
     public string idForNonTransposingLayouts
     {
         get
@@ -587,7 +544,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionC
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -611,7 +567,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
 
     private string stringedInstrumentHoldField;
 
-    /// <remarks/>
     public string standardRange
     {
         get
@@ -624,7 +579,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public string advancedRange
     {
         get
@@ -637,7 +591,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public sbyte concertOctaveTransposition
     {
         get
@@ -650,7 +603,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public sbyte transposedChromaticTransposition
     {
         get
@@ -663,7 +615,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public sbyte transposedDiatonicTransposition
     {
         get
@@ -676,7 +627,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public bool useKeySignatures
     {
         get
@@ -689,7 +639,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public string showTransposition
     {
         get
@@ -702,7 +651,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionPitchedInstrumentDataStringedInstrumentStringLengthAndSpacings stringedInstrumentStringLengthAndSpacings
     {
         get
@@ -715,7 +663,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public string stringedInstrumentHold
     {
         get
@@ -729,7 +676,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -741,7 +687,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
 
     private decimal interCourseStringSpacingAtSaddleField;
 
-    /// <remarks/>
     public decimal scaleLength
     {
         get
@@ -754,7 +699,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public decimal interCourseStringSpacingAtNut
     {
         get
@@ -767,7 +711,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public decimal interCourseStringSpacingAtSaddle
     {
         get
@@ -781,7 +724,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -791,7 +733,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("playingTechnique")]
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionPlayingTechniquesPlayingTechnique[] playingTechnique
     {
@@ -805,7 +746,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -820,7 +760,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -832,7 +771,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
 
     private bool naturalEquivalentFieldSpecified;
 
-    /// <remarks/>
     public string techniqueID
     {
         get
@@ -845,7 +783,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     public bool naturalEquivalent
     {
         get
@@ -858,7 +795,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool naturalEquivalentSpecified
     {
@@ -873,7 +809,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionP
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -881,7 +816,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
 {
     private kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionStringedInstrumentDataStringPitches stringPitchesField;
 
-    /// <remarks/>
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionStringedInstrumentDataStringPitches stringPitches
     {
         get
@@ -895,7 +829,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -905,7 +838,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("stringPitch")]
     public kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionStringedInstrumentDataStringPitchesStringPitch[] stringPitch
     {
@@ -919,7 +851,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -934,7 +865,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -942,7 +872,6 @@ public partial class kScoreLibraryInstrumentsEntitiesInstrumentEntityDefinitionS
 {
     private string pitchWithSpellingField;
 
-    /// <remarks/>
     public string pitchWithSpelling
     {
         get

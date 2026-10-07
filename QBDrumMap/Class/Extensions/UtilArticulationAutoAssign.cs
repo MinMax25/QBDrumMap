@@ -241,4 +241,4 @@ public static class UtilArticulationAutoAssign
             }
         }
     }
-        }
+}

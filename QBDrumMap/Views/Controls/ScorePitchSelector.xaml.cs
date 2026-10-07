@@ -139,4 +139,4 @@ public partial class ScorePitchSelector
     }
 
     private static void SetCanvasTop(UIElement element, double top) => Canvas.SetTop(element, top);
-        }
+}

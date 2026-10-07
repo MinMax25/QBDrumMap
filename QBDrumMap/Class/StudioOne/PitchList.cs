@@ -67,4 +67,4 @@ public partial class PitchList
             .Replace("<", "&lt;")
             .Replace(">", "&gt;");
     }
-        }
+}

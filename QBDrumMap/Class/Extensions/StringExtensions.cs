@@ -63,4 +63,4 @@ public static class StringExtensions
         return path.Replace('/', Path.DirectorySeparatorChar)
                    .Replace('\\', Path.DirectorySeparatorChar);
     }
-        }
+}

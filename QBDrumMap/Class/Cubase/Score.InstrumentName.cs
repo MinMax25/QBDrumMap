@@ -1,6 +1,5 @@
 namespace QBDrumMap.Cubase.Score.InstrumentName;
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9,7 +8,6 @@ public partial class kScoreLibrary
 {
     private kScoreLibraryInstrumentNames instrumentNamesField;
 
-    /// <remarks/>
     public kScoreLibraryInstrumentNames instrumentNames
     {
         get
@@ -23,7 +21,6 @@ public partial class kScoreLibrary
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -33,7 +30,6 @@ public partial class kScoreLibraryInstrumentNames
 
     private kScoreLibraryInstrumentNamesEntities entitiesField;
 
-    /// <remarks/>
     public string language
     {
         get
@@ -46,7 +42,6 @@ public partial class kScoreLibraryInstrumentNames
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentNamesEntities entities
     {
         get
@@ -60,7 +55,6 @@ public partial class kScoreLibraryInstrumentNames
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -70,7 +64,6 @@ public partial class kScoreLibraryInstrumentNamesEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("InstrumentNameEntityDefinition")]
     public kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDefinition[] InstrumentNameEntityDefinition
     {
@@ -84,7 +77,6 @@ public partial class kScoreLibraryInstrumentNamesEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -99,7 +91,6 @@ public partial class kScoreLibraryInstrumentNamesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -115,7 +106,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
 
     private kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDefinitionData dataField;
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -128,7 +118,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public string name
     {
         get
@@ -141,7 +130,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -154,7 +142,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -167,7 +154,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDefinitionData data
     {
         get
@@ -181,7 +167,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -201,7 +186,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
 
     private string languageField;
 
-    /// <remarks/>
     public string uiName
     {
         get
@@ -214,7 +198,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public string singularFullName
     {
         get
@@ -227,7 +210,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public string singularShortName
     {
         get
@@ -240,7 +222,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public string pluralFullName
     {
         get
@@ -253,7 +234,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public string pluralShortName
     {
         get
@@ -266,7 +246,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public string gender
     {
         get
@@ -279,7 +258,6 @@ public partial class kScoreLibraryInstrumentNamesEntitiesInstrumentNameEntityDef
         }
     }
 
-    /// <remarks/>
     public string language
     {
         get

@@ -56,4 +56,4 @@ public partial class ButtonSound : UserControl
             NoteOffCommand.Execute(CommandParameter);
         }
     }
-        }
+}

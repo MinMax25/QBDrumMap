@@ -95,4 +95,4 @@ public partial class KitPitch : ModelBase
             DisplayOrder = DisplayOrder
         };
     }
-        }
+}

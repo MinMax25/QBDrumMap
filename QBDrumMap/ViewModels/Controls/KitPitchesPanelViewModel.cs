@@ -774,4 +774,4 @@ public partial class KitPitchesPanelViewModel : ViewModelBase
             PropertyChanged -= OnPropertyChanged;
         }
     }
-        }
+}
