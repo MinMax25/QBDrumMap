@@ -66,4 +66,4 @@ public static class GMDrumMap
     {
         return StandardDrumNotes.ContainsKey(pitch);
     }
-        }
+}

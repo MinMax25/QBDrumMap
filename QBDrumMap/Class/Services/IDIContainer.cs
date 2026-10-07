@@ -20,4 +20,4 @@ public interface IDIContainer
     void Initialize();
 
     void Flush();
-        }
+}

@@ -101,4 +101,4 @@ public class CubaseDrumMap
 
         OutputDevices.Items.Add(new OutputDevicesItem());
     }
-        }
+}

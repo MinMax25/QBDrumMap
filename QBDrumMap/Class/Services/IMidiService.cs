@@ -37,4 +37,4 @@ public interface IMidiService : IDisposable
     void SendProgramChange(Plugin plugin, Kit kit);
 
     event EventHandler<MidiInMessageEventArgs> MidiMessageReceived;
-        }
+}

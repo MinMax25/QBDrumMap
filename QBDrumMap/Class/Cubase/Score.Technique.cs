@@ -1,6 +1,5 @@
 namespace QBDrumMap.Cubase.Score.Technique;
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -9,7 +8,6 @@ public partial class kScoreLibrary
 {
     private kScoreLibraryPlayingTechniques playingTechniquesField;
 
-    /// <remarks/>
     public kScoreLibraryPlayingTechniques playingTechniques
     {
         get
@@ -23,7 +21,6 @@ public partial class kScoreLibrary
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -31,7 +28,6 @@ public partial class kScoreLibraryPlayingTechniques
 {
     private kScoreLibraryPlayingTechniquesEntities entitiesField;
 
-    /// <remarks/>
     public kScoreLibraryPlayingTechniquesEntities entities
     {
         get
@@ -45,7 +41,6 @@ public partial class kScoreLibraryPlayingTechniques
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -55,7 +50,6 @@ public partial class kScoreLibraryPlayingTechniquesEntities
 
     private bool arrayField;
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("PlayingTechniqueDefinition")]
     public kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefinition[] PlayingTechniqueDefinition
     {
@@ -69,7 +63,6 @@ public partial class kScoreLibraryPlayingTechniquesEntities
         }
     }
 
-    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool array
     {
@@ -84,7 +77,6 @@ public partial class kScoreLibraryPlayingTechniquesEntities
     }
 }
 
-/// <remarks/>
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -110,7 +102,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
 
     private string mutualExclusionGroupsField;
 
-    /// <remarks/>
     public string name
     {
         get
@@ -123,7 +114,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public string entityID
     {
         get
@@ -136,7 +126,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public object parentEntityID
     {
         get
@@ -149,7 +138,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public byte inheritanceMask
     {
         get
@@ -162,7 +150,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public object text
     {
         get
@@ -175,7 +162,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public string articulationType
     {
         get
@@ -188,7 +174,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public string groupType
     {
         get
@@ -201,7 +186,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public string aliasForPlayingTechniqueID
     {
         get
@@ -214,7 +198,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public string fallbackPlayingTechniqueID
     {
         get
@@ -227,7 +210,6 @@ public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefin
         }
     }
 
-    /// <remarks/>
     public string mutualExclusionGroups
     {
         get

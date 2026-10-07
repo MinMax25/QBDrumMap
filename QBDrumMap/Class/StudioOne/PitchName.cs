@@ -40,4 +40,4 @@ public partial class PitchName
             return $"{x.name} = {x.value}";
         }).ToArray());
     }
-        }
+}

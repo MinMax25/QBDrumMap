@@ -93,4 +93,4 @@ public record ArticulationMap
 
         return articMap;
     }
-        }
+}

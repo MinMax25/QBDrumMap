@@ -57,4 +57,4 @@ public interface ISettingService : INotifyPropertyChanged, IDisposable
     void Load();
 
     void Save();
-        }
+}

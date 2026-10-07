@@ -38,4 +38,4 @@ public class ScoreNotePitch
         Line5IsVisible,
         Line6IsVisible
     ];
-        }
+}

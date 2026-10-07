@@ -54,4 +54,4 @@ public class MapItem : ListElementItem
             return $"{x.name} = {x.value}";
         }).ToArray());
     }
-        }
+}

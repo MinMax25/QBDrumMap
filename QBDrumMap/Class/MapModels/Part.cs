@@ -114,4 +114,4 @@ public partial class Part : ModelBase, IHasID
             DisplayOrder = DisplayOrder
         };
     }
-        }
+}

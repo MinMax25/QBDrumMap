@@ -127,4 +127,4 @@ public static class CubaseScore
             return default;
         }
     }
-        }
+}

@@ -172,4 +172,4 @@ public partial class KitPanelViewModel
             PropertyChanged -= OnPropertyChanged;
         }
     }
-        }
+}

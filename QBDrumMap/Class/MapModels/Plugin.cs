@@ -68,4 +68,4 @@ public partial class Plugin : ModelBase, IHasID
             DisplayOrder = DisplayOrder
         };
     }
-        }
+}

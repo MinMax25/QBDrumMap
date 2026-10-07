@@ -56,4 +56,4 @@ public class TechniqueVisibilityValue : IElementVisibility
         Trm3 = trm3;
         Stac = stac;
     }
-        }
+}

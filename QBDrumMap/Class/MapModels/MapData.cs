@@ -613,4 +613,4 @@ public partial class MapData : ObservableObject
         }
         return false;
     }
-        }
+}

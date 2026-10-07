@@ -40,4 +40,4 @@ public abstract class ListElement<T> where T : ListElementItem
 
         return element;
     }
-        }
+}

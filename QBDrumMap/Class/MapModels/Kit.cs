@@ -67,4 +67,4 @@ public partial class Kit : ModelBase, IHasID
             DisplayOrder = DisplayOrder
         };
     }
-        }
+}

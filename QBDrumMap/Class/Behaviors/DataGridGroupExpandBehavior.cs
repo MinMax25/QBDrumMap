@@ -95,4 +95,4 @@ public class DataGridGroupExpandBehavior : Behavior<DataGrid>
 
         return null;
     }
-        }
+}

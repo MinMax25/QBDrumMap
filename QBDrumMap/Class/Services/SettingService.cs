@@ -279,4 +279,4 @@ public partial class SettingService : ObservableObject, ISettingService
     public void Dispose()
     {
     }
-        }
+}

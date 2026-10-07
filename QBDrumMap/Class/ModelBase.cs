@@ -35,4 +35,4 @@ public abstract partial class ModelBase : ObservableValidator, IHasDisplayOrder,
     }
 
     public abstract object Clone();
-        }
+}

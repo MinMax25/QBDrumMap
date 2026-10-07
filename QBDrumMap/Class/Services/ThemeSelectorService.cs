@@ -21,4 +21,4 @@ public class ThemeSelectorService : IThemeSelectorService
 
         ThemeManager.Current.ChangeTheme(Application.Current, $"{theme}.{colorname}");
     }
-        }
+}
