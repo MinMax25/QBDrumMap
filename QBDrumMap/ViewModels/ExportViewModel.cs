@@ -510,4 +510,4 @@ public partial class ExportViewModel : ViewModelBase
             MapData.Saved -= OnMapDataSaved;
         }
     }
-        }
+}

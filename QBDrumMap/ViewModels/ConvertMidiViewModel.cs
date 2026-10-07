@@ -362,4 +362,4 @@ public partial class ConvertMidiViewModel : ViewModelBase
             MapData.Saved -= OnMapDataSaved;
         }
     }
-        }
+}

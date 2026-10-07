@@ -50,4 +50,4 @@ public partial class Articulation : ModelBase, IHasID
             DisplayOrder = DisplayOrder
         };
     }
-        }
+}

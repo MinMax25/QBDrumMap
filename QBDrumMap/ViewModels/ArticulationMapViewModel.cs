@@ -50,4 +50,4 @@ public partial class ArticulationMapViewModel : ViewModelBase, IParameterReceive
         var articMap = ArticulationMap.GetArticulationMap(MapData, Kit.Name);
         ArticulationMapView = CollectionViewSource.GetDefaultView(articMap.Items);
     }
-        }
+}

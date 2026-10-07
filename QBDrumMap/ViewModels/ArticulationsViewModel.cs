@@ -84,4 +84,4 @@ public partial class ArticulationsViewModel : ViewModelBase
             MapData.Saved -= OnMapDataSaved;
         }
     }
-        }
+}

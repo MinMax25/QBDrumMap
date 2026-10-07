@@ -196,4 +196,4 @@ public partial class SettingViewModel : ViewModelBase
             SelectedPartNameDictionaryEntries.Clear();
         }
     }
-        }
+}
