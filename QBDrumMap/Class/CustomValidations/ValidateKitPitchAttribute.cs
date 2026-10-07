@@ -1,24 +1,23 @@
 using System.ComponentModel.DataAnnotations;
 using QBDrumMap.Class.MapModels;
 
-namespace QBDrumMap.Class.CustomValidations
+namespace QBDrumMap.Class.CustomValidations;
+
+public class ValidateKitPitchAttribute
+    : ValidationAttribute
 {
-    public class ValidateKitPitchAttribute
-        : ValidationAttribute
+    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        {
-            if (validationContext?.ObjectInstance is not KitPitch kitPitch)
-                return ValidationResult.Success;
-
-            string str = $"{value}";
-
-            if (str.Length < 0 || str.Length > ExModel.NAME_MAX_LENGTH)
-            {
-                return new ValidationResult(string.Format(App.Text("LenghtLessLThan", Resources.LenghtLessLThan), App.NameText("KitPitch", Name.KitPitch), ExModel.NAME_MAX_LENGTH));
-            }
-
+        if (validationContext?.ObjectInstance is not KitPitch kitPitch)
             return ValidationResult.Success;
+
+        string str = $"{value}";
+
+        if (str.Length < 0 || str.Length > ExModel.NAME_MAX_LENGTH)
+        {
+            return new ValidationResult(string.Format(App.Text("LenghtLessLThan", Resources.LenghtLessLThan), App.NameText("KitPitch", Name.KitPitch), ExModel.NAME_MAX_LENGTH));
         }
+
+        return ValidationResult.Success;
     }
 }

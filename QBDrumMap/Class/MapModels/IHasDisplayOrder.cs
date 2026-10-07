@@ -1,7 +1,6 @@
-namespace QBDrumMap.Class.MapModels
+namespace QBDrumMap.Class.MapModels;
+
+public interface IHasDisplayOrder
 {
-    public interface IHasDisplayOrder
-    {
-        int DisplayOrder { get; set; }
-    }
+    int DisplayOrder { get; set; }
 }

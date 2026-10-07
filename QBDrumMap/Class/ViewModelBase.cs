@@ -7,145 +7,100 @@ using QBDrumMap.Class.Services;
 using QBDrumMap.Contracts.Services;
 using QBDrumMap.Contracts.ViewModels;
 
-namespace QBDrumMap.Class
+namespace QBDrumMap.Class;
+
+public abstract partial class ViewModelBase : ObservableObject, INavigationAware, IDisposable
 {
-    public abstract partial class ViewModelBase : ObservableObject, INavigationAware, IDisposable
+    private bool disposedValue;
+
+    [ObservableProperty]
+    private bool isCommandEnabled = true;
+
+    [ObservableProperty]
+    private bool isEditing;
+
+    protected internal IDIContainer DIContainer;
+
+    protected internal MapData MapData;
+
+    protected internal ISettingService SettingService
     {
-        #region Fields
-
-        // 重複して破棄されないためのフラグ
-        private bool disposedValue;
-
-        // コマンドの有効状態
-        [ObservableProperty]
-        private bool isCommandEnabled = true;
-
-        // 編集モード中かどうか
-        [ObservableProperty]
-        private bool isEditing;
-
-        // 依存サービスを保持するコンテナ
-        protected internal IDIContainer DIContainer;
-
-        // アプリケーション全体で共有されるマップデータ
-        protected internal MapData MapData;
-
-        #endregion
-
-        #region Properties
-
-        #region Services
-
-        // 設定管理サービスへのショートカット
-        protected internal ISettingService SettingService
+        get
         {
-            get
-            {
-                return DIContainer?.SettingService;
-            }
+            return DIContainer?.SettingService;
         }
-
-        // ナビゲーションサービスへのショートカット
-        protected internal INavigationService Navigation
-        {
-            get
-            {
-                return DIContainer?.Navigation;
-            }
-        }
-
-        // ダイアログサービスへのショートカット
-        protected internal IDialogService Dialog
-        {
-            get
-            {
-                return DIContainer?.Dialog;
-            }
-        }
-
-        // ウィンドウ操作サービスへのショートカット
-        protected internal IWindowService WindowService
-        {
-            get
-            {
-                return DIContainer?.WindowService;
-            }
-        }
-
-        // Undo/Redoマネージャーへのショートカット
-        protected internal IUndoManager UndoManager
-        {
-            get
-            {
-                return DIContainer?.UndoManager;
-            }
-        }
-
-        #endregion
-
-        #endregion
-
-        #region ctor
-
-        public ViewModelBase()
-        {
-        }
-
-        public ViewModelBase(IDIContainer dIContainer)
-        {
-            DIContainer = dIContainer;
-            MapData = App.GetService<MapData>();
-        }
-
-        #endregion
-
-        #region Methods
-
-        #region Property Change Handler
-
-        partial void OnIsEditingChanged(bool oldValue, bool newValue)
-        {
-            MapData?.SetEditState(this, newValue);
-        }
-
-        #endregion
-
-        #region General
-
-        // 画面遷移で離れる際の処理
-        public virtual void OnNavigatedFrom()
-        {
-        }
-
-        // 画面遷移で到達した際の処理
-        public virtual void OnNavigatedTo(object parameter)
-        {
-        }
-
-        #endregion
-
-        #region Dispose
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-                }
-
-                disposedValue = true;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
-
-        #endregion
-
-        #endregion
     }
-}
+
+    protected internal INavigationService Navigation
+    {
+        get
+        {
+            return DIContainer?.Navigation;
+        }
+    }
+
+    protected internal IDialogService Dialog
+    {
+        get
+        {
+            return DIContainer?.Dialog;
+        }
+    }
+
+    protected internal IWindowService WindowService
+    {
+        get
+        {
+            return DIContainer?.WindowService;
+        }
+    }
+
+    protected internal IUndoManager UndoManager
+    {
+        get
+        {
+            return DIContainer?.UndoManager;
+        }
+    }
+
+    public ViewModelBase()
+    {
+    }
+
+    public ViewModelBase(IDIContainer dIContainer)
+    {
+        DIContainer = dIContainer;
+        MapData = App.GetService<MapData>();
+    }
+
+    partial void OnIsEditingChanged(bool oldValue, bool newValue)
+    {
+        MapData?.SetEditState(this, newValue);
+    }
+
+    public virtual void OnNavigatedFrom()
+    {
+    }
+
+    public virtual void OnNavigatedTo(object parameter)
+    {
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!disposedValue)
+        {
+            if (disposing)
+            {
+            }
+
+            disposedValue = true;
+        }
+    }
+
+    public void Dispose()
+    {
+        Dispose(disposing: true);
+        GC.SuppressFinalize(this);
+    }
+        }

@@ -1,8 +1,7 @@
-namespace QBDrumMap.Class.Cubase
+namespace QBDrumMap.Class.Cubase;
+
+public class OutputDevicesElement
+    : ListElement<OutputDevicesItem>
 {
-    public class OutputDevicesElement
-        : ListElement<OutputDevicesItem>
-    {
-        public OutputDevicesElement() : base(new List<OutputDevicesItem>()) { }
-    }
+    public OutputDevicesElement() : base(new List<OutputDevicesItem>()) { }
 }

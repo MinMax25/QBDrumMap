@@ -1,22 +1,21 @@
 using System.Windows.Input;
 using MahApps.Metro.Controls;
 
-namespace QBDrumMap.Views
-{
-    public partial class SearchArticulation
-        : MetroWindow
-    {
-        public SearchArticulation()
-        {
-            InitializeComponent();
-        }
+namespace QBDrumMap.Views;
 
-        private void OnKeyDown(object sender, KeyEventArgs e)
+public partial class SearchArticulation
+    : MetroWindow
+{
+    public SearchArticulation()
+    {
+        InitializeComponent();
+    }
+
+    private void OnKeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape)
         {
-            if (e.Key == Key.Escape)
-            {
-                Close();
-            }
+            Close();
         }
     }
 }

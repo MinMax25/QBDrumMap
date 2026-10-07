@@ -4,7 +4,6 @@ using Tomlyn.Serialization;
 
 namespace QBDrumMap.Class.Services;
 
-// Setting.tomlへ永続化するデータ。実行時サービスから保存形式を分離する。
 public sealed class AppSettings
 {
     [TomlConverter(typeof(EnumTomlConverter<BaseTheme>))]

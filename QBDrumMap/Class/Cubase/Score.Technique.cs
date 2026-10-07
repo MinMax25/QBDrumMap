@@ -1,247 +1,242 @@
-namespace QBDrumMap.Cubase.Score.Technique
+namespace QBDrumMap.Cubase.Score.Technique;
+
+/// <remarks/>
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+[System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
+public partial class kScoreLibrary
 {
+    private kScoreLibraryPlayingTechniques playingTechniquesField;
+
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-    public partial class kScoreLibrary
+    public kScoreLibraryPlayingTechniques playingTechniques
     {
-
-        private kScoreLibraryPlayingTechniques playingTechniquesField;
-
-        /// <remarks/>
-        public kScoreLibraryPlayingTechniques playingTechniques
+        get
         {
-            get
-            {
-                return playingTechniquesField;
-            }
-            set
-            {
-                playingTechniquesField = value;
-            }
+            return playingTechniquesField;
+        }
+        set
+        {
+            playingTechniquesField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniques
+{
+    private kScoreLibraryPlayingTechniquesEntities entitiesField;
+
+    /// <remarks/>
+    public kScoreLibraryPlayingTechniquesEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniquesEntities
+{
+    private kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefinition[] playingTechniqueDefinitionField;
+
+    private bool arrayField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("PlayingTechniqueDefinition")]
+    public kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefinition[] PlayingTechniqueDefinition
+    {
+        get
+        {
+            return playingTechniqueDefinitionField;
+        }
+        set
+        {
+            playingTechniqueDefinitionField = value;
         }
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniques
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryPlayingTechniquesEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryPlayingTechniquesEntities entities
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private object textField;
+
+    private string articulationTypeField;
+
+    private string groupTypeField;
+
+    private string aliasForPlayingTechniqueIDField;
+
+    private string fallbackPlayingTechniqueIDField;
+
+    private string mutualExclusionGroupsField;
+
+    /// <remarks/>
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
         }
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniquesEntities
+    public string entityID
     {
-
-        private kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefinition[] playingTechniqueDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PlayingTechniqueDefinition")]
-        public kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefinition[] PlayingTechniqueDefinition
+        get
         {
-            get
-            {
-                return playingTechniqueDefinitionField;
-            }
-            set
-            {
-                playingTechniqueDefinitionField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entityIDField = value;
         }
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniquesEntitiesPlayingTechniqueDefinition
+    public object parentEntityID
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private object textField;
-
-        private string articulationTypeField;
-
-        private string groupTypeField;
-
-        private string aliasForPlayingTechniqueIDField;
-
-        private string fallbackPlayingTechniqueIDField;
-
-        private string mutualExclusionGroupsField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            parentEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    /// <remarks/>
+    public byte inheritanceMask
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            inheritanceMaskField = value;
         }
+    }
 
-        /// <remarks/>
-        public object text
+    /// <remarks/>
+    public object text
+    {
+        get
         {
-            get
-            {
-                return textField;
-            }
-            set
-            {
-                textField = value;
-            }
+            return textField;
         }
-
-        /// <remarks/>
-        public string articulationType
+        set
         {
-            get
-            {
-                return articulationTypeField;
-            }
-            set
-            {
-                articulationTypeField = value;
-            }
+            textField = value;
         }
+    }
 
-        /// <remarks/>
-        public string groupType
+    /// <remarks/>
+    public string articulationType
+    {
+        get
         {
-            get
-            {
-                return groupTypeField;
-            }
-            set
-            {
-                groupTypeField = value;
-            }
+            return articulationTypeField;
         }
-
-        /// <remarks/>
-        public string aliasForPlayingTechniqueID
+        set
         {
-            get
-            {
-                return aliasForPlayingTechniqueIDField;
-            }
-            set
-            {
-                aliasForPlayingTechniqueIDField = value;
-            }
+            articulationTypeField = value;
         }
+    }
 
-        /// <remarks/>
-        public string fallbackPlayingTechniqueID
+    /// <remarks/>
+    public string groupType
+    {
+        get
         {
-            get
-            {
-                return fallbackPlayingTechniqueIDField;
-            }
-            set
-            {
-                fallbackPlayingTechniqueIDField = value;
-            }
+            return groupTypeField;
         }
-
-        /// <remarks/>
-        public string mutualExclusionGroups
+        set
         {
-            get
-            {
-                return mutualExclusionGroupsField;
-            }
-            set
-            {
-                mutualExclusionGroupsField = value;
-            }
+            groupTypeField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string aliasForPlayingTechniqueID
+    {
+        get
+        {
+            return aliasForPlayingTechniqueIDField;
+        }
+        set
+        {
+            aliasForPlayingTechniqueIDField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string fallbackPlayingTechniqueID
+    {
+        get
+        {
+            return fallbackPlayingTechniqueIDField;
+        }
+        set
+        {
+            fallbackPlayingTechniqueIDField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string mutualExclusionGroups
+    {
+        get
+        {
+            return mutualExclusionGroupsField;
+        }
+        set
+        {
+            mutualExclusionGroupsField = value;
         }
     }
 }

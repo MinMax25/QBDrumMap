@@ -4,91 +4,57 @@ using libQB.Enums;
 using QBDrumMap.Class.Enums;
 using QBDrumMap.Class.MapModels;
 
-namespace QBDrumMap.Class.Services
+namespace QBDrumMap.Class.Services;
+
+public interface ISettingService : INotifyPropertyChanged, IDisposable
 {
-    public interface ISettingService : INotifyPropertyChanged, IDisposable
-    {
-        #region Properties
+    BaseTheme BaseTheme { get; set; }
 
-        // ベーステーマ (Dark/Light)
-        BaseTheme BaseTheme { get; set; }
+    string ThemeColor { get; set; }
 
-        // アクセントカラー
-        string ThemeColor { get; set; }
+    string Language { get; set; }
 
-        // 言語設定
-        string Language { get; set; }
+    Pages StartUpPage { get; set; }
 
-        // 起動時に表示するページ
-        Pages StartUpPage { get; set; }
+    bool UseArticulationPitchName { get; set; }
 
-        // アーティキュレーション名にピッチ名を含めるか
-        bool UseArticulationPitchName { get; set; }
+    bool UseArticulation { get; set; }
 
-        // アーティキュレーション機能を使用するか
-        bool UseArticulation { get; set; }
+    bool IsOpenTheLastFileOpened { get; set; }
 
-        // 終了時に開いていたファイルを次回起動時に開くか
-        bool IsOpenTheLastFileOpened { get; set; }
+    bool IsPartScoreViewExtended { get; set; }
 
-        // パートスコアビューを拡張表示するか
-        bool IsPartScoreViewExtended { get; set; }
+    string LastOpenedFilePath { get; set; }
 
-        // 最後に開いたファイルのパス
-        string LastOpenedFilePath { get; set; }
+    string LastImportFilePath { get; set; }
 
-        // 最後にインポートしたファイルのパス
-        string LastImportFilePath { get; set; }
+    string ExportStudioOneDefaultPath { get; set; }
 
-        // Studio One エクスポート時のデフォルトパス
-        string ExportStudioOneDefaultPath { get; set; }
+    string ExportCubaseDefaultPath { get; set; }
 
-        // Cubase エクスポート時のデフォルトパス
-        string ExportCubaseDefaultPath { get; set; }
+    string ExportTextDefaultPath { get; set; }
 
-        // テキスト出力時のデフォルトパス
-        string ExportTextDefaultPath { get; set; }
+    string ExportCubaseBaseOnDefaultPath { get; set; }
 
-        // Cubase (BaseOn形式) エクスポート時のデフォルトパス
-        string ExportCubaseBaseOnDefaultPath { get; set; }
+    string ExportNoteMapperDefaultPath { get; set; }
 
-        // NoteMapper エクスポート時のデフォルトパス
-        string ExportNoteMapperDefaultPath { get; set; }
+    string ExportQBDrummerDefaultPath { get; set; }
 
-        // QBDrummer エクスポート時のデフォルトパス
-        string ExportQBDrummerDefaultPath { get; set; }
+    MIDIFormat ConvertMIDIFormat { get; set; }
 
-        // 変換時のMIDIフォーマット
-        MIDIFormat ConvertMIDIFormat { get; set; }
+    string CubaseInstallPath { get; set; }
 
-        // Cubaseのインストールパス
-        string CubaseInstallPath { get; set; }
+    string MidiInDevice { get; set; }
 
-        // MIDI入力デバイス名
-        string MidiInDevice { get; set; }
+    int MidiInFixedPitch { get; set; }
 
-        // MIDI入力の固定ピッチ番号
-        int MidiInFixedPitch { get; set; }
+    string SearchArticulationFilter { get; set; }
 
-        // アーティキュレーション検索用フィルター
-        string SearchArticulationFilter { get; set; }
+    bool IsExtendedProgramChange { get; set; }
 
-        // プログラムチェンジを拡張設定するか
-        bool IsExtendedProgramChange { get; set; }
+    ObservableCollection<PartNameAlias> PartNameDictionary { get; set; }
 
-        // パーツ名の表記ゆれ辞書（アーティキュレーション自動設定で使用）
-        ObservableCollection<PartNameAlias> PartNameDictionary { get; set; }
+    void Load();
 
-        #endregion
-
-        #region Methods
-
-        // 設定の読み込み
-        void Load();
-
-        // 設定の保存
-        void Save();
-
-        #endregion
-    }
-}
+    void Save();
+        }
