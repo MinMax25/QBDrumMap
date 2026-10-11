@@ -10,6 +10,5 @@
 *.user
 *.userosscache
 *.sln.docstates
-/UnitTest
 /docs
 /graphify-out

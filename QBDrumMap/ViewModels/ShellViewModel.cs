@@ -163,6 +163,7 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
         }
 
         MapData.Initialize();
+        UndoManager.Clear();
         Setting.LastOpenedFilePath = string.Empty;
     }
 
@@ -187,11 +188,15 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
             return;
         }
 
-        Setting.LastOpenedFilePath = path;
-
-        if (await MapData.LoadAsync(path) == false)
+        if (await MapData.LoadAsync(path))
         {
-            await Dialog.ShowErrorAsync("File IO Error", "Load");
+            // 読込に成功した場合だけ、最終ファイルパスと編集履歴を更新する
+            Setting.LastOpenedFilePath = path;
+            UndoManager.Clear();
+        }
+        else
+        {
+            await Dialog.ShowErrorAsync($"File IO Error{Environment.NewLine}{MapData.LastError?.Message}", "Load");
         }
     }
 
@@ -220,7 +225,7 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
         }
         else
         {
-            await Dialog.ShowErrorAsync("File IO Error", "Save");
+            await Dialog.ShowErrorAsync($"File IO Error{Environment.NewLine}{MapData.LastError?.Message}", "Save");
         }
     }
 
