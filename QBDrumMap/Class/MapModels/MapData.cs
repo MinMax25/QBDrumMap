@@ -21,6 +21,13 @@ public partial class MapData : ObservableObject
 
     private MapData replica;
 
+    [JsonIgnore]
+    public Exception LastError { get; private set; }
+
+    /// <summary>Loaded/Saved の購読側で出た例外。データ処理の成否とは分離して記録する。</summary>
+    [JsonIgnore]
+    public Exception NotifyError { get; private set; }
+
     private List<ViewModelBase> EditingList = new();
 
     [ObservableProperty]
@@ -100,23 +107,25 @@ public partial class MapData : ObservableObject
         Plugins.Clear();
         Parts.Clear();
 
-        Loaded?.Invoke(this, new DrumMapIOEventArgs(true));
+        NotifyError = null;
+        RaiseSafely(Loaded, new DrumMapIOEventArgs(true));
     }
 
     public async Task<bool> LoadAsync(string path)
     {
         try
         {
-            Plugins.Clear();
-            Parts.Clear();
-
             string jsonString = await File.ReadAllTextAsync(path);
             var data = JsonSerializer.Deserialize<MapData>(jsonString);
 
             if (data == null)
             {
-                return false;
+                throw new InvalidDataException("QBD file is empty.");
             }
+
+            // 現在のデータには触れず、新しいデータを最後まで組み立ててから反映する
+            var newPlugins = new List<Plugin>();
+            var newParts = new List<Part>();
 
             foreach (var plugin in data.Plugins.Select((x, i) => new { item = x, order = i }))
             {
@@ -159,7 +168,7 @@ public partial class MapData : ObservableObject
                     newPlugin.Kits.Add(newKit);
                 }
 
-                Plugins.Add(newPlugin);
+                newPlugins.Add(newPlugin);
             }
 
             foreach (var part in data.Parts.Select((x, i) => new { item = x, order = i }))
@@ -193,28 +202,60 @@ public partial class MapData : ObservableObject
                     newPart.Articulations.Add(newArticulation);
                 }
 
-                Parts.Add(newPart);
+                newParts.Add(newPart);
+            }
+
+            // 組み立て中に現在のデータとの重複で付いた検証エラーは、読込結果の状態ではないため消す
+            foreach (var model in newPlugins.Cast<ModelBase>()
+                .Concat(newPlugins.SelectMany(x => x.Kits))
+                .Concat(newPlugins.SelectMany(x => x.Kits).SelectMany(x => x.Pitches))
+                .Concat(newParts)
+                .Concat(newParts.SelectMany(x => x.Articulations)))
+            {
+                model.ResetValidation();
+            }
+
+            // ここから先は失敗しない操作だけを行う
+            Plugins.Clear();
+            Parts.Clear();
+
+            foreach (var plugin in newPlugins)
+            {
+                Plugins.Add(plugin);
+            }
+
+            foreach (var part in newParts)
+            {
+                Parts.Add(part);
             }
 
             replica = data;
+            LastError = null;
+            NotifyError = null;
 
-            Loaded?.Invoke(this, new DrumMapIOEventArgs(true));
+            // データは確定済み。通知の失敗は読込の成否に影響させない
+            RaiseSafely(Loaded, new DrumMapIOEventArgs(true));
 
             return true;
         }
         catch (Exception ex)
         {
-            Loaded?.Invoke(this, new DrumMapIOEventArgs(false, ex));
+            // 失敗時は現在のデータ・Dirty状態・画面を変えない（イベントも発火しない）
+            LastError = ex;
             return false;
         }
     }
 
     public async Task<bool> SaveAsync(string path)
     {
+        string tempPath = null;
+        MapData snapshot;
+
         try
         {
-            FixID(this);
-            replica = Clone();
+            // 保存内容は複製で作る。ここまでの失敗では編集中のデータに触れない
+            snapshot = Clone();
+            FixID(snapshot);
 
             var options = new JsonSerializerOptions
             {
@@ -224,17 +265,84 @@ public partial class MapData : ObservableObject
                 WriteIndented = true
             };
 
-            var jsonString = JsonSerializer.Serialize(replica, options);
-            await File.WriteAllTextAsync(path, jsonString);
+            var jsonString = JsonSerializer.Serialize(snapshot, options);
 
-            Saved?.Invoke(this, new DrumMapIOEventArgs(true));
+            // 同じフォルダの一時ファイルへ書き切ってから、保存先へ確定する
+            var fullPath = Path.GetFullPath(path);
+            tempPath = Path.Combine(Path.GetDirectoryName(fullPath), $".{Path.GetFileName(fullPath)}.{Guid.NewGuid():N}.tmp");
+            await File.WriteAllTextAsync(tempPath, jsonString);
 
-            return true;
+            if (File.Exists(fullPath))
+            {
+                File.Replace(tempPath, fullPath, null);
+            }
+            else
+            {
+                File.Move(tempPath, fullPath);
+            }
+
+            tempPath = null;
         }
         catch (Exception ex)
         {
-            Saved?.Invoke(this, new DrumMapIOEventArgs(false, ex));
+            // 失敗時は保存先・編集中のデータ・Dirty状態を変えない（イベントも発火しない）
+            LastError = ex;
+            DeleteTempFile(tempPath);
             return false;
+        }
+
+        // ファイルは確定済み。以降はファイルの内容を正として、メモリ側を合わせる
+        replica = snapshot;
+        LastError = null;
+
+        try
+        {
+            FixID(this);
+        }
+        catch
+        {
+            // 振り直しを反映しきれなかった場合は、replicaとの差としてDirtyのままになり、再保存で解消できる
+        }
+
+        NotifyError = null;
+        RaiseSafely(Saved, new DrumMapIOEventArgs(true));
+
+        return true;
+    }
+
+    /// <summary>購読者ごとに例外を捕捉して通知する。例外は NotifyError に記録し、他の購読者への通知は続ける。</summary>
+    private void RaiseSafely(EventHandler<DrumMapIOEventArgs> handler, DrumMapIOEventArgs e)
+    {
+        if (handler == null)
+        {
+            return;
+        }
+
+        foreach (EventHandler<DrumMapIOEventArgs> subscriber in handler.GetInvocationList())
+        {
+            try
+            {
+                subscriber(this, e);
+            }
+            catch (Exception ex)
+            {
+                NotifyError = ex;
+            }
+        }
+    }
+
+    private static void DeleteTempFile(string tempPath)
+    {
+        try
+        {
+            if (tempPath != null && File.Exists(tempPath))
+            {
+                File.Delete(tempPath);
+            }
+        }
+        catch
+        {
+            // 一時ファイルの片付けに失敗しても、保存の成否には影響させない
         }
     }
 

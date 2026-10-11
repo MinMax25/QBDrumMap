@@ -34,5 +34,11 @@ public abstract partial class ModelBase : ObservableValidator, IHasDisplayOrder,
         UndoManager = null;
     }
 
+    /// <summary>検証エラーをすべて消す（読込結果に現在のデータとの重複エラーを残さないために使う）。</summary>
+    public void ResetValidation()
+    {
+        ClearErrors();
+    }
+
     public abstract object Clone();
 }
