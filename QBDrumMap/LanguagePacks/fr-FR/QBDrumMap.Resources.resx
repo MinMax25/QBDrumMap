@@ -264,6 +264,33 @@
   <data name="Confirm_NewFile" xml:space="preserve">
     <value>Supprimer les données actuelles et créer un nouveau fichier ?</value>
   </data>
+  <data name="Error_FileIO" xml:space="preserve">
+    <value>Erreur d'E/S de fichier</value>
+  </data>
+  <data name="Title_ExportFormat" xml:space="preserve">
+    <value>Exporter {0}</value>
+  </data>
+  <data name="Title_ConvertBaseOnKit" xml:space="preserve">
+    <value>Convertir Base On Kit = '{0}'</value>
+  </data>
+  <data name="Confirm_UnsavedChanges" xml:space="preserve">
+    <value>Des modifications n'ont pas été enregistrées. Les enregistrer avant de continuer ?</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Button_DontSave" xml:space="preserve">
+    <value>Ne pas enregistrer</value>
+  </data>
+  <data name="Busy_Saving" xml:space="preserve">
+    <value>Enregistrement en cours…</value>
+  </data>
+  <data name="Busy_Loading" xml:space="preserve">
+    <value>Chargement en cours…</value>
+  </data>
+  <data name="Error_QBDrummerTooManyArticulations" xml:space="preserve">
+    <value>Le CSV QB Drummer prend en charge au maximum {0} articulations.</value>
+  </data>
   <data name="Confirm_SaveHasError" xml:space="preserve">
     <value>Les données contiennent des erreurs et ne peuvent pas être enregistrées.</value>
   </data>

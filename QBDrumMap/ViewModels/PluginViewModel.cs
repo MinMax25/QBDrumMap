@@ -84,7 +84,7 @@ public partial class PluginViewModel : ViewModelBaseHasContents
     {
         Plugin plugin = new()
         {
-            ID = MapData.Plugins.GetNewID()
+            ID = MapData.NewPluginID()
         };
         plugin.Name = $"Plugin{plugin.ID}";
 
@@ -160,11 +160,15 @@ public partial class PluginViewModel : ViewModelBaseHasContents
 
         await Application.Current.Dispatcher.InvokeAsync(() =>
         {
-            MapData.Plugins.Clear();
-            foreach (var plugin in sortedPlugins)
+            // 表示順に並べ直すだけで、編集ではない
+            MapData.RunWithoutDirtyChange(() =>
             {
-                MapData.Plugins.Add(plugin);
-            }
+                MapData.Plugins.Clear();
+                foreach (var plugin in sortedPlugins)
+                {
+                    MapData.Plugins.Add(plugin);
+                }
+            });
 
             PluginsView = CollectionViewSource.GetDefaultView(MapData.Plugins);
             SelectedPlugin = null;

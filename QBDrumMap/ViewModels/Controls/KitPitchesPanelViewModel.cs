@@ -100,11 +100,15 @@ public partial class KitPitchesPanelViewModel : ViewModelBase
                 return x.DisplayOrder;
             }));
 
-            Kit.Pitches.Clear();
-            foreach (var p in pitches)
+            // 表示順に並べ直すだけで、編集ではない
+            MapData.RunWithoutDirtyChange(() =>
             {
-                Kit.Pitches.Add(p);
-            }
+                Kit.Pitches.Clear();
+                foreach (var p in pitches)
+                {
+                    Kit.Pitches.Add(p);
+                }
+            });
         }
 
         PitchesView = CollectionViewSource.GetDefaultView(Kit?.Pitches);
@@ -193,7 +197,7 @@ public partial class KitPitchesPanelViewModel : ViewModelBase
 
         Setting.LastImportFilePath = path;
         await TryIOFunction(
-            "Import",
+            App.Text("ButtonImport", "Import"),
             () =>
             {
                 string extension = Path.GetExtension(path);
@@ -355,7 +359,7 @@ public partial class KitPitchesPanelViewModel : ViewModelBase
             return;
         }
 
-        string title = "Export Studio One";
+        string title = string.Format(App.Text("Title_ExportFormat", "Export {0}"), "Studio One");
         var path = await Dialog.ShowSelectFolderDialog(title, Setting.ExportStudioOneDefaultPath);
 
         if (path == null)
@@ -381,7 +385,7 @@ public partial class KitPitchesPanelViewModel : ViewModelBase
             return;
         }
 
-        string title = "Export Cubase";
+        string title = string.Format(App.Text("Title_ExportFormat", "Export {0}"), "Cubase");
         var path = await Dialog.ShowSelectFolderDialog(title, Setting.ExportCubaseDefaultPath);
 
         if (path == null)
@@ -407,7 +411,7 @@ public partial class KitPitchesPanelViewModel : ViewModelBase
             return;
         }
 
-        string title = "Export .tsv";
+        string title = string.Format(App.Text("Title_ExportFormat", "Export {0}"), ".tsv");
         var path = await Dialog.ShowSelectFolderDialog(title, Setting.ExportTextDefaultPath);
 
         if (path == null)

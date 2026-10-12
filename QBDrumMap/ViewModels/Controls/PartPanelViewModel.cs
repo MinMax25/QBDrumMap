@@ -50,11 +50,15 @@ public partial class PartPanelViewModel : ViewModelBase
                 return x.DisplayOrder;
             })]);
 
-            Part.Articulations.Clear();
-            foreach (var articulation in articulations)
+            // 表示順に並べ直すだけで、編集ではない
+            MapData.RunWithoutDirtyChange(() =>
             {
-                Part.Articulations.Add(articulation);
-            }
+                Part.Articulations.Clear();
+                foreach (var articulation in articulations)
+                {
+                    Part.Articulations.Add(articulation);
+                }
+            });
         }
 
         ArticulationsView = CollectionViewSource.GetDefaultView(Part?.Articulations);
@@ -129,7 +133,7 @@ public partial class PartPanelViewModel : ViewModelBase
             return x.DisplayOrder;
         }) + 1 : 1;
 
-        articulation.ID = allArticulations.GetNewID();
+        articulation.ID = MapData.NewArticulationID();
         articulation.Name = $"{Part.Name} {count}";
         articulation.DisplayOrder = int.MaxValue;
         articulation.DrumMapOrder = order;

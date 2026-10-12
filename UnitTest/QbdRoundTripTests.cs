@@ -72,7 +72,7 @@ public class QbdRoundTripTests
     }
 
     [Fact]
-    public async Task Save_RenumbersIds_AndMemoryMatchesFile()
+    public async Task Save_NormalizesFileOnly_AndKeepsLiveData()
     {
         using var dir = new TempDir();
         var map = await TestSupport.LoadSampleAsync();
@@ -80,12 +80,16 @@ public class QbdRoundTripTests
         {
             kit.ID += 1000;
         }
+        var before = TestSupport.Dump(map);
 
         Assert.True(await map.SaveAsync(dir.File("a.qbd")));
 
+        // 編集中のデータは保存で変わらず、ファイル側だけ正規化（ID振り直し）される
+        Assert.Equal(before, TestSupport.Dump(map));
         var fromFile = new MapData();
         Assert.True(await fromFile.LoadAsync(dir.File("a.qbd")));
-        Assert.Equal(TestSupport.Dump(fromFile), TestSupport.Dump(map));
+        Assert.Equal(1, fromFile.Plugins[0].Kits[0].ID);
+        Assert.Equal(1001, map.Plugins[0].Kits[0].ID);
         Assert.False(map.IsModified());
     }
 

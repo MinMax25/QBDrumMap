@@ -10,6 +10,9 @@ public partial class ShellWindow
     : MetroWindow
     , IShellWindow
 {
+    // 終了確認中の再入（Alt+F4の連打による多重ダイアログ）を防ぐ
+    private bool isClosingFlow;
+
     public ShellWindow(ShellViewModel viewModel)
     {
         InitializeComponent();
@@ -23,7 +26,22 @@ public partial class ShellWindow
         {
             e.Cancel = true;
 
-            bool shouldClose = await vm.OnWindowClosingAsync();
+            if (isClosingFlow)
+            {
+                return;
+            }
+
+            bool shouldClose;
+            isClosingFlow = true;
+            try
+            {
+                shouldClose = await vm.OnWindowClosingAsync();
+            }
+            finally
+            {
+                isClosingFlow = false;
+            }
+
             if (shouldClose)
             {
                 Closing -= OnClosing;

@@ -44,8 +44,12 @@ public partial class KitPanelViewModel
         {
             Plugin.PropertyChanged += Plugin_PropertyChanged;
             ObservableCollection<Kit> kits = [.. Plugin.Kits.OrderBy(x => x.DisplayOrder)];
-            Plugin.Kits.Clear();
-            kits.ToList().ForEach(Plugin.Kits.Add);
+            // 表示順に並べ直すだけで、編集ではない
+            MapData.RunWithoutDirtyChange(() =>
+            {
+                Plugin.Kits.Clear();
+                kits.ToList().ForEach(Plugin.Kits.Add);
+            });
         }
         MIDI.MidiOutDevice = Plugin?.MidiOutDevice ?? string.Empty;
 
@@ -93,7 +97,7 @@ public partial class KitPanelViewModel
 
         int count = (Plugin?.Kits.Count ?? 1) + 1;
 
-        kit.ID = MapData.Plugins.SelectMany(x => x.Kits).GetNewID();
+        kit.ID = MapData.NewKitID();
         kit.Name = $"{Plugin.Name} Kit{count}";
 
         foreach (var p in Enumerable.Range(0, 128))

@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
 using System.Text.Encodings.Web;
@@ -19,7 +20,13 @@ public partial class MapData : ObservableObject
 
     public EventHandler<PropertyChangedEventArgs> EditStateChanged;
 
-    private MapData replica;
+    private bool isDirty;
+
+    // 編集セッション中に発行したIDの最大値。削除・Undo・保存を経ても巻き戻さず、IDを再利用しない
+    private int lastPluginID;
+    private int lastKitID;
+    private int lastPartID;
+    private int lastArticulationID;
 
     [JsonIgnore]
     public Exception LastError { get; private set; }
@@ -70,7 +77,154 @@ public partial class MapData : ObservableObject
     {
         AppName = typeof(App).Assembly.GetName().Name;
         ModelVersion = "1.0.0";
+
+        HookCollection(Plugins);
+        HookCollection(Parts);
     }
+
+    partial void OnPluginsChanged(ObservableCollection<Plugin> value)
+    {
+        HookCollection(value);
+    }
+
+    partial void OnPartsChanged(ObservableCollection<Part> value)
+    {
+        HookCollection(value);
+    }
+
+    /// <summary>画面表示のための並べ替え（Clear→Add）など、編集ではない操作を行う。Dirtyの状態は変えない。</summary>
+    public void RunWithoutDirtyChange(Action action)
+    {
+        bool dirty = isDirty;
+        try
+        {
+            action();
+        }
+        finally
+        {
+            isDirty = dirty;
+        }
+    }
+
+    #region 編集の検知
+
+    // モデル階層の追加・削除・値変更を購読し、編集があった事実をDirtyに記録する
+
+    private void HookCollection<T>(ObservableCollection<T> collection)
+    {
+        if (collection == null)
+        {
+            return;
+        }
+
+        collection.CollectionChanged -= OnModelCollectionChanged;
+        collection.CollectionChanged += OnModelCollectionChanged;
+
+        foreach (var item in collection)
+        {
+            HookModel(item, true);
+        }
+    }
+
+    private void UnhookCollection<T>(ObservableCollection<T> collection)
+    {
+        if (collection == null)
+        {
+            return;
+        }
+
+        collection.CollectionChanged -= OnModelCollectionChanged;
+
+        foreach (var item in collection)
+        {
+            HookModel(item, false);
+        }
+    }
+
+    private void HookModel(object model, bool attach)
+    {
+        if (model is INotifyPropertyChanged notify)
+        {
+            notify.PropertyChanged -= OnModelPropertyChanged;
+            if (attach)
+            {
+                notify.PropertyChanged += OnModelPropertyChanged;
+            }
+        }
+
+        switch (model)
+        {
+            case Plugin plugin:
+                HookChildren(plugin.Kits, attach);
+                break;
+            case Kit kit:
+                HookChildren(kit.Pitches, attach);
+                break;
+            case Part part:
+                HookChildren(part.Articulations, attach);
+                break;
+        }
+    }
+
+    private void HookChildren<T>(ObservableCollection<T> collection, bool attach)
+    {
+        if (attach)
+        {
+            HookCollection(collection);
+        }
+        else
+        {
+            UnhookCollection(collection);
+        }
+    }
+
+    private void OnModelCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+    {
+        if (e.OldItems != null)
+        {
+            foreach (var item in e.OldItems)
+            {
+                HookModel(item, false);
+            }
+        }
+
+        if (e.NewItems != null)
+        {
+            foreach (var item in e.NewItems)
+            {
+                HookModel(item, true);
+            }
+        }
+
+        isDirty = true;
+    }
+
+    private void OnModelPropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        // 検証状態の変化は編集ではない
+        if (e.PropertyName == nameof(ObservableValidator.HasErrors))
+        {
+            return;
+        }
+
+        // 子コレクションそのものが差し替えられた場合は購読し直す
+        switch (sender)
+        {
+            case Plugin plugin when e.PropertyName == nameof(Plugin.Kits):
+                HookChildren(plugin.Kits, true);
+                break;
+            case Kit kit when e.PropertyName == nameof(Kit.Pitches):
+                HookChildren(kit.Pitches, true);
+                break;
+            case Part part when e.PropertyName == nameof(Part.Articulations):
+                HookChildren(part.Articulations, true);
+                break;
+        }
+
+        isDirty = true;
+    }
+
+    #endregion
 
     public void SetEditState(ViewModelBase sender, bool isEditing)
     {
@@ -100,13 +254,43 @@ public partial class MapData : ObservableObject
         }
     }
 
+    public int NewPluginID() => Issue(ref lastPluginID, Plugins.Select(x => x.ID));
+
+    public int NewKitID() => Issue(ref lastKitID, Plugins.SelectMany(x => x.Kits).Select(x => x.ID));
+
+    public int NewPartID() => Issue(ref lastPartID, Parts.Select(x => x.ID));
+
+    public int NewArticulationID() => Issue(ref lastArticulationID, Articulations.Select(x => x.ID));
+
+    private static int Issue(ref int last, IEnumerable<int> current)
+    {
+        last = Math.Max(last, current.DefaultIfEmpty(0).Max()) + 1;
+        return last;
+    }
+
+    /// <summary>現在のデータの最大IDから発行済みIDを初期化する（読込成功・新規作成時）。</summary>
+    private void ResetIssuedIDs()
+    {
+        lastPluginID = Plugins.Select(x => x.ID).DefaultIfEmpty(0).Max();
+        lastKitID = Plugins.SelectMany(x => x.Kits).Select(x => x.ID).DefaultIfEmpty(0).Max();
+        lastPartID = Parts.Select(x => x.ID).DefaultIfEmpty(0).Max();
+        lastArticulationID = Articulations.Select(x => x.ID).DefaultIfEmpty(0).Max();
+    }
+
+    /// <summary>指定IDのArticulationが実在するか。0や孤立した参照は無効（未割当・補完なし）として扱う。</summary>
+    public bool IsValidArticulationID(int id)
+    {
+        return id != 0 && Articulations.Any(x => x.ID == id);
+    }
+
     public void Initialize()
     {
-        replica = new MapData();
-
         Plugins.Clear();
         Parts.Clear();
 
+        ResetIssuedIDs();
+
+        isDirty = false;
         NotifyError = null;
         RaiseSafely(Loaded, new DrumMapIOEventArgs(true));
     }
@@ -229,7 +413,8 @@ public partial class MapData : ObservableObject
                 Parts.Add(part);
             }
 
-            replica = data;
+            ResetIssuedIDs();
+            isDirty = false;
             LastError = null;
             NotifyError = null;
 
@@ -291,18 +476,9 @@ public partial class MapData : ObservableObject
             return false;
         }
 
-        // ファイルは確定済み。以降はファイルの内容を正として、メモリ側を合わせる
-        replica = snapshot;
+        // ファイルは確定済み。編集中のデータ（ID・表示順・選択・Undo/Redo）には触れず、保存済みの状態にする
+        isDirty = false;
         LastError = null;
-
-        try
-        {
-            FixID(this);
-        }
-        catch
-        {
-            // 振り直しを反映しきれなかった場合は、replicaとの差としてDirtyのままになり、再保存で解消できる
-        }
 
         NotifyError = null;
         RaiseSafely(Saved, new DrumMapIOEventArgs(true));
@@ -431,17 +607,10 @@ public partial class MapData : ObservableObject
         return clone;
     }
 
+    /// <summary>最後の保存・読込・新規作成以降に編集があればtrue。編集・Undo・Redoで立ち、保存・読込・新規作成の成功で下ろす。</summary>
     public bool IsModified()
     {
-        if (replica == null)
-        {
-            if (Plugins.Any() || Parts.Any())
-            {
-                return true;
-            }
-            return false;
-        }
-        return CompareMapData(replica, this);
+        return isDirty;
     }
 
     public bool HasError()
@@ -514,211 +683,5 @@ public partial class MapData : ObservableObject
                 articulation.Complement = getNewArticulationID(articulation.Complement);
             }
         }
-    }
-
-    private bool CompareMapData(MapData src, MapData dst)
-    {
-        if (src.Plugins.Count != dst.Plugins.Count)
-        {
-            return true;
-        }
-        if (src.Parts.Count != dst.Parts.Count)
-        {
-            return true;
-        }
-
-        for (int i = 0; i < src.Plugins.Count; i++)
-        {
-            if (ComparePlugin(src.Plugins[i], dst.Plugins.OrderBy(x => x.DisplayOrder).ToArray()[i]))
-            {
-                return true;
-            }
-        }
-
-        for (int i = 0; i < src.Parts.Count; i++)
-        {
-            if (ComparePart(src.Parts[i], dst.Parts.OrderBy(x => x.DisplayOrder).ToArray()[i]))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private bool ComparePlugin(Plugin src, Plugin dst)
-    {
-        if (src.Kits.Count != dst.Kits.Count)
-        {
-            return true;
-        }
-        if (src.ID != dst.ID)
-        {
-            return true;
-        }
-        if (src.Name != dst.Name)
-        {
-            return true;
-        }
-        if (src.PluginType != dst.PluginType)
-        {
-            return true;
-        }
-        if (src.MidiOutDevice != dst.MidiOutDevice)
-        {
-            return true;
-        }
-        if (src.SoundCheckChannel != dst.SoundCheckChannel)
-        {
-            return true;
-        }
-
-        for (int i = 0; i < src.Kits.Count; i++)
-        {
-            if (CompareKit(src.Kits[i], dst.Kits.OrderBy(x => x.DisplayOrder).ToArray()[i]))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private bool CompareKit(Kit src, Kit dst)
-    {
-        if (src.ID != dst.ID)
-        {
-            return true;
-        }
-        if (src.Name != dst.Name)
-        {
-            return true;
-        }
-        if (src.Pitches.Count != dst.Pitches.Count)
-        {
-            return true;
-        }
-        if (src.BankSelectMSB != dst.BankSelectMSB)
-        {
-            return true;
-        }
-        if (src.BankSelectLSB != dst.BankSelectLSB)
-        {
-            return true;
-        }
-        if (src.ProgramNumber != dst.ProgramNumber)
-        {
-            return true;
-        }
-
-        var srcPitches = src.Pitches.OrderBy(x => x.DisplayOrder).ToArray();
-        var dstPitches = dst.Pitches.OrderBy(x => x.DisplayOrder).ToArray();
-
-        for (int i = 0; i < srcPitches.Length; i++)
-        {
-            if (CompareKitPitch(srcPitches[i], dstPitches[i]))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private bool CompareKitPitch(KitPitch src, KitPitch dst)
-    {
-        if (src.Pitch != dst.Pitch)
-        {
-            return true;
-        }
-        if (src.Name != dst.Name)
-        {
-            return true;
-        }
-        if (src.ArticulationID != dst.ArticulationID)
-        {
-            return true;
-        }
-        if (src.Separator != dst.Separator)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    private bool ComparePart(Part src, Part dst)
-    {
-        if (src.Name != dst.Name)
-        {
-            return true;
-        }
-        if (src.ScorePitch != dst.ScorePitch)
-        {
-            return true;
-        }
-        if (src.Color != dst.Color)
-        {
-            return true;
-        }
-        if (src.NoteHead != dst.NoteHead)
-        {
-            return true;
-        }
-        if (src.Technique != dst.Technique)
-        {
-            return true;
-        }
-        if (src.InstrumentEntityID != dst.InstrumentEntityID)
-        {
-            return true;
-        }
-        if (src.NoteHeadSet != dst.NoteHeadSet)
-        {
-            return true;
-        }
-        if (src.Voice != dst.Voice)
-        {
-            return true;
-        }
-        if (src.TechniqueEntityID != dst.TechniqueEntityID)
-        {
-            return true;
-        }
-        if (src.Articulations.Count != dst.Articulations.Count)
-        {
-            return true;
-        }
-
-        var srcArtics = src.Articulations.OrderBy(x => x.DisplayOrder).ToArray();
-        var dstArtics = dst.Articulations.OrderBy(x => x.DisplayOrder).ToArray();
-
-        for (int i = 0; i < srcArtics.Length; i++)
-        {
-            if (CompareArticulation(srcArtics[i], dstArtics[i]))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private bool CompareArticulation(Articulation src, Articulation dst)
-    {
-        if (src.ID != dst.ID)
-        {
-            return true;
-        }
-        if (src.Name != dst.Name)
-        {
-            return true;
-        }
-        if (src.Complement != dst.Complement)
-        {
-            return true;
-        }
-        if (src.DrumMapOrder != dst.DrumMapOrder)
-        {
-            return true;
-        }
-        return false;
     }
 }

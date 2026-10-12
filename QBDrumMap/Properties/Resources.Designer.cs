@@ -268,6 +268,87 @@ namespace QBDrumMap {
         }
         
         /// <summary>
+        ///   Button_DontSave に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Button_DontSave {
+            get {
+                return ResourceManager.GetString("Button_DontSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Button_Save に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Button_Save {
+            get {
+                return ResourceManager.GetString("Button_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Confirm_UnsavedChanges に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Confirm_UnsavedChanges {
+            get {
+                return ResourceManager.GetString("Confirm_UnsavedChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busy_Loading に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Busy_Loading {
+            get {
+                return ResourceManager.GetString("Busy_Loading", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busy_Saving に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Busy_Saving {
+            get {
+                return ResourceManager.GetString("Busy_Saving", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Error_QBDrummerTooManyArticulations に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Error_QBDrummerTooManyArticulations {
+            get {
+                return ResourceManager.GetString("Error_QBDrummerTooManyArticulations", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Error_FileIO に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Error_FileIO {
+            get {
+                return ResourceManager.GetString("Error_FileIO", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Title_ConvertBaseOnKit に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_ConvertBaseOnKit {
+            get {
+                return ResourceManager.GetString("Title_ConvertBaseOnKit", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Title_ExportFormat に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_ExportFormat {
+            get {
+                return ResourceManager.GetString("Title_ExportFormat", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Close the application? に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Confirm_ApplicationClose {
