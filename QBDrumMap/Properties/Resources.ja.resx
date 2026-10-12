@@ -313,6 +313,16 @@
   <data name="Confirm_SaveHasError" xml:space="preserve"><value>データにエラーがあるため保存できません。</value></data>
   <data name="Confirm_ApplicationCloseWithTheChanges" xml:space="preserve"><value>保存されていない変更があります。アプリケーションを終了しますか？</value></data>
   <data name="Confirm_ApplicationClose" xml:space="preserve"><value>アプリケーションを終了しますか？</value></data>
+  <data name="Error_FileIO" xml:space="preserve"><value>ファイル入出力エラー</value></data>
+  <data name="Title_ExportFormat" xml:space="preserve"><value>{0}をエクスポート</value></data>
+  <data name="Title_ConvertBaseOnKit" xml:space="preserve"><value>変換 Base On Kit = '{0}'</value></data>
+  <data name="Busy_Saving" xml:space="preserve"><value>保存しています…</value></data>
+  <data name="Busy_Loading" xml:space="preserve"><value>読み込んでいます…</value></data>
+  <data name="Error_QBDrummerTooManyArticulations" xml:space="preserve"><value>QB Drummer用CSVが扱えるアーティキュレーションは最大{0}個です。</value></data>
+  <data name="Confirm_UnsavedChanges" xml:space="preserve"><value>保存されていない変更があります。続行する前に保存しますか？</value></data>
+  <data name="Button_Save" xml:space="preserve"><value>保存する</value></data>
+  <data name="Button_DontSave" xml:space="preserve"><value>保存しない</value></data>
+  <data name="Button_Cancel" xml:space="preserve"><value>キャンセル</value></data>
   <data name="Message_Command_Clear" xml:space="preserve"><value>{0}をクリアしますか？</value></data>
   <data name="Message_Command_Delete" xml:space="preserve"><value>{0}「{1}」を削除しますか？</value></data>
   <data name="Message_ProcessComplete" xml:space="preserve"><value>処理が完了しました。</value></data>
@@ -330,7 +340,6 @@
   <data name="Menu_Help" xml:space="preserve"><value>ヘルプ</value></data>
   <data name="Menu_Help_Document" xml:space="preserve"><value>ドキュメント</value></data>
   <data name="Button_OK" xml:space="preserve"><value>OK</value></data>
-  <data name="Button_Cancel" xml:space="preserve"><value>キャンセル</value></data>
   <data name="Button_Yes" xml:space="preserve"><value>はい</value></data>
   <data name="Button_No" xml:space="preserve"><value>いいえ</value></data>
   <data name="Title_Dialog_Information" xml:space="preserve"><value>情報</value></data>

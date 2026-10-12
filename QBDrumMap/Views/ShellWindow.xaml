@@ -45,6 +45,8 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <mah:MetroWindow.Resources>
+        <BooleanToVisibilityConverter
+            x:Key="BoolToVisibilityConverter" />
         <templateSelectors:MenuItemTemplateSelector
             x:Key="MenuItemTemplateSelector">
             <templateSelectors:MenuItemTemplateSelector.GlyphDataTemplate>
@@ -173,6 +175,7 @@
                 IsTabStop="False"
                 IsPaneOpen="False"
                 DisplayMode="CompactInline"
+                IsEnabled="{Binding IsNotBusy}"
                 ItemsSource="{Binding MenuItems}"
                 SelectedItem="{Binding SelectedMenuItem}"
                 ItemCommand="{Binding MenuItemInvokedCommand}"
@@ -189,6 +192,37 @@
                         Focusable="False" />
                 </mah:HamburgerMenu.Content>
             </mah:HamburgerMenu>
+            <!-- 保存中は画面全体の操作を受け付けない -->
+            <Grid
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                Background="#80000000"
+                Visibility="{Binding IsBusy, Converter={StaticResource BoolToVisibilityConverter}}">
+                <Border
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    MinWidth="360"
+                    Padding="32"
+                    Background="{DynamicResource MahApps.Brushes.Control.Background}"
+                    BorderBrush="{DynamicResource MahApps.Brushes.Gray4}"
+                    BorderThickness="1"
+                    CornerRadius="4">
+                    <StackPanel
+                        HorizontalAlignment="Center">
+                        <mah:ProgressRing
+                            Width="64"
+                            Height="64"
+                            IsActive="{Binding IsBusy}"
+                            Foreground="{DynamicResource MahApps.Brushes.Accent}" />
+                        <TextBlock
+                            Margin="0,20,0,0"
+                            HorizontalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            Text="{Binding BusyMessage}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
         </Grid>
     </mah:MetroWindow.Content>
 </mah:MetroWindow>

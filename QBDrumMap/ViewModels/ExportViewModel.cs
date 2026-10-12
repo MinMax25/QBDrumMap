@@ -376,11 +376,8 @@ public partial class ExportViewModel : ViewModelBase
         {
             foreach (var kit in SelectedKits)
             {
-                var articMap = ArticulationMap.GetArticulationMap(MapData, kit.KitName);
-                if (articMap == null)
-                {
-                    throw new Exception("Articulation map not found.");
-                }
+                // 先に全文を作り、番号上限などで失敗した場合に出力フォルダを作らない
+                var csv = ArticulationMap.ToQBDrummerCsv(MapData, kit.KitName);
 
                 var outPath = Path.Combine(path, kit.PluginName);
                 if (!Directory.Exists(outPath))
@@ -388,22 +385,7 @@ public partial class ExportViewModel : ViewModelBase
                     Directory.CreateDirectory(outPath);
                 }
 
-                var sb = new StringBuilder();
-                sb.AppendLine("ID,Sub,Name,Pitchs");
-
-                var orderedItems = articMap.Items.OrderBy(m =>
-                {
-                    return m.ID;
-                });
-
-                foreach (var item in orderedItems)
-                {
-                    int subValue = item.IsSub ? 1 : 0;
-                    string pitches = string.Join("|", item.Pitches);
-                    sb.AppendLine($"{item.ID},{subValue},{item.Name},{pitches}");
-                }
-
-                File.WriteAllText(Path.Combine(outPath, $"{kit.KitName}.csv"), sb.ToString());
+                File.WriteAllText(Path.Combine(outPath, $"{kit.KitName}.csv"), csv);
             }
         });
     }

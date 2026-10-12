@@ -264,6 +264,33 @@
   <data name="Confirm_NewFile" xml:space="preserve">
     <value>Aktuelle Daten verwerfen und eine neue Datei erstellen?</value>
   </data>
+  <data name="Error_FileIO" xml:space="preserve">
+    <value>Datei-Ein-/Ausgabefehler</value>
+  </data>
+  <data name="Title_ExportFormat" xml:space="preserve">
+    <value>{0} exportieren</value>
+  </data>
+  <data name="Title_ConvertBaseOnKit" xml:space="preserve">
+    <value>Konvertieren Base On Kit = '{0}'</value>
+  </data>
+  <data name="Confirm_UnsavedChanges" xml:space="preserve">
+    <value>Es gibt nicht gespeicherte Änderungen. Vor dem Fortfahren speichern?</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="Button_DontSave" xml:space="preserve">
+    <value>Nicht speichern</value>
+  </data>
+  <data name="Busy_Saving" xml:space="preserve">
+    <value>Speichern …</value>
+  </data>
+  <data name="Busy_Loading" xml:space="preserve">
+    <value>Laden …</value>
+  </data>
+  <data name="Error_QBDrummerTooManyArticulations" xml:space="preserve">
+    <value>Das QB-Drummer-CSV unterstützt höchstens {0} Artikulationen.</value>
+  </data>
   <data name="Confirm_SaveHasError" xml:space="preserve">
     <value>Die Daten sind fehlerhaft und können nicht gespeichert werden.</value>
   </data>

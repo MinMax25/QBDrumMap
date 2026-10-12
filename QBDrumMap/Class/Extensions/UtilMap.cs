@@ -32,7 +32,7 @@ public static class UtilMap
             throw new ArgumentException();
         }
 
-        if (kit.Pitches.Any(x => x.ArticulationID != 0) && Setting.UseArticulation == true)
+        if (kit.Pitches.Any(x => data.IsValidArticulationID(x.ArticulationID)) && Setting.UseArticulation == true)
         {
             return GetKitPitchesHasArticulation(data, kit);
         }
@@ -78,7 +78,7 @@ public static class UtilMap
                 name = $"{artic?.Name}";
             }
 
-            if (item.ArticulationID != 0)
+            if (data.IsValidArticulationID(item.ArticulationID))
             {
                 name = GetPitchName(item, name);
             }
@@ -144,7 +144,7 @@ public static class UtilMap
                     return;
                 }
 
-                if (item.ArticulationID != 0)
+                if (data.IsValidArticulationID(item.ArticulationID))
                 {
                     name = GetPitchName(item, name);
                 }
@@ -187,6 +187,10 @@ public static class UtilMap
     {
         List<KitPitch> result = new();
 
+        // 実在しないArticulationへの参照は未割当として扱う
+        var validIds = data.Articulations.Select(a => a.ID).ToHashSet();
+        bool HasArticulation(KitPitch p) => p.ArticulationID != 0 && validIds.Contains(p.ArticulationID);
+
         var allPitches = kit.Pitches.Where(x => x.Pitch >= 0 && !string.IsNullOrWhiteSpace(x.Name))
             .Select(x => new
             {
@@ -195,21 +199,21 @@ public static class UtilMap
             })
             .ToArray();
 
-        var hasArticNoSeparate = allPitches.Where(x => x.p.ArticulationID != 0 && x.p.Separator == Separator.None)
+        var hasArticNoSeparate = allPitches.Where(x => HasArticulation(x.p) && x.p.Separator == Separator.None)
             .OrderBy(x => x.a.DrumMapOrder)
             .ToArray();
 
-        var noArticNoSeparate = allPitches.Where(x => x.p.ArticulationID == 0 && x.p.Separator == Separator.None)
+        var noArticNoSeparate = allPitches.Where(x => !HasArticulation(x.p) && x.p.Separator == Separator.None)
             .OrderBy(x => x.p.DisplayOrder)
             .ThenBy(x => x.p.Pitch)
             .ToArray();
 
-        var hasArticAndSeparate = allPitches.Where(x => x.p.ArticulationID != 0 && x.p.Separator != Separator.None)
+        var hasArticAndSeparate = allPitches.Where(x => HasArticulation(x.p) && x.p.Separator != Separator.None)
             .OrderBy(x => x.p.Separator)
             .ThenBy(x => x.a.DrumMapOrder)
             .ToArray();
 
-        var noArticAndSeparate = allPitches.Where(x => x.p.ArticulationID == 0 && x.p.Separator != Separator.None)
+        var noArticAndSeparate = allPitches.Where(x => !HasArticulation(x.p) && x.p.Separator != Separator.None)
             .OrderBy(x => x.p.Separator)
             .ThenBy(x => x.p.DisplayOrder)
             .ThenBy(x => x.p.Pitch)

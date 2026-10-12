@@ -11,25 +11,6 @@ public static class ExModel
 
     public static int NAME_MAX_LENGTH = 64;
 
-    public static int GetNewID(this IEnumerable<IHasID> target)
-    {
-        int min = target.Any() ? target.Min(x => x.ID) : 0;
-        int max = target.Any() ? target.Max(x => x.ID) : 0;
-
-        List<int> numbers = target.Select(x => x.ID).ToList();
-
-        List<int> missing = Enumerable.Range(1, max - min + 1)
-            .Except(numbers)
-            .ToList();
-
-        if (numbers.Any() && missing.Any())
-        {
-            return missing.First();
-        }
-
-        return max + 1;
-    }
-
     public static void AddItem<T>(this ObservableCollection<T> source, T value, Expression<Func<T, dynamic>> f)
         where T : IHasDisplayOrder
     {
@@ -54,148 +35,89 @@ public static class ExModel
     public static void MoveTop<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
         where T : IHasDisplayOrder
     {
-        if (!target.Any())
-        {
-            return;
-        }
-
-        source.SuppressNotifications();
-
-        var tops = target.OrderBy(f.Compile()).ToArray();
-        var bottoms = source.Where(x => !target.Contains(x)).OrderBy(f.Compile()).ToArray();
-
-        int order = 1;
-
-        foreach (var item in tops)
-        {
-            f.SetValue(item, order++);
-        }
-
-        foreach (var item in bottoms)
-        {
-            f.SetValue(item, order++);
-        }
-
-        source.SortRefresh(f);
-
-        source.ResumeNotifications();
+        Reorder(source, target, f, (items, selected) =>
+            items.Where(selected.Contains).Concat(items.Where(x => !selected.Contains(x))).ToList());
     }
 
     public static void MoveUp<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
         where T : IHasDisplayOrder
     {
-        if (!target.Any())
+        // 選択行を相対順のまま1つのグループにまとめ、最初の選択行の位置から1段上へ置く
+        Reorder(source, target, f, (items, selected) =>
         {
-            return;
-        }
-
-        source.SuppressNotifications();
-
-        int pos = f.GetValue(target[0]) - 1;
-
-        if (pos <= 0)
-        {
-            source.ResumeNotifications();
-            return;
-        }
-
-        var tops = source.Where(x => f.GetValue(x) < pos).OrderBy(f.Compile()).ToArray();
-        var middles = target.OrderBy(f.Compile()).ToArray();
-        var bottoms = source.Where(x => !target.Contains(x) && f.GetValue(x) >= pos).OrderBy(f.Compile()).ToArray();
-
-        int order = 1;
-
-        foreach (var item in tops)
-        {
-            f.SetValue(item, order++);
-        }
-
-        foreach (var item in middles)
-        {
-            f.SetValue(item, order++);
-        }
-
-        foreach (var item in bottoms)
-        {
-            f.SetValue(item, order++);
-        }
-
-        source.SortRefresh(f);
-
-        source.ResumeNotifications();
+            var others = items.Where(x => !selected.Contains(x)).ToList();
+            int index = Math.Max(0, items.TakeWhile(x => !selected.Contains(x)).Count() - 1);
+            others.InsertRange(index, items.Where(selected.Contains));
+            return others;
+        });
     }
 
     public static void MoveDown<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
         where T : IHasDisplayOrder
     {
-        if (!target.Any())
+        // 選択行を相対順のまま1つのグループにまとめ、最後の選択行の位置から1段下へ置く
+        Reorder(source, target, f, (items, selected) =>
         {
-            return;
-        }
-
-        int pos = f.GetValue(target.Last()) + 1;
-
-        if (pos > source.Max(f.Compile()))
-        {
-            return;
-        }
-
-        source.SuppressNotifications();
-
-        var tops = source.Where(x => !target.Contains(x) && f.GetValue(x) <= pos).OrderBy(f.Compile()).ToArray();
-        var middles = target.OrderBy(f.Compile()).ToArray();
-        var bottoms = source.Where(x => f.GetValue(x) > pos).OrderBy(f.Compile()).ToArray();
-
-        int order = 1;
-
-        foreach (var item in tops)
-        {
-            f.SetValue(item, order++);
-        }
-
-        foreach (var item in middles)
-        {
-            f.SetValue(item, order++);
-        }
-
-        foreach (var item in bottoms)
-        {
-            f.SetValue(item, order++);
-        }
-
-        source.SortRefresh(f);
-
-        source.ResumeNotifications();
+            var others = items.Where(x => !selected.Contains(x)).ToList();
+            int lastSelected = items.FindLastIndex(selected.Contains);
+            int index = Math.Min(others.Count, items.Take(lastSelected).Count(x => !selected.Contains(x)) + 1);
+            others.InsertRange(index, items.Where(selected.Contains));
+            return others;
+        });
     }
 
     public static void MoveBottom<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
         where T : IHasDisplayOrder
     {
-        if (!target.Any())
+        Reorder(source, target, f, (items, selected) =>
+            items.Where(x => !selected.Contains(x)).Concat(items.Where(selected.Contains)).ToList());
+    }
+
+    /// <summary>
+    /// 現在の表示順に並べた一覧の上で選択行を動かし、結果を1始まりの連番で採番し直す。
+    /// 表示順が同値の行は、コレクション内の並びを維持する。選択コレクションの格納順や欠番には依存しない。
+    /// </summary>
+    private static void Reorder<T>(
+        ObservableCollection<T> source,
+        ObservableCollection<T> target,
+        Expression<Func<T, dynamic>> f,
+        Func<List<T>, HashSet<T>, List<T>> arrange)
+        where T : IHasDisplayOrder
+    {
+        var selected = target.Where(source.Contains).ToHashSet();
+        if (selected.Count == 0)
         {
             return;
         }
 
-        source.SuppressNotifications();
+        var key = f.Compile();
+        var current = source
+            .Select((item, index) => new { item, index })
+            .OrderBy(x => key(x.item))
+            .ThenBy(x => x.index)
+            .Select(x => x.item)
+            .ToList();
 
-        var tops = target.OrderBy(f.Compile()).ToArray();
-        var bottoms = source.Where(x => !target.Contains(x)).OrderBy(f.Compile()).ToArray();
+        var arranged = arrange(current.ToList(), selected);
 
-        int order = 1;
-
-        foreach (var item in bottoms)
+        // すでに端などで並びが変わらない場合は何も変更しない
+        if (arranged.SequenceEqual(current))
         {
-            f.SetValue(item, order++);
+            return;
         }
 
-        foreach (var item in tops)
+        int order = 1;
+        foreach (var item in arranged)
         {
-            f.SetValue(item, order++);
+            if (f.GetValue(item) != order)
+            {
+                f.SetValue(item, order);
+            }
+
+            order++;
         }
 
         source.SortRefresh(f);
-
-        source.ResumeNotifications();
     }
 
     public static void SortRefresh<T>(this ObservableCollection<T> source, Expression<Func<T, dynamic>> f)

@@ -117,7 +117,7 @@ public partial class ConvertMidiViewModel : ViewModelBase
     [RelayCommand(CanExecute = nameof(CanConvert))]
     private async Task OnConvert()
     {
-        string title = $"Convert Base On Kit = '{BaseOn?.Name}'";
+        string title = string.Format(App.Text("Title_ConvertBaseOnKit", "Convert Base On Kit = '{0}'"), BaseOn?.Name);
 
         if (!File.Exists(LastConvertMIDIFilePath))
         {

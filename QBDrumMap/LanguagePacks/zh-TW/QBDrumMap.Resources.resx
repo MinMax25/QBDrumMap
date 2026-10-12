@@ -264,6 +264,33 @@
   <data name="Confirm_NewFile" xml:space="preserve">
     <value>放棄當前資料並建立新檔案？</value>
   </data>
+  <data name="Error_FileIO" xml:space="preserve">
+    <value>檔案讀寫錯誤</value>
+  </data>
+  <data name="Title_ExportFormat" xml:space="preserve">
+    <value>匯出 {0}</value>
+  </data>
+  <data name="Title_ConvertBaseOnKit" xml:space="preserve">
+    <value>轉換 Base On Kit = '{0}'</value>
+  </data>
+  <data name="Confirm_UnsavedChanges" xml:space="preserve">
+    <value>有尚未儲存的變更。是否在繼續之前儲存？</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="Button_DontSave" xml:space="preserve">
+    <value>不儲存</value>
+  </data>
+  <data name="Busy_Saving" xml:space="preserve">
+    <value>正在儲存…</value>
+  </data>
+  <data name="Busy_Loading" xml:space="preserve">
+    <value>正在載入…</value>
+  </data>
+  <data name="Error_QBDrummerTooManyArticulations" xml:space="preserve">
+    <value>QB Drummer 的 CSV 最多支援 {0} 個奏法。</value>
+  </data>
   <data name="Confirm_SaveHasError" xml:space="preserve">
     <value>資料有錯誤，無法儲存。</value>
   </data>

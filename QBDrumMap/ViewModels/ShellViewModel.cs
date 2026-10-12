@@ -8,8 +8,10 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using libQB.Attributes;
+using libQB.DialogServices;
 using libQB.WindowServices;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using QBDrumMap.Class;
 using QBDrumMap.Class.Enums;
 using QBDrumMap.Class.MapModels;
@@ -31,6 +33,17 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
 
     [ObservableProperty]
     private bool _isCommandEnabled = true;
+
+    /// <summary>保存中。画面・コマンド・ショートカット・閉じる操作を受け付けない。</summary>
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+    private bool _isBusy;
+
+    public bool IsNotBusy => !IsBusy;
+
+    /// <summary>Busy Overlayに表示する処理の理由（保存中・読込中など）。</summary>
+    [ObservableProperty]
+    private string _busyMessage = string.Empty;
 
     private const string QBD_FILTER = "QB DrumMap (*.qbd)|*.qbd";
 
@@ -154,12 +167,14 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
     [RelayCommand]
     private async Task OnNewFile()
     {
-        if (MapData.IsModified())
+        if (IsBusy)
         {
-            if (await Dialog.ShowConfirmAsync(App.Text("Confirm_NewFile")) == false)
-            {
-                return;
-            }
+            return;
+        }
+
+        if (await ConfirmUnsavedChangesAsync() == false)
+        {
+            return;
         }
 
         MapData.Initialize();
@@ -170,12 +185,14 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
     [RelayCommand]
     private async Task OnOpenFile()
     {
-        if (MapData.IsModified())
+        if (IsBusy)
         {
-            if (await Dialog.ShowConfirmAsync(App.Text("Confirm_NewFile")) == false)
-            {
-                return;
-            }
+            return;
+        }
+
+        if (await ConfirmUnsavedChangesAsync() == false)
+        {
+            return;
         }
 
         var path = await Dialog.ShowOpenFileDialog(
@@ -188,7 +205,20 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
             return;
         }
 
-        if (await MapData.LoadAsync(path))
+        bool loaded;
+
+        BusyMessage = App.Text("Busy_Loading", "Loading…");
+        IsBusy = true;
+        try
+        {
+            loaded = await MapData.LoadAsync(path);
+        }
+        finally
+        {
+            IsBusy = false;
+        }
+
+        if (loaded)
         {
             // 読込に成功した場合だけ、最終ファイルパスと編集履歴を更新する
             Setting.LastOpenedFilePath = path;
@@ -196,17 +226,30 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
         }
         else
         {
-            await Dialog.ShowErrorAsync($"File IO Error{Environment.NewLine}{MapData.LastError?.Message}", "Load");
+            await Dialog.ShowErrorAsync(
+                $"{App.Text("Error_FileIO", "File IO Error")}{Environment.NewLine}{MapData.LastError?.Message}",
+                App.Text("Common_OpenFile", "Open File"));
         }
     }
 
     [RelayCommand]
     private async Task OnSaveFile()
     {
+        await SaveCoreAsync();
+    }
+
+    /// <summary>保存先を選んで保存する。保存できた場合だけtrue（エラー・ダイアログのキャンセル・保存失敗はfalse）。</summary>
+    private async Task<bool> SaveCoreAsync()
+    {
+        if (IsBusy)
+        {
+            return false;
+        }
+
         if (MapData.HasError())
         {
             await Dialog.ShowAlertAsync(App.Text("Confirm_SaveHasError"));
-            return;
+            return false;
         }
 
         var path = await Dialog.ShowSaveFileDialog(
@@ -216,17 +259,66 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
 
         if (path == null)
         {
-            return;
+            return false;
         }
 
-        if (await MapData.SaveAsync(path))
+        bool saved;
+
+        BusyMessage = App.Text("Busy_Saving", "Saving…");
+        IsBusy = true;
+        try
+        {
+            saved = await MapData.SaveAsync(path);
+        }
+        finally
+        {
+            IsBusy = false;
+        }
+
+        if (saved)
         {
             Setting.LastOpenedFilePath = path;
         }
         else
         {
-            await Dialog.ShowErrorAsync($"File IO Error{Environment.NewLine}{MapData.LastError?.Message}", "Save");
+            await Dialog.ShowErrorAsync(
+                $"{App.Text("Error_FileIO", "File IO Error")}{Environment.NewLine}{MapData.LastError?.Message}",
+                App.Text("Common_SaveFile", "Save File"));
         }
+
+        return saved;
+    }
+
+    /// <summary>未保存の変更がある場合に「保存する／保存しない／キャンセル」を確認する。続行してよい場合だけtrue。</summary>
+    private Task<bool> ConfirmUnsavedChangesAsync()
+    {
+        return UnsavedChangesGuard.ConfirmAsync(MapData.IsModified, AskUnsavedChoiceAsync, SaveCoreAsync);
+    }
+
+    private async Task<UnsavedChoice> AskUnsavedChoiceAsync()
+    {
+        var settings = new MetroDialogSettings
+        {
+            AffirmativeButtonText = App.Text("Button_Save", "Save"),
+            NegativeButtonText = App.Text("Button_Cancel", "Cancel"),
+            FirstAuxiliaryButtonText = App.Text("Button_DontSave", "Don't Save"),
+            DefaultButtonFocus = MessageDialogResult.Affirmative,
+        };
+
+        var result = await App.GetService<IDialogCoordinator>().ShowMessageAsync(
+            this,
+            DialogTextProvider.ConfirmTitle(),
+            App.Text("Confirm_UnsavedChanges", "There are unsaved changes. Save them before continuing?"),
+            MessageDialogStyle.AffirmativeAndNegativeAndSingleAuxiliary,
+            settings);
+
+        // Escキー等で閉じた場合はNegative（キャンセル）になる
+        return result switch
+        {
+            MessageDialogResult.Affirmative => UnsavedChoice.Save,
+            MessageDialogResult.FirstAuxiliary => UnsavedChoice.DontSave,
+            _ => UnsavedChoice.Cancel,
+        };
     }
 
     [RelayCommand]
@@ -286,12 +378,22 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
     [RelayCommand]
     private void OnUndo()
     {
+        if (IsBusy)
+        {
+            return;
+        }
+
         UndoManager.Undo();
     }
 
     [RelayCommand]
     private void OnRedo()
     {
+        if (IsBusy)
+        {
+            return;
+        }
+
         UndoManager.Redo();
     }
 
@@ -334,7 +436,7 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
                 OnPropertyChanged(nameof(AboutCaption));
                 break;
             case nameof(MapData.EditState):
-                IsCommandEnabled = !MapData.EditState;
+                UpdateCommandEnabled();
                 break;
             default:
                 break;
@@ -343,16 +445,31 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
 
     public async Task<bool> OnWindowClosingAsync()
     {
+        // 保存中は閉じない。保存後に自動で閉じることもしない
+        if (IsBusy)
+        {
+            return false;
+        }
+
         if (MapData.IsModified())
         {
-            var result = await Dialog.ShowWarningAsync(App.Text("Confirm_ApplicationCloseWithTheChanges"));
-            return result ?? false;
+            return await ConfirmUnsavedChangesAsync();
         }
         else
         {
             var result = await Dialog.ShowConfirmAsync(App.Text("Confirm_ApplicationClose"));
             return result ?? false;
         }
+    }
+
+    partial void OnIsBusyChanged(bool value)
+    {
+        UpdateCommandEnabled();
+    }
+
+    private void UpdateCommandEnabled()
+    {
+        IsCommandEnabled = !MapData.EditState && !IsBusy;
     }
 
     private bool CanGoBack()

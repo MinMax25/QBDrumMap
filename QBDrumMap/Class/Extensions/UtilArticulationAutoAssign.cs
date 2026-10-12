@@ -22,7 +22,7 @@ public static class UtilArticulationAutoAssign
 
         foreach (var pitch in kit.Pitches)
         {
-            if (pitch.ArticulationID != 0 || string.IsNullOrWhiteSpace(pitch.Name))
+            if (data.IsValidArticulationID(pitch.ArticulationID) || string.IsNullOrWhiteSpace(pitch.Name))
             {
                 continue;
             }
@@ -70,7 +70,7 @@ public static class UtilArticulationAutoAssign
             .SelectMany(p => p.Kits.Select(k => new { Plugin = p, Kit = k }))
             .Where(x => x.Kit != targetKit)
             .SelectMany(x => x.Kit.Pitches.Select(p => new { x.Plugin, Pitch = p }))
-            .Where(x => x.Pitch.ArticulationID != 0 && !string.IsNullOrWhiteSpace(x.Pitch.Name))
+            .Where(x => data.IsValidArticulationID(x.Pitch.ArticulationID) && !string.IsNullOrWhiteSpace(x.Pitch.Name))
             .Where(x => Normalize(x.Pitch.Name, dictionary) == normalized)
             .ToArray();
 

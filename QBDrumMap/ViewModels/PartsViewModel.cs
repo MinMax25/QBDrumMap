@@ -42,7 +42,7 @@ public partial class PartsViewModel : ViewModelBaseHasContents
     {
         Part drumPart = new()
         {
-            ID = MapData.Parts.GetNewID()
+            ID = MapData.NewPartID()
         };
         drumPart.Name = $"Part{drumPart.ID}";
 
@@ -143,11 +143,15 @@ public partial class PartsViewModel : ViewModelBaseHasContents
 
         await Application.Current.Dispatcher.InvokeAsync(() =>
         {
-            MapData.Parts.Clear();
-            foreach (var part in parts)
+            // 表示順に並べ直すだけで、編集ではない
+            MapData.RunWithoutDirtyChange(() =>
             {
-                MapData.Parts.Add(part);
-            }
+                MapData.Parts.Clear();
+                foreach (var part in parts)
+                {
+                    MapData.Parts.Add(part);
+                }
+            });
 
             PartsView = CollectionViewSource.GetDefaultView(MapData.Parts);
             MapData.SetEditState(this, false);

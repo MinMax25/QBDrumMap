@@ -313,6 +313,16 @@
   <data name="Confirm_SaveHasError" xml:space="preserve"><value>The data contains errors and cannot be saved.</value></data>
   <data name="Confirm_ApplicationCloseWithTheChanges" xml:space="preserve"><value>There are unsaved changes. Close the application?</value></data>
   <data name="Confirm_ApplicationClose" xml:space="preserve"><value>Close the application?</value></data>
+  <data name="Error_FileIO" xml:space="preserve"><value>File IO Error</value></data>
+  <data name="Title_ExportFormat" xml:space="preserve"><value>Export {0}</value></data>
+  <data name="Title_ConvertBaseOnKit" xml:space="preserve"><value>Convert Base On Kit = '{0}'</value></data>
+  <data name="Busy_Saving" xml:space="preserve"><value>Saving…</value></data>
+  <data name="Busy_Loading" xml:space="preserve"><value>Loading…</value></data>
+  <data name="Error_QBDrummerTooManyArticulations" xml:space="preserve"><value>QB Drummer CSV supports up to {0} articulations.</value></data>
+  <data name="Confirm_UnsavedChanges" xml:space="preserve"><value>There are unsaved changes. Save them before continuing?</value></data>
+  <data name="Button_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Button_DontSave" xml:space="preserve"><value>Don't Save</value></data>
+  <data name="Button_Cancel" xml:space="preserve"><value>Cancel</value></data>
   <data name="Message_Command_Clear" xml:space="preserve"><value>Clear {0}?</value></data>
   <data name="Message_Command_Delete" xml:space="preserve"><value>Delete {0}: {1}?</value></data>
   <data name="Message_ProcessComplete" xml:space="preserve"><value>Process completed.</value></data>
@@ -330,7 +340,6 @@
   <data name="Menu_Help" xml:space="preserve"><value>Help</value></data>
   <data name="Menu_Help_Document" xml:space="preserve"><value>Documentation</value></data>
   <data name="Button_OK" xml:space="preserve"><value>OK</value></data>
-  <data name="Button_Cancel" xml:space="preserve"><value>Cancel</value></data>
   <data name="Button_Yes" xml:space="preserve"><value>Yes</value></data>
   <data name="Button_No" xml:space="preserve"><value>No</value></data>
   <data name="Title_Dialog_Information" xml:space="preserve"><value>Information</value></data>
