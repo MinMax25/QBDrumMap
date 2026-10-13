@@ -22,7 +22,6 @@ public partial class MapData : ObservableObject
 
     private bool isDirty;
 
-    // 編集セッション中に発行したIDの最大値。削除・Undo・保存を経ても巻き戻さず、IDを再利用しない
     private int lastPluginID;
     private int lastKitID;
     private int lastPartID;
@@ -31,7 +30,6 @@ public partial class MapData : ObservableObject
     [JsonIgnore]
     public Exception LastError { get; private set; }
 
-    /// <summary>Loaded/Saved の購読側で出た例外。データ処理の成否とは分離して記録する。</summary>
     [JsonIgnore]
     public Exception NotifyError { get; private set; }
 
@@ -92,7 +90,6 @@ public partial class MapData : ObservableObject
         HookCollection(value);
     }
 
-    /// <summary>画面表示のための並べ替え（Clear→Add）など、編集ではない操作を行う。Dirtyの状態は変えない。</summary>
     public void RunWithoutDirtyChange(Action action)
     {
         bool dirty = isDirty;
@@ -105,10 +102,6 @@ public partial class MapData : ObservableObject
             isDirty = dirty;
         }
     }
-
-    #region 編集の検知
-
-    // モデル階層の追加・削除・値変更を購読し、編集があった事実をDirtyに記録する
 
     private void HookCollection<T>(ObservableCollection<T> collection)
     {
@@ -201,13 +194,11 @@ public partial class MapData : ObservableObject
 
     private void OnModelPropertyChanged(object sender, PropertyChangedEventArgs e)
     {
-        // 検証状態の変化は編集ではない
         if (e.PropertyName == nameof(ObservableValidator.HasErrors))
         {
             return;
         }
 
-        // 子コレクションそのものが差し替えられた場合は購読し直す
         switch (sender)
         {
             case Plugin plugin when e.PropertyName == nameof(Plugin.Kits):
@@ -223,8 +214,6 @@ public partial class MapData : ObservableObject
 
         isDirty = true;
     }
-
-    #endregion
 
     public void SetEditState(ViewModelBase sender, bool isEditing)
     {
@@ -268,7 +257,6 @@ public partial class MapData : ObservableObject
         return last;
     }
 
-    /// <summary>現在のデータの最大IDから発行済みIDを初期化する（読込成功・新規作成時）。</summary>
     private void ResetIssuedIDs()
     {
         lastPluginID = Plugins.Select(x => x.ID).DefaultIfEmpty(0).Max();
@@ -277,7 +265,6 @@ public partial class MapData : ObservableObject
         lastArticulationID = Articulations.Select(x => x.ID).DefaultIfEmpty(0).Max();
     }
 
-    /// <summary>指定IDのArticulationが実在するか。0や孤立した参照は無効（未割当・補完なし）として扱う。</summary>
     public bool IsValidArticulationID(int id)
     {
         return id != 0 && Articulations.Any(x => x.ID == id);
@@ -307,7 +294,6 @@ public partial class MapData : ObservableObject
                 throw new InvalidDataException("QBD file is empty.");
             }
 
-            // 現在のデータには触れず、新しいデータを最後まで組み立ててから反映する
             var newPlugins = new List<Plugin>();
             var newParts = new List<Part>();
 
@@ -389,7 +375,6 @@ public partial class MapData : ObservableObject
                 newParts.Add(newPart);
             }
 
-            // 組み立て中に現在のデータとの重複で付いた検証エラーは、読込結果の状態ではないため消す
             foreach (var model in newPlugins.Cast<ModelBase>()
                 .Concat(newPlugins.SelectMany(x => x.Kits))
                 .Concat(newPlugins.SelectMany(x => x.Kits).SelectMany(x => x.Pitches))
@@ -399,7 +384,6 @@ public partial class MapData : ObservableObject
                 model.ResetValidation();
             }
 
-            // ここから先は失敗しない操作だけを行う
             Plugins.Clear();
             Parts.Clear();
 
@@ -418,14 +402,12 @@ public partial class MapData : ObservableObject
             LastError = null;
             NotifyError = null;
 
-            // データは確定済み。通知の失敗は読込の成否に影響させない
             RaiseSafely(Loaded, new DrumMapIOEventArgs(true));
 
             return true;
         }
         catch (Exception ex)
         {
-            // 失敗時は現在のデータ・Dirty状態・画面を変えない（イベントも発火しない）
             LastError = ex;
             return false;
         }
@@ -438,7 +420,6 @@ public partial class MapData : ObservableObject
 
         try
         {
-            // 保存内容は複製で作る。ここまでの失敗では編集中のデータに触れない
             snapshot = Clone();
             FixID(snapshot);
 
@@ -452,7 +433,6 @@ public partial class MapData : ObservableObject
 
             var jsonString = JsonSerializer.Serialize(snapshot, options);
 
-            // 同じフォルダの一時ファイルへ書き切ってから、保存先へ確定する
             var fullPath = Path.GetFullPath(path);
             tempPath = Path.Combine(Path.GetDirectoryName(fullPath), $".{Path.GetFileName(fullPath)}.{Guid.NewGuid():N}.tmp");
             await File.WriteAllTextAsync(tempPath, jsonString);
@@ -470,13 +450,11 @@ public partial class MapData : ObservableObject
         }
         catch (Exception ex)
         {
-            // 失敗時は保存先・編集中のデータ・Dirty状態を変えない（イベントも発火しない）
             LastError = ex;
             DeleteTempFile(tempPath);
             return false;
         }
 
-        // ファイルは確定済み。編集中のデータ（ID・表示順・選択・Undo/Redo）には触れず、保存済みの状態にする
         isDirty = false;
         LastError = null;
 
@@ -486,7 +464,6 @@ public partial class MapData : ObservableObject
         return true;
     }
 
-    /// <summary>購読者ごとに例外を捕捉して通知する。例外は NotifyError に記録し、他の購読者への通知は続ける。</summary>
     private void RaiseSafely(EventHandler<DrumMapIOEventArgs> handler, DrumMapIOEventArgs e)
     {
         if (handler == null)
@@ -518,7 +495,6 @@ public partial class MapData : ObservableObject
         }
         catch
         {
-            // 一時ファイルの片付けに失敗しても、保存の成否には影響させない
         }
     }
 
@@ -607,7 +583,6 @@ public partial class MapData : ObservableObject
         return clone;
     }
 
-    /// <summary>最後の保存・読込・新規作成以降に編集があればtrue。編集・Undo・Redoで立ち、保存・読込・新規作成の成功で下ろす。</summary>
     public bool IsModified()
     {
         return isDirty;

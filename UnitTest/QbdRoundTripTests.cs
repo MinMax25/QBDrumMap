@@ -3,7 +3,6 @@ using QBDrumMap.Class.MapModels;
 
 namespace UnitTest;
 
-/// <summary>現行の正常動作を固定する Baseline テスト（修正の前後とも成功すること）。</summary>
 [Trait("Category", "Baseline")]
 public class QbdRoundTripTests
 {
@@ -84,7 +83,6 @@ public class QbdRoundTripTests
 
         Assert.True(await map.SaveAsync(dir.File("a.qbd")));
 
-        // 編集中のデータは保存で変わらず、ファイル側だけ正規化（ID振り直し）される
         Assert.Equal(before, TestSupport.Dump(map));
         var fromFile = new MapData();
         Assert.True(await fromFile.LoadAsync(dir.File("a.qbd")));

@@ -42,7 +42,6 @@ public static class ExModel
     public static void MoveUp<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
         where T : IHasDisplayOrder
     {
-        // 選択行を相対順のまま1つのグループにまとめ、最初の選択行の位置から1段上へ置く
         Reorder(source, target, f, (items, selected) =>
         {
             var others = items.Where(x => !selected.Contains(x)).ToList();
@@ -55,7 +54,6 @@ public static class ExModel
     public static void MoveDown<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
         where T : IHasDisplayOrder
     {
-        // 選択行を相対順のまま1つのグループにまとめ、最後の選択行の位置から1段下へ置く
         Reorder(source, target, f, (items, selected) =>
         {
             var others = items.Where(x => !selected.Contains(x)).ToList();
@@ -73,10 +71,6 @@ public static class ExModel
             items.Where(x => !selected.Contains(x)).Concat(items.Where(selected.Contains)).ToList());
     }
 
-    /// <summary>
-    /// 現在の表示順に並べた一覧の上で選択行を動かし、結果を1始まりの連番で採番し直す。
-    /// 表示順が同値の行は、コレクション内の並びを維持する。選択コレクションの格納順や欠番には依存しない。
-    /// </summary>
     private static void Reorder<T>(
         ObservableCollection<T> source,
         ObservableCollection<T> target,
@@ -100,7 +94,6 @@ public static class ExModel
 
         var arranged = arrange(current.ToList(), selected);
 
-        // すでに端などで並びが変わらない場合は何も変更しない
         if (arranged.SequenceEqual(current))
         {
             return;

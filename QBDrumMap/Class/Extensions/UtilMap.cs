@@ -187,7 +187,6 @@ public static class UtilMap
     {
         List<KitPitch> result = new();
 
-        // 実在しないArticulationへの参照は未割当として扱う
         var validIds = data.Articulations.Select(a => a.ID).ToHashSet();
         bool HasArticulation(KitPitch p) => p.ArticulationID != 0 && validIds.Contains(p.ArticulationID);
 

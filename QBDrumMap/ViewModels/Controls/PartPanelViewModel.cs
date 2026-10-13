@@ -50,7 +50,6 @@ public partial class PartPanelViewModel : ViewModelBase
                 return x.DisplayOrder;
             })]);
 
-            // 表示順に並べ直すだけで、編集ではない
             MapData.RunWithoutDirtyChange(() =>
             {
                 Part.Articulations.Clear();

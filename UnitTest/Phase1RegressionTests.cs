@@ -3,7 +3,6 @@ using QBDrumMap.Class.MapModels;
 
 namespace UnitTest;
 
-/// <summary>フェーズ1（B-01、B-02、N-4）の不具合再現テスト。修正前は失敗し、修正後に成功する。</summary>
 [Trait("Category", "Regression")]
 public class Phase1RegressionTests
 {
@@ -14,7 +13,7 @@ public class Phase1RegressionTests
     private static async Task<(MapData Map, string Before)> LoadedWithEditAsync()
     {
         var map = await TestSupport.LoadSampleAsync();
-        map.Plugins[0].Kits[0].Pitches[0].ArticulationID = 12345; // 未保存の編集
+        map.Plugins[0].Kits[0].Pitches[0].ArticulationID = 12345;  
         return (map, TestSupport.Dump(map));
     }
 
@@ -96,7 +95,6 @@ public class Phase1RegressionTests
     [Fact]
     public async Task B01_ReloadSameFile_HasNoValidationErrors()
     {
-        // 現在のデータと同名の項目を読み込んでも、検証エラーが付かないこと
         var map = await TestSupport.LoadSampleAsync();
 
         Assert.True(await map.LoadAsync(TestSupport.SampleQbd));
@@ -136,10 +134,10 @@ public class Phase1RegressionTests
         var map = await TestSupport.LoadSampleAsync();
         foreach (var kit in map.Plugins.SelectMany(p => p.Kits))
         {
-            kit.ID += 1000; // 保存時に振り直しが発生する状態にする
+            kit.ID += 1000;  
         }
         var arts = map.Parts.SelectMany(p => p.Articulations).ToList();
-        arts[1].ID = arts[0].ID; // FixID が失敗する重複
+        arts[1].ID = arts[0].ID;  
         var before = TestSupport.Dump(map);
 
         Assert.False(await map.SaveAsync(dir.File("a.qbd")));
@@ -155,7 +153,6 @@ public class Phase1RegressionTests
         File.WriteAllText(dir.File("a.qbd"), "precious");
         var (map, _) = await LoadedWithEditAsync();
 
-        // 保存先が別プロセスに開かれている状態（置換が失敗する）
         using (new FileStream(dir.File("a.qbd"), FileMode.Open, FileAccess.Read, FileShare.None))
         {
             Assert.False(await map.SaveAsync(dir.File("a.qbd")));

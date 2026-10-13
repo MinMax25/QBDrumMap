@@ -3,7 +3,6 @@ using QBDrumMap.Class.MapModels;
 
 namespace UnitTest;
 
-/// <summary>通知（Loaded／Saved）の購読側で例外が出ても、データ処理の成否に影響しないことの再現テスト。</summary>
 [Trait("Category", "Regression")]
 public class NotificationTests
 {

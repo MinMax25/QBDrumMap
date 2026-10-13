@@ -44,7 +44,7 @@ public partial class KitPanelViewModel
         {
             Plugin.PropertyChanged += Plugin_PropertyChanged;
             ObservableCollection<Kit> kits = [.. Plugin.Kits.OrderBy(x => x.DisplayOrder)];
-            // 表示順に並べ直すだけで、編集ではない
+             
             MapData.RunWithoutDirtyChange(() =>
             {
                 Plugin.Kits.Clear();

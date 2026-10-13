@@ -4,7 +4,6 @@ using QBDrumMap.Class.MapModels;
 
 namespace UnitTest;
 
-/// <summary>フェーズB：ID単調採番と参照切れの扱い。</summary>
 public class PhaseBTests
 {
     [Fact]
@@ -107,9 +106,9 @@ public class PhaseBTests
         {
             a.Complement = 0;
         }
-        map.Parts[0].Articulations[0].Complement = 99999; // 実在しない
+        map.Parts[0].Articulations[0].Complement = 99999;  
 
-        var articMap = ArticulationMap.GetArticulationMap(map, kit.Name); // 例外にならない
+        var articMap = ArticulationMap.GetArticulationMap(map, kit.Name);  
 
         Assert.NotEmpty(articMap.Items);
     }
@@ -147,7 +146,7 @@ public class PhaseBTests
             p.ArticulationID = 0;
         }
         var srcPitch = source.Pitches.First(x => !string.IsNullOrWhiteSpace(x.Name));
-        srcPitch.ArticulationID = 88888; // 孤立した参照
+        srcPitch.ArticulationID = 88888;  
         var tgtPitch = target.Pitches.First(x => x.Name == srcPitch.Name);
 
         map.AutoAssignArticulations(target, Array.Empty<PartNameAlias>());

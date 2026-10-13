@@ -4,7 +4,6 @@ using QBDrumMap.Class.Services;
 
 namespace UnitTest;
 
-/// <summary>フェーズA：保存・Dirty・未保存変更の確認（New/Open/Close）。</summary>
 public class PhaseATests
 {
     [Fact]
@@ -13,7 +12,7 @@ public class PhaseATests
         using var dir = new TempDir();
         var map = await TestSupport.LoadSampleAsync();
         map.Parts[0].ID = 900;
-        map.Plugins.Remove(map.Plugins[2]); // 欠番を作る
+        map.Plugins.Remove(map.Plugins[2]);  
         var before = TestSupport.Dump(map);
 
         Assert.True(await map.SaveAsync(dir.File("a.qbd")));
@@ -50,7 +49,6 @@ public class PhaseATests
         map.Parts.Add(new Part { ID = 99, Name = "new" });
         Assert.True(map.IsModified());
 
-        // 追加した要素の中身の編集も検知する
         using var dir = new TempDir();
         Assert.True(await map.SaveAsync(dir.File("a.qbd")));
         Assert.False(map.IsModified());
@@ -77,7 +75,7 @@ public class PhaseATests
         Assert.True(await map.SaveAsync(dir.File("a.qbd")));
 
         map.Plugins[0].Name = "tmp";
-        map.Plugins[0].Name = original; // Undo/Redoと同じく、値を戻しても編集扱い
+        map.Plugins[0].Name = original;  
 
         Assert.True(map.IsModified());
     }
@@ -123,7 +121,6 @@ public class PhaseATests
         });
         Assert.False(map.IsModified());
 
-        // 編集後は編集ありのまま保たれ、再追加した要素の編集も検知する
         map.Plugins[0].Name = "edited";
         map.RunWithoutDirtyChange(() =>
         {
@@ -133,8 +130,6 @@ public class PhaseATests
         });
         Assert.True(map.IsModified());
     }
-
-    // 未保存変更の確認フロー
 
     [Fact]
     public async Task Guard_NotModified_DoesNotAsk()
