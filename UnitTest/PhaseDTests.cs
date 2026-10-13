@@ -3,7 +3,6 @@ using QBDrumMap.Class.MapModels;
 
 namespace UnitTest;
 
-/// <summary>フェーズD：B-23 移動処理（Top/Up/Down/Bottom）。</summary>
 public class PhaseDTests
 {
     private static ObservableCollection<Part> Make(params int[] orders)
@@ -19,7 +18,6 @@ public class PhaseDTests
     private static ObservableCollection<Part> Pick(ObservableCollection<Part> source, params int[] ids)
         => new(ids.Select(id => source.Single(x => x.ID == id)));
 
-    /// <summary>表示順に並べたID列。</summary>
     private static int[] Ids(ObservableCollection<Part> source)
         => source.OrderBy(x => x.DisplayOrder).Select(x => x.ID).ToArray();
 
@@ -33,7 +31,6 @@ public class PhaseDTests
 
         s.MoveUp(Pick(s, 2, 5), x => x.DisplayOrder);
 
-        // 選択行は1つのグループとして最初の選択位置から1段上へ置かれる
         Assert.Equal(new[] { 2, 5, 1, 3, 4, 6 }, Ids(s));
         Assert.Equal(new[] { 1, 2, 3, 4, 5, 6 }, Orders(s));
     }
@@ -48,7 +45,6 @@ public class PhaseDTests
         Assert.Equal(new[] { 1, 3, 4, 6, 2, 5 }, Ids(s));
     }
 
-    // 仕様例：A [B] C [D] E（ID 1〜5）
     private static ObservableCollection<Part> Abcde() => Make(1, 2, 3, 4, 5);
 
     [Fact]
@@ -169,7 +165,7 @@ public class PhaseDTests
         var map = await TestSupport.LoadSampleAsync();
         var first = new ObservableCollection<Part> { map.Parts.OrderBy(x => x.DisplayOrder).First() };
 
-        map.Parts.MoveUp(first, x => x.DisplayOrder); // 先頭なので何も起きない
+        map.Parts.MoveUp(first, x => x.DisplayOrder);  
         Assert.False(map.IsModified());
 
         map.Parts.MoveDown(first, x => x.DisplayOrder);
@@ -248,7 +244,7 @@ public class PhaseDTests
 
         s.MoveUp(Pick(s, 1), x => x.DisplayOrder);
 
-        Assert.Equal(new[] { 2, 5, 9 }, Orders(s)); // 端なら何も変えない
+        Assert.Equal(new[] { 2, 5, 9 }, Orders(s));  
     }
 
     [Fact]
@@ -311,6 +307,6 @@ public class PhaseDTests
         s.MoveUp(selected, x => x.DrumMapOrder);
 
         Assert.Equal(new[] { 2, 1, 3 }, s.OrderBy(x => x.DrumMapOrder).Select(x => x.ID).ToArray());
-        Assert.Equal(new[] { 1, 2, 3 }, s.Select(x => x.DisplayOrder).ToArray()); // DisplayOrderは触らない
+        Assert.Equal(new[] { 1, 2, 3 }, s.Select(x => x.DisplayOrder).ToArray());  
     }
 }

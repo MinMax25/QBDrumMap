@@ -34,14 +34,12 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
     [ObservableProperty]
     private bool _isCommandEnabled = true;
 
-    /// <summary>保存中。画面・コマンド・ショートカット・閉じる操作を受け付けない。</summary>
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsNotBusy))]
     private bool _isBusy;
 
     public bool IsNotBusy => !IsBusy;
 
-    /// <summary>Busy Overlayに表示する処理の理由（保存中・読込中など）。</summary>
     [ObservableProperty]
     private string _busyMessage = string.Empty;
 
@@ -220,7 +218,6 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
 
         if (loaded)
         {
-            // 読込に成功した場合だけ、最終ファイルパスと編集履歴を更新する
             Setting.LastOpenedFilePath = path;
             UndoManager.Clear();
         }
@@ -238,7 +235,6 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
         await SaveCoreAsync();
     }
 
-    /// <summary>保存先を選んで保存する。保存できた場合だけtrue（エラー・ダイアログのキャンセル・保存失敗はfalse）。</summary>
     private async Task<bool> SaveCoreAsync()
     {
         if (IsBusy)
@@ -289,7 +285,6 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
         return saved;
     }
 
-    /// <summary>未保存の変更がある場合に「保存する／保存しない／キャンセル」を確認する。続行してよい場合だけtrue。</summary>
     private Task<bool> ConfirmUnsavedChangesAsync()
     {
         return UnsavedChangesGuard.ConfirmAsync(MapData.IsModified, AskUnsavedChoiceAsync, SaveCoreAsync);
@@ -312,7 +307,6 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
             MessageDialogStyle.AffirmativeAndNegativeAndSingleAuxiliary,
             settings);
 
-        // Escキー等で閉じた場合はNegative（キャンセル）になる
         return result switch
         {
             MessageDialogResult.Affirmative => UnsavedChoice.Save,
@@ -445,7 +439,6 @@ public partial class ShellViewModel : ViewModelBase, IWindowClosingAware
 
     public async Task<bool> OnWindowClosingAsync()
     {
-        // 保存中は閉じない。保存後に自動で閉じることもしない
         if (IsBusy)
         {
             return false;

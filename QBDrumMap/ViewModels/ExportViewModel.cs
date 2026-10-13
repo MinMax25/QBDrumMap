@@ -376,7 +376,6 @@ public partial class ExportViewModel : ViewModelBase
         {
             foreach (var kit in SelectedKits)
             {
-                // 先に全文を作り、番号上限などで失敗した場合に出力フォルダを作らない
                 var csv = ArticulationMap.ToQBDrummerCsv(MapData, kit.KitName);
 
                 var outPath = Path.Combine(path, kit.PluginName);

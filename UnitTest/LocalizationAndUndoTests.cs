@@ -5,10 +5,8 @@ using QBDrumMap.Class.MapModels;
 
 namespace UnitTest;
 
-/// <summary>残存項目：多言語リソースの整合と、保存がUndo履歴を変えないこと。</summary>
 public class LocalizationAndUndoTests
 {
-    // このWorkで追加した文言のキー
     private static readonly string[] AddedKeys =
     {
         "Confirm_UnsavedChanges", "Button_Save", "Button_DontSave", "Button_Cancel",
@@ -84,7 +82,7 @@ public class LocalizationAndUndoTests
         foreach (var file in sources)
         {
             var text = File.ReadAllText(file);
-            // 既存キー（App.Text）の既定値としての出現だけを許す
+             
             foreach (var literal in new[] { "\"Load\"", "\"Save\"", "\"Import\"" })
             {
                 Assert.DoesNotContain($", {literal});", text);
@@ -108,7 +106,6 @@ public class LocalizationAndUndoTests
 
         Assert.True(await map.SaveAsync(dir.File("a.qbd")));
 
-        // 保存はUndo履歴を変えず、保存後も通常どおりUndo/Redoできる
         Assert.True(undo.CanUndo);
         Assert.False(undo.CanRedo);
         Assert.Equal("edited", plugin.Name);

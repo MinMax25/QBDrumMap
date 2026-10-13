@@ -143,7 +143,6 @@ public partial class PartsViewModel : ViewModelBaseHasContents
 
         await Application.Current.Dispatcher.InvokeAsync(() =>
         {
-            // 表示順に並べ直すだけで、編集ではない
             MapData.RunWithoutDirtyChange(() =>
             {
                 MapData.Parts.Clear();

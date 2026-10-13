@@ -6,13 +6,8 @@ public record ArticulationMap
 
     public List<ArticulationMapItem> Items { get; } = new();
 
-    /// <summary>QB DrummerのプリセットCSVが扱えるArticulation番号の上限（Map1/Map2を 0x0fff で切り出すため）。0は区切り判定と衝突するため使えない。</summary>
     public const int QBDrummerMaxArticulationNumber = 0x0fff;
 
-    /// <summary>
-    /// QB Drummer CSV専用の番号を作る。Part.DisplayOrder → Articulation.DisplayOrder の順に1始まりで採番し、全Kit共通の
-    /// 「QBD内部ID → CSV番号」対応表を返す。QBD内部IDは流用しない。
-    /// </summary>
     public static Dictionary<int, int> GetQBDrummerNumbers(MapData data)
     {
         var numbers = new Dictionary<int, int>();
@@ -29,7 +24,6 @@ public record ArticulationMap
                     QBDrummerMaxArticulationNumber));
             }
 
-            // 内部IDが重複している場合は先に出た方だけを対象にする（曖昧な参照の自動修復はしない）
             if (numbers.TryAdd(articulation.ID, no))
             {
                 no++;
@@ -39,7 +33,6 @@ public record ArticulationMap
         return numbers;
     }
 
-    /// <summary>指定KitのQB Drummer向けCSV本文を作る。第1列のIDはCSV専用番号。</summary>
     public static string ToQBDrummerCsv(MapData data, string kitName)
     {
         var articMap = GetArticulationMap(data, kitName);
@@ -134,7 +127,6 @@ public record ArticulationMap
 
         foreach (var item in articMap.Items.Where(x => !x.Pitches.Any() && x.Complement != 0))
         {
-            // 参照先が存在しない（孤立した）補完は「補完なし」として扱う
             if (articMap.Items.FirstOrDefault(a => a.ID == item.Complement) is not ArticulationMapItem mapItem)
             {
                 continue;
