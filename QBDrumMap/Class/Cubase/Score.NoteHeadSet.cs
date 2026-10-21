@@ -1,12312 +1,11143 @@
-﻿namespace QBDrumMap.Cubase.Score.NoteHeadSet
+namespace QBDrumMap.Cubase.Score.NoteHeadSet;
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+[System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
+public partial class kScoreLibrary
 {
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-    public partial class kScoreLibrary
-    {
+    private kScoreLibraryTemperaments temperamentsField;
+
+    private kScoreLibraryAccidentalSystems accidentalSystemsField;
 
-        private kScoreLibraryTemperaments temperamentsField;
+    private kScoreLibraryAccidentalDefinitions accidentalDefinitionsField;
 
-        private kScoreLibraryAccidentalSystems accidentalSystemsField;
+    private kScoreLibraryTonalitySystemDefinitions tonalitySystemDefinitionsField;
 
-        private kScoreLibraryAccidentalDefinitions accidentalDefinitionsField;
+    private kScoreLibraryEnsembles ensemblesField;
 
-        private kScoreLibraryTonalitySystemDefinitions tonalitySystemDefinitionsField;
+    private kScoreLibraryInstruments instrumentsField;
 
-        private kScoreLibraryEnsembles ensemblesField;
+    private kScoreLibraryInstrumentNames instrumentNamesField;
 
-        private kScoreLibraryInstruments instrumentsField;
+    private kScoreLibraryInstrumentFamilies instrumentFamiliesField;
 
-        private kScoreLibraryInstrumentNames instrumentNamesField;
+    private kScoreLibraryInstrumentScoreOrders instrumentScoreOrdersField;
 
-        private kScoreLibraryInstrumentFamilies instrumentFamiliesField;
+    private kScoreLibraryClefDefinitions clefDefinitionsField;
 
-        private kScoreLibraryInstrumentScoreOrders instrumentScoreOrdersField;
+    private kScoreLibraryOttavaLineDefinitions ottavaLineDefinitionsField;
 
-        private kScoreLibraryClefDefinitions clefDefinitionsField;
+    private kScoreLibraryNoteheadSetDefinitions noteheadSetDefinitionsField;
 
-        private kScoreLibraryOttavaLineDefinitions ottavaLineDefinitionsField;
+    private kScoreLibraryNoteheadDefinitions noteheadDefinitionsField;
 
-        private kScoreLibraryNoteheadSetDefinitions noteheadSetDefinitionsField;
+    private kScoreLibraryRestSetDefinitions restSetDefinitionsField;
 
-        private kScoreLibraryNoteheadDefinitions noteheadDefinitionsField;
+    private kScoreLibraryRestDefinitions restDefinitionsField;
 
-        private kScoreLibraryRestSetDefinitions restSetDefinitionsField;
+    private kScoreLibraryFlagSetDefinitions flagSetDefinitionsField;
 
-        private kScoreLibraryRestDefinitions restDefinitionsField;
+    private kScoreLibraryFlagDefinitions flagDefinitionsField;
 
-        private kScoreLibraryFlagSetDefinitions flagSetDefinitionsField;
+    private kScoreLibraryGraphicDefinitions graphicDefinitionsField;
 
-        private kScoreLibraryFlagDefinitions flagDefinitionsField;
+    private kScoreLibraryBlobDefinitions blobDefinitionsField;
 
-        private kScoreLibraryGraphicDefinitions graphicDefinitionsField;
+    private kScoreLibraryDrawingDefinitions drawingDefinitionsField;
 
-        private kScoreLibraryBlobDefinitions blobDefinitionsField;
+    private kScoreLibraryTextDefinitions textDefinitionsField;
 
-        private kScoreLibraryDrawingDefinitions drawingDefinitionsField;
+    private kScoreLibraryGlyphDefinitions glyphDefinitionsField;
 
-        private kScoreLibraryTextDefinitions textDefinitionsField;
+    private kScoreLibraryCompositeDefinitions compositeDefinitionsField;
 
-        private kScoreLibraryGlyphDefinitions glyphDefinitionsField;
+    private kScoreLibraryTempoPresetDefinitions tempoPresetDefinitionsField;
 
-        private kScoreLibraryCompositeDefinitions compositeDefinitionsField;
+    private kScoreLibraryRhythmicFeelDefinitions rhythmicFeelDefinitionsField;
 
-        private kScoreLibraryTempoPresetDefinitions tempoPresetDefinitionsField;
+    private kScoreLibraryPenstyles penstylesField;
 
-        private kScoreLibraryRhythmicFeelDefinitions rhythmicFeelDefinitionsField;
+    private kScoreLibraryFontstyles fontstylesField;
 
-        private kScoreLibraryPenstyles penstylesField;
+    private kScoreLibraryBrushstyles brushstylesField;
 
-        private kScoreLibraryFontstyles fontstylesField;
+    private kScoreLibraryPagePairDefinitionSets pagePairDefinitionSetsField;
 
-        private kScoreLibraryBrushstyles brushstylesField;
+    private kScoreLibraryPageDimensionPresets pageDimensionPresetsField;
 
-        private kScoreLibraryPagePairDefinitionSets pagePairDefinitionSetsField;
+    private kScoreLibraryParagraphStyles paragraphStylesField;
 
-        private kScoreLibraryPageDimensionPresets pageDimensionPresetsField;
+    private kScoreLibraryCharacterStyles characterStylesField;
 
-        private kScoreLibraryParagraphStyles paragraphStylesField;
+    private kScoreLibraryPlayingTechniques playingTechniquesField;
 
-        private kScoreLibraryCharacterStyles characterStylesField;
+    private kScoreLibraryOrnamentDefinitions ornamentDefinitionsField;
 
-        private kScoreLibraryPlayingTechniques playingTechniquesField;
+    private kScoreLibraryMultiSegmentLineDefinitions multiSegmentLineDefinitionsField;
 
-        private kScoreLibraryOrnamentDefinitions ornamentDefinitionsField;
+    private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition playingTechniqueAppearanceCollectionDefinitionField;
 
-        private kScoreLibraryMultiSegmentLineDefinitions multiSegmentLineDefinitionsField;
+    private kScoreLibraryExpressionMapDefinitions expressionMapDefinitionsField;
 
-        private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition playingTechniqueAppearanceCollectionDefinitionField;
+    private kScoreLibraryDrumKitNoteMapDefinitions drumKitNoteMapDefinitionsField;
 
-        private kScoreLibraryExpressionMapDefinitions expressionMapDefinitionsField;
+    private kScoreLibraryRepeatableCompositeCollectionDefinitions repeatableCompositeCollectionDefinitionsField;
 
-        private kScoreLibraryDrumKitNoteMapDefinitions drumKitNoteMapDefinitionsField;
+    private kScoreLibraryChordSymbolAppearanceCollectionDefinitions chordSymbolAppearanceCollectionDefinitionsField;
 
-        private kScoreLibraryRepeatableCompositeCollectionDefinitions repeatableCompositeCollectionDefinitionsField;
+    private kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitions chordSymbolAppearanceComponentCollectionDefinitionsField;
 
-        private kScoreLibraryChordSymbolAppearanceCollectionDefinitions chordSymbolAppearanceCollectionDefinitionsField;
+    private kScoreLibraryPercussionKitDefinitionCollectionDefinition percussionKitDefinitionCollectionDefinitionField;
 
-        private kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitions chordSymbolAppearanceComponentCollectionDefinitionsField;
+    private kScoreLibraryPercussionInstrumentDataCollectionDefinition percussionInstrumentDataCollectionDefinitionField;
 
-        private kScoreLibraryPercussionKitDefinitionCollectionDefinition percussionKitDefinitionCollectionDefinitionField;
+    private kScoreLibraryFrettedInstrumentDataCollectionDefinition frettedInstrumentDataCollectionDefinitionField;
 
-        private kScoreLibraryPercussionInstrumentDataCollectionDefinition percussionInstrumentDataCollectionDefinitionField;
+    private kScoreLibraryChordDiagramCollectionDefinition chordDiagramCollectionDefinitionField;
 
-        private kScoreLibraryFrettedInstrumentDataCollectionDefinition frettedInstrumentDataCollectionDefinitionField;
+    private kScoreLibraryLineAnnotationCollectionDefinition lineAnnotationCollectionDefinitionField;
 
-        private kScoreLibraryChordDiagramCollectionDefinition chordDiagramCollectionDefinitionField;
+    private kScoreLibraryLineBodyStyleCollectionDefinition lineBodyStyleCollectionDefinitionField;
 
-        private kScoreLibraryLineAnnotationCollectionDefinition lineAnnotationCollectionDefinitionField;
+    private kScoreLibraryLineStyleCollectionDefinition lineStyleCollectionDefinitionField;
 
-        private kScoreLibraryLineBodyStyleCollectionDefinition lineBodyStyleCollectionDefinitionField;
-
-        private kScoreLibraryLineStyleCollectionDefinition lineStyleCollectionDefinitionField;
-
-        private kScoreLibraryChordSymbolComponentKerningPairsCollection chordSymbolComponentKerningPairsCollectionField;
-
-        /// <remarks/>
-        public kScoreLibraryTemperaments temperaments
-        {
-            get
-            {
-                return temperamentsField;
-            }
-            set
-            {
-                temperamentsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryAccidentalSystems accidentalSystems
-        {
-            get
-            {
-                return accidentalSystemsField;
-            }
-            set
-            {
-                accidentalSystemsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryAccidentalDefinitions accidentalDefinitions
-        {
-            get
-            {
-                return accidentalDefinitionsField;
-            }
-            set
-            {
-                accidentalDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryTonalitySystemDefinitions tonalitySystemDefinitions
-        {
-            get
-            {
-                return tonalitySystemDefinitionsField;
-            }
-            set
-            {
-                tonalitySystemDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryEnsembles ensembles
-        {
-            get
-            {
-                return ensemblesField;
-            }
-            set
-            {
-                ensemblesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryInstruments instruments
-        {
-            get
-            {
-                return instrumentsField;
-            }
-            set
-            {
-                instrumentsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryInstrumentNames instrumentNames
-        {
-            get
-            {
-                return instrumentNamesField;
-            }
-            set
-            {
-                instrumentNamesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryInstrumentFamilies instrumentFamilies
-        {
-            get
-            {
-                return instrumentFamiliesField;
-            }
-            set
-            {
-                instrumentFamiliesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryInstrumentScoreOrders instrumentScoreOrders
-        {
-            get
-            {
-                return instrumentScoreOrdersField;
-            }
-            set
-            {
-                instrumentScoreOrdersField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryClefDefinitions clefDefinitions
-        {
-            get
-            {
-                return clefDefinitionsField;
-            }
-            set
-            {
-                clefDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryOttavaLineDefinitions ottavaLineDefinitions
-        {
-            get
-            {
-                return ottavaLineDefinitionsField;
-            }
-            set
-            {
-                ottavaLineDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryNoteheadSetDefinitions noteheadSetDefinitions
-        {
-            get
-            {
-                return noteheadSetDefinitionsField;
-            }
-            set
-            {
-                noteheadSetDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryNoteheadDefinitions noteheadDefinitions
-        {
-            get
-            {
-                return noteheadDefinitionsField;
-            }
-            set
-            {
-                noteheadDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryRestSetDefinitions restSetDefinitions
-        {
-            get
-            {
-                return restSetDefinitionsField;
-            }
-            set
-            {
-                restSetDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryRestDefinitions restDefinitions
-        {
-            get
-            {
-                return restDefinitionsField;
-            }
-            set
-            {
-                restDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryFlagSetDefinitions flagSetDefinitions
-        {
-            get
-            {
-                return flagSetDefinitionsField;
-            }
-            set
-            {
-                flagSetDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryFlagDefinitions flagDefinitions
-        {
-            get
-            {
-                return flagDefinitionsField;
-            }
-            set
-            {
-                flagDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryGraphicDefinitions graphicDefinitions
-        {
-            get
-            {
-                return graphicDefinitionsField;
-            }
-            set
-            {
-                graphicDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryBlobDefinitions blobDefinitions
-        {
-            get
-            {
-                return blobDefinitionsField;
-            }
-            set
-            {
-                blobDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryDrawingDefinitions drawingDefinitions
-        {
-            get
-            {
-                return drawingDefinitionsField;
-            }
-            set
-            {
-                drawingDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryTextDefinitions textDefinitions
-        {
-            get
-            {
-                return textDefinitionsField;
-            }
-            set
-            {
-                textDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryGlyphDefinitions glyphDefinitions
-        {
-            get
-            {
-                return glyphDefinitionsField;
-            }
-            set
-            {
-                glyphDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryCompositeDefinitions compositeDefinitions
-        {
-            get
-            {
-                return compositeDefinitionsField;
-            }
-            set
-            {
-                compositeDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryTempoPresetDefinitions tempoPresetDefinitions
-        {
-            get
-            {
-                return tempoPresetDefinitionsField;
-            }
-            set
-            {
-                tempoPresetDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryRhythmicFeelDefinitions rhythmicFeelDefinitions
-        {
-            get
-            {
-                return rhythmicFeelDefinitionsField;
-            }
-            set
-            {
-                rhythmicFeelDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryPenstyles penstyles
-        {
-            get
-            {
-                return penstylesField;
-            }
-            set
-            {
-                penstylesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryFontstyles fontstyles
-        {
-            get
-            {
-                return fontstylesField;
-            }
-            set
-            {
-                fontstylesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryBrushstyles brushstyles
-        {
-            get
-            {
-                return brushstylesField;
-            }
-            set
-            {
-                brushstylesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSets pagePairDefinitionSets
-        {
-            get
-            {
-                return pagePairDefinitionSetsField;
-            }
-            set
-            {
-                pagePairDefinitionSetsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryPageDimensionPresets pageDimensionPresets
-        {
-            get
-            {
-                return pageDimensionPresetsField;
-            }
-            set
-            {
-                pageDimensionPresetsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryParagraphStyles paragraphStyles
-        {
-            get
-            {
-                return paragraphStylesField;
-            }
-            set
-            {
-                paragraphStylesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryCharacterStyles characterStyles
-        {
-            get
-            {
-                return characterStylesField;
-            }
-            set
-            {
-                characterStylesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryPlayingTechniques playingTechniques
-        {
-            get
-            {
-                return playingTechniquesField;
-            }
-            set
-            {
-                playingTechniquesField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryOrnamentDefinitions ornamentDefinitions
-        {
-            get
-            {
-                return ornamentDefinitionsField;
-            }
-            set
-            {
-                ornamentDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryMultiSegmentLineDefinitions multiSegmentLineDefinitions
-        {
-            get
-            {
-                return multiSegmentLineDefinitionsField;
-            }
-            set
-            {
-                multiSegmentLineDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition playingTechniqueAppearanceCollectionDefinition
-        {
-            get
-            {
-                return playingTechniqueAppearanceCollectionDefinitionField;
-            }
-            set
-            {
-                playingTechniqueAppearanceCollectionDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryExpressionMapDefinitions expressionMapDefinitions
-        {
-            get
-            {
-                return expressionMapDefinitionsField;
-            }
-            set
-            {
-                expressionMapDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryDrumKitNoteMapDefinitions drumKitNoteMapDefinitions
-        {
-            get
-            {
-                return drumKitNoteMapDefinitionsField;
-            }
-            set
-            {
-                drumKitNoteMapDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryRepeatableCompositeCollectionDefinitions repeatableCompositeCollectionDefinitions
-        {
-            get
-            {
-                return repeatableCompositeCollectionDefinitionsField;
-            }
-            set
-            {
-                repeatableCompositeCollectionDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryChordSymbolAppearanceCollectionDefinitions chordSymbolAppearanceCollectionDefinitions
-        {
-            get
-            {
-                return chordSymbolAppearanceCollectionDefinitionsField;
-            }
-            set
-            {
-                chordSymbolAppearanceCollectionDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitions chordSymbolAppearanceComponentCollectionDefinitions
-        {
-            get
-            {
-                return chordSymbolAppearanceComponentCollectionDefinitionsField;
-            }
-            set
-            {
-                chordSymbolAppearanceComponentCollectionDefinitionsField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryPercussionKitDefinitionCollectionDefinition percussionKitDefinitionCollectionDefinition
-        {
-            get
-            {
-                return percussionKitDefinitionCollectionDefinitionField;
-            }
-            set
-            {
-                percussionKitDefinitionCollectionDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryPercussionInstrumentDataCollectionDefinition percussionInstrumentDataCollectionDefinition
-        {
-            get
-            {
-                return percussionInstrumentDataCollectionDefinitionField;
-            }
-            set
-            {
-                percussionInstrumentDataCollectionDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryFrettedInstrumentDataCollectionDefinition frettedInstrumentDataCollectionDefinition
-        {
-            get
-            {
-                return frettedInstrumentDataCollectionDefinitionField;
-            }
-            set
-            {
-                frettedInstrumentDataCollectionDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryChordDiagramCollectionDefinition chordDiagramCollectionDefinition
-        {
-            get
-            {
-                return chordDiagramCollectionDefinitionField;
-            }
-            set
-            {
-                chordDiagramCollectionDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryLineAnnotationCollectionDefinition lineAnnotationCollectionDefinition
-        {
-            get
-            {
-                return lineAnnotationCollectionDefinitionField;
-            }
-            set
-            {
-                lineAnnotationCollectionDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryLineBodyStyleCollectionDefinition lineBodyStyleCollectionDefinition
-        {
-            get
-            {
-                return lineBodyStyleCollectionDefinitionField;
-            }
-            set
-            {
-                lineBodyStyleCollectionDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryLineStyleCollectionDefinition lineStyleCollectionDefinition
-        {
-            get
-            {
-                return lineStyleCollectionDefinitionField;
-            }
-            set
-            {
-                lineStyleCollectionDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryChordSymbolComponentKerningPairsCollection chordSymbolComponentKerningPairsCollection
-        {
-            get
-            {
-                return chordSymbolComponentKerningPairsCollectionField;
-            }
-            set
-            {
-                chordSymbolComponentKerningPairsCollectionField = value;
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTemperaments
-    {
-
-        private kScoreLibraryTemperamentsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryTemperamentsEntities entities
-        {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTemperamentsEntities
-    {
-
-        private kScoreLibraryTemperamentsEntitiesTemperamentDefinition[] temperamentDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("TemperamentDefinition")]
-        public kScoreLibraryTemperamentsEntitiesTemperamentDefinition[] TemperamentDefinition
-        {
-            get
-            {
-                return temperamentDefinitionField;
-            }
-            set
-            {
-                temperamentDefinitionField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
-        {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
-    {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private byte precedenceField;
-
-        private kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelativeDiatonicDivisions relativeDiatonicDivisionsField;
-
-        /// <remarks/>
-        public string name
-        {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
-        }
-
-        /// <remarks/>
-        public string entityID
-        {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
-        }
-
-        /// <remarks/>
-        public object parentEntityID
-        {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
-        }
-
-        /// <remarks/>
-        public byte inheritanceMask
-        {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
-        }
-
-        /// <remarks/>
-        public byte precedence
-        {
-            get
-            {
-                return precedenceField;
-            }
-            set
-            {
-                precedenceField = value;
-            }
-        }
-
-        /// <remarks/>
-        public kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelativeDiatonicDivisions relativeDiatonicDivisions
-        {
-            get
-            {
-                return relativeDiatonicDivisionsField;
-            }
-            set
-            {
-                relativeDiatonicDivisionsField = value;
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelativeDiatonicDivisions
-    {
-
-        private byte noteAtoBField;
-
-        private byte noteBtoCField;
-
-        private byte noteCtoDField;
-
-        private byte noteDtoEField;
-
-        private byte noteEtoFField;
-
-        private byte noteFtoGField;
-
-        private byte noteGtoAField;
-
-        /// <remarks/>
-        public byte noteAtoB
-        {
-            get
-            {
-                return noteAtoBField;
-            }
-            set
-            {
-                noteAtoBField = value;
-            }
-        }
-
-        /// <remarks/>
-        public byte noteBtoC
-        {
-            get
-            {
-                return noteBtoCField;
-            }
-            set
-            {
-                noteBtoCField = value;
-            }
-        }
-
-        /// <remarks/>
-        public byte noteCtoD
-        {
-            get
-            {
-                return noteCtoDField;
-            }
-            set
-            {
-                noteCtoDField = value;
-            }
-        }
-
-        /// <remarks/>
-        public byte noteDtoE
-        {
-            get
-            {
-                return noteDtoEField;
-            }
-            set
-            {
-                noteDtoEField = value;
-            }
-        }
-
-        /// <remarks/>
-        public byte noteEtoF
-        {
-            get
-            {
-                return noteEtoFField;
-            }
-            set
-            {
-                noteEtoFField = value;
-            }
-        }
+    private kScoreLibraryChordSymbolComponentKerningPairsCollection chordSymbolComponentKerningPairsCollectionField;
 
-        /// <remarks/>
-        public byte noteFtoG
+    public kScoreLibraryTemperaments temperaments
+    {
+        get
         {
-            get
-            {
-                return noteFtoGField;
-            }
-            set
-            {
-                noteFtoGField = value;
-            }
+            return temperamentsField;
         }
-
-        /// <remarks/>
-        public byte noteGtoA
+        set
         {
-            get
-            {
-                return noteGtoAField;
-            }
-            set
-            {
-                noteGtoAField = value;
-            }
+            temperamentsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryAccidentalSystems
+    public kScoreLibraryAccidentalSystems accidentalSystems
     {
-
-        private kScoreLibraryAccidentalSystemsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryAccidentalSystemsEntities entities
+        get
+        {
+            return accidentalSystemsField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            accidentalSystemsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryAccidentalSystemsEntities
+    public kScoreLibraryAccidentalDefinitions accidentalDefinitions
     {
-
-        private kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem[] accidentalSystemField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("AccidentalSystem")]
-        public kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem[] AccidentalSystem
+        get
         {
-            get
-            {
-                return accidentalSystemField;
-            }
-            set
-            {
-                accidentalSystemField = value;
-            }
+            return accidentalDefinitionsField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            accidentalDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
+    public kScoreLibraryTonalitySystemDefinitions tonalitySystemDefinitions
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string accidentalDefinitionIDsField;
-
-        private byte precedenceField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return tonalitySystemDefinitionsField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            tonalitySystemDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public kScoreLibraryEnsembles ensembles
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return ensemblesField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            ensemblesField = value;
         }
+    }
 
-        /// <remarks/>
-        public string accidentalDefinitionIDs
+    public kScoreLibraryInstruments instruments
+    {
+        get
         {
-            get
-            {
-                return accidentalDefinitionIDsField;
-            }
-            set
-            {
-                accidentalDefinitionIDsField = value;
-            }
+            return instrumentsField;
         }
-
-        /// <remarks/>
-        public byte precedence
+        set
         {
-            get
-            {
-                return precedenceField;
-            }
-            set
-            {
-                precedenceField = value;
-            }
+            instrumentsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryAccidentalDefinitions
+    public kScoreLibraryInstrumentNames instrumentNames
     {
-
-        private kScoreLibraryAccidentalDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryAccidentalDefinitionsEntities entities
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return instrumentNamesField;
         }
+        set
+        {
+            instrumentNamesField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryAccidentalDefinitionsEntities
+    public kScoreLibraryInstrumentFamilies instrumentFamilies
     {
-
-        private kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinition[] accidentalDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("AccidentalDefinition")]
-        public kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinition[] AccidentalDefinition
+        get
         {
-            get
-            {
-                return accidentalDefinitionField;
-            }
-            set
-            {
-                accidentalDefinitionField = value;
-            }
+            return instrumentFamiliesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            instrumentFamiliesField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinition
+    public kScoreLibraryInstrumentScoreOrders instrumentScoreOrders
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string compositeIDField;
-
-        private string pitchDeltaFromNaturalField;
-
-        private string cutOutNWField;
-
-        private string cutOutNEField;
-
-        private string cutOutSEField;
-
-        private string cutOutSWField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return instrumentScoreOrdersField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            instrumentScoreOrdersField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public kScoreLibraryClefDefinitions clefDefinitions
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return clefDefinitionsField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            clefDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public string compositeID
+    public kScoreLibraryOttavaLineDefinitions ottavaLineDefinitions
+    {
+        get
         {
-            get
-            {
-                return compositeIDField;
-            }
-            set
-            {
-                compositeIDField = value;
-            }
+            return ottavaLineDefinitionsField;
         }
-
-        /// <remarks/>
-        public string pitchDeltaFromNatural
+        set
         {
-            get
-            {
-                return pitchDeltaFromNaturalField;
-            }
-            set
-            {
-                pitchDeltaFromNaturalField = value;
-            }
+            ottavaLineDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public string cutOutNW
+    public kScoreLibraryNoteheadSetDefinitions noteheadSetDefinitions
+    {
+        get
         {
-            get
-            {
-                return cutOutNWField;
-            }
-            set
-            {
-                cutOutNWField = value;
-            }
+            return noteheadSetDefinitionsField;
         }
-
-        /// <remarks/>
-        public string cutOutNE
+        set
         {
-            get
-            {
-                return cutOutNEField;
-            }
-            set
-            {
-                cutOutNEField = value;
-            }
+            noteheadSetDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public string cutOutSE
+    public kScoreLibraryNoteheadDefinitions noteheadDefinitions
+    {
+        get
         {
-            get
-            {
-                return cutOutSEField;
-            }
-            set
-            {
-                cutOutSEField = value;
-            }
+            return noteheadDefinitionsField;
         }
-
-        /// <remarks/>
-        public string cutOutSW
+        set
         {
-            get
-            {
-                return cutOutSWField;
-            }
-            set
-            {
-                cutOutSWField = value;
-            }
+            noteheadDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTonalitySystemDefinitions
+    public kScoreLibraryRestSetDefinitions restSetDefinitions
     {
-
-        private kScoreLibraryTonalitySystemDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryTonalitySystemDefinitionsEntities entities
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return restSetDefinitionsField;
         }
+        set
+        {
+            restSetDefinitionsField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTonalitySystemDefinitionsEntities
+    public kScoreLibraryRestDefinitions restDefinitions
     {
-
-        private kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinition[] tonalitySystemDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("TonalitySystemDefinition")]
-        public kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinition[] TonalitySystemDefinition
+        get
         {
-            get
-            {
-                return tonalitySystemDefinitionField;
-            }
-            set
-            {
-                tonalitySystemDefinitionField = value;
-            }
+            return restDefinitionsField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            restDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinition
+    public kScoreLibraryFlagSetDefinitions flagSetDefinitions
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string temperamentDefinitionField;
-
-        private string accidentalSystemField;
-
-        private kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinitionCustomKeySignatures customKeySignaturesField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return flagSetDefinitionsField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            flagSetDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public kScoreLibraryFlagDefinitions flagDefinitions
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return flagDefinitionsField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            flagDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public string temperamentDefinition
+    public kScoreLibraryGraphicDefinitions graphicDefinitions
+    {
+        get
         {
-            get
-            {
-                return temperamentDefinitionField;
-            }
-            set
-            {
-                temperamentDefinitionField = value;
-            }
+            return graphicDefinitionsField;
         }
-
-        /// <remarks/>
-        public string accidentalSystem
+        set
         {
-            get
-            {
-                return accidentalSystemField;
-            }
-            set
-            {
-                accidentalSystemField = value;
-            }
+            graphicDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinitionCustomKeySignatures customKeySignatures
+    public kScoreLibraryBlobDefinitions blobDefinitions
+    {
+        get
+        {
+            return blobDefinitionsField;
+        }
+        set
         {
-            get
-            {
-                return customKeySignaturesField;
-            }
-            set
-            {
-                customKeySignaturesField = value;
-            }
+            blobDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinitionCustomKeySignatures
+    public kScoreLibraryDrawingDefinitions drawingDefinitions
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return drawingDefinitionsField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            drawingDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryEnsembles
+    public kScoreLibraryTextDefinitions textDefinitions
     {
-
-        private kScoreLibraryEnsemblesEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryEnsemblesEntities entities
+        get
+        {
+            return textDefinitionsField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            textDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryEnsemblesEntities
+    public kScoreLibraryGlyphDefinitions glyphDefinitions
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return glyphDefinitionsField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            glyphDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryInstruments
+    public kScoreLibraryCompositeDefinitions compositeDefinitions
     {
-
-        private kScoreLibraryInstrumentsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryInstrumentsEntities entities
+        get
+        {
+            return compositeDefinitionsField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            compositeDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryInstrumentsEntities
+    public kScoreLibraryTempoPresetDefinitions tempoPresetDefinitions
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return tempoPresetDefinitionsField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            tempoPresetDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryInstrumentNames
+    public kScoreLibraryRhythmicFeelDefinitions rhythmicFeelDefinitions
     {
-
-        private kScoreLibraryInstrumentNamesEntities entitiesField;
-
-        private string languageField;
-
-        /// <remarks/>
-        public kScoreLibraryInstrumentNamesEntities entities
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return rhythmicFeelDefinitionsField;
         }
-
-        /// <remarks/>
-        public string language
+        set
         {
-            get
-            {
-                return languageField;
-            }
-            set
-            {
-                languageField = value;
-            }
+            rhythmicFeelDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryInstrumentNamesEntities
+    public kScoreLibraryPenstyles penstyles
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return penstylesField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            penstylesField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryInstrumentFamilies
+    public kScoreLibraryFontstyles fontstyles
     {
-
-        private kScoreLibraryInstrumentFamiliesEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryInstrumentFamiliesEntities entities
+        get
+        {
+            return fontstylesField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            fontstylesField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryInstrumentFamiliesEntities
+    public kScoreLibraryBrushstyles brushstyles
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return brushstylesField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            brushstylesField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryInstrumentScoreOrders
+    public kScoreLibraryPagePairDefinitionSets pagePairDefinitionSets
     {
-
-        private kScoreLibraryInstrumentScoreOrdersEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryInstrumentScoreOrdersEntities entities
+        get
+        {
+            return pagePairDefinitionSetsField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            pagePairDefinitionSetsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryInstrumentScoreOrdersEntities
+    public kScoreLibraryPageDimensionPresets pageDimensionPresets
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return pageDimensionPresetsField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            pageDimensionPresetsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryClefDefinitions
+    public kScoreLibraryParagraphStyles paragraphStyles
     {
-
-        private kScoreLibraryClefDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryClefDefinitionsEntities entities
+        get
+        {
+            return paragraphStylesField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            paragraphStylesField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryClefDefinitionsEntities
+    public kScoreLibraryCharacterStyles characterStyles
     {
-
-        private kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition[] clefEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ClefEntityDefinition")]
-        public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition[] ClefEntityDefinition
+        get
         {
-            get
-            {
-                return clefEntityDefinitionField;
-            }
-            set
-            {
-                clefEntityDefinitionField = value;
-            }
+            return characterStylesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            characterStylesField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
+    public kScoreLibraryPlayingTechniques playingTechniques
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string basicClefTypeField;
-
-        private sbyte clefTranspositionReminderField;
-
-        private string compositeIDField;
-
-        private string clefCategoryField;
-
-        private string clefChangeCompositeIDField;
-
-        private kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinition clefDefinitionField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return playingTechniquesField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            playingTechniquesField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public kScoreLibraryOrnamentDefinitions ornamentDefinitions
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return ornamentDefinitionsField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            ornamentDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public string basicClefType
+    public kScoreLibraryMultiSegmentLineDefinitions multiSegmentLineDefinitions
+    {
+        get
         {
-            get
-            {
-                return basicClefTypeField;
-            }
-            set
-            {
-                basicClefTypeField = value;
-            }
+            return multiSegmentLineDefinitionsField;
         }
-
-        /// <remarks/>
-        public sbyte clefTranspositionReminder
+        set
         {
-            get
-            {
-                return clefTranspositionReminderField;
-            }
-            set
-            {
-                clefTranspositionReminderField = value;
-            }
+            multiSegmentLineDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public string compositeID
+    public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition playingTechniqueAppearanceCollectionDefinition
+    {
+        get
         {
-            get
-            {
-                return compositeIDField;
-            }
-            set
-            {
-                compositeIDField = value;
-            }
+            return playingTechniqueAppearanceCollectionDefinitionField;
         }
-
-        /// <remarks/>
-        public string clefCategory
+        set
         {
-            get
-            {
-                return clefCategoryField;
-            }
-            set
-            {
-                clefCategoryField = value;
-            }
+            playingTechniqueAppearanceCollectionDefinitionField = value;
         }
+    }
 
-        /// <remarks/>
-        public string clefChangeCompositeID
+    public kScoreLibraryExpressionMapDefinitions expressionMapDefinitions
+    {
+        get
         {
-            get
-            {
-                return clefChangeCompositeIDField;
-            }
-            set
-            {
-                clefChangeCompositeIDField = value;
-            }
+            return expressionMapDefinitionsField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinition clefDefinition
+        set
         {
-            get
-            {
-                return clefDefinitionField;
-            }
-            set
-            {
-                clefDefinitionField = value;
-            }
+            expressionMapDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinition
+    public kScoreLibraryDrumKitNoteMapDefinitions drumKitNoteMapDefinitions
     {
-
-        private bool isPitchedField;
-
-        private byte requiredNumStaveLinesField;
-
-        private byte staveIndexFromBottomLineField;
-
-        private kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinitionHotSpot hotSpotField;
-
-        /// <remarks/>
-        public bool isPitched
+        get
         {
-            get
-            {
-                return isPitchedField;
-            }
-            set
-            {
-                isPitchedField = value;
-            }
+            return drumKitNoteMapDefinitionsField;
         }
-
-        /// <remarks/>
-        public byte requiredNumStaveLines
+        set
         {
-            get
-            {
-                return requiredNumStaveLinesField;
-            }
-            set
-            {
-                requiredNumStaveLinesField = value;
-            }
+            drumKitNoteMapDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte staveIndexFromBottomLine
+    public kScoreLibraryRepeatableCompositeCollectionDefinitions repeatableCompositeCollectionDefinitions
+    {
+        get
         {
-            get
-            {
-                return staveIndexFromBottomLineField;
-            }
-            set
-            {
-                staveIndexFromBottomLineField = value;
-            }
+            return repeatableCompositeCollectionDefinitionsField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinitionHotSpot hotSpot
+        set
         {
-            get
-            {
-                return hotSpotField;
-            }
-            set
-            {
-                hotSpotField = value;
-            }
+            repeatableCompositeCollectionDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinitionHotSpot
+    public kScoreLibraryChordSymbolAppearanceCollectionDefinitions chordSymbolAppearanceCollectionDefinitions
     {
-
-        private string noteNameField;
-
-        private byte octaveField;
-
-        private byte transposedOctaveField;
-
-        private bool transposedOctaveFieldSpecified;
-
-        /// <remarks/>
-        public string noteName
+        get
         {
-            get
-            {
-                return noteNameField;
-            }
-            set
-            {
-                noteNameField = value;
-            }
+            return chordSymbolAppearanceCollectionDefinitionsField;
         }
-
-        /// <remarks/>
-        public byte octave
+        set
         {
-            get
-            {
-                return octaveField;
-            }
-            set
-            {
-                octaveField = value;
-            }
+            chordSymbolAppearanceCollectionDefinitionsField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte transposedOctave
+    public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitions chordSymbolAppearanceComponentCollectionDefinitions
+    {
+        get
         {
-            get
-            {
-                return transposedOctaveField;
-            }
-            set
-            {
-                transposedOctaveField = value;
-            }
+            return chordSymbolAppearanceComponentCollectionDefinitionsField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool transposedOctaveSpecified
+        set
         {
-            get
-            {
-                return transposedOctaveFieldSpecified;
-            }
-            set
-            {
-                transposedOctaveFieldSpecified = value;
-            }
+            chordSymbolAppearanceComponentCollectionDefinitionsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryOttavaLineDefinitions
+    public kScoreLibraryPercussionKitDefinitionCollectionDefinition percussionKitDefinitionCollectionDefinition
     {
-
-        private kScoreLibraryOttavaLineDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryOttavaLineDefinitionsEntities entities
+        get
+        {
+            return percussionKitDefinitionCollectionDefinitionField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            percussionKitDefinitionCollectionDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryOttavaLineDefinitionsEntities
+    public kScoreLibraryPercussionInstrumentDataCollectionDefinition percussionInstrumentDataCollectionDefinition
     {
-
-        private kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinition[] ottavaLineDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("OttavaLineDefinition")]
-        public kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinition[] OttavaLineDefinition
+        get
         {
-            get
-            {
-                return ottavaLineDefinitionField;
-            }
-            set
-            {
-                ottavaLineDefinitionField = value;
-            }
+            return percussionInstrumentDataCollectionDefinitionField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            percussionInstrumentDataCollectionDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinition
+    public kScoreLibraryFrettedInstrumentDataCollectionDefinition frettedInstrumentDataCollectionDefinition
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private sbyte transpositionForIntersectingNotesField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return frettedInstrumentDataCollectionDefinitionField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            frettedInstrumentDataCollectionDefinitionField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public kScoreLibraryChordDiagramCollectionDefinition chordDiagramCollectionDefinition
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return chordDiagramCollectionDefinitionField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            chordDiagramCollectionDefinitionField = value;
         }
+    }
 
-        /// <remarks/>
-        public sbyte transpositionForIntersectingNotes
+    public kScoreLibraryLineAnnotationCollectionDefinition lineAnnotationCollectionDefinition
+    {
+        get
+        {
+            return lineAnnotationCollectionDefinitionField;
+        }
+        set
         {
-            get
-            {
-                return transpositionForIntersectingNotesField;
-            }
-            set
-            {
-                transpositionForIntersectingNotesField = value;
-            }
+            lineAnnotationCollectionDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryNoteheadSetDefinitions
+    public kScoreLibraryLineBodyStyleCollectionDefinition lineBodyStyleCollectionDefinition
     {
+        get
+        {
+            return lineBodyStyleCollectionDefinitionField;
+        }
+        set
+        {
+            lineBodyStyleCollectionDefinitionField = value;
+        }
+    }
 
-        private kScoreLibraryNoteheadSetDefinitionsEntities entitiesField;
+    public kScoreLibraryLineStyleCollectionDefinition lineStyleCollectionDefinition
+    {
+        get
+        {
+            return lineStyleCollectionDefinitionField;
+        }
+        set
+        {
+            lineStyleCollectionDefinitionField = value;
+        }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryNoteheadSetDefinitionsEntities entities
+    public kScoreLibraryChordSymbolComponentKerningPairsCollection chordSymbolComponentKerningPairsCollection
+    {
+        get
+        {
+            return chordSymbolComponentKerningPairsCollectionField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            chordSymbolComponentKerningPairsCollectionField = value;
         }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTemperaments
+{
+    private kScoreLibraryTemperamentsEntities entitiesField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryNoteheadSetDefinitionsEntities
+    public kScoreLibraryTemperamentsEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefinition[] noteheadSetDefinitionField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTemperamentsEntities
+{
+    private kScoreLibraryTemperamentsEntitiesTemperamentDefinition[] temperamentDefinitionField;
 
-        private bool arrayField;
+    private bool arrayField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NoteheadSetDefinition")]
-        public kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefinition[] NoteheadSetDefinition
+    [System.Xml.Serialization.XmlElementAttribute("TemperamentDefinition")]
+    public kScoreLibraryTemperamentsEntitiesTemperamentDefinition[] TemperamentDefinition
+    {
+        get
         {
-            get
-            {
-                return noteheadSetDefinitionField;
-            }
-            set
-            {
-                noteheadSetDefinitionField = value;
-            }
+            return temperamentDefinitionField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            temperamentDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefinition
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private string nameField;
-
-        private string entityIDField;
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        private object parentEntityIDField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinition
+{
+    private string nameField;
 
-        private byte inheritanceMaskField;
+    private string entityIDField;
 
-        private string noteheadSetTypeField;
+    private object parentEntityIDField;
 
-        private string noteheadSetCategoryField;
+    private byte inheritanceMaskField;
 
-        private string noteheadsField;
+    private byte precedenceField;
 
-        private string defaultNoteheadIDField;
+    private kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelativeDiatonicDivisions relativeDiatonicDivisionsField;
 
-        /// <remarks/>
-        public string name
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string noteheadSetType
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return noteheadSetTypeField;
-            }
-            set
-            {
-                noteheadSetTypeField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public string noteheadSetCategory
+        set
         {
-            get
-            {
-                return noteheadSetCategoryField;
-            }
-            set
-            {
-                noteheadSetCategoryField = value;
-            }
+            parentEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string noteheads
+    public byte inheritanceMask
+    {
+        get
         {
-            get
-            {
-                return noteheadsField;
-            }
-            set
-            {
-                noteheadsField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public string defaultNoteheadID
+        set
         {
-            get
-            {
-                return defaultNoteheadIDField;
-            }
-            set
-            {
-                defaultNoteheadIDField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryNoteheadDefinitions
+    public byte precedence
     {
-
-        private kScoreLibraryNoteheadDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryNoteheadDefinitionsEntities entities
+        get
+        {
+            return precedenceField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            precedenceField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryNoteheadDefinitionsEntities
+    public kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelativeDiatonicDivisions relativeDiatonicDivisions
     {
-
-        private kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition[] noteheadDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NoteheadDefinition")]
-        public kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition[] NoteheadDefinition
+        get
         {
-            get
-            {
-                return noteheadDefinitionField;
-            }
-            set
-            {
-                noteheadDefinitionField = value;
-            }
+            return relativeDiatonicDivisionsField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            relativeDiatonicDivisionsField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
-    {
+}
 
-        private string nameField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTemperamentsEntitiesTemperamentDefinitionRelativeDiatonicDivisions
+{
+    private byte noteAtoBField;
 
-        private string entityIDField;
+    private byte noteBtoCField;
 
-        private object parentEntityIDField;
+    private byte noteCtoDField;
 
-        private byte inheritanceMaskField;
+    private byte noteDtoEField;
 
-        private string noteheadSetTypeField;
+    private byte noteEtoFField;
 
-        private string compositeIDField;
+    private byte noteFtoGField;
 
-        private string durationField;
+    private byte noteGtoAField;
 
-        private bool upToDurationField;
+    public byte noteAtoB
+    {
+        get
+        {
+            return noteAtoBField;
+        }
+        set
+        {
+            noteAtoBField = value;
+        }
+    }
 
-        private bool upFromDurationField;
-
-        private string roundOrSquareField;
-
-        private string stemDirectionField;
-
-        private byte scaleDegreeField;
-
-        private bool scaleDegreeFieldSpecified;
-
-        private string pitchField;
-
-        private string stemUpAttachmentField;
-
-        private string stemDownAttachmentField;
-
-        private string splitStemUpWAttachmentField;
-
-        private string splitStemUpEAttachmentField;
-
-        private string splitStemDownWAttachmentField;
-
-        private string splitStemDownEAttachmentField;
-
-        private string cutOutNWField;
-
-        private string cutOutSEField;
-
-        /// <remarks/>
-        public string name
+    public byte noteBtoC
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return noteBtoCField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            noteBtoCField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public byte noteCtoD
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return noteCtoDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            noteCtoDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string noteheadSetType
+    public byte noteDtoE
+    {
+        get
         {
-            get
-            {
-                return noteheadSetTypeField;
-            }
-            set
-            {
-                noteheadSetTypeField = value;
-            }
+            return noteDtoEField;
         }
-
-        /// <remarks/>
-        public string compositeID
+        set
         {
-            get
-            {
-                return compositeIDField;
-            }
-            set
-            {
-                compositeIDField = value;
-            }
+            noteDtoEField = value;
         }
+    }
 
-        /// <remarks/>
-        public string duration
+    public byte noteEtoF
+    {
+        get
         {
-            get
-            {
-                return durationField;
-            }
-            set
-            {
-                durationField = value;
-            }
+            return noteEtoFField;
         }
-
-        /// <remarks/>
-        public bool upToDuration
+        set
         {
-            get
-            {
-                return upToDurationField;
-            }
-            set
-            {
-                upToDurationField = value;
-            }
+            noteEtoFField = value;
         }
+    }
 
-        /// <remarks/>
-        public bool upFromDuration
+    public byte noteFtoG
+    {
+        get
         {
-            get
-            {
-                return upFromDurationField;
-            }
-            set
-            {
-                upFromDurationField = value;
-            }
+            return noteFtoGField;
         }
-
-        /// <remarks/>
-        public string roundOrSquare
+        set
         {
-            get
-            {
-                return roundOrSquareField;
-            }
-            set
-            {
-                roundOrSquareField = value;
-            }
+            noteFtoGField = value;
         }
+    }
 
-        /// <remarks/>
-        public string stemDirection
+    public byte noteGtoA
+    {
+        get
         {
-            get
-            {
-                return stemDirectionField;
-            }
-            set
-            {
-                stemDirectionField = value;
-            }
+            return noteGtoAField;
         }
-
-        /// <remarks/>
-        public byte scaleDegree
+        set
         {
-            get
-            {
-                return scaleDegreeField;
-            }
-            set
-            {
-                scaleDegreeField = value;
-            }
+            noteGtoAField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool scaleDegreeSpecified
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryAccidentalSystems
+{
+    private kScoreLibraryAccidentalSystemsEntities entitiesField;
+
+    public kScoreLibraryAccidentalSystemsEntities entities
+    {
+        get
         {
-            get
-            {
-                return scaleDegreeFieldSpecified;
-            }
-            set
-            {
-                scaleDegreeFieldSpecified = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public string pitch
+        set
         {
-            get
-            {
-                return pitchField;
-            }
-            set
-            {
-                pitchField = value;
-            }
+            entitiesField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public string stemUpAttachment
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryAccidentalSystemsEntities
+{
+    private kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem[] accidentalSystemField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("AccidentalSystem")]
+    public kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem[] AccidentalSystem
+    {
+        get
         {
-            get
-            {
-                return stemUpAttachmentField;
-            }
-            set
-            {
-                stemUpAttachmentField = value;
-            }
+            return accidentalSystemField;
         }
-
-        /// <remarks/>
-        public string stemDownAttachment
+        set
         {
-            get
-            {
-                return stemDownAttachmentField;
-            }
-            set
-            {
-                stemDownAttachmentField = value;
-            }
+            accidentalSystemField = value;
         }
+    }
 
-        /// <remarks/>
-        public string splitStemUpWAttachment
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return splitStemUpWAttachmentField;
-            }
-            set
-            {
-                splitStemUpWAttachmentField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public string splitStemUpEAttachment
+        set
         {
-            get
-            {
-                return splitStemUpEAttachmentField;
-            }
-            set
-            {
-                splitStemUpEAttachmentField = value;
-            }
+            arrayField = value;
         }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryAccidentalSystemsEntitiesAccidentalSystem
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
 
-        /// <remarks/>
-        public string splitStemDownWAttachment
+    private string accidentalDefinitionIDsField;
+
+    private byte precedenceField;
+
+    public string name
+    {
+        get
         {
-            get
-            {
-                return splitStemDownWAttachmentField;
-            }
-            set
-            {
-                splitStemDownWAttachmentField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string splitStemDownEAttachment
+        set
         {
-            get
-            {
-                return splitStemDownEAttachmentField;
-            }
-            set
-            {
-                splitStemDownEAttachmentField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public string cutOutNW
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return cutOutNWField;
-            }
-            set
-            {
-                cutOutNWField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public string cutOutSE
+        set
         {
-            get
-            {
-                return cutOutSEField;
-            }
-            set
-            {
-                cutOutSEField = value;
-            }
+            entityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRestSetDefinitions
+    public object parentEntityID
     {
-
-        private kScoreLibraryRestSetDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryRestSetDefinitionsEntities entities
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRestSetDefinitionsEntities
+    public byte inheritanceMask
     {
-
-        private kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition[] restSetDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RestSetDefinition")]
-        public kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition[] RestSetDefinition
+        get
         {
-            get
-            {
-                return restSetDefinitionField;
-            }
-            set
-            {
-                restSetDefinitionField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition
+    public string accidentalDefinitionIDs
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string restsField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return accidentalDefinitionIDsField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            accidentalDefinitionIDsField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public byte precedence
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return precedenceField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            precedenceField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public string rests
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryAccidentalDefinitions
+{
+    private kScoreLibraryAccidentalDefinitionsEntities entitiesField;
+
+    public kScoreLibraryAccidentalDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return restsField;
-            }
-            set
-            {
-                restsField = value;
-            }
+            return entitiesField;
         }
+        set
+        {
+            entitiesField = value;
+        }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRestDefinitions
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryAccidentalDefinitionsEntities
+{
+    private kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinition[] accidentalDefinitionField;
 
-        private kScoreLibraryRestDefinitionsEntities entitiesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryRestDefinitionsEntities entities
+    [System.Xml.Serialization.XmlElementAttribute("AccidentalDefinition")]
+    public kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinition[] AccidentalDefinition
+    {
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return accidentalDefinitionField;
         }
+        set
+        {
+            accidentalDefinitionField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRestDefinitionsEntities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryRestDefinitionsEntitiesRestDefinition[] restDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RestDefinition")]
-        public kScoreLibraryRestDefinitionsEntitiesRestDefinition[] RestDefinition
+        get
         {
-            get
-            {
-                return restDefinitionField;
-            }
-            set
-            {
-                restDefinitionField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryAccidentalDefinitionsEntitiesAccidentalDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
 
-        private string nameField;
+    private object parentEntityIDField;
 
-        private string entityIDField;
+    private byte inheritanceMaskField;
 
-        private object parentEntityIDField;
+    private string compositeIDField;
 
-        private byte inheritanceMaskField;
+    private string pitchDeltaFromNaturalField;
 
-        private string compositeIDField;
+    private string cutOutNWField;
 
-        private string durationField;
+    private string cutOutNEField;
 
-        /// <remarks/>
-        public string name
+    private string cutOutSEField;
+
+    private string cutOutSWField;
+
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string compositeID
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return compositeIDField;
-            }
-            set
-            {
-                compositeIDField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public string duration
+        set
         {
-            get
-            {
-                return durationField;
-            }
-            set
-            {
-                durationField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFlagSetDefinitions
+    public byte inheritanceMask
     {
-
-        private kScoreLibraryFlagSetDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryFlagSetDefinitionsEntities entities
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return inheritanceMaskField;
         }
+        set
+        {
+            inheritanceMaskField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFlagSetDefinitionsEntities
+    public string compositeID
     {
-
-        private kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition[] flagSetDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("FlagSetDefinition")]
-        public kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition[] FlagSetDefinition
+        get
         {
-            get
-            {
-                return flagSetDefinitionField;
-            }
-            set
-            {
-                flagSetDefinitionField = value;
-            }
+            return compositeIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            compositeIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition
+    public string pitchDeltaFromNatural
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string flagsField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return pitchDeltaFromNaturalField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            pitchDeltaFromNaturalField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string cutOutNW
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return cutOutNWField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            cutOutNWField = value;
         }
+    }
 
-        /// <remarks/>
-        public string flags
+    public string cutOutNE
+    {
+        get
+        {
+            return cutOutNEField;
+        }
+        set
         {
-            get
-            {
-                return flagsField;
-            }
-            set
-            {
-                flagsField = value;
-            }
+            cutOutNEField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFlagDefinitions
+    public string cutOutSE
     {
-
-        private kScoreLibraryFlagDefinitionsEntities entitiesField;
+        get
+        {
+            return cutOutSEField;
+        }
+        set
+        {
+            cutOutSEField = value;
+        }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryFlagDefinitionsEntities entities
+    public string cutOutSW
+    {
+        get
+        {
+            return cutOutSWField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            cutOutSWField = value;
         }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTonalitySystemDefinitions
+{
+    private kScoreLibraryTonalitySystemDefinitionsEntities entitiesField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFlagDefinitionsEntities
+    public kScoreLibraryTonalitySystemDefinitionsEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private kScoreLibraryFlagDefinitionsEntitiesFlagDefinition[] flagDefinitionField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTonalitySystemDefinitionsEntities
+{
+    private kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinition[] tonalitySystemDefinitionField;
 
-        private bool arrayField;
+    private bool arrayField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("FlagDefinition")]
-        public kScoreLibraryFlagDefinitionsEntitiesFlagDefinition[] FlagDefinition
+    [System.Xml.Serialization.XmlElementAttribute("TonalitySystemDefinition")]
+    public kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinition[] TonalitySystemDefinition
+    {
+        get
         {
-            get
-            {
-                return flagDefinitionField;
-            }
-            set
-            {
-                flagDefinitionField = value;
-            }
+            return tonalitySystemDefinitionField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            tonalitySystemDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private string nameField;
-
-        private string entityIDField;
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        private object parentEntityIDField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinition
+{
+    private string nameField;
 
-        private byte inheritanceMaskField;
+    private string entityIDField;
 
-        private string compositeIDField;
+    private object parentEntityIDField;
 
-        private string durationField;
+    private byte inheritanceMaskField;
 
-        private string stemDirectionField;
+    private string temperamentDefinitionField;
 
-        private bool shortVariantField;
+    private string accidentalSystemField;
 
-        private string stemOffsetField;
+    private kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinitionCustomKeySignatures customKeySignaturesField;
 
-        /// <remarks/>
-        public string name
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string compositeID
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return compositeIDField;
-            }
-            set
-            {
-                compositeIDField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public string duration
+        set
         {
-            get
-            {
-                return durationField;
-            }
-            set
-            {
-                durationField = value;
-            }
+            parentEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string stemDirection
+    public byte inheritanceMask
+    {
+        get
         {
-            get
-            {
-                return stemDirectionField;
-            }
-            set
-            {
-                stemDirectionField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public bool shortVariant
+        set
         {
-            get
-            {
-                return shortVariantField;
-            }
-            set
-            {
-                shortVariantField = value;
-            }
+            inheritanceMaskField = value;
         }
+    }
 
-        /// <remarks/>
-        public string stemOffset
+    public string temperamentDefinition
+    {
+        get
+        {
+            return temperamentDefinitionField;
+        }
+        set
         {
-            get
-            {
-                return stemOffsetField;
-            }
-            set
-            {
-                stemOffsetField = value;
-            }
+            temperamentDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryGraphicDefinitions
+    public string accidentalSystem
     {
-
-        private kScoreLibraryGraphicDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryGraphicDefinitionsEntities entities
+        get
+        {
+            return accidentalSystemField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            accidentalSystemField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryGraphicDefinitionsEntities
+    public kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinitionCustomKeySignatures customKeySignatures
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return customKeySignaturesField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            customKeySignaturesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryBlobDefinitions
-    {
+}
 
-        private kScoreLibraryBlobDefinitionsEntities entitiesField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTonalitySystemDefinitionsEntitiesTonalitySystemDefinitionCustomKeySignatures
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryBlobDefinitionsEntities entities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryBlobDefinitionsEntities
-    {
-
-        private bool arrayField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryEnsembles
+{
+    private kScoreLibraryEnsemblesEntities entitiesField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+    public kScoreLibraryEnsemblesEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryDrawingDefinitions
-    {
+}
 
-        private kScoreLibraryDrawingDefinitionsEntities entitiesField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryEnsemblesEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryDrawingDefinitionsEntities entities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return arrayField;
         }
+        set
+        {
+            arrayField = value;
+        }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryDrawingDefinitionsEntities
-    {
+}
 
-        private kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinition drawingPrimitiveEntityDefinitionField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryInstruments
+{
+    private kScoreLibraryInstrumentsEntities entitiesField;
 
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinition DrawingPrimitiveEntityDefinition
+    public kScoreLibraryInstrumentsEntities entities
+    {
+        get
         {
-            get
-            {
-                return drawingPrimitiveEntityDefinitionField;
-            }
-            set
-            {
-                drawingPrimitiveEntityDefinitionField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinition
-    {
-
-        private string nameField;
+}
 
-        private string entityIDField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryInstrumentsEntities
+{
+    private bool arrayField;
 
-        private object parentEntityIDField;
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        private byte inheritanceMaskField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryInstrumentNames
+{
+    private kScoreLibraryInstrumentNamesEntities entitiesField;
 
-        private kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitions lineDefinitionsField;
+    private string languageField;
 
-        /// <remarks/>
-        public string name
+    public kScoreLibraryInstrumentNamesEntities entities
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            entitiesField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string language
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return languageField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            languageField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitions lineDefinitions
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryInstrumentNamesEntities
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return lineDefinitionsField;
-            }
-            set
-            {
-                lineDefinitionsField = value;
-            }
+            return arrayField;
         }
+        set
+        {
+            arrayField = value;
+        }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitions
-    {
+}
 
-        private kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitionsLineDefinition lineDefinitionField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryInstrumentFamilies
+{
+    private kScoreLibraryInstrumentFamiliesEntities entitiesField;
 
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitionsLineDefinition lineDefinition
+    public kScoreLibraryInstrumentFamiliesEntities entities
+    {
+        get
         {
-            get
-            {
-                return lineDefinitionField;
-            }
-            set
-            {
-                lineDefinitionField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitionsLineDefinition
-    {
-
-        private decimal lineWidthField;
+}
 
-        private byte startXField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryInstrumentFamiliesEntities
+{
+    private bool arrayField;
 
-        private byte startYField;
-
-        private byte endXField;
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        private byte endYField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryInstrumentScoreOrders
+{
+    private kScoreLibraryInstrumentScoreOrdersEntities entitiesField;
 
-        /// <remarks/>
-        public decimal lineWidth
+    public kScoreLibraryInstrumentScoreOrdersEntities entities
+    {
+        get
         {
-            get
-            {
-                return lineWidthField;
-            }
-            set
-            {
-                lineWidthField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public byte startX
+        set
         {
-            get
-            {
-                return startXField;
-            }
-            set
-            {
-                startXField = value;
-            }
+            entitiesField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public byte startY
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryInstrumentScoreOrdersEntities
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return startYField;
-            }
-            set
-            {
-                startYField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public byte endX
+        set
         {
-            get
-            {
-                return endXField;
-            }
-            set
-            {
-                endXField = value;
-            }
+            arrayField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public byte endY
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryClefDefinitions
+{
+    private kScoreLibraryClefDefinitionsEntities entitiesField;
+
+    public kScoreLibraryClefDefinitionsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
         {
-            get
-            {
-                return endYField;
-            }
-            set
-            {
-                endYField = value;
-            }
+            entitiesField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTextDefinitions
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryClefDefinitionsEntities
+{
+    private kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition[] clefEntityDefinitionField;
 
-        private kScoreLibraryTextDefinitionsEntities entitiesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryTextDefinitionsEntities entities
+    [System.Xml.Serialization.XmlElementAttribute("ClefEntityDefinition")]
+    public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition[] ClefEntityDefinition
+    {
+        get
+        {
+            return clefEntityDefinitionField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            clefEntityDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTextDefinitionsEntities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefinition[] textPrimitiveEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("TextPrimitiveEntityDefinition")]
-        public kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefinition[] TextPrimitiveEntityDefinition
+        get
         {
-            get
-            {
-                return textPrimitiveEntityDefinitionField;
-            }
-            set
-            {
-                textPrimitiveEntityDefinitionField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefinition
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
 
-        private string nameField;
+    private string basicClefTypeField;
 
-        private string entityIDField;
+    private sbyte clefTranspositionReminderField;
 
-        private object parentEntityIDField;
+    private string compositeIDField;
 
-        private byte inheritanceMaskField;
+    private string clefCategoryField;
 
-        private string fontStyleField;
+    private string clefChangeCompositeIDField;
 
-        private string textField;
+    private kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinition clefDefinitionField;
 
-        /// <remarks/>
-        public string name
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string fontStyle
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return fontStyleField;
-            }
-            set
-            {
-                fontStyleField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public string text
+        set
         {
-            get
-            {
-                return textField;
-            }
-            set
-            {
-                textField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryGlyphDefinitions
+    public byte inheritanceMask
     {
-
-        private kScoreLibraryGlyphDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryGlyphDefinitionsEntities entities
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return inheritanceMaskField;
         }
+        set
+        {
+            inheritanceMaskField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryGlyphDefinitionsEntities
+    public string basicClefType
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            return basicClefTypeField;
         }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryCompositeDefinitions
-    {
-
-        private kScoreLibraryCompositeDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryCompositeDefinitionsEntities entities
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            basicClefTypeField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryCompositeDefinitionsEntities
+    public sbyte clefTranspositionReminder
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            return clefTranspositionReminderField;
         }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTempoPresetDefinitions
-    {
-
-        private kScoreLibraryTempoPresetDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryTempoPresetDefinitionsEntities entities
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            clefTranspositionReminderField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTempoPresetDefinitionsEntities
+    public string compositeID
     {
-
-        private kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefinition[] tempoPresetDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("TempoPresetDefinition")]
-        public kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefinition[] TempoPresetDefinition
+        get
         {
-            get
-            {
-                return tempoPresetDefinitionField;
-            }
-            set
-            {
-                tempoPresetDefinitionField = value;
-            }
+            return compositeIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            compositeIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefinition
+    public string clefCategory
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string abbreviatedNameField;
-
-        private bool isGradualField;
-
-        private string immediateTypeField;
-
-        private string resetTypeField;
-
-        private byte amountField;
-
-        private bool amountFieldSpecified;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return clefCategoryField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            clefCategoryField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string clefChangeCompositeID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return clefChangeCompositeIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            clefChangeCompositeIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string abbreviatedName
+    public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinition clefDefinition
+    {
+        get
         {
-            get
-            {
-                return abbreviatedNameField;
-            }
-            set
-            {
-                abbreviatedNameField = value;
-            }
+            return clefDefinitionField;
         }
-
-        /// <remarks/>
-        public bool isGradual
+        set
         {
-            get
-            {
-                return isGradualField;
-            }
-            set
-            {
-                isGradualField = value;
-            }
+            clefDefinitionField = value;
         }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinition
+{
+    private bool isPitchedField;
+
+    private byte requiredNumStaveLinesField;
+
+    private byte staveIndexFromBottomLineField;
+
+    private kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinitionHotSpot hotSpotField;
 
-        /// <remarks/>
-        public string immediateType
+    public bool isPitched
+    {
+        get
         {
-            get
-            {
-                return immediateTypeField;
-            }
-            set
-            {
-                immediateTypeField = value;
-            }
+            return isPitchedField;
         }
-
-        /// <remarks/>
-        public string resetType
+        set
         {
-            get
-            {
-                return resetTypeField;
-            }
-            set
-            {
-                resetTypeField = value;
-            }
+            isPitchedField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte amount
+    public byte requiredNumStaveLines
+    {
+        get
         {
-            get
-            {
-                return amountField;
-            }
-            set
-            {
-                amountField = value;
-            }
+            return requiredNumStaveLinesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool amountSpecified
+        set
         {
-            get
-            {
-                return amountFieldSpecified;
-            }
-            set
-            {
-                amountFieldSpecified = value;
-            }
+            requiredNumStaveLinesField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRhythmicFeelDefinitions
+    public byte staveIndexFromBottomLine
     {
-
-        private kScoreLibraryRhythmicFeelDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryRhythmicFeelDefinitionsEntities entities
+        get
+        {
+            return staveIndexFromBottomLineField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            staveIndexFromBottomLineField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRhythmicFeelDefinitionsEntities
+    public kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinitionHotSpot hotSpot
     {
-
-        private kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEntityDefinition[] rhythmicFeelEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RhythmicFeelEntityDefinition")]
-        public kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEntityDefinition[] RhythmicFeelEntityDefinition
+        get
         {
-            get
-            {
-                return rhythmicFeelEntityDefinitionField;
-            }
-            set
-            {
-                rhythmicFeelEntityDefinitionField = value;
-            }
+            return hotSpotField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            hotSpotField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEntityDefinition
-    {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string typeField;
-
-        private string unitField;
-
-        private uint lowTempoField;
-
-        private decimal lowStrengthField;
-
-        private uint highTempoField;
+}
 
-        private bool highTempoFieldSpecified;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryClefDefinitionsEntitiesClefEntityDefinitionClefDefinitionHotSpot
+{
+    private string noteNameField;
 
-        private decimal highStrengthField;
+    private byte octaveField;
 
-        private bool highStrengthFieldSpecified;
+    private byte transposedOctaveField;
 
-        /// <remarks/>
-        public string name
-        {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
-        }
+    private bool transposedOctaveFieldSpecified;
 
-        /// <remarks/>
-        public string entityID
+    public string noteName
+    {
+        get
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            return noteNameField;
         }
-
-        /// <remarks/>
-        public object parentEntityID
+        set
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            noteNameField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte inheritanceMask
+    public byte octave
+    {
+        get
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            return octaveField;
         }
-
-        /// <remarks/>
-        public string type
+        set
         {
-            get
-            {
-                return typeField;
-            }
-            set
-            {
-                typeField = value;
-            }
+            octaveField = value;
         }
+    }
 
-        /// <remarks/>
-        public string unit
+    public byte transposedOctave
+    {
+        get
         {
-            get
-            {
-                return unitField;
-            }
-            set
-            {
-                unitField = value;
-            }
+            return transposedOctaveField;
         }
-
-        /// <remarks/>
-        public uint lowTempo
+        set
         {
-            get
-            {
-                return lowTempoField;
-            }
-            set
-            {
-                lowTempoField = value;
-            }
+            transposedOctaveField = value;
         }
+    }
 
-        /// <remarks/>
-        public decimal lowStrength
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool transposedOctaveSpecified
+    {
+        get
         {
-            get
-            {
-                return lowStrengthField;
-            }
-            set
-            {
-                lowStrengthField = value;
-            }
+            return transposedOctaveFieldSpecified;
         }
-
-        /// <remarks/>
-        public uint highTempo
+        set
         {
-            get
-            {
-                return highTempoField;
-            }
-            set
-            {
-                highTempoField = value;
-            }
+            transposedOctaveFieldSpecified = value;
         }
+    }
+}
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool highTempoSpecified
-        {
-            get
-            {
-                return highTempoFieldSpecified;
-            }
-            set
-            {
-                highTempoFieldSpecified = value;
-            }
-        }
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryOttavaLineDefinitions
+{
+    private kScoreLibraryOttavaLineDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        public decimal highStrength
+    public kScoreLibraryOttavaLineDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return highStrengthField;
-            }
-            set
-            {
-                highStrengthField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool highStrengthSpecified
+        set
         {
-            get
-            {
-                return highStrengthFieldSpecified;
-            }
-            set
-            {
-                highStrengthFieldSpecified = value;
-            }
+            entitiesField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPenstyles
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryOttavaLineDefinitionsEntities
+{
+    private kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinition[] ottavaLineDefinitionField;
 
-        private kScoreLibraryPenstylesEntities entitiesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryPenstylesEntities entities
+    [System.Xml.Serialization.XmlElementAttribute("OttavaLineDefinition")]
+    public kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinition[] OttavaLineDefinition
+    {
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return ottavaLineDefinitionField;
         }
+        set
+        {
+            ottavaLineDefinitionField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPenstylesEntities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition[] penStyleEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PenStyleEntityDefinition")]
-        public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition[] PenStyleEntityDefinition
+        get
         {
-            get
-            {
-                return penStyleEntityDefinitionField;
-            }
-            set
-            {
-                penStyleEntityDefinitionField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
-    {
+}
 
-        private string nameField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryOttavaLineDefinitionsEntitiesOttavaLineDefinition
+{
+    private string nameField;
 
-        private string entityIDField;
+    private string entityIDField;
 
-        private object parentEntityIDField;
+    private object parentEntityIDField;
 
-        private byte inheritanceMaskField;
+    private byte inheritanceMaskField;
 
-        private string colourField;
-
-        private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth widthField;
-
-        private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPattern dashOrDotPatternField;
-
-        /// <remarks/>
-        public string name
-        {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
-        }
+    private sbyte transpositionForIntersectingNotesField;
 
-        /// <remarks/>
-        public string entityID
+    public string name
+    {
+        get
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public object parentEntityID
+        set
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte inheritanceMask
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public string colour
+        set
         {
-            get
-            {
-                return colourField;
-            }
-            set
-            {
-                colourField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth width
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return widthField;
-            }
-            set
-            {
-                widthField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPattern dashOrDotPattern
+        set
         {
-            get
-            {
-                return dashOrDotPatternField;
-            }
-            set
-            {
-                dashOrDotPatternField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth
+    public byte inheritanceMask
     {
-
-        private byte pointsField;
-
-        /// <remarks/>
-        public byte points
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
         {
-            get
-            {
-                return pointsField;
-            }
-            set
-            {
-                pointsField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPattern
+    public sbyte transpositionForIntersectingNotes
     {
-
-        private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPatternDashOrDotPattern dashOrDotPatternField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPatternDashOrDotPattern dashOrDotPattern
+        get
         {
-            get
-            {
-                return dashOrDotPatternField;
-            }
-            set
-            {
-                dashOrDotPatternField = value;
-            }
+            return transpositionForIntersectingNotesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            transpositionForIntersectingNotesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPatternDashOrDotPattern
-    {
+}
 
-        private byte pointsField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryNoteheadSetDefinitions
+{
+    private kScoreLibraryNoteheadSetDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        public byte points
+    public kScoreLibraryNoteheadSetDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return pointsField;
-            }
-            set
-            {
-                pointsField = value;
-            }
+            return entitiesField;
         }
+        set
+        {
+            entitiesField = value;
+        }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFontstyles
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryNoteheadSetDefinitionsEntities
+{
+    private kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefinition[] noteheadSetDefinitionField;
 
-        private kScoreLibraryFontstylesEntities entitiesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryFontstylesEntities entities
+    [System.Xml.Serialization.XmlElementAttribute("NoteheadSetDefinition")]
+    public kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefinition[] NoteheadSetDefinition
+    {
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return noteheadSetDefinitionField;
         }
+        set
+        {
+            noteheadSetDefinitionField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFontstylesEntities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition[] fontStyleEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("FontStyleEntityDefinition")]
-        public kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition[] FontStyleEntityDefinition
+        get
         {
-            get
-            {
-                return fontStyleEntityDefinitionField;
-            }
-            set
-            {
-                fontStyleEntityDefinitionField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
-    {
+}
 
-        private string nameField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryNoteheadSetDefinitionsEntitiesNoteheadSetDefinition
+{
+    private string nameField;
 
-        private string entityIDField;
+    private string entityIDField;
 
-        private string parentEntityIDField;
+    private object parentEntityIDField;
 
-        private string inheritanceMaskField;
+    private byte inheritanceMaskField;
 
-        private string fontnameField;
+    private string noteheadSetTypeField;
 
-        private string colourField;
+    private string noteheadSetCategoryField;
 
-        private string sizeField;
+    private string noteheadsField;
 
-        private string weightField;
+    private string defaultNoteheadIDField;
 
-        private bool italicField;
-
-        private bool underlinedField;
-
-        private string namedStyleField;
-
-        private string substituteFamilyNamesField;
-
-        /// <remarks/>
-        public string name
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public string parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public string inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string fontname
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return fontnameField;
-            }
-            set
-            {
-                fontnameField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public string colour
+        set
         {
-            get
-            {
-                return colourField;
-            }
-            set
-            {
-                colourField = value;
-            }
+            parentEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string size
+    public byte inheritanceMask
+    {
+        get
         {
-            get
-            {
-                return sizeField;
-            }
-            set
-            {
-                sizeField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public string weight
+        set
         {
-            get
-            {
-                return weightField;
-            }
-            set
-            {
-                weightField = value;
-            }
+            inheritanceMaskField = value;
         }
+    }
 
-        /// <remarks/>
-        public bool italic
+    public string noteheadSetType
+    {
+        get
         {
-            get
-            {
-                return italicField;
-            }
-            set
-            {
-                italicField = value;
-            }
+            return noteheadSetTypeField;
         }
-
-        /// <remarks/>
-        public bool underlined
+        set
         {
-            get
-            {
-                return underlinedField;
-            }
-            set
-            {
-                underlinedField = value;
-            }
+            noteheadSetTypeField = value;
         }
+    }
 
-        /// <remarks/>
-        public string namedStyle
+    public string noteheadSetCategory
+    {
+        get
         {
-            get
-            {
-                return namedStyleField;
-            }
-            set
-            {
-                namedStyleField = value;
-            }
+            return noteheadSetCategoryField;
         }
-
-        /// <remarks/>
-        public string substituteFamilyNames
+        set
         {
-            get
-            {
-                return substituteFamilyNamesField;
-            }
-            set
-            {
-                substituteFamilyNamesField = value;
-            }
+            noteheadSetCategoryField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryBrushstyles
+    public string noteheads
     {
-
-        private kScoreLibraryBrushstylesEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryBrushstylesEntities entities
+        get
+        {
+            return noteheadsField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            noteheadsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryBrushstylesEntities
+    public string defaultNoteheadID
     {
-
-        private kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition[] brushStyleEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("BrushStyleEntityDefinition")]
-        public kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition[] BrushStyleEntityDefinition
+        get
         {
-            get
-            {
-                return brushStyleEntityDefinitionField;
-            }
-            set
-            {
-                brushStyleEntityDefinitionField = value;
-            }
+            return defaultNoteheadIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            defaultNoteheadIDField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition
-    {
-
-        private string nameField;
+}
 
-        private string entityIDField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryNoteheadDefinitions
+{
+    private kScoreLibraryNoteheadDefinitionsEntities entitiesField;
 
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string colourField;
-
-        /// <remarks/>
-        public string name
+    public kScoreLibraryNoteheadDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            entitiesField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public object parentEntityID
-        {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
-        }
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryNoteheadDefinitionsEntities
+{
+    private kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition[] noteheadDefinitionField;
 
-        /// <remarks/>
-        public byte inheritanceMask
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("NoteheadDefinition")]
+    public kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition[] NoteheadDefinition
+    {
+        get
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            return noteheadDefinitionField;
         }
-
-        /// <remarks/>
-        public string colour
+        set
         {
-            get
-            {
-                return colourField;
-            }
-            set
-            {
-                colourField = value;
-            }
+            noteheadDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSets
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntities entities
+        get
+        {
+            return arrayField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntities
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryNoteheadDefinitionsEntitiesNoteheadDefinition
+{
+    private string nameField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinition[] pagePairDefinitionSetDefinitionField;
+    private string entityIDField;
 
-        private bool arrayField;
+    private object parentEntityIDField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PagePairDefinitionSetDefinition")]
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinition[] PagePairDefinitionSetDefinition
-        {
-            get
-            {
-                return pagePairDefinitionSetDefinitionField;
-            }
-            set
-            {
-                pagePairDefinitionSetDefinitionField = value;
-            }
-        }
+    private byte inheritanceMaskField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
-        {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
-        }
-    }
+    private string noteheadSetTypeField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinition
-    {
+    private string compositeIDField;
+
+    private string durationField;
+
+    private bool upToDurationField;
 
-        private string nameField;
+    private bool upFromDurationField;
 
-        private string entityIDField;
+    private string roundOrSquareField;
 
-        private object parentEntityIDField;
+    private string stemDirectionField;
 
-        private byte inheritanceMaskField;
+    private byte scaleDegreeField;
 
-        private string typeField;
+    private bool scaleDegreeFieldSpecified;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitions frameChainDefinitionsField;
+    private string pitchField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinition firstPageDefinitionField;
+    private string stemUpAttachmentField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinition normalPageDefinitionField;
+    private string stemDownAttachmentField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinition flowHeadingDefinitionField;
+    private string splitStemUpWAttachmentField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraPageDefinitions extraPageDefinitionsField;
+    private string splitStemUpEAttachmentField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraFlowHeadingDefinitions extraFlowHeadingDefinitionsField;
+    private string splitStemDownWAttachmentField;
 
-        /// <remarks/>
-        public string name
+    private string splitStemDownEAttachmentField;
+
+    private string cutOutNWField;
+
+    private string cutOutSEField;
+
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string type
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return typeField;
-            }
-            set
-            {
-                typeField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitions frameChainDefinitions
+        set
         {
-            get
-            {
-                return frameChainDefinitionsField;
-            }
-            set
-            {
-                frameChainDefinitionsField = value;
-            }
+            parentEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinition firstPageDefinition
+    public byte inheritanceMask
+    {
+        get
         {
-            get
-            {
-                return firstPageDefinitionField;
-            }
-            set
-            {
-                firstPageDefinitionField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinition normalPageDefinition
+        set
         {
-            get
-            {
-                return normalPageDefinitionField;
-            }
-            set
-            {
-                normalPageDefinitionField = value;
-            }
+            inheritanceMaskField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinition flowHeadingDefinition
+    public string noteheadSetType
+    {
+        get
         {
-            get
-            {
-                return flowHeadingDefinitionField;
-            }
-            set
-            {
-                flowHeadingDefinitionField = value;
-            }
+            return noteheadSetTypeField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraPageDefinitions extraPageDefinitions
+        set
         {
-            get
-            {
-                return extraPageDefinitionsField;
-            }
-            set
-            {
-                extraPageDefinitionsField = value;
-            }
+            noteheadSetTypeField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraFlowHeadingDefinitions extraFlowHeadingDefinitions
+    public string compositeID
+    {
+        get
+        {
+            return compositeIDField;
+        }
+        set
         {
-            get
-            {
-                return extraFlowHeadingDefinitionsField;
-            }
-            set
-            {
-                extraFlowHeadingDefinitionsField = value;
-            }
+            compositeIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitions
+    public string duration
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChains musicFrameChainsField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChains textFrameChainsField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicFrameChains graphicFrameChainsField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsChordsUsedFrameChains chordsUsedFrameChainsField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicSliceFrameChains graphicSliceFrameChainsField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChains musicFrameChains
+        get
         {
-            get
-            {
-                return musicFrameChainsField;
-            }
-            set
-            {
-                musicFrameChainsField = value;
-            }
+            return durationField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChains textFrameChains
+        set
         {
-            get
-            {
-                return textFrameChainsField;
-            }
-            set
-            {
-                textFrameChainsField = value;
-            }
+            durationField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicFrameChains graphicFrameChains
+    public bool upToDuration
+    {
+        get
         {
-            get
-            {
-                return graphicFrameChainsField;
-            }
-            set
-            {
-                graphicFrameChainsField = value;
-            }
+            return upToDurationField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsChordsUsedFrameChains chordsUsedFrameChains
+        set
         {
-            get
-            {
-                return chordsUsedFrameChainsField;
-            }
-            set
-            {
-                chordsUsedFrameChainsField = value;
-            }
+            upToDurationField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicSliceFrameChains graphicSliceFrameChains
+    public bool upFromDuration
+    {
+        get
+        {
+            return upFromDurationField;
+        }
+        set
         {
-            get
-            {
-                return graphicSliceFrameChainsField;
-            }
-            set
-            {
-                graphicSliceFrameChainsField = value;
-            }
+            upFromDurationField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChains
+    public string roundOrSquare
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChainsMusicFrameChains musicFrameChainsField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChainsMusicFrameChains musicFrameChains
+        get
         {
-            get
-            {
-                return musicFrameChainsField;
-            }
-            set
-            {
-                musicFrameChainsField = value;
-            }
+            return roundOrSquareField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            roundOrSquareField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChainsMusicFrameChains
+    public string stemDirection
     {
-
-        private byte frameChainDefinitionIDField;
-
-        private object flowIDsField;
-
-        private object playerIDsField;
-
-        private string flowInclusionPolicyField;
-
-        /// <remarks/>
-        public byte frameChainDefinitionID
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return stemDirectionField;
         }
-
-        /// <remarks/>
-        public object flowIDs
+        set
         {
-            get
-            {
-                return flowIDsField;
-            }
-            set
-            {
-                flowIDsField = value;
-            }
+            stemDirectionField = value;
         }
+    }
 
-        /// <remarks/>
-        public object playerIDs
+    public byte scaleDegree
+    {
+        get
         {
-            get
-            {
-                return playerIDsField;
-            }
-            set
-            {
-                playerIDsField = value;
-            }
+            return scaleDegreeField;
         }
-
-        /// <remarks/>
-        public string flowInclusionPolicy
+        set
         {
-            get
-            {
-                return flowInclusionPolicyField;
-            }
-            set
-            {
-                flowInclusionPolicyField = value;
-            }
+            scaleDegreeField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChains
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool scaleDegreeSpecified
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChains[] textFrameChainsField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("textFrameChains")]
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChains[] textFrameChains
+        get
         {
-            get
-            {
-                return textFrameChainsField;
-            }
-            set
-            {
-                textFrameChainsField = value;
-            }
+            return scaleDegreeFieldSpecified;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            scaleDegreeFieldSpecified = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChains
+    public string pitch
     {
-
-        private byte frameChainDefinitionIDField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSource contentSourceField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsProperties propertiesField;
-
-        /// <remarks/>
-        public byte frameChainDefinitionID
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return pitchField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSource contentSource
+        set
         {
-            get
-            {
-                return contentSourceField;
-            }
-            set
-            {
-                contentSourceField = value;
-            }
+            pitchField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsProperties properties
+    public string stemUpAttachment
+    {
+        get
+        {
+            return stemUpAttachmentField;
+        }
+        set
         {
-            get
-            {
-                return propertiesField;
-            }
-            set
-            {
-                propertiesField = value;
-            }
+            stemUpAttachmentField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSource
+    public string stemDownAttachment
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContent defaultContentField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContent defaultContent
+        get
+        {
+            return stemDownAttachmentField;
+        }
+        set
         {
-            get
-            {
-                return defaultContentField;
-            }
-            set
-            {
-                defaultContentField = value;
-            }
+            stemDownAttachmentField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContent
+    public string splitStemUpWAttachment
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphs paragraphsField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphs paragraphs
+        get
+        {
+            return splitStemUpWAttachmentField;
+        }
+        set
         {
-            get
-            {
-                return paragraphsField;
-            }
-            set
-            {
-                paragraphsField = value;
-            }
+            splitStemUpWAttachmentField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphs
+    public string splitStemUpEAttachment
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraph paragraphField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraph paragraph
+        get
         {
-            get
-            {
-                return paragraphField;
-            }
-            set
-            {
-                paragraphField = value;
-            }
+            return splitStemUpEAttachmentField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            splitStemUpEAttachmentField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraph
+    public string splitStemDownWAttachment
     {
-
-        private string paragraphStyleIDField;
-
-        private object contentField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragments fragmentsField;
-
-        /// <remarks/>
-        public string paragraphStyleID
+        get
         {
-            get
-            {
-                return paragraphStyleIDField;
-            }
-            set
-            {
-                paragraphStyleIDField = value;
-            }
+            return splitStemDownWAttachmentField;
         }
-
-        /// <remarks/>
-        public object content
+        set
         {
-            get
-            {
-                return contentField;
-            }
-            set
-            {
-                contentField = value;
-            }
+            splitStemDownWAttachmentField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragments fragments
+    public string splitStemDownEAttachment
+    {
+        get
+        {
+            return splitStemDownEAttachmentField;
+        }
+        set
         {
-            get
-            {
-                return fragmentsField;
-            }
-            set
-            {
-                fragmentsField = value;
-            }
+            splitStemDownEAttachmentField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragments
+    public string cutOutNW
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragment fragmentField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragment fragment
+        get
         {
-            get
-            {
-                return fragmentField;
-            }
-            set
-            {
-                fragmentField = value;
-            }
+            return cutOutNWField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            cutOutNWField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragment
+    public string cutOutSE
     {
-
-        private string contentField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragmentTextFragmentStyle textFragmentStyleField;
-
-        /// <remarks/>
-        public string content
+        get
         {
-            get
-            {
-                return contentField;
-            }
-            set
-            {
-                contentField = value;
-            }
+            return cutOutSEField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragmentTextFragmentStyle textFragmentStyle
+        set
         {
-            get
-            {
-                return textFragmentStyleField;
-            }
-            set
-            {
-                textFragmentStyleField = value;
-            }
+            cutOutSEField = value;
         }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRestSetDefinitions
+{
+    private kScoreLibraryRestSetDefinitionsEntities entitiesField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragmentTextFragmentStyle
+    public kScoreLibraryRestSetDefinitionsEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private object libraryStyleField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRestSetDefinitionsEntities
+{
+    private kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition[] restSetDefinitionField;
 
-        private object localStyleField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public object libraryStyle
+    [System.Xml.Serialization.XmlElementAttribute("RestSetDefinition")]
+    public kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition[] RestSetDefinition
+    {
+        get
         {
-            get
-            {
-                return libraryStyleField;
-            }
-            set
-            {
-                libraryStyleField = value;
-            }
+            return restSetDefinitionField;
         }
-
-        /// <remarks/>
-        public object localStyle
+        set
         {
-            get
-            {
-                return localStyleField;
-            }
-            set
-            {
-                localStyleField = value;
-            }
+            restSetDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsProperties
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        private bool showBorderField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRestSetDefinitionsEntitiesRestSetDefinition
+{
+    private string nameField;
 
-        private byte borderThicknessField;
+    private string entityIDField;
 
-        private string verticalAlignmentField;
+    private object parentEntityIDField;
 
-        /// <remarks/>
-        public bool showBorder
-        {
-            get
-            {
-                return showBorderField;
-            }
-            set
-            {
-                showBorderField = value;
-            }
-        }
+    private byte inheritanceMaskField;
 
-        /// <remarks/>
-        public byte borderThickness
+    private string restsField;
+
+    public string name
+    {
+        get
         {
-            get
-            {
-                return borderThicknessField;
-            }
-            set
-            {
-                borderThicknessField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string verticalAlignment
+        set
         {
-            get
-            {
-                return verticalAlignmentField;
-            }
-            set
-            {
-                verticalAlignmentField = value;
-            }
+            nameField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicFrameChains
+    public string entityID
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return entityIDField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsChordsUsedFrameChains
+    public object parentEntityID
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicSliceFrameChains
+    public byte inheritanceMask
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinition
+    public string rests
     {
-
-        private object nameField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeft leftField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRight rightField;
-
-        /// <remarks/>
-        public object name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return restsField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeft left
+        set
         {
-            get
-            {
-                return leftField;
-            }
-            set
-            {
-                leftField = value;
-            }
+            restsField = value;
         }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRestDefinitions
+{
+    private kScoreLibraryRestDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRight right
+    public kScoreLibraryRestDefinitionsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
         {
-            get
-            {
-                return rightField;
-            }
-            set
-            {
-                rightField = value;
-            }
+            entitiesField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeft
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRestDefinitionsEntities
+{
+    private kScoreLibraryRestDefinitionsEntitiesRestDefinition[] restDefinitionField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFrames framesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFrames frames
+    [System.Xml.Serialization.XmlElementAttribute("RestDefinition")]
+    public kScoreLibraryRestDefinitionsEntitiesRestDefinition[] RestDefinition
+    {
+        get
+        {
+            return restDefinitionField;
+        }
+        set
         {
-            get
-            {
-                return framesField;
-            }
-            set
-            {
-                framesField = value;
-            }
+            restDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFrames
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrame[] frameField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("frame")]
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrame[] frame
+        get
         {
-            get
-            {
-                return frameField;
-            }
-            set
-            {
-                frameField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrame
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRestDefinitionsEntitiesRestDefinition
+{
+    private string nameField;
 
-        private byte indexInFrameChainOnPageField;
+    private string entityIDField;
 
-        private bool contentRelativeField;
+    private object parentEntityIDField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
+    private byte inheritanceMaskField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraints constraintsField;
+    private string compositeIDField;
 
-        /// <remarks/>
-        public byte indexInFrameChainOnPage
+    private string durationField;
+
+    public string name
+    {
+        get
         {
-            get
-            {
-                return indexInFrameChainOnPageField;
-            }
-            set
-            {
-                indexInFrameChainOnPageField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public bool contentRelative
+        set
         {
-            get
-            {
-                return contentRelativeField;
-            }
-            set
-            {
-                contentRelativeField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraints constraints
+        set
         {
-            get
-            {
-                return constraintsField;
-            }
-            set
-            {
-                constraintsField = value;
-            }
+            entityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameFrameChainDefinitionID
+    public object parentEntityID
     {
-
-        private byte frameChainDefinitionIDField;
-
-        private bool isLayoutSpecificField;
-
-        /// <remarks/>
-        public byte frameChainDefinitionID
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public bool isLayoutSpecific
+        set
         {
-            get
-            {
-                return isLayoutSpecificField;
-            }
-            set
-            {
-                isLayoutSpecificField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraints
+    public byte inheritanceMask
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraintsField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraints
+        get
         {
-            get
-            {
-                return positionConstraintsField;
-            }
-            set
-            {
-                positionConstraintsField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraints
+        set
         {
-            get
-            {
-                return dimensionConstraintsField;
-            }
-            set
-            {
-                dimensionConstraintsField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsPositionConstraints
+    public string compositeID
     {
-
-        private byte leftField;
-
-        private bool leftFieldSpecified;
-
-        private byte rightField;
-
-        private bool rightFieldSpecified;
-
-        private byte bottomField;
-
-        private bool bottomFieldSpecified;
-
-        private byte topField;
-
-        private bool topFieldSpecified;
-
-        /// <remarks/>
-        public byte left
+        get
         {
-            get
-            {
-                return leftField;
-            }
-            set
-            {
-                leftField = value;
-            }
+            return compositeIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool leftSpecified
+        set
         {
-            get
-            {
-                return leftFieldSpecified;
-            }
-            set
-            {
-                leftFieldSpecified = value;
-            }
+            compositeIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte right
+    public string duration
+    {
+        get
         {
-            get
-            {
-                return rightField;
-            }
-            set
-            {
-                rightField = value;
-            }
+            return durationField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool rightSpecified
+        set
         {
-            get
-            {
-                return rightFieldSpecified;
-            }
-            set
-            {
-                rightFieldSpecified = value;
-            }
+            durationField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public byte bottom
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFlagSetDefinitions
+{
+    private kScoreLibraryFlagSetDefinitionsEntities entitiesField;
+
+    public kScoreLibraryFlagSetDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return bottomField;
-            }
-            set
-            {
-                bottomField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bottomSpecified
+        set
         {
-            get
-            {
-                return bottomFieldSpecified;
-            }
-            set
-            {
-                bottomFieldSpecified = value;
-            }
+            entitiesField = value;
         }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFlagSetDefinitionsEntities
+{
+    private kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition[] flagSetDefinitionField;
+
+    private bool arrayField;
 
-        /// <remarks/>
-        public byte top
+    [System.Xml.Serialization.XmlElementAttribute("FlagSetDefinition")]
+    public kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition[] FlagSetDefinition
+    {
+        get
         {
-            get
-            {
-                return topField;
-            }
-            set
-            {
-                topField = value;
-            }
+            return flagSetDefinitionField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool topSpecified
+        set
         {
-            get
-            {
-                return topFieldSpecified;
-            }
-            set
-            {
-                topFieldSpecified = value;
-            }
+            flagSetDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsDimensionConstraints
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        private byte widthField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFlagSetDefinitionsEntitiesFlagSetDefinition
+{
+    private string nameField;
 
-        private bool widthFieldSpecified;
+    private string entityIDField;
 
-        private byte heightField;
+    private object parentEntityIDField;
 
-        /// <remarks/>
-        public byte width
-        {
-            get
-            {
-                return widthField;
-            }
-            set
-            {
-                widthField = value;
-            }
-        }
+    private byte inheritanceMaskField;
+
+    private string flagsField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool widthSpecified
+    public string name
+    {
+        get
         {
-            get
-            {
-                return widthFieldSpecified;
-            }
-            set
-            {
-                widthFieldSpecified = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public byte height
+        set
         {
-            get
-            {
-                return heightField;
-            }
-            set
-            {
-                heightField = value;
-            }
+            nameField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRight
+    public string entityID
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFrames framesField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFrames frames
+        get
+        {
+            return entityIDField;
+        }
+        set
         {
-            get
-            {
-                return framesField;
-            }
-            set
-            {
-                framesField = value;
-            }
+            entityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFrames
+    public object parentEntityID
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrame[] frameField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("frame")]
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrame[] frame
+        get
         {
-            get
-            {
-                return frameField;
-            }
-            set
-            {
-                frameField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrame
+    public byte inheritanceMask
     {
-
-        private byte indexInFrameChainOnPageField;
-
-        private bool contentRelativeField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraints constraintsField;
-
-        /// <remarks/>
-        public byte indexInFrameChainOnPage
+        get
         {
-            get
-            {
-                return indexInFrameChainOnPageField;
-            }
-            set
-            {
-                indexInFrameChainOnPageField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public bool contentRelative
+        set
         {
-            get
-            {
-                return contentRelativeField;
-            }
-            set
-            {
-                contentRelativeField = value;
-            }
+            inheritanceMaskField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    public string flags
+    {
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return flagsField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraints constraints
+        set
         {
-            get
-            {
-                return constraintsField;
-            }
-            set
-            {
-                constraintsField = value;
-            }
+            flagsField = value;
         }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFlagDefinitions
+{
+    private kScoreLibraryFlagDefinitionsEntities entitiesField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameFrameChainDefinitionID
+    public kScoreLibraryFlagDefinitionsEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private byte frameChainDefinitionIDField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFlagDefinitionsEntities
+{
+    private kScoreLibraryFlagDefinitionsEntitiesFlagDefinition[] flagDefinitionField;
 
-        private bool isLayoutSpecificField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public byte frameChainDefinitionID
+    [System.Xml.Serialization.XmlElementAttribute("FlagDefinition")]
+    public kScoreLibraryFlagDefinitionsEntitiesFlagDefinition[] FlagDefinition
+    {
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return flagDefinitionField;
         }
-
-        /// <remarks/>
-        public bool isLayoutSpecific
+        set
         {
-            get
-            {
-                return isLayoutSpecificField;
-            }
-            set
-            {
-                isLayoutSpecificField = value;
-            }
+            flagDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraints
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraintsField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraints
+        get
         {
-            get
-            {
-                return positionConstraintsField;
-            }
-            set
-            {
-                positionConstraintsField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraints
+        set
         {
-            get
-            {
-                return dimensionConstraintsField;
-            }
-            set
-            {
-                dimensionConstraintsField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsPositionConstraints
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFlagDefinitionsEntitiesFlagDefinition
+{
+    private string nameField;
 
-        private byte leftField;
+    private string entityIDField;
 
-        private bool leftFieldSpecified;
+    private object parentEntityIDField;
 
-        private byte rightField;
+    private byte inheritanceMaskField;
 
-        private bool rightFieldSpecified;
+    private string compositeIDField;
 
-        private byte bottomField;
+    private string durationField;
 
-        private bool bottomFieldSpecified;
+    private string stemDirectionField;
 
-        private byte topField;
+    private bool shortVariantField;
 
-        private bool topFieldSpecified;
+    private string stemOffsetField;
 
-        /// <remarks/>
-        public byte left
+    public string name
+    {
+        get
         {
-            get
-            {
-                return leftField;
-            }
-            set
-            {
-                leftField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool leftSpecified
+        set
         {
-            get
-            {
-                return leftFieldSpecified;
-            }
-            set
-            {
-                leftFieldSpecified = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte right
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return rightField;
-            }
-            set
-            {
-                rightField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool rightSpecified
+        set
         {
-            get
-            {
-                return rightFieldSpecified;
-            }
-            set
-            {
-                rightFieldSpecified = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte bottom
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return bottomField;
-            }
-            set
-            {
-                bottomField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bottomSpecified
+        set
         {
-            get
-            {
-                return bottomFieldSpecified;
-            }
-            set
-            {
-                bottomFieldSpecified = value;
-            }
+            parentEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte top
+    public byte inheritanceMask
+    {
+        get
         {
-            get
-            {
-                return topField;
-            }
-            set
-            {
-                topField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool topSpecified
+        set
         {
-            get
-            {
-                return topFieldSpecified;
-            }
-            set
-            {
-                topFieldSpecified = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsDimensionConstraints
+    public string compositeID
     {
-
-        private byte widthField;
-
-        private bool widthFieldSpecified;
-
-        private byte heightField;
-
-        /// <remarks/>
-        public byte width
-        {
-            get
-            {
-                return widthField;
-            }
-            set
-            {
-                widthField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool widthSpecified
+        get
         {
-            get
-            {
-                return widthFieldSpecified;
-            }
-            set
-            {
-                widthFieldSpecified = value;
-            }
+            return compositeIDField;
         }
-
-        /// <remarks/>
-        public byte height
+        set
         {
-            get
-            {
-                return heightField;
-            }
-            set
-            {
-                heightField = value;
-            }
+            compositeIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinition
+    public string duration
     {
-
-        private object nameField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeft leftField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRight rightField;
-
-        /// <remarks/>
-        public object name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return durationField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeft left
+        set
         {
-            get
-            {
-                return leftField;
-            }
-            set
-            {
-                leftField = value;
-            }
+            durationField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRight right
+    public string stemDirection
+    {
+        get
         {
-            get
-            {
-                return rightField;
-            }
-            set
-            {
-                rightField = value;
-            }
+            return stemDirectionField;
         }
+        set
+        {
+            stemDirectionField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeft
+    public bool shortVariant
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFrames framesField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFrames frames
+        get
         {
-            get
-            {
-                return framesField;
-            }
-            set
-            {
-                framesField = value;
-            }
+            return shortVariantField;
         }
+        set
+        {
+            shortVariantField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFrames
+    public string stemOffset
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrame[] frameField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("frame")]
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrame[] frame
+        get
         {
-            get
-            {
-                return frameField;
-            }
-            set
-            {
-                frameField = value;
-            }
+            return stemOffsetField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            stemOffsetField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrame
-    {
+}
 
-        private byte indexInFrameChainOnPageField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryGraphicDefinitions
+{
+    private kScoreLibraryGraphicDefinitionsEntities entitiesField;
 
-        private bool contentRelativeField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraints constraintsField;
-
-        /// <remarks/>
-        public byte indexInFrameChainOnPage
+    public kScoreLibraryGraphicDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return indexInFrameChainOnPageField;
-            }
-            set
-            {
-                indexInFrameChainOnPageField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public bool contentRelative
+        set
         {
-            get
-            {
-                return contentRelativeField;
-            }
-            set
-            {
-                contentRelativeField = value;
-            }
+            entitiesField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionID
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryGraphicDefinitionsEntities
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraints constraints
+        set
         {
-            get
-            {
-                return constraintsField;
-            }
-            set
-            {
-                constraintsField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameFrameChainDefinitionID
-    {
-
-        private byte frameChainDefinitionIDField;
+}
 
-        private bool isLayoutSpecificField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryBlobDefinitions
+{
+    private kScoreLibraryBlobDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        public byte frameChainDefinitionID
+    public kScoreLibraryBlobDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public bool isLayoutSpecific
+        set
         {
-            get
-            {
-                return isLayoutSpecificField;
-            }
-            set
-            {
-                isLayoutSpecificField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraints
-    {
+}
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraintsField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryBlobDefinitionsEntities
+{
+    private bool arrayField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraints
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return positionConstraintsField;
-            }
-            set
-            {
-                positionConstraintsField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraints
+        set
         {
-            get
-            {
-                return dimensionConstraintsField;
-            }
-            set
-            {
-                dimensionConstraintsField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsPositionConstraints
-    {
-
-        private byte leftField;
-
-        private byte rightField;
-
-        private bool rightFieldSpecified;
+}
 
-        private byte bottomField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryDrawingDefinitions
+{
+    private kScoreLibraryDrawingDefinitionsEntities entitiesField;
 
-        private bool bottomFieldSpecified;
-
-        private byte topField;
-
-        /// <remarks/>
-        public byte left
+    public kScoreLibraryDrawingDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return leftField;
-            }
-            set
-            {
-                leftField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public byte right
+        set
         {
-            get
-            {
-                return rightField;
-            }
-            set
-            {
-                rightField = value;
-            }
+            entitiesField = value;
         }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryDrawingDefinitionsEntities
+{
+    private kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinition drawingPrimitiveEntityDefinitionField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool rightSpecified
+    private bool arrayField;
+
+    public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinition DrawingPrimitiveEntityDefinition
+    {
+        get
         {
-            get
-            {
-                return rightFieldSpecified;
-            }
-            set
-            {
-                rightFieldSpecified = value;
-            }
+            return drawingPrimitiveEntityDefinitionField;
         }
-
-        /// <remarks/>
-        public byte bottom
+        set
         {
-            get
-            {
-                return bottomField;
-            }
-            set
-            {
-                bottomField = value;
-            }
+            drawingPrimitiveEntityDefinitionField = value;
         }
+    }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bottomSpecified
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return bottomFieldSpecified;
-            }
-            set
-            {
-                bottomFieldSpecified = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public byte top
+        set
         {
-            get
-            {
-                return topField;
-            }
-            set
-            {
-                topField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsDimensionConstraints
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinition
+{
+    private string nameField;
 
-        private byte widthField;
+    private string entityIDField;
 
-        private bool widthFieldSpecified;
+    private object parentEntityIDField;
 
-        private byte heightField;
+    private byte inheritanceMaskField;
 
-        /// <remarks/>
-        public byte width
-        {
-            get
-            {
-                return widthField;
-            }
-            set
-            {
-                widthField = value;
-            }
-        }
+    private kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitions lineDefinitionsField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool widthSpecified
+    public string name
+    {
+        get
         {
-            get
-            {
-                return widthFieldSpecified;
-            }
-            set
-            {
-                widthFieldSpecified = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public byte height
+        set
         {
-            get
-            {
-                return heightField;
-            }
-            set
-            {
-                heightField = value;
-            }
+            nameField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRight
+    public string entityID
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFrames framesField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFrames frames
+        get
+        {
+            return entityIDField;
+        }
+        set
         {
-            get
-            {
-                return framesField;
-            }
-            set
-            {
-                framesField = value;
-            }
+            entityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFrames
+    public object parentEntityID
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrame[] frameField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("frame")]
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrame[] frame
+        get
         {
-            get
-            {
-                return frameField;
-            }
-            set
-            {
-                frameField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrame
+    public byte inheritanceMask
     {
-
-        private byte indexInFrameChainOnPageField;
-
-        private bool contentRelativeField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraints constraintsField;
-
-        /// <remarks/>
-        public byte indexInFrameChainOnPage
+        get
         {
-            get
-            {
-                return indexInFrameChainOnPageField;
-            }
-            set
-            {
-                indexInFrameChainOnPageField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public bool contentRelative
+        set
         {
-            get
-            {
-                return contentRelativeField;
-            }
-            set
-            {
-                contentRelativeField = value;
-            }
+            inheritanceMaskField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitions lineDefinitions
+    {
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return lineDefinitionsField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraints constraints
+        set
         {
-            get
-            {
-                return constraintsField;
-            }
-            set
-            {
-                constraintsField = value;
-            }
+            lineDefinitionsField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameFrameChainDefinitionID
-    {
+}
 
-        private byte frameChainDefinitionIDField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitions
+{
+    private kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitionsLineDefinition lineDefinitionField;
 
-        private bool isLayoutSpecificField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public byte frameChainDefinitionID
+    public kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitionsLineDefinition lineDefinition
+    {
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return lineDefinitionField;
         }
-
-        /// <remarks/>
-        public bool isLayoutSpecific
+        set
         {
-            get
-            {
-                return isLayoutSpecificField;
-            }
-            set
-            {
-                isLayoutSpecificField = value;
-            }
+            lineDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraints
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraintsField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraints
+        get
         {
-            get
-            {
-                return positionConstraintsField;
-            }
-            set
-            {
-                positionConstraintsField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraints
+        set
         {
-            get
-            {
-                return dimensionConstraintsField;
-            }
-            set
-            {
-                dimensionConstraintsField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsPositionConstraints
-    {
+}
 
-        private byte leftField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryDrawingDefinitionsEntitiesDrawingPrimitiveEntityDefinitionLineDefinitionsLineDefinition
+{
+    private decimal lineWidthField;
 
-        private bool leftFieldSpecified;
+    private byte startXField;
 
-        private byte rightField;
+    private byte startYField;
 
-        private byte bottomField;
+    private byte endXField;
 
-        private bool bottomFieldSpecified;
+    private byte endYField;
 
-        private byte topField;
-
-        /// <remarks/>
-        public byte left
+    public decimal lineWidth
+    {
+        get
         {
-            get
-            {
-                return leftField;
-            }
-            set
-            {
-                leftField = value;
-            }
+            return lineWidthField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool leftSpecified
+        set
         {
-            get
-            {
-                return leftFieldSpecified;
-            }
-            set
-            {
-                leftFieldSpecified = value;
-            }
+            lineWidthField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte right
+    public byte startX
+    {
+        get
         {
-            get
-            {
-                return rightField;
-            }
-            set
-            {
-                rightField = value;
-            }
+            return startXField;
         }
-
-        /// <remarks/>
-        public byte bottom
+        set
         {
-            get
-            {
-                return bottomField;
-            }
-            set
-            {
-                bottomField = value;
-            }
+            startXField = value;
         }
+    }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bottomSpecified
+    public byte startY
+    {
+        get
         {
-            get
-            {
-                return bottomFieldSpecified;
-            }
-            set
-            {
-                bottomFieldSpecified = value;
-            }
+            return startYField;
         }
-
-        /// <remarks/>
-        public byte top
+        set
         {
-            get
-            {
-                return topField;
-            }
-            set
-            {
-                topField = value;
-            }
+            startYField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsDimensionConstraints
+    public byte endX
     {
-
-        private byte widthField;
-
-        private bool widthFieldSpecified;
-
-        private byte heightField;
-
-        /// <remarks/>
-        public byte width
+        get
         {
-            get
-            {
-                return widthField;
-            }
-            set
-            {
-                widthField = value;
-            }
+            return endXField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool widthSpecified
+        set
         {
-            get
-            {
-                return widthFieldSpecified;
-            }
-            set
-            {
-                widthFieldSpecified = value;
-            }
+            endXField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte height
+    public byte endY
+    {
+        get
+        {
+            return endYField;
+        }
+        set
         {
-            get
-            {
-                return heightField;
-            }
-            set
-            {
-                heightField = value;
-            }
+            endYField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinition
-    {
-
-        private string nameField;
+}
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeading headingField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTextDefinitions
+{
+    private kScoreLibraryTextDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        public string name
+    public kScoreLibraryTextDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeading heading
+        set
         {
-            get
-            {
-                return headingField;
-            }
-            set
-            {
-                headingField = value;
-            }
+            entitiesField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeading
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTextDefinitionsEntities
+{
+    private kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefinition[] textPrimitiveEntityDefinitionField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFrames framesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFrames frames
+    [System.Xml.Serialization.XmlElementAttribute("TextPrimitiveEntityDefinition")]
+    public kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefinition[] TextPrimitiveEntityDefinition
+    {
+        get
         {
-            get
-            {
-                return framesField;
-            }
-            set
-            {
-                framesField = value;
-            }
+            return textPrimitiveEntityDefinitionField;
         }
+        set
+        {
+            textPrimitiveEntityDefinitionField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFrames
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrame frameField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrame frame
+        get
         {
-            get
-            {
-                return frameField;
-            }
-            set
-            {
-                frameField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrame
-    {
+}
 
-        private byte indexInFrameChainOnPageField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTextDefinitionsEntitiesTextPrimitiveEntityDefinition
+{
+    private string nameField;
 
-        private bool contentRelativeField;
+    private string entityIDField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
+    private object parentEntityIDField;
 
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraints constraintsField;
+    private byte inheritanceMaskField;
 
-        /// <remarks/>
-        public byte indexInFrameChainOnPage
-        {
-            get
-            {
-                return indexInFrameChainOnPageField;
-            }
-            set
-            {
-                indexInFrameChainOnPageField = value;
-            }
-        }
+    private string fontStyleField;
 
-        /// <remarks/>
-        public bool contentRelative
-        {
-            get
-            {
-                return contentRelativeField;
-            }
-            set
-            {
-                contentRelativeField = value;
-            }
-        }
+    private string textField;
 
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    public string name
+    {
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraints constraints
+        set
         {
-            get
-            {
-                return constraintsField;
-            }
-            set
-            {
-                constraintsField = value;
-            }
+            nameField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameFrameChainDefinitionID
+    public string entityID
     {
-
-        private byte frameChainDefinitionIDField;
-
-        private bool isLayoutSpecificField;
-
-        /// <remarks/>
-        public byte frameChainDefinitionID
+        get
         {
-            get
-            {
-                return frameChainDefinitionIDField;
-            }
-            set
-            {
-                frameChainDefinitionIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public bool isLayoutSpecific
+        set
         {
-            get
-            {
-                return isLayoutSpecificField;
-            }
-            set
-            {
-                isLayoutSpecificField = value;
-            }
+            entityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraints
+    public object parentEntityID
     {
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsPositionConstraints positionConstraintsField;
-
-        private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsPositionConstraints positionConstraints
+        get
         {
-            get
-            {
-                return positionConstraintsField;
-            }
-            set
-            {
-                positionConstraintsField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsDimensionConstraints dimensionConstraints
+        set
         {
-            get
-            {
-                return dimensionConstraintsField;
-            }
-            set
-            {
-                dimensionConstraintsField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsPositionConstraints
+    public byte inheritanceMask
     {
-
-        private byte leftField;
-
-        private byte rightField;
-
-        private byte topField;
-
-        /// <remarks/>
-        public byte left
-        {
-            get
-            {
-                return leftField;
-            }
-            set
-            {
-                leftField = value;
-            }
-        }
-
-        /// <remarks/>
-        public byte right
+        get
         {
-            get
-            {
-                return rightField;
-            }
-            set
-            {
-                rightField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public byte top
+        set
         {
-            get
-            {
-                return topField;
-            }
-            set
-            {
-                topField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsDimensionConstraints
+    public string fontStyle
     {
-
-        private byte heightField;
-
-        /// <remarks/>
-        public byte height
+        get
         {
-            get
-            {
-                return heightField;
-            }
-            set
-            {
-                heightField = value;
-            }
+            return fontStyleField;
         }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraPageDefinitions
-    {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            fontStyleField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraFlowHeadingDefinitions
+    public string text
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            return textField;
         }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPageDimensionPresets
-    {
-
-        private kScoreLibraryPageDimensionPresetsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryPageDimensionPresetsEntities entities
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            textField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPageDimensionPresetsEntities
-    {
-
-        private kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPresetEntityDefinition[] pageDimensionsPresetEntityDefinitionField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryGlyphDefinitions
+{
+    private kScoreLibraryGlyphDefinitionsEntities entitiesField;
 
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PageDimensionsPresetEntityDefinition")]
-        public kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPresetEntityDefinition[] PageDimensionsPresetEntityDefinition
+    public kScoreLibraryGlyphDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return pageDimensionsPresetEntityDefinitionField;
-            }
-            set
-            {
-                pageDimensionsPresetEntityDefinitionField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPresetEntityDefinition
-    {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private ushort widthField;
+}
 
-        private ushort heightField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryGlyphDefinitionsEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        public string name
-        {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
-        }
-
-        /// <remarks/>
-        public string entityID
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public object parentEntityID
+        set
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            arrayField = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public byte inheritanceMask
-        {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
-        }
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryCompositeDefinitions
+{
+    private kScoreLibraryCompositeDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        public ushort width
+    public kScoreLibraryCompositeDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return widthField;
-            }
-            set
-            {
-                widthField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public ushort height
+        set
         {
-            get
-            {
-                return heightField;
-            }
-            set
-            {
-                heightField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryParagraphStyles
-    {
+}
 
-        private kScoreLibraryParagraphStylesEntities entitiesField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryCompositeDefinitionsEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryParagraphStylesEntities entities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryParagraphStylesEntities
-    {
-
-        private kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinition[] paragraphStyleEntityDefinitionField;
+}
 
-        private bool arrayField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTempoPresetDefinitions
+{
+    private kScoreLibraryTempoPresetDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ParagraphStyleEntityDefinition")]
-        public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinition[] ParagraphStyleEntityDefinition
+    public kScoreLibraryTempoPresetDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return paragraphStyleEntityDefinitionField;
-            }
-            set
-            {
-                paragraphStyleEntityDefinitionField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinition
-    {
-
-        private string nameField;
-
-        private string entityIDField;
+}
 
-        private string parentEntityIDField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTempoPresetDefinitionsEntities
+{
+    private kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefinition[] tempoPresetDefinitionField;
 
-        private string inheritanceMaskField;
+    private bool arrayField;
 
-        private kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyle paragraphStyleField;
-
-        /// <remarks/>
-        public string name
-        {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
-        }
-
-        /// <remarks/>
-        public string entityID
+    [System.Xml.Serialization.XmlElementAttribute("TempoPresetDefinition")]
+    public kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefinition[] TempoPresetDefinition
+    {
+        get
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            return tempoPresetDefinitionField;
         }
-
-        /// <remarks/>
-        public string parentEntityID
+        set
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            tempoPresetDefinitionField = value;
         }
+    }
 
-        /// <remarks/>
-        public string inheritanceMask
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyle paragraphStyle
+        set
         {
-            get
-            {
-                return paragraphStyleField;
-            }
-            set
-            {
-                paragraphStyleField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyle
-    {
-
-        private string fontnameField;
-
-        private string sizeField;
-
-        private string alignmentField;
-
-        private byte indentField;
-
-        private byte extraFirstLineIndentField;
+}
 
-        private byte gapAfterParagraphField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryTempoPresetDefinitionsEntitiesTempoPresetDefinition
+{
+    private string nameField;
 
-        private byte leadingField;
+    private string entityIDField;
 
-        private string fontStyleField;
+    private object parentEntityIDField;
 
-        private byte fontStretchField;
+    private byte inheritanceMaskField;
 
-        private byte letterSpacingField;
+    private string abbreviatedNameField;
 
-        private byte wordSpacingField;
+    private bool isGradualField;
 
-        private bool underlineField;
+    private string immediateTypeField;
 
-        private bool overlineField;
+    private string resetTypeField;
 
-        private decimal borderThicknessField;
+    private byte amountField;
 
-        private bool borderField;
+    private bool amountFieldSpecified;
 
-        private bool alignWithSystemStartField;
-
-        private string borderStyleField;
-
-        private kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyleBorderPadding borderPaddingField;
-
-        /// <remarks/>
-        public string fontname
+    public string name
+    {
+        get
         {
-            get
-            {
-                return fontnameField;
-            }
-            set
-            {
-                fontnameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string size
+        set
         {
-            get
-            {
-                return sizeField;
-            }
-            set
-            {
-                sizeField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public string alignment
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return alignmentField;
-            }
-            set
-            {
-                alignmentField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte indent
+        set
         {
-            get
-            {
-                return indentField;
-            }
-            set
-            {
-                indentField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte extraFirstLineIndent
+    public object parentEntityID
+    {
+        get
         {
-            get
-            {
-                return extraFirstLineIndentField;
-            }
-            set
-            {
-                extraFirstLineIndentField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public byte gapAfterParagraph
+        set
         {
-            get
-            {
-                return gapAfterParagraphField;
-            }
-            set
-            {
-                gapAfterParagraphField = value;
-            }
+            parentEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte leading
+    public byte inheritanceMask
+    {
+        get
         {
-            get
-            {
-                return leadingField;
-            }
-            set
-            {
-                leadingField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public string fontStyle
+        set
         {
-            get
-            {
-                return fontStyleField;
-            }
-            set
-            {
-                fontStyleField = value;
-            }
+            inheritanceMaskField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte fontStretch
+    public string abbreviatedName
+    {
+        get
         {
-            get
-            {
-                return fontStretchField;
-            }
-            set
-            {
-                fontStretchField = value;
-            }
+            return abbreviatedNameField;
         }
-
-        /// <remarks/>
-        public byte letterSpacing
+        set
         {
-            get
-            {
-                return letterSpacingField;
-            }
-            set
-            {
-                letterSpacingField = value;
-            }
+            abbreviatedNameField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte wordSpacing
+    public bool isGradual
+    {
+        get
         {
-            get
-            {
-                return wordSpacingField;
-            }
-            set
-            {
-                wordSpacingField = value;
-            }
+            return isGradualField;
         }
-
-        /// <remarks/>
-        public bool underline
+        set
         {
-            get
-            {
-                return underlineField;
-            }
-            set
-            {
-                underlineField = value;
-            }
+            isGradualField = value;
         }
+    }
 
-        /// <remarks/>
-        public bool overline
+    public string immediateType
+    {
+        get
         {
-            get
-            {
-                return overlineField;
-            }
-            set
-            {
-                overlineField = value;
-            }
+            return immediateTypeField;
         }
-
-        /// <remarks/>
-        public decimal borderThickness
+        set
         {
-            get
-            {
-                return borderThicknessField;
-            }
-            set
-            {
-                borderThicknessField = value;
-            }
+            immediateTypeField = value;
         }
+    }
 
-        /// <remarks/>
-        public bool border
+    public string resetType
+    {
+        get
         {
-            get
-            {
-                return borderField;
-            }
-            set
-            {
-                borderField = value;
-            }
+            return resetTypeField;
         }
-
-        /// <remarks/>
-        public bool alignWithSystemStart
+        set
         {
-            get
-            {
-                return alignWithSystemStartField;
-            }
-            set
-            {
-                alignWithSystemStartField = value;
-            }
+            resetTypeField = value;
         }
+    }
 
-        /// <remarks/>
-        public string borderStyle
+    public byte amount
+    {
+        get
         {
-            get
-            {
-                return borderStyleField;
-            }
-            set
-            {
-                borderStyleField = value;
-            }
+            return amountField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyleBorderPadding borderPadding
+        set
         {
-            get
-            {
-                return borderPaddingField;
-            }
-            set
-            {
-                borderPaddingField = value;
-            }
+            amountField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyleBorderPadding
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool amountSpecified
     {
-
-        private byte topField;
-
-        private byte bottomField;
-
-        private decimal leftField;
-
-        private decimal rightField;
-
-        /// <remarks/>
-        public byte top
+        get
         {
-            get
-            {
-                return topField;
-            }
-            set
-            {
-                topField = value;
-            }
+            return amountFieldSpecified;
         }
-
-        /// <remarks/>
-        public byte bottom
+        set
         {
-            get
-            {
-                return bottomField;
-            }
-            set
-            {
-                bottomField = value;
-            }
+            amountFieldSpecified = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public decimal left
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRhythmicFeelDefinitions
+{
+    private kScoreLibraryRhythmicFeelDefinitionsEntities entitiesField;
+
+    public kScoreLibraryRhythmicFeelDefinitionsEntities entities
+    {
+        get
         {
-            get
-            {
-                return leftField;
-            }
-            set
-            {
-                leftField = value;
-            }
+            return entitiesField;
         }
-
-        /// <remarks/>
-        public decimal right
+        set
         {
-            get
-            {
-                return rightField;
-            }
-            set
-            {
-                rightField = value;
-            }
+            entitiesField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryCharacterStyles
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRhythmicFeelDefinitionsEntities
+{
+    private kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEntityDefinition[] rhythmicFeelEntityDefinitionField;
 
-        private kScoreLibraryCharacterStylesEntities entitiesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryCharacterStylesEntities entities
+    [System.Xml.Serialization.XmlElementAttribute("RhythmicFeelEntityDefinition")]
+    public kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEntityDefinition[] RhythmicFeelEntityDefinition
+    {
+        get
+        {
+            return rhythmicFeelEntityDefinitionField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            rhythmicFeelEntityDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryCharacterStylesEntities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinition characterStyleEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinition CharacterStyleEntityDefinition
+        get
         {
-            get
-            {
-                return characterStyleEntityDefinitionField;
-            }
-            set
-            {
-                characterStyleEntityDefinitionField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinition
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRhythmicFeelDefinitionsEntitiesRhythmicFeelEntityDefinition
+{
+    private string nameField;
 
-        private string nameField;
+    private string entityIDField;
 
-        private string entityIDField;
+    private object parentEntityIDField;
 
-        private object parentEntityIDField;
+    private byte inheritanceMaskField;
 
-        private byte inheritanceMaskField;
+    private string typeField;
 
-        private kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinitionCharacterStyle characterStyleField;
+    private string unitField;
 
-        /// <remarks/>
-        public string name
-        {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
-        }
+    private uint lowTempoField;
+
+    private decimal lowStrengthField;
+
+    private uint highTempoField;
 
-        /// <remarks/>
-        public string entityID
+    private bool highTempoFieldSpecified;
+
+    private decimal highStrengthField;
+
+    private bool highStrengthFieldSpecified;
+
+    public string name
+    {
+        get
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public object parentEntityID
+        set
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte inheritanceMask
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinitionCharacterStyle characterStyle
+        set
         {
-            get
-            {
-                return characterStyleField;
-            }
-            set
-            {
-                characterStyleField = value;
-            }
+            entityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinitionCharacterStyle
+    public object parentEntityID
     {
-
-        private string fontNameField;
-
-        private string fontStyleField;
-
-        /// <remarks/>
-        public string fontName
+        get
         {
-            get
-            {
-                return fontNameField;
-            }
-            set
-            {
-                fontNameField = value;
-            }
+            return parentEntityIDField;
         }
-
-        /// <remarks/>
-        public string fontStyle
+        set
         {
-            get
-            {
-                return fontStyleField;
-            }
-            set
-            {
-                fontStyleField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniques
+    public byte inheritanceMask
     {
-
-        private kScoreLibraryPlayingTechniquesEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryPlayingTechniquesEntities entities
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniquesEntities
+    public string type
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return typeField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            typeField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryOrnamentDefinitions
+    public string unit
     {
-
-        private kScoreLibraryOrnamentDefinitionsEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryOrnamentDefinitionsEntities entities
+        get
+        {
+            return unitField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            unitField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryOrnamentDefinitionsEntities
+    public uint lowTempo
     {
-
-        private kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition[] ornamentDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("OrnamentDefinition")]
-        public kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition[] OrnamentDefinition
+        get
         {
-            get
-            {
-                return ornamentDefinitionField;
-            }
-            set
-            {
-                ornamentDefinitionField = value;
-            }
+            return lowTempoField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            lowTempoField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
+    public decimal lowStrength
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private string categoryField;
-
-        private string compositeIDField;
-
-        private bool hasWavyLineField;
-
-        private string multiSegmentLineEntityIDField;
-
-        private bool usesNoteAboveField;
-
-        private bool usesNoteBelowField;
-
-        private string realisationField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return lowStrengthField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            lowStrengthField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public uint highTempo
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return highTempoField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            highTempoField = value;
         }
+    }
 
-        /// <remarks/>
-        public string category
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool highTempoSpecified
+    {
+        get
         {
-            get
-            {
-                return categoryField;
-            }
-            set
-            {
-                categoryField = value;
-            }
+            return highTempoFieldSpecified;
         }
-
-        /// <remarks/>
-        public string compositeID
+        set
         {
-            get
-            {
-                return compositeIDField;
-            }
-            set
-            {
-                compositeIDField = value;
-            }
+            highTempoFieldSpecified = value;
         }
+    }
 
-        /// <remarks/>
-        public bool hasWavyLine
+    public decimal highStrength
+    {
+        get
         {
-            get
-            {
-                return hasWavyLineField;
-            }
-            set
-            {
-                hasWavyLineField = value;
-            }
+            return highStrengthField;
         }
-
-        /// <remarks/>
-        public string multiSegmentLineEntityID
+        set
         {
-            get
-            {
-                return multiSegmentLineEntityIDField;
-            }
-            set
-            {
-                multiSegmentLineEntityIDField = value;
-            }
+            highStrengthField = value;
         }
+    }
 
-        /// <remarks/>
-        public bool usesNoteAbove
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool highStrengthSpecified
+    {
+        get
         {
-            get
-            {
-                return usesNoteAboveField;
-            }
-            set
-            {
-                usesNoteAboveField = value;
-            }
+            return highStrengthFieldSpecified;
         }
-
-        /// <remarks/>
-        public bool usesNoteBelow
+        set
         {
-            get
-            {
-                return usesNoteBelowField;
-            }
-            set
-            {
-                usesNoteBelowField = value;
-            }
+            highStrengthFieldSpecified = value;
         }
+    }
+}
 
-        /// <remarks/>
-        public string realisation
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPenstyles
+{
+    private kScoreLibraryPenstylesEntities entitiesField;
+
+    public kScoreLibraryPenstylesEntities entities
+    {
+        get
         {
-            get
-            {
-                return realisationField;
-            }
-            set
-            {
-                realisationField = value;
-            }
+            return entitiesField;
         }
+        set
+        {
+            entitiesField = value;
+        }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryMultiSegmentLineDefinitions
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPenstylesEntities
+{
+    private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition[] penStyleEntityDefinitionField;
 
-        private kScoreLibraryMultiSegmentLineDefinitionsEntities entitiesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryMultiSegmentLineDefinitionsEntities entities
+    [System.Xml.Serialization.XmlElementAttribute("PenStyleEntityDefinition")]
+    public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition[] PenStyleEntityDefinition
+    {
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return penStyleEntityDefinitionField;
         }
+        set
+        {
+            penStyleEntityDefinitionField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryMultiSegmentLineDefinitionsEntities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinition multiSegmentLineDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinition MultiSegmentLineDefinition
+        get
         {
-            get
-            {
-                return multiSegmentLineDefinitionField;
-            }
-            set
-            {
-                multiSegmentLineDefinitionField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinition
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
 
-        private string nameField;
+    private object parentEntityIDField;
 
-        private string entityIDField;
+    private byte inheritanceMaskField;
 
-        private object parentEntityIDField;
+    private string colourField;
 
-        private byte inheritanceMaskField;
+    private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth widthField;
 
-        private kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegments lineSegmentsField;
+    private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPattern dashOrDotPatternField;
 
-        /// <remarks/>
-        public string name
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegments lineSegments
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
         {
-            get
-            {
-                return lineSegmentsField;
-            }
-            set
-            {
-                lineSegmentsField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegments
+    public byte inheritanceMask
     {
-
-        private kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegmentsRepeatableLineSegmentData[] repeatableLineSegmentDataField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("repeatableLineSegmentData")]
-        public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegmentsRepeatableLineSegmentData[] repeatableLineSegmentData
+        get
         {
-            get
-            {
-                return repeatableLineSegmentDataField;
-            }
-            set
-            {
-                repeatableLineSegmentDataField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegmentsRepeatableLineSegmentData
+    public string colour
     {
-
-        private string compositeIDField;
-
-        private decimal repeatOffsetField;
-
-        /// <remarks/>
-        public string compositeID
+        get
         {
-            get
-            {
-                return compositeIDField;
-            }
-            set
-            {
-                compositeIDField = value;
-            }
+            return colourField;
         }
-
-        /// <remarks/>
-        public decimal repeatOffset
+        set
         {
-            get
-            {
-                return repeatOffsetField;
-            }
-            set
-            {
-                repeatOffsetField = value;
-            }
+            colourField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
+    public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth width
     {
-
-        private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntities entities
+        get
+        {
+            return widthField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            widthField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntities
+    public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPattern dashOrDotPattern
     {
-
-        private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinition[] playingTechniqueAppearanceDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PlayingTechniqueAppearanceDefinition")]
-        public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinition[] PlayingTechniqueAppearanceDefinition
+        get
         {
-            get
-            {
-                return playingTechniqueAppearanceDefinitionField;
-            }
-            set
-            {
-                playingTechniqueAppearanceDefinitionField = value;
-            }
+            return dashOrDotPatternField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            dashOrDotPatternField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinition
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionWidth
+{
+    private byte pointsField;
+
+    public byte points
+    {
+        get
+        {
+            return pointsField;
+        }
+        set
+        {
+            pointsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPattern
+{
+    private kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPatternDashOrDotPattern dashOrDotPatternField;
+
+    private bool arrayField;
+
+    public kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPatternDashOrDotPattern dashOrDotPattern
+    {
+        get
+        {
+            return dashOrDotPatternField;
+        }
+        set
+        {
+            dashOrDotPatternField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPenstylesEntitiesPenStyleEntityDefinitionDashOrDotPatternDashOrDotPattern
+{
+    private byte pointsField;
+
+    public byte points
+    {
+        get
+        {
+            return pointsField;
+        }
+        set
+        {
+            pointsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFontstyles
+{
+    private kScoreLibraryFontstylesEntities entitiesField;
+
+    public kScoreLibraryFontstylesEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFontstylesEntities
+{
+    private kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition[] fontStyleEntityDefinitionField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("FontStyleEntityDefinition")]
+    public kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition[] FontStyleEntityDefinition
+    {
+        get
+        {
+            return fontStyleEntityDefinitionField;
+        }
+        set
+        {
+            fontStyleEntityDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFontstylesEntitiesFontStyleEntityDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private string parentEntityIDField;
+
+    private string inheritanceMaskField;
+
+    private string fontnameField;
+
+    private string colourField;
+
+    private string sizeField;
+
+    private string weightField;
+
+    private bool italicField;
+
+    private bool underlinedField;
+
+    private string namedStyleField;
+
+    private string substituteFamilyNamesField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public string parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public string inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public string fontname
+    {
+        get
+        {
+            return fontnameField;
+        }
+        set
+        {
+            fontnameField = value;
+        }
+    }
+
+    public string colour
+    {
+        get
+        {
+            return colourField;
+        }
+        set
+        {
+            colourField = value;
+        }
+    }
+
+    public string size
+    {
+        get
+        {
+            return sizeField;
+        }
+        set
+        {
+            sizeField = value;
+        }
+    }
+
+    public string weight
+    {
+        get
+        {
+            return weightField;
+        }
+        set
+        {
+            weightField = value;
+        }
+    }
+
+    public bool italic
+    {
+        get
+        {
+            return italicField;
+        }
+        set
+        {
+            italicField = value;
+        }
+    }
+
+    public bool underlined
+    {
+        get
+        {
+            return underlinedField;
+        }
+        set
+        {
+            underlinedField = value;
+        }
+    }
+
+    public string namedStyle
+    {
+        get
+        {
+            return namedStyleField;
+        }
+        set
+        {
+            namedStyleField = value;
+        }
+    }
+
+    public string substituteFamilyNames
+    {
+        get
+        {
+            return substituteFamilyNamesField;
+        }
+        set
+        {
+            substituteFamilyNamesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryBrushstyles
+{
+    private kScoreLibraryBrushstylesEntities entitiesField;
+
+    public kScoreLibraryBrushstylesEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryBrushstylesEntities
+{
+    private kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition[] brushStyleEntityDefinitionField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("BrushStyleEntityDefinition")]
+    public kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition[] BrushStyleEntityDefinition
+    {
+        get
+        {
+            return brushStyleEntityDefinitionField;
+        }
+        set
+        {
+            brushStyleEntityDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryBrushstylesEntitiesBrushStyleEntityDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private string colourField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public byte inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public string colour
+    {
+        get
+        {
+            return colourField;
+        }
+        set
+        {
+            colourField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSets
+{
+    private kScoreLibraryPagePairDefinitionSetsEntities entitiesField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntities
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinition[] pagePairDefinitionSetDefinitionField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("PagePairDefinitionSetDefinition")]
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinition[] PagePairDefinitionSetDefinition
+    {
+        get
+        {
+            return pagePairDefinitionSetDefinitionField;
+        }
+        set
+        {
+            pagePairDefinitionSetDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private string typeField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitions frameChainDefinitionsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinition firstPageDefinitionField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinition normalPageDefinitionField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinition flowHeadingDefinitionField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraPageDefinitions extraPageDefinitionsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraFlowHeadingDefinitions extraFlowHeadingDefinitionsField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public byte inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public string type
+    {
+        get
+        {
+            return typeField;
+        }
+        set
+        {
+            typeField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitions frameChainDefinitions
+    {
+        get
+        {
+            return frameChainDefinitionsField;
+        }
+        set
+        {
+            frameChainDefinitionsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinition firstPageDefinition
+    {
+        get
+        {
+            return firstPageDefinitionField;
+        }
+        set
+        {
+            firstPageDefinitionField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinition normalPageDefinition
+    {
+        get
+        {
+            return normalPageDefinitionField;
+        }
+        set
+        {
+            normalPageDefinitionField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinition flowHeadingDefinition
+    {
+        get
+        {
+            return flowHeadingDefinitionField;
+        }
+        set
+        {
+            flowHeadingDefinitionField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraPageDefinitions extraPageDefinitions
+    {
+        get
+        {
+            return extraPageDefinitionsField;
+        }
+        set
+        {
+            extraPageDefinitionsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraFlowHeadingDefinitions extraFlowHeadingDefinitions
+    {
+        get
+        {
+            return extraFlowHeadingDefinitionsField;
+        }
+        set
+        {
+            extraFlowHeadingDefinitionsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitions
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChains musicFrameChainsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChains textFrameChainsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicFrameChains graphicFrameChainsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsChordsUsedFrameChains chordsUsedFrameChainsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicSliceFrameChains graphicSliceFrameChainsField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChains musicFrameChains
+    {
+        get
+        {
+            return musicFrameChainsField;
+        }
+        set
+        {
+            musicFrameChainsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChains textFrameChains
+    {
+        get
+        {
+            return textFrameChainsField;
+        }
+        set
+        {
+            textFrameChainsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicFrameChains graphicFrameChains
+    {
+        get
+        {
+            return graphicFrameChainsField;
+        }
+        set
+        {
+            graphicFrameChainsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsChordsUsedFrameChains chordsUsedFrameChains
+    {
+        get
+        {
+            return chordsUsedFrameChainsField;
+        }
+        set
+        {
+            chordsUsedFrameChainsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicSliceFrameChains graphicSliceFrameChains
+    {
+        get
+        {
+            return graphicSliceFrameChainsField;
+        }
+        set
+        {
+            graphicSliceFrameChainsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChains
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChainsMusicFrameChains musicFrameChainsField;
+
+    private bool arrayField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChainsMusicFrameChains musicFrameChains
+    {
+        get
+        {
+            return musicFrameChainsField;
+        }
+        set
+        {
+            musicFrameChainsField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsMusicFrameChainsMusicFrameChains
+{
+    private byte frameChainDefinitionIDField;
+
+    private object flowIDsField;
+
+    private object playerIDsField;
+
+    private string flowInclusionPolicyField;
+
+    public byte frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public object flowIDs
+    {
+        get
+        {
+            return flowIDsField;
+        }
+        set
+        {
+            flowIDsField = value;
+        }
+    }
+
+    public object playerIDs
+    {
+        get
+        {
+            return playerIDsField;
+        }
+        set
+        {
+            playerIDsField = value;
+        }
+    }
+
+    public string flowInclusionPolicy
+    {
+        get
+        {
+            return flowInclusionPolicyField;
+        }
+        set
+        {
+            flowInclusionPolicyField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChains
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChains[] textFrameChainsField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("textFrameChains")]
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChains[] textFrameChains
+    {
+        get
+        {
+            return textFrameChainsField;
+        }
+        set
+        {
+            textFrameChainsField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChains
+{
+    private byte frameChainDefinitionIDField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSource contentSourceField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsProperties propertiesField;
+
+    public byte frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSource contentSource
+    {
+        get
+        {
+            return contentSourceField;
+        }
+        set
+        {
+            contentSourceField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsProperties properties
+    {
+        get
+        {
+            return propertiesField;
+        }
+        set
+        {
+            propertiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSource
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContent defaultContentField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContent defaultContent
+    {
+        get
+        {
+            return defaultContentField;
+        }
+        set
+        {
+            defaultContentField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContent
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphs paragraphsField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphs paragraphs
+    {
+        get
+        {
+            return paragraphsField;
+        }
+        set
+        {
+            paragraphsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphs
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraph paragraphField;
+
+    private bool arrayField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraph paragraph
+    {
+        get
+        {
+            return paragraphField;
+        }
+        set
+        {
+            paragraphField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraph
+{
+    private string paragraphStyleIDField;
+
+    private object contentField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragments fragmentsField;
+
+    public string paragraphStyleID
+    {
+        get
+        {
+            return paragraphStyleIDField;
+        }
+        set
+        {
+            paragraphStyleIDField = value;
+        }
+    }
+
+    public object content
+    {
+        get
+        {
+            return contentField;
+        }
+        set
+        {
+            contentField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragments fragments
+    {
+        get
+        {
+            return fragmentsField;
+        }
+        set
+        {
+            fragmentsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragments
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragment fragmentField;
+
+    private bool arrayField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragment fragment
+    {
+        get
+        {
+            return fragmentField;
+        }
+        set
+        {
+            fragmentField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragment
+{
+    private string contentField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragmentTextFragmentStyle textFragmentStyleField;
+
+    public string content
+    {
+        get
+        {
+            return contentField;
+        }
+        set
+        {
+            contentField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragmentTextFragmentStyle textFragmentStyle
+    {
+        get
+        {
+            return textFragmentStyleField;
+        }
+        set
+        {
+            textFragmentStyleField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsContentSourceDefaultContentParagraphsParagraphFragmentsFragmentTextFragmentStyle
+{
+    private object libraryStyleField;
+
+    private object localStyleField;
+
+    public object libraryStyle
+    {
+        get
+        {
+            return libraryStyleField;
+        }
+        set
+        {
+            libraryStyleField = value;
+        }
+    }
+
+    public object localStyle
+    {
+        get
+        {
+            return localStyleField;
+        }
+        set
+        {
+            localStyleField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsTextFrameChainsTextFrameChainsProperties
+{
+    private bool showBorderField;
+
+    private byte borderThicknessField;
+
+    private string verticalAlignmentField;
+
+    public bool showBorder
+    {
+        get
+        {
+            return showBorderField;
+        }
+        set
+        {
+            showBorderField = value;
+        }
+    }
+
+    public byte borderThickness
+    {
+        get
+        {
+            return borderThicknessField;
+        }
+        set
+        {
+            borderThicknessField = value;
+        }
+    }
+
+    public string verticalAlignment
+    {
+        get
+        {
+            return verticalAlignmentField;
+        }
+        set
+        {
+            verticalAlignmentField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicFrameChains
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsChordsUsedFrameChains
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFrameChainDefinitionsGraphicSliceFrameChains
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinition
+{
+    private object nameField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeft leftField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRight rightField;
+
+    public object name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeft left
+    {
+        get
+        {
+            return leftField;
+        }
+        set
+        {
+            leftField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRight right
+    {
+        get
+        {
+            return rightField;
+        }
+        set
+        {
+            rightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeft
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFrames framesField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFrames frames
+    {
+        get
+        {
+            return framesField;
+        }
+        set
+        {
+            framesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFrames
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrame[] frameField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("frame")]
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrame[] frame
+    {
+        get
+        {
+            return frameField;
+        }
+        set
+        {
+            frameField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrame
+{
+    private byte indexInFrameChainOnPageField;
+
+    private bool contentRelativeField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraints constraintsField;
+
+    public byte indexInFrameChainOnPage
+    {
+        get
+        {
+            return indexInFrameChainOnPageField;
+        }
+        set
+        {
+            indexInFrameChainOnPageField = value;
+        }
+    }
+
+    public bool contentRelative
+    {
+        get
+        {
+            return contentRelativeField;
+        }
+        set
+        {
+            contentRelativeField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraints constraints
+    {
+        get
+        {
+            return constraintsField;
+        }
+        set
+        {
+            constraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameFrameChainDefinitionID
+{
+    private byte frameChainDefinitionIDField;
+
+    private bool isLayoutSpecificField;
+
+    public byte frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public bool isLayoutSpecific
+    {
+        get
+        {
+            return isLayoutSpecificField;
+        }
+        set
+        {
+            isLayoutSpecificField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraints
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraintsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraints
+    {
+        get
+        {
+            return positionConstraintsField;
+        }
+        set
+        {
+            positionConstraintsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraints
+    {
+        get
+        {
+            return dimensionConstraintsField;
+        }
+        set
+        {
+            dimensionConstraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsPositionConstraints
+{
+    private byte leftField;
+
+    private bool leftFieldSpecified;
+
+    private byte rightField;
+
+    private bool rightFieldSpecified;
+
+    private byte bottomField;
+
+    private bool bottomFieldSpecified;
+
+    private byte topField;
+
+    private bool topFieldSpecified;
+
+    public byte left
+    {
+        get
+        {
+            return leftField;
+        }
+        set
+        {
+            leftField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool leftSpecified
+    {
+        get
+        {
+            return leftFieldSpecified;
+        }
+        set
+        {
+            leftFieldSpecified = value;
+        }
+    }
+
+    public byte right
+    {
+        get
+        {
+            return rightField;
+        }
+        set
+        {
+            rightField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool rightSpecified
+    {
+        get
+        {
+            return rightFieldSpecified;
+        }
+        set
+        {
+            rightFieldSpecified = value;
+        }
+    }
+
+    public byte bottom
+    {
+        get
+        {
+            return bottomField;
+        }
+        set
+        {
+            bottomField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool bottomSpecified
+    {
+        get
+        {
+            return bottomFieldSpecified;
+        }
+        set
+        {
+            bottomFieldSpecified = value;
+        }
+    }
+
+    public byte top
+    {
+        get
+        {
+            return topField;
+        }
+        set
+        {
+            topField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool topSpecified
+    {
+        get
+        {
+            return topFieldSpecified;
+        }
+        set
+        {
+            topFieldSpecified = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionLeftFramesFrameConstraintsDimensionConstraints
+{
+    private byte widthField;
+
+    private bool widthFieldSpecified;
+
+    private byte heightField;
+
+    public byte width
+    {
+        get
+        {
+            return widthField;
+        }
+        set
+        {
+            widthField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool widthSpecified
+    {
+        get
+        {
+            return widthFieldSpecified;
+        }
+        set
+        {
+            widthFieldSpecified = value;
+        }
+    }
+
+    public byte height
+    {
+        get
+        {
+            return heightField;
+        }
+        set
+        {
+            heightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRight
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFrames framesField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFrames frames
+    {
+        get
+        {
+            return framesField;
+        }
+        set
+        {
+            framesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFrames
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrame[] frameField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("frame")]
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrame[] frame
+    {
+        get
+        {
+            return frameField;
+        }
+        set
+        {
+            frameField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrame
+{
+    private byte indexInFrameChainOnPageField;
+
+    private bool contentRelativeField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraints constraintsField;
+
+    public byte indexInFrameChainOnPage
+    {
+        get
+        {
+            return indexInFrameChainOnPageField;
+        }
+        set
+        {
+            indexInFrameChainOnPageField = value;
+        }
+    }
+
+    public bool contentRelative
+    {
+        get
+        {
+            return contentRelativeField;
+        }
+        set
+        {
+            contentRelativeField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraints constraints
+    {
+        get
+        {
+            return constraintsField;
+        }
+        set
+        {
+            constraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameFrameChainDefinitionID
+{
+    private byte frameChainDefinitionIDField;
+
+    private bool isLayoutSpecificField;
+
+    public byte frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public bool isLayoutSpecific
+    {
+        get
+        {
+            return isLayoutSpecificField;
+        }
+        set
+        {
+            isLayoutSpecificField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraints
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraintsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraints
+    {
+        get
+        {
+            return positionConstraintsField;
+        }
+        set
+        {
+            positionConstraintsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraints
+    {
+        get
+        {
+            return dimensionConstraintsField;
+        }
+        set
+        {
+            dimensionConstraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsPositionConstraints
+{
+    private byte leftField;
+
+    private bool leftFieldSpecified;
+
+    private byte rightField;
+
+    private bool rightFieldSpecified;
+
+    private byte bottomField;
+
+    private bool bottomFieldSpecified;
+
+    private byte topField;
+
+    private bool topFieldSpecified;
+
+    public byte left
+    {
+        get
+        {
+            return leftField;
+        }
+        set
+        {
+            leftField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool leftSpecified
+    {
+        get
+        {
+            return leftFieldSpecified;
+        }
+        set
+        {
+            leftFieldSpecified = value;
+        }
+    }
+
+    public byte right
+    {
+        get
+        {
+            return rightField;
+        }
+        set
+        {
+            rightField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool rightSpecified
+    {
+        get
+        {
+            return rightFieldSpecified;
+        }
+        set
+        {
+            rightFieldSpecified = value;
+        }
+    }
+
+    public byte bottom
+    {
+        get
+        {
+            return bottomField;
+        }
+        set
+        {
+            bottomField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool bottomSpecified
+    {
+        get
+        {
+            return bottomFieldSpecified;
+        }
+        set
+        {
+            bottomFieldSpecified = value;
+        }
+    }
+
+    public byte top
+    {
+        get
+        {
+            return topField;
+        }
+        set
+        {
+            topField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool topSpecified
+    {
+        get
+        {
+            return topFieldSpecified;
+        }
+        set
+        {
+            topFieldSpecified = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFirstPageDefinitionRightFramesFrameConstraintsDimensionConstraints
+{
+    private byte widthField;
+
+    private bool widthFieldSpecified;
+
+    private byte heightField;
+
+    public byte width
+    {
+        get
+        {
+            return widthField;
+        }
+        set
+        {
+            widthField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool widthSpecified
+    {
+        get
+        {
+            return widthFieldSpecified;
+        }
+        set
+        {
+            widthFieldSpecified = value;
+        }
+    }
+
+    public byte height
+    {
+        get
+        {
+            return heightField;
+        }
+        set
+        {
+            heightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinition
+{
+    private object nameField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeft leftField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRight rightField;
+
+    public object name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeft left
+    {
+        get
+        {
+            return leftField;
+        }
+        set
+        {
+            leftField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRight right
+    {
+        get
+        {
+            return rightField;
+        }
+        set
+        {
+            rightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeft
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFrames framesField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFrames frames
+    {
+        get
+        {
+            return framesField;
+        }
+        set
+        {
+            framesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFrames
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrame[] frameField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("frame")]
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrame[] frame
+    {
+        get
+        {
+            return frameField;
+        }
+        set
+        {
+            frameField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrame
+{
+    private byte indexInFrameChainOnPageField;
+
+    private bool contentRelativeField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraints constraintsField;
+
+    public byte indexInFrameChainOnPage
+    {
+        get
+        {
+            return indexInFrameChainOnPageField;
+        }
+        set
+        {
+            indexInFrameChainOnPageField = value;
+        }
+    }
+
+    public bool contentRelative
+    {
+        get
+        {
+            return contentRelativeField;
+        }
+        set
+        {
+            contentRelativeField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraints constraints
+    {
+        get
+        {
+            return constraintsField;
+        }
+        set
+        {
+            constraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameFrameChainDefinitionID
+{
+    private byte frameChainDefinitionIDField;
+
+    private bool isLayoutSpecificField;
+
+    public byte frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public bool isLayoutSpecific
+    {
+        get
+        {
+            return isLayoutSpecificField;
+        }
+        set
+        {
+            isLayoutSpecificField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraints
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraintsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsPositionConstraints positionConstraints
+    {
+        get
+        {
+            return positionConstraintsField;
+        }
+        set
+        {
+            positionConstraintsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsDimensionConstraints dimensionConstraints
+    {
+        get
+        {
+            return dimensionConstraintsField;
+        }
+        set
+        {
+            dimensionConstraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsPositionConstraints
+{
+    private byte leftField;
+
+    private byte rightField;
+
+    private bool rightFieldSpecified;
+
+    private byte bottomField;
+
+    private bool bottomFieldSpecified;
+
+    private byte topField;
+
+    public byte left
+    {
+        get
+        {
+            return leftField;
+        }
+        set
+        {
+            leftField = value;
+        }
+    }
+
+    public byte right
+    {
+        get
+        {
+            return rightField;
+        }
+        set
+        {
+            rightField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool rightSpecified
+    {
+        get
+        {
+            return rightFieldSpecified;
+        }
+        set
+        {
+            rightFieldSpecified = value;
+        }
+    }
+
+    public byte bottom
+    {
+        get
+        {
+            return bottomField;
+        }
+        set
+        {
+            bottomField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool bottomSpecified
+    {
+        get
+        {
+            return bottomFieldSpecified;
+        }
+        set
+        {
+            bottomFieldSpecified = value;
+        }
+    }
+
+    public byte top
+    {
+        get
+        {
+            return topField;
+        }
+        set
+        {
+            topField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionLeftFramesFrameConstraintsDimensionConstraints
+{
+    private byte widthField;
+
+    private bool widthFieldSpecified;
+
+    private byte heightField;
+
+    public byte width
+    {
+        get
+        {
+            return widthField;
+        }
+        set
+        {
+            widthField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool widthSpecified
+    {
+        get
+        {
+            return widthFieldSpecified;
+        }
+        set
+        {
+            widthFieldSpecified = value;
+        }
+    }
+
+    public byte height
+    {
+        get
+        {
+            return heightField;
+        }
+        set
+        {
+            heightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRight
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFrames framesField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFrames frames
+    {
+        get
+        {
+            return framesField;
+        }
+        set
+        {
+            framesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFrames
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrame[] frameField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("frame")]
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrame[] frame
+    {
+        get
+        {
+            return frameField;
+        }
+        set
+        {
+            frameField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrame
+{
+    private byte indexInFrameChainOnPageField;
+
+    private bool contentRelativeField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraints constraintsField;
+
+    public byte indexInFrameChainOnPage
+    {
+        get
+        {
+            return indexInFrameChainOnPageField;
+        }
+        set
+        {
+            indexInFrameChainOnPageField = value;
+        }
+    }
+
+    public bool contentRelative
+    {
+        get
+        {
+            return contentRelativeField;
+        }
+        set
+        {
+            contentRelativeField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraints constraints
+    {
+        get
+        {
+            return constraintsField;
+        }
+        set
+        {
+            constraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameFrameChainDefinitionID
+{
+    private byte frameChainDefinitionIDField;
+
+    private bool isLayoutSpecificField;
+
+    public byte frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public bool isLayoutSpecific
+    {
+        get
+        {
+            return isLayoutSpecificField;
+        }
+        set
+        {
+            isLayoutSpecificField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraints
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraintsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsPositionConstraints positionConstraints
+    {
+        get
+        {
+            return positionConstraintsField;
+        }
+        set
+        {
+            positionConstraintsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsDimensionConstraints dimensionConstraints
+    {
+        get
+        {
+            return dimensionConstraintsField;
+        }
+        set
+        {
+            dimensionConstraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsPositionConstraints
+{
+    private byte leftField;
+
+    private bool leftFieldSpecified;
+
+    private byte rightField;
+
+    private byte bottomField;
+
+    private bool bottomFieldSpecified;
+
+    private byte topField;
+
+    public byte left
+    {
+        get
+        {
+            return leftField;
+        }
+        set
+        {
+            leftField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool leftSpecified
+    {
+        get
+        {
+            return leftFieldSpecified;
+        }
+        set
+        {
+            leftFieldSpecified = value;
+        }
+    }
+
+    public byte right
+    {
+        get
+        {
+            return rightField;
+        }
+        set
+        {
+            rightField = value;
+        }
+    }
+
+    public byte bottom
+    {
+        get
+        {
+            return bottomField;
+        }
+        set
+        {
+            bottomField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool bottomSpecified
+    {
+        get
+        {
+            return bottomFieldSpecified;
+        }
+        set
+        {
+            bottomFieldSpecified = value;
+        }
+    }
+
+    public byte top
+    {
+        get
+        {
+            return topField;
+        }
+        set
+        {
+            topField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionNormalPageDefinitionRightFramesFrameConstraintsDimensionConstraints
+{
+    private byte widthField;
+
+    private bool widthFieldSpecified;
+
+    private byte heightField;
+
+    public byte width
+    {
+        get
+        {
+            return widthField;
+        }
+        set
+        {
+            widthField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool widthSpecified
+    {
+        get
+        {
+            return widthFieldSpecified;
+        }
+        set
+        {
+            widthFieldSpecified = value;
+        }
+    }
+
+    public byte height
+    {
+        get
+        {
+            return heightField;
+        }
+        set
+        {
+            heightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinition
+{
+    private string nameField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeading headingField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeading heading
+    {
+        get
+        {
+            return headingField;
+        }
+        set
+        {
+            headingField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeading
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFrames framesField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFrames frames
+    {
+        get
+        {
+            return framesField;
+        }
+        set
+        {
+            framesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFrames
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrame frameField;
+
+    private bool arrayField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrame frame
+    {
+        get
+        {
+            return frameField;
+        }
+        set
+        {
+            frameField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrame
+{
+    private byte indexInFrameChainOnPageField;
+
+    private bool contentRelativeField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameFrameChainDefinitionID frameChainDefinitionIDField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraints constraintsField;
+
+    public byte indexInFrameChainOnPage
+    {
+        get
+        {
+            return indexInFrameChainOnPageField;
+        }
+        set
+        {
+            indexInFrameChainOnPageField = value;
+        }
+    }
+
+    public bool contentRelative
+    {
+        get
+        {
+            return contentRelativeField;
+        }
+        set
+        {
+            contentRelativeField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameFrameChainDefinitionID frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraints constraints
+    {
+        get
+        {
+            return constraintsField;
+        }
+        set
+        {
+            constraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameFrameChainDefinitionID
+{
+    private byte frameChainDefinitionIDField;
+
+    private bool isLayoutSpecificField;
+
+    public byte frameChainDefinitionID
+    {
+        get
+        {
+            return frameChainDefinitionIDField;
+        }
+        set
+        {
+            frameChainDefinitionIDField = value;
+        }
+    }
+
+    public bool isLayoutSpecific
+    {
+        get
+        {
+            return isLayoutSpecificField;
+        }
+        set
+        {
+            isLayoutSpecificField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraints
+{
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsPositionConstraints positionConstraintsField;
+
+    private kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsDimensionConstraints dimensionConstraintsField;
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsPositionConstraints positionConstraints
+    {
+        get
+        {
+            return positionConstraintsField;
+        }
+        set
+        {
+            positionConstraintsField = value;
+        }
+    }
+
+    public kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsDimensionConstraints dimensionConstraints
+    {
+        get
+        {
+            return dimensionConstraintsField;
+        }
+        set
+        {
+            dimensionConstraintsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsPositionConstraints
+{
+    private byte leftField;
+
+    private byte rightField;
+
+    private byte topField;
+
+    public byte left
+    {
+        get
+        {
+            return leftField;
+        }
+        set
+        {
+            leftField = value;
+        }
+    }
+
+    public byte right
+    {
+        get
+        {
+            return rightField;
+        }
+        set
+        {
+            rightField = value;
+        }
+    }
+
+    public byte top
+    {
+        get
+        {
+            return topField;
+        }
+        set
+        {
+            topField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionFlowHeadingDefinitionHeadingFramesFrameConstraintsDimensionConstraints
+{
+    private byte heightField;
+
+    public byte height
+    {
+        get
+        {
+            return heightField;
+        }
+        set
+        {
+            heightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraPageDefinitions
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPagePairDefinitionSetsEntitiesPagePairDefinitionSetDefinitionExtraFlowHeadingDefinitions
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPageDimensionPresets
+{
+    private kScoreLibraryPageDimensionPresetsEntities entitiesField;
+
+    public kScoreLibraryPageDimensionPresetsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPageDimensionPresetsEntities
+{
+    private kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPresetEntityDefinition[] pageDimensionsPresetEntityDefinitionField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("PageDimensionsPresetEntityDefinition")]
+    public kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPresetEntityDefinition[] PageDimensionsPresetEntityDefinition
+    {
+        get
+        {
+            return pageDimensionsPresetEntityDefinitionField;
+        }
+        set
+        {
+            pageDimensionsPresetEntityDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPageDimensionPresetsEntitiesPageDimensionsPresetEntityDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private ushort widthField;
+
+    private ushort heightField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public byte inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public ushort width
+    {
+        get
+        {
+            return widthField;
+        }
+        set
+        {
+            widthField = value;
+        }
+    }
+
+    public ushort height
+    {
+        get
+        {
+            return heightField;
+        }
+        set
+        {
+            heightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryParagraphStyles
+{
+    private kScoreLibraryParagraphStylesEntities entitiesField;
+
+    public kScoreLibraryParagraphStylesEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryParagraphStylesEntities
+{
+    private kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinition[] paragraphStyleEntityDefinitionField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("ParagraphStyleEntityDefinition")]
+    public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinition[] ParagraphStyleEntityDefinition
+    {
+        get
+        {
+            return paragraphStyleEntityDefinitionField;
+        }
+        set
+        {
+            paragraphStyleEntityDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private string parentEntityIDField;
+
+    private string inheritanceMaskField;
+
+    private kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyle paragraphStyleField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public string parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public string inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyle paragraphStyle
+    {
+        get
+        {
+            return paragraphStyleField;
+        }
+        set
+        {
+            paragraphStyleField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyle
+{
+    private string fontnameField;
+
+    private string sizeField;
+
+    private string alignmentField;
+
+    private byte indentField;
+
+    private byte extraFirstLineIndentField;
+
+    private byte gapAfterParagraphField;
+
+    private byte leadingField;
+
+    private string fontStyleField;
+
+    private byte fontStretchField;
+
+    private byte letterSpacingField;
+
+    private byte wordSpacingField;
+
+    private bool underlineField;
+
+    private bool overlineField;
+
+    private decimal borderThicknessField;
+
+    private bool borderField;
+
+    private bool alignWithSystemStartField;
+
+    private string borderStyleField;
+
+    private kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyleBorderPadding borderPaddingField;
+
+    public string fontname
+    {
+        get
+        {
+            return fontnameField;
+        }
+        set
+        {
+            fontnameField = value;
+        }
+    }
+
+    public string size
+    {
+        get
+        {
+            return sizeField;
+        }
+        set
+        {
+            sizeField = value;
+        }
+    }
+
+    public string alignment
+    {
+        get
+        {
+            return alignmentField;
+        }
+        set
+        {
+            alignmentField = value;
+        }
+    }
+
+    public byte indent
+    {
+        get
+        {
+            return indentField;
+        }
+        set
+        {
+            indentField = value;
+        }
+    }
+
+    public byte extraFirstLineIndent
+    {
+        get
+        {
+            return extraFirstLineIndentField;
+        }
+        set
+        {
+            extraFirstLineIndentField = value;
+        }
+    }
+
+    public byte gapAfterParagraph
+    {
+        get
+        {
+            return gapAfterParagraphField;
+        }
+        set
+        {
+            gapAfterParagraphField = value;
+        }
+    }
+
+    public byte leading
+    {
+        get
+        {
+            return leadingField;
+        }
+        set
+        {
+            leadingField = value;
+        }
+    }
+
+    public string fontStyle
+    {
+        get
+        {
+            return fontStyleField;
+        }
+        set
+        {
+            fontStyleField = value;
+        }
+    }
+
+    public byte fontStretch
+    {
+        get
+        {
+            return fontStretchField;
+        }
+        set
+        {
+            fontStretchField = value;
+        }
+    }
+
+    public byte letterSpacing
+    {
+        get
+        {
+            return letterSpacingField;
+        }
+        set
+        {
+            letterSpacingField = value;
+        }
+    }
+
+    public byte wordSpacing
+    {
+        get
+        {
+            return wordSpacingField;
+        }
+        set
+        {
+            wordSpacingField = value;
+        }
+    }
+
+    public bool underline
+    {
+        get
+        {
+            return underlineField;
+        }
+        set
+        {
+            underlineField = value;
+        }
+    }
+
+    public bool overline
+    {
+        get
+        {
+            return overlineField;
+        }
+        set
+        {
+            overlineField = value;
+        }
+    }
+
+    public decimal borderThickness
+    {
+        get
+        {
+            return borderThicknessField;
+        }
+        set
+        {
+            borderThicknessField = value;
+        }
+    }
+
+    public bool border
+    {
+        get
+        {
+            return borderField;
+        }
+        set
+        {
+            borderField = value;
+        }
+    }
+
+    public bool alignWithSystemStart
+    {
+        get
+        {
+            return alignWithSystemStartField;
+        }
+        set
+        {
+            alignWithSystemStartField = value;
+        }
+    }
+
+    public string borderStyle
+    {
+        get
+        {
+            return borderStyleField;
+        }
+        set
+        {
+            borderStyleField = value;
+        }
+    }
+
+    public kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyleBorderPadding borderPadding
+    {
+        get
+        {
+            return borderPaddingField;
+        }
+        set
+        {
+            borderPaddingField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryParagraphStylesEntitiesParagraphStyleEntityDefinitionParagraphStyleBorderPadding
+{
+    private byte topField;
+
+    private byte bottomField;
+
+    private decimal leftField;
+
+    private decimal rightField;
+
+    public byte top
+    {
+        get
+        {
+            return topField;
+        }
+        set
+        {
+            topField = value;
+        }
+    }
+
+    public byte bottom
+    {
+        get
+        {
+            return bottomField;
+        }
+        set
+        {
+            bottomField = value;
+        }
+    }
+
+    public decimal left
+    {
+        get
+        {
+            return leftField;
+        }
+        set
+        {
+            leftField = value;
+        }
+    }
+
+    public decimal right
+    {
+        get
+        {
+            return rightField;
+        }
+        set
+        {
+            rightField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryCharacterStyles
+{
+    private kScoreLibraryCharacterStylesEntities entitiesField;
+
+    public kScoreLibraryCharacterStylesEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryCharacterStylesEntities
+{
+    private kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinition characterStyleEntityDefinitionField;
+
+    private bool arrayField;
+
+    public kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinition CharacterStyleEntityDefinition
+    {
+        get
+        {
+            return characterStyleEntityDefinitionField;
+        }
+        set
+        {
+            characterStyleEntityDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinitionCharacterStyle characterStyleField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public byte inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinitionCharacterStyle characterStyle
+    {
+        get
+        {
+            return characterStyleField;
+        }
+        set
+        {
+            characterStyleField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryCharacterStylesEntitiesCharacterStyleEntityDefinitionCharacterStyle
+{
+    private string fontNameField;
+
+    private string fontStyleField;
+
+    public string fontName
+    {
+        get
+        {
+            return fontNameField;
+        }
+        set
+        {
+            fontNameField = value;
+        }
+    }
+
+    public string fontStyle
+    {
+        get
+        {
+            return fontStyleField;
+        }
+        set
+        {
+            fontStyleField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniques
+{
+    private kScoreLibraryPlayingTechniquesEntities entitiesField;
+
+    public kScoreLibraryPlayingTechniquesEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniquesEntities
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryOrnamentDefinitions
+{
+    private kScoreLibraryOrnamentDefinitionsEntities entitiesField;
+
+    public kScoreLibraryOrnamentDefinitionsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryOrnamentDefinitionsEntities
+{
+    private kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition[] ornamentDefinitionField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("OrnamentDefinition")]
+    public kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition[] OrnamentDefinition
+    {
+        get
+        {
+            return ornamentDefinitionField;
+        }
+        set
+        {
+            ornamentDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryOrnamentDefinitionsEntitiesOrnamentDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private string categoryField;
+
+    private string compositeIDField;
+
+    private bool hasWavyLineField;
+
+    private string multiSegmentLineEntityIDField;
+
+    private bool usesNoteAboveField;
+
+    private bool usesNoteBelowField;
+
+    private string realisationField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public byte inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public string category
+    {
+        get
+        {
+            return categoryField;
+        }
+        set
+        {
+            categoryField = value;
+        }
+    }
+
+    public string compositeID
+    {
+        get
+        {
+            return compositeIDField;
+        }
+        set
+        {
+            compositeIDField = value;
+        }
+    }
+
+    public bool hasWavyLine
+    {
+        get
+        {
+            return hasWavyLineField;
+        }
+        set
+        {
+            hasWavyLineField = value;
+        }
+    }
+
+    public string multiSegmentLineEntityID
+    {
+        get
+        {
+            return multiSegmentLineEntityIDField;
+        }
+        set
+        {
+            multiSegmentLineEntityIDField = value;
+        }
+    }
+
+    public bool usesNoteAbove
+    {
+        get
+        {
+            return usesNoteAboveField;
+        }
+        set
+        {
+            usesNoteAboveField = value;
+        }
+    }
+
+    public bool usesNoteBelow
+    {
+        get
+        {
+            return usesNoteBelowField;
+        }
+        set
+        {
+            usesNoteBelowField = value;
+        }
+    }
+
+    public string realisation
+    {
+        get
+        {
+            return realisationField;
+        }
+        set
+        {
+            realisationField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryMultiSegmentLineDefinitions
+{
+    private kScoreLibraryMultiSegmentLineDefinitionsEntities entitiesField;
+
+    public kScoreLibraryMultiSegmentLineDefinitionsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryMultiSegmentLineDefinitionsEntities
+{
+    private kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinition multiSegmentLineDefinitionField;
+
+    private bool arrayField;
+
+    public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinition MultiSegmentLineDefinition
+    {
+        get
+        {
+            return multiSegmentLineDefinitionField;
+        }
+        set
+        {
+            multiSegmentLineDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegments lineSegmentsField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public byte inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegments lineSegments
+    {
+        get
+        {
+            return lineSegmentsField;
+        }
+        set
+        {
+            lineSegmentsField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegments
+{
+    private kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegmentsRepeatableLineSegmentData[] repeatableLineSegmentDataField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("repeatableLineSegmentData")]
+    public kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegmentsRepeatableLineSegmentData[] repeatableLineSegmentData
+    {
+        get
+        {
+            return repeatableLineSegmentDataField;
+        }
+        set
+        {
+            repeatableLineSegmentDataField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryMultiSegmentLineDefinitionsEntitiesMultiSegmentLineDefinitionLineSegmentsRepeatableLineSegmentData
+{
+    private string compositeIDField;
+
+    private decimal repeatOffsetField;
+
+    public string compositeID
+    {
+        get
+        {
+            return compositeIDField;
+        }
+        set
+        {
+            compositeIDField = value;
+        }
+    }
+
+    public decimal repeatOffset
+    {
+        get
+        {
+            return repeatOffsetField;
+        }
+        set
+        {
+            repeatOffsetField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinition
+{
+    private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntities entitiesField;
+
+    public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntities
+{
+    private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinition[] playingTechniqueAppearanceDefinitionField;
+
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("PlayingTechniqueAppearanceDefinition")]
+    public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinition[] PlayingTechniqueAppearanceDefinition
+    {
+        get
+        {
+            return playingTechniqueAppearanceDefinitionField;
+        }
+        set
+        {
+            playingTechniqueAppearanceDefinitionField = value;
+        }
+    }
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
+
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private string playingTechniqueAppearanceCategoryField;
+
+    private string playingTechniqueAppearanceTypeField;
+
+    private string languageField;
+
+    private string textField;
+
+    private string compositeEntityIDField;
 
-        private string nameField;
+    private string playingTechniqueEntityIDField;
 
-        private string entityIDField;
+    private bool alwaysHasDurationField;
 
-        private object parentEntityIDField;
+    private string defaultPlacementField;
 
-        private byte inheritanceMaskField;
+    private string optionalCompositeEntityIDBelowField;
 
-        private string playingTechniqueAppearanceCategoryField;
+    private bool shownInCuesField;
 
-        private string playingTechniqueAppearanceTypeField;
+    private bool shownOnTabIfNotationAlsoShownField;
 
-        private string languageField;
+    private string continuationGlyphField;
 
-        private string textField;
+    private string continuationTextField;
 
-        private string compositeEntityIDField;
+    private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionDurationLineData durationLineDataField;
 
-        private string playingTechniqueEntityIDField;
+    private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionTransitionLineData transitionLineDataField;
 
-        private bool alwaysHasDurationField;
+    private bool isBowingMarkField;
+
+    public string name
+    {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
+
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
+
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
+        {
+            parentEntityIDField = value;
+        }
+    }
+
+    public byte inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
+
+    public string playingTechniqueAppearanceCategory
+    {
+        get
+        {
+            return playingTechniqueAppearanceCategoryField;
+        }
+        set
+        {
+            playingTechniqueAppearanceCategoryField = value;
+        }
+    }
 
-        private string defaultPlacementField;
+    public string playingTechniqueAppearanceType
+    {
+        get
+        {
+            return playingTechniqueAppearanceTypeField;
+        }
+        set
+        {
+            playingTechniqueAppearanceTypeField = value;
+        }
+    }
 
-        private string optionalCompositeEntityIDBelowField;
+    public string language
+    {
+        get
+        {
+            return languageField;
+        }
+        set
+        {
+            languageField = value;
+        }
+    }
 
-        private bool shownInCuesField;
+    public string text
+    {
+        get
+        {
+            return textField;
+        }
+        set
+        {
+            textField = value;
+        }
+    }
 
-        private bool shownOnTabIfNotationAlsoShownField;
+    public string compositeEntityID
+    {
+        get
+        {
+            return compositeEntityIDField;
+        }
+        set
+        {
+            compositeEntityIDField = value;
+        }
+    }
 
-        private string continuationGlyphField;
+    public string playingTechniqueEntityID
+    {
+        get
+        {
+            return playingTechniqueEntityIDField;
+        }
+        set
+        {
+            playingTechniqueEntityIDField = value;
+        }
+    }
 
-        private string continuationTextField;
+    public bool alwaysHasDuration
+    {
+        get
+        {
+            return alwaysHasDurationField;
+        }
+        set
+        {
+            alwaysHasDurationField = value;
+        }
+    }
 
-        private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionDurationLineData durationLineDataField;
+    public string defaultPlacement
+    {
+        get
+        {
+            return defaultPlacementField;
+        }
+        set
+        {
+            defaultPlacementField = value;
+        }
+    }
 
-        private kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionTransitionLineData transitionLineDataField;
+    public string optionalCompositeEntityIDBelow
+    {
+        get
+        {
+            return optionalCompositeEntityIDBelowField;
+        }
+        set
+        {
+            optionalCompositeEntityIDBelowField = value;
+        }
+    }
 
-        private bool isBowingMarkField;
+    public bool shownInCues
+    {
+        get
+        {
+            return shownInCuesField;
+        }
+        set
+        {
+            shownInCuesField = value;
+        }
+    }
 
-        /// <remarks/>
-        public string name
+    public bool shownOnTabIfNotationAlsoShown
+    {
+        get
+        {
+            return shownOnTabIfNotationAlsoShownField;
+        }
+        set
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            shownOnTabIfNotationAlsoShownField = value;
         }
+    }
 
-        /// <remarks/>
-        public string entityID
+    public string continuationGlyph
+    {
+        get
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            return continuationGlyphField;
         }
+        set
+        {
+            continuationGlyphField = value;
+        }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string continuationText
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return continuationTextField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            continuationTextField = value;
         }
+    }
 
-        /// <remarks/>
-        public string playingTechniqueAppearanceCategory
+    public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionDurationLineData durationLineData
+    {
+        get
         {
-            get
-            {
-                return playingTechniqueAppearanceCategoryField;
-            }
-            set
-            {
-                playingTechniqueAppearanceCategoryField = value;
-            }
+            return durationLineDataField;
         }
-
-        /// <remarks/>
-        public string playingTechniqueAppearanceType
+        set
         {
-            get
-            {
-                return playingTechniqueAppearanceTypeField;
-            }
-            set
-            {
-                playingTechniqueAppearanceTypeField = value;
-            }
+            durationLineDataField = value;
         }
+    }
 
-        /// <remarks/>
-        public string language
+    public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionTransitionLineData transitionLineData
+    {
+        get
         {
-            get
-            {
-                return languageField;
-            }
-            set
-            {
-                languageField = value;
-            }
+            return transitionLineDataField;
         }
-
-        /// <remarks/>
-        public string text
+        set
         {
-            get
-            {
-                return textField;
-            }
-            set
-            {
-                textField = value;
-            }
+            transitionLineDataField = value;
         }
+    }
 
-        /// <remarks/>
-        public string compositeEntityID
+    public bool isBowingMark
+    {
+        get
         {
-            get
-            {
-                return compositeEntityIDField;
-            }
-            set
-            {
-                compositeEntityIDField = value;
-            }
+            return isBowingMarkField;
         }
-
-        /// <remarks/>
-        public string playingTechniqueEntityID
+        set
         {
-            get
-            {
-                return playingTechniqueEntityIDField;
-            }
-            set
-            {
-                playingTechniqueEntityIDField = value;
-            }
+            isBowingMarkField = value;
         }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionDurationLineData
+{
+    private string lineStyleEntityIDField;
+
+    private string lineGlyphAttachmentAboveField;
+
+    private string lineGlyphAttachmentBelowField;
+
+    private string lineTextAttachmentAboveField;
 
-        /// <remarks/>
-        public bool alwaysHasDuration
+    private string lineTextAttachmentBelowField;
+
+    public string lineStyleEntityID
+    {
+        get
         {
-            get
-            {
-                return alwaysHasDurationField;
-            }
-            set
-            {
-                alwaysHasDurationField = value;
-            }
+            return lineStyleEntityIDField;
         }
-
-        /// <remarks/>
-        public string defaultPlacement
+        set
         {
-            get
-            {
-                return defaultPlacementField;
-            }
-            set
-            {
-                defaultPlacementField = value;
-            }
+            lineStyleEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string optionalCompositeEntityIDBelow
+    public string lineGlyphAttachmentAbove
+    {
+        get
         {
-            get
-            {
-                return optionalCompositeEntityIDBelowField;
-            }
-            set
-            {
-                optionalCompositeEntityIDBelowField = value;
-            }
+            return lineGlyphAttachmentAboveField;
         }
-
-        /// <remarks/>
-        public bool shownInCues
+        set
         {
-            get
-            {
-                return shownInCuesField;
-            }
-            set
-            {
-                shownInCuesField = value;
-            }
+            lineGlyphAttachmentAboveField = value;
         }
+    }
 
-        /// <remarks/>
-        public bool shownOnTabIfNotationAlsoShown
+    public string lineGlyphAttachmentBelow
+    {
+        get
         {
-            get
-            {
-                return shownOnTabIfNotationAlsoShownField;
-            }
-            set
-            {
-                shownOnTabIfNotationAlsoShownField = value;
-            }
+            return lineGlyphAttachmentBelowField;
         }
-
-        /// <remarks/>
-        public string continuationGlyph
+        set
         {
-            get
-            {
-                return continuationGlyphField;
-            }
-            set
-            {
-                continuationGlyphField = value;
-            }
+            lineGlyphAttachmentBelowField = value;
         }
+    }
 
-        /// <remarks/>
-        public string continuationText
+    public string lineTextAttachmentAbove
+    {
+        get
         {
-            get
-            {
-                return continuationTextField;
-            }
-            set
-            {
-                continuationTextField = value;
-            }
+            return lineTextAttachmentAboveField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionDurationLineData durationLineData
+        set
         {
-            get
-            {
-                return durationLineDataField;
-            }
-            set
-            {
-                durationLineDataField = value;
-            }
+            lineTextAttachmentAboveField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionTransitionLineData transitionLineData
+    public string lineTextAttachmentBelow
+    {
+        get
         {
-            get
-            {
-                return transitionLineDataField;
-            }
-            set
-            {
-                transitionLineDataField = value;
-            }
+            return lineTextAttachmentBelowField;
         }
-
-        /// <remarks/>
-        public bool isBowingMark
+        set
         {
-            get
-            {
-                return isBowingMarkField;
-            }
-            set
-            {
-                isBowingMarkField = value;
-            }
+            lineTextAttachmentBelowField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionDurationLineData
-    {
+}
 
-        private string lineStyleEntityIDField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionTransitionLineData
+{
+    private string lineStyleEntityIDField;
 
-        private string lineGlyphAttachmentAboveField;
+    private string lineGlyphAttachmentAboveField;
 
-        private string lineGlyphAttachmentBelowField;
+    private string lineGlyphAttachmentBelowField;
 
-        private string lineTextAttachmentAboveField;
+    private string lineTextAttachmentAboveField;
 
-        private string lineTextAttachmentBelowField;
+    private string lineTextAttachmentBelowField;
 
-        /// <remarks/>
-        public string lineStyleEntityID
+    public string lineStyleEntityID
+    {
+        get
         {
-            get
-            {
-                return lineStyleEntityIDField;
-            }
-            set
-            {
-                lineStyleEntityIDField = value;
-            }
+            return lineStyleEntityIDField;
         }
-
-        /// <remarks/>
-        public string lineGlyphAttachmentAbove
+        set
         {
-            get
-            {
-                return lineGlyphAttachmentAboveField;
-            }
-            set
-            {
-                lineGlyphAttachmentAboveField = value;
-            }
+            lineStyleEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public string lineGlyphAttachmentBelow
+    public string lineGlyphAttachmentAbove
+    {
+        get
         {
-            get
-            {
-                return lineGlyphAttachmentBelowField;
-            }
-            set
-            {
-                lineGlyphAttachmentBelowField = value;
-            }
+            return lineGlyphAttachmentAboveField;
         }
-
-        /// <remarks/>
-        public string lineTextAttachmentAbove
+        set
         {
-            get
-            {
-                return lineTextAttachmentAboveField;
-            }
-            set
-            {
-                lineTextAttachmentAboveField = value;
-            }
+            lineGlyphAttachmentAboveField = value;
         }
+    }
 
-        /// <remarks/>
-        public string lineTextAttachmentBelow
+    public string lineGlyphAttachmentBelow
+    {
+        get
         {
-            get
-            {
-                return lineTextAttachmentBelowField;
-            }
-            set
-            {
-                lineTextAttachmentBelowField = value;
-            }
+            return lineGlyphAttachmentBelowField;
         }
+        set
+        {
+            lineGlyphAttachmentBelowField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPlayingTechniqueAppearanceCollectionDefinitionEntitiesPlayingTechniqueAppearanceDefinitionTransitionLineData
+    public string lineTextAttachmentAbove
     {
-
-        private string lineStyleEntityIDField;
-
-        private string lineGlyphAttachmentAboveField;
-
-        private string lineGlyphAttachmentBelowField;
-
-        private string lineTextAttachmentAboveField;
-
-        private string lineTextAttachmentBelowField;
-
-        /// <remarks/>
-        public string lineStyleEntityID
+        get
         {
-            get
-            {
-                return lineStyleEntityIDField;
-            }
-            set
-            {
-                lineStyleEntityIDField = value;
-            }
+            return lineTextAttachmentAboveField;
         }
-
-        /// <remarks/>
-        public string lineGlyphAttachmentAbove
+        set
         {
-            get
-            {
-                return lineGlyphAttachmentAboveField;
-            }
-            set
-            {
-                lineGlyphAttachmentAboveField = value;
-            }
+            lineTextAttachmentAboveField = value;
         }
+    }
 
-        /// <remarks/>
-        public string lineGlyphAttachmentBelow
+    public string lineTextAttachmentBelow
+    {
+        get
         {
-            get
-            {
-                return lineGlyphAttachmentBelowField;
-            }
-            set
-            {
-                lineGlyphAttachmentBelowField = value;
-            }
+            return lineTextAttachmentBelowField;
         }
-
-        /// <remarks/>
-        public string lineTextAttachmentAbove
+        set
         {
-            get
-            {
-                return lineTextAttachmentAboveField;
-            }
-            set
-            {
-                lineTextAttachmentAboveField = value;
-            }
+            lineTextAttachmentBelowField = value;
         }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryExpressionMapDefinitions
+{
+    private kScoreLibraryExpressionMapDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        public string lineTextAttachmentBelow
+    public kScoreLibraryExpressionMapDefinitionsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
         {
-            get
-            {
-                return lineTextAttachmentBelowField;
-            }
-            set
-            {
-                lineTextAttachmentBelowField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryExpressionMapDefinitions
-    {
+}
 
-        private kScoreLibraryExpressionMapDefinitionsEntities entitiesField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryExpressionMapDefinitionsEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryExpressionMapDefinitionsEntities entities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return arrayField;
         }
+        set
+        {
+            arrayField = value;
+        }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryExpressionMapDefinitionsEntities
-    {
+}
 
-        private bool arrayField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryDrumKitNoteMapDefinitions
+{
+    private kScoreLibraryDrumKitNoteMapDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+    public kScoreLibraryDrumKitNoteMapDefinitionsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entitiesField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryDrumKitNoteMapDefinitions
-    {
+}
 
-        private kScoreLibraryDrumKitNoteMapDefinitionsEntities entitiesField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryDrumKitNoteMapDefinitionsEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryDrumKitNoteMapDefinitionsEntities entities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryDrumKitNoteMapDefinitionsEntities
-    {
-
-        private bool arrayField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRepeatableCompositeCollectionDefinitions
+{
+    private kScoreLibraryRepeatableCompositeCollectionDefinitionsEntities entitiesField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+    public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            entitiesField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRepeatableCompositeCollectionDefinitions
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntities
+{
+    private kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinition[] repeatableCompositeEntityDefinitionField;
 
-        private kScoreLibraryRepeatableCompositeCollectionDefinitionsEntities entitiesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntities entities
+    [System.Xml.Serialization.XmlElementAttribute("RepeatableCompositeEntityDefinition")]
+    public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinition[] RepeatableCompositeEntityDefinition
+    {
+        get
+        {
+            return repeatableCompositeEntityDefinitionField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            repeatableCompositeEntityDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinition[] repeatableCompositeEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RepeatableCompositeEntityDefinition")]
-        public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinition[] RepeatableCompositeEntityDefinition
+        get
         {
-            get
-            {
-                return repeatableCompositeEntityDefinitionField;
-            }
-            set
-            {
-                repeatableCompositeEntityDefinitionField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinition
-    {
+}
 
-        private string nameField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinition
+{
+    private string nameField;
 
-        private string entityIDField;
+    private string entityIDField;
 
-        private object parentEntityIDField;
+    private object parentEntityIDField;
 
-        private byte inheritanceMaskField;
+    private byte inheritanceMaskField;
 
-        private kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinitionRepeatableCompositeData repeatableCompositeDataField;
+    private kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinitionRepeatableCompositeData repeatableCompositeDataField;
 
-        /// <remarks/>
-        public string name
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinitionRepeatableCompositeData repeatableCompositeData
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
         {
-            get
-            {
-                return repeatableCompositeDataField;
-            }
-            set
-            {
-                repeatableCompositeDataField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinitionRepeatableCompositeData
+    public byte inheritanceMask
     {
-
-        private string compositeIDField;
-
-        private decimal repeatOffsetField;
-
-        /// <remarks/>
-        public string compositeID
+        get
         {
-            get
-            {
-                return compositeIDField;
-            }
-            set
-            {
-                compositeIDField = value;
-            }
+            return inheritanceMaskField;
         }
-
-        /// <remarks/>
-        public decimal repeatOffset
+        set
         {
-            get
-            {
-                return repeatOffsetField;
-            }
-            set
-            {
-                repeatOffsetField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceCollectionDefinitions
+    public kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinitionRepeatableCompositeData repeatableCompositeData
     {
+        get
+        {
+            return repeatableCompositeDataField;
+        }
+        set
+        {
+            repeatableCompositeDataField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryRepeatableCompositeCollectionDefinitionsEntitiesRepeatableCompositeEntityDefinitionRepeatableCompositeData
+{
+    private string compositeIDField;
 
-        private kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEntities entitiesField;
+    private decimal repeatOffsetField;
 
-        /// <remarks/>
-        public kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEntities entities
+    public string compositeID
+    {
+        get
+        {
+            return compositeIDField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            compositeIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEntities
+    public decimal repeatOffset
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return repeatOffsetField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            repeatOffsetField = value;
         }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceCollectionDefinitions
+{
+    private kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEntities entitiesField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitions
+    public kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntities entitiesField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceCollectionDefinitionsEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntities entities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return arrayField;
         }
+        set
+        {
+            arrayField = value;
+        }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntities
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitions
+{
+    private kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntities entitiesField;
+
+    public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponent[] chordSymbolAppearanceComponentField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntities
+{
+    private kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponent[] chordSymbolAppearanceComponentField;
 
-        private bool arrayField;
+    private bool arrayField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ChordSymbolAppearanceComponent")]
-        public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponent[] ChordSymbolAppearanceComponent
+    [System.Xml.Serialization.XmlElementAttribute("ChordSymbolAppearanceComponent")]
+    public kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponent[] ChordSymbolAppearanceComponent
+    {
+        get
         {
-            get
-            {
-                return chordSymbolAppearanceComponentField;
-            }
-            set
-            {
-                chordSymbolAppearanceComponentField = value;
-            }
+            return chordSymbolAppearanceComponentField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            chordSymbolAppearanceComponentField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponent
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        private object[] itemsField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponent
+{
+    private object[] itemsField;
 
-        private ItemsChoiceType[] itemsElementNameField;
+    private ItemsChoiceType[] itemsElementNameField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("accidental", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("alterationAccidentalPosition", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("alterationAccidentalStyle", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("alterationType", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("alteredAppearanceOption", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("augmentedQualityAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("chordSymbolMode", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("chordSymbolPedalOnlyAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("chordSymbolRootOnlyAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("chordSymbolStyle", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("compositeId", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("compoundChordSymbolArrangement", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("diminishedSeventhQualityAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("diminishedTriadQualityAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("entityID", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("halfDiminishedChordAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("inheritanceMask", typeof(byte))]
-        [System.Xml.Serialization.XmlElementAttribute("interval", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("intervalDegreeAndAdjustment", typeof(kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentIntervalDegreeAndAdjustment))]
-        [System.Xml.Serialization.XmlElementAttribute("isChordAlterationComma", typeof(bool))]
-        [System.Xml.Serialization.XmlElementAttribute("isFlatFollowingVowel", typeof(bool))]
-        [System.Xml.Serialization.XmlElementAttribute("isH", typeof(bool))]
-        [System.Xml.Serialization.XmlElementAttribute("isJapaneseAlteredBassSeparator", typeof(bool))]
-        [System.Xml.Serialization.XmlElementAttribute("isOpticalVariantForSuperscript", typeof(bool))]
-        [System.Xml.Serialization.XmlElementAttribute("isParenthesised", typeof(bool))]
-        [System.Xml.Serialization.XmlElementAttribute("letterCase", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("majorQualityAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("majorSeventhIntervalAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("maximumNumberOfRowsOfAlterations", typeof(byte))]
-        [System.Xml.Serialization.XmlElementAttribute("minorQualityAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("modalChordSymbolAppearanceInfo", typeof(kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentModalChordSymbolAppearanceInfo))]
-        [System.Xml.Serialization.XmlElementAttribute("name", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("nashvilleNoteNameAccidentalAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("note", typeof(kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentNote))]
-        [System.Xml.Serialization.XmlElementAttribute("omissionText", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("openFifthAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("parentEntityID", typeof(object))]
-        [System.Xml.Serialization.XmlElementAttribute("parenthesisTypeIfAny", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("quality", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("role", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("root", typeof(kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentRoot))]
-        [System.Xml.Serialization.XmlElementAttribute("rootAndBassNoteAccidentalType", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("scaleDegree", typeof(byte))]
-        [System.Xml.Serialization.XmlElementAttribute("sixSlashNineAppearance", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("solfeggioPreferenceForNoteB", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("solfeggioPreferenceForNoteC", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("solfeggioPreferenceForNoteD", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("solfeggioPreferenceForNoteG", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("value", typeof(string))]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public object[] Items
+    [System.Xml.Serialization.XmlElementAttribute("accidental", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("alterationAccidentalPosition", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("alterationAccidentalStyle", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("alterationType", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("alteredAppearanceOption", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("augmentedQualityAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("chordSymbolMode", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("chordSymbolPedalOnlyAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("chordSymbolRootOnlyAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("chordSymbolStyle", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("compositeId", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("compoundChordSymbolArrangement", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("diminishedSeventhQualityAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("diminishedTriadQualityAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("entityID", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("halfDiminishedChordAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("inheritanceMask", typeof(byte))]
+    [System.Xml.Serialization.XmlElementAttribute("interval", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("intervalDegreeAndAdjustment", typeof(kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentIntervalDegreeAndAdjustment))]
+    [System.Xml.Serialization.XmlElementAttribute("isChordAlterationComma", typeof(bool))]
+    [System.Xml.Serialization.XmlElementAttribute("isFlatFollowingVowel", typeof(bool))]
+    [System.Xml.Serialization.XmlElementAttribute("isH", typeof(bool))]
+    [System.Xml.Serialization.XmlElementAttribute("isJapaneseAlteredBassSeparator", typeof(bool))]
+    [System.Xml.Serialization.XmlElementAttribute("isOpticalVariantForSuperscript", typeof(bool))]
+    [System.Xml.Serialization.XmlElementAttribute("isParenthesised", typeof(bool))]
+    [System.Xml.Serialization.XmlElementAttribute("letterCase", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("majorQualityAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("majorSeventhIntervalAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("maximumNumberOfRowsOfAlterations", typeof(byte))]
+    [System.Xml.Serialization.XmlElementAttribute("minorQualityAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("modalChordSymbolAppearanceInfo", typeof(kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentModalChordSymbolAppearanceInfo))]
+    [System.Xml.Serialization.XmlElementAttribute("name", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("nashvilleNoteNameAccidentalAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("note", typeof(kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentNote))]
+    [System.Xml.Serialization.XmlElementAttribute("omissionText", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("openFifthAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("parentEntityID", typeof(object))]
+    [System.Xml.Serialization.XmlElementAttribute("parenthesisTypeIfAny", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("quality", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("role", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("root", typeof(kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentRoot))]
+    [System.Xml.Serialization.XmlElementAttribute("rootAndBassNoteAccidentalType", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("scaleDegree", typeof(byte))]
+    [System.Xml.Serialization.XmlElementAttribute("sixSlashNineAppearance", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("solfeggioPreferenceForNoteB", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("solfeggioPreferenceForNoteC", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("solfeggioPreferenceForNoteD", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("solfeggioPreferenceForNoteG", typeof(string))]
+    [System.Xml.Serialization.XmlElementAttribute("value", typeof(string))]
+    [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+    public object[] Items
+    {
+        get
         {
-            get
-            {
-                return itemsField;
-            }
-            set
-            {
-                itemsField = value;
-            }
+            return itemsField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemsChoiceType[] ItemsElementName
+        set
         {
-            get
-            {
-                return itemsElementNameField;
-            }
-            set
-            {
-                itemsElementNameField = value;
-            }
+            itemsField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentIntervalDegreeAndAdjustment
+    [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public ItemsChoiceType[] ItemsElementName
     {
+        get
+        {
+            return itemsElementNameField;
+        }
+        set
+        {
+            itemsElementNameField = value;
+        }
+    }
+}
 
-        private byte degreeField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentIntervalDegreeAndAdjustment
+{
+    private byte degreeField;
 
-        private string adjustmentField;
+    private string adjustmentField;
 
-        /// <remarks/>
-        public byte degree
+    public byte degree
+    {
+        get
         {
-            get
-            {
-                return degreeField;
-            }
-            set
-            {
-                degreeField = value;
-            }
+            return degreeField;
         }
-
-        /// <remarks/>
-        public string adjustment
+        set
         {
-            get
-            {
-                return adjustmentField;
-            }
-            set
-            {
-                adjustmentField = value;
-            }
+            degreeField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentModalChordSymbolAppearanceInfo
+    public string adjustment
     {
+        get
+        {
+            return adjustmentField;
+        }
+        set
+        {
+            adjustmentField = value;
+        }
+    }
+}
 
-        private bool hasDotSuffixField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentModalChordSymbolAppearanceInfo
+{
+    private bool hasDotSuffixField;
 
-        private bool isScaleField;
+    private bool isScaleField;
 
-        private string letterCaseField;
+    private string letterCaseField;
 
-        /// <remarks/>
-        public bool hasDotSuffix
+    public bool hasDotSuffix
+    {
+        get
         {
-            get
-            {
-                return hasDotSuffixField;
-            }
-            set
-            {
-                hasDotSuffixField = value;
-            }
+            return hasDotSuffixField;
         }
-
-        /// <remarks/>
-        public bool isScale
+        set
         {
-            get
-            {
-                return isScaleField;
-            }
-            set
-            {
-                isScaleField = value;
-            }
+            hasDotSuffixField = value;
         }
+    }
 
-        /// <remarks/>
-        public string letterCase
+    public bool isScale
+    {
+        get
+        {
+            return isScaleField;
+        }
+        set
         {
-            get
-            {
-                return letterCaseField;
-            }
-            set
-            {
-                letterCaseField = value;
-            }
+            isScaleField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentNote
+    public string letterCase
     {
-
-        private string noteNameField;
-
-        /// <remarks/>
-        public string noteName
+        get
+        {
+            return letterCaseField;
+        }
+        set
         {
-            get
-            {
-                return noteNameField;
-            }
-            set
-            {
-                noteNameField = value;
-            }
+            letterCaseField = value;
         }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentNote
+{
+    private string noteNameField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentRoot
+    public string noteName
     {
+        get
+        {
+            return noteNameField;
+        }
+        set
+        {
+            noteNameField = value;
+        }
+    }
+}
 
-        private string noteNameField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolAppearanceComponentCollectionDefinitionsEntitiesChordSymbolAppearanceComponentRoot
+{
+    private string noteNameField;
 
-        private string accidentalTypeField;
+    private string accidentalTypeField;
 
-        /// <remarks/>
-        public string noteName
+    public string noteName
+    {
+        get
         {
-            get
-            {
-                return noteNameField;
-            }
-            set
-            {
-                noteNameField = value;
-            }
+            return noteNameField;
         }
-
-        /// <remarks/>
-        public string accidentalType
+        set
         {
-            get
-            {
-                return accidentalTypeField;
-            }
-            set
-            {
-                accidentalTypeField = value;
-            }
+            noteNameField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
-    public enum ItemsChoiceType
+    public string accidentalType
     {
+        get
+        {
+            return accidentalTypeField;
+        }
+        set
+        {
+            accidentalTypeField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+public enum ItemsChoiceType
+{
+    accidental,
+
+    alterationAccidentalPosition,
+
+    alterationAccidentalStyle,
+
+    alterationType,
 
-        /// <remarks/>
-        accidental,
+    alteredAppearanceOption,
 
-        /// <remarks/>
-        alterationAccidentalPosition,
+    augmentedQualityAppearance,
 
-        /// <remarks/>
-        alterationAccidentalStyle,
+    chordSymbolMode,
 
-        /// <remarks/>
-        alterationType,
+    chordSymbolPedalOnlyAppearance,
 
-        /// <remarks/>
-        alteredAppearanceOption,
+    chordSymbolRootOnlyAppearance,
 
-        /// <remarks/>
-        augmentedQualityAppearance,
+    chordSymbolStyle,
 
-        /// <remarks/>
-        chordSymbolMode,
+    compositeId,
 
-        /// <remarks/>
-        chordSymbolPedalOnlyAppearance,
+    compoundChordSymbolArrangement,
 
-        /// <remarks/>
-        chordSymbolRootOnlyAppearance,
+    diminishedSeventhQualityAppearance,
 
-        /// <remarks/>
-        chordSymbolStyle,
+    diminishedTriadQualityAppearance,
 
-        /// <remarks/>
-        compositeId,
+    entityID,
 
-        /// <remarks/>
-        compoundChordSymbolArrangement,
+    halfDiminishedChordAppearance,
 
-        /// <remarks/>
-        diminishedSeventhQualityAppearance,
+    inheritanceMask,
 
-        /// <remarks/>
-        diminishedTriadQualityAppearance,
+    interval,
 
-        /// <remarks/>
-        entityID,
+    intervalDegreeAndAdjustment,
 
-        /// <remarks/>
-        halfDiminishedChordAppearance,
+    isChordAlterationComma,
 
-        /// <remarks/>
-        inheritanceMask,
+    isFlatFollowingVowel,
 
-        /// <remarks/>
-        interval,
+    isH,
 
-        /// <remarks/>
-        intervalDegreeAndAdjustment,
+    isJapaneseAlteredBassSeparator,
 
-        /// <remarks/>
-        isChordAlterationComma,
+    isOpticalVariantForSuperscript,
 
-        /// <remarks/>
-        isFlatFollowingVowel,
+    isParenthesised,
 
-        /// <remarks/>
-        isH,
+    letterCase,
 
-        /// <remarks/>
-        isJapaneseAlteredBassSeparator,
+    majorQualityAppearance,
 
-        /// <remarks/>
-        isOpticalVariantForSuperscript,
+    majorSeventhIntervalAppearance,
 
-        /// <remarks/>
-        isParenthesised,
+    maximumNumberOfRowsOfAlterations,
 
-        /// <remarks/>
-        letterCase,
+    minorQualityAppearance,
 
-        /// <remarks/>
-        majorQualityAppearance,
+    modalChordSymbolAppearanceInfo,
 
-        /// <remarks/>
-        majorSeventhIntervalAppearance,
+    name,
 
-        /// <remarks/>
-        maximumNumberOfRowsOfAlterations,
+    nashvilleNoteNameAccidentalAppearance,
 
-        /// <remarks/>
-        minorQualityAppearance,
+    note,
 
-        /// <remarks/>
-        modalChordSymbolAppearanceInfo,
+    omissionText,
 
-        /// <remarks/>
-        name,
+    openFifthAppearance,
 
-        /// <remarks/>
-        nashvilleNoteNameAccidentalAppearance,
+    parentEntityID,
 
-        /// <remarks/>
-        note,
+    parenthesisTypeIfAny,
 
-        /// <remarks/>
-        omissionText,
+    quality,
 
-        /// <remarks/>
-        openFifthAppearance,
+    role,
 
-        /// <remarks/>
-        parentEntityID,
+    root,
 
-        /// <remarks/>
-        parenthesisTypeIfAny,
+    rootAndBassNoteAccidentalType,
 
-        /// <remarks/>
-        quality,
+    scaleDegree,
 
-        /// <remarks/>
-        role,
+    sixSlashNineAppearance,
 
-        /// <remarks/>
-        root,
+    solfeggioPreferenceForNoteB,
 
-        /// <remarks/>
-        rootAndBassNoteAccidentalType,
+    solfeggioPreferenceForNoteC,
 
-        /// <remarks/>
-        scaleDegree,
+    solfeggioPreferenceForNoteD,
 
-        /// <remarks/>
-        sixSlashNineAppearance,
+    solfeggioPreferenceForNoteG,
 
-        /// <remarks/>
-        solfeggioPreferenceForNoteB,
+    value,
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPercussionKitDefinitionCollectionDefinition
+{
+    private kScoreLibraryPercussionKitDefinitionCollectionDefinitionEntities entitiesField;
+
+    public kScoreLibraryPercussionKitDefinitionCollectionDefinitionEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPercussionKitDefinitionCollectionDefinitionEntities
+{
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        /// <remarks/>
-        solfeggioPreferenceForNoteC,
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPercussionInstrumentDataCollectionDefinition
+{
+    private kScoreLibraryPercussionInstrumentDataCollectionDefinitionEntities entitiesField;
 
-        /// <remarks/>
-        solfeggioPreferenceForNoteD,
+    public kScoreLibraryPercussionInstrumentDataCollectionDefinitionEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        /// <remarks/>
-        solfeggioPreferenceForNoteG,
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryPercussionInstrumentDataCollectionDefinitionEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        value,
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFrettedInstrumentDataCollectionDefinition
+{
+    private kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPercussionKitDefinitionCollectionDefinition
+    public kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private kScoreLibraryPercussionKitDefinitionCollectionDefinitionEntities entitiesField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryPercussionKitDefinitionCollectionDefinitionEntities entities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            arrayField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPercussionKitDefinitionCollectionDefinitionEntities
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordDiagramCollectionDefinition
+{
+    private kScoreLibraryChordDiagramCollectionDefinitionEntities entitiesField;
+
+    public kScoreLibraryChordDiagramCollectionDefinitionEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private bool arrayField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordDiagramCollectionDefinitionEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineAnnotationCollectionDefinition
+{
+    private kScoreLibraryLineAnnotationCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPercussionInstrumentDataCollectionDefinition
+    public kScoreLibraryLineAnnotationCollectionDefinitionEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntities
+{
+    private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinition[] lineAnnotationEntityDefinitionField;
 
-        private kScoreLibraryPercussionInstrumentDataCollectionDefinitionEntities entitiesField;
+    private bool arrayField;
+
+    [System.Xml.Serialization.XmlElementAttribute("LineAnnotationEntityDefinition")]
+    public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinition[] LineAnnotationEntityDefinition
+    {
+        get
+        {
+            return lineAnnotationEntityDefinitionField;
+        }
+        set
+        {
+            lineAnnotationEntityDefinitionField = value;
+        }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryPercussionInstrumentDataCollectionDefinitionEntities entities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            return arrayField;
         }
+        set
+        {
+            arrayField = value;
+        }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinition
+{
+    private string nameField;
+
+    private string entityIDField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryPercussionInstrumentDataCollectionDefinitionEntities
+    private object parentEntityIDField;
+
+    private byte inheritanceMaskField;
+
+    private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionData dataField;
+
+    public string name
     {
+        get
+        {
+            return nameField;
+        }
+        set
+        {
+            nameField = value;
+        }
+    }
 
-        private bool arrayField;
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
+        {
+            entityIDField = value;
+        }
+    }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFrettedInstrumentDataCollectionDefinition
+    public byte inheritanceMask
     {
-
-        private kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntities entities
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryFrettedInstrumentDataCollectionDefinitionEntities
+    public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionData data
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return dataField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            dataField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordDiagramCollectionDefinition
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionData
+{
+    private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataHookData hookDataField;
+
+    private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataArrowData arrowDataField;
 
-        private kScoreLibraryChordDiagramCollectionDefinitionEntities entitiesField;
+    private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataTerminalLineData terminalLineDataField;
 
-        /// <remarks/>
-        public kScoreLibraryChordDiagramCollectionDefinitionEntities entities
+    public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataHookData hookData
+    {
+        get
+        {
+            return hookDataField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            hookDataField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordDiagramCollectionDefinitionEntities
+    public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataArrowData arrowData
     {
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        get
+        {
+            return arrowDataField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrowDataField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineAnnotationCollectionDefinition
+    public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataTerminalLineData terminalLineData
     {
-
-        private kScoreLibraryLineAnnotationCollectionDefinitionEntities entitiesField;
-
-        /// <remarks/>
-        public kScoreLibraryLineAnnotationCollectionDefinitionEntities entities
+        get
+        {
+            return terminalLineDataField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            terminalLineDataField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntities
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataHookData
+{
+    private byte hookLengthField;
 
-        private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinition[] lineAnnotationEntityDefinitionField;
+    private string lineWidthField;
 
-        private bool arrayField;
+    private string hookDirectionField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("LineAnnotationEntityDefinition")]
-        public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinition[] LineAnnotationEntityDefinition
+    private string rotationBehaviourField;
+
+    public byte hookLength
+    {
+        get
         {
-            get
-            {
-                return lineAnnotationEntityDefinitionField;
-            }
-            set
-            {
-                lineAnnotationEntityDefinitionField = value;
-            }
+            return hookLengthField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            hookLengthField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinition
+    public string lineWidth
     {
-
-        private string nameField;
-
-        private string entityIDField;
-
-        private object parentEntityIDField;
-
-        private byte inheritanceMaskField;
-
-        private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionData dataField;
-
-        /// <remarks/>
-        public string name
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return lineWidthField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            lineWidthField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string hookDirection
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return hookDirectionField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            hookDirectionField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionData data
+    public string rotationBehaviour
+    {
+        get
+        {
+            return rotationBehaviourField;
+        }
+        set
         {
-            get
-            {
-                return dataField;
-            }
-            set
-            {
-                dataField = value;
-            }
+            rotationBehaviourField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionData
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataArrowData
+{
+    private string styleField;
 
-        private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataHookData hookDataField;
+    private string lineWidthField;
 
-        private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataArrowData arrowDataField;
+    private byte heightField;
 
-        private kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataTerminalLineData terminalLineDataField;
+    private byte widthField;
 
-        /// <remarks/>
-        public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataHookData hookData
+    public string style
+    {
+        get
         {
-            get
-            {
-                return hookDataField;
-            }
-            set
-            {
-                hookDataField = value;
-            }
+            return styleField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataArrowData arrowData
+        set
         {
-            get
-            {
-                return arrowDataField;
-            }
-            set
-            {
-                arrowDataField = value;
-            }
+            styleField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataTerminalLineData terminalLineData
+    public string lineWidth
+    {
+        get
         {
-            get
-            {
-                return terminalLineDataField;
-            }
-            set
-            {
-                terminalLineDataField = value;
-            }
+            return lineWidthField;
         }
+        set
+        {
+            lineWidthField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataHookData
+    public byte height
     {
-
-        private byte hookLengthField;
-
-        private string lineWidthField;
-
-        private string hookDirectionField;
-
-        private string rotationBehaviourField;
-
-        /// <remarks/>
-        public byte hookLength
+        get
         {
-            get
-            {
-                return hookLengthField;
-            }
-            set
-            {
-                hookLengthField = value;
-            }
+            return heightField;
         }
-
-        /// <remarks/>
-        public string lineWidth
+        set
         {
-            get
-            {
-                return lineWidthField;
-            }
-            set
-            {
-                lineWidthField = value;
-            }
+            heightField = value;
         }
+    }
 
-        /// <remarks/>
-        public string hookDirection
+    public byte width
+    {
+        get
         {
-            get
-            {
-                return hookDirectionField;
-            }
-            set
-            {
-                hookDirectionField = value;
-            }
+            return widthField;
         }
-
-        /// <remarks/>
-        public string rotationBehaviour
+        set
         {
-            get
-            {
-                return rotationBehaviourField;
-            }
-            set
-            {
-                rotationBehaviourField = value;
-            }
+            widthField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataArrowData
-    {
-
-        private string styleField;
+}
 
-        private string lineWidthField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataTerminalLineData
+{
+    private byte terminalLineLengthField;
 
-        private byte heightField;
+    private string lineWidthField;
 
-        private byte widthField;
+    private string rotationBehaviourField;
 
-        /// <remarks/>
-        public string style
+    public byte terminalLineLength
+    {
+        get
         {
-            get
-            {
-                return styleField;
-            }
-            set
-            {
-                styleField = value;
-            }
+            return terminalLineLengthField;
         }
-
-        /// <remarks/>
-        public string lineWidth
+        set
         {
-            get
-            {
-                return lineWidthField;
-            }
-            set
-            {
-                lineWidthField = value;
-            }
+            terminalLineLengthField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte height
+    public string lineWidth
+    {
+        get
         {
-            get
-            {
-                return heightField;
-            }
-            set
-            {
-                heightField = value;
-            }
+            return lineWidthField;
         }
-
-        /// <remarks/>
-        public byte width
+        set
         {
-            get
-            {
-                return widthField;
-            }
-            set
-            {
-                widthField = value;
-            }
+            lineWidthField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineAnnotationCollectionDefinitionEntitiesLineAnnotationEntityDefinitionDataTerminalLineData
+    public string rotationBehaviour
     {
-
-        private byte terminalLineLengthField;
-
-        private string lineWidthField;
-
-        private string rotationBehaviourField;
-
-        /// <remarks/>
-        public byte terminalLineLength
+        get
         {
-            get
-            {
-                return terminalLineLengthField;
-            }
-            set
-            {
-                terminalLineLengthField = value;
-            }
+            return rotationBehaviourField;
         }
-
-        /// <remarks/>
-        public string lineWidth
+        set
         {
-            get
-            {
-                return lineWidthField;
-            }
-            set
-            {
-                lineWidthField = value;
-            }
+            rotationBehaviourField = value;
         }
+    }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineBodyStyleCollectionDefinition
+{
+    private kScoreLibraryLineBodyStyleCollectionDefinitionEntities entitiesField;
 
-        /// <remarks/>
-        public string rotationBehaviour
+    public kScoreLibraryLineBodyStyleCollectionDefinitionEntities entities
+    {
+        get
+        {
+            return entitiesField;
+        }
+        set
         {
-            get
-            {
-                return rotationBehaviourField;
-            }
-            set
-            {
-                rotationBehaviourField = value;
-            }
+            entitiesField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineBodyStyleCollectionDefinition
-    {
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntities
+{
+    private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinition[] lineBodyStyleEntityDefinitionField;
 
-        private kScoreLibraryLineBodyStyleCollectionDefinitionEntities entitiesField;
+    private bool arrayField;
 
-        /// <remarks/>
-        public kScoreLibraryLineBodyStyleCollectionDefinitionEntities entities
+    [System.Xml.Serialization.XmlElementAttribute("LineBodyStyleEntityDefinition")]
+    public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinition[] LineBodyStyleEntityDefinition
+    {
+        get
+        {
+            return lineBodyStyleEntityDefinitionField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            lineBodyStyleEntityDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntities
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
-
-        private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinition[] lineBodyStyleEntityDefinitionField;
-
-        private bool arrayField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("LineBodyStyleEntityDefinition")]
-        public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinition[] LineBodyStyleEntityDefinition
+        get
         {
-            get
-            {
-                return lineBodyStyleEntityDefinitionField;
-            }
-            set
-            {
-                lineBodyStyleEntityDefinitionField = value;
-            }
+            return arrayField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinition
-    {
+}
 
-        private string nameField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinition
+{
+    private string nameField;
 
-        private string entityIDField;
+    private string entityIDField;
 
-        private object parentEntityIDField;
+    private object parentEntityIDField;
 
-        private byte inheritanceMaskField;
+    private byte inheritanceMaskField;
 
-        private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionData dataField;
+    private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionData dataField;
 
-        /// <remarks/>
-        public string name
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
+        {
+            return entityIDField;
+        }
+        set
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public byte inheritanceMask
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            parentEntityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionData data
+    public byte inheritanceMask
+    {
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
         {
-            get
-            {
-                return dataField;
-            }
-            set
-            {
-                dataField = value;
-            }
+            inheritanceMaskField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionData
+    public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionData data
     {
+        get
+        {
+            return dataField;
+        }
+        set
+        {
+            dataField = value;
+        }
+    }
+}
 
-        private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataMultiSegmentLineData multiSegmentLineDataField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionData
+{
+    private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataMultiSegmentLineData multiSegmentLineDataField;
 
-        private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataWedgeLineData wedgeLineDataField;
+    private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataWedgeLineData wedgeLineDataField;
 
-        private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataGenericLineData genericLineDataField;
+    private kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataGenericLineData genericLineDataField;
 
-        /// <remarks/>
-        public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataMultiSegmentLineData multiSegmentLineData
+    public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataMultiSegmentLineData multiSegmentLineData
+    {
+        get
         {
-            get
-            {
-                return multiSegmentLineDataField;
-            }
-            set
-            {
-                multiSegmentLineDataField = value;
-            }
+            return multiSegmentLineDataField;
         }
-
-        /// <remarks/>
-        public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataWedgeLineData wedgeLineData
+        set
         {
-            get
-            {
-                return wedgeLineDataField;
-            }
-            set
-            {
-                wedgeLineDataField = value;
-            }
+            multiSegmentLineDataField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataGenericLineData genericLineData
+    public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataWedgeLineData wedgeLineData
+    {
+        get
+        {
+            return wedgeLineDataField;
+        }
+        set
         {
-            get
-            {
-                return genericLineDataField;
-            }
-            set
-            {
-                genericLineDataField = value;
-            }
+            wedgeLineDataField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataMultiSegmentLineData
+    public kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataGenericLineData genericLineData
     {
+        get
+        {
+            return genericLineDataField;
+        }
+        set
+        {
+            genericLineDataField = value;
+        }
+    }
+}
 
-        private string patternField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataMultiSegmentLineData
+{
+    private string patternField;
 
-        private string repeatModeField;
+    private string repeatModeField;
 
-        private bool drawEndsAsContinuationField;
+    private bool drawEndsAsContinuationField;
 
-        /// <remarks/>
-        public string pattern
+    public string pattern
+    {
+        get
         {
-            get
-            {
-                return patternField;
-            }
-            set
-            {
-                patternField = value;
-            }
+            return patternField;
         }
-
-        /// <remarks/>
-        public string repeatMode
+        set
         {
-            get
-            {
-                return repeatModeField;
-            }
-            set
-            {
-                repeatModeField = value;
-            }
+            patternField = value;
         }
+    }
 
-        /// <remarks/>
-        public bool drawEndsAsContinuation
+    public string repeatMode
+    {
+        get
+        {
+            return repeatModeField;
+        }
+        set
         {
-            get
-            {
-                return drawEndsAsContinuationField;
-            }
-            set
-            {
-                drawEndsAsContinuationField = value;
-            }
+            repeatModeField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataWedgeLineData
+    public bool drawEndsAsContinuation
     {
+        get
+        {
+            return drawEndsAsContinuationField;
+        }
+        set
+        {
+            drawEndsAsContinuationField = value;
+        }
+    }
+}
 
-        private string wedgeStartThicknessField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataWedgeLineData
+{
+    private string wedgeStartThicknessField;
 
-        private string wedgeEndThicknessField;
+    private string wedgeEndThicknessField;
 
-        private string typeField;
+    private string typeField;
 
-        /// <remarks/>
-        public string wedgeStartThickness
+    public string wedgeStartThickness
+    {
+        get
         {
-            get
-            {
-                return wedgeStartThicknessField;
-            }
-            set
-            {
-                wedgeStartThicknessField = value;
-            }
+            return wedgeStartThicknessField;
         }
-
-        /// <remarks/>
-        public string wedgeEndThickness
+        set
         {
-            get
-            {
-                return wedgeEndThicknessField;
-            }
-            set
-            {
-                wedgeEndThicknessField = value;
-            }
+            wedgeStartThicknessField = value;
         }
+    }
 
-        /// <remarks/>
-        public string type
+    public string wedgeEndThickness
+    {
+        get
         {
-            get
-            {
-                return typeField;
-            }
-            set
-            {
-                typeField = value;
-            }
+            return wedgeEndThicknessField;
         }
+        set
+        {
+            wedgeEndThicknessField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataGenericLineData
+    public string type
     {
+        get
+        {
+            return typeField;
+        }
+        set
+        {
+            typeField = value;
+        }
+    }
+}
 
-        private string bodyStyleField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineBodyStyleCollectionDefinitionEntitiesLineBodyStyleEntityDefinitionDataGenericLineData
+{
+    private string bodyStyleField;
 
-        private string lineWidthField;
+    private string lineWidthField;
 
-        private string dashGapPatternField;
+    private string dashGapPatternField;
 
-        private string lineSeparationField;
+    private string lineSeparationField;
 
-        /// <remarks/>
-        public string bodyStyle
+    public string bodyStyle
+    {
+        get
         {
-            get
-            {
-                return bodyStyleField;
-            }
-            set
-            {
-                bodyStyleField = value;
-            }
+            return bodyStyleField;
         }
-
-        /// <remarks/>
-        public string lineWidth
+        set
         {
-            get
-            {
-                return lineWidthField;
-            }
-            set
-            {
-                lineWidthField = value;
-            }
+            bodyStyleField = value;
         }
+    }
 
-        /// <remarks/>
-        public string dashGapPattern
+    public string lineWidth
+    {
+        get
         {
-            get
-            {
-                return dashGapPatternField;
-            }
-            set
-            {
-                dashGapPatternField = value;
-            }
+            return lineWidthField;
         }
-
-        /// <remarks/>
-        public string lineSeparation
+        set
         {
-            get
-            {
-                return lineSeparationField;
-            }
-            set
-            {
-                lineSeparationField = value;
-            }
+            lineWidthField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineStyleCollectionDefinition
+    public string dashGapPattern
     {
-
-        private kScoreLibraryLineStyleCollectionDefinitionEntities entitiesField;
+        get
+        {
+            return dashGapPatternField;
+        }
+        set
+        {
+            dashGapPatternField = value;
+        }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryLineStyleCollectionDefinitionEntities entities
+    public string lineSeparation
+    {
+        get
+        {
+            return lineSeparationField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            lineSeparationField = value;
         }
     }
+}
+
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineStyleCollectionDefinition
+{
+    private kScoreLibraryLineStyleCollectionDefinitionEntities entitiesField;
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineStyleCollectionDefinitionEntities
+    public kScoreLibraryLineStyleCollectionDefinitionEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinition[] lineStyleEntityDefinitionField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineStyleCollectionDefinitionEntities
+{
+    private kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinition[] lineStyleEntityDefinitionField;
 
-        private bool arrayField;
+    private bool arrayField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("LineStyleEntityDefinition")]
-        public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinition[] LineStyleEntityDefinition
+    [System.Xml.Serialization.XmlElementAttribute("LineStyleEntityDefinition")]
+    public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinition[] LineStyleEntityDefinition
+    {
+        get
         {
-            get
-            {
-                return lineStyleEntityDefinitionField;
-            }
-            set
-            {
-                lineStyleEntityDefinitionField = value;
-            }
+            return lineStyleEntityDefinitionField;
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            lineStyleEntityDefinitionField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinition
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
     {
+        get
+        {
+            return arrayField;
+        }
+        set
+        {
+            arrayField = value;
+        }
+    }
+}
 
-        private string nameField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinition
+{
+    private string nameField;
 
-        private string entityIDField;
+    private string entityIDField;
 
-        private object parentEntityIDField;
+    private object parentEntityIDField;
 
-        private byte inheritanceMaskField;
+    private byte inheritanceMaskField;
 
-        private kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionData dataField;
+    private kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionData dataField;
 
-        /// <remarks/>
-        public string name
+    public string name
+    {
+        get
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            return nameField;
         }
-
-        /// <remarks/>
-        public string entityID
+        set
         {
-            get
-            {
-                return entityIDField;
-            }
-            set
-            {
-                entityIDField = value;
-            }
+            nameField = value;
         }
+    }
 
-        /// <remarks/>
-        public object parentEntityID
+    public string entityID
+    {
+        get
         {
-            get
-            {
-                return parentEntityIDField;
-            }
-            set
-            {
-                parentEntityIDField = value;
-            }
+            return entityIDField;
         }
-
-        /// <remarks/>
-        public byte inheritanceMask
+        set
         {
-            get
-            {
-                return inheritanceMaskField;
-            }
-            set
-            {
-                inheritanceMaskField = value;
-            }
+            entityIDField = value;
         }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionData data
+    public object parentEntityID
+    {
+        get
+        {
+            return parentEntityIDField;
+        }
+        set
         {
-            get
-            {
-                return dataField;
-            }
-            set
-            {
-                dataField = value;
-            }
+            parentEntityIDField = value;
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionData
+    public byte inheritanceMask
     {
-
-        private kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionDataCommonData commonDataField;
+        get
+        {
+            return inheritanceMaskField;
+        }
+        set
+        {
+            inheritanceMaskField = value;
+        }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionDataCommonData commonData
+    public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionData data
+    {
+        get
+        {
+            return dataField;
+        }
+        set
         {
-            get
-            {
-                return commonDataField;
-            }
-            set
-            {
-                commonDataField = value;
-            }
+            dataField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionDataCommonData
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionData
+{
+    private kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionDataCommonData commonDataField;
+
+    public kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionDataCommonData commonData
     {
+        get
+        {
+            return commonDataField;
+        }
+        set
+        {
+            commonDataField = value;
+        }
+    }
+}
 
-        private string orientationField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryLineStyleCollectionDefinitionEntitiesLineStyleEntityDefinitionDataCommonData
+{
+    private string orientationField;
 
-        private bool canBeRotatedField;
+    private bool canBeRotatedField;
 
-        private string bodyEntityField;
+    private string bodyEntityField;
 
-        private string startCapField;
+    private string startCapField;
 
-        private string endCapField;
+    private string endCapField;
 
-        private string continuationEndCapField;
+    private string continuationEndCapField;
 
-        private bool hookAndTerminalLineFollowDashDotPatternField;
+    private bool hookAndTerminalLineFollowDashDotPatternField;
 
-        private bool wholeBodyOnEachSystemField;
+    private bool wholeBodyOnEachSystemField;
 
-        private string centreAnnotationVerticalPositionField;
+    private string centreAnnotationVerticalPositionField;
 
-        private string centreAnnotationRepeatField;
+    private string centreAnnotationRepeatField;
 
-        private byte centreAnnotationRepeatDistanceField;
+    private byte centreAnnotationRepeatDistanceField;
 
-        private bool centreAnnotationIsAlwaysHorizontalField;
+    private bool centreAnnotationIsAlwaysHorizontalField;
 
-        private string centreAnnotationPlacementField;
+    private string centreAnnotationPlacementField;
 
-        private byte centreAnnotationStartAndEndGapField;
+    private byte centreAnnotationStartAndEndGapField;
 
-        private string defaultHorizontalPlacementField;
+    private string defaultHorizontalPlacementField;
 
-        private byte centreAnnotationOffsetField;
+    private byte centreAnnotationOffsetField;
 
-        /// <remarks/>
-        public string orientation
+    public string orientation
+    {
+        get
         {
-            get
-            {
-                return orientationField;
-            }
-            set
-            {
-                orientationField = value;
-            }
+            return orientationField;
         }
-
-        /// <remarks/>
-        public bool canBeRotated
+        set
         {
-            get
-            {
-                return canBeRotatedField;
-            }
-            set
-            {
-                canBeRotatedField = value;
-            }
+            orientationField = value;
         }
+    }
 
-        /// <remarks/>
-        public string bodyEntity
+    public bool canBeRotated
+    {
+        get
         {
-            get
-            {
-                return bodyEntityField;
-            }
-            set
-            {
-                bodyEntityField = value;
-            }
+            return canBeRotatedField;
         }
-
-        /// <remarks/>
-        public string startCap
+        set
         {
-            get
-            {
-                return startCapField;
-            }
-            set
-            {
-                startCapField = value;
-            }
+            canBeRotatedField = value;
         }
+    }
 
-        /// <remarks/>
-        public string endCap
+    public string bodyEntity
+    {
+        get
         {
-            get
-            {
-                return endCapField;
-            }
-            set
-            {
-                endCapField = value;
-            }
+            return bodyEntityField;
         }
-
-        /// <remarks/>
-        public string continuationEndCap
+        set
         {
-            get
-            {
-                return continuationEndCapField;
-            }
-            set
-            {
-                continuationEndCapField = value;
-            }
+            bodyEntityField = value;
         }
+    }
 
-        /// <remarks/>
-        public bool hookAndTerminalLineFollowDashDotPattern
+    public string startCap
+    {
+        get
         {
-            get
-            {
-                return hookAndTerminalLineFollowDashDotPatternField;
-            }
-            set
-            {
-                hookAndTerminalLineFollowDashDotPatternField = value;
-            }
+            return startCapField;
         }
+        set
+        {
+            startCapField = value;
+        }
+    }
 
-        /// <remarks/>
-        public bool wholeBodyOnEachSystem
+    public string endCap
+    {
+        get
         {
-            get
-            {
-                return wholeBodyOnEachSystemField;
-            }
-            set
-            {
-                wholeBodyOnEachSystemField = value;
-            }
+            return endCapField;
         }
+        set
+        {
+            endCapField = value;
+        }
+    }
 
-        /// <remarks/>
-        public string centreAnnotationVerticalPosition
+    public string continuationEndCap
+    {
+        get
         {
-            get
-            {
-                return centreAnnotationVerticalPositionField;
-            }
-            set
-            {
-                centreAnnotationVerticalPositionField = value;
-            }
+            return continuationEndCapField;
         }
+        set
+        {
+            continuationEndCapField = value;
+        }
+    }
 
-        /// <remarks/>
-        public string centreAnnotationRepeat
+    public bool hookAndTerminalLineFollowDashDotPattern
+    {
+        get
         {
-            get
-            {
-                return centreAnnotationRepeatField;
-            }
-            set
-            {
-                centreAnnotationRepeatField = value;
-            }
+            return hookAndTerminalLineFollowDashDotPatternField;
         }
+        set
+        {
+            hookAndTerminalLineFollowDashDotPatternField = value;
+        }
+    }
 
-        /// <remarks/>
-        public byte centreAnnotationRepeatDistance
+    public bool wholeBodyOnEachSystem
+    {
+        get
         {
-            get
-            {
-                return centreAnnotationRepeatDistanceField;
-            }
-            set
-            {
-                centreAnnotationRepeatDistanceField = value;
-            }
+            return wholeBodyOnEachSystemField;
         }
+        set
+        {
+            wholeBodyOnEachSystemField = value;
+        }
+    }
 
-        /// <remarks/>
-        public bool centreAnnotationIsAlwaysHorizontal
+    public string centreAnnotationVerticalPosition
+    {
+        get
         {
-            get
-            {
-                return centreAnnotationIsAlwaysHorizontalField;
-            }
-            set
-            {
-                centreAnnotationIsAlwaysHorizontalField = value;
-            }
+            return centreAnnotationVerticalPositionField;
         }
+        set
+        {
+            centreAnnotationVerticalPositionField = value;
+        }
+    }
 
-        /// <remarks/>
-        public string centreAnnotationPlacement
+    public string centreAnnotationRepeat
+    {
+        get
         {
-            get
-            {
-                return centreAnnotationPlacementField;
-            }
-            set
-            {
-                centreAnnotationPlacementField = value;
-            }
+            return centreAnnotationRepeatField;
         }
+        set
+        {
+            centreAnnotationRepeatField = value;
+        }
+    }
 
-        /// <remarks/>
-        public byte centreAnnotationStartAndEndGap
+    public byte centreAnnotationRepeatDistance
+    {
+        get
         {
-            get
-            {
-                return centreAnnotationStartAndEndGapField;
-            }
-            set
-            {
-                centreAnnotationStartAndEndGapField = value;
-            }
+            return centreAnnotationRepeatDistanceField;
         }
+        set
+        {
+            centreAnnotationRepeatDistanceField = value;
+        }
+    }
 
-        /// <remarks/>
-        public string defaultHorizontalPlacement
+    public bool centreAnnotationIsAlwaysHorizontal
+    {
+        get
         {
-            get
-            {
-                return defaultHorizontalPlacementField;
-            }
-            set
-            {
-                defaultHorizontalPlacementField = value;
-            }
+            return centreAnnotationIsAlwaysHorizontalField;
         }
+        set
+        {
+            centreAnnotationIsAlwaysHorizontalField = value;
+        }
+    }
 
-        /// <remarks/>
-        public byte centreAnnotationOffset
+    public string centreAnnotationPlacement
+    {
+        get
         {
-            get
-            {
-                return centreAnnotationOffsetField;
-            }
-            set
-            {
-                centreAnnotationOffsetField = value;
-            }
+            return centreAnnotationPlacementField;
         }
+        set
+        {
+            centreAnnotationPlacementField = value;
+        }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolComponentKerningPairsCollection
+    public byte centreAnnotationStartAndEndGap
     {
+        get
+        {
+            return centreAnnotationStartAndEndGapField;
+        }
+        set
+        {
+            centreAnnotationStartAndEndGapField = value;
+        }
+    }
 
-        private kScoreLibraryChordSymbolComponentKerningPairsCollectionEntities entitiesField;
+    public string defaultHorizontalPlacement
+    {
+        get
+        {
+            return defaultHorizontalPlacementField;
+        }
+        set
+        {
+            defaultHorizontalPlacementField = value;
+        }
+    }
 
-        /// <remarks/>
-        public kScoreLibraryChordSymbolComponentKerningPairsCollectionEntities entities
+    public byte centreAnnotationOffset
+    {
+        get
+        {
+            return centreAnnotationOffsetField;
+        }
+        set
         {
-            get
-            {
-                return entitiesField;
-            }
-            set
-            {
-                entitiesField = value;
-            }
+            centreAnnotationOffsetField = value;
         }
     }
+}
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class kScoreLibraryChordSymbolComponentKerningPairsCollectionEntities
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolComponentKerningPairsCollection
+{
+    private kScoreLibraryChordSymbolComponentKerningPairsCollectionEntities entitiesField;
+
+    public kScoreLibraryChordSymbolComponentKerningPairsCollectionEntities entities
     {
+        get
+        {
+            return entitiesField;
+        }
+        set
+        {
+            entitiesField = value;
+        }
+    }
+}
 
-        private bool arrayField;
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class kScoreLibraryChordSymbolComponentKerningPairsCollectionEntities
+{
+    private bool arrayField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool array
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool array
+    {
+        get
+        {
+            return arrayField;
+        }
+        set
         {
-            get
-            {
-                return arrayField;
-            }
-            set
-            {
-                arrayField = value;
-            }
+            arrayField = value;
         }
     }
 }

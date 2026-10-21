@@ -1,26 +1,25 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace QBDrumMap.Class.MapModels
+namespace QBDrumMap.Class.MapModels;
+
+public partial class KitListItem
+    : ViewModelBase
 {
-    public partial class KitListItem
-        : ViewModelBase
-    {
-        [ObservableProperty]
-        private int pluginID;
+    [ObservableProperty]
+    private int pluginID;
 
-        [ObservableProperty]
-        private string pluginName;
+    [ObservableProperty]
+    private string pluginName;
 
-        [ObservableProperty]
-        private int pluginDisplayOrder;
+    [ObservableProperty]
+    private int pluginDisplayOrder;
 
-        [ObservableProperty]
-        private int kitID;
+    [ObservableProperty]
+    private int kitID;
 
-        [ObservableProperty]
-        private string kitName;
+    [ObservableProperty]
+    private string kitName;
 
-        [ObservableProperty]
-        private int kitDisplayOrder;
-    }
+    [ObservableProperty]
+    private int kitDisplayOrder;
 }

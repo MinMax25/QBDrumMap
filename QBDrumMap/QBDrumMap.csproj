@@ -9,8 +9,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>Resources\QB.ico</ApplicationIcon>
     <Platforms>AnyCPU;x64</Platforms>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,45 +20,7 @@
 
   <ItemGroup>
     <None Remove="DrumMap.qbd" />
-    <None Remove="Resources\Document\Manual\base.html" />
-    <None Remove="Resources\Document\Manual\basic.html" />
-    <None Remove="Resources\Document\Manual\content.css" />
-    <None Remove="Resources\Document\Manual\image\intoro_pic_1.png" />
-    <None Remove="Resources\Document\Manual\image\page-articulation_pic_1.png" />
-    <None Remove="Resources\Document\Manual\image\page-convert_pic_1.png" />
-    <None Remove="Resources\Document\Manual\image\page-export_pic_1.png" />
-    <None Remove="Resources\Document\Manual\image\page-parts_pic_1.png" />
-    <None Remove="Resources\Document\Manual\image\page-parts_pic_2.png" />
-    <None Remove="Resources\Document\Manual\image\page-parts_pic_3.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_1.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_2.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_3.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_4.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_5.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_6.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_7.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_7_.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_8.png" />
-    <None Remove="Resources\Document\Manual\image\page-plugin_pic_9.png" />
-    <None Remove="Resources\Document\Manual\image\QB.png" />
-    <None Remove="Resources\Document\Manual\image\setting_pic_1.png" />
-    <None Remove="Resources\Document\Manual\image\setting_pic_2.png" />
-    <None Remove="Resources\Document\Manual\index.html" />
-    <None Remove="Resources\Document\Manual\install.html" />
-    <None Remove="Resources\Document\Manual\intro.html" />
-    <None Remove="Resources\Document\Manual\layout.js" />
-    <None Remove="Resources\Document\Manual\others.html" />
-    <None Remove="Resources\Document\Manual\page-articulation.html" />
-    <None Remove="Resources\Document\Manual\page-common.html" />
-    <None Remove="Resources\Document\Manual\page-export.html" />
-    <None Remove="Resources\Document\Manual\page-midiconvert.html" />
-    <None Remove="Resources\Document\Manual\page-parts.html" />
-    <None Remove="Resources\Document\Manual\page-plugin.html" />
-    <None Remove="Resources\Document\Manual\page.html" />
-    <None Remove="Resources\Document\Manual\score.html" />
-    <None Remove="Resources\Document\Manual\ScreenLayout.html" />
-    <None Remove="Resources\Document\Manual\setting.html" />
-    <None Remove="Resources\Document\Manual\style.css" />
+    <None Remove="Languages\README.md" />
     <None Remove="Resources\license.txt" />
   </ItemGroup>
 
@@ -65,104 +28,253 @@
     <Content Include="DrumMap.qbd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Document\Manual\content.css">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\intoro_pic_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-articulation_pic_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-convert_pic_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-export_pic_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-parts_pic_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-parts_pic_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-parts_pic_3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_5.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_6.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_7_.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_8.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\page-plugin_pic_9.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\QB.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\setting_pic_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\image\setting_pic_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\index.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\install.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\intro.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\layout.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\others.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\page-articulation.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\page-common.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\page-export.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\page-midiconvert.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\page-parts.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\page-plugin.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\setting.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Document\Manual\style.css">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="LanguagePacks\de-DE\de.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\content.css" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\intoro_pic_1.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-articulation_pic_1.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-convert_pic_1.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-export_pic_1.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-parts_pic_1.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-parts_pic_2.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-parts_pic_3.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_1.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_2.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_3.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_4.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_5.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_6.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_7_.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_8.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\page-plugin_pic_9.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\QB.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\setting_pic_1.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\image\setting_pic_2.png" />
+    <Content Include="LanguagePacks\de-DE\Manual\index.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\install.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\intro.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\layout.js" />
+    <Content Include="LanguagePacks\de-DE\Manual\others.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\page-articulation.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\page-common.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\page-export.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\page-midiconvert.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\page-parts.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\page-plugin.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\setting.html" />
+    <Content Include="LanguagePacks\de-DE\Manual\style.css" />
+    <Content Include="LanguagePacks\de-DE\QBDrumMap.Resources.resx" />
+    <Content Include="LanguagePacks\es-ES\es.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\content.css" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\intoro_pic_1.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-articulation_pic_1.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-convert_pic_1.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-export_pic_1.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-parts_pic_1.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-parts_pic_2.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-parts_pic_3.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_1.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_2.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_3.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_4.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_5.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_6.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_7_.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_8.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\page-plugin_pic_9.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\QB.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\setting_pic_1.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\image\setting_pic_2.png" />
+    <Content Include="LanguagePacks\es-ES\Manual\index.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\install.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\intro.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\layout.js" />
+    <Content Include="LanguagePacks\es-ES\Manual\others.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\page-articulation.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\page-common.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\page-export.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\page-midiconvert.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\page-parts.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\page-plugin.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\setting.html" />
+    <Content Include="LanguagePacks\es-ES\Manual\style.css" />
+    <Content Include="LanguagePacks\es-ES\QBDrumMap.Resources.resx" />
+    <Content Include="LanguagePacks\fr-FR\fr.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\content.css" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\intoro_pic_1.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-articulation_pic_1.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-convert_pic_1.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-export_pic_1.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-parts_pic_1.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-parts_pic_2.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-parts_pic_3.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_1.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_2.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_3.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_4.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_5.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_6.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_7_.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_8.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\page-plugin_pic_9.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\QB.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\setting_pic_1.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\image\setting_pic_2.png" />
+    <Content Include="LanguagePacks\fr-FR\Manual\index.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\install.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\intro.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\layout.js" />
+    <Content Include="LanguagePacks\fr-FR\Manual\others.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\page-articulation.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\page-common.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\page-export.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\page-midiconvert.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\page-parts.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\page-plugin.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\setting.html" />
+    <Content Include="LanguagePacks\fr-FR\Manual\style.css" />
+    <Content Include="LanguagePacks\fr-FR\QBDrumMap.Resources.resx" />
+    <Content Include="LanguagePacks\ko-KR\kr.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\content.css" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\intoro_pic_1.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-articulation_pic_1.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-convert_pic_1.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-export_pic_1.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-parts_pic_1.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-parts_pic_2.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-parts_pic_3.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_1.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_2.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_3.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_4.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_5.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_6.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_7_.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_8.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\page-plugin_pic_9.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\QB.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\setting_pic_1.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\image\setting_pic_2.png" />
+    <Content Include="LanguagePacks\ko-KR\Manual\index.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\install.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\intro.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\layout.js" />
+    <Content Include="LanguagePacks\ko-KR\Manual\others.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\page-articulation.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\page-common.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\page-export.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\page-midiconvert.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\page-parts.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\page-plugin.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\setting.html" />
+    <Content Include="LanguagePacks\ko-KR\Manual\style.css" />
+    <Content Include="LanguagePacks\ko-KR\QBDrumMap.Resources.resx" />
+    <Content Include="LanguagePacks\pt-BR\br.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\content.css" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\intoro_pic_1.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-articulation_pic_1.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-convert_pic_1.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-export_pic_1.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-parts_pic_1.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-parts_pic_2.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-parts_pic_3.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_1.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_2.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_3.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_4.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_5.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_6.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_7_.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_8.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\page-plugin_pic_9.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\QB.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\setting_pic_1.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\image\setting_pic_2.png" />
+    <Content Include="LanguagePacks\pt-BR\Manual\index.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\install.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\intro.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\layout.js" />
+    <Content Include="LanguagePacks\pt-BR\Manual\others.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\page-articulation.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\page-common.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\page-export.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\page-midiconvert.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\page-parts.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\page-plugin.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\setting.html" />
+    <Content Include="LanguagePacks\pt-BR\Manual\style.css" />
+    <Content Include="LanguagePacks\pt-BR\QBDrumMap.Resources.resx" />
+    <Content Include="LanguagePacks\zh-CN\cn.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\content.css" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\intoro_pic_1.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-articulation_pic_1.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-convert_pic_1.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-export_pic_1.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-parts_pic_1.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-parts_pic_2.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-parts_pic_3.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_1.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_2.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_3.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_4.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_5.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_6.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_7_.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_8.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\page-plugin_pic_9.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\QB.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\setting_pic_1.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\image\setting_pic_2.png" />
+    <Content Include="LanguagePacks\zh-CN\Manual\index.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\install.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\intro.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\layout.js" />
+    <Content Include="LanguagePacks\zh-CN\Manual\others.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\page-articulation.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\page-common.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\page-export.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\page-midiconvert.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\page-parts.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\page-plugin.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\setting.html" />
+    <Content Include="LanguagePacks\zh-CN\Manual\style.css" />
+    <Content Include="LanguagePacks\zh-CN\QBDrumMap.Resources.resx" />
+    <Content Include="LanguagePacks\zh-TW\Manual\content.css" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\intoro_pic_1.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-articulation_pic_1.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-convert_pic_1.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-export_pic_1.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-parts_pic_1.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-parts_pic_2.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-parts_pic_3.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_1.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_2.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_3.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_4.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_5.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_6.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_7_.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_8.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\page-plugin_pic_9.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\QB.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\setting_pic_1.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\image\setting_pic_2.png" />
+    <Content Include="LanguagePacks\zh-TW\Manual\index.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\install.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\intro.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\layout.js" />
+    <Content Include="LanguagePacks\zh-TW\Manual\others.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\page-articulation.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\page-common.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\page-export.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\page-midiconvert.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\page-parts.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\page-plugin.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\setting.html" />
+    <Content Include="LanguagePacks\zh-TW\Manual\style.css" />
+    <Content Include="LanguagePacks\zh-TW\QBDrumMap.Resources.resx" />
+    <Content Include="LanguagePacks\zh-TW\tw.png" />
+    <Content Include="Languages\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -173,17 +285,48 @@
     <Content Include="Resources\QB.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Flags\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Document\Manual\ja\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Document\Manual\en\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\**\*.css;Languages\**\*.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-    <PackageReference Include="libMidi" Version="1.0.7" />
-    <PackageReference Include="libQB" Version="1.0.1" />
+    <PackageReference Include="libMidi" Version="2.0.0" />
+    <PackageReference Include="libQB" Version="2.0.0" />
     <PackageReference Include="MahApps.Metro" Version="2.4.11" />
     <PackageReference Include="MahApps.Metro.IconPacks.FontAwesome" Version="6.2.1" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="6.2.1" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.9" />
-    <PackageReference Include="NAudio.Midi" Version="2.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.13" />
+    <PackageReference Include="NAudio.Midi" Version="2.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Languages\**\*.resx" />
+    <None Remove="Languages\**\*.resx" />
+    <Content Include="Languages\**\*.resx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Languages\**\*.html" />
+    <Content Include="Languages\**\*.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Languages\**\*.png" />
+    <Content Include="Languages\**\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -203,16 +346,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Name.ja.resx">
+      <CustomToolNamespace>QBDrumMap</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Name.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Name.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>QBDrumMap</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.ja.resx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CustomToolNamespace>QBDrumMap</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>QBDrumMap</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>MIDI Convert</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>MIDI Convert</h1>
+<p>Convertit les données MIDI (SMF).</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-convert_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">Comment utiliser</h2>
+<p>
+            Sélectionnez le kit de base à partir duquel effectuer la conversion. Importez le fichier à convertir à l’aide du bouton sur le côté droit de<br/>
+            Target Midi File.<br/>
+            Alternativement, vous pouvez importer un fichier MIDI en le faisant glisser et en le déposant sur la page. (version 1.0.1 ou ultérieure)<br/>
+            Sélectionnez la cible de conversion dans la liste des kits sur le côté droit de l'écran (plusieurs sélections sont possibles) et appuyez sur le bouton de conversion. Spécifications de conversion
+        </p>
+<h2 id="specifications">La conversion</h2>
+<p>est effectuée en fonction des paramètres d'articulation de la mappe de batterie.</p>
+<p>
+            Les hauteurs pour lesquelles aucune articulation n'est spécifiée seront sorties sous forme de données séparées avec un « # » ajouté au début du nom du fichier d'origine.
+        </p>
+<p class="note">Par exemple, si la source de conversion est constituée de données incluant également des percussions de carte GM, la partie batterie et la partie percussion seront séparées.</p>
+<p>Le fichier de sortie converti sera créé dans le même dossier que le fichier d'origine.</p>
+<p class="note">Si le format de sortie est Format0, un dossier sera créé avec le nom de fichier d'origine + _converted, et un fichier y sera créé avec le nom de Drum Map converti.</p>
+<p class="note">Si le format de sortie est Format1, un fichier sera créé avec le nom de fichier d'origine + _converti, et une piste sera créée à l'intérieur avec le nom de Drum Map converti.</p>
+<h3>À propos du format de sortie</h3>
+<p>Si vous utilisez Cubase, il est préférable d'utiliser le format 0 car vous ne pouvez pas gérer des pistes individuelles dans un fichier MIDI.</p>
+</div>
+</body>
+</html>

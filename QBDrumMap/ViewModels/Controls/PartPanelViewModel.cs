@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
@@ -11,258 +11,223 @@ using QBDrumMap.Class.Services;
 using QBDrumMap.Views;
 using QBDrumMap.Views.Controls;
 
-namespace QBDrumMap.ViewModels.Controls
+namespace QBDrumMap.ViewModels.Controls;
+
+[DIUserControl<PartPanel>]
+public partial class PartPanelViewModel : ViewModelBase
 {
-    [DIUserControl<PartPanel>]
-    public partial class PartPanelViewModel : ViewModelBase
+    [ObservableProperty]
+    private Part _part;
+
+    [ObservableProperty]
+    private ICollectionView _articulationsView;
+
+    [ObservableProperty]
+    private ObservableCollection<Articulation> _selectedArticulations = new();
+
+    [ObservableProperty]
+    private Articulation _selectedArticulation;
+
+    public ISettingService Setting
     {
-        #region Fields
-
-        // 現在編集対象となっているパートモデル
-        [ObservableProperty]
-        private Part _part;
-
-        // アーティキュレーション一覧のビュー（表示用）
-        [ObservableProperty]
-        private ICollectionView _articulationsView;
-
-        // 選択されているアーティキュレーションのコレクション（複数選択用）
-        [ObservableProperty]
-        private ObservableCollection<Articulation> _selectedArticulations = new();
-
-        // 単一選択されているアーティキュレーション
-        [ObservableProperty]
-        private Articulation _selectedArticulation;
-
-        #endregion
-
-        #region Properties
-
-        // 設定サービスへの参照
-        public ISettingService Setting
+        get
         {
-            get
-            {
-                return SettingService;
-            }
+            return SettingService;
         }
+    }
 
-        #endregion
+    public PartPanelViewModel(IDIContainer diContainer, Part part)
+        : base(diContainer)
+    {
+        Part = part;
 
-        #region ctor
-
-        public PartPanelViewModel(IDIContainer diContainer, Part part)
-            : base(diContainer)
+        if (Part != null)
         {
-            Part = part;
+            Part.RegisterUndoManager(UndoManager);
 
-            if (Part != null)
+            ObservableCollection<Articulation> articulations = new([.. Part.Articulations.OrderBy(x =>
             {
-                Part.RegisterUndoManager(UndoManager);
+                return x.DisplayOrder;
+            })]);
 
-                // 表示順に基づいてソートし、コレクションを再構築
-                ObservableCollection<Articulation> articulations = new([.. Part.Articulations.OrderBy(x =>
-                {
-                    return x.DisplayOrder;
-                })]);
-
+            MapData.RunWithoutDirtyChange(() =>
+            {
                 Part.Articulations.Clear();
                 foreach (var articulation in articulations)
                 {
                     Part.Articulations.Add(articulation);
                 }
-            }
-
-            ArticulationsView = CollectionViewSource.GetDefaultView(Part?.Articulations);
-
-            MapData.EditStateChanged += OnPropertyChanged;
-        }
-
-        #endregion
-
-        #region Methods
-
-        #region Commands
-
-        [RelayCommand]
-        private async Task OnClearComplement(object value)
-        {
-            if (SelectedArticulation == null)
-            {
-                return;
-            }
-
-            string message = string.Format(libQB.Properties.Resources.Message_Command_Clear, Properties.Name.Complement);
-            if (await Dialog.ShowConfirmAsync(message, libQB.Properties.Dialog.Title_Command_Clear) == false)
-            {
-                return;
-            }
-
-            SelectedArticulation.Complement = 0;
-        }
-
-        [RelayCommand]
-        private void OnSearchComplement(object value)
-        {
-            if (value is not Articulation articulation)
-            {
-                return;
-            }
-
-            if (SelectedArticulation == null)
-            {
-                return;
-            }
-
-            WindowService.ShowWindowWithCallback<SearchArticulation, SearchArticulationViewModel, Articulation>(
-                parameter: articulation,
-                owner: Application.Current.Windows.OfType<Window>().FirstOrDefault(w =>
-                {
-                    return w.IsActive;
-                }),
-                resultCallback: result =>
-                {
-                    if (result != null)
-                    {
-                        SelectedArticulation.Complement = result.ID;
-                    }
-                });
-        }
-
-        [RelayCommand]
-        private void OnAdd()
-        {
-            if (Part == null)
-            {
-                return;
-            }
-
-            Articulation articulation = new();
-
-            int count = Part.Articulations.Count + 1;
-
-            // 既存の最大表示順を取得
-            var allArticulations = MapData.Parts.SelectMany(x =>
-            {
-                return x.Articulations;
             });
-
-            int order = allArticulations.Any() ? allArticulations.Max(x =>
-            {
-                return x.DisplayOrder;
-            }) + 1 : 1;
-
-            articulation.ID = allArticulations.GetNewID();
-            articulation.Name = $"{Part.Name} {count}";
-            articulation.DisplayOrder = int.MaxValue;
-            articulation.DrumMapOrder = order;
-
-            // 式ツリー制約のため、AddItemのラムダは式形式を維持
-            Part.Articulations.AddItem(articulation, x => x.DisplayOrder);
-
-            SelectedArticulation = articulation;
         }
 
-        [RelayCommand]
-        private void OnMoveTop() => Part?.Articulations.MoveTop(SelectedArticulations, x => x.DisplayOrder);
+        ArticulationsView = CollectionViewSource.GetDefaultView(Part?.Articulations);
 
-        [RelayCommand]
-        private void OnMoveUp() => Part?.Articulations.MoveUp(SelectedArticulations, x => x.DisplayOrder);
+        MapData.EditStateChanged += OnPropertyChanged;
+    }
 
-        [RelayCommand]
-        private void OnMoveDown() => Part?.Articulations.MoveDown(SelectedArticulations, x => x.DisplayOrder);
-
-        [RelayCommand]
-        private void OnMoveBottom() => Part?.Articulations.MoveBottom(SelectedArticulations, x => x.DisplayOrder);
-
-        [RelayCommand]
-        private async Task OnDeleteSelectedArticulations()
+    [RelayCommand]
+    private async Task OnClearComplement(object value)
+    {
+        if (SelectedArticulation == null)
         {
-            if (SelectedArticulations == null || SelectedArticulations.Count == 0)
-            {
-                return;
-            }
+            return;
+        }
 
-            string names = string.Join(", ", SelectedArticulations.Select(x =>
-            {
-                return x.Name;
-            }).ToArray());
+        string message = string.Format(App.Text("Message_Command_Clear"), App.NameText("Complement", Name.Complement));
+        if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Clear")) == false)
+        {
+            return;
+        }
 
-            string message = string.Format(libQB.Properties.Resources.Message_Command_Delete, Properties.Name.Articulation, names);
-            if (await Dialog.ShowConfirmAsync(message, libQB.Properties.Dialog.Title_Command_Delete) == false)
-            {
-                return;
-            }
+        SelectedArticulation.Complement = 0;
+    }
 
-            foreach (var item in SelectedArticulations.ToArray())
-            {
-                // 関連付けられている全キットピッチの参照を解除
-                var targetPitches = MapData.Plugins
-                    .SelectMany(x =>
-                    {
-                        return x.Kits;
-                    })
-                    .SelectMany(x =>
-                    {
-                        return x.Pitches;
-                    })
-                    .Where(x =>
-                    {
-                        return x.ArticulationID == item.ID;
-                    });
+    [RelayCommand]
+    private void OnSearchComplement(object value)
+    {
+        if (value is not Articulation articulation)
+        {
+            return;
+        }
 
-                foreach (var kitPitch in targetPitches.ToArray())
+        if (SelectedArticulation == null)
+        {
+            return;
+        }
+
+        WindowService.ShowWindowWithCallback<SearchArticulation, SearchArticulationViewModel, Articulation>(
+            parameter: articulation,
+            owner: Application.Current.Windows.OfType<Window>().FirstOrDefault(w =>
+            {
+                return w.IsActive;
+            }),
+            resultCallback: result =>
+            {
+                if (result != null)
                 {
-                    kitPitch.ArticulationID = 0;
+                    SelectedArticulation.Complement = result.ID;
                 }
+            });
+    }
 
-                Part?.Articulations.Remove(item);
-            }
-
-            SelectedArticulations.Clear();
-            SelectedArticulation = null;
-
-            ArticulationsView?.Refresh();
+    [RelayCommand]
+    private void OnAdd()
+    {
+        if (Part == null)
+        {
+            return;
         }
 
-        #endregion
+        Articulation articulation = new();
 
-        #region Property Change Handler
+        int count = Part.Articulations.Count + 1;
 
-        partial void OnSelectedArticulationChanged(Articulation oldValue, Articulation newValue)
+        var allArticulations = MapData.Parts.SelectMany(x =>
         {
-            oldValue?.UnregisterUndoManager();
-            newValue?.RegisterUndoManager(UndoManager);
+            return x.Articulations;
+        });
+
+        int order = allArticulations.Any() ? allArticulations.Max(x =>
+        {
+            return x.DisplayOrder;
+        }) + 1 : 1;
+
+        articulation.ID = MapData.NewArticulationID();
+        articulation.Name = $"{Part.Name} {count}";
+        articulation.DisplayOrder = int.MaxValue;
+        articulation.DrumMapOrder = order;
+
+        Part.Articulations.AddItem(articulation, x => x.DisplayOrder);
+
+        SelectedArticulation = articulation;
+    }
+
+    [RelayCommand]
+    private void OnMoveTop() => Part?.Articulations.MoveTop(SelectedArticulations, x => x.DisplayOrder);
+
+    [RelayCommand]
+    private void OnMoveUp() => Part?.Articulations.MoveUp(SelectedArticulations, x => x.DisplayOrder);
+
+    [RelayCommand]
+    private void OnMoveDown() => Part?.Articulations.MoveDown(SelectedArticulations, x => x.DisplayOrder);
+
+    [RelayCommand]
+    private void OnMoveBottom() => Part?.Articulations.MoveBottom(SelectedArticulations, x => x.DisplayOrder);
+
+    [RelayCommand]
+    private async Task OnDeleteSelectedArticulations()
+    {
+        if (SelectedArticulations == null || SelectedArticulations.Count == 0)
+        {
+            return;
         }
 
-        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        string names = string.Join(", ", SelectedArticulations.Select(x =>
         {
-            switch (e.PropertyName)
+            return x.Name;
+        }).ToArray());
+
+        string message = string.Format(App.Text("Message_Command_Delete"), App.NameText("Articulation", Name.Articulation), names);
+        if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Delete")) == false)
+        {
+            return;
+        }
+
+        foreach (var item in SelectedArticulations.ToArray())
+        {
+            var targetPitches = MapData.Plugins
+                .SelectMany(x =>
+                {
+                    return x.Kits;
+                })
+                .SelectMany(x =>
+                {
+                    return x.Pitches;
+                })
+                .Where(x =>
+                {
+                    return x.ArticulationID == item.ID;
+                });
+
+            foreach (var kitPitch in targetPitches.ToArray())
             {
-                case nameof(MapData.EditState):
-                    IsCommandEnabled = !MapData.EditState;
-                    break;
-                default:
-                    break;
+                kitPitch.ArticulationID = 0;
             }
+
+            Part?.Articulations.Remove(item);
         }
 
-        #endregion
+        SelectedArticulations.Clear();
+        SelectedArticulation = null;
 
-        #region Dispose
+        ArticulationsView?.Refresh();
+    }
 
-        protected override void Dispose(bool disposing)
+    partial void OnSelectedArticulationChanged(Articulation oldValue, Articulation newValue)
+    {
+        oldValue?.UnregisterUndoManager();
+        newValue?.RegisterUndoManager(UndoManager);
+    }
+
+    private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        switch (e.PropertyName)
         {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-                MapData.EditStateChanged -= OnPropertyChanged;
-            }
+            case nameof(MapData.EditState):
+                IsCommandEnabled = !MapData.EditState;
+                break;
+            default:
+                break;
         }
+    }
 
-        #endregion
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
 
-        #endregion
+        if (disposing)
+        {
+            MapData.EditStateChanged -= OnPropertyChanged;
+        }
     }
 }

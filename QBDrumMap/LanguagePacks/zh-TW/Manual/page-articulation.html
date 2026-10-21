@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<title>演奏法</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>演奏法</h1>
+<p>設定建立鼓映射時的排序順序。</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-articulation_pic_1.png" width="650"/>
+</div>
+<h2 id="order">關於顯示順序</h2>
+<h3>如果在匯出鼓圖譜時選取「使用演奏法」</h3>
+<p>鼓圖譜將依照下列規則分組，且各組將依照演奏法音高的降序排列。</p>
+<ol>
+<li>指定了發音但未指定分隔符號。</li>
+<li>未指定鉸接且指定分離。</li>
+<li>指定鉸接並指定分離。指定了</li>
+<li>鉸接並指定了未加載。指定了</li>
+<li>清晰度並指定了重複。</li>
+<li>未指定鉸接符號且未指定分隔符號。</li>
+</ol>
+<p>如果 2. 和 3. 之間存在未定義的最小間距，則會自動插入分隔符號（「==========」）。</p>
+<h3>若匯出鼓圖時未選取「使用演奏記號」</h3>
+<p>將以原樣應用音高列表順序。</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Outros</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Outros</h1>
+<h2 id="interpolation">Sobre a interpolação automática de articulações</h2>
+<p>Ao converter MIDI ou criar um mapa de bateria mapeado, um mapa de articulação é criado para cada mapa de bateria e a conversão de afinação é realizada com base nessas informações.</p>
+<p>Se não houver altura atribuída a uma articulação, uma altura alternativa será preenchida de acordo com as seguintes regras.</p>
+<ol>
+<li>Se a lista de articulações de cada parte de bateria estiver indefinida de cima para baixo, preencha a afinação anterior.</li>
+<li>Se a lista de articulações para cada parte de bateria estiver indefinida de baixo para cima, preencha a afinação anterior.</li>
+<li>Depois de executar 1.2. acima, se ainda estiver indefinido, preencha a altura da articulação definida como Complemento.</li>
+</ol>
+<p class="note">
+            De acordo com as regras acima, as articulações da parte da bateria requerem pelo menos uma atribuição de afinação.
+        </p>
+</div>
+</body>
+</html>

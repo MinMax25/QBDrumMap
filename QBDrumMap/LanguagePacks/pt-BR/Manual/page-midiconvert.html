@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Conversão MIDI</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Conversão MIDI</h1>
+<p>Converte dados MIDI (SMF).</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-convert_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">Como usar</h2>
+<p>
+            Selecione o kit básico para conversão. Importe o arquivo a ser convertido usando o botão à direita do<br/>
+            Target Midi File.<br/>
+            Alternativamente, você pode importar um arquivo MIDI arrastando e soltando-o na página. (versão 1.0.1 ou posterior)<br/>
+            Selecione o alvo de conversão na lista de kits no lado direito da tela (múltiplas seleções são possíveis) e pressione o botão converter.
+        </p>
+<h2 id="specifications">Especificações de conversão</h2>
+<p>A conversão é realizada com base nas configurações de articulação do mapa de bateria.</p>
+<p>
+            As alturas para as quais nenhuma articulação é especificada serão geradas como dados separados com um '#' adicionado ao início do nome do arquivo original.
+        </p>
+<p class="note">Por exemplo, se a fonte de conversão for dados que também incluam percussão de mapa GM, a parte de bateria e a parte de percussão serão separadas.</p>
+<p>O arquivo de saída convertido será criado na mesma pasta do arquivo original.</p>
+<p class="note">Se o formato de saída for Format0, uma pasta será criada com o nome do arquivo original + _converted, e um arquivo será criado nela com o nome do mapa de bateria convertido.</p>
+<p class="note">Se o formato de saída for Format1, um arquivo será criado com o nome do arquivo original + _converted, e uma trilha será criada dentro dele com o nome do mapa de bateria convertido.</p>
+<h3>Sobre o formato de saída</h3>
+<p>Se você estiver usando o Cubase, é melhor usar o formato 0, pois você não pode manipular trilhas individuais em um arquivo MIDI.</p>
+</div>
+</body>
+</html>

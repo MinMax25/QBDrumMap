@@ -1,13 +1,12 @@
-﻿using System.Windows.Controls;
+using System.Windows.Controls;
 
-namespace QBDrumMap.Views.Controls
+namespace QBDrumMap.Views.Controls;
+
+public partial class PartPanel
+    : UserControl
 {
-    public partial class PartPanel
-        : UserControl
+    public PartPanel()
     {
-        public PartPanel()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

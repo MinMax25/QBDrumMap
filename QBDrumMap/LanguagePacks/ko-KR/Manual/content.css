@@ -1,0 +1,178 @@
+/* ======================================================
+   全体・カード・背景・文字
+====================================================== */
+body {
+    font-family: "Yu Gothic", "游ゴシック体", "メイリオ", sans-serif;
+    background-color: #2b2b2b;
+    /* 濃いグレー */
+    color: #f0f0f0;
+    /* 明るめ文字色 */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #3c3c3c;
+    /* カード背景 */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+/* 見出し */
+h1 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #888888;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #888888;
+    margin-top: 3px;
+    border-radius: 2px;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #dddddd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ======================================================
+   リスト（縦線付きカード風）
+====================================================== */
+.sub-text {
+    font-size: 0.95em;
+    color: #bbbbbb;
+    margin-top: 4px;
+}
+
+ul>li {
+    list-style: none;
+    /* 丸ポチを消す */
+    margin-bottom: 8px;
+    padding: 2px 12px;
+    background-color: #3c3c3c;
+    border-left: 4px solid #888888;
+    /* 縦線 */
+    border-radius: 4px;
+}
+
+ul li li {
+    border-left: none;
+    background-color: #3c3c3c;
+    padding-left: 12px;
+}
+
+/* ======================================================
+   画像
+====================================================== */
+.image-wrapper,
+.contextmenu-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-wrapper img,
+.contextmenu-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================================
+   コンテクストメニューラッパー
+====================================================== */
+.contextmenu-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contextmenu-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* ======================================================
+   レスポンシブ
+====================================================== */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .contextmenu-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contextmenu-image img {
+        max-width: 100%;
+    }
+}
+
+/* 注意・補足用のスタイル */
+.note {
+    font-size: 0.9em;
+    color: #bbbbbb;
+    /* 薄いグレーの文字色 */
+    background-color: #2a2a2a;
+    /* ダークグレー背景 */
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-left: 4px solid #888888;
+    border-radius: 4px;
+}

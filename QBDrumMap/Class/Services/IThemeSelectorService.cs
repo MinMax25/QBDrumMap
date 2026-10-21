@@ -1,9 +1,8 @@
-﻿using libQB.Enums;
+using libQB.Enums;
 
-namespace QBDrumMap.Services
+namespace QBDrumMap.Services;
+
+public interface IThemeSelectorService
 {
-    public interface IThemeSelectorService
-    {
-        void SetTheme(BaseTheme theme, string colorname);
-    }
+    void SetTheme(BaseTheme theme, string colorname);
 }

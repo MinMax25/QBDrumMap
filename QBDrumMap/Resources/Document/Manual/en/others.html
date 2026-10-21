@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Others</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Others</h1>
+<h2 id="interpolation">About automatic interpolation of articulations</h2>
+<p>When converting MIDI or creating a mapped drum map, an articulation map is created for each drum map, and pitch conversion is performed based on that information.</p>
+<p>If there is no pitch assigned to an articulation, an alternate pitch will be filled in according to the following rules.</p>
+<ol>
+<li>If the articulation list for each drum part is undefined from the top to the bottom, fill in the previous pitch.</li>
+<li>If the articulation list for each drum part is undefined from the bottom to the top, fill in the previous pitch.</li>
+<li>After executing 1.2. above, if it is still undefined, fill in the pitch of the articulation set to Complement.</li>
+</ol>
+<p class="note">
+            According to the above rules, drum part articulations require at least one pitch assignment.
+        </p>
+</div>
+</body>
+</html>

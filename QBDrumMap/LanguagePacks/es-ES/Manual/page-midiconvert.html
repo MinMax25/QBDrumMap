@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Conversión MIDI</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Conversión MIDI</h1>
+<p>Convierte datos MIDI (SMF).</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-convert_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">Cómo utilizar</h2>
+<p>
+            Seleccione el kit base desde el que realizar la conversión. Importe el archivo a convertir usando el botón en el lado derecho de<br/>
+            Target Midi File.<br/>
+            Alternativamente, puede importar un archivo MIDI arrastrándolo y soltándolo en la página. (ver 1.0.1 o posterior)<br/>
+            Seleccione el objetivo de conversión de la lista de kits en el lado derecho de la pantalla (son posibles varias selecciones) y presione el botón de conversión.
+        </p>
+<h2 id="specifications">Especificaciones de conversión</h2>
+<p>La conversión se realiza en función de la configuración de articulación del mapa de batería.</p>
+<p>
+            Los tonos para los que no se especifica ninguna articulación se generarán como datos separados con un '#' añadido al principio del nombre del archivo original.
+        </p>
+<p class="note">Por ejemplo, si la fuente de conversión son datos que también incluyen percusión del mapa GM, la parte de batería y la parte de percusión se separarán.</p>
+<p>El archivo de salida convertido se creará en la misma carpeta que el archivo original.</p>
+<p class="note">Si el formato de salida es Format0, se creará una carpeta con el nombre del archivo original + _converted, y se creará un archivo en ella con el nombre del drum map convertido.</p>
+<p class="note">Si el formato de salida es Format1, se creará un archivo con el nombre del archivo original + _convertido, y se creará una pista dentro de él con el nombre del mapa de batería convertido.</p>
+<h3>Acerca del formato de salida</h3>
+<p>Si está utilizando Cubase, es mejor utilizar el formato 0 ya que no puede manejar pistas individuales en un archivo MIDI.</p>
+</div>
+</body>
+</html>

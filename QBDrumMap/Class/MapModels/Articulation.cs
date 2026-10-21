@@ -1,74 +1,53 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using QBDrumMap.Class.CustomValidations;
 
-namespace QBDrumMap.Class.MapModels
+namespace QBDrumMap.Class.MapModels;
+
+public partial class Articulation : ModelBase, IHasID
 {
-    public partial class Articulation : ModelBase, IHasID
+    [ObservableProperty]
+    private int iD;
+
+    [ObservableProperty]
+    [ValidateArticulation]
+    [NotifyDataErrorInfo]
+    private string name = string.Empty;
+
+    [ObservableProperty]
+    private int complement;
+
+    [ObservableProperty]
+    private int drumMapOrder;
+
+    partial void OnIDChanged(int oldValue, int newValue)
     {
-        #region Fields
+        UndoManager?.RegisterPropertyChange(() => ID, oldValue, newValue);
+    }
 
-        // アーティキュレーションの一意なID
-        [ObservableProperty]
-        private int iD;
+    partial void OnNameChanged(string oldValue, string newValue)
+    {
+        UndoManager?.RegisterPropertyChange(() => Name, oldValue, newValue);
+    }
 
-        // アーティキュレーション名
-        [ObservableProperty]
-        [ValidateArticulation]
-        [NotifyDataErrorInfo]
-        private string name = string.Empty;
+    partial void OnComplementChanged(int oldValue, int newValue)
+    {
+        UndoManager?.RegisterPropertyChange(() => Complement, oldValue, newValue);
+    }
 
-        // 補足情報または補完データ
-        [ObservableProperty]
-        private int complement;
+    partial void OnDrumMapOrderChanged(int oldValue, int newValue)
+    {
+        UndoManager?.RegisterPropertyChange(() => DrumMapOrder, oldValue, newValue);
+    }
 
-        // ドラムマップ表示時の並び順
-        [ObservableProperty]
-        private int drumMapOrder;
-
-        #endregion
-
-        #region Methods
-
-        #region Property Change Handler
-
-        partial void OnIDChanged(int oldValue, int newValue)
+    public override object Clone()
+    {
+        return new Articulation
         {
-            UndoManager?.RegisterPropertyChange(() => ID, oldValue, newValue);
-        }
-
-        partial void OnNameChanged(string oldValue, string newValue)
-        {
-            UndoManager?.RegisterPropertyChange(() => Name, oldValue, newValue);
-        }
-
-        partial void OnComplementChanged(int oldValue, int newValue)
-        {
-            UndoManager?.RegisterPropertyChange(() => Complement, oldValue, newValue);
-        }
-
-        partial void OnDrumMapOrderChanged(int oldValue, int newValue)
-        {
-            UndoManager?.RegisterPropertyChange(() => DrumMapOrder, oldValue, newValue);
-        }
-
-        #endregion
-
-        #region General
-
-        public override object Clone()
-        {
-            return new Articulation
-            {
-                ID = ID,
-                Name = Name,
-                Complement = Complement,
-                DrumMapOrder = DrumMapOrder,
-                DisplayOrder = DisplayOrder
-            };
-        }
-
-        #endregion
-
-        #endregion
+            ID = ID,
+            Name = Name,
+            Complement = Complement,
+            DrumMapOrder = DrumMapOrder,
+            DisplayOrder = DisplayOrder
+        };
     }
 }

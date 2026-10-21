@@ -1,9 +1,8 @@
-﻿namespace QBDrumMap.Contracts.Activation
-{
-    public interface IActivationHandler
-    {
-        bool CanHandle();
+namespace QBDrumMap.Contracts.Activation;
 
-        Task HandleAsync();
-    }
+public interface IActivationHandler
+{
+    bool CanHandle();
+
+    Task HandleAsync();
 }

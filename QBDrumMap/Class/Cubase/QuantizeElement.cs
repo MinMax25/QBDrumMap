@@ -1,8 +1,7 @@
-﻿namespace QBDrumMap.Class.Cubase
+namespace QBDrumMap.Class.Cubase;
+
+public class QuantizeElement
+    : ListElement<QuantizeItem>
 {
-    public class QuantizeElement
-        : ListElement<QuantizeItem>
-    {
-        public QuantizeElement() : base(new List<QuantizeItem>()) { }
-    }
+    public QuantizeElement() : base(new List<QuantizeItem>()) { }
 }

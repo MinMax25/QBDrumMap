@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Articulação</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Articulação</h1>
+<p>Defina a ordem de classificação ao criar um mapa de bateria.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-articulation_pic_1.png" width="650"/>
+</div>
+<h2 id="order">Sobre a ordem de exibição</h2>
+<h3>Se "Usar articulações" estiver marcado ao exportar o mapa de bateria</h3>
+<p>Os mapas de bateria serão agrupados de acordo com as seguintes regras e dentro dos grupos eles serão classificados em ordem decrescente de tom de articulação.</p>
+<ol>
+<li>A articulação é especificada, mas o separador não é especificado.</li>
+<li>Articulação não foi especificada e Separado foi especificado.</li>
+<li>Articulação é especificada e Separado é especificado. A articulação</li>
+<li>é especificada e Não carregado é especificado.</li>
+<li>Articulação é especificada e Duplicado é especificado.</li>
+<li>A articulação não foi especificada e o separador não foi especificado.</li>
+</ol>
+<p>Se houver um pitch mínimo indefinido entre 2. e 3., um separador ("==========") será interpolado automaticamente.</p>
+<h3>Se "Usar articulações" não estiver marcado ao exportar o mapa de bateria</h3>
+<p>A ordem da lista de notas será aplicada como está.</p>
+</div>
+</body>
+</html>

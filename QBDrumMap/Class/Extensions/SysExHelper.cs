@@ -1,24 +1,23 @@
-﻿using System.Reflection;
+using System.Reflection;
 using libMidi.Messages.attributes;
 using libMidi.Messages.enums;
 
-namespace QBDrumMap.Class.Extensions
+namespace QBDrumMap.Class.Extensions;
+
+public static class SysExHelper
 {
-    public static class SysExHelper
+    public static byte[] GetExclusiveData(SysExType type)
     {
-        public static byte[] GetExclusiveData(SysExType type)
-        {
-            byte[] data = [0xF0];
+        byte[] data = [0xF0];
 
-            var fieldInfo = typeof(SysExType).GetField(type.ToString());
-            if (fieldInfo == null)
-                return null;
+        var fieldInfo = typeof(SysExType).GetField(type.ToString());
+        if (fieldInfo == null)
+            return null;
 
-            var attribute = fieldInfo.GetCustomAttribute<ExclusiveAttribute>();
-            if (attribute?.Data == null)
-                return null;
+        var attribute = fieldInfo.GetCustomAttribute<ExclusiveAttribute>();
+        if (attribute?.Data == null)
+            return null;
 
-            return data.Concat(attribute.Data).ToArray();
-        }
+        return data.Concat(attribute.Data).ToArray();
     }
 }

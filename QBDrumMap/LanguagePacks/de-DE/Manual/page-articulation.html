@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Artikulation</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Artikulation</h1>
+<p>Legen Sie die Sortierreihenfolge beim Erstellen einer Drum-Map fest.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-articulation_pic_1.png" width="650"/>
+</div>
+<h2 id="order">Über die Anzeigereihenfolge</h2>
+<h3>Wenn „Artikulationen verwenden“ beim Exportieren der Drum-Map aktiviert ist</h3>
+<p>Die Drum-Maps werden nach den folgenden Regeln gruppiert und innerhalb der Gruppen in absteigender Reihenfolge der Artikulationshöhe sortiert.</p>
+<ol>
+<li>Artikulation ist angegeben, aber kein Trennzeichen.</li>
+<li>Artikulation ist nicht angegeben und Separat ist angegeben.</li>
+<li>Artikulation ist angegeben und Separat ist angegeben. Die Artikulation</li>
+<li>ist angegeben und „Nicht geladen“ ist angegeben.</li>
+<li>Artikulation ist angegeben und Duplikat ist angegeben.</li>
+<li>Artikulation ist nicht angegeben und Trennzeichen ist nicht angegeben.</li>
+</ol>
+<p>Liegt zwischen 2. und 3. ein undefinierter Mindestabstand, wird automatisch ein Trennzeichen („==========") interpoliert.</p>
+<h3>Wenn „Artikulationen verwenden“ beim Exportieren der Drum-Map nicht aktiviert ist</h3>
+<p>Die Reihenfolge der Tonhöhenliste wird unverändert angewendet.</p>
+</div>
+</body>
+</html>

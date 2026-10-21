@@ -1,274 +1,169 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Windows.Data;
 
-namespace QBDrumMap.Class.MapModels
+namespace QBDrumMap.Class.MapModels;
+
+public static class ExModel
 {
-    public static class ExModel
+    private static readonly PropertyChangedEventArgs EmptyEventArgs = new PropertyChangedEventArgs(string.Empty);
+
+    public static int NAME_MAX_LENGTH = 64;
+
+    public static void AddItem<T>(this ObservableCollection<T> source, T value, Expression<Func<T, dynamic>> f)
+        where T : IHasDisplayOrder
     {
-        #region Fields
+        source.SuppressNotifications();
 
-        // 空のプロパティ変更イベント引数
-        private static readonly PropertyChangedEventArgs EmptyEventArgs = new PropertyChangedEventArgs(string.Empty);
+        f.SetValue(value, int.MaxValue);
 
-        // 名前の最大文字数
-        public static int NAME_MAX_LENGTH = 64;
+        source.Add(value);
 
-        #endregion
+        int count = 1;
 
-        #region Methods
-
-        #region General
-
-        public static int GetNewID(this IEnumerable<IHasID> target)
+        foreach (var item in source.OrderBy(f.Compile()).ToArray())
         {
-            int min = target.Any() ? target.Min(x => x.ID) : 0;
-            int max = target.Any() ? target.Max(x => x.ID) : 0;
-
-            List<int> numbers = target.Select(x => x.ID).ToList();
-
-            List<int> missing = Enumerable.Range(1, max - min + 1)
-                .Except(numbers)
-                .ToList();
-
-            if (numbers.Any() && missing.Any())
-            {
-                return missing.First();
-            }
-
-            return max + 1;
+            f.SetValue(item, count++);
         }
 
-        public static void AddItem<T>(this ObservableCollection<T> source, T value, Expression<Func<T, dynamic>> f)
-            where T : IHasDisplayOrder
+        source.SortRefresh(f);
+
+        source.ResumeNotifications();
+    }
+
+    public static void MoveTop<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
+        where T : IHasDisplayOrder
+    {
+        Reorder(source, target, f, (items, selected) =>
+            items.Where(selected.Contains).Concat(items.Where(x => !selected.Contains(x))).ToList());
+    }
+
+    public static void MoveUp<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
+        where T : IHasDisplayOrder
+    {
+        Reorder(source, target, f, (items, selected) =>
         {
-            source.SuppressNotifications();
+            var others = items.Where(x => !selected.Contains(x)).ToList();
+            int index = Math.Max(0, items.TakeWhile(x => !selected.Contains(x)).Count() - 1);
+            others.InsertRange(index, items.Where(selected.Contains));
+            return others;
+        });
+    }
 
-            f.SetValue(value, int.MaxValue);
+    public static void MoveDown<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
+        where T : IHasDisplayOrder
+    {
+        Reorder(source, target, f, (items, selected) =>
+        {
+            var others = items.Where(x => !selected.Contains(x)).ToList();
+            int lastSelected = items.FindLastIndex(selected.Contains);
+            int index = Math.Min(others.Count, items.Take(lastSelected).Count(x => !selected.Contains(x)) + 1);
+            others.InsertRange(index, items.Where(selected.Contains));
+            return others;
+        });
+    }
 
-            source.Add(value);
+    public static void MoveBottom<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
+        where T : IHasDisplayOrder
+    {
+        Reorder(source, target, f, (items, selected) =>
+            items.Where(x => !selected.Contains(x)).Concat(items.Where(selected.Contains)).ToList());
+    }
 
-            int count = 1;
-
-            foreach (var item in source.OrderBy(f.Compile()).ToArray())
-            {
-                f.SetValue(item, count++);
-            }
-
-            source.SortRefresh(f);
-
-            source.ResumeNotifications();
+    private static void Reorder<T>(
+        ObservableCollection<T> source,
+        ObservableCollection<T> target,
+        Expression<Func<T, dynamic>> f,
+        Func<List<T>, HashSet<T>, List<T>> arrange)
+        where T : IHasDisplayOrder
+    {
+        var selected = target.Where(source.Contains).ToHashSet();
+        if (selected.Count == 0)
+        {
+            return;
         }
 
-        public static void MoveTop<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
-            where T : IHasDisplayOrder
+        var key = f.Compile();
+        var current = source
+            .Select((item, index) => new { item, index })
+            .OrderBy(x => key(x.item))
+            .ThenBy(x => x.index)
+            .Select(x => x.item)
+            .ToList();
+
+        var arranged = arrange(current.ToList(), selected);
+
+        if (arranged.SequenceEqual(current))
         {
-            if (!target.Any())
-            {
-                return;
-            }
-
-            source.SuppressNotifications();
-
-            var tops = target.OrderBy(f.Compile()).ToArray();
-            var bottoms = source.Where(x => !target.Contains(x)).OrderBy(f.Compile()).ToArray();
-
-            int order = 1;
-
-            foreach (var item in tops)
-            {
-                f.SetValue(item, order++);
-            }
-
-            foreach (var item in bottoms)
-            {
-                f.SetValue(item, order++);
-            }
-
-            source.SortRefresh(f);
-
-            source.ResumeNotifications();
+            return;
         }
 
-        public static void MoveUp<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
-            where T : IHasDisplayOrder
+        int order = 1;
+        foreach (var item in arranged)
         {
-            if (!target.Any())
+            if (f.GetValue(item) != order)
             {
-                return;
+                f.SetValue(item, order);
             }
 
-            source.SuppressNotifications();
-
-            int pos = f.GetValue(target[0]) - 1;
-
-            if (pos <= 0)
-            {
-                source.ResumeNotifications();
-                return;
-            }
-
-            var tops = source.Where(x => f.GetValue(x) < pos).OrderBy(f.Compile()).ToArray();
-            var middles = target.OrderBy(f.Compile()).ToArray();
-            var bottoms = source.Where(x => !target.Contains(x) && f.GetValue(x) >= pos).OrderBy(f.Compile()).ToArray();
-
-            int order = 1;
-
-            foreach (var item in tops)
-            {
-                f.SetValue(item, order++);
-            }
-
-            foreach (var item in middles)
-            {
-                f.SetValue(item, order++);
-            }
-
-            foreach (var item in bottoms)
-            {
-                f.SetValue(item, order++);
-            }
-
-            source.SortRefresh(f);
-
-            source.ResumeNotifications();
+            order++;
         }
 
-        public static void MoveDown<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
-            where T : IHasDisplayOrder
+        source.SortRefresh(f);
+    }
+
+    public static void SortRefresh<T>(this ObservableCollection<T> source, Expression<Func<T, dynamic>> f)
+        where T : IHasDisplayOrder
+    {
+        string propertyName = f?.GetPropertyName() ?? nameof(IHasDisplayOrder.DisplayOrder);
+
+        var sort = CollectionViewSource.GetDefaultView(source);
+
+        sort.SortDescriptions.Clear();
+        sort.SortDescriptions.Add(new SortDescription(propertyName, ListSortDirection.Ascending));
+        sort.Refresh();
+    }
+
+    public static void SuppressNotifications<T>(this ObservableCollection<T> collection)
+    {
+        collection.CollectionChanged -= OnCollectionChanged;
+    }
+
+    public static void ResumeNotifications<T>(this ObservableCollection<T> collection)
+    {
+        collection.CollectionChanged += OnCollectionChanged;
+    }
+
+    private static string GetPropertyName<T>(this Expression<Func<T, dynamic>> f)
+    {
+        var unary = f.Body as UnaryExpression;
+        if (unary?.Operand is not MemberExpression member)
         {
-            if (!target.Any())
+            if (f.Body is not MemberExpression memberBody)
             {
-                return;
+                throw new ArgumentException("Expression must be a member expression");
             }
 
-            int pos = f.GetValue(target.Last()) + 1;
-
-            if (pos > source.Max(f.Compile()))
-            {
-                return;
-            }
-
-            source.SuppressNotifications();
-
-            var tops = source.Where(x => !target.Contains(x) && f.GetValue(x) <= pos).OrderBy(f.Compile()).ToArray();
-            var middles = target.OrderBy(f.Compile()).ToArray();
-            var bottoms = source.Where(x => f.GetValue(x) > pos).OrderBy(f.Compile()).ToArray();
-
-            int order = 1;
-
-            foreach (var item in tops)
-            {
-                f.SetValue(item, order++);
-            }
-
-            foreach (var item in middles)
-            {
-                f.SetValue(item, order++);
-            }
-
-            foreach (var item in bottoms)
-            {
-                f.SetValue(item, order++);
-            }
-
-            source.SortRefresh(f);
-
-            source.ResumeNotifications();
+            member = memberBody;
         }
 
-        public static void MoveBottom<T>(this ObservableCollection<T> source, ObservableCollection<T> target, Expression<Func<T, dynamic>> f)
-            where T : IHasDisplayOrder
-        {
-            if (!target.Any())
-            {
-                return;
-            }
+        return member.Member.Name;
+    }
 
-            source.SuppressNotifications();
+    private static void SetValue<T>(this Expression<Func<T, dynamic>> f, T target, dynamic value)
+    {
+        string pn = f.GetPropertyName();
+        typeof(T).GetProperty(pn)?.SetValue(target, value, null);
+    }
 
-            var tops = target.OrderBy(f.Compile()).ToArray();
-            var bottoms = source.Where(x => !target.Contains(x)).OrderBy(f.Compile()).ToArray();
+    private static dynamic GetValue<T>(this Expression<Func<T, dynamic>> f, T target)
+    {
+        string pn = f.GetPropertyName();
+        return typeof(T).GetProperty(pn)?.GetValue(target);
+    }
 
-            int order = 1;
-
-            foreach (var item in bottoms)
-            {
-                f.SetValue(item, order++);
-            }
-
-            foreach (var item in tops)
-            {
-                f.SetValue(item, order++);
-            }
-
-            source.SortRefresh(f);
-
-            source.ResumeNotifications();
-        }
-
-        public static void SortRefresh<T>(this ObservableCollection<T> source, Expression<Func<T, dynamic>> f)
-            where T : IHasDisplayOrder
-        {
-            string propertyName = f?.GetPropertyName() ?? nameof(IHasDisplayOrder.DisplayOrder);
-
-            var sort = CollectionViewSource.GetDefaultView(source);
-
-            sort.SortDescriptions.Clear();
-            sort.SortDescriptions.Add(new SortDescription(propertyName, ListSortDirection.Ascending));
-            sort.Refresh();
-        }
-
-        public static void SuppressNotifications<T>(this ObservableCollection<T> collection)
-        {
-            collection.CollectionChanged -= OnCollectionChanged;
-        }
-
-        public static void ResumeNotifications<T>(this ObservableCollection<T> collection)
-        {
-            collection.CollectionChanged += OnCollectionChanged;
-        }
-
-        #endregion
-
-        #region Private
-
-        private static string GetPropertyName<T>(this Expression<Func<T, dynamic>> f)
-        {
-            var unary = f.Body as UnaryExpression;
-            if (unary?.Operand is not MemberExpression member)
-            {
-                if (f.Body is not MemberExpression memberBody)
-                {
-                    throw new ArgumentException("Expression must be a member expression");
-                }
-
-                member = memberBody;
-            }
-
-            return member.Member.Name;
-        }
-
-        private static void SetValue<T>(this Expression<Func<T, dynamic>> f, T target, dynamic value)
-        {
-            string pn = f.GetPropertyName();
-            typeof(T).GetProperty(pn)?.SetValue(target, value, null);
-        }
-
-        private static dynamic GetValue<T>(this Expression<Func<T, dynamic>> f, T target)
-        {
-            string pn = f.GetPropertyName();
-            return typeof(T).GetProperty(pn)?.GetValue(target);
-        }
-
-        private static void OnCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            // 通知の抑制用スタブ
-        }
-
-        #endregion
-
-        #endregion
+    private static void OnCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+    {
     }
 }

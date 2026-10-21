@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Plug-in</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Plug-in</h1>
+<p>Bearbeitet die Drum-Map.</p>
+<h2 id="drummap">Drum-Map bearbeiten</h2>
+<p>Plug-in- und Kit-Informationen festlegen.</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_7_.png"/>
+</div>
+<ul>
+<li class="sub-text">Wählen Sie ein Plugin aus der Plugin-Liste aus. Fügen Sie das Plugin hinzu, falls es nicht vorhanden ist.</li>
+<li class="sub-text">Wählen Sie ein Kit aus der Kit-Liste aus. Wenn Sie kein Kit haben, fügen Sie eines hinzu.</li>
+<li class="sub-text">Konfigurieren Sie die Karte mithilfe der Pitch-Liste.</li>
+</ul>
+<h2 id="pitchlist">Pitch-Liste</h2>
+<p>Legen Sie die in VST (Drum-Soundquelle) definierten Drum-Map-Informationen fest.</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_8.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Name
+                <ul>
+<li class="sub-text">Geben Sie den Tonhöhennamen ein. Wenn es leer ist, wird die Tonhöhe nicht festgelegt.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Artikulation
+                <ul>
+<li class="sub-text">Öffnen Sie den Artikulationsauswahlbildschirm über die Suchschaltfläche und wählen Sie die entsprechende aus.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Trennzeichen
+                <ul>
+<li class="sub-text">Wählen Sie das entsprechende aus dem Kombinationsfeld aus.</li>
+</ul>
+</li>
+</ul>
+<h3 id="filter">Filter</h3>
+<p>Filter nach Tonhöhenname und Artikulationsname.</p>
+<div class="image-wrapper">
+<img height="40%" src="image/page-plugin_pic_5.png" width="40%"/>
+</div>
+<p>Sie können einen Platzhalter mit einem Sternchen (*) angeben.</p>
+<ul>
+<li>Wenn nicht angegeben, genaue Übereinstimmung.</li>
+<li>Wenn am Anfang des Schlüsselworts platziert, mit dem Suffix übereinstimmen.</li>
+<li>Wenn am Ende des Schlüsselworts platziert, mit dem Anfang übereinstimmen.</li>
+<li>Wenn vor oder nach dem Schlüsselwort platziert, teilweise übereinstimmen.</li>
+</ul>
+<h3>Sortieren.</h3>
+<ul>
+<li class="sub-text">Geben Sie jedes Element der entsprechenden Tonhöhenlinie ein.</li>
+<li class="sub-text">
+                Sie können die Sortierreihenfolge ändern, indem Sie auf die Spaltenüberschrift klicken.
+                <ul>
+<li class="sub-text">Mit dem ersten Klick wird es in aufsteigender Reihenfolge sortiert, mit dem zweiten wird es in absteigender Reihenfolge sortiert und mit dem dritten wird es in den Ausgangszustand zurückversetzt.</li>
+<li class="sub-text">Einige Bearbeitungsfunktionen sind im sortierten Zustand eingeschränkt. Wenn Sie es bearbeiten möchten, setzen Sie es bitte in den Ausgangszustand zurück.</li>
+</ul>
+</li>
+</ul>
+<h2 id="soundcheck">Soundcheck</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_6.png"/>
+</div>
+<p>Durch Klicken auf das Lautsprechersymbol in jeder Zeile der Tonhöhenliste werden Note-On/Off-Nachrichten für diese Zeile an den MIDI-Port gesendet.</p>
+<h2 id="contextmenu">Kontextmenü</h2>
+<p>Wird durch Rechtsklick auf die Pitch-Liste angezeigt.</p>
+<div class="contextmenu-wrapper">
+<div class="contextmenu-image">
+<img src="image/page-plugin_pic_2.png"/>
+</div>
+<ul class="contextmenu-list">
+<li class="sub-text">Anzeige der Artikulationskarte</li>
+<li class="sub-text">
+                    Drum-Map-Export
+                    <ul>
+<li class="sub-text">Studio One</li>
+<li class="sub-text">Cubase</li>
+<li class="sub-text">.tsv-Text</li>
+</ul>
+</li>
+<li class="sub-text">Drum-Map-Import (.pitchlist, .drm, .tsv)</li>
+<li class="sub-text">
+                    Tonhöhenliste sortieren
+                    <ul>
+<li class="sub-text">Nach Tonhöhe sortieren</li>
+<li class="sub-text">Vorwärts bewegen</li>
+</ul>
+</li>
+<li class="sub-text">Artikulationen aus anderen Karten kopieren</li>
+<li class="sub-text">
+                    Artikulationen automatisch zuweisen
+                    <ul>
+<li class="sub-text">Artikulationen automatisch auf nicht festgelegte Tonhöhen setzen, basierend auf Kartendaten-Artikulationen (Teilenamen-Wörterbuch, Einstellungen anderer Kits, Ähnlichkeitsabgleich). Bei</li>
+<li class="sub-text">GM/GS/XG-Plug-Ins unterliegen Standardnoten für Percussion keinen automatischen Einstellungen.</li>
+<li class="sub-text">Separator ist für Tonhöhen, die einen Namen, aber keine Artikulation haben, auf „Separat“ eingestellt.</li>
+</ul>
+</li>
+<li class="sub-text">
+                    Artikulationen und Trennzeichen löschen
+                    <ul>
+<li class="sub-text">Setzt Artikulationen und Trennzeichen für alle Tonhöhen im Kit in ihren nicht festgelegten Zustand zurück (Tonhöhennamen werden nicht geändert).</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="articulationmap">Artikulationskarte</h2>
+<p class="sub-text">Wird angezeigt, wenn sie über das Kontextmenü aufgerufen wird. Hier können Sie sehen, welche Tonhöhen welchen Artikulationen zugeordnet sind.</p>
+<div class="image-wrapper">
+<img alt="Artikulationskarte" height="60%" src="image/page-plugin_pic_3.png" width="60%"/>
+</div>
+<p class="sub-text">Zeigt die der Artikulation zugeordnete Tonhöhe an.</p>
+<p class="note">Bei den markierten Elementen in der Spalte „Sub“ handelt es sich um automatisch interpolierte Tonhöhen.</p>
+<h2 id="options">Plug-in-Option</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_9.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                Sound Check Velocity
+                <ul>
+<li class="sub-text">Legen Sie den Note-On-Velocity-Wert fest, der ausgegeben wird, wenn die Soundcheck-Taste gedrückt wird.</li>
+</ul>
+</li>
+<li class="sub-text">
+                Input Fixed Enable
+                <ul>
+<li class="sub-text">MIDI In Fixed Pitch.</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI In Device
+                <ul>
+<li class="sub-text">Wählen Sie den Port aus, an den das MIDI-Keyboard angeschlossen ist. Wenn nicht erforderlich, wählen Sie bitte „Leer“ aus. Falls verfügbar, wird „Verbunden“ angezeigt; Falls nicht verfügbar, wird „Nicht verbunden“ angezeigt.</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI In Fixed Pitch
+                <ul>
+<li class="sub-text">
+                        Gibt die Tonhöhe der MIDI-Tastaturnoten-Ein/Aus-Meldungen an, die akzeptiert werden sollen.<br/>
+                        Wenn Sie diesen Wert angeben und „Input Fixed“ aktivieren,
+                        Die MIDI-Tastatureingabe wird in die in der Tonhöhenliste ausgewählte Note-Ein/Aus-Meldung umgewandelt und ausgegeben.
+                    </li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI-Out-Gerät
+                <ul>
+<li class="sub-text">Wählen Sie das Ausgabeziel für MIDI-Nachrichten. Falls verfügbar, wird „Verbunden“ angezeigt; Falls nicht verfügbar, wird „Nicht verbunden“ angezeigt.</li>
+</ul>
+</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- setting.html -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Settings</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Settings</h1>
+<p>The settings page is displayed by clicking the gear icon at the bottom of the hamburger menu.</p>
+<p class="note"><strong>Important notice for upgrading:</strong> This release changes the settings file format from JSON to TOML. Settings from previous versions are not migrated automatically. Please configure your settings again after upgrading.</p>
+<div class="image-wrapper">
+<img alt="QB DrumMap screen image" height="400" src="image/setting_pic_1.png" width="650"/>
+</div>
+<h2 id="theme">Setting a Theme</h2>
+<p>You can choose from the following themes:</p>
+<ul>
+<li>Light</li>
+<li>Dark</li>
+</ul>
+<p>You can also specify an accent color.</p>
+<h2 id="language">Setting the language</h2>
+<p>The Language combo box supports these options:</p>
+<ul>
+<li>English and Japanese are built in.</li>
+<li>Other languages are available when a language pack is placed under <code>Languages/&lt;culture-code&gt;/</code> in the application folder.</li>
+</ul>
+<p>The selected language is applied to the application. Available additional languages depend on the installed language packs.</p>
+<h2 id="startup-page">Setting the startup page</h2>
+<p>Start Up Page combo box allows you to specify the page that is initially displayed at startup.</p>
+<p>Changes will be reflected the next time the program is started.</p>
+<h2 id="load-on-startup">Set loading at startup</h2>
+<ul>
+<li>Checked: The last opened file will be automatically opened the next time the program is started.</li>
+<li>Unchecked: A new screen will be displayed.</li>
+</ul>
+<h2 id="cubase-path">Setting the installation destination for Cubase</h2>
+<p>When using Cubase's score function, specify the installation destination.</p>
+<p class="note">*If you do not have Cubase (version 14 or later) or do not need drum score display, you can leave it unset.</p>
+<h2 id="part-name-dictionary">Setting the part name dictionary</h2>
+<p>
+            Edit the notation variation dictionary for drum part names used in "Auto Articulation Assignment" on the plug-in page.
+        </p>
+<div class="image-wrapper">
+<img alt="Part Name Dictionary screen image" height="200" src="image/setting_pic_2.png" width="650"/>
+</div>
+<ul>
+<li class="sub-text">Canonical Name: Enter the part name (official name) set on the Part page.</li>
+<li class="sub-text">Aliases (comma separated): Enter the spelling variations of the Canonical Name separated by commas (e.g. "Bass Drum,BD"). Add a line with the</li>
+<li class="sub-text">+ button, and delete it by pressing the Delete key on the selected line.</li>
+</ul>
+<p class="note">
+            This dictionary is used to automatically set articulations by inferring parts from pitch names.
+            Please register if the drum parts are called differently (Kick / Bass Drum / BD etc.) depending on the plug-in.
+        </p>
+</div>
+</body>
+</html>

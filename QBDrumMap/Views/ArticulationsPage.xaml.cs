@@ -1,15 +1,14 @@
-﻿using System.Windows.Controls;
+using System.Windows.Controls;
 using QBDrumMap.ViewModels;
 
-namespace QBDrumMap.Views
+namespace QBDrumMap.Views;
+
+public partial class ArticulationsPage
+    : Page
 {
-    public partial class ArticulationsPage
-        : Page
+    public ArticulationsPage(ArticulationsViewModel viewModel)
     {
-        public ArticulationsPage(ArticulationsViewModel viewModel)
-        {
-            InitializeComponent();
-            DataContext = viewModel;
-        }
+        InitializeComponent();
+        DataContext = viewModel;
     }
 }

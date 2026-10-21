@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -8,115 +8,80 @@ using QBDrumMap.Class.MapModels;
 using QBDrumMap.Class.Services;
 using QBDrumMap.Views;
 
-namespace QBDrumMap.ViewModels
+namespace QBDrumMap.ViewModels;
+
+[DIPage<ArticulationsPage>]
+public partial class ArticulationsViewModel : ViewModelBase
 {
-    [DIPage<ArticulationsPage>]
-    public partial class ArticulationsViewModel : ViewModelBase
+    [ObservableProperty]
+    private ObservableCollection<Articulation> _articulations = new();
+
+    [ObservableProperty]
+    private ObservableCollection<Articulation> _selectedArticulations = new();
+
+    public ArticulationsViewModel(IDIContainer diContainer)
+        : base(diContainer)
     {
-        #region Fields
+        OnMapDataLoaded(this, new RoutedEventArgs());
+        MapData.Loaded += OnMapDataLoaded;
+        MapData.Saved += OnMapDataSaved;
+    }
 
-        // 画面に表示する全アーティキュレーションのリスト
-        [ObservableProperty]
-        private ObservableCollection<Articulation> _articulations = new();
+    [RelayCommand]
+    private void OnMoveTop() => Articulations.MoveTop(SelectedArticulations, x => x.DrumMapOrder);
 
-        // グリッド等で選択されているアーティキュレーションのリスト
-        [ObservableProperty]
-        private ObservableCollection<Articulation> _selectedArticulations = new();
+    [RelayCommand]
+    private void OnMoveUp() => Articulations.MoveUp(SelectedArticulations, x => x.DrumMapOrder);
 
-        #endregion
+    [RelayCommand]
+    private void OnMoveDown() => Articulations.MoveDown(SelectedArticulations, x => x.DrumMapOrder);
 
-        #region ctor
+    [RelayCommand]
+    private void OnMoveBottom() => Articulations.MoveBottom(SelectedArticulations, x => x.DrumMapOrder);
 
-        public ArticulationsViewModel(IDIContainer diContainer)
-            : base(diContainer)
+    private async void OnMapDataLoaded(object sender, RoutedEventArgs e)
+    {
+        await InitializeDataAsync();
+    }
+
+    private async void OnMapDataSaved(object sender, DrumMapIOEventArgs e)
+    {
+        await InitializeDataAsync();
+    }
+
+    private async Task InitializeDataAsync()
+    {
+        SelectedArticulations.Clear();
+
+        await Application.Current.Dispatcher.InvokeAsync(() =>
         {
-            OnMapDataLoaded(this, new RoutedEventArgs());
-            MapData.Loaded += OnMapDataLoaded;
-            MapData.Saved += OnMapDataSaved;
-        }
+            Articulations.Clear();
 
-        #endregion
-
-        #region Methods
-
-        #region Commands
-
-        [RelayCommand]
-        private void OnMoveTop() => Articulations.MoveTop(SelectedArticulations, x => x.DrumMapOrder);
-
-        [RelayCommand]
-        private void OnMoveUp() => Articulations.MoveUp(SelectedArticulations, x => x.DrumMapOrder);
-
-        [RelayCommand]
-        private void OnMoveDown() => Articulations.MoveDown(SelectedArticulations, x => x.DrumMapOrder);
-
-        [RelayCommand]
-        private void OnMoveBottom() => Articulations.MoveBottom(SelectedArticulations, x => x.DrumMapOrder);
-
-        #endregion
-
-        #region EventHandler
-
-        // マップデータ読み込み完了時のイベントハンドラ
-        private async void OnMapDataLoaded(object sender, RoutedEventArgs e)
-        {
-            await InitializeDataAsync();
-        }
-
-        // マップデータ保存完了時のイベントハンドラ
-        private async void OnMapDataSaved(object sender, DrumMapIOEventArgs e)
-        {
-            await InitializeDataAsync();
-        }
-
-        #endregion
-
-        #region General
-
-        // 表示用データの非同期初期化処理
-        private async Task InitializeDataAsync()
-        {
-            SelectedArticulations.Clear();
-
-            await Application.Current.Dispatcher.InvokeAsync(() =>
-            {
-                Articulations.Clear();
-
-                // 全パートからアーティキュレーションをフラットに取得し、ドラムマップ順でソート
-                var source = MapData.Parts
-                    .SelectMany(x =>
-                    {
-                        return x.Articulations;
-                    })
-                    .OrderBy(x =>
-                    {
-                        return x.DrumMapOrder;
-                    });
-
-                foreach (var item in source)
+            var source = MapData.Parts
+                .SelectMany(x =>
                 {
-                    Articulations.Add(item);
-                }
-            });
-        }
+                    return x.Articulations;
+                })
+                .OrderBy(x =>
+                {
+                    return x.DrumMapOrder;
+                });
 
-        #endregion
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (disposing)
+            foreach (var item in source)
             {
-                MapData.Loaded -= OnMapDataLoaded;
-                MapData.Saved -= OnMapDataSaved;
+                Articulations.Add(item);
             }
+        });
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+
+        if (disposing)
+        {
+            MapData.Loaded -= OnMapDataLoaded;
+            MapData.Saved -= OnMapDataSaved;
         }
-
-        #endregion
-
-        #endregion
     }
 }

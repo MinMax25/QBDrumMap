@@ -1,0 +1,182 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background: #333;
+    color: #eee;
+}
+
+/* ======================================================
+   タイトル
+====================================================== */
+
+/* h1にカード幅いっぱいの下線（落ち着いたグレー） */
+h1 {
+    font-size: 1.2em;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    /* 下線と文字の間隔 */
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    /* カード幅いっぱい */
+    height: 4px;
+    /* 下線の太さ */
+    background-color: #888888;
+    /* 落ち着いたグレー */
+    margin-top: 10px;
+    /* 下線と文字の間隔 */
+    border-radius: 2px;
+    /* 角丸で柔らかく */
+}
+
+/* =============================
+   CSS変数（ここで一元管理）
+   ============================= */
+:root {
+    --sidebar-width: 360px;
+    /* サイドバー幅 */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 上部タイトルバー */
+header {
+    height: 60px;
+    background: #444;
+    border-bottom: 1px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 中央エリア */
+.main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    /* サイドバー切替ボタンの配置基準 */
+}
+
+/* 左サイドバー */
+.root {
+    width: var(--sidebar-width);
+    background: #444;
+    padding: 10px;
+    overflow-y: auto;
+    transition: width 0.3s ease, padding 0.3s ease;
+}
+
+.root.closed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* 左フレーム内リンク */
+.root a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.root a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ネストリスト */
+.root ul {
+    list-style: none;
+    padding-left: 10px;
+    margin: 4px 0;
+}
+
+.root ul ul {
+    padding-left: 15px;
+}
+
+.root ul ul ul {
+    padding-left: 20px;
+}
+
+.root ul ul ul ul {
+    padding-left: 25px;
+}
+
+/* 右側コンテンツ */
+.contents {
+    flex: 1;
+    background: #555;
+    margin-left: 20px;
+    /* 左余白 */
+    overflow: hidden;
+    /* 外側のスクロールは消す */
+}
+
+.contents iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    /* iframeの余白を消す */
+    overflow: auto;
+    /* 内部スクロールのみ有効 */
+}
+
+/* サイドバー開閉ボタン */
+#toggleSidebar {
+    position: absolute;
+    top: 50%;
+    left: var(--sidebar-width);
+    /* CSS変数を利用 */
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 3;
+    background: #666;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    color: #fff;
+    transition: left 0.3s ease, background-color 0.3s;
+}
+
+#toggleSidebar:hover {
+    background: #888;
+}
+
+/* フッター */
+footer {
+    height: 40px;
+    background: #222;
+    color: #ccc;
+    text-align: center;
+    font-size: 0.75em;
+    border-top: 1px solid #444;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

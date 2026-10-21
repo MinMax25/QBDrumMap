@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Introduction</h1>
+<p>This is a drum map editor used in DAW (Studio One, Cubase).</p>
+<div class="image-wrapper">
+<img height="400" src="image/intoro_pic_1.png" width="650"/>
+</div>
+<h2 id="system-requirements">System Requirements</h2>
+<p>Operating environment is Windows OS only. Complies with</p>
+<p>Studio One Pro Windows system requirements.</p>
+<h2 id="purpose">Program Overview</h2>
+<ol>
+<li>
+                Absorbs differences between sound sources
+                <ul>
+<li>
+                        By separating the management of articulation information that can be used common to each sound source, it is possible to unify articulations that were different between sound sources.
+                    </li>
+<li>
+                        By including drum score information in the articulation information, there is no need to set the DAW's score information individually.
+                    </li>
+</ul>
+</li>
+<li>
+                Utilizing common drum maps
+                <ul>
+<li>
+                        The map data managed by this software is managed as a json file that can be converted to "Studio Oe" and "Cubase".
+                    </li>
+<li>
+                        Map data can be imported and exported in TSV format. This allows editing with an external editor (such as Excel).
+                    </li>
+<li>
+                        Previously, map files were edited for each sound source or expansion pack, but with this software, they are centrally managed as one JSON data, making map files easier to maintain.
+                    </li>
+<li>
+                        The file formats that can be imported are the ".pitchlist" file of "Studio One", the ".drm" file of "Cubase", and the ".tsv" file exported by this software.<br/>
+                        *Only the output pitch is imported from the Cubase map.
+                    </li>
+</ul>
+</li>
+<li>
+                Improved convenience
+                <ul>
+<li>
+                        Equipped with a function that allows you to perform a sound check (listening) when creating a drum map.
+                    </li>
+<li>
+                        Program change information for sound sources of various standards such as GM, GM2, GS, and XG can be registered. In addition, since the registered program number and system exclusive data are sent when editing the map, it is possible to work without operating the sound source as much as possible.
+                    </li>
+</ul>
+</li>
+</ol>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>
+            This software is "free software" and may be used free of charge for personal use only.
+            The author or provider assumes no responsibility for any defects in this software or for any damage caused by using this software.
+            Obtain and use the software at your own risk and expense.
+            The provision of this software may be discontinued without notice. The author or provider assumes no responsibility for any loss or damage incurred by users or third parties as a result of termination of this provision.
+        </p>
+</div>
+</body>
+</html>

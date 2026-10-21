@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QBDrumMap.Properties {
+namespace QBDrumMap {
     using System;
     
     
@@ -61,6 +61,15 @@ namespace QBDrumMap.Properties {
         }
         
         /// <summary>
+        ///   File not found. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Alert_FileNotFound {
+            get {
+                return ResourceManager.GetString("Alert_FileNotFound", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Do you want to set articulation automatically? に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ArticulationAutomaticFill {
@@ -87,6 +96,51 @@ namespace QBDrumMap.Properties {
             }
         }
         
+        /// <summary>
+        ///   Built-in Languages に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string BuiltInLanguages {
+            get {
+                return ResourceManager.GetString("BuiltInLanguages", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Cancel に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Button_Cancel {
+            get {
+                return ResourceManager.GetString("Button_Cancel", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   No に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Button_No {
+            get {
+                return ResourceManager.GetString("Button_No", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   OK に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Button_OK {
+            get {
+                return ResourceManager.GetString("Button_OK", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Yes に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Button_Yes {
+            get {
+                return ResourceManager.GetString("Button_Yes", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Add に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -169,6 +223,24 @@ namespace QBDrumMap.Properties {
         }
         
         /// <summary>
+        ///   Open File に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Common_OpenFile {
+            get {
+                return ResourceManager.GetString("Common_OpenFile", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Save File に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Common_SaveFile {
+            get {
+                return ResourceManager.GetString("Common_SaveFile", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Compress Forward に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string CompressForward {
@@ -195,6 +267,123 @@ namespace QBDrumMap.Properties {
             }
         }
         
+        /// <summary>
+        ///   Button_DontSave に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Button_DontSave {
+            get {
+                return ResourceManager.GetString("Button_DontSave", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Button_Save に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Button_Save {
+            get {
+                return ResourceManager.GetString("Button_Save", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Confirm_UnsavedChanges に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Confirm_UnsavedChanges {
+            get {
+                return ResourceManager.GetString("Confirm_UnsavedChanges", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busy_Loading に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Busy_Loading {
+            get {
+                return ResourceManager.GetString("Busy_Loading", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busy_Saving に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Busy_Saving {
+            get {
+                return ResourceManager.GetString("Busy_Saving", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Error_QBDrummerTooManyArticulations に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Error_QBDrummerTooManyArticulations {
+            get {
+                return ResourceManager.GetString("Error_QBDrummerTooManyArticulations", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Error_FileIO に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Error_FileIO {
+            get {
+                return ResourceManager.GetString("Error_FileIO", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Title_ConvertBaseOnKit に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_ConvertBaseOnKit {
+            get {
+                return ResourceManager.GetString("Title_ConvertBaseOnKit", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Title_ExportFormat に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_ExportFormat {
+            get {
+                return ResourceManager.GetString("Title_ExportFormat", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Close the application? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Confirm_ApplicationClose {
+            get {
+                return ResourceManager.GetString("Confirm_ApplicationClose", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   There are unsaved changes. Close the application? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Confirm_ApplicationCloseWithTheChanges {
+            get {
+                return ResourceManager.GetString("Confirm_ApplicationCloseWithTheChanges", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Discard the current data and create a new file? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Confirm_NewFile {
+            get {
+                return ResourceManager.GetString("Confirm_NewFile", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   The data contains errors and cannot be saved. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Confirm_SaveHasError {
+            get {
+                return ResourceManager.GetString("Confirm_SaveHasError", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Set the same value to the same name? に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -340,6 +529,15 @@ namespace QBDrumMap.Properties {
         }
         
         /// <summary>
+        ///   Language Packs に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string LanguagePacks {
+            get {
+                return ResourceManager.GetString("LanguagePacks", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   {0} Name must be {1} characters or less に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string LenghtLessLThan {
@@ -358,6 +556,69 @@ namespace QBDrumMap.Properties {
         }
         
         /// <summary>
+        ///   File に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Menu_File {
+            get {
+                return ResourceManager.GetString("Menu_File", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Close に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Menu_File_Close {
+            get {
+                return ResourceManager.GetString("Menu_File_Close", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   New に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Menu_File_New {
+            get {
+                return ResourceManager.GetString("Menu_File_New", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Open に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Menu_File_Open {
+            get {
+                return ResourceManager.GetString("Menu_File_Open", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Save に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Menu_File_Save {
+            get {
+                return ResourceManager.GetString("Menu_File_Save", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Help に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Menu_Help {
+            get {
+                return ResourceManager.GetString("Menu_Help", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Documentation に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Menu_Help_Document {
+            get {
+                return ResourceManager.GetString("Menu_Help_Document", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   About {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MenuHelpAboutCaption {
@@ -366,6 +627,33 @@ namespace QBDrumMap.Properties {
             }
         }
         
+        /// <summary>
+        ///   Clear {0}? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Message_Command_Clear {
+            get {
+                return ResourceManager.GetString("Message_Command_Clear", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Delete {0}: {1}? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Message_Command_Delete {
+            get {
+                return ResourceManager.GetString("Message_Command_Delete", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Process completed. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Message_ProcessComplete {
+            get {
+                return ResourceManager.GetString("Message_ProcessComplete", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   An error occurred during MIDI data processing に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -420,6 +708,15 @@ namespace QBDrumMap.Properties {
             }
         }
         
+        /// <summary>
+        ///   Accent Color に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Setting_AccentColor {
+            get {
+                return ResourceManager.GetString("Setting_AccentColor", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Convert MIDI Format に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -502,6 +799,15 @@ namespace QBDrumMap.Properties {
         }
         
         /// <summary>
+        ///   Language に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Setting_Language {
+            get {
+                return ResourceManager.GetString("Setting_Language", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Last Import File Path に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Setting_LastImportFilePath {
@@ -556,6 +862,24 @@ namespace QBDrumMap.Properties {
         }
         
         /// <summary>
+        ///   Settings に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Setting_PageTitle {
+            get {
+                return ResourceManager.GetString("Setting_PageTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Startup Page に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Setting_StartUpPage {
+            get {
+                return ResourceManager.GetString("Setting_StartUpPage", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Use Articulation Pitch Name に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Setting_UseArticulationPitchName {
@@ -592,6 +916,24 @@ namespace QBDrumMap.Properties {
         }
         
         /// <summary>
+        ///   Clear に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_Command_Clear {
+            get {
+                return ResourceManager.GetString("Title_Command_Clear", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Delete に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_Command_Delete {
+            get {
+                return ResourceManager.GetString("Title_Command_Delete", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Convert MIDI に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Title_ConvertMidiPage {
@@ -600,6 +942,42 @@ namespace QBDrumMap.Properties {
             }
         }
         
+        /// <summary>
+        ///   Confirm に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_Dialog_Confirm {
+            get {
+                return ResourceManager.GetString("Title_Dialog_Confirm", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Error に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_Dialog_Error {
+            get {
+                return ResourceManager.GetString("Title_Dialog_Error", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Information に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_Dialog_Information {
+            get {
+                return ResourceManager.GetString("Title_Dialog_Information", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Warning に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_Dialog_Warning {
+            get {
+                return ResourceManager.GetString("Title_Dialog_Warning", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Export に類似しているローカライズされた文字列を検索します。
         /// </summary>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="MenuHelpAboutCaption" xml:space="preserve">
+    <value>À propos de {0}</value>
+  </data>
+  <data name="Alert_FileNotFound" xml:space="preserve">
+    <value>Fichier introuvable !</value>
+  </data>
+  <data name="Setting_PageTitle" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="Setting_AccentColor" xml:space="preserve">
+    <value>Couleur d'accent</value>
+  </data>
+  <data name="Setting_Language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Button_Yes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="Button_No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="Title_Dialog_Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Title_Dialog_Warning" xml:space="preserve">
+    <value>Avertissement</value>
+  </data>
+  <data name="Title_Dialog_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Title_Dialog_Confirm" xml:space="preserve">
+    <value>Confirmer</value>
+  </data>
+  <data name="Title_Command_Clear" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="Common_OpenFile" xml:space="preserve">
+    <value>Ouvrir un fichier</value>
+  </data>
+  <data name="Common_SaveFile" xml:space="preserve">
+    <value>Enregistrer le fichier</value>
+  </data>
+  <data name="BuiltInLanguages" xml:space="preserve">
+    <value>Langues Intégrées</value>
+  </data>
+  <data name="LanguagePacks" xml:space="preserve">
+    <value>Packs de Langue</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>Fichier (_F)</value>
+  </data>
+  <data name="Menu_File_New" xml:space="preserve">
+    <value>Nouveau (_N)</value>
+  </data>
+  <data name="Menu_File_Open" xml:space="preserve">
+    <value>Ouvrir (_O)</value>
+  </data>
+  <data name="Menu_File_Save" xml:space="preserve">
+    <value>Enregistrer (_S)</value>
+  </data>
+  <data name="Menu_File_Close" xml:space="preserve">
+    <value>Fermer (_X)</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>Aide (_H)</value>
+  </data>
+  <data name="Menu_Help_Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="Title_PluginPage" xml:space="preserve">
+    <value>Plug-in</value>
+  </data>
+  <data name="Title_PartsPage" xml:space="preserve">
+    <value>Parties</value>
+  </data>
+  <data name="Title_ArticulationsPage" xml:space="preserve">
+    <value>Articulations</value>
+  </data>
+  <data name="Title_ExportPage" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="Title_ConvertMidiPage" xml:space="preserve">
+    <value>Convertir MIDI</value>
+  </data>
+  <data name="Setting_UseArticulationPitchName" xml:space="preserve">
+    <value>Utiliser les noms d’articulation comme noms de note</value>
+  </data>
+  <data name="Setting_UseArticulationWhenExporting" xml:space="preserve">
+    <value>Utiliser les articulations lors de l’exportation</value>
+  </data>
+  <data name="ArticulationAutomaticFill" xml:space="preserve">
+    <value>Voulez-vous définir l’articulation automatiquement ?</value>
+  </data>
+  <data name="AutoAssignArticulationConfirm" xml:space="preserve">
+    <value>Attribuer automatiquement des articulations à ce kit en fonction des données cartographiques ?</value>
+  </data>
+  <data name="AutoAssignArticulationResult" xml:space="preserve">
+    <value>{0} emplacement(s) attribué(s). Emplacement(s) {1} ignoré(s) (aucune correspondance fiable trouvée).</value>
+  </data>
+  <data name="ButtonAdd" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="ButtonImport" xml:space="preserve">
+    <value>Importer</value>
+  </data>
+  <data name="ButtonMoveBottom" xml:space="preserve">
+    <value>Déplacer vers le bas</value>
+  </data>
+  <data name="ButtonMoveDown" xml:space="preserve">
+    <value>Descendre vers le bas</value>
+  </data>
+  <data name="ButtonMoveTop" xml:space="preserve">
+    <value>Déplacer vers le haut</value>
+  </data>
+  <data name="ButtonMoveUp" xml:space="preserve">
+    <value>Monter</value>
+  </data>
+  <data name="ButtonOpenFile" xml:space="preserve">
+    <value>Ouvrir le fichier</value>
+  </data>
+  <data name="ButtonSearch" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="ClearArticulationAndSeparatorConfirm" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir effacer l'articulation et le séparateur pour tous les emplacements de ce kit ?</value>
+  </data>
+  <data name="CompressForward" xml:space="preserve">
+    <value>Compresser en avant</value>
+  </data>
+  <data name="CompressForwardConfirm" xml:space="preserve">
+    <value>Remplir les lignes vides en arrière ?</value>
+  </data>
+  <data name="ConfiramAutomaticInterpolation" xml:space="preserve">
+    <value>Souhaitez-vous une interpolation automatique ?</value>
+  </data>
+  <data name="ConfirmAutoFill" xml:space="preserve">
+    <value>Définir la même valeur sur le même nom ?</value>
+  </data>
+  <data name="ContextKitPitchesArticulationSourceIsEmpty" xml:space="preserve">
+    <value>Sélectionner le kit source d'articulation</value>
+  </data>
+  <data name="ContextKitPitchesAutoAssignArticulation" xml:space="preserve">
+    <value>Attribuer automatiquement l'articulation</value>
+  </data>
+  <data name="ContextKitPitchesClearArticulationAndSeparator" xml:space="preserve">
+    <value>Effacer l'articulation et le séparateur</value>
+  </data>
+  <data name="ContextKitPitchesCompressForward" xml:space="preserve">
+    <value>Compresser en avant</value>
+  </data>
+  <data name="ContextKitPitchesCopyArticulation" xml:space="preserve">
+    <value>Copier l'articulation</value>
+  </data>
+  <data name="ContextKitPitchesCopyTextToClibBoard" xml:space="preserve">
+    <value>Copier le texte dans le presse-papiers</value>
+  </data>
+  <data name="ContextKitPitchesImportDrmMap" xml:space="preserve">
+    <value>Importer la map de batterie</value>
+  </data>
+  <data name="ContextKitPitchesPasteTextFromClibBoard" xml:space="preserve">
+    <value>Coller le texte à partir du presse-papiers</value>
+  </data>
+  <data name="ContextKitPitchesResetOrdeByPitch" xml:space="preserve">
+    <value>Réinitialiser l'ordre par pas</value>
+  </data>
+  <data name="ContextKitPitchesShowArticulationMap" xml:space="preserve">
+    <value>Afficher la carte d'articulation</value>
+  </data>
+  <data name="CopyTextClipToClipBoardComplete" xml:space="preserve">
+    <value>Copier dans le presse-papiers</value>
+  </data>
+  <data name="DialogAutomaticFill" xml:space="preserve">
+    <value>Remplissage automatique</value>
+  </data>
+  <data name="DuplicateNaem" xml:space="preserve">
+    <value>'{0}' est déjà utilisé !</value>
+  </data>
+  <data name="ImportDrumMap" xml:space="preserve">
+    <value>Importer DrumMap</value>
+  </data>
+  <data name="IncorrectMIDIData" xml:space="preserve">
+    <value>Données MIDI incorrectes !</value>
+  </data>
+  <data name="LenghtLessLThan" xml:space="preserve">
+    <value>{0} Le nom doit contenir au maximum des caractères {1}</value>
+  </data>
+  <data name="LengthBetween" xml:space="preserve">
+    <value>{0} Le nom doit contenir au moins {1} et pas plus de caractères {2}.</value>
+  </data>
+  <data name="MIDIError" xml:space="preserve">
+    <value>Une erreur s'est produite lors du traitement des données MIDI.</value>
+  </data>
+  <data name="PasteComplete" xml:space="preserve">
+    <value>Collage terminé !</value>
+  </data>
+  <data name="PasteConfirm" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir exécuter le collage ?</value>
+  </data>
+  <data name="ResetOrderByPitch" xml:space="preserve">
+    <value>Réinitialiser l'ordre par emplacement</value>
+  </data>
+  <data name="ResetOrderByPitchConfirm" xml:space="preserve">
+    <value>Puis-je trier par emplacement ?</value>
+  </data>
+  <data name="SelectCubaseInstallPath" xml:space="preserve">
+    <value>Sélectionner le chemin d'installation de Cubase</value>
+  </data>
+  <data name="Setting_ConvertMIDIFormat" xml:space="preserve">
+    <value>Convertir le format MIDI</value>
+  </data>
+  <data name="Setting_CubaseInstallPath" xml:space="preserve">
+    <value>Chemin d'installation de Cubase</value>
+  </data>
+  <data name="Setting_ExportCubaseBaseOnDefaultPath" xml:space="preserve">
+    <value>Exporter Cubase Base sur le chemin par défaut</value>
+  </data>
+  <data name="Setting_ExportCubaseDefaultPath" xml:space="preserve">
+    <value>Exporter le chemin par défaut de Cubase</value>
+  </data>
+  <data name="Setting_ExportNoteMapperDefaultPath" xml:space="preserve">
+    <value>Exporter le chemin par défaut du Note Mapper</value>
+  </data>
+  <data name="Setting_ExportQBDrummerDefaultPath" xml:space="preserve">
+    <value>Exporter le chemin par défaut de QB Drummer</value>
+  </data>
+  <data name="Setting_ExportStudioOneDefaultPath" xml:space="preserve">
+    <value>Exporter Studio un chemin par défaut</value>
+  </data>
+  <data name="Setting_ExportTextDefaultPath" xml:space="preserve">
+    <value>Exporter le chemin par défaut du texte</value>
+  </data>
+  <data name="Setting_IsOpenTheLastFileOpened" xml:space="preserve">
+    <value>est ouvert Le dernier fichier ouvert</value>
+  </data>
+  <data name="Setting_LastImportFilePath" xml:space="preserve">
+    <value>Chemin du dernier fichier d'importation</value>
+  </data>
+  <data name="Setting_LastOpenedFilePath" xml:space="preserve">
+    <value>Chemin du dernier fichier ouvert</value>
+  </data>
+  <data name="Setting_MidiInDevice" xml:space="preserve">
+    <value>Périphérique d'entrée MIDI</value>
+  </data>
+  <data name="Setting_MidiInFixedPitch" xml:space="preserve">
+    <value>Entrée MIDI à hauteur fixe</value>
+  </data>
+  <data name="Setting_MidiOutChannel" xml:space="preserve">
+    <value>Canal de sortie MIDI</value>
+  </data>
+  <data name="Setting_MidiOutDevice" xml:space="preserve">
+    <value>Périphérique de sortie MIDI</value>
+  </data>
+  <data name="SoundCheckVelocity" xml:space="preserve">
+    <value>Vitesse de vérification du son</value>
+  </data>
+  <data name="Confirm_NewFile" xml:space="preserve">
+    <value>Supprimer les données actuelles et créer un nouveau fichier ?</value>
+  </data>
+  <data name="Error_FileIO" xml:space="preserve">
+    <value>Erreur d'E/S de fichier</value>
+  </data>
+  <data name="Title_ExportFormat" xml:space="preserve">
+    <value>Exporter {0}</value>
+  </data>
+  <data name="Title_ConvertBaseOnKit" xml:space="preserve">
+    <value>Convertir Base On Kit = '{0}'</value>
+  </data>
+  <data name="Confirm_UnsavedChanges" xml:space="preserve">
+    <value>Des modifications n'ont pas été enregistrées. Les enregistrer avant de continuer ?</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Button_DontSave" xml:space="preserve">
+    <value>Ne pas enregistrer</value>
+  </data>
+  <data name="Busy_Saving" xml:space="preserve">
+    <value>Enregistrement en cours…</value>
+  </data>
+  <data name="Busy_Loading" xml:space="preserve">
+    <value>Chargement en cours…</value>
+  </data>
+  <data name="Error_QBDrummerTooManyArticulations" xml:space="preserve">
+    <value>Le CSV QB Drummer prend en charge au maximum {0} articulations.</value>
+  </data>
+  <data name="Confirm_SaveHasError" xml:space="preserve">
+    <value>Les données contiennent des erreurs et ne peuvent pas être enregistrées.</value>
+  </data>
+  <data name="Confirm_ApplicationCloseWithTheChanges" xml:space="preserve">
+    <value>Il existe des modifications non enregistrées. Fermer l'application ?</value>
+  </data>
+  <data name="Confirm_ApplicationClose" xml:space="preserve">
+    <value>Fermer l'application ?</value>
+  </data>
+  <data name="Message_Command_Clear" xml:space="preserve">
+    <value>Effacer {0}?</value>
+  </data>
+  <data name="Message_Command_Delete" xml:space="preserve">
+    <value>Supprimer {0} : {1} ?</value>
+  </data>
+  <data name="Message_ProcessComplete" xml:space="preserve">
+    <value>Processus terminé.</value>
+  </data>
+  <data name="Title_Command_Delete" xml:space="preserve">
+    <value>Supprimer la page de démarrage de</value>
+  </data>
+  <data name="Setting_StartUpPage" xml:space="preserve">
+    <value>Startup Page</value>
+  </data>
+</root>
