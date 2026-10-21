@@ -310,7 +310,7 @@
     <value>Prozess abgeschlossen.</value>
   </data>
   <data name="Title_Command_Delete" xml:space="preserve">
-    <value></value>
+    <value>Delete</value>
   </data>
   <data name="Setting_StartUpPage" xml:space="preserve">
     <value>-Startseite löschen</value>
