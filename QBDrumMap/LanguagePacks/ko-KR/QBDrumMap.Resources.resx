@@ -310,7 +310,7 @@
     <value>프로세스가 완료되었습니다.</value>
   </data>
   <data name="Title_Command_Delete" xml:space="preserve">
-    <value></value>
+    <value>Delete</value>
   </data>
   <data name="Setting_StartUpPage" xml:space="preserve">
     <value>시작 페이지 삭제</value>
