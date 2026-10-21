@@ -1,5 +1,10 @@
 # QBDrumMap language packs
 
+更新者：Codex
+最終更新日時：2026-10-19 11:18
+
+In the source project, optional pack files are maintained under `QBDrumMap/LanguagePacks/<culture-code>/`. This source folder is not scanned by the running application. To make a pack available, copy its non-empty `.resx` resource file(s) into `Languages/<culture-code>/` under the application folder.
+
 Create one directory per culture code under this directory, for example:
 
 ```text

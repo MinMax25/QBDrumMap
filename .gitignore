@@ -12,3 +12,8 @@
 *.sln.docstates
 /docs
 /graphify-out
+/.temp/
+**/[Tt]estResults/
+*.coverage
+*.coveragexml
+*.opencover.xml

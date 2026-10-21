@@ -68,7 +68,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Alert_FileNotFound", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Do you want to set articulation automatically? に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -104,7 +104,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("BuiltInLanguages", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Cancel に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -113,7 +113,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Button_Cancel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   No に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -122,7 +122,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Button_No", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   OK に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -131,7 +131,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Button_OK", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Yes に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -140,7 +140,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Button_Yes", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Add に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -230,7 +230,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Common_OpenFile", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Save File に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -239,7 +239,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Common_SaveFile", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Compress Forward に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -275,7 +275,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Button_DontSave", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Button_Save に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -284,7 +284,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Button_Save", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Confirm_UnsavedChanges に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -293,7 +293,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Confirm_UnsavedChanges", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Busy_Loading に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -356,7 +356,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Confirm_ApplicationClose", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   There are unsaved changes. Close the application? に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -365,7 +365,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Confirm_ApplicationCloseWithTheChanges", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Discard the current data and create a new file? に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -374,7 +374,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Confirm_NewFile", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   The data contains errors and cannot be saved. に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -383,7 +383,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Confirm_SaveHasError", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Set the same value to the same name? に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -536,7 +536,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("LanguagePacks", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   {0} Name must be {1} characters or less に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -563,7 +563,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Menu_File", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Close に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -572,7 +572,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Menu_File_Close", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   New に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -581,7 +581,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Menu_File_New", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Open に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -590,7 +590,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Menu_File_Open", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Save に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -599,7 +599,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Menu_File_Save", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Help に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -608,7 +608,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Menu_Help", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Documentation に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -617,7 +617,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Menu_Help_Document", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   About {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -635,7 +635,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Message_Command_Clear", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Delete {0}: {1}? に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -644,7 +644,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Message_Command_Delete", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Process completed. に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -653,7 +653,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Message_ProcessComplete", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   An error occurred during MIDI data processing に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -716,7 +716,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Setting_AccentColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Convert MIDI Format に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -806,7 +806,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Setting_Language", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Last Import File Path に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -869,7 +869,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Setting_PageTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Startup Page に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -878,7 +878,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Setting_StartUpPage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Use Articulation Pitch Name に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -923,7 +923,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Title_Command_Clear", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Delete に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -932,7 +932,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Title_Command_Delete", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Convert MIDI に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -950,7 +950,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Title_Dialog_Confirm", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Error に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -959,7 +959,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Title_Dialog_Error", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Information に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -968,7 +968,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Title_Dialog_Information", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Warning に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -977,7 +977,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Title_Dialog_Warning", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Export に類似しているローカライズされた文字列を検索します。
         /// </summary>

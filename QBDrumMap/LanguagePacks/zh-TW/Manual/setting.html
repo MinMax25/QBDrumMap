@@ -11,6 +11,7 @@
 <div class="container">
 <h1>設定</h1>
 <p>點擊漢堡選單底部的齒輪圖示即可顯示設定頁面。</p>
+<p class="note"><strong>升級注意：</strong>此版本將設定檔格式從 JSON 改為 TOML（<code>Setting.toml</code>）。舊版本的設定不會自動移轉，請在升級後重新設定。</p>
 <div class="image-wrapper">
 <img alt="QB DrumMap 螢幕影像" height="400" src="image/setting_pic_1.png" width="650"/>
 </div>
@@ -24,10 +25,10 @@
 <h2 id="language">設定語言</h2>
 <p>您可以從語言組合方塊中指定以下內容：</p>
 <ul>
-<li>英文</li>
-<li>日文</li>
+<li>內建英文和日文。</li>
+<li>原始碼專案中的語言套件位於 <code>LanguagePacks/&lt;locale&gt;/</code>。如要使用，請將語言套件複製到應用程式資料夾中的 <code>Languages/&lt;locale&gt;/</code>。</li>
 </ul>
-<p>變更將在下次啟動程式時反映出來。</p>
+<p>所選語言會立即設為目前語言。使用在地化繫結的文字會更新；部分介面元素可能在重新顯示時更新。</p>
 <h2 id="startup-page">設定啟動頁面</h2>
 <p>啟動頁面組合方塊可讓您指定啟動時最初顯示的頁面。</p>
 <p>變更將在下次程式啟動時反映出來。</p>

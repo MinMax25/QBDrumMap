@@ -13,7 +13,7 @@ public class Phase1RegressionTests
     private static async Task<(MapData Map, string Before)> LoadedWithEditAsync()
     {
         var map = await TestSupport.LoadSampleAsync();
-        map.Plugins[0].Kits[0].Pitches[0].ArticulationID = 12345;  
+        map.Plugins[0].Kits[0].Pitches[0].ArticulationID = 12345;
         return (map, TestSupport.Dump(map));
     }
 
@@ -134,10 +134,10 @@ public class Phase1RegressionTests
         var map = await TestSupport.LoadSampleAsync();
         foreach (var kit in map.Plugins.SelectMany(p => p.Kits))
         {
-            kit.ID += 1000;  
+            kit.ID += 1000;
         }
         var arts = map.Parts.SelectMany(p => p.Articulations).ToList();
-        arts[1].ID = arts[0].ID;  
+        arts[1].ID = arts[0].ID;
         var before = TestSupport.Dump(map);
 
         Assert.False(await map.SaveAsync(dir.File("a.qbd")));

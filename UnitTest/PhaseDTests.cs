@@ -165,7 +165,7 @@ public class PhaseDTests
         var map = await TestSupport.LoadSampleAsync();
         var first = new ObservableCollection<Part> { map.Parts.OrderBy(x => x.DisplayOrder).First() };
 
-        map.Parts.MoveUp(first, x => x.DisplayOrder);  
+        map.Parts.MoveUp(first, x => x.DisplayOrder);
         Assert.False(map.IsModified());
 
         map.Parts.MoveDown(first, x => x.DisplayOrder);
@@ -244,7 +244,7 @@ public class PhaseDTests
 
         s.MoveUp(Pick(s, 1), x => x.DisplayOrder);
 
-        Assert.Equal(new[] { 2, 5, 9 }, Orders(s));  
+        Assert.Equal(new[] { 2, 5, 9 }, Orders(s));
     }
 
     [Fact]
@@ -307,6 +307,6 @@ public class PhaseDTests
         s.MoveUp(selected, x => x.DrumMapOrder);
 
         Assert.Equal(new[] { 2, 1, 3 }, s.OrderBy(x => x.DrumMapOrder).Select(x => x.ID).ToArray());
-        Assert.Equal(new[] { 1, 2, 3 }, s.Select(x => x.DisplayOrder).ToArray());  
+        Assert.Equal(new[] { 1, 2, 3 }, s.Select(x => x.DisplayOrder).ToArray());
     }
 }

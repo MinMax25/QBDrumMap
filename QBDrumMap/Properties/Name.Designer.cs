@@ -10,8 +10,8 @@
 
 namespace QBDrumMap {
     using System;
-    
-    
+
+
     /// <summary>
     ///   ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
     /// </summary>
@@ -23,15 +23,15 @@ namespace QBDrumMap {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Name {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Name() {
         }
-        
+
         /// <summary>
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
@@ -45,7 +45,7 @@ namespace QBDrumMap {
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
@@ -59,7 +59,7 @@ namespace QBDrumMap {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Articulation に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -68,7 +68,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Articulation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Complement に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -77,7 +77,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Complement", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Kit に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -86,7 +86,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Kit", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Pitch に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -95,7 +95,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("KitPitch", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Part に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -104,7 +104,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("Part", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Part Name Alias に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -113,7 +113,7 @@ namespace QBDrumMap {
                 return ResourceManager.GetString("PartNameAlias", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Plugin に類似しているローカライズされた文字列を検索します。
         /// </summary>
