@@ -54,6 +54,10 @@ System requirements follow **Studio One Pro (Windows)** specifications.
 
 The built-in interface supports Japanese and English. Other languages are available when a language pack is placed under `Languages/<culture-code>/` in the application folder. The available additional languages depend on the packs installed.
 
+**翻訳について**：日本語・英語以外の言語は機械翻訳を使用しています。そのため、一部に不自然な表現や不正確な翻訳が含まれる場合があります。内容が分かりにくい場合は、英語版の操作ガイドをご参照ください。
+
+**Translation notice**: Languages other than Japanese and English use machine translations. Some expressions may be unnatural or inaccurate. If anything is unclear, please refer to the English version of the user guide. Translation corrections and suggestions are welcome.
+
 ---
 
 ## 開発者向けテスト | Tests for Developers
