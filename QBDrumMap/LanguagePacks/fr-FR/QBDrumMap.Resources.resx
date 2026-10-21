@@ -313,6 +313,6 @@
     <value>Supprimer la page de démarrage de</value>
   </data>
   <data name="Setting_StartUpPage" xml:space="preserve">
-    <value></value>
+    <value>Startup Page</value>
   </data>
 </root>
