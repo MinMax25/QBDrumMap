@@ -1,6 +1,4 @@
 # QBDrumMap
-更新者：Codex
-最終更新日時：2026-10-19 11:18
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](QBDrumMap/Resources/license.txt)
 [![.NET](https://img.shields.io/badge/.NET-10.0-blueviolet)](https://dotnet.microsoft.com/)
