@@ -1,4 +1,4 @@
-﻿<mah:MetroWindow
+<mah:MetroWindow
     x:Class="QBDrumMap.Views.SearchArticulation"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
@@ -19,42 +19,62 @@
     d:Background="Black"
     BorderThickness="1"
     BorderBrush="Gray"
-    Width="480" Height="600">
-    <Grid Margin="16">
+    Width="480"
+    Height="600">
+    <Grid
+        Margin="16">
         <DockPanel>
             <DockPanel.Resources>
-                <Style TargetType="Label">
-                    <Setter Property="Width" Value="100"/>
+                <Style
+                    TargetType="Label">
+                    <Setter
+                        Property="Width"
+                        Value="100" />
                 </Style>
             </DockPanel.Resources>
-            <DockPanel DockPanel.Dock="Top">
-                <Label Content="Articulation"/>
-                <TextBox mah:TextBoxHelper.ClearTextButton="True" mah:TextBoxHelper.Watermark="Articulation Filter"
-                         Text="{Binding FilterArticulationName, UpdateSourceTrigger=PropertyChanged}"/>
+            <DockPanel
+                DockPanel.Dock="Top">
+                <Label
+                    Content="Articulation" />
+                <TextBox
+                    mah:TextBoxHelper.ClearTextButton="True"
+                    mah:TextBoxHelper.Watermark="Articulation Filter"
+                    Text="{Binding FilterArticulationName, UpdateSourceTrigger=PropertyChanged}" />
             </DockPanel>
             <DataGrid
-                Style="{StaticResource DataGridStyle}" IsReadOnly="True"
-                ItemsSource="{Binding Articulations}" SelectedItem="{Binding SelectedArticulation, Mode=TwoWay}" >
+                Style="{StaticResource DataGridStyle}"
+                IsReadOnly="True"
+                ItemsSource="{Binding Articulations}"
+                SelectedItem="{Binding SelectedArticulation, Mode=TwoWay}">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button
                                     ToolTip="Select"
-                                    Background="Transparent" BorderThickness="0" Focusable="False"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Focusable="False"
                                     Command="{Binding DataContext.ArticulationSelectedCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets"
-                                       Text="&#xE73E;"
-                                       FontSize="14"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"/>
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE73E;"
+                                        FontSize="14"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" />
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Width="200" Header="Articulation" Binding="{Binding Name}"/>
-                    <DataGridTextColumn Width="160" Header="Part" Binding="{Binding ID, Converter={StaticResource GetPartNameConverter}}"/>
+                    <DataGridTextColumn
+                        Width="200"
+                        Header="Articulation"
+                        Binding="{Binding Name}" />
+                    <DataGridTextColumn
+                        Width="160"
+                        Header="Part"
+                        Binding="{Binding ID, Converter={StaticResource GetPartNameConverter}}" />
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>

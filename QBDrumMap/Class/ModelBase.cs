@@ -1,61 +1,43 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using libQB.UndoRedo;
 using QBDrumMap.Class.MapModels;
 
-namespace QBDrumMap.Class
+namespace QBDrumMap.Class;
+
+public abstract partial class ModelBase : ObservableValidator, IHasDisplayOrder, ICloneable
 {
-    public abstract partial class ModelBase : ObservableValidator, IHasDisplayOrder, ICloneable
+    private int _displayOrder;
+
+    protected IUndoManager UndoManager;
+
+    [JsonIgnore]
+    public int DisplayOrder
     {
-        #region Fields
-
-        // 並び順を保持するバッキングフィールド
-        private int _displayOrder;
-
-        // Undo/Redo操作を管理するマネージャー
-        protected IUndoManager UndoManager;
-
-        #endregion
-
-        #region Properties
-
-        // 表示順序（シリアライズ対象外）
-        [JsonIgnore]
-        public int DisplayOrder
+        get
         {
-            get
-            {
-                return _displayOrder;
-            }
-            set
-            {
-                SetProperty(ref _displayOrder, value);
-            }
+            return _displayOrder;
         }
-
-        #endregion
-
-        #region Methods
-
-        #region General
-
-        // Undoマネージャーを登録
-        public void RegisterUndoManager(IUndoManager undoManager)
+        set
         {
-            UndoManager = undoManager;
+            SetProperty(ref _displayOrder, value);
         }
-
-        // Undoマネージャーの登録を解除
-        public void UnregisterUndoManager()
-        {
-            UndoManager = null;
-        }
-
-        // オブジェクトのディープコピーを作成（派生クラスで実装）
-        public abstract object Clone();
-
-        #endregion
-
-        #endregion
     }
+
+    public void RegisterUndoManager(IUndoManager undoManager)
+    {
+        UndoManager = undoManager;
+    }
+
+    public void UnregisterUndoManager()
+    {
+        UndoManager = null;
+    }
+
+    public void ResetValidation()
+    {
+        ClearErrors();
+    }
+
+    public abstract object Clone();
 }

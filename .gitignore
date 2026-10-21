@@ -10,5 +10,10 @@
 *.user
 *.userosscache
 *.sln.docstates
-/UnitTest
 /docs
+/graphify-out
+/.temp/
+**/[Tt]estResults/
+*.coverage
+*.coveragexml
+*.opencover.xml

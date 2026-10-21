@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Exportar</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Exportar</h1>
+<p>Exporta el mapa de percusión.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-export_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">Cómo utilizar</h2>
+<p>
+            Seleccione el destino de exportación de la lista de kits en el lado derecho de la pantalla (se pueden realizar múltiples selecciones).
+            Presione el botón de exportación deseado.
+            Seleccione la ubicación de almacenamiento en el cuadro de diálogo de selección de carpeta que aparece.
+            La carpeta seleccionada se registra en el archivo de configuración y se convierte en la carpeta de selección predeterminada la próxima vez que exporte.
+        </p>
+<h3>Usar articulación Si se marca</h3>
+<p>Usar nombre de tono de articulación, el nombre de la articulación se usará preferentemente para el nombre del tono.</p>
+<p>Al exportar un mapa de percusión normal, puede especificar si desea utilizar o no la articulación en Usar articulación al exportar. Si selecciona no utilizar la articulación</p>
+<p>, el contenido mostrado en la lista de tonos se mostrará tal cual. Si selecciona Usar articulación</p>
+<p>, el orden de clasificación estará determinado por la articulación vinculada en lugar del contenido mostrado en la lista de tonos.</p>
+<p>La información de la partitura de batería y la combinación de colores se generarán solo si selecciona Usar articulación. (No hay información de esquema de color para Cubase)</p>
+<h2 id="filename">Acerca del nombre del archivo</h2>
+<p>El nombre del archivo será el nombre del kit. Extensión<em></em>. Si ya existe un archivo con el mismo nombre, se sobrescribirá y reemplazará.</p>
+<p class="note">La lista de tonos para Studio One, el mapa de batería para Cubase y el texto tsv se muestran en la carpeta del nombre del complemento.</p>
+<h2 id="filetype">Tipo de archivo</h2>
+<p>Los archivos que se pueden exportar son los siguientes.</p>
+<ul>
+<li>
+                Mapa de batería normal
+                <ul>
+<li>Lista de tonos para Studio One</li>
+<li>Mapa de batería para Cubase</li>
+</ul>
+</li>
+<li>
+                Mapa de batería mapeado
+                <ul>
+<li>Mapa de batería para Cubase</li>
+<li>Plantilla para Note Mapper</li>
+</ul>
+</li>
+<li>
+                Otros
+                <ul>
+<li>tsv text</li>
+</ul>
+</li>
+</ul>
+<p>Al exportar un mapa de batería mapeado, seleccione el mapa de batería (kit) como fuente.</p>
+<h2 id="qbdrummer">Acerca del CSV para QB Drummer</h2>
+<p>En el CSV para QB Drummer, a cada articulación se le asigna un número secuencial exclusivo del CSV.</p>
+<p class="note">Si cambia la configuración o el orden de las articulaciones del mapa de batería, estos números pueden cambiar, por lo que combinar archivos CSV de antes y después del cambio puede no convertirse correctamente. Después de modificar el mapa de batería, vuelva a exportar el CSV de los kits que utilice.</p>
+</div>
+</body>
+</html>

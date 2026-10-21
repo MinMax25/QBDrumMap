@@ -1,122 +1,104 @@
-﻿using System.IO;
+using System.IO;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using QBDrumMap.Class.Extensions;
 
-namespace QBDrumMap.Class.Cubase
+namespace QBDrumMap.Class.Cubase;
+
+public class CubaseDrumMap
 {
-    public class CubaseDrumMap
+    public string Name { get; set; } = string.Empty;
+
+    public QuantizeElement Quantize { get; set; } = new();
+
+    public MapElement Map { get; set; } = new();
+
+    public List<int> Order { get; set; } = [];
+
+    public OutputDevicesElement OutputDevices { get; set; } = new();
+
+    public int Flags { get; set; }
+
+    public CubaseDrumMap()
     {
-        #region Properties
+    }
 
-        public string Name { get; set; } = string.Empty;
+    public static CubaseDrumMap Load(string filePath)
+    {
+        CubaseDrumMap drumMap;
 
-        public QuantizeElement Quantize { get; set; } = new();
-
-        public MapElement Map { get; set; } = new();
-
-        public List<int> Order { get; set; } = [];
-
-        public OutputDevicesElement OutputDevices { get; set; } = new();
-
-        public int Flags { get; set; }
-
-        #endregion
-
-        #region ctor
-
-        public CubaseDrumMap()
+        if (XDocument.Load(filePath) is not XDocument doc)
         {
+            throw new FileNotFoundException(filePath);
         }
 
-        #endregion
-
-        #region Methods
-
-        #region General
-
-        public static CubaseDrumMap Load(string filePath)
+        if (doc.XPathSelectElement($"/{Tag.DrumMap}") is not XElement root)
         {
-            CubaseDrumMap drumMap;
-
-            if (XDocument.Load(filePath) is not XDocument doc)
-            {
-                throw new FileNotFoundException(filePath);
-            }
-
-            if (doc.XPathSelectElement($"/{Tag.DrumMap}") is not XElement root)
-            {
-                throw new ArgumentException(filePath);
-            }
-
-            IEnumerable<XElement> GetItems(string key) => root.XPathSelectElements($"*[@{CubaseAttr.name}='{key}']/{Tag.item}");
-
-            drumMap = new()
-            {
-                Name = root.XPathSelectElement($"*[@{CubaseAttr.name}='{nameof(Name)}']")?.Attribute($"{CubaseAttr.value}")?.Value ?? string.Empty
-            };
-
-            drumMap.Quantize.GetElement(GetItems(nameof(Quantize)));
-
-            drumMap.Map.GetElement(GetItems(nameof(Map)));
-
-            drumMap.Order = GetItems(nameof(Order)).Select(elm => int.Parse(elm.Attribute(CubaseAttr.value)?.Value ?? "0")).ToList();
-
-            drumMap.OutputDevices.GetElement(GetItems(nameof(OutputDevices)));
-
-            // nameof(Flags) に統一
-            drumMap.Flags = int.Parse(root.XPathSelectElement($"*[@{CubaseAttr.name}='{nameof(Flags)}']")?.Attribute(CubaseAttr.value)?.Value ?? "0");
-
-            return drumMap;
+            throw new ArgumentException(filePath);
         }
 
-        public void Save(string filePath)
+        IEnumerable<XElement> GetItems(string key) => root.XPathSelectElements($"*[@{CubaseAttr.name}='{key}']/{Tag.item}");
+
+        drumMap = new()
         {
-            XDocument doc = new XDocument(new XDeclaration(version: "1.0", encoding: "utf-8", null));
+            Name = root.XPathSelectElement($"*[@{CubaseAttr.name}='{nameof(Name)}']")?.Attribute($"{CubaseAttr.value}")?.Value ?? string.Empty
+        };
 
-            XElement root = new XElement($"{Tag.DrumMap}");
+        drumMap.Quantize.GetElement(GetItems(nameof(Quantize)));
 
-            doc.Add(root);
+        drumMap.Map.GetElement(GetItems(nameof(Map)));
 
-            root.Add(new XElement(Tag.@string, [new XAttribute(CubaseAttr.name, $"{nameof(Name)}"), new XAttribute(CubaseAttr.value, Name), new XAttribute(CubaseAttr.wide, true.ToString().ToLower())]));
+        drumMap.Order = GetItems(nameof(Order)).Select(elm => int.Parse(elm.Attribute(CubaseAttr.value)?.Value ?? "0")).ToList();
 
-            root.Add(Quantize.ToElement());
+        drumMap.OutputDevices.GetElement(GetItems(nameof(OutputDevices)));
 
-            root.Add(Map.ToElement());
+        drumMap.Flags = int.Parse(root.XPathSelectElement($"*[@{CubaseAttr.name}='{nameof(Flags)}']")?.Attribute(CubaseAttr.value)?.Value ?? "0");
 
-            XElement order = new XElement(Tag.list, [new XAttribute(CubaseAttr.name, nameof(Order)), new XAttribute(CubaseAttr.type, Tag.@int)]);
+        return drumMap;
+    }
 
-            Order.ForEach(item =>
-            {
-                order.Add(new XElement(Tag.item, new XAttribute(CubaseAttr.value, $"{item}")));
-            });
+    public void Save(string filePath)
+    {
+        XDocument doc = new XDocument(new XDeclaration(version: "1.0", encoding: "utf-8", null));
 
-            root.Add(order);
+        XElement root = new XElement($"{Tag.DrumMap}");
 
-            root.Add(OutputDevices.ToElement());
+        doc.Add(root);
 
-            root.Add(new XElement(Tag.@int, [new XAttribute(CubaseAttr.name, $"{nameof(Flags)}"), new XAttribute($"{CubaseAttr.value}", Flags)]));
+        root.Add(new XElement(Tag.@string, [new XAttribute(CubaseAttr.name, $"{nameof(Name)}"), new XAttribute(CubaseAttr.value, Name), new XAttribute(CubaseAttr.wide, true.ToString().ToLower())]));
 
-            doc.Save(filePath.ToSafeFilePath());
-        }
+        root.Add(Quantize.ToElement());
 
-        public void Initialize()
+        root.Add(Map.ToElement());
+
+        XElement order = new XElement(Tag.list, [new XAttribute(CubaseAttr.name, nameof(Order)), new XAttribute(CubaseAttr.type, Tag.@int)]);
+
+        Order.ForEach(item =>
         {
-            Name = "Default";
+            order.Add(new XElement(Tag.item, new XAttribute(CubaseAttr.value, $"{item}")));
+        });
 
-            Quantize.Items.Add(new QuantizeItem());
+        root.Add(order);
 
-            Enumerable.Range(0, 128).ToList().ForEach(x =>
-            {
-                Map.Items.Add(new MapItem(string.Empty, x));
-                Order.Add(x);
-            });
+        root.Add(OutputDevices.ToElement());
 
-            OutputDevices.Items.Add(new OutputDevicesItem());
-        }
+        root.Add(new XElement(Tag.@int, [new XAttribute(CubaseAttr.name, $"{nameof(Flags)}"), new XAttribute($"{CubaseAttr.value}", Flags)]));
 
-        #endregion
+        doc.Save(filePath.ToSafeFilePath());
+    }
 
-        #endregion
+    public void Initialize()
+    {
+        Name = "Default";
+
+        Quantize.Items.Add(new QuantizeItem());
+
+        Enumerable.Range(0, 128).ToList().ForEach(x =>
+        {
+            Map.Items.Add(new MapItem(string.Empty, x));
+            Order.Add(x);
+        });
+
+        OutputDevices.Items.Add(new OutputDevicesItem());
     }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>MIDI Convert</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>MIDI Convert</h1>
+<p>Konvertiert MIDI-Daten (SMF).</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-convert_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">So verwenden Sie</h2>
+<p>
+            Wählen Sie das Basiskit aus, von dem Sie umrüsten möchten. Importieren Sie die zu konvertierende Datei über die Schaltfläche auf der rechten Seite von<br/>
+            Target Midi File.<br/>
+            Alternativ können Sie eine MIDI-Datei importieren, indem Sie sie per Drag &amp; Drop auf die Seite ziehen. (Version 1.0.1 oder höher)<br/>
+            Wählen Sie das Konvertierungsziel aus der Kit-Liste auf der rechten Seite des Bildschirms aus (Mehrfachauswahl ist möglich) und klicken Sie auf die Schaltfläche „Konvertieren“.
+        </p>
+<h2 id="specifications">Konvertierungsspezifikationen</h2>
+<p>Die Konvertierung erfolgt basierend auf den Drum-Map-Artikulationseinstellungen.</p>
+<p>
+            Tonhöhen, für die keine Artikulation angegeben ist, werden als separate Daten ausgegeben, wobei am Anfang des ursprünglichen Dateinamens ein „#“ hinzugefügt wird.
+        </p>
+<p class="note">Wenn es sich bei der Konvertierungsquelle beispielsweise um Daten handelt, die auch GM-Map-Percussion enthalten, werden der Drum-Part und der Percussion-Part getrennt.</p>
+<p>Die konvertierte Ausgabedatei wird im selben Ordner wie die Originaldatei erstellt.</p>
+<p class="note">Wenn das Ausgabeformat Format0 ist, wird ein Ordner mit dem ursprünglichen Dateinamen + _converted erstellt und darin eine Datei mit dem konvertierten Drum-Map-Namen.</p>
+<p class="note">Wenn das Ausgabeformat Format1 ist, wird eine Datei mit dem ursprünglichen Dateinamen + _converted erstellt und darin wird eine Spur mit dem konvertierten Drum-Map-Namen erstellt.</p>
+<h3>Über das Ausgabeformat</h3>
+<p>Wenn Sie Cubase verwenden, ist es am besten, Format 0 zu verwenden, da Sie einzelne Spuren in einer MIDI-Datei nicht verarbeiten können.</p>
+</div>
+</body>
+</html>

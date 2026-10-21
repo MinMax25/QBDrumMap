@@ -1,15 +1,14 @@
-﻿using System.Windows.Controls;
+using System.Windows.Controls;
 using QBDrumMap.ViewModels;
 
-namespace QBDrumMap.Views
+namespace QBDrumMap.Views;
+
+public partial class SettingPage
+    : Page
 {
-    public partial class SettingPage
-        : Page
+    public SettingPage(SettingViewModel viewModel)
     {
-        public SettingPage(SettingViewModel viewModel)
-        {
-            InitializeComponent();
-            DataContext = viewModel;
-        }
+        InitializeComponent();
+        DataContext = viewModel;
     }
 }

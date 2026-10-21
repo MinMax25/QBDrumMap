@@ -1,11 +1,10 @@
-﻿using System.Windows.Controls;
+using System.Windows.Controls;
 
-namespace QBDrumMap.Contracts.Services
+namespace QBDrumMap.Contracts.Services;
+
+public interface IPageService
 {
-    public interface IPageService
-    {
-        Type GetPageType(string key);
+    Type GetPageType(string key);
 
-        Page GetPage(string key);
-    }
+    Page GetPage(string key);
 }

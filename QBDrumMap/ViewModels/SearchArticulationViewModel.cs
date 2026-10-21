@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -11,125 +11,86 @@ using QBDrumMap.Class.MapModels;
 using QBDrumMap.Class.Services;
 using QBDrumMap.Views;
 
-namespace QBDrumMap.ViewModels
+namespace QBDrumMap.ViewModels;
+
+[DIWindow<SearchArticulation>]
+public partial class SearchArticulationViewModel : ViewModelBase, IResultProvider<Articulation>
 {
-    [DIWindow<SearchArticulation>]
-    public partial class SearchArticulationViewModel : ViewModelBase, IResultProvider<Articulation>
+    public ICollectionView Articulations { get; init; }
+
+    [ObservableProperty]
+    private string _filterArticulationName;
+
+    [ObservableProperty]
+    private Articulation _selectedArticulation;
+
+    public Articulation GetResult()
     {
-        #region Fields
+        return SelectedArticulation;
+    }
 
-        // フィルタリング・表示用のアーティキュレーション一覧ビュー
-        public ICollectionView Articulations { get; init; }
-
-        // アーティキュレーション名で絞り込むためのフィルター文字列
-        [ObservableProperty]
-        private string _filterArticulationName;
-
-        // リストで選択されているアーティキュレーション
-        [ObservableProperty]
-        private Articulation _selectedArticulation;
-
-        #endregion
-
-        #region Properties
-
-        // IResultProviderの実装: 選択された結果を返す
-        public Articulation GetResult()
-        {
-            return SelectedArticulation;
-        }
-
-        #endregion
-
-        #region ctor
-
-        public SearchArticulationViewModel(IDIContainer diContainer)
-            : base(diContainer)
-        {
-            var artics = MapData.Parts
-                .GroupBy(x =>
+    public SearchArticulationViewModel(IDIContainer diContainer)
+        : base(diContainer)
+    {
+        var artics = MapData.Parts
+            .GroupBy(x =>
+            {
+                return x.DisplayOrder;
+            })
+            .SelectMany(x =>
+            {
+                return x.SelectMany(y =>
                 {
-                    return x.DisplayOrder;
-                })
-                .SelectMany(x =>
-                {
-                    return x.SelectMany(y =>
+                    return y.Articulations.OrderBy(z =>
                     {
-                        return y.Articulations.OrderBy(z =>
-                        {
-                            return z.DisplayOrder;
-                        });
+                        return z.DisplayOrder;
                     });
-                })
-                .ToList();
+                });
+            })
+            .ToList();
 
-            Articulations = CollectionViewSource.GetDefaultView(artics);
-            Articulations.Filter = FilterMethod;
+        Articulations = CollectionViewSource.GetDefaultView(artics);
+        Articulations.Filter = FilterMethod;
 
-            FilterArticulationName = SettingService.SearchArticulationFilter;
-        }
+        FilterArticulationName = SettingService.SearchArticulationFilter;
+    }
 
-        #endregion
+    partial void OnFilterArticulationNameChanged(string value)
+    {
+        SettingService.SearchArticulationFilter = value;
+        Articulations.Refresh();
+    }
 
-        #region Methods
-
-        #region PropertyChanged Callbacks
-
-        // フィルター文字列変更時に設定を保存し、ビューを更新する
-        partial void OnFilterArticulationNameChanged(string value)
+    [RelayCommand]
+    private void OnArticulationSelected(object sender)
+    {
+        if (sender is Window window)
         {
-            SettingService.SearchArticulationFilter = value;
-            Articulations.Refresh();
+            WindowService.CloseWindow(window);
         }
+    }
 
-        #endregion
-
-        #region Commands
-
-        [RelayCommand]
-        private void OnArticulationSelected(object sender)
+    private bool FilterMethod(object obj)
+    {
+        if (obj is not Articulation articulation)
         {
-            if (sender is Window window)
-            {
-                WindowService.CloseWindow(window);
-            }
+            return false;
         }
 
-        #endregion
-
-        #region General
-
-        // コレクションビューのフィルタリングロジック
-        private bool FilterMethod(object obj)
+        if (string.IsNullOrEmpty(FilterArticulationName))
         {
-            if (obj is not Articulation articulation)
-            {
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(FilterArticulationName))
-            {
-                return true;
-            }
-
-            return articulation.Name.Like(FilterArticulationName);
+            return true;
         }
 
-        #endregion
+        return articulation.Name.Like(FilterArticulationName);
+    }
 
-        #region Dispose
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
 
-        protected override void Dispose(bool disposing)
+        if (disposing)
         {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-            }
         }
-
-        #endregion
-
-        #endregion
     }
 }

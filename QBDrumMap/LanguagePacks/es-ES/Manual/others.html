@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Otros</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Otros</h1>
+<h2 id="interpolation">Acerca de la interpolación automática de articulaciones</h2>
+<p>Al convertir MIDI o crear un mapa de batería mapeado, se crea un mapa de articulación para cada mapa de batería y la conversión de tono se realiza en función de esa información.</p>
+<p>Si no hay un tono asignado a una articulación, se completará un tono alternativo de acuerdo con las siguientes reglas.</p>
+<ol>
+<li>Si la lista de articulaciones para cada parte de batería no está definida de arriba a abajo, complete el tono anterior.</li>
+<li>Si la lista de articulaciones para cada parte de batería no está definida de abajo hacia arriba, complete el tono anterior.</li>
+<li>Después de ejecutar 1.2. arriba, si aún no está definido, complete el tono de la articulación configurada en Complemento.</li>
+</ol>
+<p class="note">
+            Según las reglas anteriores, las articulaciones de partes de batería requieren al menos una asignación de tono.
+        </p>
+</div>
+</body>
+</html>

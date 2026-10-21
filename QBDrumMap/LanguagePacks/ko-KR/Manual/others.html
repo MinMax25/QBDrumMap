@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>기타</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>기타</h1>
+<h2 id="interpolation">아티큘레이션의 자동 보간에 대하여</h2>
+<p>MIDI 컨버트나 매핑된 드럼 맵 작성시에는 각 드럼 맵의 아티큘레이션 맵이 작성되어, 그 정보를 기초로 피치 변환이 행해집니다.</p>
+<p>아티큘레이션에 할당 된 피치가 없으면 다음 규칙으로 대체 피치를 채 웁니다.</p>
+<ol>
+<li>드럼 파트 마다의 아티큘레이션 일람 상부로부터 하부를 향해 미정의의 경우는 1개 앞의 피치를 메운다.</li>
+<li>드럼 파트마다의 아티큘레이션 일람 하부로부터 상부를 향해 미정의의 경우는 1개 앞의 피치를 메운다.</li>
+<li>위의 1.2. 실행 후 아직 정의되지 않은 경우 Complement로 설정된 아티큘레이션의 피치를 채 웁니다.</li>
+</ol>
+<p class="note">
+            위의 규칙을 사용하면 드럼 부품의 아티큘레이션에 최소한 하나의 피치 할당이 필요합니다.
+        </p>
+</div>
+</body>
+</html>

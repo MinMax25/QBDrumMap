@@ -1,7 +1,6 @@
-﻿namespace QBDrumMap.Class.MapModels
+namespace QBDrumMap.Class.MapModels;
+
+public interface IHasID
 {
-    public interface IHasID
-    {
-        int ID { get; set; }
-    }
+    int ID { get; set; }
 }

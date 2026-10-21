@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Export</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Export</h1>
+<p>Exportiert die Drum-Map.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-export_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">So verwenden Sie</h2>
+<p>
+            Wählen Sie das Exportziel aus der Kit-Liste auf der rechten Seite des Bildschirms aus (Mehrfachauswahl möglich).
+            Drücken Sie den gewünschten Export-Button.
+            Wählen Sie im erscheinenden Ordnerauswahldialog den Speicherort aus.
+            Der ausgewählte Ordner wird in der Einstellungsdatei aufgezeichnet und wird beim nächsten Export zum Standardauswahlordner.
+        </p>
+<h3>Artikulation verwenden Wenn</h3>
+<p>Tonhöhennamen der Artikulation verwenden aktiviert ist, wird der Artikulationsname bevorzugt als Tonhöhenname verwendet.</p>
+<p>Beim Exportieren einer normalen Drum-Map können Sie unter „Artikulation beim Exportieren verwenden“ angeben, ob Artikulation verwendet werden soll oder nicht. Wenn Sie die</p>
+<p>-Artikulation nicht verwenden, werden die in der Tonhöhenliste angezeigten Inhalte unverändert ausgegeben. Wenn Sie</p>
+<p>-Artikulation verwenden auswählen, wird die Sortierreihenfolge durch die verknüpfte Artikulation und nicht durch den angezeigten Inhalt der Tonhöhenliste bestimmt.</p>
+<p>Drum-Score-Informationen und Farbschema werden nur ausgegeben, wenn Sie Artikulation verwenden auswählen. (Es gibt keine Informationen zum Farbschema für Cubase)</p>
+<h2 id="filename">Über den Dateinamen</h2>
+<p>Der Dateiname ist der Kit-Name.<em>Erweiterung</em>. Existiert bereits eine Datei mit demselben Namen, wird diese überschrieben und ersetzt.</p>
+<p class="note">Pitch-Liste für Studio One, Drum-Map für Cubase und TSV-Text werden im Plug-In-Namensordner ausgegeben.</p>
+<h2 id="filetype">Dateityp</h2>
+<p>Folgende Dateien können exportiert werden.</p>
+<ul>
+<li>
+                Normale Drum-Map
+                <ul>
+<li>Pitch-Liste für Studio One</li>
+<li>Drum-Map für Cubase</li>
+</ul>
+</li>
+<li>
+                Zugeordnete Drum-Map
+                <ul>
+<li>Drum-Map für Cubase</li>
+<li>Vorlage für Note Mapper</li>
+</ul>
+</li>
+<li>
+                Sonstiges
+                <ul>
+<li>tsv-Text</li>
+</ul>
+</li>
+</ul>
+<p>Wählen Sie beim Exportieren einer gemappten Drum-Map die zu erstellende Drum-Map (Kit) aus die Quelle.</p>
+<h2 id="qbdrummer">Hinweis zum CSV für QB Drummer</h2>
+<p>Im CSV für QB Drummer wird jeder Artikulation eine eigene fortlaufende CSV-Nummer zugewiesen.</p>
+<p class="note">Wenn Sie die Artikulationsstruktur oder die Reihenfolge der Drum-Map ändern, können sich diese Nummern ändern. Die Kombination von CSV-Dateien vor und nach einer Änderung kann daher möglicherweise nicht korrekt konvertiert werden. Exportieren Sie nach einer Änderung der Drum-Map das CSV der verwendeten Kits erneut.</p>
+</div>
+</body>
+</html>

@@ -1,120 +1,98 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Xaml.Behaviors;
 
-namespace QBDrumMap.Class.Behaviors
+namespace QBDrumMap.Class.Behaviors;
+
+public class DataGridGroupExpandBehavior : Behavior<DataGrid>
 {
-    public class DataGridGroupExpandBehavior : Behavior<DataGrid>
+    public static readonly DependencyProperty IsExpandedProperty =
+        DependencyProperty.Register(
+            nameof(IsExpanded),
+            typeof(bool),
+            typeof(DataGridGroupExpandBehavior),
+            new FrameworkPropertyMetadata(
+                false,
+                FrameworkPropertyMetadataOptions.None,
+                OnIsExpandedChanged
+            )
+        );
+
+    public bool IsExpanded
     {
-        #region Properties
+        get => (bool)GetValue(IsExpandedProperty);
+        set => SetValue(IsExpandedProperty, value);
+    }
 
-        #region DependencyProperty
+    private static void OnIsExpandedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        var behavior = (DataGridGroupExpandBehavior)d;
+        behavior.UpdateExpanders((bool)e.NewValue);
+    }
 
-        // 全てのグループを展開するかどうか
-        public static readonly DependencyProperty IsExpandedProperty =
-            DependencyProperty.Register(
-                nameof(IsExpanded),
-                typeof(bool),
-                typeof(DataGridGroupExpandBehavior),
-                new FrameworkPropertyMetadata(
-                    false,
-                    FrameworkPropertyMetadataOptions.None,
-                    OnIsExpandedChanged
-                )
-            );
-
-        #endregion
-
-        public bool IsExpanded
+    private void UpdateExpanders(bool isExpanded)
+    {
+        if (AssociatedObject == null)
         {
-            get => (bool)GetValue(IsExpandedProperty);
-            set => SetValue(IsExpandedProperty, value);
+            return;
         }
 
-        #endregion
-
-        #region Methods
-
-        #region Property Change Handler
-
-        private static void OnIsExpandedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        var groupItems = FindVisualChildren<GroupItem>(AssociatedObject);
+        foreach (var groupItem in groupItems)
         {
-            var behavior = (DataGridGroupExpandBehavior)d;
-            behavior.UpdateExpanders((bool)e.NewValue);
-        }
-
-        #endregion
-
-        #region General
-
-        private void UpdateExpanders(bool isExpanded)
-        {
-            if (AssociatedObject == null)
+            if (VisualTreeHelper.GetChildrenCount(groupItem) == 0)
             {
-                return;
+                continue;
             }
 
-            var groupItems = FindVisualChildren<GroupItem>(AssociatedObject);
-            foreach (var groupItem in groupItems)
+            var expander = FindVisualChild<Expander>(groupItem);
+            if (expander != null)
             {
-                if (VisualTreeHelper.GetChildrenCount(groupItem) == 0)
-                {
-                    continue;
-                }
-
-                var expander = FindVisualChild<Expander>(groupItem);
-                if (expander != null)
-                {
-                    expander.IsExpanded = isExpanded;
-                }
+                expander.IsExpanded = isExpanded;
             }
         }
+    }
 
-        private static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+    private static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+    {
+        if (depObj == null)
         {
-            if (depObj == null)
+            yield break;
+        }
+
+        for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+        {
+            var child = VisualTreeHelper.GetChild(depObj, i);
+            if (child is T t)
             {
-                yield break;
+                yield return t;
             }
 
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+            foreach (var childOfChild in FindVisualChildren<T>(child))
             {
-                var child = VisualTreeHelper.GetChild(depObj, i);
-                if (child is T t)
-                {
-                    yield return t;
-                }
+                yield return childOfChild;
+            }
+        }
+    }
 
-                foreach (var childOfChild in FindVisualChildren<T>(child))
-                {
-                    yield return childOfChild;
-                }
+    private static T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
+    {
+        for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+        {
+            var child = VisualTreeHelper.GetChild(parent, i);
+            if (child is T t)
+            {
+                return t;
+            }
+
+            var result = FindVisualChild<T>(child);
+            if (result != null)
+            {
+                return result;
             }
         }
 
-        private static T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
-        {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
-            {
-                var child = VisualTreeHelper.GetChild(parent, i);
-                if (child is T t)
-                {
-                    return t;
-                }
-
-                var result = FindVisualChild<T>(child);
-                if (result != null)
-                {
-                    return result;
-                }
-            }
-
-            return null;
-        }
-
-        #endregion
-
-        #endregion
+        return null;
     }
 }

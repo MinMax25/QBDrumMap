@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="QBDrumMap.Views.ExportPage"
     Style="{DynamicResource MahApps.Styles.Page}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -8,94 +8,157 @@
     xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:bhlibqb="clr-namespace:libQB.Behaviors;assembly=libQB"
+    xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    xmlns:p="clr-namespace:QBDrumMap"
     xmlns:bhlocal="clr-namespace:QBDrumMap.Class.Behaviors"
-    xmlns:properties="clr-namespace:QBDrumMap.Properties"
     Dialog:DialogParticipation.Register="{Binding}"
     mc:Ignorable="d"
-    d:DesignHeight="800" d:DesignWidth="1000">
-    
+    d:DesignHeight="800"
+    d:DesignWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition
+                Height="48" />
+            <RowDefinition
+                Height="*" />
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
-            <ContentControl Focusable="False" Content="{StaticResource ExportPageIcon}" Margin="8,2,0,0"/>
-            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static properties:Resources.Title_ExportPage}"/>
+        <StackPanel
+            Grid.Row="0"
+            Margin="{StaticResource MediumLeftMargin}"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <ContentControl
+                Focusable="False"
+                Content="{StaticResource ExportPageIcon}"
+                Margin="8,2,0,0" />
+            <TextBlock
+                Style="{StaticResource PageTitleStyle}"
+                Text="{loc:Loc Key={x:Static p:Resources.Title_ExportPage}}" />
         </StackPanel>
-
-        <Grid Grid.Row="1" Margin="{StaticResource MediumLeftRightMargin}" Background="{DynamicResource MahApps.Brushes.Gray10}">
+        <Grid
+            Grid.Row="1"
+            Margin="{StaticResource MediumLeftRightMargin}"
+            Background="{DynamicResource MahApps.Brushes.Gray10}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="400"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition
+                        Width="400" />
+                    <ColumnDefinition
+                        Width="*" />
                 </Grid.ColumnDefinitions>
-
-                <StackPanel Grid.Column="0">
-                    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Setting">
+                <StackPanel
+                    Grid.Column="0">
+                    <GroupBox
+                        Style="{StaticResource GroupBoxBaseStyle}"
+                        Header="Setting">
                         <StackPanel>
-                            <CheckBox Margin="12,8,8,8" Content="{x:Static properties:Resources.Setting_UseArticulationPitchName}" IsChecked="{Binding Setting.UseArticulationPitchName}"/>
-                            <CheckBox Margin="12,8,8,8" Content="{x:Static properties:Resources.Setting_UseArticulationWhenExporting}" IsChecked="{Binding Setting.UseArticulation}"/>
+                            <CheckBox
+                                Margin="12,8,8,8"
+                                Content="{loc:Loc Key={x:Static p:Resources.Setting_UseArticulationPitchName}}"
+                                IsChecked="{Binding Setting.UseArticulationPitchName}" />
+                            <CheckBox
+                                Margin="12,8,8,8"
+                                Content="{loc:Loc Key={x:Static p:Resources.Setting_UseArticulationWhenExporting}}"
+                                IsChecked="{Binding Setting.UseArticulation}" />
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Export Simple Map">
+                    <GroupBox
+                        Style="{StaticResource GroupBoxBaseStyle}"
+                        Header="Export Simple Map">
                         <StackPanel>
-                            <Button Style="{StaticResource ExportButtonStyle}" Content="Studio One" Command="{Binding ExportStudioOneCommand}"/>
-                            <Button Style="{StaticResource ExportButtonStyle}" Content="Cubase" Command="{Binding ExportCubaseCommand}"/>
-                        </StackPanel>                        
-                    </GroupBox>
-                    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Export Base On Map">
-                        <StackPanel>
-                            <Label Content="Base On Kit"/>
-                            <ComboBox SelectedValue="{Binding BaseOn}" ItemsSource="{Binding BaseOnComboSource}" DisplayMemberPath="Name"/>
-                            <Button Style="{StaticResource ExportButtonStyle}" Content="Cubase" Command="{Binding ExportCubaseBaseOnCommand}"/>
-                            <Button Style="{StaticResource ExportButtonStyle}" Content="Note Mapper" Command="{Binding ExportNoteMapperCommand}"/>
+                            <Button
+                                Style="{StaticResource ExportButtonStyle}"
+                                Content="Studio One"
+                                Command="{Binding ExportStudioOneCommand}" />
+                            <Button
+                                Style="{StaticResource ExportButtonStyle}"
+                                Content="Cubase"
+                                Command="{Binding ExportCubaseCommand}" />
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Style="{StaticResource GroupBoxBaseStyle}" Header="Export Other">
+                    <GroupBox
+                        Style="{StaticResource GroupBoxBaseStyle}"
+                        Header="Export Base On Map">
                         <StackPanel>
-                            <Button Style="{StaticResource ExportButtonStyle}" Content="Text(.tsv)" Command="{Binding ExportTextCommand}"/>
-                            <Button Style="{StaticResource ExportButtonStyle}" Content="QB Drummer" Command="{Binding ExportQBDrummerCommand}"/>
+                            <Label
+                                Content="Base On Kit" />
+                            <ComboBox
+                                SelectedValue="{Binding BaseOn}"
+                                ItemsSource="{Binding BaseOnComboSource}"
+                                DisplayMemberPath="Name" />
+                            <Button
+                                Style="{StaticResource ExportButtonStyle}"
+                                Content="Cubase"
+                                Command="{Binding ExportCubaseBaseOnCommand}" />
+                            <Button
+                                Style="{StaticResource ExportButtonStyle}"
+                                Content="Note Mapper"
+                                Command="{Binding ExportNoteMapperCommand}" />
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox
+                        Style="{StaticResource GroupBoxBaseStyle}"
+                        Header="Export Other">
+                        <StackPanel>
+                            <Button
+                                Style="{StaticResource ExportButtonStyle}"
+                                Content="Text(.tsv)"
+                                Command="{Binding ExportTextCommand}" />
+                            <Button
+                                Style="{StaticResource ExportButtonStyle}"
+                                Content="QB Drummer"
+                                Command="{Binding ExportQBDrummerCommand}" />
                         </StackPanel>
                     </GroupBox>
                 </StackPanel>
-
-                <Grid Grid.Column="1">
+                <Grid
+                    Grid.Column="1">
                     <DataGrid
                         ItemsSource="{Binding KitListView}"
                         Style="{StaticResource DataGridStyle}">
                         <bh:Interaction.Behaviors>
-                            <bhlibqb:DataGridExtendBehavior SelectedRows="{Binding SelectedKits}" SelectionChangedCommand="{Binding SelectedKitsSelectionChangedCommand}"/>
-                            <bhlocal:DataGridGroupExpandBehavior IsExpanded="{Binding IsGroupExpanded}" />
+                            <bhlibqb:DataGridExtendBehavior
+                                SelectedRows="{Binding SelectedKits}"
+                                SelectionChangedCommand="{Binding SelectedKitsSelectionChangedCommand}" />
+                            <bhlocal:DataGridGroupExpandBehavior
+                                IsExpanded="{Binding IsGroupExpanded}" />
                         </bh:Interaction.Behaviors>
-
                         <DataGrid.ContextMenu>
-                            <ContextMenu  IsEnabled="{Binding IsCommandEnabled}">
-                                <MenuItem Header="Expand All" Command="{Binding ExpandAllCommand}"/>
-                                <MenuItem Header="Shrink All" Command="{Binding ShrinkAllCommand}"/>
+                            <ContextMenu
+                                IsEnabled="{Binding IsCommandEnabled}">
+                                <MenuItem
+                                    Header="Expand All"
+                                    Command="{Binding ExpandAllCommand}" />
+                                <MenuItem
+                                    Header="Shrink All"
+                                    Command="{Binding ShrinkAllCommand}" />
                             </ContextMenu>
                         </DataGrid.ContextMenu>
-                        
                         <DataGrid.GroupStyle>
                             <GroupStyle>
                                 <GroupStyle.ContainerStyle>
-                                    <Style TargetType="GroupItem">
-                                        <Setter Property="Template">
+                                    <Style
+                                        TargetType="GroupItem">
+                                        <Setter
+                                            Property="Template">
                                             <Setter.Value>
-                                                <ControlTemplate TargetType="GroupItem">
+                                                <ControlTemplate
+                                                    TargetType="GroupItem">
                                                     <Expander
                                                         IsExpanded="False"
                                                         mah:HeaderedControlHelper.HeaderBackground="{StaticResource MahApps.Brushes.Accent4}">
                                                         <Expander.Header>
                                                             <DockPanel>
-                                                                <TextBlock Width="280" Text="{Binding Items[0].PluginName}"/>
-                                                                <TextBlock Text="{Binding Items.Count}"/>
+                                                                <TextBlock
+                                                                    Width="280"
+                                                                    Text="{Binding Items[0].PluginName}" />
+                                                                <TextBlock
+                                                                    Text="{Binding Items.Count}" />
                                                             </DockPanel>
                                                         </Expander.Header>
                                                         <Expander.Content>
-                                                            <ItemsPresenter/>
+                                                            <ItemsPresenter />
                                                         </Expander.Content>
                                                     </Expander>
                                                 </ControlTemplate>
@@ -106,7 +169,11 @@
                             </GroupStyle>
                         </DataGrid.GroupStyle>
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Kit" Binding="{Binding KitName}" Width="300" IsReadOnly="True"/>
+                            <DataGridTextColumn
+                                Header="Kit"
+                                Binding="{Binding KitName}"
+                                Width="300"
+                                IsReadOnly="True" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

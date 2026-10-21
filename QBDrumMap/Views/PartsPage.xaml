@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="QBDrumMap.Views.PartsPage"
     Style="{DynamicResource MahApps.Styles.Page}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -8,122 +8,193 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:behaviors="clr-namespace:libQB.Behaviors;assembly=libQB"
-    xmlns:resx="clr-namespace:QBDrumMap.Properties"
+    xmlns:loc="clr-namespace:libQB.Localization;assembly=libQB"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    xmlns:p="clr-namespace:QBDrumMap"
     xmlns:vm="clr-namespace:QBDrumMap.ViewModels.Controls"
     xmlns:Controls="clr-namespace:QBDrumMap.Views.Controls"
     Dialog:DialogParticipation.Register="{Binding}"
     mc:Ignorable="d"
     Loaded="Page_Loaded"
-    d:DesignHeight="450" d:DesignWidth="1000">
-
+    d:DesignHeight="450"
+    d:DesignWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition
+                Height="48" />
+            <RowDefinition
+                Height="*" />
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="0" Margin="{StaticResource MediumLeftMargin}" VerticalAlignment="Center" Orientation="Horizontal">
-            <ContentControl Focusable="False" Content="{StaticResource PartsPageIcon}" Margin="8,2,0,0"/>
-            <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static resx:Resources.Title_PartsPage}"/>
+        <StackPanel
+            Grid.Row="0"
+            Margin="{StaticResource MediumLeftMargin}"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <ContentControl
+                Focusable="False"
+                Content="{StaticResource PartsPageIcon}"
+                Margin="8,2,0,0" />
+            <TextBlock
+                Style="{StaticResource PageTitleStyle}"
+                Text="{loc:Loc Key={x:Static p:Resources.Title_PartsPage}}" />
         </StackPanel>
-
-        <Grid Grid.Row="1" Margin="{StaticResource MediumLeftRightMargin}" Background="{DynamicResource MahApps.Brushes.Gray10}">
+        <Grid
+            Grid.Row="1"
+            Margin="{StaticResource MediumLeftRightMargin}"
+            Background="{DynamicResource MahApps.Brushes.Gray10}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition
+                        Height="Auto" />
+                    <RowDefinition
+                        Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition
+                        Width="Auto" />
+                    <ColumnDefinition
+                        Width="*" />
                 </Grid.ColumnDefinitions>
-
-                <Expander Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="4" ExpandDirection="Right" IsExpanded="True">
+                <Expander
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="2"
+                    Margin="4"
+                    ExpandDirection="Right"
+                    IsExpanded="True">
                     <Expander.Header>
-                        <Label Content="Parts">
+                        <Label
+                            Content="Parts">
                             <Label.LayoutTransform>
-                                <RotateTransform Angle="90"/>
+                                <RotateTransform
+                                    Angle="90" />
                             </Label.LayoutTransform>
                         </Label>
                     </Expander.Header>
-
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition
+                                Height="Auto" />
+                            <RowDefinition
+                                Height="*" />
                         </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0">
+                        <Grid
+                            Grid.Row="0">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition
+                                    Width="*" />
+                                <ColumnDefinition
+                                    Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Row="0" Orientation="Horizontal" IsEnabled="{Binding IsCommandEnabled}">
-                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding AddCommand}" ToolTip="{x:Static resx:Resources.ButtonAdd}">
-                                    <iconPacks:PackIconMaterial Kind="Plus" Style="{StaticResource BasePackIconStyle}"/>
+                            <StackPanel
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                IsEnabled="{Binding IsCommandEnabled}">
+                                <Button
+                                    Style="{StaticResource IconButtonStyle}"
+                                    Command="{Binding AddCommand}"
+                                    ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonAdd}}">
+                                    <iconPacks:PackIconMaterial
+                                        Kind="Plus"
+                                        Style="{StaticResource BasePackIconStyle}" />
                                 </Button>
-                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveTopCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveTop}">
-                                    <iconPacks:PackIconMaterial Kind="ArrowCollapseUp" Style="{StaticResource BasePackIconStyle}"/>
+                                <Button
+                                    Style="{StaticResource IconButtonStyle}"
+                                    Command="{Binding MoveTopCommand}"
+                                    ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonMoveTop}}">
+                                    <iconPacks:PackIconMaterial
+                                        Kind="ArrowCollapseUp"
+                                        Style="{StaticResource BasePackIconStyle}" />
                                 </Button>
-                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveUpCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveUp}">
-                                    <iconPacks:PackIconMaterial Kind="ArrowUp" Style="{StaticResource BasePackIconStyle}"/>
+                                <Button
+                                    Style="{StaticResource IconButtonStyle}"
+                                    Command="{Binding MoveUpCommand}"
+                                    ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonMoveUp}}">
+                                    <iconPacks:PackIconMaterial
+                                        Kind="ArrowUp"
+                                        Style="{StaticResource BasePackIconStyle}" />
                                 </Button>
-                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveDownCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveDown}">
-                                    <iconPacks:PackIconMaterial Kind="ArrowDown" Style="{StaticResource BasePackIconStyle}"/>
+                                <Button
+                                    Style="{StaticResource IconButtonStyle}"
+                                    Command="{Binding MoveDownCommand}"
+                                    ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonMoveDown}}">
+                                    <iconPacks:PackIconMaterial
+                                        Kind="ArrowDown"
+                                        Style="{StaticResource BasePackIconStyle}" />
                                 </Button>
-                                <Button Style="{StaticResource IconButtonStyle}" Command="{Binding MoveBottomCommand}" ToolTip="{x:Static resx:Resources.ButtonMoveBottom}">
-                                    <iconPacks:PackIconMaterial Kind="ArrowCollapseDown" Style="{StaticResource BasePackIconStyle}"/>
+                                <Button
+                                    Style="{StaticResource IconButtonStyle}"
+                                    Command="{Binding MoveBottomCommand}"
+                                    ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonMoveBottom}}">
+                                    <iconPacks:PackIconMaterial
+                                        Kind="ArrowCollapseDown"
+                                        Style="{StaticResource BasePackIconStyle}" />
                                 </Button>
                             </StackPanel>
                         </Grid>
-
-                        <DataGrid x:Name="PartsDataGrid" Grid.Row="1" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding PartsView}">
+                        <DataGrid
+                            x:Name="PartsDataGrid"
+                            Grid.Row="1"
+                            Style="{StaticResource DataGridStyle}"
+                            ItemsSource="{Binding PartsView}">
                             <bh:Interaction.Behaviors>
                                 <behaviors:DataGridExtendBehavior
-                            IsEditing="{Binding IsEditing}"
-                            SelectedRows="{Binding SelectedParts}"
-                            SelectedRow="{Binding SelectedPart}"
-                            DeleteCommand="{Binding DeleteSelectedPartsCommand}"/>
+                                    IsEditing="{Binding IsEditing}"
+                                    SelectedRows="{Binding SelectedParts}"
+                                    SelectedRow="{Binding SelectedPart}"
+                                    DeleteCommand="{Binding DeleteSelectedPartsCommand}" />
                             </bh:Interaction.Behaviors>
-
                             <DataGrid.RowValidationErrorTemplate>
-                                <ControlTemplate/>
+                                <ControlTemplate />
                             </DataGrid.RowValidationErrorTemplate>
-
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Color" Width="60">
+                                <DataGridTemplateColumn
+                                    Header="Color"
+                                    Width="60">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <mah:Tile Margin="2" Height="10" Width="40" Background="{Binding Color, Converter={StaticResource StudioOneSolidBrushConverter}}"/>
+                                            <StackPanel
+                                                Orientation="Horizontal"
+                                                HorizontalAlignment="Center">
+                                                <mah:Tile
+                                                    Margin="2"
+                                                    Height="10"
+                                                    Width="40"
+                                                    Background="{Binding Color, Converter={StaticResource StudioOneSolidBrushConverter}}" />
                                             </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-
                                 <DataGridTextColumn
-                            Width="200" Header="Name"
-                            mah:TextBoxHelper.ClearTextButton="True"
-                            Binding="{Binding Name, ValidatesOnDataErrors=True, Converter={StaticResource TrimConverter}}">
+                                    Width="200"
+                                    Header="Name"
+                                    mah:TextBoxHelper.ClearTextButton="True"
+                                    Binding="{Binding Name, ValidatesOnDataErrors=True, Converter={StaticResource TrimConverter}}">
                                     <DataGridTextColumn.EditingElementStyle>
-                                        <StaticResource ResourceKey="DataGridEditingTextBoxStyle"/>
+                                        <StaticResource
+                                            ResourceKey="DataGridEditingTextBoxStyle" />
                                     </DataGridTextColumn.EditingElementStyle>
                                 </DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
                 </Expander>
-
                 <!-- Child Contents -->
-                <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                <Grid
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.RowSpan="2">
                     <Grid.Resources>
-                        <DataTemplate DataType="{x:Type vm:PartPanelViewModel}">
-                            <Controls:PartPanel/>
+                        <DataTemplate
+                            DataType="{x:Type vm:PartPanelViewModel}">
+                            <Controls:PartPanel />
                         </DataTemplate>
                     </Grid.Resources>
-                    <ContentControl Focusable="False" IsEnabled="{Binding IsContentEnabled}"  Content="{Binding ContentViewModel}"/>
+                    <ContentControl
+                        Focusable="False"
+                        IsEnabled="{Binding IsContentEnabled}"
+                        Content="{Binding ContentViewModel}" />
                 </Grid>
             </Grid>
         </Grid>

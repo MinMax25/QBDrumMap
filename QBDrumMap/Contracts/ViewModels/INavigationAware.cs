@@ -1,9 +1,8 @@
-﻿namespace QBDrumMap.Contracts.ViewModels
-{
-    public interface INavigationAware
-    {
-        void OnNavigatedTo(object parameter);
+namespace QBDrumMap.Contracts.ViewModels;
 
-        void OnNavigatedFrom();
-    }
+public interface INavigationAware
+{
+    void OnNavigatedTo(object parameter);
+
+    void OnNavigatedFrom();
 }

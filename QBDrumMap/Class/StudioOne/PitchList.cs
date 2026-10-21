@@ -1,87 +1,70 @@
-﻿using System.IO;
+using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 using QBDrumMap.Class.Extensions;
 
-namespace QBDrumMap.Class.StudioOne
+namespace QBDrumMap.Class.StudioOne;
+
+[Serializable]
+[System.ComponentModel.DesignerCategory("code")]
+[XmlType(AnonymousType = true)]
+[XmlRoot("Music.PitchNameList", Namespace = "", IsNullable = false)]
+public partial class PitchList
 {
-    [Serializable]
-    [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot("Music.PitchNameList", Namespace = "", IsNullable = false)]
-    public partial class PitchList
+    [XmlElement("Music.PitchName")]
+    public List<PitchName> Items { get; set; } = new();
+
+    [XmlAttribute("title")]
+    public string Title { get; set; } = string.Empty;
+
+    public void Save(string path)
     {
-        #region Properties
+        StringBuilder sb = new();
 
-        // ピッチ名のリスト項目
-        [XmlElement("Music.PitchName")]
-        public List<PitchName> Items { get; set; } = new();
+        sb.AppendLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+        sb.AppendLine($"<Music.PitchNameList title=\"{Title}\">");
 
-        // リストのタイトル
-        [XmlAttribute("title")]
-        public string Title { get; set; } = string.Empty;
-
-        #endregion
-
-        #region Methods
-
-        #region General
-
-        // 指定したパスにStudio One形式のXMLとして保存
-        public void Save(string path)
+        foreach (var item in Items)
         {
-            StringBuilder sb = new();
+            sb.Append("\t<Music.PitchName");
+            sb.Append($" pitch=\"{item.Pitch}\"");
+            sb.Append($" name=\"{EscXML(item.Name)}\"");
 
-            sb.AppendLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
-            sb.AppendLine($"<Music.PitchNameList title=\"{Title}\">");
-
-            foreach (var item in Items)
+            if (!string.IsNullOrWhiteSpace(item.Color))
             {
-                sb.Append("\t<Music.PitchName");
-                sb.Append($" pitch=\"{item.Pitch}\"");
-                sb.Append($" name=\"{EscXML(item.Name)}\"");
-
-                if (!string.IsNullOrWhiteSpace(item.Color))
-                {
-                    sb.Append($" color=\"{item.Color}\"");
-                }
-
-                if (!string.IsNullOrWhiteSpace(item.ScorePitch))
-                {
-                    sb.Append($" scorePitch=\"{item.ScorePitch}\"");
-                }
-
-                if (!string.IsNullOrWhiteSpace(item.Notehead))
-                {
-                    sb.Append($" notehead=\"{item.Notehead}\"");
-                }
-
-                if (!string.IsNullOrWhiteSpace(item.Technique))
-                {
-                    sb.Append($" technique=\"{item.Technique}\"");
-                }
-
-                sb.AppendLine("/>");
+                sb.Append($" color=\"{item.Color}\"");
             }
 
-            sb.AppendLine("</Music.PitchNameList>");
+            if (!string.IsNullOrWhiteSpace(item.ScorePitch))
+            {
+                sb.Append($" scorePitch=\"{item.ScorePitch}\"");
+            }
 
-            File.WriteAllText(path.ToSafeFilePath(), sb.ToString(), Encoding.UTF8);
+            if (!string.IsNullOrWhiteSpace(item.Notehead))
+            {
+                sb.Append($" notehead=\"{item.Notehead}\"");
+            }
+
+            if (!string.IsNullOrWhiteSpace(item.Technique))
+            {
+                sb.Append($" technique=\"{item.Technique}\"");
+            }
+
+            sb.AppendLine("/>");
         }
 
-        // XMLの特殊文字をエスケープ処理
-        public static string EscXML(string str)
-        {
-            return $"{str}"
-                .Replace("&", "&amp;")
-                .Replace("\"", "&quot;")
-                .Replace("'", "&apos;")
-                .Replace("<", "&lt;")
-                .Replace(">", "&gt;");
-        }
+        sb.AppendLine("</Music.PitchNameList>");
 
-        #endregion
+        File.WriteAllText(path.ToSafeFilePath(), sb.ToString(), Encoding.UTF8);
+    }
 
-        #endregion
+    public static string EscXML(string str)
+    {
+        return $"{str}"
+            .Replace("&", "&amp;")
+            .Replace("\"", "&quot;")
+            .Replace("'", "&apos;")
+            .Replace("<", "&lt;")
+            .Replace(">", "&gt;");
     }
 }

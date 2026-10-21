@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>MIDI Convert</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>MIDI Convert</h1>
+<p>Converts MIDI data (SMF).</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-convert_pic_1.png" width="650"/>
+</div>
+<h2 id="howtouse">How to use</h2>
+<p>
+            Select the base kit to convert from. Import the file to be converted using the button on the right side of<br/>
+            Target Midi File.<br/>
+            Alternatively, you can import a MIDI file by dragging and dropping it onto the page. (ver 1.0.1 or later)<br/>
+            Select the conversion target from the kit list on the right side of the screen (multiple selections are possible) and press the convert button.
+        </p>
+<h2 id="specifications">Conversion specifications</h2>
+<p>Conversion is performed based on the drum map articulation settings.</p>
+<p>
+            Pitches for which no articulation is specified will be output as separate data with a '#' added to the beginning of the original file name.
+        </p>
+<p class="note">For example, if the conversion source is data that also includes GM map percussion, the drum part and percussion part will be separated.</p>
+<p>The converted output file will be created in the same folder as the original file.</p>
+<p class="note">For Format 0, output is written to a folder named after the original file with " Converted" appended. The folder is deleted and recreated if it already exists, which removes its contents. Move any files you need to keep before converting.</p>
+<p class="note">For Format 1, output is written to a file named after the original file with " Converted.mid" appended, with a track for each target kit.</p>
+<h3>About the output format</h3>
+<p>If you are using Cubase, it is best to use Format 0 since you cannot handle individual tracks in a MIDI file.</p>
+</div>
+</body>
+</html>

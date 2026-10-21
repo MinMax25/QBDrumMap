@@ -1,8 +1,7 @@
-﻿namespace QBDrumMap.Class.Cubase
+namespace QBDrumMap.Class.Cubase;
+
+public class MapElement
+    : ListElement<MapItem>
 {
-    public class MapElement
-        : ListElement<MapItem>
-    {
-        public MapElement() : base(new List<MapItem>()) { }
-    }
+    public MapElement() : base(new List<MapItem>()) { }
 }

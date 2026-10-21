@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- setting.html -->
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Paramètres</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Paramètres</h1>
+<p>La page des paramètres s'affiche en cliquant sur l'icône d'engrenage en bas du menu hamburger.</p>
+<p class="note"><strong>Important lors de la mise à niveau :</strong> Cette version remplace le format JSON par TOML (<code>Setting.toml</code>) pour les paramètres. Les paramètres des versions précédentes ne sont pas migrés automatiquement. Veuillez les reconfigurer après la mise à niveau.</p>
+<div class="image-wrapper">
+<img alt="Image de l’écran QB DrumMap" height="400" src="image/setting_pic_1.png" width="650"/>
+</div>
+<h2 id="theme">Définition d'un thème</h2>
+<p>Vous pouvez choisir parmi les thèmes suivants :</p>
+<ul>
+<li>Clair</li>
+<li>Foncé</li>
+</ul>
+<p>Vous pouvez également spécifier une couleur d'accentuation.</p>
+<h2 id="language">Définition de la langue</h2>
+<p>Vous pouvez spécifier les éléments suivants dans la zone de liste déroulante Langue :</p>
+<ul>
+<li>L’anglais et le japonais sont intégrés.</li>
+<li>Dans le projet source, les packs linguistiques se trouvent dans <code>LanguagePacks/&lt;locale&gt;/</code>. Pour les utiliser, copiez un pack dans <code>Languages/&lt;locale&gt;/</code>, dans le dossier de l’application.</li>
+</ul>
+<p>La langue choisie devient active immédiatement. Les textes liés à la localisation sont actualisés ; certains éléments de l’interface peuvent ne se mettre à jour qu’à leur prochain affichage.</p>
+<h2 id="startup-page">Définition de la page de démarrage</h2>
+<p>La liste déroulante Page de démarrage vous permet de spécifier la page qui s'affiche initialement au démarrage.</p>
+<p>Les modifications seront reflétées au prochain démarrage du programme.</p>
+<h2 id="load-on-startup">Définir le chargement au démarrage</h2>
+<ul>
+<li>Coché : Le dernier fichier ouvert sera automatiquement ouvert au prochain démarrage du programme.</li>
+<li>Non coché : un nouvel écran s'affichera.</li>
+</ul>
+<h2 id="cubase-path">Définition de la destination d'installation pour Cubase</h2>
+<p>Lorsque vous utilisez la fonction de partition de Cubase, spécifiez la destination d'installation.</p>
+<p class="note">*Si vous n'avez pas Cubase (version 14 ou ultérieure) ou si vous n'avez pas besoin de l'affichage de la partition de batterie, vous pouvez le laisser désactivé.</p>
+<h2 id="part-name-dictionary">Définition du dictionnaire des noms de parties</h2>
+<p>
+            Modifiez le dictionnaire de variations de notation pour les noms de parties de batterie utilisé dans « Auto Articulation Assignment » sur la page du plug-in. Nom canonique
+        </p>
+<div class="image-wrapper">
+<img alt="Image de l’écran du dictionnaire des noms de pièces" height="200" src="image/setting_pic_2.png" width="650"/>
+</div>
+<ul>
+<li class="sub-text">: saisissez le nom de la pièce (nom officiel) défini sur la page Pièce. Alias ​​</li>
+<li class="sub-text">(séparés par des virgules) : saisissez les variantes orthographiques du nom canonique séparées par des virgules (par exemple "Bass Drum,BD"). Ajoutez une ligne avec le bouton</li>
+<li class="sub-text">+, et supprimez-la en appuyant sur la touche Suppr de la ligne sélectionnée.</li>
+</ul>
+<p class="note">
+            Ce dictionnaire est utilisé pour définir automatiquement les articulations en déduisant les parties à partir des noms de hauteur.
+            Veuillez vous enregistrer si les parties de batterie sont appelées différemment selon le plug-in (Kick / Bass Drum / BD, etc.).
+        </p>
+</div>
+</body>
+</html>

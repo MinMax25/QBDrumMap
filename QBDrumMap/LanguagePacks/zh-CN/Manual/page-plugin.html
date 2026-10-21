@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>插件</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>插件</h1>
+<p>编辑鼓映射。</p>
+<h2 id="drummap">编辑鼓映射</h2>
+<p>设置插件和套件信息。</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_7_.png"/>
+</div>
+<ul>
+<li class="sub-text">从插件列表中选择一个插件。如果插件不存在，请添加该插件。</li>
+<li class="sub-text">从套件列表中选择一个套件。如果您没有套件，请添加一个。</li>
+<li class="sub-text">使用音高列表配置地图。</li>
+</ul>
+<h2 id="pitchlist">音调列表</h2>
+<p>设置 VST（鼓音源）中定义的鼓映射信息。</p>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_8.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                名称
+                <ul>
+<li class="sub-text">输入音调名称。如果为空，则不会设置音高。</li>
+</ul>
+</li>
+<li class="sub-text">
+                清晰度
+                <ul>
+<li class="sub-text">从搜索按钮打开清晰度选择屏幕并选择合适的清晰度。</li>
+</ul>
+</li>
+<li class="sub-text">
+                分隔符
+                <ul>
+<li class="sub-text">从组合框中选择适当的分隔符。</li>
+</ul>
+</li>
+</ul>
+<h3 id="filter">过滤器</h3>
+<p>按音高名称和发音名称过滤。</p>
+<div class="image-wrapper">
+<img height="40%" src="image/page-plugin_pic_5.png" width="40%"/>
+</div>
+<p>您可以使用星号 (*) 指定通配符。</p>
+<ul>
+<li>如果未指定，则完全匹配</li>
+<li>如果放置在关键字开头，则匹配后缀</li>
+<li>如果放置在关键字末尾，则匹配开头</li>
+<li>如果放置在关键字之前或之后，则部分匹配</li>
+</ul>
+<h3>排序</h3>
+<ul>
+<li class="sub-text">输入适用音调线的各项。</li>
+<li class="sub-text">
+                您可以通过单击列标题来更改排序顺序。
+                <ul>
+<li class="sub-text">第一次单击将按升序排序，第二次单击将按降序排序，第三次将返回初始状态。</li>
+<li class="sub-text">某些编辑功能在排序状态下受到限制。如果要编辑，请将其恢复到初始状态。</li>
+</ul>
+</li>
+</ul>
+<h2 id="soundcheck">声音检查</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_6.png"/>
+</div>
+<p>单击音高列表每行中的扬声器图标将将该行的音符开/关消息发送到 MIDI 端口。</p>
+<h2 id="contextmenu">上下文菜单</h2>
+<p>通过右键单击音调列表显示。</p>
+<div class="contextmenu-wrapper">
+<div class="contextmenu-image">
+<img src="image/page-plugin_pic_2.png"/>
+</div>
+<ul class="contextmenu-list">
+<li class="sub-text">发音图显示</li>
+<li class="sub-text">
+                    鼓图导出
+                    <ul>
+<li class="sub-text">Studio One</li>
+<li class="sub-text">Cubase</li>
+<li class="sub-text">.tsv 文本</li>
+</ul>
+</li>
+<li class="sub-text">鼓图导入（.pitchlist、.drm、.tsv）</li>
+<li class="sub-text">
+                    对音高列表进行排序
+                    <ul>
+<li class="sub-text">按音高排序</li>
+<li class="sub-text">前进</li>
+</ul>
+</li>
+<li class="sub-text">从其他地图复制演奏记号</li>
+<li class="sub-text">
+                    演奏记号自动分配
+                    <ul>
+<li class="sub-text">根据地图数据演奏记号（部件名称词典、其他套件的设置、相似性匹配）自动将演奏记号设置为未设置的音高。对于</li>
+<li class="sub-text">GM/GS/XG 插件，打击乐器的标准音符不受自动设置的影响。对于有名称但没有发音的音高，</li>
+<li class="sub-text">分隔符设置为“单独”。</li>
+</ul>
+</li>
+<li class="sub-text">
+                    清除演奏法和分隔符
+                    <ul>
+<li class="sub-text">将套件中所有音高的演奏法和分隔符返回到未设置状态（音高名称不更改）。</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="articulationmap">关节图</h2>
+<p class="sub-text">从上下文菜单调用时显示。在这里您可以看到哪些音高分配给了哪些演奏记号。</p>
+<div class="image-wrapper">
+<img alt="关节图" height="60%" src="image/page-plugin_pic_3.png" width="60%"/>
+</div>
+<p class="sub-text">显示与发音相关的音高。</p>
+<p class="note">子栏中勾选的项目会自动插值音高。</p>
+<h2 id="options">插件选项</h2>
+<div class="image-wrapper">
+<img src="image/page-plugin_pic_9.png"/>
+</div>
+<ul>
+<li class="sub-text">
+                声音检查力度
+                <ul>
+<li class="sub-text">设置按下声音检查按钮时输出的音符力度值。</li>
+</ul>
+</li>
+<li class="sub-text">
+                输入固定启用
+                <ul>
+<li class="sub-text">MIDI 固定音高。</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI 输入设备
+                <ul>
+<li class="sub-text">选择连接 MIDI 键盘的端口。如果不需要，请选择空白。如果可用，将显示“已连接”；如果不可用，将显示“未连接”。</li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI 固定音高
+                <ul>
+<li class="sub-text">
+                        指定要接受的 MIDI 键盘音符开/关消息的音高。<br/>
+                        如果指定该值并启用“固定输入”，
+                        MIDI 键盘输入转换为音调列表中选择的音符开/关消息并输出。
+                    </li>
+</ul>
+</li>
+<li class="sub-text">
+                MIDI 输出设备
+                <ul>
+<li class="sub-text">选择 MIDI 消息输出目的地。如果可用，将显示“已连接”；如果不可用，将显示“未连接”。</li>
+</ul>
+</li>
+</ul>
+</div>
+</body>
+</html>

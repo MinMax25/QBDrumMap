@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Articulation</title>
+<link href="content.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h1>Articulation</h1>
+<p>Set the sorting order when creating a drum map.</p>
+<div class="image-wrapper">
+<img height="400" src="image/page-articulation_pic_1.png" width="650"/>
+</div>
+<h2 id="order">About the display order</h2>
+<h3>If "Use articulations" is checked when exporting the drum map</h3>
+<p>The drum maps will be grouped according to the following rules, and the groups will be sorted in descending order of articulation pitch.</p>
+<ol>
+<li>Articulation is specified but separator is not specified.</li>
+<li>Articulation is not specified and Separate is specified.</li>
+<li>Articulation is specified and Separate is specified.</li>
+<li>articulation is specified and Not Loaded is specified.</li>
+<li>Articulation is specified and Duplicate is specified.</li>
+<li>Articulation is not specified and separator is not specified.</li>
+</ol>
+<p>If there is an undefined minimum pitch between 2. and 3., a separator ("==========") will be automatically interpolated.</p>
+<h3>If "Use articulations" is not checked when exporting the drum map</h3>
+<p>The pitch list order will be applied as is.</p>
+</div>
+</body>
+</html>
