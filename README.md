@@ -14,7 +14,7 @@ DAW（Studio One、Cubase）で使用する **ドラムマップ編集ツール*
 
 A **drum map editor** for use with DAWs such as **Studio One** and **Cubase**.
 
-<img width="1300" height="800" alt="Image" src="QBDrumMap/Resources/Document/Manual/image/intoro_pic_1.png" />
+<img width="1300" height="800" alt="Image" src="QBDrumMap/Resources/Document/Manual/ja/image/intoro_pic_1.png" />
 
 ---
 
