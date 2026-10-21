@@ -12,6 +12,7 @@
     <div class="container">
         <h1>設定</h1>
         <p>設定ページはハンバーガーメニュー最下部の歯車アイコンクリックで表示されます。</p>
+        <p class="note"><strong>アップデート時の注意：</strong>本バージョンでは設定ファイルの形式をJSONからTOMLへ変更しました。以前のバージョンの設定は自動移行されません。アップデート後は設定を再度行ってください。</p>
         <div class="image-wrapper">
             <img src="image/setting_pic_1.png" alt="QB DrumMapの画面イメージ" width="650" height="400" />
         </div>
@@ -27,10 +28,10 @@
         <h2 id="language">言語を設定する</h2>
         <p>Languageコンボボックスより以下を指定できます:</p>
         <ul>
-            <li>英語</li>
-            <li>日本語</li>
+            <li>英語・日本語（標準対応）</li>
+            <li>その他の言語：言語パックをアプリケーションフォルダ内の <code>Languages/&lt;culture-code&gt;/</code> に配置すると選択できます。</li>
         </ul>
-        <p>変更内容は次回プログラム起動時に反映されます。</p>
+        <p>選択した言語はアプリケーション画面に反映されます。追加言語の有無は、配置されている言語パックによります。</p>
 
         <h2 id="startup-page">スタートアップページを設定する</h2>
         <p>Start Up Pageコンボボックスより、起動時に初期表示されるページを指定できます。</p>

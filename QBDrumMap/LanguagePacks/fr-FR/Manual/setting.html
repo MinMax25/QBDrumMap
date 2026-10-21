@@ -11,6 +11,7 @@
 <div class="container">
 <h1>Paramètres</h1>
 <p>La page des paramètres s'affiche en cliquant sur l'icône d'engrenage en bas du menu hamburger.</p>
+<p class="note"><strong>Important lors de la mise à niveau :</strong> Cette version remplace le format JSON par TOML (<code>Setting.toml</code>) pour les paramètres. Les paramètres des versions précédentes ne sont pas migrés automatiquement. Veuillez les reconfigurer après la mise à niveau.</p>
 <div class="image-wrapper">
 <img alt="Image de l’écran QB DrumMap" height="400" src="image/setting_pic_1.png" width="650"/>
 </div>
@@ -24,10 +25,10 @@
 <h2 id="language">Définition de la langue</h2>
 <p>Vous pouvez spécifier les éléments suivants dans la zone de liste déroulante Langue :</p>
 <ul>
-<li>Anglais</li>
-<li>Japonais</li>
+<li>L’anglais et le japonais sont intégrés.</li>
+<li>Dans le projet source, les packs linguistiques se trouvent dans <code>LanguagePacks/&lt;locale&gt;/</code>. Pour les utiliser, copiez un pack dans <code>Languages/&lt;locale&gt;/</code>, dans le dossier de l’application.</li>
 </ul>
-<p>Les modifications seront reflétées au prochain démarrage du programme.</p>
+<p>La langue choisie devient active immédiatement. Les textes liés à la localisation sont actualisés ; certains éléments de l’interface peuvent ne se mettre à jour qu’à leur prochain affichage.</p>
 <h2 id="startup-page">Définition de la page de démarrage La liste déroulante Page de démarrage</h2>
 <p>vous permet de spécifier la page qui s'affiche initialement au démarrage.</p>
 <p>Les modifications seront reflétées au prochain démarrage du programme.</p>

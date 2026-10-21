@@ -11,6 +11,7 @@
 <div class="container">
 <h1>Einstellungen</h1>
 <p>Die Einstellungsseite wird durch Klicken auf das Zahnradsymbol unten im Hamburger-Menü angezeigt.</p>
+<p class="note"><strong>Hinweis zum Upgrade:</strong> Dieses Release ändert das Einstellungsformat von JSON zu TOML (<code>Setting.toml</code>). Einstellungen aus früheren Versionen werden nicht automatisch übernommen. Bitte richten Sie Ihre Einstellungen nach dem Upgrade erneut ein.</p>
 <div class="image-wrapper">
 <img alt="QB DrumMap-Bildschirmbild" height="400" src="image/setting_pic_1.png" width="650"/>
 </div>
@@ -24,10 +25,10 @@
 <h2 id="language">Festlegen der Sprache</h2>
 <p>Im Kombinationsfeld „Sprache“ können Sie Folgendes festlegen:</p>
 <ul>
-<li>Englisch</li>
-<li>Japanisch</li>
+<li>Englisch und Japanisch sind integriert.</li>
+<li>Im Quellprojekt liegen Sprachpakete unter <code>LanguagePacks/&lt;locale&gt;/</code>. Zur Verwendung kopieren Sie ein Paket in den Anwendungsordner unter <code>Languages/&lt;locale&gt;/</code>.</li>
 </ul>
-<p>Änderungen werden beim nächsten Start des Programms übernommen.</p>
+<p>Die gewählte Sprache wird sofort als aktive Sprache gesetzt. Texte mit Lokalisierungsbindung werden aktualisiert; einzelne Oberflächenelemente werden möglicherweise erst beim erneuten Anzeigen aktualisiert.</p>
 <h2 id="startup-page">Einrichten der Startseite Mit dem Kombinationsfeld „Startseite“ von</h2>
 <p>können Sie die Seite angeben, die beim Start zunächst angezeigt wird.</p>
 <p>Änderungen werden beim nächsten Start des Programms übernommen.</p>

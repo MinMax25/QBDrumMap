@@ -11,6 +11,7 @@
 <div class="container">
 <h1>Configurações</h1>
 <p>A página de configurações é exibida clicando no ícone de engrenagem na parte inferior do menu de hambúrguer.</p>
+<p class="note"><strong>Aviso ao atualizar:</strong> Esta versão altera o formato do arquivo de configurações de JSON para TOML (<code>Setting.toml</code>). As configurações das versões anteriores não são migradas automaticamente. Configure novamente suas preferências após a atualização.</p>
 <div class="image-wrapper">
 <img alt="Imagem da tela do QB DrumMap" height="400" src="image/setting_pic_1.png" width="650"/>
 </div>
@@ -24,10 +25,10 @@
 <h2 id="language">Definir o idioma</h2>
 <p>Você pode especificar o seguinte na caixa de combinação Idioma:</p>
 <ul>
-<li>Inglês</li>
-<li>Japonês</li>
+<li>Inglês e japonês estão incluídos.</li>
+<li>No projeto de código-fonte, os pacotes de idioma ficam em <code>LanguagePacks/&lt;locale&gt;/</code>. Para usá-los, copie um pacote para <code>Languages/&lt;locale&gt;/</code>, na pasta do aplicativo.</li>
 </ul>
-<p>As alterações serão refletidas na próxima vez que o programa for iniciado.</p>
+<p>O idioma selecionado é ativado imediatamente. Os textos vinculados à localização são atualizados; alguns elementos da interface podem ser atualizados quando forem exibidos novamente.</p>
 <h2 id="startup-page">Configurando a página inicial A caixa de combinação</h2>
 <p>Página inicial permite especificar a página que é exibida inicialmente na inicialização.</p>
 <p>As alterações serão refletidas na próxima vez que o programa for iniciado.</p>

@@ -11,6 +11,7 @@
 <div class="container">
 <h1>设置</h1>
 <p>单击汉堡菜单底部的齿轮图标即可显示设置页面。</p>
+<p class="note"><strong>升级注意：</strong>此版本将设置文件格式从 JSON 改为 TOML（<code>Setting.toml</code>）。旧版本的设置不会自动迁移，请在升级后重新配置。</p>
 <div class="image-wrapper">
 <img alt="QB DrumMap 屏幕图像" height="400" src="image/setting_pic_1.png" width="650"/>
 </div>
@@ -24,10 +25,10 @@
 <h2 id="language">设置语言</h2>
 <p>您可以从语言组合框中指定以下内容：</p>
 <ul>
-<li>英语</li>
-<li>日语</li>
+<li>内置英语和日语。</li>
+<li>源代码项目中的语言包位于 <code>LanguagePacks/&lt;locale&gt;/</code>。如需使用，请将语言包复制到应用程序文件夹中的 <code>Languages/&lt;locale&gt;/</code>。</li>
 </ul>
-<p>更改将在下次启动程序时反映出来。</p>
+<p>所选语言会立即设为当前语言。使用本地化绑定的文本会更新；部分界面元素可能在重新显示时更新。</p>
 <h2 id="startup-page">设置启动页面</h2>
 <p>启动页面组合框允许您指定启动时最初显示的页面。</p>
 <p>更改将在下次程序启动时反映出来。</p>

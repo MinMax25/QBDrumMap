@@ -11,6 +11,7 @@
 <div class="container">
 <h1>Settings</h1>
 <p>The settings page is displayed by clicking the gear icon at the bottom of the hamburger menu.</p>
+<p class="note"><strong>Important notice for upgrading:</strong> This release changes the settings file format from JSON to TOML. Settings from previous versions are not migrated automatically. Please configure your settings again after upgrading.</p>
 <div class="image-wrapper">
 <img alt="QB DrumMap screen image" height="400" src="image/setting_pic_1.png" width="650"/>
 </div>
@@ -22,12 +23,12 @@
 </ul>
 <p>You can also specify an accent color.</p>
 <h2 id="language">Setting the language</h2>
-<p>You can specify the following from the Language combo box:</p>
+<p>The Language combo box supports these options:</p>
 <ul>
-<li>English</li>
-<li>Japanese</li>
+<li>English and Japanese are built in.</li>
+<li>Other languages are available when a language pack is placed under <code>Languages/&lt;culture-code&gt;/</code> in the application folder.</li>
 </ul>
-<p>Changes will be reflected the next time the program is started.</p>
+<p>The selected language is applied to the application. Available additional languages depend on the installed language packs.</p>
 <h2 id="startup-page">Setting the startup page The</h2>
 <p>Start Up Page combo box allows you to specify the page that is initially displayed at startup.</p>
 <p>Changes will be reflected the next time the program is started.</p>

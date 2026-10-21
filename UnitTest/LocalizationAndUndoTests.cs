@@ -82,7 +82,7 @@ public class LocalizationAndUndoTests
         foreach (var file in sources)
         {
             var text = File.ReadAllText(file);
-             
+
             foreach (var literal in new[] { "\"Load\"", "\"Save\"", "\"Import\"" })
             {
                 Assert.DoesNotContain($", {literal});", text);

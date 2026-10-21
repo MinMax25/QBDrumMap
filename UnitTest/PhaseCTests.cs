@@ -11,7 +11,7 @@ public class PhaseCTests
     private static MapData Build()
     {
         var map = new MapData();
-         
+
         var p1 = new Part { ID = 5, Name = "P1", DisplayOrder = 2 };
         p1.Articulations.Add(new Articulation { ID = 30, Name = "B", DisplayOrder = 2 });
         p1.Articulations.Add(new Articulation { ID = 10, Name = "A", DisplayOrder = 1 });
@@ -29,7 +29,7 @@ public class PhaseCTests
 
         k1.Pitches.Add(new KitPitch { Pitch = 36, Name = "n", ArticulationID = 7, DisplayOrder = 1 });
         k1.Pitches.Add(new KitPitch { Pitch = 38, Name = "n", ArticulationID = 10, DisplayOrder = 2 });
-        k1.Pitches.Add(new KitPitch { Pitch = 40, Name = "n", ArticulationID = 999, DisplayOrder = 3 });  
+        k1.Pitches.Add(new KitPitch { Pitch = 40, Name = "n", ArticulationID = 999, DisplayOrder = 3 });
         k2.Pitches.Add(new KitPitch { Pitch = 50, Name = "n", ArticulationID = 30, DisplayOrder = 1 });
         k2.Pitches.Add(new KitPitch { Pitch = 52, Name = "n", ArticulationID = 10, DisplayOrder = 2 });
 
@@ -41,9 +41,9 @@ public class PhaseCTests
     {
         var n = ArticulationMap.GetQBDrummerNumbers(Build());
 
-        Assert.Equal(1, n[7]);    
-        Assert.Equal(2, n[10]);   
-        Assert.Equal(3, n[30]);   
+        Assert.Equal(1, n[7]);
+        Assert.Equal(2, n[10]);
+        Assert.Equal(3, n[30]);
     }
 
     [Fact]
@@ -54,7 +54,7 @@ public class PhaseCTests
         Assert.Equal("ID,Sub,Name,Pitchs", lines[0]);
         Assert.Equal("1,0,C,36", lines[1]);
         Assert.Equal("2,0,A,38", lines[2]);
-        Assert.StartsWith("3,1,B,", lines[3]);  
+        Assert.StartsWith("3,1,B,", lines[3]);
     }
 
     [Fact]

@@ -12,7 +12,7 @@ public class PhaseATests
         using var dir = new TempDir();
         var map = await TestSupport.LoadSampleAsync();
         map.Parts[0].ID = 900;
-        map.Plugins.Remove(map.Plugins[2]);  
+        map.Plugins.Remove(map.Plugins[2]);
         var before = TestSupport.Dump(map);
 
         Assert.True(await map.SaveAsync(dir.File("a.qbd")));
@@ -75,7 +75,7 @@ public class PhaseATests
         Assert.True(await map.SaveAsync(dir.File("a.qbd")));
 
         map.Plugins[0].Name = "tmp";
-        map.Plugins[0].Name = original;  
+        map.Plugins[0].Name = original;
 
         Assert.True(map.IsModified());
     }

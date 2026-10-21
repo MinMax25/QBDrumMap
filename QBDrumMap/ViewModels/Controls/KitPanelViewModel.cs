@@ -44,7 +44,7 @@ public partial class KitPanelViewModel
         {
             Plugin.PropertyChanged += Plugin_PropertyChanged;
             ObservableCollection<Kit> kits = [.. Plugin.Kits.OrderBy(x => x.DisplayOrder)];
-             
+
             MapData.RunWithoutDirtyChange(() =>
             {
                 Plugin.Kits.Clear();
