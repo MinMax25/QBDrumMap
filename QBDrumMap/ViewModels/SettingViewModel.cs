@@ -187,6 +187,23 @@ public partial class SettingViewModel : ViewModelBase
         SelectedPartNameDictionaryEntry = null;
     }
 
+    [RelayCommand]
+    private async Task OnResetPartNameDictionary()
+    {
+        string message = string.Format(
+            App.Text("Message_Command_Reset", Resources.Message_Command_Reset),
+            App.NameText("PartNameAlias", Name.PartNameAlias));
+
+        if (await Dialog.ShowConfirmAsync(message, App.Text("Title_Command_Reset", Resources.Title_Command_Reset)) == false)
+        {
+            return;
+        }
+
+        SelectedPartNameDictionaryEntries.Clear();
+        SelectedPartNameDictionaryEntry = null;
+        Setting.ResetPartNameDictionary();
+    }
+
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

@@ -129,6 +129,9 @@
   <data name="ButtonAdd" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="ButtonReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
   <data name="ButtonImport" xml:space="preserve">
     <value>Import</value>
   </data>
@@ -325,9 +328,11 @@
   <data name="Button_Cancel" xml:space="preserve"><value>Cancel</value></data>
   <data name="Message_Command_Clear" xml:space="preserve"><value>Clear {0}?</value></data>
   <data name="Message_Command_Delete" xml:space="preserve"><value>Delete {0}: {1}?</value></data>
+  <data name="Message_Command_Reset" xml:space="preserve"><value>Reset {0} to its defaults? Your changes will be lost.</value></data>
   <data name="Message_ProcessComplete" xml:space="preserve"><value>Process completed.</value></data>
   <data name="Title_Command_Clear" xml:space="preserve"><value>Clear</value></data>
   <data name="Title_Command_Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Title_Command_Reset" xml:space="preserve"><value>Reset</value></data>
   <data name="Setting_PageTitle" xml:space="preserve"><value>Settings</value></data>
   <data name="Setting_AccentColor" xml:space="preserve"><value>Accent Color</value></data>
   <data name="Setting_Language" xml:space="preserve"><value>Language</value></data>

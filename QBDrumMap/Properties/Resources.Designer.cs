@@ -205,6 +205,15 @@ namespace QBDrumMap {
         }
         
         /// <summary>
+        ///   Reset に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ButtonReset {
+            get {
+                return ResourceManager.GetString("ButtonReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Search に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ButtonSearch {
@@ -664,6 +673,15 @@ namespace QBDrumMap {
         }
         
         /// <summary>
+        ///   Reset {0} to its defaults? Your changes will be lost. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Message_Command_Reset {
+            get {
+                return ResourceManager.GetString("Message_Command_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Paste Complete! に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string PasteComplete {
@@ -939,6 +957,15 @@ namespace QBDrumMap {
         public static string Title_ConvertMidiPage {
             get {
                 return ResourceManager.GetString("Title_ConvertMidiPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Reset に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Title_Command_Reset {
+            get {
+                return ResourceManager.GetString("Title_Command_Reset", resourceCulture);
             }
         }
         

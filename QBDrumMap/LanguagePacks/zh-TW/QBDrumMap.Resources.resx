@@ -315,4 +315,13 @@
   <data name="Setting_StartUpPage" xml:space="preserve">
     <value>啟動頁</value>
   </data>
+  <data name="ButtonReset" xml:space="preserve">
+    <value>重設</value>
+  </data>
+  <data name="Message_Command_Reset" xml:space="preserve">
+    <value>要將{0}重設為預設值嗎？變更內容將會遺失。</value>
+  </data>
+  <data name="Title_Command_Reset" xml:space="preserve">
+    <value>重設</value>
+  </data>
 </root>

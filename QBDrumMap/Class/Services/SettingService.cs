@@ -220,6 +220,18 @@ public partial class SettingService : ObservableObject, ISettingService
             return;
         }
 
+        AddDefaultPartNameDictionary();
+    }
+
+    // 画面にバインドされたコレクションを差し替えないよう、中身だけを入れ替える
+    public void ResetPartNameDictionary()
+    {
+        PartNameDictionary.Clear();
+        AddDefaultPartNameDictionary();
+    }
+
+    private void AddDefaultPartNameDictionary()
+    {
         var defaults = new[]
         {
             new PartNameAlias { CanonicalName = "Kick", Aliases = "Bass Drum,BD" },

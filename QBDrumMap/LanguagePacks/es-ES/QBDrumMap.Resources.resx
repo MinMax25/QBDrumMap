@@ -315,4 +315,13 @@
   <data name="Setting_StartUpPage" xml:space="preserve">
     <value>Startup Page</value>
   </data>
+  <data name="ButtonReset" xml:space="preserve">
+    <value>Restablecer</value>
+  </data>
+  <data name="Message_Command_Reset" xml:space="preserve">
+    <value>¿Restablecer {0} a sus valores predeterminados? Se perderán los cambios.</value>
+  </data>
+  <data name="Title_Command_Reset" xml:space="preserve">
+    <value>Restablecer</value>
+  </data>
 </root>

@@ -242,6 +242,16 @@
                                     Kind="Plus"
                                     Style="{StaticResource BasePackIconStyle}" />
                             </Button>
+                            <Button
+                                Style="{StaticResource IconButtonStyle}"
+                                Command="{Binding ResetPartNameDictionaryCommand}"
+                                ToolTip="{loc:Loc Key={x:Static p:Resources.ButtonReset}}">
+                                <iconPacks:PackIconMaterial
+                                    Kind="Restore"
+                                    Width="16"
+                                    Height="16"
+                                    Style="{StaticResource BasePackIconStyle}" />
+                            </Button>
                         </StackPanel>
                         <DataGrid
                             Grid.Row="1"

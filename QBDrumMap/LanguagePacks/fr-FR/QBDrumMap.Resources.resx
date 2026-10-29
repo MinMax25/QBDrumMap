@@ -315,4 +315,13 @@
   <data name="Setting_StartUpPage" xml:space="preserve">
     <value>Startup Page</value>
   </data>
+  <data name="ButtonReset" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="Message_Command_Reset" xml:space="preserve">
+    <value>Réinitialiser {0} aux valeurs par défaut ? Les modifications seront perdues.</value>
+  </data>
+  <data name="Title_Command_Reset" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
 </root>

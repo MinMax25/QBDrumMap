@@ -315,4 +315,13 @@
   <data name="Setting_StartUpPage" xml:space="preserve">
     <value>-Startseite löschen</value>
   </data>
+  <data name="ButtonReset" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="Message_Command_Reset" xml:space="preserve">
+    <value>{0} auf die Standardwerte zurücksetzen? Änderungen gehen verloren.</value>
+  </data>
+  <data name="Title_Command_Reset" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
 </root>

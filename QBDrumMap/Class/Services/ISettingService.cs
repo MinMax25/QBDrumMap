@@ -54,6 +54,8 @@ public interface ISettingService : INotifyPropertyChanged, IDisposable
 
     ObservableCollection<PartNameAlias> PartNameDictionary { get; set; }
 
+    void ResetPartNameDictionary();
+
     void Load();
 
     void Save();
