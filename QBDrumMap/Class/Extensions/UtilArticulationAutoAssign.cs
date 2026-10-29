@@ -1,10 +1,21 @@
 using QBDrumMap.Class.MapModels;
+using System.Text;
 
 namespace QBDrumMap.Class.Extensions;
 
 public static class UtilArticulationAutoAssign
 {
-    private const double SimilarityThreshold = 0.6;
+    // パーツ名の語のうち、入力名に含まれている割合の下限
+    private const double MinimumPartCoverage = 0.5;
+
+    // 語尾違い（Choked / Choke など）を同一視する前置一致の最小長
+    private const int MinimumPrefixLength = 4;
+
+    // 非ドラム系の打楽器や制御用のノート。Articulationを割り当てない
+    private static readonly string[] ExcludedWords = { "spiral", "chopper", "cowbell", "clap", "controller" };
+
+    // パーツやArticulationの判別に寄与しない語。入力名から除いて照合する
+    private static readonly string[] NoiseWords = { "drum", "cym", "cymbal", "center" };
 
     public static (int AssignedCount, int SkippedCount) AutoAssignArticulations(this MapData data, Kit kit, IEnumerable<PartNameAlias> dictionary)
     {
@@ -14,7 +25,7 @@ public static class UtilArticulationAutoAssign
         }
 
         var owningPlugin = data.Plugins.FirstOrDefault(p => p.Kits.Contains(kit));
-        var dictionaryList = dictionary?.ToArray() ?? Array.Empty<PartNameAlias>();
+        var replacements = BuildReplacements(dictionary);
 
         int assignedCount = 0;
         int skippedCount = 0;
@@ -33,8 +44,8 @@ public static class UtilArticulationAutoAssign
                 continue;
             }
 
-            int? articulationID = FindByOtherKitReference(data, kit, owningPlugin, pitch.Name, dictionaryList)
-                ?? FindByPartDictionary(data, pitch.Name, dictionaryList);
+            int? articulationID = FindByOtherKitReference(data, kit, owningPlugin, pitch.Name, replacements)
+                ?? FindByPartDictionary(data, pitch.Name, replacements);
 
             if (articulationID.HasValue)
             {
@@ -62,16 +73,16 @@ public static class UtilArticulationAutoAssign
             || pluginType == PluginType.XG;
     }
 
-    private static int? FindByOtherKitReference(MapData data, Kit targetKit, Plugin owningPlugin, string pitchName, IReadOnlyList<PartNameAlias> dictionary)
+    private static int? FindByOtherKitReference(MapData data, Kit targetKit, Plugin owningPlugin, string pitchName, IReadOnlyList<(string Alias, string CanonicalName)> replacements)
     {
-        string normalized = Normalize(pitchName, dictionary);
+        string normalized = Normalize(pitchName, replacements);
 
         var candidates = data.Plugins
             .SelectMany(p => p.Kits.Select(k => new { Plugin = p, Kit = k }))
             .Where(x => x.Kit != targetKit)
             .SelectMany(x => x.Kit.Pitches.Select(p => new { x.Plugin, Pitch = p }))
             .Where(x => data.IsValidArticulationID(x.Pitch.ArticulationID) && !string.IsNullOrWhiteSpace(x.Pitch.Name))
-            .Where(x => Normalize(x.Pitch.Name, dictionary) == normalized)
+            .Where(x => Normalize(x.Pitch.Name, replacements) == normalized)
             .ToArray();
 
         if (owningPlugin != null)
@@ -86,126 +97,185 @@ public static class UtilArticulationAutoAssign
         return candidates.FirstOrDefault()?.Pitch.ArticulationID;
     }
 
-    private static int? FindByPartDictionary(MapData data, string pitchName, IReadOnlyList<PartNameAlias> dictionary)
+    private static int? FindByPartDictionary(MapData data, string pitchName, IReadOnlyList<(string Alias, string CanonicalName)> replacements)
     {
-        var part = IdentifyPart(data, pitchName, dictionary);
-        if (part == null || part.Articulations.Count == 0)
+        var allTokens = Tokenize(Normalize(pitchName, replacements));
+        if (allTokens.Any(t => ExcludedWords.Contains(t)))
         {
             return null;
         }
 
-        string normalized = Normalize(pitchName, dictionary);
-
-        var exact = part.Articulations.FirstOrDefault(a => Normalize(a.Name, dictionary) == normalized);
-        if (exact != null)
+        var pitchTokens = allTokens.Where(t => !NoiseWords.Contains(t)).ToArray();
+        if (pitchTokens.Length == 0)
         {
-            return exact.ID;
+            return null;
         }
 
+        var part = FindBestPart(data, pitchTokens, replacements);
+        return part == null ? null : FindBestArticulation(part, pitchTokens, replacements)?.ID;
+    }
+
+    private static Part FindBestPart(MapData data, string[] pitchTokens, IReadOnlyList<(string Alias, string CanonicalName)> replacements)
+    {
+        Part best = null;
+        MatchResult bestMatch = default;
+
+        foreach (var part in data.Parts)
+        {
+            if (part.Articulations.Count == 0)
+            {
+                continue;
+            }
+
+            var partTokens = Tokenize(Normalize(part.Name, replacements));
+            var match = CountMatches(pitchTokens, partTokens);
+
+            // 入力名が長くても特定できるよう、パーツ名側の語がどれだけ入力名に含まれるかで判定する
+            if (!match.HasWord || (double)match.CandidateMatched / partTokens.Length < MinimumPartCoverage)
+            {
+                continue;
+            }
+
+            // 一致数が同じなら、後ろの語に一致するパーツを優先する（Hi Hat Closed Pedal は Pedal 側）
+            if (best == null
+                || match.Matched > bestMatch.Matched
+                || (match.Matched == bestMatch.Matched && match.IndexSum > bestMatch.IndexSum)
+                || (match.Matched == bestMatch.Matched && match.IndexSum == bestMatch.IndexSum && match.Extras < bestMatch.Extras))
+            {
+                best = part;
+                bestMatch = match;
+            }
+        }
+
+        return best;
+    }
+
+    private static Articulation FindBestArticulation(Part part, string[] pitchTokens, IReadOnlyList<(string Alias, string CanonicalName)> replacements)
+    {
         Articulation best = null;
-        double bestScore = 0;
+        MatchResult bestMatch = default;
 
         foreach (var articulation in part.Articulations)
         {
-            double score = CalculateSimilarity(normalized, Normalize(articulation.Name, dictionary));
-            if (score > bestScore)
+            var match = CountMatches(pitchTokens, Tokenize(Normalize(articulation.Name, replacements)));
+
+            // 同点の場合は余分な語がないものを優先し、それも同点なら一覧の先頭を採用する。主要なArticulationが先頭に並ぶ前提
+            if (best == null
+                || match.Matched > bestMatch.Matched
+                || (match.Matched == bestMatch.Matched && match.IndexSum > bestMatch.IndexSum)
+                || (match.Matched == bestMatch.Matched && match.IndexSum == bestMatch.IndexSum && match.Extras == 0 && bestMatch.Extras != 0))
             {
-                bestScore = score;
                 best = articulation;
+                bestMatch = match;
             }
         }
 
-        return (best != null && bestScore >= SimilarityThreshold) ? best.ID : null;
+        return best;
     }
 
-    private static Part IdentifyPart(MapData data, string pitchName, IReadOnlyList<PartNameAlias> dictionary)
+    private static MatchResult CountMatches(string[] pitchTokens, string[] candidateTokens)
     {
-        string bestCanonical = null;
-        int bestLength = 0;
+        int matched = 0;
+        int indexSum = 0;
+        bool hasWord = false;
 
-        foreach (var entry in dictionary)
+        for (int i = 0; i < pitchTokens.Length; i++)
         {
-            foreach (var candidate in entry.GetAllNames())
+            if (!candidateTokens.Any(c => IsSameToken(pitchTokens[i], c)))
             {
-                if (candidate.Length > bestLength && ContainsWord(pitchName, candidate))
-                {
-                    bestCanonical = entry.CanonicalName;
-                    bestLength = candidate.Length;
-                }
+                continue;
             }
+
+            matched++;
+            indexSum += i;
+
+            // 数字や1文字だけの一致（"1"、"L" など）では、対象パーツと判断しない
+            hasWord |= pitchTokens[i].Length >= 2 && pitchTokens[i].Any(char.IsLetter);
         }
 
-        if (bestCanonical == null)
-        {
-            return null;
-        }
+        int candidateMatched = candidateTokens.Count(c => pitchTokens.Any(p => IsSameToken(p, c)));
 
-        return data.Parts.FirstOrDefault(p => string.Equals(p.Name, bestCanonical, StringComparison.OrdinalIgnoreCase));
+        return new MatchResult(matched, indexSum, candidateTokens.Length - candidateMatched, candidateMatched, hasWord);
     }
 
-    private static bool ContainsWord(string text, string word)
+    private static bool IsSameToken(string a, string b)
     {
-        if (string.IsNullOrWhiteSpace(text) || string.IsNullOrWhiteSpace(word))
+        if (a == b)
         {
-            return false;
+            return true;
         }
 
-        return text.Contains(word, StringComparison.OrdinalIgnoreCase);
+        return Math.Min(a.Length, b.Length) >= MinimumPrefixLength
+            && (a.StartsWith(b, StringComparison.Ordinal) || b.StartsWith(a, StringComparison.Ordinal));
     }
 
-    private static string Normalize(string name, IReadOnlyList<PartNameAlias> dictionary)
+    private static (string Alias, string CanonicalName)[] BuildReplacements(IEnumerable<PartNameAlias> dictionary)
+    {
+        return (dictionary ?? Array.Empty<PartNameAlias>())
+            .SelectMany(entry => entry.GetAllNames().Select(alias => (Alias: alias, entry.CanonicalName)))
+            .OrderByDescending(x => x.Alias.Length)
+            .ToArray();
+    }
+
+    // 別名を正規名へ置き換える。語の途中（"Hat" が "Hi-Hat" の一部など）では置き換えない
+    private static string Normalize(string name, IReadOnlyList<(string Alias, string CanonicalName)> replacements)
     {
         if (string.IsNullOrWhiteSpace(name))
         {
             return string.Empty;
         }
 
-        string result = name;
+        var result = new StringBuilder();
+        int index = 0;
 
-        var replacements = dictionary
-            .SelectMany(entry => entry.GetAllNames().Select(alias => (Alias: alias, entry.CanonicalName)))
-            .OrderByDescending(x => x.Alias.Length);
-
-        foreach (var (alias, canonicalName) in replacements)
+        while (index < name.Length)
         {
-            int index = result.IndexOf(alias, StringComparison.OrdinalIgnoreCase);
-            if (index >= 0)
+            var match = IsWordStart(name, index)
+                ? replacements.FirstOrDefault(x => IsAliasAt(name, index, x.Alias))
+                : default;
+
+            if (match.Alias != null)
             {
-                result = result.Remove(index, alias.Length).Insert(index, canonicalName);
+                result.Append(match.CanonicalName);
+                index += match.Alias.Length;
+            }
+            else
+            {
+                result.Append(name[index]);
+                index++;
             }
         }
 
-        return result.Trim().ToLowerInvariant();
+        return result.ToString().Trim().ToLowerInvariant();
     }
 
-    private static double CalculateSimilarity(string a, string b)
+    private static bool IsWordStart(string text, int index)
     {
-        if (string.IsNullOrWhiteSpace(a) || string.IsNullOrWhiteSpace(b))
-        {
-            return 0;
-        }
-
-        var tokensA = Tokenize(a);
-        var tokensB = Tokenize(b);
-
-        if (tokensA.Count == 0 || tokensB.Count == 0)
-        {
-            return 0;
-        }
-
-        int common = tokensA.Intersect(tokensB).Count();
-        int union = tokensA.Union(tokensB).Count();
-
-        return union == 0 ? 0 : (double)common / union;
+        return index == 0 || !char.IsLetterOrDigit(text[index - 1]);
     }
 
-    private static HashSet<string> Tokenize(string text)
+    private static bool IsAliasAt(string text, int index, string alias)
+    {
+        if (string.Compare(text, index, alias, 0, alias.Length, StringComparison.OrdinalIgnoreCase) != 0)
+        {
+            return false;
+        }
+
+        int end = index + alias.Length;
+        return end == text.Length || !char.IsLetterOrDigit(text[end]);
+    }
+
+    // 語の位置（後ろの語ほど具体的）を比較に使うため、出現順を保って重複を除く
+    private static string[] Tokenize(string text)
     {
         return text
             .Split(new[] { ' ', '-', '_', '[', ']', '<', '>', '(', ')', '/', '\\' }, StringSplitOptions.RemoveEmptyEntries)
             .Select(x => x.ToLowerInvariant())
-            .ToHashSet();
+            .Distinct()
+            .ToArray();
     }
+
+    private readonly record struct MatchResult(int Matched, int IndexSum, int Extras, int CandidateMatched, bool HasWord);
 
     private static void ResolveDuplicates(Kit kit, HashSet<KitPitch> newlyAssigned)
     {

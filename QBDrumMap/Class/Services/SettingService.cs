@@ -224,11 +224,26 @@ public partial class SettingService : ObservableObject, ISettingService
         {
             new PartNameAlias { CanonicalName = "Kick", Aliases = "Bass Drum,BD" },
             new PartNameAlias { CanonicalName = "Snare", Aliases = "SD" },
+            new PartNameAlias { CanonicalName = "Snare Sidestick", Aliases = "Side-Stick,Side Stick,Sidestick" },
             new PartNameAlias { CanonicalName = "Hi-Hat", Aliases = "HiHat,HH,Hat" },
-            new PartNameAlias { CanonicalName = "Tom", Aliases = "Floor Tom" },
+            new PartNameAlias { CanonicalName = "Floortom", Aliases = "Floor Tom" },
+            new PartNameAlias { CanonicalName = "Racktom", Aliases = "Rack Tom" },
+            new PartNameAlias { CanonicalName = "Floortom 1", Aliases = "Tom Low,High Floor Tom,Hi Floor Tom" },
+            new PartNameAlias { CanonicalName = "Floortom 2", Aliases = "Low Floor Tom" },
+            new PartNameAlias { CanonicalName = "Racktom 1", Aliases = "Tom Mid" },
+            new PartNameAlias { CanonicalName = "Racktom 2", Aliases = "High Rack Tom,Hi Rack Tom" },
+            new PartNameAlias { CanonicalName = "Racktom 4", Aliases = "Low Rack Tom" },
+            new PartNameAlias { CanonicalName = "Hightom 1", Aliases = "Tom Hi,Tom High" },
+            new PartNameAlias { CanonicalName = "Crash L", Aliases = "High Crash" },
+            new PartNameAlias { CanonicalName = "Crash R", Aliases = "Low Crash" },
             new PartNameAlias { CanonicalName = "Ride", Aliases = "Ride Cymbal" },
             new PartNameAlias { CanonicalName = "Crash", Aliases = "Crash Cymbal" },
             new PartNameAlias { CanonicalName = "Cymbal", Aliases = string.Empty },
+            new PartNameAlias { CanonicalName = "Hi-Hat Open Edge 1", Aliases = "Hi Hat Open 1/4,Hi-Hat Open 1/4" },
+            new PartNameAlias { CanonicalName = "Hi-Hat Open Edge 2", Aliases = "Hi Hat Open 1/2,Hi-Hat Open 1/2" },
+            new PartNameAlias { CanonicalName = "Hi-Hat Open Edge 3", Aliases = "Hi Hat Open 3/4,Hi-Hat Open 3/4" },
+            new PartNameAlias { CanonicalName = "Hi-Hat Open Edge 4", Aliases = "Hi Hat Open Loose,Hi-Hat Open Loose" },
+            new PartNameAlias { CanonicalName = "Hi-Hat Open Edge 5", Aliases = "Hi Hat Open Full,Hi-Hat Open Full" },
         };
 
         foreach (var item in defaults)
