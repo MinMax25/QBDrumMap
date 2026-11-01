@@ -26,6 +26,7 @@ public partial class ExportViewModel : ViewModelBase
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(ExportStudioOneCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportCubaseCommand))]
+    [NotifyCanExecuteChangedFor(nameof(ExportReaperCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportCubaseBaseOnCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportNoteMapperCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportTextCommand))]
@@ -35,6 +36,7 @@ public partial class ExportViewModel : ViewModelBase
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(ExportStudioOneCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportCubaseCommand))]
+    [NotifyCanExecuteChangedFor(nameof(ExportReaperCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportCubaseBaseOnCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportNoteMapperCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportTextCommand))]
@@ -44,6 +46,7 @@ public partial class ExportViewModel : ViewModelBase
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(ExportStudioOneCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportCubaseCommand))]
+    [NotifyCanExecuteChangedFor(nameof(ExportReaperCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportCubaseBaseOnCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportNoteMapperCommand))]
     [NotifyCanExecuteChangedFor(nameof(ExportTextCommand))]
@@ -164,6 +167,59 @@ public partial class ExportViewModel : ViewModelBase
                 cubase.Save(Path.Combine(outPath, $"{kit.KitName}.drm"));
             }
         });
+    }
+
+    [RelayCommand(CanExecute = nameof(CanExport))]
+    private async Task OnExportReaper()
+    {
+        string title = "REAPER .lua";
+
+        var path = await SelectFolderAsync(
+            title,
+            GetReaperDefaultPath,
+            p => Setting.ExportReaperDefaultPath = p);
+
+        if (path == null)
+        {
+            return;
+        }
+
+        await TryIOFunction(title, () =>
+        {
+            foreach (var kit in SelectedKits)
+            {
+                var outPath = Path.Combine(path, kit.PluginName);
+                if (!Directory.Exists(outPath))
+                {
+                    Directory.CreateDirectory(outPath);
+                }
+
+                var script = MapData.GetReaperLuaScript(kit.KitName);
+                File.WriteAllText(Path.Combine(outPath, $"{kit.KitName}.lua").ToSafeFilePath(), script, Encoding.UTF8);
+            }
+        });
+    }
+
+    private string GetReaperDefaultPath()
+    {
+        if (!string.IsNullOrWhiteSpace(Setting.ExportReaperDefaultPath))
+        {
+            return Setting.ExportReaperDefaultPath;
+        }
+
+        var reaperScriptsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "REAPER", "Scripts");
+        if (Directory.Exists(reaperScriptsPath))
+        {
+            return reaperScriptsPath;
+        }
+
+        var reaperNotesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "REAPER", "MIDINoteNames");
+        if (Directory.Exists(reaperNotesPath))
+        {
+            return reaperNotesPath;
+        }
+
+        return string.Empty;
     }
 
     [RelayCommand(CanExecute = nameof(CanExport))]

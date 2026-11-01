@@ -75,6 +75,10 @@
                                 Style="{StaticResource ExportButtonStyle}"
                                 Content="Cubase"
                                 Command="{Binding ExportCubaseCommand}" />
+                            <Button
+                                Style="{StaticResource ExportButtonStyle}"
+                                Content="REAPER"
+                                Command="{Binding ExportReaperCommand}" />
                         </StackPanel>
                     </GroupBox>
                     <GroupBox

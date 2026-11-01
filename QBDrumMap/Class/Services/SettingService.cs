@@ -58,6 +58,9 @@ public partial class SettingService : ObservableObject, ISettingService
     private string exportCubaseDefaultPath = string.Empty;
 
     [ObservableProperty]
+    private string exportReaperDefaultPath = string.Empty;
+
+    [ObservableProperty]
     private string exportTextDefaultPath = string.Empty;
 
     [ObservableProperty]
@@ -176,6 +179,7 @@ public partial class SettingService : ObservableObject, ISettingService
         LastImportFilePath = settings.LastImportFilePath;
         ExportStudioOneDefaultPath = settings.ExportStudioOneDefaultPath;
         ExportCubaseDefaultPath = settings.ExportCubaseDefaultPath;
+        ExportReaperDefaultPath = settings.ExportReaperDefaultPath;
         ExportTextDefaultPath = settings.ExportTextDefaultPath;
         ExportCubaseBaseOnDefaultPath = settings.ExportCubaseBaseOnDefaultPath;
         ExportNoteMapperDefaultPath = settings.ExportNoteMapperDefaultPath;
@@ -285,6 +289,7 @@ public partial class SettingService : ObservableObject, ISettingService
             LastImportFilePath = source.LastImportFilePath,
             ExportStudioOneDefaultPath = source.ExportStudioOneDefaultPath,
             ExportCubaseDefaultPath = source.ExportCubaseDefaultPath,
+            ExportReaperDefaultPath = source.ExportReaperDefaultPath,
             ExportTextDefaultPath = source.ExportTextDefaultPath,
             ExportCubaseBaseOnDefaultPath = source.ExportCubaseBaseOnDefaultPath,
             ExportNoteMapperDefaultPath = source.ExportNoteMapperDefaultPath,

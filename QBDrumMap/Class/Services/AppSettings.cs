@@ -23,6 +23,7 @@ public sealed class AppSettings
     public string LastImportFilePath { get; set; } = string.Empty;
     public string ExportStudioOneDefaultPath { get; set; } = string.Empty;
     public string ExportCubaseDefaultPath { get; set; } = string.Empty;
+    public string ExportReaperDefaultPath { get; set; } = string.Empty;
     public string ExportTextDefaultPath { get; set; } = string.Empty;
     public string ExportCubaseBaseOnDefaultPath { get; set; } = string.Empty;
     public string ExportNoteMapperDefaultPath { get; set; } = string.Empty;

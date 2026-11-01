@@ -32,6 +32,8 @@ public interface ISettingService : INotifyPropertyChanged, IDisposable
 
     string ExportCubaseDefaultPath { get; set; }
 
+    string ExportReaperDefaultPath { get; set; }
+
     string ExportTextDefaultPath { get; set; }
 
     string ExportCubaseBaseOnDefaultPath { get; set; }
