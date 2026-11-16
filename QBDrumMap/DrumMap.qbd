@@ -72375,7 +72375,8 @@
             },
             {
               "Pitch": 29,
-              "Name": "Snare Roll"
+              "Name": "Snare Roll",
+              "ArticulationID": 18
             },
             {
               "Pitch": 30,
@@ -72383,7 +72384,8 @@
             },
             {
               "Pitch": 31,
-              "Name": "Snare Soft"
+              "Name": "Snare Soft",
+              "ArticulationID": 9
             },
             {
               "Pitch": 32,
@@ -72391,11 +72393,13 @@
             },
             {
               "Pitch": 33,
-              "Name": "Kick Soft"
+              "Name": "Kick Soft",
+              "ArticulationID": 4
             },
             {
               "Pitch": 34,
-              "Name": "OpenRimShot"
+              "Name": "OpenRimShot",
+              "ArticulationID": 21
             },
             {
               "Pitch": 35,
@@ -72415,7 +72419,7 @@
             {
               "Pitch": 38,
               "Name": "Snare",
-              "ArticulationID": 5
+              "ArticulationID": 12
             },
             {
               "Pitch": 39,
@@ -72424,7 +72428,7 @@
             {
               "Pitch": 40,
               "Name": "Snare Tight",
-              "ArticulationID": 21
+              "ArticulationID": 5
             },
             {
               "Pitch": 41,
@@ -72915,7 +72919,8 @@
             },
             {
               "Pitch": 29,
-              "Name": "Snare Roll 2"
+              "Name": "Snare Roll 2",
+              "ArticulationID": 18
             },
             {
               "Pitch": 30,
@@ -72931,7 +72936,8 @@
             },
             {
               "Pitch": 33,
-              "Name": "Kick Soft"
+              "Name": "Kick Soft",
+              "ArticulationID": 4
             },
             {
               "Pitch": 34,
